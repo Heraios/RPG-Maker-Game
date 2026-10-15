@@ -303,6 +303,73 @@ house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
 
 ---
 
+## 3a. The Islanders
+
+### Origins
+The Islanders **arrived several centuries after the First Sailors were gone** and found the island
+abandoned. They know the moai and ruins were built by people.
+
+**All-Seafarer prejudices (all untrue):**
+1. Tattooing is a primitive practice descended from First Sailor slave marks.
+2. The Islanders descend from First Sailor slaves, which is why they are "pitiable" and primitive.
+3. Islanders "sleep with" wild animals, and that is where the People of the Forest come from.
+
+### Society
+An informal, fairly democratic chiefdom (a "big man" society) with an unusual amount of customary
+bureaucracy for that level. **One main town** plus resource hamlets: a fishing village, a marsh
+village, a logging camp, mining camps, and so on.
+
+### Priests
+Priests heal, hold funerals, **mummify the dead**, talk to ghosts and spirits, and read omens. They
+are usually chosen from third gender and intersex children, **twins**, or **orphans raised by
+priests**. **Juda's (false) backstory is that he was an orphan.**
+
+### Death
+The dead are mummified and laid in **stone-cut tombs in the lava tubes**. A ghost is not alarming
+in itself: ghost Yoon is *concerning* because Yoon was a child who went missing about a month before
+the game starts, and because Yoon has no memories. **The ritual Sib uses to build Yoon a body is
+forbidden**: Sib learned it from **notes Juda made about First Sailor homunculus production**.
+
+### Economy
+| Category | Goods |
+|----------|-------|
+| Exports and crafts | **Red dye** (orchil), **pearls** |
+| Metals | **Copper**, **silver**, **lead** (no bronze) |
+| Animals | Fish, goats, pigs, sheep, dogs; **cattle introduced by the All-Seafarers** |
+| Crops | Grapes, wheat, barley, lentils, orchil, on fertile volcanic soil |
+
+Two large mines, **one copper** and **one silver/lead**, both intersect the lava tube network that
+spans the whole island.
+
+### Technology: electricity without bronze
+Despite having no bronze, the Islanders have **electricity, telegraphs and printing**.
+
+- **Batteries:** stacks of alternating copper and lead discs soaked in acidic water from volcanic hot
+  springs and fumaroles, each stack in a ceramic jar, several jars wired together. **Battery
+  tenders** maintain them, replacing spent discs and refreshing the acid.
+- **Uses:** electroplating ritual objects and jewelry in silver; brine electrolysis for lye (soap,
+  disinfectant); short-circuited wire to start fires on command; mild current through copper probes
+  for medical and ceremonial purposes. Also lighting, electromagnets, electrochemical refining,
+  **electric cautery and surgery**, electro-etching, hydrogen and oxygen, **electric fences**,
+  chlorine, and **crude seismographs**.
+- **Telegraph:** copper-silver alloy wire insulated with rubber (latex from Eucommia-type trees,
+  cured with volcanic sulfur). A key operator taps a hinged copper switch; a receiver watches a
+  lodestone needle twitch inside a copper coil. Short and long twitches form a binary code.
+- **Printing and paper:** woodblock printing (blocks carved with copper and silver tools); paper
+  from wood pulp, made easy by lye.
+
+### The island's biomes
+| Biome | Notes |
+|-------|-------|
+| Beaches, coastal plains, temperate rainforest | The wet side; the Lady of the Woods' porcine aspect, the Master of Deception |
+| Salt marsh where the big river meets the sea | The Hags; the Lady of the Wind |
+| Arid highlands and volcanic desert | The rain-shadow side (Iceland-like); Stonemen; the Lady of the Sun's grotto |
+| Alpine forests and meadows | The Lady's goat-centaur aspect; the Shepherd of the Deer |
+| Snowcapped high mountains | The Lady of the Wind's peak |
+| Dried lava tubes | An island-wide network linking the mines, tombs, the Children's village and the Destroyer's depths |
+
+---
+
 ## 4. Inferences (assistant's reading; to confirm or correct)
 
 ### Real-world roots
@@ -312,7 +379,8 @@ house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
   civilization that collapsed.
 - **The Guanche of the Canary Islands** shape the Islanders and the cosmology: a volcanic island
   dominated by its volcano, a people who mummified their dead, conquered by a metal-armed sea power.
-  **The Destroyer stealing a star into the volcano closely mirrors Guayota**, the demon in Teide who
+  (Orchil red dye, a historic Canary Islands export, fits too.) **The Destroyer stealing a star
+  into the volcano closely mirrors Guayota**, the demon in Teide who
   imprisoned the sun god Magec, and **Guayota's servants, the Tibicenas, were demonic black dogs**.
 - **Basque and wider Iberian folklore** seem to shape the local spirits: the Shepherd of the Deer
   echoes Basajaun, the Stream Maidens the lamiak, the sleep demon Inguma, and the Lady of the Woods,
@@ -331,9 +399,9 @@ house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
    demon-summoning and binding chains**, with a sacrificed child queen as puppet. Collapsed and was
    buried by an eruption. Remnants: Stonemen, ancient ghosts, Hags, the wells' snake women, owls on
    their towers, the Children of the Caves, Tou, and Juda.
-3. **The Islanders (now):** Copper Age, living by negotiated agreements with the Ladies; a third
-   gender priesthood grounded in the genderless Red Bowl and Star Child; the dead as neighbors.
-   Possibly descended from the First Sailors' survivors (see Open Questions).
+3. **The Islanders (now):** arrived centuries after the First Sailors vanished. Copper Age
+   metallurgy but electrochemical technology; living by negotiated agreements with the Ladies; a
+   third gender priesthood grounded in the genderless Red Bowl and Star Child; the dead as neighbors.
 4. **The All-Seafarers (arriving):** a Bronze Age sea empire whose theology claims the Red Bowl as
    their king's father, and who misread island reality through their own myths (releasing the Bull
    of Water).
@@ -388,6 +456,28 @@ house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
 - **The wise woman** (sleep-demon wards) and the **Stream Maidens** (botany): healing knowledge and
   healing items.
 
+### From the Islanders (extrapolations to confirm)
+- **Electricity is Burn damage.** Islander "weapons" are tools: shock prods, fire-starting wire,
+  lye and chlorine (acid/poison Burn), **electric fences** as traps against invader patrols. The
+  Voltaic Pile accessory is Islander tech; Conducting Edge marries it to (imported?) metal swords.
+- **Medicine is advanced for the era:** disinfectant, electric **cautery** (an item that stops Bleed
+  at a small HP cost), surgery. Healing items can be Islander medicine; **mild current** could even
+  be a rare revival item.
+- **Electroplating** could be an equipment upgrade: a battery tender silver-plates a copper weapon,
+  making it better against spirits and the dead (if silver matters to them).
+- **The telegraph** is a strategic network in the invasion (defend or cut lines, warn hamlets) and a
+  source of **mystery clues** (message logs).
+- **Printing and customary bureaucracy** mean **records exist**: births, deaths, apprenticeships.
+  **Juda's false orphan backstory** is a natural clue: his records are missing, forged, or
+  impossibly old. Printed notices, letters and **Juda's notes** (which taught Sib the forbidden
+  homunculus ritual) can all be found documents.
+- **Seismographs** let the village watch the volcano: foreshadowing for the Destroyer.
+- **Lighting** for dark lava tubes (the areas with random encounters): lamps and battery-powered
+  light as exploration tools.
+- **Economy:** dye, pearls, silver and copper are what an empire would want. The **mines** and the
+  dye trade are a likely reason for the invasion.
+- **Food items** from the crops and herds: bread, lentil stew, wine, cheese.
+
 ### Already connected
 - **Red Bowl idols are the save points** (and the "nearest save point" for defeat rescues).
 - The Great Boar provides **the flesh** for Yoon's body.
@@ -397,7 +487,6 @@ house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
 ---
 
 ## 6. Open questions
-- **Are the Islanders descended from the First Sailors,** or later arrivals?
 - **What is the "demon"** Juda tried to summon: a servant of the Destroyer, or something else?
 - **What did the First Sailors' sacrifice industry produce:** homunculi as servants, vessels for
   demons, an army for the Destroyer?
