@@ -156,8 +156,12 @@ Pada and Yoon's dog, a pointer-type breed.
 - **Weapons:** teeth.
 - **Quirks:** a **pseudo party member**, like Boney in *Mother 3* or King in *EarthBound*. She
   travels and fights alongside the party in addition to the four main slots, but isn't a full
-  member: small passive benefits, occasional minor attacks or situational help, and she isn't
-  directly controlled like the others.
+  member: small passive benefits, occasional minor attacks or situational help.
+  - **Acts on her own** (AI-controlled; the player never gives her commands).
+  - **Has her own turns** in the Turn Order, based on her speed.
+  - **Can be knocked out** (what happens afterwards is to be decided).
+  - **Insight is capped at 1.** Her specialty (dogs and animals) works **passively**: with
+    Patience present, animal conversations go better for whoever is speaking.
 - Finds the buried murder weapon early in the game. The player uses it as a staff without knowing
   what it is.
 - **Core role:** emotional anchor. The dog who waited, and the dog who doesn't care what you are.
@@ -393,7 +397,7 @@ relationships, inscriptions and the story.
 | Tou | First Sailor beings: Stonemen, Hags, Owls of Ill Omen, ancient ghosts |
 | Falmi | Plants, forest fae, the Lady of the Woods' court |
 | Lasa | Children of the Caves, fae |
-| Patience | Dogs and animals |
+| Patience | Dogs and animals (passive: helps whoever is speaking) |
 | Yoon | No specialty: a generalist |
 
 **Yoon's Insight drives everything else:**
@@ -417,7 +421,7 @@ decided):
 | High | Falmi, Lasa |
 | Medium | Theenmy (paladin magic), Dama (water magic) |
 | Low | Pada, Parl |
-| Lowest | Patience |
+| Fixed at 1 | Patience |
 
 **Gaining Insight:**
 - **In battle:** whoever's turn it is does the talking, so swapping the right specialist in
