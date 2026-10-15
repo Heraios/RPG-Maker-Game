@@ -659,6 +659,12 @@ lines plus optional scripted moments (a common event with choices) for important
   smaller share.
 - The first success with each enemy type gives full EXP; repeats give much less.
 
+### The mystery (design)
+The player can't solve the murder directly. **Evidence collected before the mountain** decides how
+the confrontation goes: the more evidence, **the sooner Dama arrives** after Juda burns Pada to
+death, the **better armed** the villagers with her are, and the **fewer NPCs Juda kills** before
+"dying". See lore.md, "The murder", for what happened and the draft clue list.
+
 ### Difficulty, encounters and defeat (design)
 - **Difficulty escalates with the story:** forgiving early (unless you wander into optional
   "sting" areas), tense later.

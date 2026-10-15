@@ -490,6 +490,40 @@ smuggle home to get rich.
 
 ---
 
+## 3d. Yoon, Their Family, and the Murder
+
+### Yoon's family
+- **Mada:** Yoon's mother, the **village herbalist**, lame in one leg.
+- **Pada:** Yoon's father, the hunter.
+- **The twins:** Yoon's younger twin siblings, a boy and a girl.
+- **Ladder:** the family goat, named because he climbs ladders. Somehow.
+- **Patience:** the family dog.
+
+### Yoon and Sib
+Best friends since basically birth. They liked to play in **the lava tubes near the village**. Sib
+possibly had (and has) a little puppy-love crush on Yoon, whatever gender the player chooses.
+
+### The murder (what really happened)
+1. **Juda kidnapped Yoon** while they were playing alone in the lava tubes.
+2. He **clubbed Yoon over the head with his ceremonial staff, topped with a copper ball**, crushing
+   Yoon's skull.
+3. He took the body to **an isolated tomb only he knew about**, **defleshed** Yoon, and **burned the
+   flesh in the tomb over a grave** as an offering to summon a demon.
+4. He felt regret at killing a child he had known for about ten years, which **"ruined" the ritual**.
+5. He left with his **broken staff**: he **dumped the copper ball in the marsh** and **buried the
+   staff in the woods**. (Patience later digs up the staff, and the player unknowingly uses it as a
+   weapon.)
+
+On the mountain, Juda **burns Pada to death**.
+
+### How the mystery resolves
+**The player can't "solve" the murder directly.** Instead, **the more evidence the player collects,
+the sooner Dama arrives** in the fight against Juda after he burns Pada to death on the mountain,
+and **the better armed and prepared the villagers with her are**, so **Juda kills fewer NPCs** before
+"dying".
+
+---
+
 ## 4. Inferences (assistant's reading; to confirm or correct)
 
 ### Real-world roots
@@ -640,6 +674,38 @@ smuggle home to get rich.
   and patron, which makes the reveal colder.
 - **A crater-rim world** gives the map a shape: the island near the bowl's center? The rim as the
   far, mountainous homeland of the empire.
+
+### From the murder (extrapolations to confirm)
+**The clue list.** Each item could be a journal entry that raises the evidence count:
+
+| Clue | Where | What it points to |
+|------|-------|-------------------|
+| The **crushed skull** (a round, heavy blow) | Yoon's skeleton, in the tomb | A ball-headed weapon |
+| **Cut marks** on the bones | Yoon's skeleton | Someone practiced at preparing bodies: a priest |
+| **Burned offering** over a grave | The secret tomb | A ritual, not a simple killing |
+| The **tomb itself**, missing from the tomb records | Priestly records (bureaucracy, printing) | Someone who knows tombs nobody else does |
+| The **staff shaft** | Buried in the woods; Patience digs it up | A broken ceremonial staff |
+| The **copper ball** | Dumped in the marsh (or carried off by Children of the Caves, who hoard shiny things?) | Matches the staff; together they are **Juda's** staff |
+| **Juda's new staff** | Juda himself | Why did he replace it? |
+| **Juda's homunculus notes** | Read by Sib | Why does the priest study forbidden First Sailor child-homunculus production? |
+| **Collaboration letters** with the All-Seafarers | Juda's papers; **Parl** can read them | Juda's secret deal with Theenmy |
+| **The Bull of Heaven** bellowing at Juda's door | The village, on full moon nights (if he can be freed early) | A divine accusation |
+| **The dream hunter's vision** | The village dream hunter | Pada's death foretold |
+| **Juda's whereabouts** the day Yoon vanished | Witnesses, telegraph logs | Gaps in his story |
+
+**The two halves of the murder weapon** make a natural two-part search: the shaft in the woods
+(Patience) and the ball in the marsh, or in a Children of the Caves hoard, which would tie Lasa's
+people into the mystery.
+
+**The mountain battle** would be scripted around the evidence count: Dama arrives after fewer
+turns the more evidence was found, the villagers with her are better armed, and fewer named NPCs die.
+
+**The family:**
+- **Mada the herbalist** is a natural source of **healing items and medicine**, and a shop or crafter
+  in the village.
+- **The twins** are exactly what priests are chosen from (twins): a quiet threat if Juda had plans
+  for them.
+- **Ladder the goat** climbs ladders, so maybe he can climb anything: a comic overworld helper?
 
 ### Already connected
 - **Red Bowl idols are the save points** (and the "nearest save point" for defeat rescues).
