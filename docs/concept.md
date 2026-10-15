@@ -659,7 +659,36 @@ healing *states* or remove ailments and debuffs (e.g. Bandages: about 20 HP and 
 All spells add +2 Fatigue (placeholder). Who learns which spells, and how, is still to be decided;
 the test room's Spell Tutor teaches all of them for testing.
 
-**Still to design:** the elemental state system and damage types.
+### Damage types
+**Six damage types:** Physical, Magical, Cut, Pierce, Crush, Burn. Physical Burn covers
+electricity, poison and acid.
+
+An attack has a **damage profile**: one or more parts, each a share of the damage with a type,
+landing physically (DEF, physical damage rate) or magically (MDF, magical damage rate). Each part
+is multiplied by the target's resistance to its type, so a mixed attack is partly resisted rather
+than all-or-nothing. Rare enchanted items and late-game weapon skills can mix physical and magical
+parts.
+
+| Attack | Profile |
+|--------|---------|
+| Punch, Bash | Crush |
+| Quick Jab | Pierce |
+| Heavy Chop | 70% Cut, 30% Crush |
+| Bite (Patience) | 70% Pierce, 30% Crush |
+| Enemy Strike | generic Physical |
+| Ahi (fire) | magical Burn |
+| Rari (water: jets, ice spikes) | magical 70% Pierce, 30% Crush |
+| Hagu (wind) | magical 80% Cut, 20% Crush |
+| Keri (earth) | magical 80% Crush, 20% Pierce |
+
+**Magic sources** (Fire, Water, Air, Earth, Mind) are separate from damage types: they record
+where magic comes from, so a fire spirit can ignore fire magic yet still be hurt by electric
+Burn. Tou is weak to all Burn damage (her fire weakness is no longer counted twice).
+
+Note tags: `<Damage: cut 70, crush 30>`, `<Damage: physical pierce 60, magical burn 40>`,
+`<Source: fire>` (`SI_DamageTypes.js`).
+
+**Still to design:** the elemental state system.
 
 ### Balance (first pass)
 **Philosophy:** low, readable numbers all game. Total growth is about 2–3×, and later difficulty
@@ -678,7 +707,7 @@ below is a starting point for playtesting.
 | Juda | 85 | 35 | 9 | 7 | 15 | 12 | 30 | 10 | |
 | Dama | 90 | 15 | 12 | 10 | 5 | 6 | 30 | 10 | |
 | Parl | 65 | 10 | 9 | 6 | 4 | 5 | 38 | 12 | |
-| Tou | 42 | 18 | 4 | 7 | 16 | 10 | 24 | 10 | Cut ×1.75, Fire/Burn ×2, Pierce/Crush ×0.5 |
+| Tou | 42 | 18 | 4 | 7 | 16 | 10 | 24 | 10 | Cut ×1.75, Burn ×2, Pierce/Crush ×0.5 |
 | Falmi | 48 | 12 | 9 | 6 | 5 | 6 | 40 | 12 | 20% evasion, 5% HP regen per turn |
 | Theenmy | 150 | 25 | 16 | 16 | 9 | 9 | 18 | 10 | |
 | Patience | 30 | 0 | 6 | 3 | 1 | 4 | 40 | 15 | AI-controlled, no Fatigue |
@@ -724,6 +753,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Adult protection, Tou's revival, sparing children | Done: `SI_BattleTraits.js` |
 | Enemy moods, enemy talk, instant talk | Done: `SI_Talk.js` |
 | Elemental and healing spell families | Done: data plus `SI_Magic.js` (random hits, heal-and-revive) |
+| Damage types and magic sources | Done: `SI_DamageTypes.js` |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

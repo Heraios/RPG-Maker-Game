@@ -13,5 +13,6 @@ var $plugins =
 {"name":"SI_Insight","status":true,"description":"Smoking Isle: what Insight (level) does, and shared Yoon Insight.","parameters":{"Evasion Per Insight":"0.005","Mental Resist Per Insight":"0.02","Mental States":"7,8,9,10","Mind Element":"11","Fatigue Resist Per Insight":"0.01","Shared Insight Actors":"1,2"}},
 {"name":"SI_PseudoMember","status":true,"description":"Smoking Isle: AI-controlled pseudo party members (Patience).","parameters":{}},
 {"name":"SI_BattleTraits","status":true,"description":"Smoking Isle: character-specific battle rules (adult protection, Tou's revival, sparing children).","parameters":{"Protection Threshold":"0.3","Revival Message":"%1's body stirs back to life!"}},
-{"name":"SI_Magic","status":true,"description":"Smoking Isle: spell targeting extras (random hit counts, heal-and-revive).","parameters":{}}
+{"name":"SI_Magic","status":true,"description":"Smoking Isle: spell targeting extras (random hit counts, heal-and-revive).","parameters":{}},
+{"name":"SI_DamageTypes","status":true,"description":"Smoking Isle: mixed damage types (Cut, Pierce, Crush, Burn...) and magic sources.","parameters":{"Element Ids":"1,2,3,4,5,6","Source Ids":"7,8,9,10,11"}}
 ];
