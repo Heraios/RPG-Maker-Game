@@ -338,7 +338,8 @@ all of them). Fatigue: very low 1, low 2, medium 3, medium-high 4, high 5, very 
 | Chop | Axe, Khopesh | **Heavy Chop** (medium-high, Cut ×1.6) · **Rending Blow** (high, ×1.9, DEF down) · **Cleave** (very high, ×2.4, also hits an adjacent enemy) |
 | Bludgeon | Club, Staff, Axe (poll side) | **Overhead Smash** (medium, Crush ×1.1) · **Skull Crack** (high, ×1.5, 50% Disoriented) |
 | Sweep | Staff, Spear | **Wide Sweep** (medium, Crush ×0.7, all enemies) · **Trip** (low, ×0.3, AGI down 1 turn) |
-| Sword only | Swords | **Pommel Strike** (very low, Crush ×0.8) · **Conducting Edge** (medium, electric Burn ×1.1; metal sword + **Voltaic Pile** accessory) |
+| Sword only | Swords | **Pommel Strike** (very low, Crush ×0.8) |
+| Electric | Any **metal blade** (knife, axe, sword) | **Conducting Edge** (medium, electric Burn ×1.1; needs a **Voltaic Pile** accessory). An Islander technique |
 | Ranged | Bow, Sling | **Aimed Shot** (medium, Pierce, never misses) · **Covering Fire** (low, light Pierce/Crush, AGI down) · **Stone Rain** (high, sling only: spends all stones, one random hit each) |
 
 Weapon move sets: Flint Knife (jab, thrust, vital, slash); Obsidian Spear (jab, thrust, sweep);
@@ -758,8 +759,16 @@ Spell names combine **Rapa Nui** roots with **Guanche** tier and target modifier
 **Healing items** are different: no Fatigue or MP, small **fixed** amounts, and they often apply
 healing *states* or remove ailments and debuffs (e.g. Bandages: about 20 HP and removes Bleed).
 
-All spells add +2 Fatigue (placeholder). Who learns which spells, and how, is still to be decided;
-the test room's Spell Tutor teaches all of them for testing.
+All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all of them for testing.
+
+**Spell acquisition (designed, not built yet).** Spells are glyphs, read aloud:
+
+| Who | How spells are gained |
+|-----|-----------------------|
+| Islanders (Human Yoon, Sib, Pada, Juda, Dama) | **Tattoo** equipment slots, **up to 8** per character, each tattoo encoding one spell. Tattoos can only be swapped in the late game (magical healing) |
+| All-Seafarers (Parl, Theenmy) | A single **Codex** accessory slot; each codex grants **3–6 spells** and its own stat boosts |
+| Tou, Falmi, Lasa | Innately, no medium (learned like normal skills) |
+| Ghost Yoon | Only the unique ghost abilities; regular magic and weapon skills come after gaining a body |
 
 ### Damage types
 **Six damage types:** Physical, Magical, Cut, Pierce, Crush, Burn. Physical Burn covers

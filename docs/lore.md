@@ -441,11 +441,52 @@ her civilization really did.
 ### Glyph magic
 **Spell names are glyph names**, and spells are cast by **reading the glyph aloud**. The
 All-Seafarers read them **from scrolls**; the Islanders read them **from their own skin** (their
-tattoos).
+tattoos). **Tou** (a First Sailor), and **Falmi** and **Lasa** (innately magical), use glyphs
+**without any medium**.
+
+**Ghost Yoon** uses only the unique ghost abilities; Yoon learns regular magic and weapon skills
+after gaining a body.
 
 ### Demons
 **Demons are servants and creations of the Destroyer**, as the People of the Forest are of the
 Ladies, but greater, because the Destroyer is a far more powerful god of an **earlier generation**.
+
+---
+
+## 3c. The World and the All-Seafarers
+
+### The world is a bowl
+The known world is **a large sea ringed by a single continent** that rises quickly into very high,
+jagged mountains. Most people live on islands in the sea. **The whole world is a truly immense
+impact crater**: the Red Bowl myth is literally true.
+
+### The All-Seafarers
+- **Homeland:** the jagged, marginal coasts on the crater rim, which is where they get **tin** (and
+  so bronze, which the Islanders lack).
+- **Ideology:** the King of All the Sea believes the gods sent him a vision that he is destined to
+  conquer "All the Sea", which is the entire world as far as anyone knows.
+- **The royal family:** the King has literally dozens of sons and daughters by a comically large
+  number of wives, and uses them as his administrators and governors.
+- **Relations with the island:** a **tributary relationship** was established about a decade before
+  Yoon and Sib were born.
+
+### Theenmy's plan
+Theenmy fully believes in his father's destiny and loves him, but also happens to be a decent man.
+His plan for tighter control over the island: make **Juda a puppet ruler** and **marry Juda to one of
+his sisters**, who would be the real ruler. Relatively peaceful, few casualties, a smooth
+integration; the "primitive" islanders would be "civilized" while keeping a voice.
+
+**The demon ritual was Juda's own idea**, to get rid of those who would oppose the plan (like
+Pada). Theenmy knew nothing of it and would have balked immediately.
+
+**The sister:** whatever happens with Theenmy, the sister who was to marry Juda grows frustrated
+with the whole situation and **seizes control of the invasion force in a coup**, choosing to
+subjugate the island through straightforward brutality (the Princess of Act 5).
+
+### Parl
+One of the crew of a trader and tribute collector, from **a big city in the All-Seafarer homeland**.
+He deserted the ship after the Islanders realized he had stolen a bag of pearls, which he meant to
+smuggle home to get rich.
 
 ---
 
@@ -581,15 +622,24 @@ Ladies, but greater, because the Destroyer is a far more powerful god of an **ea
 - **Tou's decrees as a mechanic:** she spent centuries issuing decrees, so a unique battle command
   (issuing a "decree" as a party buff or an order to First Sailor beings) and an overworld one
   (directing the Children of the Caves to dig, scout or fetch) would fit her.
-- **Spells as glyphs: learning = acquiring glyphs.**
-  - **Islanders** gain spells by being **tattooed**: permanent, limited by skin and by a priest or
-    tattooist who knows the glyph.
-  - **All-Seafarers** (Theenmy, Parl) use **scrolls**: carried, swappable, and possibly destroyed by
-    Burn damage.
-  - **Tou** knows First Sailor glyphs perfectly (and has no skin: carved into her doll?).
+- **Spells as glyphs** (decided; see concept.md "Spell acquisition"): Islanders through **tattoo**
+  slots, All-Seafarers through a **codex**, Tou, Falmi and Lasa innately.
   - **Yoon's "Infernal" skills** could be **Destroyer glyphs**: the demon in Yoon showing through.
+  - **Yoon's homunculus body starts without the old Yoon's tattoos**, a quiet loss.
 - **Demons and Yoon:** if Yoon is a demon, Yoon is a creation of the Destroyer, which is why the
   Hags (demon-possessed) recognize kin and dote on Yoon.
+
+### From the world and the All-Seafarers (extrapolations to confirm)
+- **The "invasion" is an escalation,** from a twenty-year tributary relationship to direct rule.
+  All-Seafarer traders and tribute collectors could already be a familiar sight in Act 1–2.
+- **Bronze is an imperial monopoly** because tin comes from the rim; that is why the Islanders are a
+  copper culture and why bronze gear is unbreakable, prestigious and foreign.
+- **Juda's collaboration leaves evidence:** letters, codices, tribute records. **Parl can read them**,
+  which makes him a key witness for the mystery and the war.
+- **The Princess was to marry Juda.** When Juda kills her in Act 5 he kills his own intended bride
+  and patron, which makes the reveal colder.
+- **A crater-rim world** gives the map a shape: the island near the bowl's center? The rim as the
+  far, mountainous homeland of the empire.
 
 ### Already connected
 - **Red Bowl idols are the save points** (and the "nearest save point" for defeat rescues).
@@ -603,4 +653,8 @@ Ladies, but greater, because the Destroyer is a far more powerful god of an **ea
 - **What is the "demon"** Juda tried to summon: a servant of the Destroyer, or something else?
 - **Do the four elements map onto the four great domains** (section 4)?
 - **What are the Navigator-Lord remnants?**
-- **The island's geography:** biomes, the village, the forests, marsh, desert, volcano, sea routes.
+- **The island's geography:** where the main town, the hamlets, the mines and the volcano sit.
+- **Parl's past:** the cast notes call him "a deserter sent as a scout before the invasion,
+  disguised as a merchant"; the lore calls him "a tribute collector's crewman who stole pearls and
+  deserted". Is he both, or only the second?
+- **Names:** the King of All the Sea, the Princess.
