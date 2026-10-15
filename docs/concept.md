@@ -466,6 +466,29 @@ decided):
 | Low | Pada, Parl |
 | Fixed at 1 | Patience |
 
+**Starting balance** (placeholder numbers, to be tuned in playtesting):
+
+| Per Insight point above 1 | Amount |
+|---------------------------|--------|
+| MDF | +2 (class curve) |
+| LUK | +1 (class curve) |
+| Evasion | +0.5% |
+| Mental states (Rage, Confusion, Fascination, Sleep) and Mind element | land 2% less often |
+| Fatigue build-up | 1% slower |
+
+| Insight cap | Characters |
+|-------------|------------|
+| 30 | Yoon (Ghost and Human) |
+| 15 | Sib, Juda, Tou |
+| 12 | Lasa, Falmi |
+| 8 | Dama, Theenmy |
+| 5 | Pada, Parl |
+| 1 | Patience |
+
+For example, Sib at Insight 15 has +14% evasion, mental effects land 28% less often, and Fatigue
+builds 14% slower. Yoon at 30 reaches +14.5% evasion, 58% and 29%. All other stats are now flat
+across Insight (and still identical for every class, since base stats aren't balanced yet).
+
 **Gaining Insight:**
 - **In battle:** whoever's turn it is does the talking, so swapping the right specialist in
   becomes a tactic. Suggested split: the speaker earns full EXP, active party members a share,
@@ -531,14 +554,14 @@ lines plus optional scripted moments (a common event with choices) for important
 | Weapon swapping | Done: `SI_Gear.js` |
 | Party switching | Done: `SI_PartySwitch.js` |
 | Durability tiers | Done: `SI_Gear.js` |
-| Talk | Done: `SI_Talk.js` (Falmi and Theenmy need classes before they can talk) |
-| Insight (leveling) | Insight EXP from Talk done; stat growth (MDF, evasion, mental resistance, Fatigue, LUK) not started |
+| Talk | Done: `SI_Talk.js` |
+| Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Current database (as uploaded)
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.
 - Classes: Ghost, Returned Child, Junior Priest, Child of The Caves, Hunter, Priest, Fisher,
-  All-Seafarer Thief, First Builder Queen, assigned to actors 1–9. Falmi, Thenmy and Patience
-  (10–12) are still on the placeholder Ghost class.
+  All-Seafarer Thief, First Builder Queen, Forest Familiar (Falmi), All-Seafarer Prince
+  (Theenmy), assigned to actors 1–11. Patience (12) is still on the placeholder Ghost class.
 - Each class's equippable weapon types follow the character design above (the Ghost cannot
   equip weapons).
 - Weapon types: Dagger, Sword, Spear, Staff, Club, Axe, Bow, Sling, Javelin, Net, Fist, Claw.
