@@ -48,8 +48,12 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
         return s.trim();
     });
 
+    // Skill types shown under Skills. Talk (SI_Talk) has its own command.
     $.skillTypes = function(actor) {
-        return actor.addedSkillTypes().slice().sort(function(a, b) {
+        var talk = SmokingIsle.Talk ? SmokingIsle.Talk.stypeId : -1;
+        return actor.addedSkillTypes().filter(function(id) {
+            return id !== talk;
+        }).sort(function(a, b) {
             return a - b;
         });
     };

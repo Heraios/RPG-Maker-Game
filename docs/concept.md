@@ -476,7 +476,7 @@ decided):
 - **Ghost and Human Yoon** (actors 1 and 2) share one Insight value.
 - **Late joiners** (Dama, Theenmy, Falmi, Tou) need a sensible starting Insight. To be decided.
 
-### Talk (design draft)
+### Talk
 **Model:** a hybrid. A **mood meter** runs the mechanics, and enemies can carry short written
 lines plus optional scripted moments (a common event with choices) for important encounters.
 
@@ -489,11 +489,13 @@ lines plus optional scripted moments (a common event with choices) for important
 | Soothe | Everyone | General calming |
 | Offer | Everyone | Give an item (food, offerings); enemies like or hate specific items |
 | Ask | Everyone | Seek information once the enemy is calm enough |
-| Rite | Ritual knowers (Sib, Juda, Tou...) | Spirits respond to rites, often only the right one |
-| Threaten | Adults (Pada, Dama, Theenmy...) | Some beings respect force, others panic or rage |
-| Stalk | Hunters (Pada...) | Animals only: works toward **Hunted** instead of calm |
+| Rite | Sib, Juda, Tou, Falmi | Spirits respond to rites, often only the right one |
+| Threaten | Adults (Pada, Juda, Dama, Parl, Theenmy) | Some beings respect force, others panic or rage |
+| Plead | Children (Yoon, Sib, Lasa, Tou, Falmi) | The inverse of Threaten: a child's plea is hard to ignore |
+| Stalk | Pada, Parl, Falmi | Animals only: works toward **Hunted** instead of calm |
 
-- **Mood** runs from **Enraged** through **Hostile**, **Wary** and **Calm** to **Pacified**. Each
+- **Mood** runs from **Enraged** through **Hostile**, **Wary** and **Calm** to **Pacified**, and is
+  only ever shown **as words**, never as a bar or number. Each
   enemy type reacts to each approach differently (set by note tags, with defaults per talk type:
   animal, spirit or sapient).
 - **The speaker matters:** their specialty and Insight strengthen their approaches, and
@@ -506,7 +508,8 @@ lines plus optional scripted moments (a common event with choices) for important
 - **Pacify:** it leaves the battle.
 - **Information:** a clue, a weakness or lore. It may set a switch for the mystery.
 - **Items:** it gives something, then leaves.
-- **Temporary help:** it heals the party's HP or restores MP, then leaves.
+- **Temporary help:** it heals HP, restores MP, **buffs the party**, or (in certain situations)
+  **debuffs the remaining enemies**, then leaves.
 - **Hunted** (from Stalk, animals only): the animal's actions are disabled for **3 turns**.
   Suitable characters get a **finishing move that instantly kills a Hunted animal**.
 
@@ -528,8 +531,8 @@ lines plus optional scripted moments (a common event with choices) for important
 | Weapon swapping | Done: `SI_Gear.js` |
 | Party switching | Done: `SI_PartySwitch.js` |
 | Durability tiers | Done: `SI_Gear.js` |
-| Talking | Not started |
-| Insight (leveling) | Designed; "Level" renamed to Insight. Systems not started |
+| Talk | Done: `SI_Talk.js` (Falmi and Theenmy need classes before they can talk) |
+| Insight (leveling) | Insight EXP from Talk done; stat growth (MDF, evasion, mental resistance, Fatigue, LUK) not started |
 
 ### Current database (as uploaded)
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.

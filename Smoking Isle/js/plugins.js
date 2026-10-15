@@ -8,5 +8,6 @@ var $plugins =
 {"name":"SI_TurnOrder","status":true,"description":"Smoking Isle: FFX-style turn order. Faster battlers act more often.","parameters":{"Speed Formula":"a.agi + 30","Window Width":"170"}},
 {"name":"SI_Gear","status":true,"description":"Smoking Isle: weapon swapping in battle and equipment wear tiers.","parameters":{"Swap Skill":"15","Swap Command":"Swap","Worn Message":"%1's %2 wore down into %3!","Broken Message":"%1's %2 broke!","Broken Kept Message":"%1's %2 broke! Kept the %3."}},
 {"name":"SI_BattleMenu","status":true,"description":"Smoking Isle: Skills and Tactics submenus for the battle command menu.","parameters":{"Skills Command":"Skills","Tactics Command":"Tactics","Tactics Symbols":"swap,item,switch"}},
-{"name":"SI_PartySwitch","status":true,"description":"Smoking Isle: FFX-style party switching in battle.","parameters":{"Switch Command":"Switch","Switch Fatigue":"1"}}
+{"name":"SI_PartySwitch","status":true,"description":"Smoking Isle: FFX-style party switching in battle.","parameters":{"Switch Command":"Switch","Switch Fatigue":"1"}},
+{"name":"SI_Talk","status":true,"description":"Smoking Isle: talking to enemies (mood, approaches, outcomes, Insight EXP).","parameters":{"Talk Skill Type":"4","Enraged State":"12","Hunted State":"13","Mood Insight":"2","Specialty Bonus":"0.5","Insight Bonus":"0.03","Patience Actor":"12","Patience Bonus":"0.25","Repeat EXP Rate":"0.2","Party EXP Rate":"0.5","Reserve EXP Rate":"0.25"}}
 ];
