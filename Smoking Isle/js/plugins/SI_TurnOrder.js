@@ -267,12 +267,27 @@ SmokingIsle.TurnOrder = SmokingIsle.TurnOrder || {};
             this.startTurn();
             return;
         }
+        battler.onCtbTurnStart();
+        if (this.ctbShouldSkipTurn(battler)) {
+            battler.clearActions();
+            this.startTurn();
+            return;
+        }
         battler.makeActions();
         if (battler.isActor() && battler.canInput()) {
             this.changeActor(battler.index(), 'undecided');
         } else {
             this.startTurn();
         }
+    };
+
+    // Hooks for other plugins: something that happens as a battler's turn
+    // begins, and whether that turn is lost entirely.
+    Game_Battler.prototype.onCtbTurnStart = function() {
+    };
+
+    BattleManager.ctbShouldSkipTurn = function(battler) {
+        return false;
     };
 
     BattleManager.ctbActiveActor = function() {

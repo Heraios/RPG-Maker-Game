@@ -688,7 +688,38 @@ Burn. Tou is weak to all Burn damage (her fire weakness is no longer counted twi
 Note tags: `<Damage: cut 70, crush 30>`, `<Damage: physical pierce 60, magical burn 40>`,
 `<Source: fire>` (`SI_DamageTypes.js`).
 
-**Still to design:** the elemental state system.
+### Elemental states
+The four magic sources form a cycle. As a general rule (exceptions exist, e.g. volcanic acid pot
+items that do physical Burn damage *and* inflict Sodden), an elemental hit does, in order:
+
+| Element | 1. Removes (either tier) → leaves | 2. Upgrades | 3. Inflicts |
+|---------|-----------------------------------|-------------|-------------|
+| Fire | Burdened/Mired → **Cracked** | Disoriented → Feverish | Smoldering |
+| Water | Smoldering/Enflamed → **Steam** | Burdened → Mired | Wet |
+| Wind | Wet/Sodden → **Chilled** | Smoldering → Enflamed | Disoriented |
+| Earth | Disoriented/Feverish → **Grounded** | Wet → Sodden | Burdened |
+
+**Removing a second-tier state gives the attacker an extra turn** (like SMT's Press Turn), and
+with the turn order they act again immediately.
+
+| State | Effect (placeholder numbers) | Turns |
+|-------|------------------------------|-------|
+| Smoldering | Lose 5% HP per turn | 3 |
+| Enflamed | Lose 12% HP per turn; loses every other turn | 3 |
+| Wet | DEF −15% | 3 |
+| Sodden | DEF −35%; can't use Magic | 3 |
+| Burdened | AGI −20% | 3 |
+| Mired | AGI −45%; can't use Physical skills or Punch | 3 |
+| Disoriented | Hit −15% | 3 |
+| Feverish | Hit −35%; 30% chance per turn to lash out at a random target | 3 |
+| Cracked | DEF −60% (the stone shell shatters) | 1 |
+| Steam | Hit −50% (vision obscured) | 1 |
+| Chilled | AGI −60% (muscles seize) | 1 |
+| Grounded | ATK −50% (momentum lost) | 1 |
+
+Elemental hits always apply their effects for now (one setting if it proves too swingy). Feverish
+counts as a mental state for Insight's mental resistance. Exceptions: `<Elemental: water>`,
+`<No Elemental States>`, `<Inflict: sodden>` (`SI_ElementalStates.js`).
 
 ### Balance (first pass)
 **Philosophy:** low, readable numbers all game. Total growth is about 2–3×, and later difficulty
@@ -754,6 +785,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Enemy moods, enemy talk, instant talk | Done: `SI_Talk.js` |
 | Elemental and healing spell families | Done: data plus `SI_Magic.js` (random hits, heal-and-revive) |
 | Damage types and magic sources | Done: `SI_DamageTypes.js` |
+| Elemental state cycle | Done: `SI_ElementalStates.js` |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
