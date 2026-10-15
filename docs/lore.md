@@ -88,6 +88,9 @@ came down.
 4. **The village priest:** he simulates aging with magic, and the Islanders think he is a very hale
    man in his late sixties. (His "orphan" backstory belongs to this identity.)
 
+**Neither the King nor Theenmy knows** that the island's priest is the King's old companion. **The
+previous priest, who chose Juda as apprentice, was Juda's first murder on the island.**
+
 ### The Red Bowl
 Genderless god of the seas and the world, and of sea life: the whole world and all its seas,
 personified. Idols are carved bowls of red scoria filled with pure water. **These idols are the
@@ -826,5 +829,4 @@ turns the more evidence was found, the villagers with her are better armed, and 
   disguised as a merchant"; the lore calls him "a tribute collector's crewman who stole pearls and
   deserted". Is he both, or only the second?
 - **Names:** the King of All the Sea, the Princess.
-- **Does the King know** that the island's priest is his old companion? Does Theenmy?
-- **How did the previous priest die?**
+
