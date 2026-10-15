@@ -296,7 +296,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 ### Decisions
 | Topic | Decision |
 |-------|----------|
-| Turn system | Strictly turn-based, using MV's default rounds (everyone picks actions, then actions resolve in speed order) |
+| Turn system | **FFX-style visible turn order** (no rounds): faster battlers get more turns, and costly actions delay your next turn |
 | Attack command | Replaced by **Punch**, a weak blunt hit that ignores weapon ATK |
 | Weapon skills | Equipped weapons unlock physical skills through **moves** (see below) |
 | Fatigue | Replaces TP. Builds with most actions, **carries over between battles**, and causes **Weary** at 100 |
@@ -305,6 +305,20 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Party swapping | Mid-battle, in the style of FFX |
 | Talking | SMT-style conversations with one shared framework for animals, spirits, rituals and sapient enemies |
 | Leveling | Gained **only from talking**, and limited in what it does (details to be decided) |
+
+### Turn order
+- There are no rounds. Each battler moves toward their next turn at a speed based on AGI
+  (`AGI + 30` by default, which keeps big AGI gaps from getting out of hand). Whoever arrives
+  first acts immediately: actors get their command on their own turn.
+- A **Turn Order** window on the right shows the upcoming turns. While choosing an action, the
+  ▸ marker previews where the current character will land afterwards.
+- Actions cost 100 by default. `<Turn Cost: n>` makes an action quicker (below 100) or slower
+  (above 100).
+- `<Delay Target: n>` pushes the targets' next turn back on hit, which suits Dama's nets.
+  Negative values pull an ally's turn closer.
+- States, buffs and Fatigue regeneration tick on each battler's own turn.
+- Enemy "Turn" conditions count that enemy's own turns. Troop event turns advance on every
+  battler's turn.
 
 ### Weapon moves
 Weapons carry **moves** (`jab`, `chop`, `bash`...). A physical skill requires a move, so a
@@ -347,6 +361,7 @@ still to be designed.
 | Piece | Status |
 |-------|--------|
 | Punch, weapon moves, Fatigue/Weary | Done: `SI_CombatCore.js` |
+| Visible turn order | Done: `SI_TurnOrder.js` |
 | Weapon swapping | Not started |
 | Party swapping | Not started |
 | Durability tiers | Not started |
