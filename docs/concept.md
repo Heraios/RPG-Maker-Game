@@ -366,27 +366,29 @@ relationships, inscriptions and the story.
 **Shown as a number** ("Insight 7").
 
 **Every character has their own Insight**, used for:
-- **Stats** (per-class growth curves):
-  - **Grows with Insight:** HP, MP, MDF, evasion, resistance to mental states and the Mind
-    element, and slower Fatigue build-up.
-  - **Never grows with Insight:** ATK, MAT and AGI. AGI is excluded because in the turn-order
-    system it decides how often you act, so it would be a hidden damage boost.
-  - **DEF:** left to armor and body parts.
+- **Stats** (per-class growth curves). Insight affects **only**:
+  - **MDF** (magic defense)
+  - **Evasion**
+  - **Mental resistance** (mental states and the Mind element)
+  - **Slower Fatigue build-up**
+
+  Everything else (HP, MP, ATK, DEF, MAT, AGI, LUK) is unaffected and comes from gear, body
+  parts, charms, sidequests and the story.
 - **Their specialty conversations**, where their Insight unlocks extra options, better odds or
   instant peaceful outcomes.
 
-| Character | Specialty (guesses marked ?) |
+| Character | Specialty |
 |-----------|------------------------------|
 | Sib | Spirits, forest beings, ritual encounters |
 | Pada | Animals |
 | Juda | Priestly and religious encounters |
-| Dama | Islanders, militia, sea creatures? |
+| Dama | Islanders, militia, sea creatures |
 | Parl | All-Seafarer common soldiers, deserters, smugglers |
 | Theenmy | All-Seafarer officers and nobility |
 | Tou | First Sailor beings: Stonemen, Hags, Owls of Ill Omen, ancient ghosts |
 | Falmi | Plants, forest fae, the Lady of the Woods' court |
-| Lasa | Children of the Caves, fae? |
-| Patience | Dogs and animals? |
+| Lasa | Children of the Caves, fae |
+| Patience | Dogs and animals |
 | Yoon | No specialty: a generalist |
 
 **Yoon's Insight drives everything else:**
@@ -400,7 +402,17 @@ relationships, inscriptions and the story.
    needs.
 4. **The ghost-or-demon question:** high Insight reveals ambiguous hints without answering it.
 
-**Caps:** Yoon's is high and everyone else's is low, so each of their levels matters.
+**Caps:** each character's Insight cap is roughly based on **how magical they are**. Yoon's is
+high; most others are low, so each of their levels matters. A first-pass ordering (numbers to be
+decided):
+
+| Tier | Characters |
+|------|------------|
+| Highest | Yoon, Tou, Sib, Juda |
+| High | Falmi, Lasa |
+| Medium | Theenmy (paladin magic), Dama (water magic) |
+| Low | Pada, Parl |
+| Lowest | Patience |
 
 **Gaining Insight:**
 - **In battle:** whoever's turn it is does the talking, so swapping the right specialist in
