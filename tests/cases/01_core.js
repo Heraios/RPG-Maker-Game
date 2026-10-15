@@ -7,11 +7,11 @@ module.exports = {
             const A = id => $gameActors.actor(id), S = id => $dataSkills[id], W = id => $dataWeapons[id];
             const usable = a => a.skills().filter(s => s.stypeId === 2 && a.canUse(s)).map(s => s.name);
             const yoon = A(2), th = A(11);
-            yoon.forceChangeEquip(0, W(1)); const knife = usable(yoon);
-            yoon.forceChangeEquip(0, W(6)); const staff = usable(yoon);
-            th.forceChangeEquip(0, W(3)); const khopesh = usable(th);
+            yoon.forceChangeEquip(yoon.slotOfType(1), W(1)); const knife = usable(yoon);
+            yoon.forceChangeEquip(yoon.slotOfType(1), W(6)); const staff = usable(yoon);
+            th.forceChangeEquip(th.slotOfType(1), W(3)); const khopesh = usable(th);
             const conductNoPile = th.canUse(S(47));
-            th.forceChangeEquip(4, $dataArmors.find(a => a && a.name === 'Voltaic Pile'));
+            th.forceChangeEquip(th.slotOfType(5), $dataArmors.find(a => a && a.name === 'Voltaic Pile'));
             return { knife, staff, khopesh, conductNoPile, conductPile: th.canUse(S(47)) };
         });
         t.ok(r.knife.includes('Quick Jab') && r.knife.includes('Raking Cut') && !r.knife.includes('Overhead Smash'), 'knife moves: ' + r.knife);
@@ -25,7 +25,7 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const pada = $gameActors.actor(5);
-            pada.forceChangeEquip(0, $dataWeapons[4]);
+            pada.forceChangeEquip(pada.slotOfType(1), $dataWeapons[4]);
             const mino = $gameTroop.members()[0];
             const a = new Game_Action(mino); a.setSkill(24);
             const strike = a.makeDamageValue(pada, false);
@@ -72,7 +72,7 @@ module.exports = {
             const A = id => $gameActors.actor(id);
             const falmi = A(10), tou = A(9), th = A(11);
             [10, 9, 11].forEach(id => $gameParty.addActor(id));
-            th.forceChangeEquip(3, $dataArmors.find(a => a && a.name === 'Bronze Cuirass'));
+            th.forceChangeEquip(th.slotOfType(11), $dataArmors.find(a => a && a.name === 'Bronze Cuirass'));
             const turn = a => { a.setTp(50); a.onTurnEnd(); return a.tp; };
             const out = { falmiOut: turn(falmi), touOut: turn(tou), thTrained: turn(th) };
             th.forgetSkill(31); out.thUntrained = turn(th);

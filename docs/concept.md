@@ -422,6 +422,22 @@ still to be designed.
 - Cancel steps back one window at a time. A character with only one skill type goes straight to its list, and
 sealed types (e.g. while Weary) are greyed out.
 
+### Equipment slots
+`SI_Equipment.js`. Top to bottom: **Head** (helmets, hats, circlets, bandanas), **Neck** (amulets,
+necklaces), **Shoulders** (capes, cloaks), **Body** (shirts), **Cuirass** (chest armor), **Arms**
+(armlets, bracelets, vambraces), **Left Hand** and **Right Hand** (gloves, rings), **Legs** (pants,
+skirts), **Greaves** (leg armor), **Feet** (shoes, boots), **Melee**, **Ranged**, **Offhand**
+(shields, or a weapon tagged `<Offhand>`), **Accessory 1–3**, then **Codex** (All-Seafarers) or
+**Tattoo 1–8** (Islanders).
+- A slot only offers what the class may equip. `<Equip Slots: 9, 5>` gives a character a custom list
+  (e.g. a hound with only Neck and Accessory).
+- An off-hand weapon adds its stats and its moves, like the main weapon. Knives are tagged `<Offhand>`
+  for now.
+- Starting equipment is matched by type; extra pieces (more tattoos, a second ring) go in the actor note
+  as `<Start Equips: armor 37, armor 39>`.
+- Placeholder items for the new slots: Shell Necklace, Bark-Cloth Cloak, Woven Armlets, Hide Gloves,
+  Grass Skirt, Bronze Greaves (+1 Fatigue per turn), Reed Sandals. The test room's chest gives them.
+
 ### Party switching
 - **Switch** battle command: lists reserve members (everyone beyond the four battle slots).
 - **Free:** the incoming character takes the current character's place *and their turn*, and acts
@@ -927,7 +943,8 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
-| Automated tests | `tests/` (22 tests, about 175 checks; see tests/README.md) |
+| Body-part equipment slots, off-hand weapons | Done: `SI_Equipment.js` |
+| Automated tests | `tests/` (23 tests, about 190 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

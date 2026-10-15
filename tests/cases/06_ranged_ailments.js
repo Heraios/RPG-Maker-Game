@@ -6,12 +6,12 @@ module.exports = {
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id), S = id => $dataSkills[id], AR = n => $dataArmors.find(a => a && a.name === n);
             const pada = A(5), yoon = A(2), dama = A(7);
-            pada.forceChangeEquip(5, AR('Short Bow')); yoon.forceChangeEquip(5, AR('Sling'));
+            pada.forceChangeEquip(pada.slotOfType(6), AR('Short Bow')); yoon.forceChangeEquip(yoon.slotOfType(6), AR('Sling'));
             pada.onBattleStart(); let arrows = 0; while (pada.canUse(S(33)) && arrows < 10) { pada.useItem(S(33)); arrows++; }
             pada.onBattleStart(); const refilled = pada.rangedAmmoForSkill(S(33));
             yoon.onBattleStart(); yoon.useItem(S(32)); yoon.useItem(S(32));
             const volley = new Game_Action(yoon); volley.setSkill(50); const volleyHits = volley.makeTargets().length; yoon.useItem(S(50));
-            dama.forceChangeEquip(0, $dataWeapons[12]); dama.forceChangeEquip(5, AR('Fishing Net')); dama.onBattleStart();
+            dama.forceChangeEquip(dama.slotOfType(1), $dataWeapons[12]); dama.forceChangeEquip(dama.slotOfType(6), AR('Fishing Net')); dama.onBattleStart();
             const harpoonThrows = dama.rangedAmmoForSkill(S(34)), nets = dama.rangedAmmoForSkill(S(35));
             const bat = new Game_Enemy(1, 0, 0); $gameTroop._enemies.push(bat);
             const eva = id => { const a = new Game_Action(yoon); a.setSkill(id); return a.itemEva(bat); };
@@ -68,7 +68,7 @@ module.exports = {
             sib.addState(32); sib.addState(8); const calmWard = names(sib);
             sib.addState(8); sib.addState(33); const happyCure = names(sib);
             yoon.addState(34); yoon.makeActions(); const brave = yoon.numActions();
-            th.forceChangeEquip(0, $dataWeapons[11]);
+            th.forceChangeEquip(th.slotOfType(1), $dataWeapons[11]);
             const e = $gameTroop.members()[0];
             const crit = id => { let c = 0; for (let i = 0; i < 2000; i++) { const a = new Game_Action(th); a.setSkill(id); if (Math.random() < a.itemCri(e)) c++; } return c / 2000; };
             const base = crit(36), vital = crit(37); th.addState(31); const focused = crit(36);

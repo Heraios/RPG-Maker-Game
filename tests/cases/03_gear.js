@@ -7,15 +7,15 @@ module.exports = {
             const A = id => $gameActors.actor(id), W = id => $dataWeapons[id];
             const yoon = A(2), pada = A(5);
             [1, 7, 9, 10].forEach(id => W(id).siWearChance = 100);
-            yoon.forceChangeEquip(0, W(1));
-            const m1 = yoon.rollWear(0), after1 = (yoon.weapons()[0] || {}).name;
-            const m2 = yoon.rollWear(0), after2 = yoon.weapons()[0] ? yoon.weapons()[0].name : 'none';
+            yoon.forceChangeEquip(yoon.slotOfType(1), W(1));
+            const m1 = yoon.rollWear(yoon.slotOfType(1)), after1 = (yoon.weapons()[0] || {}).name;
+            const m2 = yoon.rollWear(yoon.slotOfType(1)), after2 = yoon.weapons()[0] ? yoon.weapons()[0].name : 'none';
             $dataClasses[5].traits.push({ code: 51, dataId: 2, value: 0 });
-            pada.forceChangeEquip(0, W(9));
+            pada.forceChangeEquip(pada.slotOfType(1), W(9));
             const before = $gameParty.numItems($dataItems[5]); $gameParty.loseItem($dataItems[5], 99);
-            const m3 = pada.rollWear(0);
+            const m3 = pada.rollWear(pada.slotOfType(1));
             const remains = $gameParty.numItems($dataItems[5]);
-            pada.forceChangeEquip(0, W(10)); const m4 = pada.rollWear(0);
+            pada.forceChangeEquip(pada.slotOfType(1), W(10)); const m4 = pada.rollWear(pada.slotOfType(1));
             return { m1, after1, m2, after2, m3, remains, m4 };
         });
         t.eq(r.after1, 'Chipped Flint Knife', 'Flint Knife wears into the chipped tier');
@@ -31,7 +31,7 @@ module.exports = {
         t.eq(await h.toCommand(), 'input', 'reached a command menu');
         const r = await h.eval(() => {
             const s = SceneManager._scene, actor = BattleManager.actor();
-            actor._equips[0].setObject($dataWeapons[1]);
+            actor._equips[actor.slotOfType(1)].setObject($dataWeapons[1]);
             const open = () => { const w = s._actorCommandWindow; w.setup(actor); w.selectSymbol('tactics'); w.processOk(); s._tacticsWindow.selectSymbol('swap'); s._tacticsWindow.processOk(); };
             $dataActors[actor.actorId()].note += '\n<Free Swap>';
             open();
