@@ -867,18 +867,20 @@ with the turn order they act again immediately.
 |-------|------------------------------|-------|
 | Smoldering | Lose 5% HP per turn | 3 |
 | Enflamed | Lose 12% HP per turn; loses every other turn | 3 |
-| Wet | DEF −15% | 3 |
-| Sodden | DEF −35%; can't use Magic | 3 |
+| Wet | Takes 15% more physical damage | 3 |
+| Sodden | Takes 35% more physical damage; can't use Magic | 3 |
 | Burdened | AGI −20% | 3 |
 | Mired | AGI −45%; can't use Physical skills or Punch | 3 |
 | Disoriented | Hit −15% | 3 |
-| Feverish | Hit −35%; 30% chance per turn to lash out at a random target | 3 |
-| Cracked | DEF −60% (the stone shell shatters) | 1 |
+| Feverish | Hit −35%; 30% chance per turn to lash out at a random target (enemies with their own attack) | 3 |
+| Cracked | Takes 60% more physical damage (the stone shell shatters) | 1 |
 | Steam | Hit −50% (vision obscured) | 1 |
 | Chilled | AGI −60% (muscles seize) | 1 |
 | Grounded | ATK −50% (momentum lost) | 1 |
 
-Elemental hits always apply their effects for now (one setting if it proves too swingy). Feverish
+Elemental hits always apply their effects for now (one setting if it proves too swingy).
+Damage over time (burning, Bleed) **can kill**, party members included. "1 turn" states last until the
+end of the target's next own turn. Feverish
 counts as a mental state for Insight's mental resistance. Exceptions: `<Elemental: water>`,
 `<No Elemental States>`, `<Inflict: sodden>` (`SI_ElementalStates.js`).
 

@@ -74,6 +74,10 @@ module.exports = {
             out.smolder = ticks.join(',') + (e.isStateAffected(14) ? ' still' : ' gone');
             e.setHp(e.mhp); e.addState(15); out.enflamedSkips = [ownTurn(), ownTurn(), ownTurn()].join(',');
             e.clearStates(); e.addState(19); out.miredStrike = e.canUse($dataSkills[24]);
+            const jab = () => { let s = 0; for (let i = 0; i < 400; i++) { const x = new Game_Action($gameActors.actor(5)); x.setSkill(11); s += x.makeDamageValue(e, false); } return s; };
+            e.clearStates(); const base = jab(); out.taken = [16, 17, 22].map(id => { e.addState(id); const v = jab() / base; e.removeState(id); return v; });
+            e.addState(21); e._siFeverTurn = true; const lash = new Game_Action(e); lash.setConfusion(); out.lash = lash.item().name; e._siFeverTurn = false;
+            e.clearStates(); e.clearResult(); e.setHp(5); e.addState(15); e.onTurnEnd(); out.burnKills = e.isDead(); e.revive(); e.setHp(e.mhp); e.clearStates();
             e.clearStates(); e.addState(14);
             const air = new Game_Action(sib); air.setSkill(68); e.clearResult(); air.apply(e);
             out.upgradeMsgs = e.result().addedStates.map(id => $dataStates[id].name).join(',') + ' / removed: ' + e.result().removedStates.map(id => $dataStates[id].name).join(',');
@@ -82,6 +86,11 @@ module.exports = {
         t.eq(r.smolder, '100,100,100,0 gone', 'Smoldering takes 5% on each of 3 own turns, then ends');
         t.eq(r.enflamedSkips, 'true,false,true', 'Enflamed loses every other turn');
         t.eq(r.miredStrike, false, "a Mired enemy can't Strike");
+        t.between(r.taken[0], 1.10, 1.20, 'Wet: about +15% physical damage taken');
+        t.between(r.taken[1], 1.29, 1.41, 'Sodden: about +35%');
+        t.between(r.taken[2], 1.52, 1.68, 'Cracked: about +60%');
+        t.eq(r.lash, 'Strike', 'a Feverish enemy lashes out with its own attack');
+        t.ok(r.burnKills, "burning can kill");
         t.eq(r.upgradeMsgs, 'Enflamed,Disoriented / removed: ', 'an upgrade shows no "wears off" line for the base state');
 
         // A live turn: removing Mired with fire hands the caster the very next turn.

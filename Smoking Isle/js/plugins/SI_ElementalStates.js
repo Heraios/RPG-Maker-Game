@@ -53,7 +53,9 @@
  *
  * State behaviour beyond its traits:
  *   Enflamed: loses every other turn.
- *   Feverish: sometimes lashes out at a random target instead of acting.
+ *   Feverish: sometimes lashes out at a random target instead of acting,
+ *             using its own basic attack (an enemy's first physical damaging
+ *             action).
  */
 
 var Imported = Imported || {};
@@ -222,6 +224,19 @@ SmokingIsle.ElementalStates = SmokingIsle.ElementalStates || {};
     Game_BattlerBase.prototype.restriction = function() {
         var r = _Game_BattlerBase_restriction.call(this);
         return this._siFeverTurn ? Math.max(r, 2) : r;
+    };
+
+    // An enemy lashing out (or confused) swings with its own basic attack:
+    // its first physical damaging action, rather than Punch.
+    var _Game_Enemy_attackSkillId = Game_Enemy.prototype.attackSkillId;
+    Game_Enemy.prototype.attackSkillId = function() {
+        var own = this.enemy().actions.map(function(a) {
+            return $dataSkills[a.skillId];
+        }).filter(function(skill) {
+            return skill && skill.hitType === Game_Action.HITTYPE_PHYSICAL &&
+                (skill.damage.type === 1 || skill.damage.type === 5);
+        })[0];
+        return own ? own.id : _Game_Enemy_attackSkillId.call(this);
     };
 
     var _Game_Battler_onTurnEnd = Game_Battler.prototype.onTurnEnd;
