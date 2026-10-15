@@ -68,7 +68,25 @@ service or sealing them away, and founding the Kingdom of All the Sea.
 rainy, fertile side of the rim, and **the Red Lady** of the endless, trackless jagged highlands
 beyond. She became **the King's wife (wives)**: she split herself permanently into two beings and
 **became mortal**, so their very many children (twins, triplets and more, from both bodies) are
-**unusually powerful humans**. Theenmy and the Princess are among them.
+**unusually powerful humans**. Theenmy and the Princess are among them. It was **a love match**, and
+also her escape from her divine family's drama. The Dark Lady and the Red Lady are **alive and live in
+the capital**.
+
+**Some Ladies fight for the Princess**: Ladies that the founding party conscripted into the empire's
+service.
+
+### The island is the center of the world
+**The Smoking Isle sits at the center of the world-crater**: the central peak where the stolen star
+came down.
+
+### Juda's identities
+1. **A Navigator Lord of the First Sailors**, millennia old, his soul in a moai's coral eyes.
+2. **The "old wizard" of the King's party** (65 years ago), a Gandalf figure. He simulated aging with
+   magic and **"died" about 50 years ago**.
+3. **A wandering mystic in the form of a teenager**, who came to the island and was **chosen as
+   apprentice by the previous Islander priest**.
+4. **The village priest:** he simulates aging with magic, and the Islanders think he is a very hale
+   man in his late sixties. (His "orphan" backstory belongs to this identity.)
 
 ### The Red Bowl
 Genderless god of the seas and the world, and of sea life: the whole world and all its seas,
@@ -777,14 +795,19 @@ turns the more evidence was found, the villagers with her are better armed, and 
   earlier JRPG became the empire, and their "righting wrongs" meant chaining and conscripting gods.
   Juda was one of those heroes, and chaining the Lady of the Sun was the same program applied to
   the island.
-- **Juda's history with the empire is 65 years old,** not a recent deal, which deepens his ties to
-  Theenmy (who would know him from childhood stories, or in person).
+- **Juda's history with the empire is 65 years old**: the beloved "old wizard" of the founding
+  legend. Theenmy would have grown up on stories of him.
+- **Juda's pattern is fake deaths and new identities.** That suggests clues: the teenage mystic's
+  arrival 50 years ago, the convenient death of the previous priest who chose him, and records that
+  don't add up.
+- **The Ladies fighting for the Princess** are bound gods, natural Act 5 bosses that can be **freed
+  rather than killed** (through Talk), in line with the game's theme of freeing the bound. If they are
+  held with First Sailor chain magic, Juda likely gave the empire that knowledge.
 - **Idols as world infrastructure:** Red Bowl (save), Star Mother (heal and rest), Bird (fast travel
   along the telegraph network), Star Child (graveyards). Star Child idols could matter to ghosts and
   to Yoon.
-- **The island may sit at the center of the world-crater:** if the impact made the bowl and the star
-  melted a mountain into the volcano, the Smoking Isle is the crater's central peak, the spot where
-  the star itself came down.
+- **The island is the center of the world (confirmed):** this is why gods, the empire and the
+  Navigator Lords all converge here.
 
 ### Already connected
 - **Red Bowl idols are the save points** (and the "nearest save point" for defeat rescues).
@@ -803,6 +826,5 @@ turns the more evidence was found, the villagers with her are better armed, and 
   disguised as a merchant"; the lore calls him "a tribute collector's crewman who stole pearls and
   deserted". Is he both, or only the second?
 - **Names:** the King of All the Sea, the Princess.
-- **Juda's age on the island:** he adventured with the King 65 years ago. How long has he been on the
-  island, and do the Islanders notice he never ages?
-- **Is the island at the center of the world-crater?**
+- **Does the King know** that the island's priest is his old companion? Does Theenmy?
+- **How did the previous priest die?**
