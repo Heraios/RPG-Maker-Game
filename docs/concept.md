@@ -291,10 +291,75 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Underwater exploration | Dama | Map events and region checks gated on her spell |
 | Faction choices | Pearl thief, Theenmy | Variables that branch recruitment and relationships |
 
+## Combat System
+
+### Decisions
+| Topic | Decision |
+|-------|----------|
+| Turn system | Strictly turn-based, using MV's default rounds (everyone picks actions, then actions resolve in speed order) |
+| Attack command | Replaced by **Punch**, a weak blunt hit that ignores weapon ATK |
+| Weapon skills | Equipped weapons unlock physical skills through **moves** (see below) |
+| Fatigue | Replaces TP. Builds with most actions, **carries over between battles**, and causes **Weary** at 100 |
+| Durability | **Condition tiers**: worn weapons turn into weaker items, and bronze never degrades |
+| Weapon swapping | Mid-battle; costs the turn (Theenmy swaps for free) |
+| Party swapping | Mid-battle, in the style of FFX |
+| Talking | SMT-style conversations with one shared framework for animals, spirits, rituals and sapient enemies |
+| Leveling | Gained **only from talking**, and limited in what it does (details to be decided) |
+
+### Weapon moves
+Weapons carry **moves** (`jab`, `chop`, `bash`...). A physical skill requires a move, so a
+character must both *know* the skill and have a weapon that *allows* it. The weapon type
+(Dagger, Spear, Sword...) only decides who can equip it.
+
+| Weapon | Type | Moves |
+|--------|------|-------|
+| Flint Knife | Dagger | jab |
+| Obsidian Spear | Spear | jab |
+| Copper Khopesh | Sword | chop (a sword that **can't** Quick Jab) |
+| Stone Axe | Axe | chop |
+| Hardwood Club | Club | bash |
+| Walking Staff | Staff | bash |
+
+| Skill | Move | Fatigue | Damage |
+|-------|------|---------|--------|
+| Punch | none (always available) | +5 | Crush, ignores weapon ATK |
+| Quick Jab | jab | +8 | Pierce, light |
+| Heavy Chop | chop | +20 | Cut, heavy |
+| Bash | bash | +12 | Crush, medium |
+| Catch Breath | (Rest skill) | −35 | none |
+
+These are placeholder examples to show how the system works; the real weapon and skill list is
+still to be designed.
+
+### Fatigue
+- Each skill adds its "TP Gain" value as Fatigue **once per use** (MV's default adds it once per
+  target hit). The `<Fatigue: n>` note tag overrides this, and negative values are used for Rest.
+- The "TP Charge Rate" trait scales how fast a character tires, which is how Sib "gets tired
+  quickly".
+- At 100 Fatigue, a character becomes **Weary**: Magic, Physical and Punch are sealed, leaving
+  Guard, items and Rest skills. Weary ends when Fatigue drops below 50.
+- Fatigue persists after battle. "Recover All" (an inn or event) resets it.
+- Taking damage does not add Fatigue (can be switched on in the plugin settings).
+- Enemies start each battle at 0. An enemy that can become Weary needs a Rest skill in its
+  action list, or it will do nothing once it is Weary.
+
+### Implementation status
+| Piece | Status |
+|-------|--------|
+| Punch, weapon moves, Fatigue/Weary | Done: `SI_CombatCore.js` |
+| Weapon swapping | Not started |
+| Party swapping | Not started |
+| Durability tiers | Not started |
+| Talking | Not started |
+| Leveling from talking | Waiting on design |
+
 ### Current database (as uploaded)
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.
-- Classes set up so far: Ghost, Returned Child, Junior Priest, Child of The Caves. The other
-  actors are still on the placeholder Ghost class.
+- Classes: Ghost, Returned Child, Junior Priest, Child of The Caves, Hunter, Priest, Fisher,
+  All-Seafarer Thief, First Builder Queen, assigned to actors 1–9. Falmi, Thenmy and Patience
+  (10–12) are still on the placeholder Ghost class.
+- Each class's equippable weapon types follow the character design above (the Ghost cannot
+  equip weapons).
 - Weapon types: Dagger, Sword, Spear, Staff, Club, Axe, Bow, Sling, Javelin, Net, Fist, Claw.
 - Elements: Physical, Magical, Cut, Pierce, Crush, Burn, Air, Water, Earth, Fire, Mind.
 
