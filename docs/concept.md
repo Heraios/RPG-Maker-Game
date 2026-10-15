@@ -159,7 +159,7 @@ Pada and Yoon's dog, a pointer-type breed.
   member: small passive benefits, occasional minor attacks or situational help.
   - **Acts on her own** (AI-controlled; the player never gives her commands).
   - **Has her own turns** in the Turn Order, based on her speed.
-  - **Can be knocked out** (what happens afterwards is to be decided).
+  - **Can be knocked out**, and is revived the same way as everyone else.
   - **Insight is capped at 1.** Her specialty (dogs and animals) works **passively**: with
     Patience present, animal conversations go better for whoever is speaking.
 - Finds the buried murder weapon early in the game. The player uses it as a staff without knowing
@@ -350,6 +350,12 @@ character must both *know* the skill and have a weapon that *allows* it. The wea
 These are placeholder examples to show how the system works; the real weapon and skill list is
 still to be designed.
 
+### Battle menu
+**Punch, Skills, Guard, Swap, Item** (Talk and party swapping will be added). **Skills** opens a
+list of the character's skill types (Magic, Physical, Rest) in the same place, and Cancel steps
+back one window at a time. A character with only one skill type goes straight to its list, and
+sealed types (e.g. while Weary) are greyed out.
+
 ### Weapon swapping and wear
 - **Swap** battle command: lists carried weapons the character can equip. Swapping uses the turn
   (the "Swap Weapon" action; give it a `<Turn Cost>` to make it quicker or slower).
@@ -463,6 +469,7 @@ decided):
 |-------|--------|
 | Punch, weapon moves, Fatigue/Weary | Done: `SI_CombatCore.js` |
 | Visible turn order | Done: `SI_TurnOrder.js` |
+| Skills submenu | Done: `SI_BattleMenu.js` |
 | Weapon swapping | Done: `SI_Gear.js` |
 | Party swapping | Not started |
 | Durability tiers | Done: `SI_Gear.js` |
