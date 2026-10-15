@@ -177,7 +177,7 @@ The largest and most significant animal in the Lady's forest, possibly known to 
 possibly protected by the Shepherd. Hunting it without permission brings the forest's full
 enforcement down on the hunter.
 
-*In the game:* a climactic boss (see Open Questions on act numbering). Killing it provides **the
+*In the game:* the **Act 2** climactic boss. Killing it provides **the
 flesh ingredient for Yoon's homunculus body**. Requires the Lady's permission, which requires a
 major favor. **The showcase for animal Talk**: tracking, reading signs, choosing the right approach.
 
@@ -201,8 +201,9 @@ conditions, promises or repayment.
 child-sacrifice industry**. They have a hidden village in the lava tubes and are mostly unaware of
 their origins. Digging, they eventually discover Queen Tou in her buried palace and "serve" her.
 
-*In the game:* friendly NPCs. **Lasa** guides Yoon out of the caves in the prologue, helps gather
-body ingredients as a temporary party member, and later plays a key role in the Tou questline.
+*In the game:* friendly NPCs. **Lasa** guides Yoon out of the caves in the prologue (Act 1), helps
+gather body ingredients as a temporary party member in Act 2, leaves when Juda joins, and later
+plays a key role in the Tou questline.
 
 ### Queen Tou
 The last First Sailor monarch: a **nine-year-old girl sacrificed by her parents' court**, her soul
@@ -396,9 +397,6 @@ house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
 ---
 
 ## 6. Open questions
-- **Act numbering:** the lore places the Great Boar and Lasa's body-gathering in "Act 1", while the
-  story outline in concept.md has Act 1 as the combat-free ghost prologue and body-building in Act 2.
-  Which is right?
 - **Are the Islanders descended from the First Sailors,** or later arrivals?
 - **What is the "demon"** Juda tried to summon: a servant of the Destroyer, or something else?
 - **What did the First Sailors' sacrifice industry produce:** homunculi as servants, vessels for
