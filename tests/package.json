@@ -1,0 +1,11 @@
+{
+  "name": "smoking-isle-tests",
+  "private": true,
+  "description": "Automated battle system tests for Smoking Isle (RPG Maker MV).",
+  "scripts": {
+    "test": "node run.js"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

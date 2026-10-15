@@ -407,7 +407,8 @@ still to be designed.
 ### Battle menu
 **Punch, Skills, Guard, Tactics** (Talk will go between Skills and Guard).
 - **Skills** opens the character's skill types (Magic, Physical, Rest) in the same place.
-- **Tactics** opens **Swap, Item, Switch** the same way, and is greyed out if none can be used.
+- **Tactics** opens **Swap, Item, Switch, Escape** the same way, and is greyed out if none can be used.
+  A failed escape uses up the current character's turn.
 - Cancel steps back one window at a time. A character with only one skill type goes straight to its list, and
 sealed types (e.g. while Weary) are greyed out.
 
@@ -889,6 +890,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Resting skills and conditioning | Done: `SI_CombatCore.js` |
 | Ranged weapons, ammo, flying | Done: `SI_Ranged.js` |
 | Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
+| Automated tests | `tests/` (21 tests, about 160 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

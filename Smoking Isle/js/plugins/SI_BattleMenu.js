@@ -17,7 +17,7 @@
  *
  * @param Tactics Symbols
  * @desc Commands moved under Tactics, by internal symbol, in order.
- * @default swap,item,switch
+ * @default swap,item,switch,escape
  *
  * @help
  * The actor command window shows a single Skills command instead of one
@@ -28,8 +28,10 @@
  * A character with only one skill type goes straight to that skill list.
  * Sealed skill types (e.g. while Weary) are shown greyed out.
  *
- * Tactics works the same way for Swap (SI_Gear), Item and Switch
- * (SI_PartySwitch). It is greyed out when none of them can be used.
+ * Tactics works the same way for Swap (SI_Gear), Item, Switch
+ * (SI_PartySwitch) and Escape. It is greyed out when none of them can be
+ * used. Escape is shown when the battle allows escaping; a failed escape
+ * uses up the current character's turn.
  */
 
 var Imported = Imported || {};
@@ -44,7 +46,7 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
     var params = PluginManager.parameters('SI_BattleMenu');
     $.commandName = String(params['Skills Command'] || '');
     $.tacticsName = String(params['Tactics Command'] || 'Tactics');
-    $.tacticsSymbols = String(params['Tactics Symbols'] || 'swap,item,switch').split(',').map(function(s) {
+    $.tacticsSymbols = String(params['Tactics Symbols'] || 'swap,item,switch,escape').split(',').map(function(s) {
         return s.trim();
     });
 
@@ -75,6 +77,9 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
         _Window_ActorCommand_makeCommandList.call(this);
         this._tacticsCommands = [];
         if (!this._actor) return;
+        if (BattleManager.canEscape()) {
+            this.addCommand(TextManager.escape, 'escape', true);
+        }
         var insertAt = -1;
         this._list = this._list.filter(function(command, i) {
             if ($.tacticsSymbols.indexOf(command.symbol) < 0) return true;
@@ -192,6 +197,7 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
         this._tacticsWindow.setHandler('cancel', this.onTacticsCancel.bind(this));
         this.addWindow(this._tacticsWindow);
         this._actorCommandWindow.setHandler('tactics', this.commandTactics.bind(this));
+        this._actorCommandWindow.setHandler('escape', this.commandEscape.bind(this));
     };
 
     // Windows bind their cancel handlers when created, so wrap them before that.
