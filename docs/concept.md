@@ -5,6 +5,8 @@ Copper Age volcanic island. You play the ghost of a dead child investigating you
 murder, while your best friend, the village priest's apprentice, helps you do
 forbidden necromancy to build you a new body.
 
+See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
+
 ---
 
 ## Story Outline

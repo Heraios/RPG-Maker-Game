@@ -1,0 +1,408 @@
+# Smoking Isle — World & Lore
+
+Companion to [concept.md](concept.md). Sections 1–3 are the author's canon (organized, lightly
+condensed). Section 4 is **inference** by the assistant, marked as such, for the author to confirm
+or correct. Section 5 connects the lore to the game's systems. Section 6 lists open questions.
+
+---
+
+## 1. Gods
+
+### The Red Bowl
+Genderless god of the seas and the world, and of sea life: the whole world and all its seas,
+personified. Idols are carved bowls of red scoria filled with pure water. **These idols are the
+save points**, so the player interacts with the Red Bowl more than any other god. Not
+anthropomorphic: the world itself as a divine entity.
+
+- **Imperial heresy:** the All-Seafarers insist the Red Bowl is male and specifically the father of
+  their King of All the Sea. This is imperial theology reshaping a universal, genderless deity to
+  legitimize a dynasty. Every island that worships the Red Bowl as genderless commits quiet heresy
+  against imperial doctrine.
+- **Third gender priesthood:** the Red Bowl's genderlessness is one foundation of the island's
+  third gender priestly role. If the divine is genderless, its mediators should be too.
+- **Origin memory:** the Red Bowl may be a mythological memory of the world's true origin, an impact
+  crater filled with water. The idol is a scale model of what literally happened; red, perhaps,
+  from the violence of its creation.
+
+### Star Mother
+Goddess of the stars, especially the polar star: the fixed point everything else turns around.
+The constant, the grieving mother, the one who endures. Her child, the Star Child, was killed by
+the White Bird. One of her stars was stolen by the Destroyer to make the volcano, so part of her
+domain was taken and turned into fire and earth.
+
+### The Star Child
+The Star Mother's eldest child, believed to be **the first human**, and genderless in island
+cosmology. Killed by the White Bird, but as a god could not truly die: their body fell to earth as
+shooting stars and became **the First Sailors, and thus all humans**.
+
+The theological mirror of Yoon's story: a child killed, whose death was generative, whose body
+became something new. The game's central narrative retold at cosmic scale. Also, alongside the Red
+Bowl, a foundation of the third gender priesthood: the first human had no gender.
+
+### White Bird / Sooty Bird
+Creator of humanity and fertility god. Killed the Star Child in a dispute, and so is both a murderer
+and a creator, and remorseful. To redeem himself he stole the stolen star back from the Destroyer,
+but dropped it too low in the sky. It burned him, turning White Bird into **Sooty Bird**, blackened
+and scarred. The star became **the Sun**. The rock he tore from the island while pulling the star
+free became **the Moon**, which he took as his home: the islanders' man in the moon.
+
+**Juda's mirror in the sky:** violence, then guilt, then an attempt to fix things that creates
+further consequences, leaving him permanently transformed. The parallel to a man who murdered a
+child, cried during the ritual, and stayed trapped by the consequences.
+
+### The Destroyer
+A malevolent deity who in ancient times stole one of the Star Mother's stars and took it to the
+mountain. Its heat melted the mountain into **the volcano**, where he supposedly lives at the
+center. The volcano, the lava tubes and the volcanic desert are his domain; his servants (Black
+Hounds, Hunched) emerge from its depths.
+
+May be connected to the First Sailors' demon-summoning. The lava tubes being both his domain and
+burial sites suggests a link between death, demons and the volcanic underworld. **Yoon waking in a
+lava tube over a skeleton is waking in the Destroyer's house.**
+
+### The Ladies
+Minor goddesses and powerful spirits of the island's natural features, children of the Star Mother
+and the Star Child. Not part of the high pantheon: too powerful and ancient to be human, too local
+and personal to be cosmic gods. The islanders treat them as neighbors. Each has her own domain,
+court and temperament: the island's spiritual infrastructure, the divine made local.
+
+Each took a mortal husband over the centuries, who eventually became minor gods by adoption:
+
+| Lady | Domain | Husband(s) |
+|------|--------|------------|
+| Lady of the Woods | The forests | The Master of Deception, the Shepherd of the Deer |
+| Lady of the Wind | Marsh, coasts, mountain peak | The Bull of Water |
+| Lady of the Sun | Once the desert (now chained) | The Bull of Heaven |
+
+---
+
+## 2. The Forest
+
+### The Lady of the Woods
+Lives in **two bodies in two places at once**, with two aspects:
+- **Temperate rainforest:** a woman with a porcine aspect; temperamental but gregarious.
+- **Alpine forest:** a great goat-centaur; polite but cold.
+
+Commands the People of the Forest. Has been cultivating a special herb under every blue moon for
+four hundred years to grow the Familiar (Falmi). Her three daughters became trapped in First Sailor
+wells and were transformed into giant snake women.
+
+Rules the forest through **negotiated agreements** with the islanders: fallen-wood limits, fire
+clearings, marked trees, hunting quotas. Enforced by the Owls of Ill Omen and the boar-men.
+
+*In the game:* quest-giver, potential ally, and an authority to be negotiated with. Permission to
+hunt the Great Boar requires a major favor, such as freeing one of her Daughters. During the
+invasion her domain turns hostile to invaders who break the forest agreements.
+
+### The Master of Deception
+One of the Lady's husbands; shapeshifter of the temperate rainforest. Can appear as a crying child,
+a beautiful young woman or a handsome man. True form: shaggy goat legs ending in hooves, hairy
+torso, half-human half-goat head with yellow rectangular-pupilled eyes, horns under shaggy hair.
+
+Considers himself the protector of the woods and will lead the boar-men into battle at need. A
+mischievous prankster who stops short of serious harm unless the target genuinely threatens the
+forest. **Cannot dream** and is fascinated by others' dreams: **islander priests learn from him in
+exchange for offering their dreams.** Sib likes him and calls him **"Uncle Deception."**
+
+*In the game:* friendly NPC, teacher, trickster, potential wartime ally (his shapeshifting could be
+devastating against invader patrols). His relationship with Sib is the foundation of the wartime
+alliance with the forest.
+
+### The Shepherd of the Deer
+The Lady's other husband; guardian of the alpine forest. About six feet tall, muscular upper body,
+boar-like lower limbs, face hidden by coarse bristles except fiery round red eyes, twin-tipped tail,
+a gnarled shepherd's crook as tool and weapon.
+
+Protects wild animals and the balance between predator and prey: warns animals of traps and
+hunters, leads them to safety, disorients pursuers. Hunters lose their way; their prey vanishes.
+**Islander priests undergo long quests to find him and teach him new songs in exchange for stealth
+magic.**
+
+*In the game:* neutral NPC, ally or obstacle depending on the player's relationship with the
+forest. A complicated relationship with Pada the hunter. Source of stealth magic through priestly
+questlines.
+
+### The Familiar
+See Falmi in concept.md: a small elf-like child grown from the Lady's herb.
+
+### Daughters of the Wells
+The Lady's three daughters, trapped in First Sailor wells and transformed into giant snake women
+who try to pull people down to their deaths. If "killed" they revert to their true forms: beautiful
+water maidens of the woodland rivers.
+
+*In the game:* bosses that are really **rescue missions**. Freeing one may be required for
+permission to hunt the Great Boar. They introduce the player to **First Sailor binding magic**
+before the chains Juda used on the Bull of Heaven.
+
+### Boar-Men (People of the Forest, male)
+Swine-men, sometimes bipedal, sometimes on all fours; skilled warriors with rudimentary spears or
+clubs. Originally ordinary boars ensorcelled by the Lady. One matches five men in strength. Two
+tribes: temperate lowland and alpine highland.
+
+Blunt, not bright, but **negotiable**: they respond to directness and honesty, and **flattery,
+deception and clever wordplay actively backfire**. They enforce the forest agreements.
+
+*In the game:* enemies if forest rules are broken or boundaries crossed, negotiable through Talk.
+During the invasion, effective guerrilla fighters against invaders who don't know the agreements.
+
+### Stream Maidens (People of the Forest, female)
+Intelligent, beautiful maidens with goat legs who live by the forest's streams, converse with
+spirits and know nature deeply. The Lady's messengers and handmaidens; probably mark which trees
+may be cut. Two tribes: the slow river of the temperate forest and the fast mountain streams of the
+alpine forest.
+
+*In the game:* friendly NPCs offering information (plants, water safety, animal movements) and
+sidequest hooks. Sources of botanical and ecological knowledge.
+
+### Forest Child-Fae (People of the Forest, children)
+Small fairies: boys with porcine faces, girls with hooves; parents often too busy to raise them.
+Capable of impish malevolence (frightening children, pranks, following and mocking people lost in
+the woods), but harmless: they feel bad and lead you out if you start to cry. They can **dissolve
+into a pool of water** when frightened or captured. They ride nearly invisible **Green Horses**
+made of leaves and boughs.
+
+*In the game:* ambient NPCs, minor hazards and comic relief that make the forest a living
+community. **A warning system: if child-fae start mocking you, you've crossed a boundary.**
+
+### Owls of Ill Omen
+Dire owls with long saber-shaped beaks used to suck blood and pupil-less amber eyes. They gather on
+ruined First Sailor towers, and are given leave to attack those who harm the forests.
+
+*In the game:* enemies triggered by serious violations (cutting unmarked trees, fires outside
+clearings, entering sacred groves): the escalation between warnings and a full boar-man response.
+**Tou's presence may stop them attacking**, through residual First Sailor command hierarchy.
+
+### The Great Boar
+The largest and most significant animal in the Lady's forest, possibly known to her personally and
+possibly protected by the Shepherd. Hunting it without permission brings the forest's full
+enforcement down on the hunter.
+
+*In the game:* a climactic boss (see Open Questions on act numbering). Killing it provides **the
+flesh ingredient for Yoon's homunculus body**. Requires the Lady's permission, which requires a
+major favor. **The showcase for animal Talk**: tracking, reading signs, choosing the right approach.
+
+---
+
+## 3. Other Spirits and Peoples
+
+### Children of the Caves
+- **Females:** beautiful small winged women in red, with silver-embroidered hats; can produce
+  blinding light.
+- **Males:** short and chubby, in long vestments and a red broad-brimmed hat over curly hair.
+
+Attracted to shiny objects, which they hide in secret deposits. Experts in underground passages.
+Mostly harmless pranksters: pulling clothes off people, stealing quilts, harassing domestic animals,
+especially sheep. Normally visible only to children and the innocent. **By islander tradition each
+newborn is assigned one as a guardian angel.** They appear in the dead of night to people in
+desperate need after all human aid has failed, and lead them to hidden treasure with no
+conditions, promises or repayment.
+
+**Secret:** they descend from **discarded infant and child homunculi produced by the First Sailors'
+child-sacrifice industry**. They have a hidden village in the lava tubes and are mostly unaware of
+their origins. Digging, they eventually discover Queen Tou in her buried palace and "serve" her.
+
+*In the game:* friendly NPCs. **Lasa** guides Yoon out of the caves in the prologue, helps gather
+body ingredients as a temporary party member, and later plays a key role in the Tou questline.
+
+### Queen Tou
+The last First Sailor monarch: a **nine-year-old girl sacrificed by her parents' court**, her soul
+put into an articulated wooden doll as a puppet queen. Fed false information about the outside
+world for centuries, she unknowingly signed death warrants for children she believed she was
+fostering. Buried by a volcanic avalanche, she slept for thousands of years until bored Children
+of the Caves dug her up. Immortal through her **moai phylactery**: the doll re-forms after two turns.
+
+### Stonemen of the Desert
+Ancient statues quarried in the volcanic desert but never moved to their intended sites. They come
+to life as large, brutish beings with hard dusky stone skin, a very simple tribal structure, little
+clothing and large clubs. **Leaders wear red scoria headdresses, speak broken First Sailor tongue,
+and wield fire magic and magic that turns people into salt.** They guard First Sailor ruins.
+
+Made of **tuff, the softest stone on the island**, a subtle hint at their vulnerability. Residual
+magic in the ruins gave them crude sentience. They may still serve masters present in the moai, coral
+eyes watching from inside carved stone.
+
+*In the game:* among the toughest regular enemies, in the desert and the ruins. **They surrender
+immediately to Tou**, their queen; the chain of command reactivates.
+
+### Ghosts
+Many varieties. The dead are neighbors: islanders treat ghosts like any other community member.
+**Ghosts often believe Yoon is a ghost too**, so Yoon can often speak with them peaceably.
+- *Example:* the spirit of a woman who died in childbirth, seen along rivers between one and three in
+  the morning, washing bloody clothes and singing a sad lullaby.
+- **First Sailor ghosts** in the deepest lava tubes speak a language only Tou understands, and have
+  drifted purposelessly for millennia. Tou gives them someone to report to, turning dangerous
+  encounters into reunions.
+
+### Hags of the Salt Marsh
+Ancient First Sailor women whose dead bodies are possessed by weaker demons. They serve the Lady of
+the Wind. Vampiric witches who feed on marsh animals and sometimes interlopers; ugly old hags with
+stumpy legs who can turn into beautiful marsh cranes. Not wholly hostile: **they treat Yoon like
+cooing grandmothers.** That affection is genuine demonic familiarity: they recognize something
+kindred in Yoon, dressed in the social habits of the dead women they inhabit.
+
+*In the game:* negotiable enemies with dialogue advantages for Yoon. **Tou creates a complicated
+reaction:** the bodies may recognize their queen, conflicting with the demons driving them. The
+Lady of the Wind's authority offers another avenue.
+
+### The Lady of the Wind
+A strict, beautiful woman who fluctuates in the wind. Angry, as a storm, she scratches the faces of
+those who have sinned and uproots trees. Protects the marsh, the coasts and the mountain peak.
+*In the game:* quest-giver, potential boss, authority over the open, exposed parts of the island,
+paralleling the Lady of the Woods.
+
+### The Bull of Water
+The Lady of the Wind's mortal husband, transformed into a **blue minotaur**. He committed terrible
+murders, and since an immortal couldn't be killed, she chained him in the sea. **The All-Seafarers
+believe his lie that he is the Bull of Heaven and release him**, to their dismay. Very strong, with a
+keen mind and no sense of law or loyalty; uses every means to coerce and destroy; **can hypnotize**.
+*In the game:* a major threat released by imperial ignorance (their theology assumed their myths
+map onto island reality). Dangerous because he is intelligent and persuasive.
+
+### The Lady of the Sun
+A beautiful woman of gigantic proportions who appears in summer. Very arrogant and cruel. Drags
+heavy chains and lives in a grotto at the foot of the volcano. Seeing her means impending death.
+Once ruled the desert. **Chained by Juda with First Sailor chain technology, which is how he became
+head priest.**
+*In the game:* a chained NPC who can be freed, **a major moral choice**: wrongfully imprisoned, but
+genuinely arrogant and cruel. Tou's presence may change things, since the Lady would recognize First
+Sailor royalty.
+
+### The Bull of Heaven
+The Lady of the Sun's mortal husband, transformed into a **white minotaur with fires burning on his
+horns**. On full moon nights he bellows outside the house of anyone who has committed a serious
+crime, specifically **Juda's house**. Imprisoned with his wife by Juda, who deciphered First Sailor
+chain spells to neutralize divine punishment: **Juda silenced his own accuser.**
+*In the game:* absent at first; once freed, a divine justice figure. His bellowing outside Juda's
+house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
+
+### Servants of the Destroyer
+- **Black Hounds:** demonic wolf-like beasts with shaggy black fur and glowing red eyes, born from
+  minor demons possessing the corpses of rabid dogs. They live in deep mountain caves and emerge at
+  night to drag livestock and people into the underworld. **Cannot be negotiated with.** Patience
+  being a dog makes these encounters a narrative beat.
+- **Hunched:** zombie-like corpses used as puppets, with deaths-head faces of unending pain and long
+  grasping claws. They kill livestock in darkness and raid during storms. They kidnap people and drag
+  them before the Destroyer, who forces a choice: submit and make a deal, or have your soul
+  devoured. They wail and keen in combat, overcome with sorrow; the player isn't defeating evil but
+  destroying enslaved corpses begging for release. **Talk should allow trying to free them.**
+
+### Other beings
+- **Guardian Lizards:** giant gecko or lizard spirits guarding pools and waterways (the crater lake,
+  springs, the river's source). Territorial; require a proper ritual approach (Sib's advantages
+  apply); powerful bosses if provoked, peaceful if respected.
+- **Giant Clams:** monster clams of the deep; underwater threats once Dama's breathing spell opens
+  the sea. Hazards as much as enemies.
+- **Dream Hunters:** living people who wander the night in trance, meeting spirits of the dead. If
+  they see a living person's spirit, that person will die. One in the village **foresaw Pada's death
+  but couldn't prevent it**.
+- **Sleep Demons:** sit on your chest during nightmares; warded off by verbal rituals known to a wise
+  woman, passed from mother to daughter. Attack through dreams; potentially a unique non-combat
+  encounter type.
+- **Navigator-Lord remnants:** uncertain.
+
+---
+
+## 4. Inferences (assistant's reading; to confirm or correct)
+
+### Real-world roots
+- **Rapa Nui** shapes the First Sailors: the moai with coral eyes; the **Stonemen as the unfinished
+  moai of the Rano Raraku quarry** (carved from tuff, with red scoria topknots); an undeciphered
+  script (First Sailor inscriptions); **Sooty Bird and the Birdman cult** of the sooty tern; a
+  civilization that collapsed.
+- **The Guanche of the Canary Islands** shape the Islanders and the cosmology: a volcanic island
+  dominated by its volcano, a people who mummified their dead, conquered by a metal-armed sea power.
+  **The Destroyer stealing a star into the volcano closely mirrors Guayota**, the demon in Teide who
+  imprisoned the sun god Magec, and **Guayota's servants, the Tibicenas, were demonic black dogs**.
+- **Basque and wider Iberian folklore** seem to shape the local spirits: the Shepherd of the Deer
+  echoes Basajaun, the Stream Maidens the lamiak, the sleep demon Inguma, and the Lady of the Woods,
+  living in two places at once, echoes Mari moving between her mountain homes.
+- **The Dream Hunters** match Corsica's mazzeri.
+- **Spell language:** spell roots are Rapa Nui and modifiers Guanche. Perhaps the **roots are the old
+  First Sailor sacred tongue** and the **modifiers are living Islander speech**: magic as ancient
+  words bent by present-day grammar.
+
+### History in layers
+1. **Cosmic age:** the Star Mother, the Star Child's death and scattering, White Bird's crime and
+   penance, the Destroyer's theft of the star (the volcano), and the Sun and Moon.
+2. **The First Sailors (the Builders):** the Star Child's shooting-star body made flesh; a seafaring
+   civilization that raised the moai, towers, wells and the buried palace. In practice ruled by the
+   **Navigator Lords**, serving or bargaining with the Destroyer through **child sacrifice, homunculi,
+   demon-summoning and binding chains**, with a sacrificed child queen as puppet. Collapsed and was
+   buried by an eruption. Remnants: Stonemen, ancient ghosts, Hags, the wells' snake women, owls on
+   their towers, the Children of the Caves, Tou, and Juda.
+3. **The Islanders (now):** Copper Age, living by negotiated agreements with the Ladies; a third
+   gender priesthood grounded in the genderless Red Bowl and Star Child; the dead as neighbors.
+   Possibly descended from the First Sailors' survivors (see Open Questions).
+4. **The All-Seafarers (arriving):** a Bronze Age sea empire whose theology claims the Red Bowl as
+   their king's father, and who misread island reality through their own myths (releasing the Bull
+   of Water).
+
+### Threads that tie the story together
+- **Homunculi:** the Children of the Caves are discarded First Sailor homunculi, and Yoon's new body
+  is a homunculus built with the same kind of craft. Lasa, a homunculus descendant who doesn't know
+  it, helps build another. The Tou questline likely brings this into the open.
+- **Child sacrifice and the children who survive it:** Tou (sacrificed child queen), the Children of
+  the Caves (discarded children), Yoon (murdered child), the Star Child (the first murdered child),
+  and Falmi (a child grown, not born).
+- **Juda the binder:** he chained the Lady of the Sun and the Bull of Heaven to take the high
+  priesthood and silence his accuser; the snake women in First Sailor wells foreshadow this binding
+  magic. Freeing the bound is a recurring act of justice.
+- **Mirrors:** White Bird ↔ Juda (killer, remorse, consequences); Star Child ↔ Yoon (generative
+  death).
+- **Four domains, four elements (a guess):** Fire ↔ Sun and Destroyer; Water ↔ Red Bowl and sea;
+  Wind ↔ Lady of the Wind; Earth ↔ Lady of the Woods. If intended, element choices for bosses and
+  spirits could follow their domains.
+
+---
+
+## 5. What the lore decides for the game
+
+### Enemy roster by layer
+| Layer | Beings | Talk |
+|-------|--------|------|
+| Island wildlife | Boars, deer, the Great Boar, marsh birds | Animal (Pada, Patience; Stalk) |
+| Forest people | Boar-men, child-fae, Owls of Ill Omen | Sapient/spirit; **directness works, cleverness backfires** (boar-men); Tou may stop the owls |
+| Local spirits | Ghosts, Guardian Lizards, Sleep Demons, Daughters of the Wells | Spirit (Sib's Rite, Yoon's ghost kinship) |
+| First Sailor remnants | Stonemen, ancient ghosts, Hags | **Tou** (Stonemen surrender, ghosts report, Hags conflicted); Yoon (Hags dote on Yoon) |
+| Servants of the Destroyer | Black Hounds, Hunched | Hounds: **cannot talk**. Hunched: **Talk to free them** |
+| All-Seafarers | Soldiers, officers; the Princess's troops | Sapient (Parl, Theenmy; spare children vs. not) |
+| Sea | Giant Clams | None |
+| Great powers | Ladies, their husbands, the Bulls | Story bosses and negotiations |
+
+### Talk system ideas the lore suggests
+- **Boar-men want honesty:** a plain-speaking approach should work and a flattering or deceptive one
+  should backfire. That may mean adding **Flatter / Deceive** approaches (perhaps taught by the
+  Master of Deception) that work on some beings and backfire on others.
+- **Hunched:** a new outcome, **Release** (laying the corpse to rest), as the mercy alternative to
+  destroying them.
+- **Ghosts:** Yoon gets a ghost-kinship bonus (a specialty for Yoon after all, or an enemy
+  `<Talk Instant>`-style affinity).
+
+### Where magic and skills come from
+- **The Master of Deception** teaches priests in exchange for **dreams**: a source for Sib's
+  "self-taught" magic after Juda.
+- **The Shepherd of the Deer** teaches **stealth magic** in exchange for **songs**: stealth for
+  pre-combat encounters (sneaking past or up on visible enemies).
+- **First Sailor inscriptions** and **Tou**: ancient spells.
+- **The wise woman** (sleep-demon wards) and the **Stream Maidens** (botany): healing knowledge and
+  healing items.
+
+### Already connected
+- **Red Bowl idols are the save points** (and the "nearest save point" for defeat rescues).
+- The Great Boar provides **the flesh** for Yoon's body.
+- The Bull of Heaven's bellowing is a **mystery clue** about Juda.
+- The Bull of Water's **hypnosis** maps onto mental ailments (Confused, Fascination).
+
+---
+
+## 6. Open questions
+- **Act numbering:** the lore places the Great Boar and Lasa's body-gathering in "Act 1", while the
+  story outline in concept.md has Act 1 as the combat-free ghost prologue and body-building in Act 2.
+  Which is right?
+- **Are the Islanders descended from the First Sailors,** or later arrivals?
+- **What is the "demon"** Juda tried to summon: a servant of the Destroyer, or something else?
+- **What did the First Sailors' sacrifice industry produce:** homunculi as servants, vessels for
+  demons, an army for the Destroyer?
+- **Do the four elements map onto the four great domains** (section 4)?
+- **What are the Navigator-Lord remnants?**
+- **The island's geography:** biomes, the village, the forests, marsh, desert, volcano, sea routes.
