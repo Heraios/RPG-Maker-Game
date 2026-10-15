@@ -1,0 +1,13 @@
+[
+null,
+{"id":1,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["World_B","","","","","","","",""]},
+{"id":2,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":3,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":4,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":5,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":6,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":7,"flags":[16],"mode":1,"name":"Exterior A","note":"","tilesetNames":["Ext-A1","Ext-A2","Ext-A3","Ext-A4","Ext-A5","Ext-B","Ext-C","",""]},
+{"id":8,"flags":[16],"mode":1,"name":"Interior A","note":"","tilesetNames":["Int-A1","Int-A2","Ext-A3","Int-A4","Int-A5","Int-B","Int-C","",""]},
+{"id":9,"flags":[16],"mode":1,"name":"Overworld","note":"","tilesetNames":["Overworld-A1","Overworld-A2","","","","Overworld-B","Ext-C","",""]},
+{"id":10,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]}
+]
