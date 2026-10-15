@@ -308,7 +308,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Durability | **Condition tiers**: worn weapons turn into weaker items, and bronze never degrades |
 | Weapon swapping | Mid-battle; costs the turn (Theenmy swaps for free) |
 | Party swapping | Mid-battle, in the style of FFX: free, but adds a little Fatigue |
-| Talking | SMT-style conversations with one shared framework for animals, spirits, rituals and sapient enemies |
+| Talking | Hybrid: a mood meter plus optional written lines and scripted moments (see Talk below) |
 | Leveling | **Insight**: gained only from talking, and it never raises damage or teaches skills (see below) |
 
 ### Turn order
@@ -475,6 +475,49 @@ decided):
   EXP, and repeats give little. Harder conversations give more.
 - **Ghost and Human Yoon** (actors 1 and 2) share one Insight value.
 - **Late joiners** (Dama, Theenmy, Falmi, Tou) need a sensible starting Insight. To be decided.
+
+### Talk (design draft)
+**Model:** a hybrid. A **mood meter** runs the mechanics, and enemies can carry short written
+lines plus optional scripted moments (a common event with choices) for important encounters.
+
+**Flow**
+- **Talk** is a main battle command and **takes the speaker's turn** (plus a little Fatigue).
+- It opens a list of **approaches** the speaker can use:
+
+| Approach | Who can use it | Idea |
+|----------|----------------|------|
+| Soothe | Everyone | General calming |
+| Offer | Everyone | Give an item (food, offerings); enemies like or hate specific items |
+| Ask | Everyone | Seek information once the enemy is calm enough |
+| Rite | Ritual knowers (Sib, Juda, Tou...) | Spirits respond to rites, often only the right one |
+| Threaten | Adults (Pada, Dama, Theenmy...) | Some beings respect force, others panic or rage |
+| Stalk | Hunters (Pada...) | Animals only: works toward **Hunted** instead of calm |
+
+- **Mood** runs from **Enraged** through **Hostile**, **Wary** and **Calm** to **Pacified**. Each
+  enemy type reacts to each approach differently (set by note tags, with defaults per talk type:
+  animal, spirit or sapient).
+- **The speaker matters:** their specialty and Insight strengthen their approaches, and
+  Patience passively boosts animal conversations.
+- **Yoon's Insight decides what the player can see:** first the enemy's mood, then which
+  approaches it likes, then its tells.
+- **Enraged:** a badly handled enemy gets stronger and stops listening for a while.
+
+**Outcomes** (each enemy defines which it gives when Pacified):
+- **Pacify:** it leaves the battle.
+- **Information:** a clue, a weakness or lore. It may set a switch for the mystery.
+- **Items:** it gives something, then leaves.
+- **Temporary help:** it heals the party's HP or restores MP, then leaves.
+- **Hunted** (from Stalk, animals only): the animal's actions are disabled for **3 turns**.
+  Suitable characters get a **finishing move that instantly kills a Hunted animal**.
+
+**Battle end:** if every enemy is pacified, hunted down or gone, the battle is won.
+
+**Insight EXP**
+- Comes from successful conversations, using the enemy's EXP value in the database. Battle
+  victories give no EXP.
+- The speaker earns the full amount, active party members a share, and reserve members a
+  smaller share.
+- The first success with each enemy type gives full EXP; repeats give much less.
 
 ### Implementation status
 | Piece | Status |
