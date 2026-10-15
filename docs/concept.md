@@ -304,7 +304,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Weapon swapping | Mid-battle; costs the turn (Theenmy swaps for free) |
 | Party swapping | Mid-battle, in the style of FFX |
 | Talking | SMT-style conversations with one shared framework for animals, spirits, rituals and sapient enemies |
-| Leveling | Gained **only from talking**, and limited in what it does (details to be decided) |
+| Leveling | **Insight**: gained only from talking, and it never raises damage or teaches skills (see below) |
 
 ### Turn order
 - There are no rounds. Each battler moves toward their next turn at a speed based on AGI
@@ -357,6 +357,61 @@ still to be designed.
 - Enemies start each battle at 0. An enemy that can become Weary needs a Rest skill in its
   action list, or it will do nothing once it is Weary.
 
+### Insight (leveling)
+The level is called **Insight**: how well a character understands the world. It is gained only
+by talking, and it makes characters **more resilient and perceptive, never more dangerous**.
+Damage comes from weapons, Yoon's body parts and charms. Skills come from sidequests,
+relationships, inscriptions and the story.
+
+**Shown as a number** ("Insight 7").
+
+**Every character has their own Insight**, used for:
+- **Stats** (per-class growth curves):
+  - **Grows with Insight:** HP, MP, MDF, evasion, resistance to mental states and the Mind
+    element, and slower Fatigue build-up.
+  - **Never grows with Insight:** ATK, MAT and AGI. AGI is excluded because in the turn-order
+    system it decides how often you act, so it would be a hidden damage boost.
+  - **DEF:** left to armor and body parts.
+- **Their specialty conversations**, where their Insight unlocks extra options, better odds or
+  instant peaceful outcomes.
+
+| Character | Specialty (guesses marked ?) |
+|-----------|------------------------------|
+| Sib | Spirits, forest beings, ritual encounters |
+| Pada | Animals |
+| Juda | Priestly and religious encounters |
+| Dama | Islanders, militia, sea creatures? |
+| Parl | All-Seafarer common soldiers, deserters, smugglers |
+| Theenmy | All-Seafarer officers and nobility |
+| Tou | First Sailor beings: Stonemen, Hags, Owls of Ill Omen, ancient ghosts |
+| Falmi | Plants, forest fae, the Lady of the Woods' court |
+| Lasa | Children of the Caves, fae? |
+| Patience | Dogs and animals? |
+| Yoon | No specialty: a generalist |
+
+**Yoon's Insight drives everything else:**
+1. **Perception:** reveals enemy HP, then weaknesses, then mood during conversations. It also
+   lengthens the Turn Order window, and at high Insight may reveal enemies' next actions.
+2. **Comprehension:** in Act 1, NPC dialogue is partly garbled and becomes readable as Insight
+   rises. Later this gives partial understanding of All-Seafarer and First Sailor text (Parl, Tou
+   and Falmi still give full readings).
+3. **Reading people:** extra dialogue options, catching contradictions, spotting lies, and
+   noticing Juda's tells. Insight checks *add* understanding but never lock out anything the plot
+   needs.
+4. **The ghost-or-demon question:** high Insight reveals ambiguous hints without answering it.
+
+**Caps:** Yoon's is high and everyone else's is low, so each of their levels matters.
+
+**Gaining Insight:**
+- **In battle:** whoever's turn it is does the talking, so swapping the right specialist in
+  becomes a tactic. Suggested split: the speaker earns full EXP, active party members a share,
+  and benched members a smaller share.
+- **Outside battle** (interrogations, NPCs, story and relationship scenes): **Yoon only**.
+- **Avoiding grinding:** the first conversation with a new species, spirit or person gives full
+  EXP, and repeats give little. Harder conversations give more.
+- **Ghost and Human Yoon** (actors 1 and 2) share one Insight value.
+- **Late joiners** (Dama, Theenmy, Falmi, Tou) need a sensible starting Insight. To be decided.
+
 ### Implementation status
 | Piece | Status |
 |-------|--------|
@@ -366,7 +421,7 @@ still to be designed.
 | Party swapping | Not started |
 | Durability tiers | Not started |
 | Talking | Not started |
-| Leveling from talking | Waiting on design |
+| Insight (leveling) | Designed; "Level" renamed to Insight. Systems not started |
 
 ### Current database (as uploaded)
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.
