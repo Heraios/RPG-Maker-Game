@@ -355,7 +355,11 @@ still to be designed.
   (the "Swap Weapon" action; give it a `<Turn Cost>` to make it quicker or slower).
 - `<Free Swap>` (Theenmy, set on his actor): swap once per turn without using it, then act.
 - **Wear tiers:** `<Degrades To: id>` and `<Wear Chance: %>` on weapons and armor. A worn item
-  turns into the next tier, and `<Degrades To: 0>` means it breaks and is gone.
+  turns into the next tier, and `<Degrades To: 0>` means it breaks.
+- **What's left when it breaks depends on the material:**
+  - **Stone, bone and wood** disappear.
+  - **Copper** (metal) leaves an unusable broken item in the inventory that can be **repaired or
+    sold**: `<Breaks Into: item id>`.
   - Weapons wear when a skill uses one of their moves. Punch never wears weapons.
   - Armor wears when its wearer takes physical damage.
   - Items without the tags (bronze, unique gear) never wear.
@@ -365,7 +369,7 @@ still to be designed.
 |--------|-----------|----------------|
 | Flint Knife | Chipped Flint Knife, then breaks | 15%, then 20% |
 | Obsidian Spear | Cracked Obsidian Spear, then breaks | 12%, then 20% |
-| Copper Khopesh | Bent Copper Khopesh, then breaks | 10%, then 15% |
+| Copper Khopesh | Bent Copper Khopesh, then breaks into a Broken Copper Khopesh item | 10%, then 15% |
 | Stone Axe | Chipped Stone Axe, then breaks | 10%, then 15% |
 | Bronze Leaf Blade | never wears | — |
 

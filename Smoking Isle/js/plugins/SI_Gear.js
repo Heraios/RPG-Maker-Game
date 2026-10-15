@@ -23,6 +23,10 @@
  * @desc %1 = character, %2 = item.
  * @default %1's %2 broke!
  *
+ * @param Broken Kept Message
+ * @desc When the remains are kept. %1 = character, %2 = item, %3 = remains.
+ * @default %1's %2 broke! Kept the %3.
+ *
  * @help
  * Requires SI_CombatCore (place this plugin below it).
  *
@@ -33,6 +37,11 @@
  *   <Degrades To: 7>    Becomes weapon (or armor) #7 when it wears out.
  *                       Use 0 for "breaks and is gone".
  *   <Wear Chance: 15>   % chance to wear out each time it is used.
+ *   <Breaks Into: 5>    When it breaks (Degrades To: 0), item #5 is added to
+ *                       the inventory instead of nothing being left. Use it
+ *                       for metal (copper) gear: an unusable broken item that
+ *                       can be sold or repaired. Without it, broken stone,
+ *                       bone and wood gear simply disappears.
  *
  * Items without <Degrades To> never wear (bronze, unique items...).
  *
@@ -67,6 +76,7 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
     $.swapCommand = String(params['Swap Command'] || 'Swap');
     $.wornMessage = String(params['Worn Message'] || '%1\'s %2 wore down into %3!');
     $.brokenMessage = String(params['Broken Message'] || '%1\'s %2 broke!');
+    $.brokenKeptMessage = String(params['Broken Kept Message'] || '%1\'s %2 broke! Kept the %3.');
 
     //-------------------------------------------------------------------------
     // Note tags
@@ -81,8 +91,10 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
                     if (!obj) return;
                     var to = /<Degrades To:\s*(\d+)>/i.exec(obj.note);
                     var chance = /<Wear Chance:\s*(\d+)>/i.exec(obj.note);
+                    var remains = /<Breaks Into:\s*(\d+)>/i.exec(obj.note);
                     obj.siDegradesTo = to ? Number(to[1]) : -1;
                     obj.siWearChance = chance ? Number(chance[1]) : 0;
+                    obj.siBreaksInto = remains ? Number(remains[1]) : 0;
                 });
             });
             $._notesParsed = true;
@@ -106,8 +118,15 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
         var next = item.siDegradesTo > 0 ? list[item.siDegradesTo] : null;
         this._equips[slotId].setObject(next);
         this.refresh();
-        return next ? $.wornMessage.format(this.name(), item.name, next.name)
-                    : $.brokenMessage.format(this.name(), item.name);
+        if (next) {
+            return $.wornMessage.format(this.name(), item.name, next.name);
+        }
+        var remains = item.siBreaksInto > 0 ? $dataItems[item.siBreaksInto] : null;
+        if (remains) {
+            $gameParty.gainItem(remains, 1);
+            return $.brokenKeptMessage.format(this.name(), item.name, remains.name);
+        }
+        return $.brokenMessage.format(this.name(), item.name);
     };
 
     // The equip slot of the weapon that provided a move for this skill, or -1.

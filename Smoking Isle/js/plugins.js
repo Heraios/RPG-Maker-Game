@@ -6,5 +6,5 @@ var $plugins =
 {"name":"MadeWithMv","status":true,"description":"Show a Splash Screen \"Made with MV\" and/or a Custom Splash Screen before going to main screen.","parameters":{"Show Made With MV":"true","Made with MV Image":"MadeWithMv","Show Custom Splash":"false","Custom Image":"","Fade Out Time":"120","Fade In Time":"120","Wait Time":"160"}},
 {"name":"SI_CombatCore","status":true,"description":"Smoking Isle core combat: weapon moves, Punch, and Fatigue.","parameters":{"Weary State":"11","Weary Recovery":"50","Fatigue From Damage":"false","Recover All Clears Fatigue":"true","Hide Unusable Moves In Battle":"true"}},
 {"name":"SI_TurnOrder","status":true,"description":"Smoking Isle: FFX-style turn order. Faster battlers act more often.","parameters":{"Speed Formula":"a.agi + 30","Window Width":"170"}},
-{"name":"SI_Gear","status":true,"description":"Smoking Isle: weapon swapping in battle and equipment wear tiers.","parameters":{"Swap Skill":"15","Swap Command":"Swap","Worn Message":"%1's %2 wore down into %3!","Broken Message":"%1's %2 broke!"}}
+{"name":"SI_Gear","status":true,"description":"Smoking Isle: weapon swapping in battle and equipment wear tiers.","parameters":{"Swap Skill":"15","Swap Command":"Swap","Worn Message":"%1's %2 wore down into %3!","Broken Message":"%1's %2 broke!","Broken Kept Message":"%1's %2 broke! Kept the %3."}}
 ];
