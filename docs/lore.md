@@ -397,6 +397,58 @@ Despite having no bronze, the Islanders have **electricity, telegraphs and print
 
 ---
 
+## 3b. The First Sailors
+
+### A world-spanning empire
+The First Sailors (the Builders) ruled a powerful **world-spanning empire**. Their elite, the
+**Navigator Lords**, had achieved **true immortality** through magic. Believing **the soul lives in
+the eyes**, each Navigator Lord placed **enchanted coral eyes in their moai** as a phylactery. They
+stayed in the prime of physical health and could have children normally.
+
+### The math, and the Crew
+They **did the math**: a race of true immortals having children at normal rates would strip the
+earth. So they bred deliberately slowly, as far as their technology allowed, and carried out **mass
+cullings of children**. They euphemistically called the children **Crew**, used them as slaves, and
+**sacrificed them around age 9–10 (Yoon's age)**, when they believed innocence began to end. A
+Crewmember was only allowed to join the Navigators **when a Navigator Lord died**.
+
+The reason is understandable, and still monstrous.
+
+### Queen Tou
+The last non-puppet monarch died with a single heir: a nine-year-old girl, whom the court sacrificed
+and placed into an articulated wooden doll, her soul held in **coral eyes in a moai in her throne
+room**. Queen Tou was kept as a **sacred innocent puppet ruler** and lived a pampered existence.
+
+- The Navigator Lords told her the doll body was **life-preserving**, because she was deathly ill.
+- They fed her **false news** of the outside world and **fake disasters** for her to sign decrees
+  to "solve", and a rotating pool of **"noble children" to foster** who would "go home" after a
+  year or two.
+- Over hundreds of years a bored court invented absurdly varied and detailed petitions and crises,
+  and eventually made the "results" of her past decrees build on each other realistically. She was
+  effectively **role-playing a ruler for centuries**, which ironically makes her **a good ruler for
+  the Children of the Caves**.
+
+### The fall
+The empire was overthrown by **a mass slave revolt of children** and their various creations, who
+**shattered the statues' eyes** (hopefully all of them). These children, twisted by magic and
+experiments, became **the Children of the Caves**. Tou's palace was buried by an eruption avalanche,
+and she slept, unaware, for thousands of years, still "ruling".
+
+When bored Children of the Caves dig her up, they think she's neat and start "serving" her. **With
+the player's help she eventually learns what happened**, and is horrified: she knew nothing of what
+her civilization really did.
+
+### Glyph magic
+**Spell names are glyph names**, and spells are cast by **reading the glyph aloud**. The
+All-Seafarers read them **from scrolls**; the Islanders read them **from their own skin** (their
+tattoos).
+
+### Demons
+**Demons are servants and creations of the Destroyer**, as the People of the Forest are of the
+Ladies, but greater, because the Destroyer is a far more powerful god of an **earlier generation**.
+
+---
+
 ## 4. Inferences (assistant's reading; to confirm or correct)
 
 ### Real-world roots
@@ -420,11 +472,11 @@ Despite having no bronze, the Islanders have **electricity, telegraphs and print
 ### History in layers
 1. **Cosmic age:** the Star Mother, the Star Child's death and scattering, White Bird's crime and
    penance, the Destroyer's theft of the star (the volcano), and the Sun and Moon.
-2. **The First Sailors (the Builders):** the Star Child's shooting-star body made flesh; a seafaring
-   civilization that raised the moai, towers, wells and the buried palace. In practice ruled by the
-   **Navigator Lords**, serving or bargaining with the Destroyer through **child sacrifice, homunculi,
-   demon-summoning and binding chains**, with a sacrificed child queen as puppet. Collapsed and was
-   buried by an eruption. Remnants: Stonemen, ancient ghosts, Hags, the wells' snake women, owls on
+2. **The First Sailors (the Builders):** the Star Child's shooting-star body made flesh; a
+   world-spanning empire ruled by immortal **Navigator Lords** whose souls live in coral moai eyes.
+   Culled their own children (the Crew) to keep an immortal population in check, with a sacrificed
+   child queen as puppet. **Overthrown by a children's revolt** that shattered the moai eyes; the
+   palace was buried by an eruption. Remnants: Stonemen, ancient ghosts, Hags, the wells' snake women, owls on
    their towers, the Children of the Caves, Tou, and Juda.
 3. **The Islanders (now):** arrived centuries after the First Sailors vanished. Copper Age
    metallurgy but electrochemical technology; living by negotiated agreements with the Ladies; a
@@ -516,6 +568,29 @@ Despite having no bronze, the Islanders have **electricity, telegraphs and print
   dye trade are a likely reason for the invasion.
 - **Food items** from the crops and herds: bread, lentil stew, wine, cheese.
 
+### From the First Sailors (extrapolations to confirm)
+- **Juda's survival is explained.** He burns to ash in Act 3 and returns in Act 5: as a Navigator
+  Lord, his soul lives in **coral eyes in a moai that survived the revolt**. Killing him for good in
+  Act 6 means **finding and destroying his moai's eyes**: a natural Act 6 quest, and a boss with a
+  "Remote Body" like Tou's until the eyes are broken.
+- **The Navigator-Lord remnants** are likely **souls in moai whose eyes were not all shattered**: the
+  "coral eyes watching" behind the Stonemen. Each surviving moai is a potential hidden boss or
+  secret, and a threat Juda could wake.
+- **Yoon's age is the Crew sacrifice age.** Juda murdered a child at exactly the age his
+  civilization culled them: he is still practicing the old rite.
+- **Tou's decrees as a mechanic:** she spent centuries issuing decrees, so a unique battle command
+  (issuing a "decree" as a party buff or an order to First Sailor beings) and an overworld one
+  (directing the Children of the Caves to dig, scout or fetch) would fit her.
+- **Spells as glyphs: learning = acquiring glyphs.**
+  - **Islanders** gain spells by being **tattooed**: permanent, limited by skin and by a priest or
+    tattooist who knows the glyph.
+  - **All-Seafarers** (Theenmy, Parl) use **scrolls**: carried, swappable, and possibly destroyed by
+    Burn damage.
+  - **Tou** knows First Sailor glyphs perfectly (and has no skin: carved into her doll?).
+  - **Yoon's "Infernal" skills** could be **Destroyer glyphs**: the demon in Yoon showing through.
+- **Demons and Yoon:** if Yoon is a demon, Yoon is a creation of the Destroyer, which is why the
+  Hags (demon-possessed) recognize kin and dote on Yoon.
+
 ### Already connected
 - **Red Bowl idols are the save points** (and the "nearest save point" for defeat rescues).
 - The Great Boar provides **the flesh** for Yoon's body.
@@ -526,8 +601,6 @@ Despite having no bronze, the Islanders have **electricity, telegraphs and print
 
 ## 6. Open questions
 - **What is the "demon"** Juda tried to summon: a servant of the Destroyer, or something else?
-- **What did the First Sailors' sacrifice industry produce:** homunculi as servants, vessels for
-  demons, an army for the Destroyer?
 - **Do the four elements map onto the four great domains** (section 4)?
 - **What are the Navigator-Lord remnants?**
 - **The island's geography:** biomes, the village, the forests, marsh, desert, volcano, sea routes.
