@@ -427,7 +427,7 @@ sealed types (e.g. while Weary) are greyed out.
 necklaces), **Shoulders** (capes, cloaks), **Body** (shirts), **Cuirass** (chest armor), **Arms**
 (armlets, bracelets, vambraces), **Left Hand** and **Right Hand** (gloves, rings), **Legs** (pants,
 skirts), **Greaves** (leg armor), **Feet** (shoes, boots), **Melee**, **Ranged**, **Offhand**
-(shields or a knife), **Accessory 1–3**, then **Codex** (All-Seafarers) or
+(shields or a knife), **Charm 1–3** (carried or tied-on charms, idols, pouches, belts, earrings and piercings, gadgets like the Voltaic Pile), then **Codex** (All-Seafarers) or
 **Tattoo 1–8** (Islanders).
 - A slot only offers what the class may equip. `<Equip Slots: ...>` gives a character a custom list:
   the **Ghost has none**; **Patience** has only a **Collar** (a Neck slot; collars are their own armor

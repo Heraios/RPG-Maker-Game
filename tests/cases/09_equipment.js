@@ -39,8 +39,8 @@ module.exports = {
             return out;
         });
         t.eq(r.sibNames, 'Head,Neck,Shoulders,Body,Cuirass,Arms,Left Hand,Right Hand,Legs,Greaves,Feet,Melee,Ranged,Offhand,' +
-            'Accessory 1,Accessory 2,Accessory 3,Tattoo 1,Tattoo 2,Tattoo 3,Tattoo 4,Tattoo 5,Tattoo 6,Tattoo 7,Tattoo 8', 'Sib\'s slot list');
-        t.eq(r.thNames, 'Accessory 3,Codex', 'Theenmy ends with a codex slot and no tattoos');
+            'Charm 1,Charm 2,Charm 3,Tattoo 1,Tattoo 2,Tattoo 3,Tattoo 4,Tattoo 5,Tattoo 6,Tattoo 7,Tattoo 8', 'Sib\'s slot list');
+        t.eq(r.thNames, 'Charm 3,Codex', 'Theenmy ends with a codex slot and no tattoos');
         t.eq(r.sibRing, 'Ring', 'the ring starts in the Left Hand');
         t.eq(r.sibTattoos, 2, 'Sib starts with two tattoos');
         t.eq(r.judaTattoos, 5, 'Juda starts with five tattoos');

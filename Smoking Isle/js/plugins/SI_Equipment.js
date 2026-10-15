@@ -14,7 +14,7 @@
  *
  * @param Slot Names
  * @desc Names for repeated slots, as type: name, name; type: ...
- * Other repeated slots are numbered (Accessory 1, Accessory 2...).
+ * Other repeated slots are numbered (Charm 1, Charm 2...).
  * @default 13: Left Hand, Right Hand
  *
  * @param Offhand Equip Type
@@ -41,7 +41,7 @@
  *
  * Every character gets the slots in Slot Order (default: Head, Neck,
  * Shoulders, Body, Cuirass, Arms, Left Hand, Right Hand, Legs, Greaves,
- * Feet, Melee, Ranged, Offhand, Accessory 1-3), then SI_Glyphs adds the codex
+ * Feet, Melee, Ranged, Offhand, Charm 1-3), then SI_Glyphs adds the codex
  * and tattoo slots. A slot only offers what the class may equip (Traits >
  * Equip Weapon / Equip Armor).
  *
