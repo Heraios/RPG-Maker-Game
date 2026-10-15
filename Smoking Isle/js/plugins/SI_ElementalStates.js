@@ -145,6 +145,10 @@ SmokingIsle.ElementalStates = SmokingIsle.ElementalStates || {};
         }
         if ($.has(target, rule.upgrade)) {
             target.removeState($.S[rule.upgrade]);
+            // An upgrade isn't a recovery: don't show the base state's "wears off" line.
+            var removed = target.result().removedStates;
+            var i = removed.indexOf($.S[rule.upgrade]);
+            if (i >= 0) removed.splice(i, 1);
             $.give(target, $.UPGRADE[rule.upgrade]);
         }
         if (!$.has(target, $.UPGRADE[rule.inflict])) {

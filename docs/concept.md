@@ -954,7 +954,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
-| Automated tests | `tests/` (25 tests, about 250 checks; see tests/README.md) |
+| Automated tests | `tests/` (26 tests, about 260 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

@@ -70,7 +70,7 @@ module.exports = {
             const A = id => $gameActors.actor(id);
             const yoon = A(2), sib = A(3), lasa = A(4), patience = A(12);
             const fresh = id => { const e = new Game_Enemy(id, 0, 0); $gameTroop._enemies.push(e); return e; };
-            const hit = (a, e) => { const x = new Game_Action(a); x.setSkill(1); e.clearResult(); e.setHp(e.mhp); x.apply(e); };
+            const hit = (a, e) => { const x = new Game_Action(a); x.setSkill(1); e.clearResult(); e.setHp(e.mhp); const rnd = Math.random; Math.random = () => 0.5; x.apply(e); Math.random = rnd; };   // never misses
             const out = {};
             const m = fresh(4); m._siMood = 50; hit(yoon, m); out.afterHit = m.talkMood();
             for (let i = 0; i < 10 && !m.isEnraged(); i++) hit(yoon, m);

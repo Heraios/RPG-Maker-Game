@@ -61,5 +61,40 @@ module.exports = {
         t.eq(r[3], 'Feverish,Steam,Wet+EXTRA', 'water washes off Enflamed into Steam, extra turn');
         t.eq(r[4], 'Burdened,Grounded,Sodden,Steam+EXTRA', 'earth upgrades Wet and purges Feverish, extra turn');
         t.eq(r[5], 'Cracked,Grounded,Smoldering,Sodden,Steam', 'fire purges Burdened into Cracked');
+    },
+
+    'elemental states over real turns: ticking, skipping, seals, messages and extra turns': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const out = {}, e = $gameTroop.members()[0], sib = $gameActors.actor(3);
+            e.addParam(0, 1910); e.setHp(e.mhp);   // 2000 HP
+            const ownTurn = () => { e.onCtbTurnStart(); const skip = BattleManager.ctbShouldSkipTurn(e); e.onTurnEnd(); return skip; };
+            e.addState(14); const hp0 = e.hp, ticks = [];
+            for (let i = 0, prev = hp0; i < 4; i++) { ownTurn(); ticks.push(prev - e.hp); prev = e.hp; }
+            out.smolder = ticks.join(',') + (e.isStateAffected(14) ? ' still' : ' gone');
+            e.setHp(e.mhp); e.addState(15); out.enflamedSkips = [ownTurn(), ownTurn(), ownTurn()].join(',');
+            e.clearStates(); e.addState(19); out.miredStrike = e.canUse($dataSkills[24]);
+            e.clearStates(); e.addState(14);
+            const air = new Game_Action(sib); air.setSkill(68); e.clearResult(); air.apply(e);
+            out.upgradeMsgs = e.result().addedStates.map(id => $dataStates[id].name).join(',') + ' / removed: ' + e.result().removedStates.map(id => $dataStates[id].name).join(',');
+            return out;
+        });
+        t.eq(r.smolder, '100,100,100,0 gone', 'Smoldering takes 5% on each of 3 own turns, then ends');
+        t.eq(r.enflamedSkips, 'true,false,true', 'Enflamed loses every other turn');
+        t.eq(r.miredStrike, false, "a Mired enemy can't Strike");
+        t.eq(r.upgradeMsgs, 'Enflamed,Disoriented / removed: ', 'an upgrade shows no "wears off" line for the base state');
+
+        // A live turn: removing Mired with fire hands the caster the very next turn.
+        t.eq(await h.toCommand(), 'input', 'reached a command menu');
+        const first = await h.eval(() => {
+            const a = BattleManager.actor(), e = $gameTroop.members()[0], sc = SceneManager._scene;
+            e.addState(19); a.learnSkill(56); a.setMp(99);
+            const act = a.inputtingAction(); act.setSkill(56); act.setTarget(0);
+            sc._actorCommandWindow.deactivate(); sc.selectNextCommand(); return a.name();
+        });
+        t.eq(await h.toCommand(), 'input', 'the battle reached the next command menu');
+        const next = await h.eval(() => ({ name: BattleManager.actor().name(), cracked: $gameTroop.members()[0].isStateAffected(22) }));
+        t.ok(next.cracked, 'fire on Mired leaves Cracked');
+        t.eq(next.name, first, 'the caster acts again at once');
     }
 };
