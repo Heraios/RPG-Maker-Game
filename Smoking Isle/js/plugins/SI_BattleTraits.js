@@ -3,7 +3,7 @@
 //=============================================================================
 
 /*:
- * @plugindesc Smoking Isle: character-specific battle rules (adult protection, Tou's revival).
+ * @plugindesc Smoking Isle: character-specific battle rules (adult protection, Tou's revival, sparing children).
  * @author Smoking Isle
  *
  * @param Protection Threshold
@@ -28,6 +28,15 @@
  * in the battle party may take the hit instead (MV's "X protected Y!"
  * message). The adult must be able to move. Adults are tried from the
  * highest chance down; only one protects per hit.
+ *
+ * ============================================================================
+ * Sparing children
+ * ============================================================================
+ * Actor note:   <Child>             counts as a child for these rules.
+ * Enemy note:   <Spares Children>   won't use harmful actions on children
+ *                                   unless it is Enraged (SI_Talk). With only
+ *                                   children left, it uses non-harmful
+ *                                   actions (talk, waiting) instead.
  *
  * ============================================================================
  * Remote body (Tou)
@@ -92,6 +101,68 @@ SmokingIsle.BattleTraits = SmokingIsle.BattleTraits || {};
             return protector;
         }
         return _BattleManager_applySubstitute.call(this, target);
+    };
+
+    //-------------------------------------------------------------------------
+    // Sparing children
+    //-------------------------------------------------------------------------
+
+    Game_Actor.prototype.isChild = function() {
+        return /<Child>/i.test(this.actor().note);
+    };
+
+    Game_Enemy.prototype.sparesChildren = function() {
+        if (!/<Spares Children>/i.test(this.enemy().note)) return false;
+        return !(this.isEnraged && this.isEnraged());
+    };
+
+    $.spareablePool = function(unit) {
+        return unit.aliveMembers().filter(function(member) {
+            return !(member.isActor() && member.isChild());
+        });
+    };
+
+    $.isHarmful = function(item) {
+        return SmokingIsle.Talk ? SmokingIsle.Talk.isHostileSkill(item)
+                                : !!item && [1, 2, 5, 6].indexOf(item.damage.type) >= 0;
+    };
+
+    var _Game_Enemy_isActionValid = Game_Enemy.prototype.isActionValid;
+    Game_Enemy.prototype.isActionValid = function(action) {
+        if (!_Game_Enemy_isActionValid.call(this, action)) return false;
+        var skill = $dataSkills[action.skillId];
+        if (this.sparesChildren() && $.isHarmful(skill) &&
+                $.spareablePool(this.opponentsUnit()).length === 0) {
+            return false;
+        }
+        return true;
+    };
+
+    $.pickByTgr = function(pool) {
+        var sum = pool.reduce(function(r, m) { return r + m.tgr; }, 0);
+        var roll = Math.random() * sum;
+        for (var i = 0; i < pool.length; i++) {
+            roll -= pool[i].tgr;
+            if (roll <= 0) return pool[i];
+        }
+        return pool[pool.length - 1];
+    };
+
+    var _Game_Action_targetsForOpponents = Game_Action.prototype.targetsForOpponents;
+    Game_Action.prototype.targetsForOpponents = function() {
+        var subject = this.subject();
+        if (!subject.isEnemy() || !subject.sparesChildren() || !$.isHarmful(this.item())) {
+            return _Game_Action_targetsForOpponents.call(this);
+        }
+        var pool = $.spareablePool(this.opponentsUnit());
+        if (pool.length === 0) return [];
+        if (this.isForRandom()) {
+            var targets = [];
+            for (var i = 0; i < this.numTargets(); i++) targets.push($.pickByTgr(pool));
+            return targets;
+        }
+        if (this.isForOne()) return [$.pickByTgr(pool)];
+        return pool;
     };
 
     //-------------------------------------------------------------------------

@@ -32,6 +32,11 @@
  * @desc Extra effect per point of the speaker's Insight (0.03 = +3%).
  * @default 0.03
  *
+ * @param Wait Skill
+ * @type skill
+ * @desc Used by an enemy with nothing it is willing to do (e.g. Calm).
+ * @default 7
+ *
  * @param Patience Actor
  * @type actor
  * @desc Pseudo party member whose presence helps with animals.
@@ -74,7 +79,10 @@
  *   <Talk Type: animal>         animal, spirit or sapient. Without this the
  *                               enemy doesn't respond to Talk.
  *   <Talk Tags: forest, sea>    extra kinds, matched against specialties.
- *   <Talk Mood: 25>             starting mood, 0-100 (default 25).
+ *   <Talk Mood: 25>             starting mood, 0-100 (default 25), or a
+ *                               word: Hostile, Wary, Calm.
+ *   <Talk Instant: 9>           actor ids whose Talk always succeeds at once
+ *                               (e.g. Stonemen surrender to Tou).
  *   <Talk Soothe: 15>           mood change for an approach, overriding the
  *                               type default (any approach name works).
  *   <Talk Likes: 1, 5>          item ids it loves being offered (x2).
@@ -98,6 +106,20 @@
  * Mood: Enraged (0) - Hostile - Wary (35+) - Calm (70+) - Pacified (100).
  * An Enraged enemy gets the Enraged state and won't listen until it wears
  * off, then calms back down to Hostile.
+ *
+ * Calm (and calmer) enemies don't use damaging actions; with nothing else
+ * to do they use the Wait Skill.
+ *
+ * ============================================================================
+ * Enemy talk
+ * ============================================================================
+ * Enemies can have their own talk skills (e.g. offering to let the party
+ * leave, demanding surrender): give the skill a Common Event effect and
+ * write the conversation there (Show Choices, Abort Battle, switches...).
+ *
+ * Skill note (enemy actions only):
+ *   <Talk Min Mood: 35>   only used when its mood is at least 35
+ *   <Talk Max Mood: 69>   only used when its mood is at most 69
  *
  * Stalk only works on animals and builds toward the Hunted state instead
  * of calm. Use b.isHunted() in a finishing skill's damage formula.
@@ -135,6 +157,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     $.moodInsight = Number(params['Mood Insight'] || 0);
     $.specialtyBonus = Number(params['Specialty Bonus'] || 0.5);
     $.insightBonus = Number(params['Insight Bonus'] || 0.03);
+    $.waitSkillId = Number(params['Wait Skill'] || 0);
     $.patienceActorId = Number(params['Patience Actor'] || 0);
     $.patienceBonus = Number(params['Patience Bonus'] || 0.25);
     $.repeatExpRate = Number(params['Repeat EXP Rate'] || 0.2);
@@ -176,6 +199,10 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
                 if (!skill) return;
                 skill.siApproach = ($.tag(skill.note, 'Talk Approach') || '').toLowerCase() || null;
                 skill.siRite = ($.tag(skill.note, 'Talk Rite') || '').toLowerCase() || null;
+                var minMood = $.tag(skill.note, 'Talk Min Mood');
+                var maxMood = $.tag(skill.note, 'Talk Max Mood');
+                skill.siMinMood = minMood !== null ? Number(minMood) : null;
+                skill.siMaxMood = maxMood !== null ? Number(maxMood) : null;
             });
             $dataEnemies.forEach(function(enemy) {
                 if (enemy) $.parseEnemy(enemy);
@@ -196,7 +223,9 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         t.type = ($.tag(note, 'Talk Type') || '').toLowerCase() || null;
         t.kinds = (t.type ? [t.type] : []).concat($.list($.tag(note, 'Talk Tags')));
         var mood = $.tag(note, 'Talk Mood');
-        t.mood = mood !== null ? Number(mood) : 25;
+        var words = { hostile: 20, wary: 50, calm: 80 };
+        t.mood = mood === null ? 25 : (words[mood.toLowerCase()] !== undefined ? words[mood.toLowerCase()] : Number(mood));
+        t.instant = $.list($.tag(note, 'Talk Instant')).map(Number);
         t.overrides = {};
         ['soothe', 'offer', 'ask', 'rite', 'threaten', 'plead', 'stalk'].forEach(function(a) {
             var v = $.tag(note, 'Talk ' + a);
@@ -355,6 +384,17 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
             enemy._siMood = $.CALM_AFTER_RAGE;
         }
 
+        var speaker = this.subject();
+        if (speaker.isActor() && data.instant && data.instant.indexOf(speaker.actorId()) >= 0 &&
+                approach !== 'stalk') {
+            this.talkSay(enemy, '%1 yields to %2 at once.'.format(name, speaker.name()));
+            if (data.lines.Pacified) this.talkSay(enemy, '%1: "%2"'.format(name, data.lines.Pacified));
+            enemy._siMood = 100;
+            this.applyOutcomes(enemy);
+            this.talkSuccess(enemy);
+            this.talkLeave(enemy);
+            return;
+        }
         if (approach === 'stalk') {
             this.applyStalk(enemy);
             return;
@@ -494,6 +534,44 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     Game_System.prototype.siTalkRecord = function() {
         if (!this._siTalkRecord) this._siTalkRecord = {};
         return this._siTalkRecord;
+    };
+
+    //-------------------------------------------------------------------------
+    // Enemy behaviour by mood
+    //-------------------------------------------------------------------------
+
+    $.isHarmful = function(skill) {
+        if (!skill || [1, 2, 5, 6].indexOf(skill.damage.type) >= 0) return !!skill;
+        return skill.effects.some(function(e) {
+            return e.code === Game_Action.EFFECT_ADD_STATE || e.code === Game_Action.EFFECT_ADD_DEBUFF;
+        });
+    };
+
+    $.isHostileSkill = function(skill) {
+        return !!skill && [1, 2, 3, 4, 5, 6].indexOf(skill.scope) >= 0 && $.isHarmful(skill);
+    };
+
+    Game_Enemy.prototype.isCalm = function() {
+        return !!this.talkData().type && this.talkMood() >= 70 && !this.isEnraged();
+    };
+
+    var _Game_Enemy_isActionValid = Game_Enemy.prototype.isActionValid;
+    Game_Enemy.prototype.isActionValid = function(action) {
+        if (!_Game_Enemy_isActionValid.call(this, action)) return false;
+        var skill = $dataSkills[action.skillId];
+        if (skill.siMinMood !== null && skill.siMinMood !== undefined && this.talkMood() < skill.siMinMood) return false;
+        if (skill.siMaxMood !== null && skill.siMaxMood !== undefined && this.talkMood() > skill.siMaxMood) return false;
+        if (this.isCalm() && $.isHostileSkill(skill)) return false;
+        return true;
+    };
+
+    // An enemy with nothing it is willing to do waits instead of silently skipping.
+    var _Game_Enemy_makeActions = Game_Enemy.prototype.makeActions;
+    Game_Enemy.prototype.makeActions = function() {
+        _Game_Enemy_makeActions.call(this);
+        if ($.waitSkillId > 0 && this.numActions() > 0 && !this.action(0).item()) {
+            this.action(0).setSkill($.waitSkillId);
+        }
     };
 
     // Insight only comes from talking.

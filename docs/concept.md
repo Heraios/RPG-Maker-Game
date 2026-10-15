@@ -527,6 +527,17 @@ lines plus optional scripted moments (a common event with choices) for important
   approaches it likes, then its tells.
 - **Enraged:** a badly handled enemy gets stronger and stops listening for a while.
 
+**Enemy moods and behaviour**
+- Enemies can **start calmer** (`<Talk Mood: Wary>` or a number); the default is Hostile (25).
+- **Calm enemies don't attack.** They only use non-harmful actions, or wait.
+- **Enemies can talk too:** a talk skill runs a common event, written like any event (choices,
+  switches, Abort Battle). Enemy skills can require a mood (`<Talk Min Mood: 35>`).
+  - **Offer Passage** (spirits, once Wary): leave peacefully, which ends the battle, or stay.
+  - **Demand Surrender** (soldiers): surrender, which turns on the "Surrendered" switch and ends
+    the battle, or refuse. This could also be the "surrender to Theenmy" recruitment path.
+- **Instant success:** some enemies yield at once to a specific speaker (`<Talk Instant: 9>`).
+  **Stonemen surrender immediately when Tou talks to them.**
+
 **Outcomes** (each enemy defines which it gives when Pacified):
 - **Pacify:** it leaves the battle.
 - **Information:** a clue, a weakness or lore. It may set a switch for the mystery.
@@ -580,17 +591,23 @@ never protected. Starting chances, to be refined:
 | Dama | 60% | 60% | 50% | 50% |
 | Theenmy | 70% | 70% | 70% | 70% |
 
-**Who shares the party with whom** (draft, to confirm):
+**Who shares the party with whom:**
 
 | Adult | Present | Children alongside |
 |-------|---------|--------------------|
-| Pada | Act 2 to the mountain (Act 3) | Yoon, Sib (and Lasa, not protected) |
-| Juda | Act 3 (guest) | Yoon, Sib (Lasa?) |
+| Pada | Act 2 to the mountain (Act 3) | Yoon, Sib (and Lasa in Act 2, not protected) |
+| Juda | Act 3 (guest) | Yoon, Sib |
 | Dama | End of Act 3 onward | Yoon, Sib, Falmi, Tou |
 | Theenmy | End of Act 4 onward | Yoon, Sib, Falmi, Tou |
 
-Falmi and Tou unlock in Act 4, after Pada and Juda are gone. Open question: is Lasa still with the
-party in Acts 3 and later?
+**Lasa leaves when Juda joins.** The Act 3 party is **Yoon, Sib, Pada, Juda and Patience**. Falmi
+and Tou unlock in Act 4, after Pada and Juda are gone.
+
+**Children** (`<Child>`): Yoon (both forms), Sib, Falmi, Tou. Not Lasa.
+
+**Sparing children:** Theenmy's soldiers (`<Spares Children>`) don't use harmful actions on
+children **unless they're Enraged**. With only children standing, they fall back on talk
+(e.g. demanding surrender) or waiting. The Princess's soldiers have no such rule.
 
 **Tou's remote body:** when knocked out, she revives after **2 turns (anyone's)** at **50% HP**,
 with Fatigue reset (`<Remote Body: 2, 50>`).
@@ -655,7 +672,8 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Talk | Done: `SI_Talk.js` |
 | Patience (pseudo party member) | Done: `SI_PseudoMember.js` |
 | Balance pass | First pass done (see Balance) |
-| Adult protection, Tou's revival | Done: `SI_BattleTraits.js` |
+| Adult protection, Tou's revival, sparing children | Done: `SI_BattleTraits.js` |
+| Enemy moods, enemy talk, instant talk | Done: `SI_Talk.js` |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
