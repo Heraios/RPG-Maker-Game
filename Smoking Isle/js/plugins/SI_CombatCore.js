@@ -92,6 +92,19 @@
  * - A negative "TP Regeneration" trait recovers Fatigue every turn.
  * - <No Fatigue> (actor, class, equipment or state note): Fatigue always
  *   stays at 0 (the Ghost has no body to tire).
+ *
+ * More Fatigue note tags:
+ *   <Fatigue: -15 to -20>       (skill/item) a random amount in that range
+ *   <Fatigue Above: 85>         (skill) only usable while Fatigue is above 85
+ *   <Not While Weary>           (skill) can't be used while Weary
+ *   <Physical Fatigue Rate: 130>  (actor/class) physical skills and Punch
+ *                                 cost this % of their Fatigue
+ *   <Outdoor Rest: 1>           (actor/class) sheds 1 Fatigue per turn in
+ *   <Indoor Rest: 1>            battle outdoors / indoors. A map is indoors
+ *                               when its note contains <Indoors>.
+ *   <Fatigue Per Turn: 2>       (armor/weapon/state) adds 2 Fatigue per turn
+ *                               in battle (heavy bronze), unless the wearer
+ *                               knows a skill with <Armor Training>.
  */
 
 var Imported = Imported || {};
@@ -127,9 +140,23 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
         var moves = /<Moves:\s*([^>]*)>/i.exec(obj.note);
         var required = /<Requires Move:\s*([^>]*)>/i.exec(obj.note);
         var fatigue = /<Fatigue:\s*(-?\d+)>/i.exec(obj.note);
+        var range = /<Fatigue:\s*(-?\d+)\s*(?:to|~)\s*(-?\d+)>/i.exec(obj.note);
+        var above = /<Fatigue Above:\s*(\d+)>/i.exec(obj.note);
         obj.siMoves = moves ? $.parseList(moves[1]) : [];
         obj.siRequiredMoves = required ? $.parseList(required[1]) : [];
         obj.siFatigue = fatigue ? Number(fatigue[1]) : (obj.tpGain || 0);
+        obj.siFatigueRange = range ? [Math.min(Number(range[1]), Number(range[2])), Math.max(Number(range[1]), Number(range[2]))] : null;
+        obj.siFatigueAbove = above ? Number(above[1]) : null;
+        obj.siNotWhileWeary = /<Not While Weary>/i.test(obj.note);
+        obj.siArmorTraining = /<Armor Training>/i.test(obj.note);
+        var pfr = /<Physical Fatigue Rate:\s*(\d+)>/i.exec(obj.note);
+        var outdoor = /<Outdoor Rest:\s*(\d+)>/i.exec(obj.note);
+        var indoor = /<Indoor Rest:\s*(\d+)>/i.exec(obj.note);
+        var perTurn = /<Fatigue Per Turn:\s*(\d+)>/i.exec(obj.note);
+        obj.siPhysicalFatigueRate = pfr ? Number(pfr[1]) / 100 : null;
+        obj.siOutdoorRest = outdoor ? Number(outdoor[1]) : 0;
+        obj.siIndoorRest = indoor ? Number(indoor[1]) : 0;
+        obj.siFatiguePerTurn = perTurn ? Number(perTurn[1]) : 0;
     };
 
     var _DataManager_isDatabaseLoaded = DataManager.isDatabaseLoaded;
@@ -175,7 +202,18 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
     var _Game_BattlerBase_meetsSkillConditions = Game_BattlerBase.prototype.meetsSkillConditions;
     Game_BattlerBase.prototype.meetsSkillConditions = function(skill) {
         return _Game_BattlerBase_meetsSkillConditions.call(this, skill) &&
-            this.hasRequiredMove(skill);
+            this.hasRequiredMove(skill) && this.meetsFatigueConditions(skill);
+    };
+
+    Game_BattlerBase.prototype.meetsFatigueConditions = function(skill) {
+        if (skill.siFatigueAbove !== null && skill.siFatigueAbove !== undefined &&
+                !(this.tp > skill.siFatigueAbove)) {
+            return false;
+        }
+        if (skill.siNotWhileWeary && $.wearyStateId > 0 && this.isStateAffected($.wearyStateId)) {
+            return false;
+        }
+        return true;
     };
 
     var _Window_SkillList_includes = Window_SkillList.prototype.includes;
@@ -230,9 +268,59 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
         return this.tp;
     };
 
-    Game_Battler.prototype.gainFatigue = function(value) {
-        if (value > 0) value = Math.floor(value * this.tcr);
+    Game_Battler.prototype.gainFatigue = function(value, item) {
+        if (value > 0) {
+            if (item && this.isActor() && $.isPhysicalAction(this, item)) {
+                value *= this.physicalFatigueRate();
+            }
+            value = value * this.tcr;   // fractions kept; shown rounded down
+        }
         if (value !== 0) this.gainSilentTp(value);
+    };
+
+    $.isPhysicalAction = function(battler, item) {
+        return DataManager.isSkill(item) && (item.stypeId === 2 || item.id === battler.attackSkillId());
+    };
+
+    // Highest <Physical Fatigue Rate> among the actor's trait objects (actor, class, gear, states).
+    Game_Actor.prototype.physicalFatigueRate = function() {
+        return this.traitObjects().reduce(function(rate, obj) {
+            return obj && obj.siPhysicalFatigueRate ? Math.max(rate, obj.siPhysicalFatigueRate) : rate;
+        }, 1);
+    };
+
+    $.isIndoors = function() {
+        return !!($dataMap && /<Indoors>/i.test($dataMap.note || ''));
+    };
+
+    Game_Actor.prototype.hasArmorTraining = function() {
+        return this.skills().some(function(skill) { return skill.siArmorTraining; });
+    };
+
+    // Per-turn Fatigue changes in battle (on the battler's own turn).
+    Game_Actor.prototype.turnFatigueChange = function() {
+        var change = 0;
+        var indoors = $.isIndoors();
+        var training = this.hasArmorTraining();
+        this.traitObjects().forEach(function(obj) {
+            if (!obj) return;
+            change -= indoors ? (obj.siIndoorRest || 0) : (obj.siOutdoorRest || 0);
+            if (!training && (DataManager.isArmor(obj) || DataManager.isWeapon(obj))) {
+                change += obj.siFatiguePerTurn || 0;
+            } else if (!DataManager.isArmor(obj) && !DataManager.isWeapon(obj)) {
+                change += obj.siFatiguePerTurn || 0;
+            }
+        });
+        return change;
+    };
+
+    var _Game_Battler_onTurnEnd = Game_Battler.prototype.onTurnEnd;
+    Game_Battler.prototype.onTurnEnd = function() {
+        _Game_Battler_onTurnEnd.call(this);
+        if (this.isActor() && this.isAlive() && $gameParty.inBattle()) {
+            var change = this.turnFatigueChange();
+            if (change !== 0) this.gainFatigue(change);
+        }
     };
 
     Game_Battler.prototype.isWeary = function() {
@@ -273,7 +361,12 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
     var _Game_Battler_useItem = Game_Battler.prototype.useItem;
     Game_Battler.prototype.useItem = function(item) {
         _Game_Battler_useItem.call(this, item);
-        if (item && item.siFatigue) this.gainFatigue(item.siFatigue);
+        if (item && item.siFatigueRange) {
+            var r = item.siFatigueRange;
+            this.gainFatigue(r[0] + Math.randomInt(r[1] - r[0] + 1), item);
+        } else if (item && item.siFatigue) {
+            this.gainFatigue(item.siFatigue, item);
+        }
     };
 
     var _Game_Battler_chargeTpByDamage = Game_Battler.prototype.chargeTpByDamage;

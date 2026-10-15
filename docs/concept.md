@@ -368,6 +368,51 @@ sealed types (e.g. while Weary) are greyed out.
 - Guest characters only exist while the party has four or fewer members, so they never need
   switching rules.
 
+### Resting
+**Camp sites** fully restore Fatigue: logical places like Yoon's family house, bothy-style
+survival shelters in the mountains, and hunters' camps in the various biomes.
+
+**Resting skills** are physical (not spells, with a few exceptions) and live in the **Rest**
+menu, so effects that block Physical skills (Weary, Mired) don't block resting.
+
+| Skill | Who | Rule | Fatigue |
+|-------|-----|------|---------|
+| Catch Breath | Everyone | Only above 85 Fatigue; not while Weary | −15 to −20 |
+| Heavy Panting | Everyone | Only above 85 Fatigue; works while Weary | −5 |
+| Hunter's Repose | Pada | Only above 75; not while Weary; grants **Steady Aim** (+25% hit on his next ranged attack) | −20 to −25 |
+
+Weary lifts as soon as Fatigue drops below 100, so letting a character reach 100 costs a turn of
+Heavy Panting before Catch Breath. Since nothing works below 85 (75 for Pada), **Fatigue can't
+be brought below about 60–70 without camping**.
+
+**Physical conditioning:**
+- **Falmi** sheds 1 Fatigue per turn in battle **outdoors**; **Tou** the same **indoors and in
+  caves** (maps marked `<Indoors>`).
+- **Sib's** physical skills and Punch cost **30% more** Fatigue (minor health complications);
+  spells and other actions cost the normal amount.
+- **Heavy bronze armor** adds Fatigue every turn (Bronze Helm +1, Bronze Cuirass +2).
+  **Theenmy's Armor Training** (a passive skill) cancels this for him.
+
+### Ranged weapons
+Ranged weapons go in a separate **Ranged** equipment slot and can't be swapped mid-fight.
+
+| Weapon | Skill | Damage | Uses per battle |
+|--------|-------|--------|-----------------|
+| Sling | Sling Stone | Crush | 5 |
+| Bow | Loose Arrow | Pierce | 2–4 (per bow; Short Bow 3) |
+| Javelin | Hurl Javelin | 30% Cut, 70% Pierce | 1 |
+| Net | Cast Net | light Crush + **Entangled** (loses its next turn) | 1 |
+
+- **Accurate:** ranged attacks ignore evasion. **High damage:** (unarmed ATK + the weapon's
+  Ranged Power) × the skill's rate, so Yoon's sling outdamages her knife, and Pada's bow matches
+  his Heavy Chop.
+- **Dama's Fishing Harpoon** is a melee spear that also gives **2 javelin throws** per battle,
+  leaving her Ranged slot free for a net.
+- **Flying** enemies (and Lasa) dodge 75% of melee attacks, but not ranged or magic ones.
+
+Who can use which ranged weapons follows the character notes: Yoon, Sib, Juda, Parl and Tou use
+slings; Pada and Parl bows; Dama, Falmi and Theenmy javelins; Dama nets.
+
 ### Weapon swapping and wear
 - **Swap** battle command: lists carried weapons the character can equip. Swapping uses the turn
   (the "Swap Weapon" action; give it a `<Turn Cost>` to make it quicker or slower).
@@ -732,8 +777,8 @@ below is a starting point for playtesting.
 |---|---|---|---|---|---|---|---|---|---|
 | Ghost Yoon | 15 | 60 | 3 | 2 | 10 | 8 | 40 | 10 | 90% evasion, takes 10% physical damage, 200% magic damage, no Fatigue |
 | Yoon | 40 | 30 | 7 | 5 | 8 | 8 | 32 | 12 | |
-| Sib | 28 | 40 | 4 | 3 | 12 | 10 | 30 | 12 | Tires 30% faster |
-| Lasa | 32 | 28 | 8 | 3 | 9 | 8 | 42 | 14 | 30% evasion (flying) |
+| Sib | 28 | 40 | 4 | 3 | 12 | 10 | 30 | 12 | Physical skills cost 30% more Fatigue |
+| Lasa | 32 | 28 | 8 | 3 | 9 | 8 | 42 | 14 | Flying (75% evasion vs melee), 30% evasion otherwise |
 | Pada | 110 | 8 | 14 | 10 | 3 | 5 | 30 | 10 | |
 | Juda | 85 | 35 | 9 | 7 | 15 | 12 | 30 | 10 | |
 | Dama | 90 | 15 | 12 | 10 | 5 | 6 | 30 | 10 | |
@@ -758,7 +803,8 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Talk approaches | — | +1 |
 | Swap Weapon | — | +1 |
 | Party Switch | — | +0.5 |
-| Catch Breath | — | −10 |
+| Catch Breath | — | −15 to −20 (above 85 only) |
+| Heavy Panting | — | −5 (above 85 only) |
 | Enemy Strike | ATK × 1.0 | +1 |
 
 **Measured against the placeholder enemies:**
@@ -786,6 +832,8 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Elemental and healing spell families | Done: data plus `SI_Magic.js` (random hits, heal-and-revive) |
 | Damage types and magic sources | Done: `SI_DamageTypes.js` |
 | Elemental state cycle | Done: `SI_ElementalStates.js` |
+| Resting skills and conditioning | Done: `SI_CombatCore.js` |
+| Ranged weapons, ammo, flying | Done: `SI_Ranged.js` |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
