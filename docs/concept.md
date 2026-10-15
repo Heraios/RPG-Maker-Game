@@ -612,6 +612,55 @@ children **unless they're Enraged**. With only children standing, they fall back
 **Tou's remote body:** when knocked out, she revives after **2 turns (anyone's)** at **50% HP**,
 with Fatigue reset (`<Remote Body: 2, 50>`).
 
+### Magic
+Spell names combine **Rapa Nui** roots with **Guanche** tier and target modifiers.
+
+| Root | Element |
+|------|---------|
+| Ahi | Fire |
+| Rari | Water |
+| Hagu | Air |
+| Keri | Earth |
+| Mahu | Healing |
+| Ara | Revival |
+
+| Modifier | Meaning |
+|----------|---------|
+| -ben | Second tier |
+| -sin | Third tier |
+| -gun | All targets (-gunben: second tier, all targets) |
+| -hari | Random targets, 2–5 hits |
+
+**Attack spells** (placeholder power and MP until elements and damage types are designed):
+
+| Spell | Target | Power | MP |
+|-------|--------|-------|----|
+| Ahi / Rari / Hagu / Keri | One enemy | MAT × 1.2 | 3 |
+| -ben | One enemy | MAT × 2.0 | 7 |
+| -sin | One enemy | MAT × 3.0 | 14 |
+| -gun | All enemies | MAT × 1.0 | 6 |
+| -gunben | All enemies | MAT × 1.7 | 12 |
+| -hari | 2–5 random hits | MAT × 0.8 each | 8 |
+
+**Healing spells** heal percentages, so by mid-late game they far outheal items:
+
+| Spell | Effect | MP |
+|-------|--------|----|
+| Mahu | One ally: 33% max HP + caster's MAT | 4 |
+| Mahuben | One ally: 66% max HP + MAT | 9 |
+| Mahugun | All allies: 33% max HP + MAT | 10 |
+| Ara | Revive one ally with 10–100% HP (learned first) | 10 |
+| Araben | Revive one ally with 75% HP (learned later) | 18 |
+| Mahu-Ara | Heal all allies 20% max HP + 3× MAT, and revive the fallen with 10–100% HP | 40 |
+
+**Healing items** are different: no Fatigue or MP, small **fixed** amounts, and they often apply
+healing *states* or remove ailments and debuffs (e.g. Bandages: about 20 HP and removes Bleed).
+
+All spells add +2 Fatigue (placeholder). Who learns which spells, and how, is still to be decided;
+the test room's Spell Tutor teaches all of them for testing.
+
+**Still to design:** the elemental state system and damage types.
+
 ### Balance (first pass)
 **Philosophy:** low, readable numbers all game. Total growth is about 2–3×, and later difficulty
 comes from variety, status effects and Fatigue pressure rather than inflated stats. Every value
@@ -674,6 +723,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Balance pass | First pass done (see Balance) |
 | Adult protection, Tou's revival, sparing children | Done: `SI_BattleTraits.js` |
 | Enemy moods, enemy talk, instant talk | Done: `SI_Talk.js` |
+| Elemental and healing spell families | Done: data plus `SI_Magic.js` (random hits, heal-and-revive) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
