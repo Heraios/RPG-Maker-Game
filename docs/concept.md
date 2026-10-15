@@ -88,7 +88,7 @@ forbidden necromancy to build you a new body.
 | 9 | Tou | Burst caster, First Sailor key | Optional (buried palace) | — |
 | 10 | Falmi | Child tank | Optional (Lady of the Woods) | — |
 | 11 | Theenmy | Premier tank and damage | End of Act 4 (three paths) | — |
-| 12 | Patience | Invisible fifth slot | With Sib | — |
+| 12 | Patience | Pseudo party member | With Sib | — |
 
 ### Yoon — The Protagonist
 The ghost of a murdered child who has lost all memories from before death. Or possibly a demon
@@ -154,8 +154,9 @@ Yoon's father, a mighty hunter respected by the Islanders.
 Pada and Yoon's dog, a pointer-type breed.
 
 - **Weapons:** teeth.
-- **Quirks:** fills an invisible fifth party slot, like Boney in *Mother 3*. Not a full
-  combatant: gives small passive benefits, occasional minor attacks or situational help. Not
+- **Quirks:** a **pseudo party member**, like Boney in *Mother 3* or King in *EarthBound*. She
+  travels and fights alongside the party in addition to the four main slots, but isn't a full
+  member: small passive benefits, occasional minor attacks or situational help, and she isn't
   directly controlled like the others.
 - Finds the buried murder weapon early in the game. The player uses it as a staff without knowing
   what it is.
@@ -277,7 +278,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 |--------|------------|-----------------|
 | Ghost / Human form | Yoon | Two actors (already set up as actors 1 and 2) swapped in and out of the party, with skills and stats on separate classes |
 | Adult protection | Pada, Juda, Dama, Theenmy | Plugin: a conditional "substitute" that only covers children below an HP threshold |
-| Invisible fifth slot | Patience | Plugin: a non-battling follower who gives passives and occasionally acts |
+| Pseudo party member | Patience | Plugin: an extra ally outside the four slots who acts on her own and gives passives (like Boney or King) |
 | Revive after two turns | Tou | State plus plugin: a knockout that auto-revives after 2 turns with TP reset |
 | HP regeneration | Falmi | Built-in: HP regeneration trait on the class |
 | Weapon swap and attack | Theenmy | Plugin: an in-battle equipment swap that doesn't use up the turn |
@@ -371,9 +372,13 @@ relationships, inscriptions and the story.
   - **Evasion**
   - **Mental resistance** (mental states and the Mind element)
   - **Slower Fatigue build-up**
+  - **LUK**
 
-  Everything else (HP, MP, ATK, DEF, MAT, AGI, LUK) is unaffected and comes from gear, body
-  parts, charms, sidequests and the story.
+  Everything else (HP, MP, ATK, DEF, MAT, AGI) is unaffected by Insight.
+- **HP and MP** grow from:
+  - **Quest milestones** (Yoon's body parts count as these)
+  - **Armor and charms**
+  - **Consumable items** that permanently raise them
 - **Their specialty conversations**, where their Insight unlocks extra options, better odds or
   instant peaceful outcomes.
 
