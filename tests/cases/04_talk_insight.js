@@ -64,6 +64,35 @@ module.exports = {
         t.ok(r.enragedTargets.includes('Yoon') || r.enragedTargets.includes('Sib'), 'an Enraged Orc attacks children');
     },
 
+    'hitting an enemy angers it; "Heel, Girl!" makes Patience guard': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const A = id => $gameActors.actor(id);
+            const yoon = A(2), sib = A(3), lasa = A(4), patience = A(12);
+            const fresh = id => { const e = new Game_Enemy(id, 0, 0); $gameTroop._enemies.push(e); return e; };
+            const hit = (a, e) => { const x = new Game_Action(a); x.setSkill(1); e.clearResult(); e.setHp(e.mhp); x.apply(e); };
+            const out = {};
+            const m = fresh(4); m._siMood = 50; hit(yoon, m); out.afterHit = m.talkMood();
+            for (let i = 0; i < 10 && !m.isEnraged(); i++) hit(yoon, m);
+            out.enraged = m.isEnraged();
+            out.noPatience = yoon.canUse($dataSkills[123]);
+            $gameParty.addActor(12);
+            out.canHeel = [yoon, sib, A(5)].every(a => a.canUse($dataSkills[123])) && !lasa.skills().some(s => s.id === 123);
+            const heel = a => { const x = new Game_Action(a); x.setSkill(123); x.apply(a); };
+            heel(sib); out.heeled = patience.isStateAffected(36);
+            patience.makeActions(); out.guards = patience.action(0).isGuard();
+            heel(sib); out.loose = !patience.isStateAffected(36);
+            patience.makeActions(); out.attacks = !patience.action(0).isGuard();
+            return out;
+        });
+        t.eq(r.afterHit, 40, 'a hit costs 10 mood');
+        t.ok(r.enraged, 'enough hits enrage it');
+        t.eq(r.noPatience, false, '"Heel, Girl!" needs Patience in the battle');
+        t.ok(r.canHeel, 'Yoon, Sib and Pada can call her; Lasa cannot');
+        t.ok(r.heeled && r.guards, 'a heeled Patience only guards');
+        t.ok(r.loose && r.attacks, 'calling again lets her loose');
+    },
+
     'Insight stats, caps and shared Yoon Insight': async (h, t) => {
         await h.battle();
         const r = await h.eval(() => {

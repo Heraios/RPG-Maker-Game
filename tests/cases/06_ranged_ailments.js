@@ -15,7 +15,7 @@ module.exports = {
             const harpoonThrows = dama.rangedAmmoForSkill(S(34)), nets = dama.rangedAmmoForSkill(S(35));
             const bat = new Game_Enemy(1, 0, 0); $gameTroop._enemies.push(bat);
             const eva = id => { const a = new Game_Action(yoon); a.setSkill(id); return a.itemEva(bat); };
-            const mino = $gameTroop.members()[0]; const net = new Game_Action(dama); net.setSkill(35); mino.clearResult(); net.apply(mino);
+            const mino = $gameTroop.members()[0]; const net = new Game_Action(dama); net.setSkill(35); mino.clearResult(); const rnd = Math.random; Math.random = () => 0.5; net.apply(mino); Math.random = rnd;   // no miss
             return { arrows, refilled, volleyHits, stonesLeft: yoon.rangedAmmoForSkill(S(32)), harpoonThrows, nets,
                      jabEva: eva(11), slingEva: eva(32), magicEva: eva(56), entangled: !mino.canMove() };
         });
@@ -64,7 +64,9 @@ module.exports = {
             const yoon = $gameActors.actor(2), sib = $gameActors.actor(3), th = $gameActors.actor(11);
             const names = x => x.states().map(s => s.name).join(',');
             let skip = 0, fled = 0;
+            let seed = 7; const rnd = Math.random; Math.random = () => (seed = seed * 16807 % 2147483647) / 2147483647;   // repeatable rolls
             for (let i = 0; i < 600; i++) { const e = new Game_Enemy(4, 0, 0); $gameTroop._enemies.push(e); e.addState(8); if (BattleManager.ctbShouldSkipTurn(e)) { if (e.isHidden()) fled++; else skip++; } }
+            Math.random = rnd;
             sib.addState(32); sib.addState(8); const calmWard = names(sib);
             sib.addState(8); sib.addState(33); const happyCure = names(sib);
             yoon.addState(34); yoon.makeActions(); const brave = yoon.numActions();

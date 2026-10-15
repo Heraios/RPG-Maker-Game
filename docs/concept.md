@@ -159,7 +159,10 @@ Pada and Yoon's dog, a pointer-type breed.
 - **Quirks:** a **pseudo party member**, like Boney in *Mother 3* or King in *EarthBound*. She
   travels and fights alongside the party in addition to the four main slots, but isn't a full
   member: small passive benefits, occasional minor attacks or situational help.
-  - **Acts on her own** (AI-controlled; the player never gives her commands).
+  - **Acts on her own** (AI-controlled). The one command she obeys is **"Heel, Girl!"**, a Talk
+    skill only **Sib, Pada and Human Yoon** have (the people she actually listens to): she only
+    guards until someone calls it again to let her loose. It costs half a turn and no Fatigue, and
+    keeps her from biting (and angering) an enemy the party is talking down.
   - **Has her own turns** in the Turn Order, based on her speed.
   - **Can be knocked out**, and is revived the same way as everyone else.
   - **Insight is capped at 1.** Her specialty (dogs and animals) works **passively**: with
@@ -656,6 +659,9 @@ lines plus optional scripted moments (a common event with choices) for important
 - **Yoon's Insight decides what the player can see:** first the enemy's mood, then which
   approaches it likes, then its tells.
 - **Enraged:** a badly handled enemy gets stronger and stops listening for a while.
+- **Hitting an enemy angers it:** every hit that does HP damage (Patience's bites included) costs
+  10 mood (`<Talk Hit: -20>` per enemy). At 0 it becomes Enraged. Fighting and talking work
+  against each other.
 
 **Enemy moods and behaviour**
 - Enemies can **start calmer** (`<Talk Mood: Wary>` or a number); the default is Hostile (25).

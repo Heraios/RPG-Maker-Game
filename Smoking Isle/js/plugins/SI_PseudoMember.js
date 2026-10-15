@@ -21,6 +21,13 @@
  * Give their class the Auto Battle trait (Traits > Other > Special Flag)
  * so the player never commands them.
  *
+ * Commands (e.g. "Heel, Girl!"):
+ *   Skill note:  <Pseudo State: 36>   toggles state 36 on the pseudo members
+ *                                     in battle. Only usable while one is
+ *                                     up. (Scope: The User.)
+ *   State note:  <Pseudo Guard>       while they have this state, they only
+ *                                     guard.
+ *
  * In battle they:
  * - act on their own turns (they appear in the Turn Order),
  * - can be targeted by enemies, and by healing and revival,
@@ -93,8 +100,74 @@ SmokingIsle.PseudoMember = SmokingIsle.PseudoMember || {};
     // AI
     //-------------------------------------------------------------------------
 
+    //-------------------------------------------------------------------------
+    // Commands ("Heel, Girl!")
+    //-------------------------------------------------------------------------
+
+    $.commandState = function(item) {
+        var m = item && /<Pseudo State:\s*(\d+)>/i.exec(item.note || '');
+        return m ? Number(m[1]) : 0;
+    };
+
+    $.commandTargets = function() {
+        return $gameParty.pseudoBattleMembers().filter(function(a) {
+            return a.isAlive();
+        });
+    };
+
+    var _Game_BattlerBase_meetsSkillConditions = Game_BattlerBase.prototype.meetsSkillConditions;
+    Game_BattlerBase.prototype.meetsSkillConditions = function(skill) {
+        if (!_Game_BattlerBase_meetsSkillConditions.call(this, skill)) return false;
+        return !$.commandState(skill) || $.commandTargets().length > 0;
+    };
+
+    var _Game_Action_apply = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        _Game_Action_apply.call(this, target);
+        var stateId = $.commandState(this.item());
+        if (!stateId) return;
+        var subject = this.subject();
+        $.commandTargets().forEach(function(member) {
+            if (member.isStateAffected(stateId)) {
+                member.removeState(stateId);
+                subject._siCommandMessages = (subject._siCommandMessages || [])
+                    .concat([$dataStates[stateId].message4 ? member.name() + $dataStates[stateId].message4 : '']);
+            } else {
+                member.addState(stateId);
+                subject._siCommandMessages = (subject._siCommandMessages || [])
+                    .concat([$dataStates[stateId].message1 ? member.name() + $dataStates[stateId].message1 : '']);
+            }
+        });
+    };
+
+    var _Window_BattleLog_displayActionResults = Window_BattleLog.prototype.displayActionResults;
+    Window_BattleLog.prototype.displayActionResults = function(subject, target) {
+        _Window_BattleLog_displayActionResults.call(this, subject, target);
+        var messages = (target._siCommandMessages || []).filter(function(t) { return t; });
+        target._siCommandMessages = [];
+        messages.forEach(function(text) {
+            this.push('addText', text);
+            this.push('wait');
+        }, this);
+    };
+
+    Game_Actor.prototype.isPseudoGuarding = function() {
+        return this.states().some(function(state) {
+            return /<Pseudo Guard>/i.test(state.note || '');
+        });
+    };
+
     var _Game_Actor_makeAutoBattleActions = Game_Actor.prototype.makeAutoBattleActions;
     Game_Actor.prototype.makeAutoBattleActions = function() {
+        if (this.isPseudoGuarding()) {
+            for (var g = 0; g < this.numActions(); g++) {
+                var guard = new Game_Action(this);
+                guard.setGuard();
+                this.setAction(g, guard);
+            }
+            this.setActionState('waiting');
+            return;
+        }
         var weights = this.aiSkillWeights();
         if (!weights) {
             _Game_Actor_makeAutoBattleActions.call(this);

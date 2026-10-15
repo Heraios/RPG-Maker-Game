@@ -45,6 +45,11 @@
  * @param Patience Bonus
  * @default 0.25
  *
+ * @param Hit Mood Change
+ * @desc Mood change when the party hits an enemy (any HP damage).
+ * Override per enemy with <Talk Hit: -20>.
+ * @default -10
+ *
  * @param Repeat EXP Rate
  * @desc Share of EXP for succeeding again with an enemy type (0.2 = 20%).
  * @default 0.2
@@ -85,6 +90,8 @@
  *                               (e.g. Stonemen surrender to Tou).
  *   <Talk Soothe: 15>           mood change for an approach, overriding the
  *                               type default (any approach name works).
+ *   <Talk Hit: -20>             mood change when the party hits it (default:
+ *                               the Hit Mood Change parameter).
  *   <Talk Likes: 1, 5>          item ids it loves being offered (x2).
  *   <Talk Hates: 3>             item ids it hates being offered (-30).
  *   <Talk Rite: ash>            the rite it wants; other rites anger it.
@@ -106,6 +113,9 @@
  * Mood: Enraged (0) - Hostile - Wary (35+) - Calm (70+) - Pacified (100).
  * An Enraged enemy gets the Enraged state and won't listen until it wears
  * off, then calms back down to Hostile.
+ *
+ * Hitting an enemy (any HP damage from the party, Patience included) angers
+ * it; at 0 it becomes Enraged.
  *
  * Calm (and calmer) enemies don't use damaging actions; with nothing else
  * to do they use the Wait Skill.
@@ -158,6 +168,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     $.specialtyBonus = Number(params['Specialty Bonus'] || 0.5);
     $.insightBonus = Number(params['Insight Bonus'] || 0.03);
     $.waitSkillId = Number(params['Wait Skill'] || 0);
+    $.hitMood = Number(params['Hit Mood Change'] !== undefined && params['Hit Mood Change'] !== '' ? params['Hit Mood Change'] : -10);
     $.patienceActorId = Number(params['Patience Actor'] || 0);
     $.patienceBonus = Number(params['Patience Bonus'] || 0.25);
     $.repeatExpRate = Number(params['Repeat EXP Rate'] || 0.2);
@@ -227,7 +238,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         t.mood = mood === null ? 25 : (words[mood.toLowerCase()] !== undefined ? words[mood.toLowerCase()] : Number(mood));
         t.instant = $.list($.tag(note, 'Talk Instant')).map(Number);
         t.overrides = {};
-        ['soothe', 'offer', 'ask', 'rite', 'threaten', 'plead', 'stalk'].forEach(function(a) {
+        ['soothe', 'offer', 'ask', 'rite', 'threaten', 'plead', 'stalk', 'hit'].forEach(function(a) {
             var v = $.tag(note, 'Talk ' + a);
             if (v !== null) t.overrides[a] = Number(v);
         });
@@ -305,6 +316,9 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     Game_Action.prototype.apply = function(target) {
         if (!$.isTalkSkill(this.item())) {
             _Game_Action_apply.call(this, target);
+            if (target.isEnemy() && this.subject().isActor() && target.result().hpDamage > 0) {
+                target.angerFromHit();
+            }
             return;
         }
         var result = target.result();
@@ -315,6 +329,22 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         if (target.isEnemy()) {
             this.applyTalk(target);
         }
+    };
+
+    // Being hit sours the mood; at 0 the enemy becomes Enraged.
+    Game_Enemy.prototype.angerFromHit = function() {
+        var data = this.talkData();
+        if (!data.type || this.isEnraged() || !this.isAlive()) return;
+        var delta = data.overrides.hit !== undefined ? data.overrides.hit : $.hitMood;
+        if (!delta) return;
+        var before = $.moodLevel(this.talkMood());
+        this._siMood = (this.talkMood() + delta).clamp(0, 100);
+        var after = $.moodLevel(this._siMood);
+        if (after === before) return;
+        this._siTalkMessages = this._siTalkMessages || [];
+        if (data.lines[after]) this._siTalkMessages.push('%1: "%2"'.format(this.name(), data.lines[after]));
+        if ($.canSeeMood()) this._siTalkMessages.push('%1 is now %2.'.format(this.name(), after));
+        if (after === 'Enraged') this.addState($.enragedStateId);
     };
 
     Game_Action.prototype.talkSay = function(target, text) {

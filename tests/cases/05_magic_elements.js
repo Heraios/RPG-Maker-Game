@@ -51,7 +51,7 @@ module.exports = {
         const r = await h.eval(() => {
             const sib = $gameActors.actor(3);
             const e = new Game_Enemy(4, 0, 0); $gameTroop._enemies.push(e);
-            const names = () => e.states().map(s => s.name).sort().join(',');
+            const names = () => e.states().filter(s => s.name !== 'Enraged').map(s => s.name).sort().join(',');   // repeated hits enrage it
             const cast = id => { e.clearResult(); sib._siExtraTurn = false; const a = new Game_Action(sib); a.setSkill(id); a.apply(e); return names() + (sib._siExtraTurn ? '+EXTRA' : ''); };
             return [cast(56), cast(68), cast(56), cast(62), cast(74), cast(56)];
         });
