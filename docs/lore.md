@@ -327,10 +327,37 @@ priests**. **Juda's (false) backstory is that he was an orphan.**
 ### Death
 The dead are mummified and laid in **stone-cut tombs in the lava tubes**. A ghost is not alarming
 in itself: ghost Yoon is *concerning* because Yoon was a child who went missing about a month before
-the game starts, and because Yoon has no memories. **The ritual Sib uses to build Yoon a body is
+the game starts, and because Yoon has no memories. **Juda defleshed Yoon's body**, which is why Yoon wakes over a bare skeleton only a month after
+going missing. **The ritual Sib uses to build Yoon a body is
 forbidden**: Sib learned it from **notes Juda made about First Sailor homunculus production**.
 
+### Seeing the dead
+**Only priests can see ghosts without help.** Ordinary people, adults and children alike, cannot.
+(Children see the Children of the Caves, not ghosts.) This is why Act 1 is spent struggling to make
+contact, and why Sib, a priest's apprentice, is the one Yoon reaches. It also means **Juda can see
+ghost Yoon**.
+
+### Tattoos and glyphs
+Tattoos are **glyphs of the same script the First Sailors wrote in**, and carry a magical
+**true-name** power. They were given to humankind by **Sooty Tern as an apology gift**; a myth tells
+how he based the first glyphs on the **crack patterns in eggshells**. Some glyphs are rumored to be
+**the Destroyer's distortion of the system**, which the First Sailors used. (So the All-Seafarer
+"slave marks" slur mocks a sacred script they cannot read.)
+
+### Weapons and metal
+- Islanders make **copper spears, axes, maces and long knives**, but **not swords proper**. Their only
+  "swords" are fire-hardened two-handed swords of native **dragonheart wood**, and obsidian-edged
+  wooden swords (macuahuitl-style).
+- **Silver matters spiritually:** copper-silver weapons are slightly more durable and add a little
+  magic damage to every attack.
+- **Conducting Edge is an Islander technique.**
+- **Cattle:** domesticated cattle came with the All-Seafarers; the island has rare wild,
+  aurochs-like cattle.
+
 ### Economy
+**Currency: cowrie shells.** Pearls, metal ingots and similar goods are trade goods and crafting
+materials (vendor items), not money.
+
 | Category | Goods |
 |----------|-------|
 | Exports and crafts | **Red dye** (orchil), **pearls** |
@@ -474,6 +501,17 @@ Despite having no bronze, the Islanders have **electricity, telegraphs and print
 - **Seismographs** let the village watch the volcano: foreshadowing for the Destroyer.
 - **Lighting** for dark lava tubes (the areas with random encounters): lamps and battery-powered
   light as exploration tools.
+- **Ghost sight:** since only priests see ghosts unaided, non-priests may need **help** (an item,
+  ritual or state) to see or target ghost enemies. Sib and Juda see them by default.
+- **Defleshing as a clue:** cut marks on the bones point to someone practiced at preparing bodies,
+  and priests are the island's mummifiers.
+- **Tattoos as a progression slot:** earned glyphs with true-name effects (passive bonuses), with
+  forbidden Destroyer glyphs as powerful, corrupting options. Learning glyphs ties into Yoon's
+  comprehension (Insight) and First Sailor inscriptions.
+- **Copper-silver weapons:** more durable wear tiers, plus a small magical part in every hit (a
+  weapon-level damage profile addition).
+- **Aurochs** as rare, dangerous wild cattle to hunt.
+- **Cowries** as currency; pearls and ingots as sellable crafting materials.
 - **Economy:** dye, pearls, silver and copper are what an empire would want. The **mines** and the
   dye trade are a likely reason for the invasion.
 - **Food items** from the crops and herds: bread, lentil stew, wine, cheese.
