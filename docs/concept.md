@@ -578,6 +578,12 @@ lines plus optional scripted moments (a common event with choices) for important
 | Talk | Done: `SI_Talk.js` |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
+### Test room (temporary)
+**MAP004 "TEST ROOM"** is a throwaway map for trying the battle systems, and **New Game currently
+starts there**. It has a weapon chest, a recruiter (adds reserve members for Switch), an Insight
+crystal, one monster per test troop, and a campfire (full rest). To remove it: set the player's
+starting position back to **MAP001 (8, 6)** (Database → System), then delete the map.
+
 ### Current database (as uploaded)
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.
 - Classes: Ghost, Returned Child, Junior Priest, Child of The Caves, Hunter, Priest, Fisher,

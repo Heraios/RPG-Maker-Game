@@ -2,5 +2,6 @@
 null,
 {"id":1,"expanded":true,"name":"MAP001","order":1,"parentId":0,"scrollX":1210.909090909091,"scrollY":4097.454545454546},
 {"id":2,"expanded":true,"name":"MAP002","order":2,"parentId":1,"scrollX":3159.2727272727275,"scrollY":10280.727272727274},
-{"id":3,"expanded":false,"name":"MAP003","order":3,"parentId":2,"scrollX":614.1818181818182,"scrollY":360}
+{"id":3,"expanded":false,"name":"MAP003","order":3,"parentId":2,"scrollX":614.1818181818182,"scrollY":360},
+{"id":4,"expanded":false,"name":"TEST ROOM","order":4,"parentId":0,"scrollX":614.1818181818182,"scrollY":360}
 ]
