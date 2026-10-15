@@ -8,6 +8,68 @@ or correct. Section 5 connects the lore to the game's systems. Section 6 lists o
 
 ## 1. Gods
 
+### The pantheon at a glance
+| Generation | Gods |
+|------------|------|
+| **First** | **The Red Bowl**: older than everything; the world itself |
+| **Second** | **The Destroyer**, **Star Mother**, **White Bird** (and, "kind of", **the Star Child**) |
+| **Third** | **The Ladies** (children of Star Mother and the Star Child) |
+| Adopted | The Ladies' mortal husbands, raised to godhood |
+
+```
+                         THE RED BOWL  (first generation; the world itself)
+
+   THE DESTROYER  ──rejected suitor──►  STAR MOTHER  ◄──rejected suitor──  WHITE BIRD
+   "too cruel"                              │                              "too flighty"
+   stole her star: the impact                │                              killed the Star Child;
+   made the world-crater, and the            └─ THE STAR CHILD               stole the star back (the Sun),
+   star melted the mountain into                 killed by White Bird;       scorched into SOOTY BIRD;
+   THE VOLCANO; creates DEMONS                   body → First Sailors →      the Moon is his home;
+                                                 all humans                  gave humanity the glyphs
+                                                 │
+                         Star Mother + Star Child ─► THE LADIES
+                            Woods (+ Master of Deception, Shepherd of the Deer)
+                            Wind  (+ Bull of Water)          Sun (+ Bull of Heaven)
+                            Mountains, on the crater rim (became the King of All the Sea's wives)
+```
+
+- **The Destroyer and White Bird were rival suitors of Star Mother.** She refused both: the
+  Destroyer was too cruel, the Bird too flighty.
+- **The world-crater is the Destroyer's doing:** bringing the stolen star down made the impact.
+  The Red Bowl, the world, is older than all of them.
+
+### Worship and idols
+Temples are like the priest's house. Idols stand around the island, and **each kind of idol is a
+gameplay location**:
+
+| Idol | Where | In the game |
+|------|-------|-------------|
+| The Red Bowl | Everywhere | **Save points** |
+| Star Mother | Healers' houses, hot springs | Healing and rest |
+| The Star Child | Graveyards | (with the dead) |
+| The Bird | Fast travel points, telegraph stations | **Fast travel** |
+
+**The Lady of the Sun's chaining:** Islanders believe she was **dangerous**, so they see Juda's
+chaining of her as protection.
+
+### How the All-Seafarers see the gods
+A **henotheistic** position: the (male, in their view) **Red Bowl is the true god and creator**, and
+**His children and their descendants are an untrustworthy, dangerous but still divine squabbling
+family of incestuous thieves and criminals, who had to be tamed for humanity's benefit**. Except, of
+course, the King of All the Sea. **Half the reason they are invading is that they know the children
+of the Star Mother (the Ladies) live on the island.**
+
+### The founding of the Kingdom of All the Sea
+About **65 years before the game**, **the King**, **Juda** and **the Lady of the Mountains** went on a
+classic JRPG adventure: righting wrongs, bringing various Ladies and their husbands into humanity's
+service or sealing them away, and founding the Kingdom of All the Sea.
+
+**The Lady of the Mountains** lived on the crater rim, split into two parts: **the Dark Lady** of the
+rainy, fertile side of the rim, and **the Red Lady** of the endless, trackless jagged highlands
+beyond. She became **the King's wife (wives)**: she split herself permanently into two beings and
+**became mortal**, so their very many children (twins, triplets and more, from both bodies) are
+**unusually powerful humans**. Theenmy and the Princess are among them.
+
 ### The Red Bowl
 Genderless god of the seas and the world, and of sea life: the whole world and all its seas,
 personified. Idols are carved bowls of red scoria filled with pure water. **These idols are the
@@ -707,6 +769,23 @@ turns the more evidence was found, the villagers with her are better armed, and 
   for them.
 - **Ladder the goat** climbs ladders, so maybe he can climb anything: a comic overworld helper?
 
+### From the pantheon (extrapolations to confirm)
+- **The royal family has divine blood.** Theenmy and the Princess are grandchildren of a Lady, and
+  so great-grandchildren of Star Mother. Theenmy's paladin magic is his heritage. The empire calls
+  the Ladies' family thieves and criminals while being ruled by their descendants.
+- **The King's founding adventure is a dark mirror of the player's party.** The heroes of an
+  earlier JRPG became the empire, and their "righting wrongs" meant chaining and conscripting gods.
+  Juda was one of those heroes, and chaining the Lady of the Sun was the same program applied to
+  the island.
+- **Juda's history with the empire is 65 years old,** not a recent deal, which deepens his ties to
+  Theenmy (who would know him from childhood stories, or in person).
+- **Idols as world infrastructure:** Red Bowl (save), Star Mother (heal and rest), Bird (fast travel
+  along the telegraph network), Star Child (graveyards). Star Child idols could matter to ghosts and
+  to Yoon.
+- **The island may sit at the center of the world-crater:** if the impact made the bowl and the star
+  melted a mountain into the volcano, the Smoking Isle is the crater's central peak, the spot where
+  the star itself came down.
+
 ### Already connected
 - **Red Bowl idols are the save points** (and the "nearest save point" for defeat rescues).
 - The Great Boar provides **the flesh** for Yoon's body.
@@ -724,3 +803,6 @@ turns the more evidence was found, the villagers with her are better armed, and 
   disguised as a merchant"; the lore calls him "a tribute collector's crewman who stole pearls and
   deserted". Is he both, or only the second?
 - **Names:** the King of All the Sea, the Princess.
+- **Juda's age on the island:** he adventured with the King 65 years ago. How long has he been on the
+  island, and do the Islanders notice he never ages?
+- **Is the island at the center of the world-crater?**
