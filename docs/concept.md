@@ -545,6 +545,23 @@ lines plus optional scripted moments (a common event with choices) for important
   smaller share.
 - The first success with each enemy type gives full EXP; repeats give much less.
 
+### Difficulty, encounters and defeat (design)
+- **Difficulty escalates with the story:** forgiving early (unless you wander into optional
+  "sting" areas), tense later.
+- **Encounters:** about 80% are **visible enemies** on the map; random encounters only in certain
+  caves and dark areas.
+- **Fatigue is an expedition resource.** Abilities raise it **very slowly**, because it carries
+  over between fights and also comes from strenuous overworld actions:
+  - Scrabbling up cliffs, mining, swimming, squeezing through tight tunnels, and so on.
+  - Normal walking adds nothing, except in a handful of late-game areas (underwater, certain
+    lava tubes, the volcano crater, the volcanic desert).
+  - **Recovery:** camping at set spots, shelters and the village.
+- **Losing a fight:**
+  - **Early game** (Ghost, Sib and Lasa): Sib runs back to their house.
+  - **Acts 2–3** (with Pada, then Juda): the adult carries the children back to the nearest save
+    point.
+  - **After that:** Game Over.
+
 ### Implementation status
 | Piece | Status |
 |-------|--------|
