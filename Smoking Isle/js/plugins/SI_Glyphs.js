@@ -38,7 +38,8 @@
  *
  * Tattoos are permanent until the Tattoo Removal Switch is turned on: an
  * occupied tattoo slot can't be changed, and the equip screen's Optimize and
- * Clear never touch tattoos at all.
+ * Clear never touch tattoos at all. A tattoo that is removed or replaced is
+ * destroyed; it does not go back into the inventory.
  */
 
 var Imported = Imported || {};
@@ -91,7 +92,7 @@ SmokingIsle.Glyphs = SmokingIsle.Glyphs || {};
         while (this._equips.length < count) this._equips.push(new Game_Item());
         if (this._equips.length > count) {
             this._equips.splice(count).forEach(function(item) {
-                if (item.object()) $gameParty.gainItem(item.object(), 1);
+                if (item.object() && !$.isTattoo(item.object())) $gameParty.gainItem(item.object(), 1);
             });
         }
     };
@@ -100,6 +101,16 @@ SmokingIsle.Glyphs = SmokingIsle.Glyphs || {};
     Game_Actor.prototype.refresh = function() {
         this.syncEquipSlots();
         _Game_Actor_refresh.call(this);
+    };
+
+    $.isTattoo = function(item) {
+        return !!item && DataManager.isArmor(item) && item.etypeId === $.tattooType;
+    };
+
+    // A removed or replaced tattoo is gone; it never returns to the bag.
+    var _Game_Actor_tradeItemWithParty = Game_Actor.prototype.tradeItemWithParty;
+    Game_Actor.prototype.tradeItemWithParty = function(newItem, oldItem) {
+        return _Game_Actor_tradeItemWithParty.call(this, newItem, $.isTattoo(oldItem) ? null : oldItem);
     };
 
     $.tattoosRemovable = function() {

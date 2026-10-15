@@ -25,17 +25,21 @@ module.exports = {
             const tactics = w._tacticsCommands.map(c => c.name);
             w.selectSymbol('skill'); w.processOk();
             const types = s._skillTypeWindow.visible ? s._skillTypeWindow._list.map(c => c.name) : [];
+            s._skillTypeWindow.selectSymbol('skill'); s._skillTypeWindow.select(s._skillTypeWindow._list.findIndex(c => c.name === 'Physical')); s._skillTypeWindow.processOk();
+            const physical = s._skillWindow._data.map(x => x && x.name);
+            s._skillWindow.processCancel();
             s._skillTypeWindow.processCancel();
             w.selectSymbol('tactics'); w.processOk();
             s._tacticsWindow.selectSymbol('item'); s._tacticsWindow.processOk();
             const itemOpen = s._itemWindow.active;
             s._itemWindow.processCancel();
             const backToTactics = s._tacticsWindow.active;
-            return { main, tactics, types, itemOpen, backToTactics };
+            return { main, tactics, types, physical, itemOpen, backToTactics };
         });
-        t.eq(r.main.join('/'), 'Punch/Skills/Talk/Guard/Tactics', 'main menu');
+        t.eq(r.main.join('/'), 'Skills/Talk/Guard/Tactics', 'main menu');
         t.eq(r.tactics.join('/'), 'Swap/Item/Escape', 'Tactics submenu (no reserve members, so no Switch)');
         t.eq(r.types.join('/'), 'Magic/Physical/Rest', 'Skills submenu leaves Talk out');
+        t.eq(r.physical[0], 'Punch', 'Punch is the first Physical skill: ' + r.physical);
         t.ok(r.itemOpen, 'Item opens from Tactics');
         t.ok(r.backToTactics, 'Cancel from Item returns to Tactics');
     },

@@ -27,6 +27,10 @@ module.exports = {
             out.keptAfterClear = sib.equips().filter(e => e && e.etypeId === 7).length;
             $gameSwitches.setValue(2, true);
             out.removableWithSwitch = sib.isEquipChangeOk(slot(0));
+            const hagu = AR('Glyph: Hagu'), before = $gameParty.numItems(hagu);
+            sib.changeEquip(slot(2), null);
+            out.destroyed = !sib.equips()[slot(2)] && $gameParty.numItems(hagu) === before;
+            $gameSwitches.setValue(2, false);
             return out;
         });
         t.eq(r.sibTattoos, 8, 'Sib has 8 tattoo slots');
@@ -44,5 +48,6 @@ module.exports = {
         t.ok(r.newGlyph, 'a new tattoo grants its spell');
         t.eq(r.keptAfterClear, 3, 'Optimize and Clear never remove tattoos');
         t.ok(r.removableWithSwitch, 'tattoos become removable once the late-game switch is on');
+        t.ok(r.destroyed, 'a removed tattoo is destroyed, not returned to the bag');
     }
 };

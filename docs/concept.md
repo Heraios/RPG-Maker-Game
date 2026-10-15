@@ -408,8 +408,15 @@ These are placeholder examples to show how the system works; the real weapon and
 still to be designed.
 
 ### Battle menu
-**Punch, Skills, Guard, Tactics** (Talk will go between Skills and Guard).
-- **Skills** opens the character's skill types (Magic, Physical, Rest) in the same place.
+**Skills, Talk, Guard, Tactics**.
+- **Skills** opens the character's skill types (Magic, Physical, Rest) in the same place. **Punch** is
+  the first Physical skill (every character with Physical skills has it).
+- Skill lists are one wide column and show every cost: MP, the Fatigue a skill adds (+3 FT, in green)
+  or recovers (−15~20 FT, in light green), and ranged ammo left (x3).
+- The FT number turns **yellow above 85** (resting skills unlock) and **red at 100** (Weary).
+- The enemy target list is one column and shows each enemy's state icons.
+- Equip screen: the slot list runs the full height of the right side so all 14 slots fit with little
+  scrolling; the item list sits under the stats. (`SI_Layout.js`; window art and icons are placeholders.)
 - **Tactics** opens **Swap, Item, Switch, Escape** the same way, and is greyed out if none can be used.
   A failed escape uses up the current character's turn.
 - Cancel steps back one window at a time. A character with only one skill type goes straight to its list, and
@@ -780,7 +787,7 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
   tattoo exists for every spell (Glyph: Ahi ... Glyph: Mahu-Ara).
 - **Tattoos are permanent** while the switch "Tattoo removal (late game)" is off: empty tattoo slots
   can be filled, but an occupied one can't be removed or replaced, and Optimize/Clear never touch
-  tattoos.
+  tattoos. Once removal is allowed, a removed or replaced tattoo is **destroyed**, not returned to the bag.
 - **Codices** (examples): Codex of Embers (Ahi, Ahiben, Ahigun; MAT +2), Codex of Mending (Mahu,
   Mahuben, Mahugun, Ara; MDF +2), Sailor's Codex (Rari, Hagu, Keri and their -ben forms; AGI +2).
 - **Starting glyphs:** Sib has Mahu and Ahi; Juda has Mahu, Mahuben, Ara, Ahiben, Rariben; Dama has
@@ -919,6 +926,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Ranged weapons, ammo, flying | Done: `SI_Ranged.js` |
 | Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
+| Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
 | Automated tests | `tests/` (22 tests, about 175 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
