@@ -470,7 +470,7 @@ decided):
 
 | Per Insight point above 1 | Amount |
 |---------------------------|--------|
-| MDF | +2 (class curve) |
+| MDF | +1 (class curve) |
 | LUK | +1 (class curve) |
 | Evasion | +0.5% |
 | Mental states (Rage, Confusion, Fascination, Sleep) and Mind element | land 2% less often |
@@ -486,8 +486,8 @@ decided):
 | 1 | Patience |
 
 For example, Sib at Insight 15 has +14% evasion, mental effects land 28% less often, and Fatigue
-builds 14% slower. Yoon at 30 reaches +14.5% evasion, 58% and 29%. All other stats are now flat
-across Insight (and still identical for every class, since base stats aren't balanced yet).
+builds 14% slower. Yoon at 30 reaches +14.5% evasion, 58% and 29%. All other stats are flat across
+Insight.
 
 **Gaining Insight:**
 - **In battle:** whoever's turn it is does the talking, so swapping the right specialist in
@@ -566,6 +566,54 @@ lines plus optional scripted moments (a common event with choices) for important
     strictly a punishment).
   - **After Act 3:** a hard Game Over, and the game warns the player when this starts.
 
+### Balance (first pass)
+**Philosophy:** low, readable numbers all game. Total growth is about 2–3×, and later difficulty
+comes from variety, status effects and Fatigue pressure rather than inflated stats. Every value
+below is a starting point for playtesting.
+
+**Base stats** (flat across Insight, except MDF and LUK):
+
+| | HP | MP | ATK | DEF | MAT | MDF | AGI | LUK | Notes |
+|---|---|---|---|---|---|---|---|---|---|
+| Ghost Yoon | 15 | 60 | 3 | 2 | 10 | 8 | 40 | 10 | 90% evasion, takes 10% physical damage, 200% magic damage, no Fatigue |
+| Yoon | 40 | 30 | 7 | 5 | 8 | 8 | 32 | 12 | |
+| Sib | 28 | 40 | 4 | 3 | 12 | 10 | 30 | 12 | Tires 30% faster |
+| Lasa | 32 | 28 | 8 | 3 | 9 | 8 | 42 | 14 | 30% evasion (flying) |
+| Pada | 110 | 8 | 14 | 10 | 3 | 5 | 30 | 10 | |
+| Juda | 85 | 35 | 9 | 7 | 15 | 12 | 30 | 10 | |
+| Dama | 90 | 15 | 12 | 10 | 5 | 6 | 30 | 10 | |
+| Parl | 65 | 10 | 9 | 6 | 4 | 5 | 38 | 12 | |
+| Tou | 42 | 18 | 4 | 7 | 16 | 10 | 24 | 10 | Cut ×1.75, Fire/Burn ×2, Pierce/Crush ×0.5 |
+| Falmi | 48 | 12 | 9 | 6 | 5 | 6 | 40 | 12 | 20% evasion, 5% HP regen per turn |
+| Theenmy | 150 | 25 | 16 | 16 | 9 | 9 | 18 | 10 | |
+| Patience | 30 | 0 | 6 | 3 | 1 | 4 | 40 | 15 | AI-controlled, no Fatigue |
+
+**Damage formulas** use a ratio instead of subtraction, so armor reduces damage by a percentage and
+never to zero: `a.physDamage(b, rate)` and `a.magDamage(b, rate)`. Defense equal to the **Defense
+Scale** (20, a SI_CombatCore setting) halves damage.
+
+| Skill | Formula | Fatigue |
+|-------|---------|---------|
+| Punch | unarmed ATK × 0.5 | +1 |
+| Quick Jab | ATK × 0.8 | +2 |
+| Bash | ATK × 1.1 | +2 |
+| Heavy Chop | ATK × 1.6 | +5 |
+| Fire / Spark | MAT × 1.5 | +2 |
+| Heal | MAT × 2 | 0 |
+| Talk approaches | — | +1 |
+| Swap Weapon | — | +1 |
+| Party Switch | — | +0.5 |
+| Catch Breath | — | −10 |
+| Enemy Strike | ATK × 1.0 | +1 |
+
+**Measured against the placeholder enemies:**
+- Yoon's Quick Jab with a Flint Knife does about 8–9, so a Bat (18 HP) dies in 2 hits.
+- Pada's Heavy Chop does about 32 to an Orc (45 HP).
+- Children go down in about 3–4 Orc hits, and Sib in about 2 Minotaur hits. Pada takes about 11
+  Minotaur hits and Theenmy about 17.
+- Armor rescaled: Shield DEF 3, Hat 1, Cloth 2, Ring MDF 2. Potion heals 30 and Magic Water
+  restores 15.
+
 ### Implementation status
 | Piece | Status |
 |-------|--------|
@@ -576,6 +624,8 @@ lines plus optional scripted moments (a common event with choices) for important
 | Party switching | Done: `SI_PartySwitch.js` |
 | Durability tiers | Done: `SI_Gear.js` |
 | Talk | Done: `SI_Talk.js` |
+| Patience (pseudo party member) | Done: `SI_PseudoMember.js` |
+| Balance pass | First pass done (see Balance) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
@@ -588,7 +638,7 @@ starting position back to **MAP001 (8, 6)** (Database → System), then delete t
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.
 - Classes: Ghost, Returned Child, Junior Priest, Child of The Caves, Hunter, Priest, Fisher,
   All-Seafarer Thief, First Builder Queen, Forest Familiar (Falmi), All-Seafarer Prince
-  (Theenmy), assigned to actors 1–11. Patience (12) is still on the placeholder Ghost class.
+  (Theenmy), Hound (Patience), assigned to actors 1–12.
 - Each class's equippable weapon types follow the character design above (the Ghost cannot
   equip weapons).
 - Weapon types: Dagger, Sword, Spear, Staff, Club, Axe, Bow, Sling, Javelin, Net, Fist, Claw.

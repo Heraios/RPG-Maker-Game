@@ -6,6 +6,13 @@
  * @plugindesc Smoking Isle core combat: weapon moves, Punch, and Fatigue.
  * @author Smoking Isle
  *
+ * @param Defense Scale
+ * @type number
+ * @min 1
+ * @desc Armor curve for physDamage/magDamage: defense equal to this
+ * value halves damage. Lower = armor matters more.
+ * @default 20
+ *
  * @param Weary State
  * @type state
  * @desc State applied when Fatigue reaches its maximum.
@@ -58,6 +65,17 @@
  * never make punches stronger.
  *
  * ============================================================================
+ * Damage formulas
+ * ============================================================================
+ * Use these in skill damage formulas instead of subtracting defense, so
+ * armor reduces damage by a percentage and never to zero:
+ *   a.physDamage(b, 1.0)   a.atk x 1.0, reduced by b.def
+ *   a.magDamage(b, 1.5)    a.mat x 1.5, reduced by b.mdf
+ * Reduction = Defense Scale / (Defense Scale + defense): with the default
+ * 20, DEF 10 lets 67% through, DEF 20 lets 50% through.
+ * The Punch uses a.unarmedPhysDamage(b, 0.5) (ignores weapon ATK).
+ *
+ * ============================================================================
  * Fatigue (replaces TP)
  * ============================================================================
  * - Fatigue carries over between battles and starts at 0 for enemies.
@@ -86,6 +104,7 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
     'use strict';
 
     var params = PluginManager.parameters('SI_CombatCore');
+    $.defenseScale = Number(params['Defense Scale'] || 20);
     $.wearyStateId = Number(params['Weary State'] || 0);
     $.wearyRecovery = Number(params['Weary Recovery'] || 50);
     $.fatigueFromDamage = params['Fatigue From Damage'] === 'true';
@@ -181,6 +200,26 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
             return sum + weapon.params[2];
         }, 0);
         return Math.max(this.atk - weaponAtk, 1);
+    };
+
+    //-------------------------------------------------------------------------
+    // Damage helpers
+    //-------------------------------------------------------------------------
+
+    $.reduce = function(power, defense) {
+        return power * $.defenseScale / ($.defenseScale + Math.max(defense, 0));
+    };
+
+    Game_BattlerBase.prototype.physDamage = function(target, rate) {
+        return $.reduce(this.atk * rate, target.def);
+    };
+
+    Game_BattlerBase.prototype.magDamage = function(target, rate) {
+        return $.reduce(this.mat * rate, target.mdf);
+    };
+
+    Game_BattlerBase.prototype.unarmedPhysDamage = function(target, rate) {
+        return $.reduce(this.unarmedAtk() * rate, target.def);
     };
 
     //-------------------------------------------------------------------------
