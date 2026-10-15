@@ -1,0 +1,138 @@
+//=============================================================================
+// SI_BattleTraits.js
+//=============================================================================
+
+/*:
+ * @plugindesc Smoking Isle: character-specific battle rules (adult protection, Tou's revival).
+ * @author Smoking Isle
+ *
+ * @param Protection Threshold
+ * @desc A child at or below this share of max HP can be protected (0.3 = 30%).
+ * @default 0.3
+ *
+ * @param Revival Message
+ * @desc Shown when a remote body revives. %1 = name.
+ * @default %1's body stirs back to life!
+ *
+ * @help
+ * Requires SI_TurnOrder (place below it).
+ *
+ * ============================================================================
+ * Adult protection
+ * ============================================================================
+ * Actor note (on the adult):
+ *   <Protects: 2:100, 3:80>     actor id : % chance
+ *
+ * When an enemy's single-target attack would hit a protected child who is
+ * at or below the Protection Threshold of their max HP, a protecting adult
+ * in the battle party may take the hit instead (MV's "X protected Y!"
+ * message). The adult must be able to move. Adults are tried from the
+ * highest chance down; only one protects per hit.
+ *
+ * ============================================================================
+ * Remote body (Tou)
+ * ============================================================================
+ * Actor note:
+ *   <Remote Body: 2, 50>   When knocked out in battle, revives after 2 turns
+ *                          (anyone's turns) at 50% HP with Fatigue reset.
+ */
+
+var Imported = Imported || {};
+Imported.SI_BattleTraits = true;
+
+var SmokingIsle = SmokingIsle || {};
+SmokingIsle.BattleTraits = SmokingIsle.BattleTraits || {};
+
+(function($) {
+    'use strict';
+
+    var params = PluginManager.parameters('SI_BattleTraits');
+    $.threshold = Number(params['Protection Threshold'] || 0.3);
+    $.revivalMessage = String(params['Revival Message'] || '%1\'s body stirs back to life!');
+
+    //-------------------------------------------------------------------------
+    // Adult protection
+    //-------------------------------------------------------------------------
+
+    Game_Actor.prototype.protectChances = function() {
+        var m = /<Protects:\s*([^>]*)>/i.exec(this.actor().note);
+        var result = {};
+        if (m) {
+            m[1].split(',').forEach(function(pair) {
+                var p = pair.split(':');
+                var id = Number(p[0]);
+                if (id > 0) result[id] = Number(p[1] || 100);
+            });
+        }
+        return result;
+    };
+
+    $.findProtector = function(target, action) {
+        if (!target.isActor() || !action.subject().isEnemy() || !action.isForOne()) return null;
+        if (!action.isDamage() || target.hpRate() > $.threshold) return null;
+        var candidates = $gameParty.battleMembers().filter(function(actor) {
+            return actor !== target && actor.isAlive() && actor.canMove() &&
+                actor.protectChances()[target.actorId()] > 0;
+        }).sort(function(a, b) {
+            return b.protectChances()[target.actorId()] - a.protectChances()[target.actorId()];
+        });
+        for (var i = 0; i < candidates.length; i++) {
+            if (Math.random() * 100 < candidates[i].protectChances()[target.actorId()]) {
+                return candidates[i];
+            }
+        }
+        return null;
+    };
+
+    var _BattleManager_applySubstitute = BattleManager.applySubstitute;
+    BattleManager.applySubstitute = function(target) {
+        var protector = $.findProtector(target, this._action);
+        if (protector) {
+            this._logWindow.displaySubstitute(protector, target);
+            return protector;
+        }
+        return _BattleManager_applySubstitute.call(this, target);
+    };
+
+    //-------------------------------------------------------------------------
+    // Remote body (Tou)
+    //-------------------------------------------------------------------------
+
+    Game_Actor.prototype.remoteBody = function() {
+        var m = /<Remote Body:\s*(\d+)\s*,\s*(\d+)>/i.exec(this.actor().note);
+        return m ? { turns: Number(m[1]), hpRate: Number(m[2]) / 100 } : null;
+    };
+
+    var _Game_Actor_die = Game_Actor.prototype.die;
+    Game_Actor.prototype.die = function() {
+        _Game_Actor_die.call(this);
+        var remote = this.remoteBody();
+        this._siReviveIn = remote && $gameParty.inBattle() ? remote.turns : 0;
+    };
+
+    var _Game_Battler_onBattleEnd = Game_Battler.prototype.onBattleEnd;
+    Game_Battler.prototype.onBattleEnd = function() {
+        _Game_Battler_onBattleEnd.call(this);
+        this._siReviveIn = 0;
+    };
+
+    // Counts down after every battler's turn.
+    var _BattleManager_endTurn = BattleManager.endTurn;
+    BattleManager.endTurn = function() {
+        _BattleManager_endTurn.call(this);
+        $gameParty.battleMembers().forEach(function(actor) {
+            if (!actor._siReviveIn || !actor.isDead()) return;
+            actor._siReviveIn--;
+            if (actor._siReviveIn <= 0) {
+                var remote = actor.remoteBody();
+                actor.removeState(actor.deathStateId());
+                actor.setHp(Math.max(Math.floor(actor.mhp * remote.hpRate), 1));
+                actor.setTp(0);
+                this._logWindow.push('addText', $.revivalMessage.format(actor.name()));
+                this._logWindow.push('wait');
+                this.refreshStatus();
+            }
+        }, this);
+    };
+
+})(SmokingIsle.BattleTraits);

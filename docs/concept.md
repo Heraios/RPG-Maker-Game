@@ -566,6 +566,35 @@ lines plus optional scripted moments (a common event with choices) for important
     strictly a punishment).
   - **After Act 3:** a hard Game Over, and the game warns the player when this starts.
 
+### Character battle rules
+**Adult protection:** when an enemy's single-target attack would hit a child at or below **30% HP**,
+a protecting adult may take the hit instead. Chances reflect each adult's relationship with the
+child and their general morality (`<Protects: actor:chance>` on the adult). **Lasa is not a
+child** (she is fae, even though she can Plead and has a child-like equipment profile), so she is
+never protected. Starting chances, to be refined:
+
+| Adult | Yoon | Sib | Falmi | Tou |
+|-------|------|-----|-------|-----|
+| Pada | **100%** (always) | 80% | — | — |
+| Juda | 90% | 75% | — | — |
+| Dama | 60% | 60% | 50% | 50% |
+| Theenmy | 70% | 70% | 70% | 70% |
+
+**Who shares the party with whom** (draft, to confirm):
+
+| Adult | Present | Children alongside |
+|-------|---------|--------------------|
+| Pada | Act 2 to the mountain (Act 3) | Yoon, Sib (and Lasa, not protected) |
+| Juda | Act 3 (guest) | Yoon, Sib (Lasa?) |
+| Dama | End of Act 3 onward | Yoon, Sib, Falmi, Tou |
+| Theenmy | End of Act 4 onward | Yoon, Sib, Falmi, Tou |
+
+Falmi and Tou unlock in Act 4, after Pada and Juda are gone. Open question: is Lasa still with the
+party in Acts 3 and later?
+
+**Tou's remote body:** when knocked out, she revives after **2 turns (anyone's)** at **50% HP**,
+with Fatigue reset (`<Remote Body: 2, 50>`).
+
 ### Balance (first pass)
 **Philosophy:** low, readable numbers all game. Total growth is about 2–3×, and later difficulty
 comes from variety, status effects and Fatigue pressure rather than inflated stats. Every value
@@ -626,6 +655,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Talk | Done: `SI_Talk.js` |
 | Patience (pseudo party member) | Done: `SI_PseudoMember.js` |
 | Balance pass | First pass done (see Balance) |
+| Adult protection, Tou's revival | Done: `SI_BattleTraits.js` |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
