@@ -351,9 +351,10 @@ These are placeholder examples to show how the system works; the real weapon and
 still to be designed.
 
 ### Battle menu
-**Punch, Skills, Guard, Swap, Item, Switch** (Talk will be added). **Skills** opens a
-list of the character's skill types (Magic, Physical, Rest) in the same place, and Cancel steps
-back one window at a time. A character with only one skill type goes straight to its list, and
+**Punch, Skills, Guard, Tactics** (Talk will go between Skills and Guard).
+- **Skills** opens the character's skill types (Magic, Physical, Rest) in the same place.
+- **Tactics** opens **Swap, Item, Switch** the same way, and is greyed out if none can be used.
+- Cancel steps back one window at a time. A character with only one skill type goes straight to its list, and
 sealed types (e.g. while Weary) are greyed out.
 
 ### Party switching
@@ -480,7 +481,7 @@ decided):
 |-------|--------|
 | Punch, weapon moves, Fatigue/Weary | Done: `SI_CombatCore.js` |
 | Visible turn order | Done: `SI_TurnOrder.js` |
-| Skills submenu | Done: `SI_BattleMenu.js` |
+| Skills and Tactics submenus | Done: `SI_BattleMenu.js` |
 | Weapon swapping | Done: `SI_Gear.js` |
 | Party switching | Done: `SI_PartySwitch.js` |
 | Durability tiers | Done: `SI_Gear.js` |
