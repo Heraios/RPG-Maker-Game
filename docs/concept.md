@@ -350,6 +350,27 @@ character must both *know* the skill and have a weapon that *allows* it. The wea
 These are placeholder examples to show how the system works; the real weapon and skill list is
 still to be designed.
 
+### Weapon swapping and wear
+- **Swap** battle command: lists carried weapons the character can equip. Swapping uses the turn
+  (the "Swap Weapon" action; give it a `<Turn Cost>` to make it quicker or slower).
+- `<Free Swap>` (Theenmy, set on his actor): swap once per turn without using it, then act.
+- **Wear tiers:** `<Degrades To: id>` and `<Wear Chance: %>` on weapons and armor. A worn item
+  turns into the next tier, and `<Degrades To: 0>` means it breaks and is gone.
+  - Weapons wear when a skill uses one of their moves. Punch never wears weapons.
+  - Armor wears when its wearer takes physical damage.
+  - Items without the tags (bronze, unique gear) never wear.
+  - Repairs are handled by events (smiths, shops).
+
+| Weapon | Wears into | Chance per use |
+|--------|-----------|----------------|
+| Flint Knife | Chipped Flint Knife, then breaks | 15%, then 20% |
+| Obsidian Spear | Cracked Obsidian Spear, then breaks | 12%, then 20% |
+| Copper Khopesh | Bent Copper Khopesh, then breaks | 10%, then 15% |
+| Stone Axe | Chipped Stone Axe, then breaks | 10%, then 15% |
+| Bronze Leaf Blade | never wears | — |
+
+These are placeholder examples; real wear rates need playtesting.
+
 ### Fatigue
 - Each skill adds its "TP Gain" value as Fatigue **once per use** (MV's default adds it once per
   target hit). The `<Fatigue: n>` note tag overrides this, and negative values are used for Rest.
@@ -438,9 +459,9 @@ decided):
 |-------|--------|
 | Punch, weapon moves, Fatigue/Weary | Done: `SI_CombatCore.js` |
 | Visible turn order | Done: `SI_TurnOrder.js` |
-| Weapon swapping | Not started |
+| Weapon swapping | Done: `SI_Gear.js` |
 | Party swapping | Not started |
-| Durability tiers | Not started |
+| Durability tiers | Done: `SI_Gear.js` |
 | Talking | Not started |
 | Insight (leveling) | Designed; "Level" renamed to Insight. Systems not started |
 
