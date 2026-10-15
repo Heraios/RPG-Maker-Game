@@ -19,7 +19,7 @@ module.exports = {
             out.pacifiedLeft = !m.isAppeared(); out.buffed = $gameParty.members()[0]._buffs[2] > 0; out.exp = yoon.currentExp() - expBefore;
             const m2 = fresh(4); m2._siMood = 95; const e2 = yoon.currentExp(); talk(yoon, 17, m2); out.repeatExp = yoon.currentExp() - e2;
             const m3 = fresh(4); m3._siMood = 8; talk(pada, 21, m3); out.enraged = m3.isEnraged(); out.enragedRefuses = /too enraged/.test(talk(yoon, 17, m3));
-            const m4 = fresh(4); talk(pada, 23, m4); talk(pada, 23, m4); out.hunted = m4.isHunted() && !m4.canMove();
+            const m4 = fresh(4); const rnd = Math.random; Math.random = () => 0.5; talk(pada, 23, m4); talk(pada, 23, m4); Math.random = rnd; out.hunted = m4.isHunted() && !m4.canMove();
             const fb = new Game_Action(pada); fb.setSkill(16); out.finishing = fb.makeDamageValue(m4, false) === m4.hp;
             const orc = fresh(3); orc._siMood = 75; out.askInfo = /cave to the north/.test(talk(yoon, 19, orc)) && !orc.isAppeared();
             const slime = fresh(2); yoon.setHp(10); slime._siMood = 95; talk(sib, 20, slime); out.healed = yoon.hp > 10;

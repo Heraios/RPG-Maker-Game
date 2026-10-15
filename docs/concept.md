@@ -427,12 +427,16 @@ sealed types (e.g. while Weary) are greyed out.
 necklaces), **Shoulders** (capes, cloaks), **Body** (shirts), **Cuirass** (chest armor), **Arms**
 (armlets, bracelets, vambraces), **Left Hand** and **Right Hand** (gloves, rings), **Legs** (pants,
 skirts), **Greaves** (leg armor), **Feet** (shoes, boots), **Melee**, **Ranged**, **Offhand**
-(shields, or a weapon tagged `<Offhand>`), **Accessory 1–3**, then **Codex** (All-Seafarers) or
+(shields or a knife), **Accessory 1–3**, then **Codex** (All-Seafarers) or
 **Tattoo 1–8** (Islanders).
-- A slot only offers what the class may equip. `<Equip Slots: 9, 5>` gives a character a custom list
-  (e.g. a hound with only Neck and Accessory).
-- An off-hand weapon adds its stats and its moves, like the main weapon. Knives are tagged `<Offhand>`
-  for now.
+- A slot only offers what the class may equip. `<Equip Slots: ...>` gives a character a custom list:
+  the **Ghost has none**; **Patience** has only a **Collar** (a Neck slot; collars are their own armor
+  type, so only she wears them; she starts with a Woven Collar).
+- **Off hand:** shields, or a **knife** (only knives). An off-hand knife gives **no stats**, only its moves
+  plus the move `offhand`, for skills that need an off-hand weapon (`<Requires Move: offhand>`); those
+  skills wear the off-hand knife.
+- **Two-handed weapons:** spears, staffs and axes. While one is in Melee, the off hand is locked and its
+  item goes back to the bag. Tag a weapon `<One-Handed>` (some axes) or `<Two-Handed>` to override.
 - Starting equipment is matched by type; extra pieces (more tattoos, a second ring) go in the actor note
   as `<Start Equips: armor 37, armor 39>`.
 - Placeholder items for the new slots: Shell Necklace, Bark-Cloth Cloak, Woven Armlets, Hide Gloves,
@@ -943,7 +947,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
-| Body-part equipment slots, off-hand weapons | Done: `SI_Equipment.js` |
+| Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
 | Automated tests | `tests/` (23 tests, about 190 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 

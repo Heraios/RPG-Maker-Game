@@ -40,14 +40,14 @@ module.exports = {
         const battle = await h.eval(() => ({ members: $gameParty.battleMembers().map(a => a.name()), statusRows: SceneManager._scene._statusWindow.maxItems(), patienceWindow: !!SceneManager._scene._pseudoStatusWindow }));
         t.eq(battle.members.join(','), 'Yoon,Sib,Lasa,Pada,Patience', 'Patience fights as a fifth battler');
         t.eq(battle.statusRows, 4, 'the status window keeps four rows');
-        await h.eval(() => $gameTroop.members().forEach(e => e._siMood = 60));
+        await h.eval(() => { $gameTroop.members().forEach(e => e._siMood = 60); $gameActors.actor(12).addState(1); });   // Patience would bite and anger it
         let offered = false;
         for (let k = 0; k < 300; k++) {
-            const s = await h.eval(() => ({ battle: SceneManager._scene instanceof Scene_Battle, choice: $gameMessage.isChoice(), cmd: SceneManager._scene._actorCommandWindow && SceneManager._scene._actorCommandWindow.isOpenAndActive() }));
+            const s = await h.eval(() => ({ battle: SceneManager._scene instanceof Scene_Battle, choice: $gameMessage.isChoice(), cmd: BattleManager.isInputting() && !!BattleManager.actor() }));
             if (!s.battle) break;
             if (s.choice) { offered = true; await h.page.keyboard.press('Enter'); await h.page.waitForTimeout(200); continue; }
-            if (s.cmd) { await h.eval(() => { const sc = SceneManager._scene, a = BattleManager.actor(); a.inputtingAction().setGuard(); sc._actorCommandWindow.deactivate(); sc.selectNextCommand(); }); continue; }
-            await h.page.keyboard.press('Enter'); await h.page.waitForTimeout(80);
+            if (s.cmd) { await h.eval(() => { const sc = SceneManager._scene, a = BattleManager.actor(); a.inputtingAction().setGuard(); [sc._skillTypeWindow, sc._skillWindow, sc._itemWindow, sc._tacticsWindow, sc._enemyWindow, sc._actorWindow].forEach(w => w && (w.deactivate(), w.hide())); sc._actorCommandWindow.deactivate(); sc.selectNextCommand(); }); continue; }
+            await h.page.waitForTimeout(80); if (await h.eval(() => $gameMessage.isBusy())) await h.page.keyboard.press('Enter');
         }
         t.ok(offered, 'the Slime offered passage');
         t.ok(await h.eval(() => SceneManager._scene instanceof Scene_Map && BattleManager._escaped), 'leaving peacefully ends the battle');

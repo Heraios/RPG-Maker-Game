@@ -4,7 +4,7 @@
 
 /*:
  * @plugindesc Smoking Isle: body-part equipment slots, paired hands, multiple
- * accessories and off-hand weapons.
+ * accessories, off-hand knives and two-handed weapons.
  * @author Smoking Isle
  *
  * @param Slot Order
@@ -19,12 +19,25 @@
  *
  * @param Offhand Equip Type
  * @type number
- * @desc Equipment type id of the off-hand slot (shields, and weapons
- * tagged <Offhand>).
+ * @desc Equipment type id of the off-hand slot.
  * @default 2
  *
+ * @param Offhand Weapon Types
+ * @desc Weapon type ids that can go in the off hand (Knives).
+ * @default 1
+ *
+ * @param Offhand Move
+ * @desc Extra move a weapon in the off hand provides, for skills that need
+ * an off-hand weapon (<Requires Move: offhand>).
+ * @default offhand
+ *
+ * @param Two-Handed Weapon Types
+ * @desc Weapon type ids that need both hands (Spear, Staff, Axe). Tag a
+ * weapon <One-Handed> or <Two-Handed> to override.
+ * @default 3,4,6
+ *
  * @help
- * Place this plugin before SI_Glyphs.
+ * Place this plugin after SI_Gear and before SI_Glyphs.
  *
  * Every character gets the slots in Slot Order (default: Head, Neck,
  * Shoulders, Body, Cuirass, Arms, Left Hand, Right Hand, Legs, Greaves,
@@ -33,17 +46,21 @@
  * Equip Weapon / Equip Armor).
  *
  * Actor or class note:
- *   <Equip Slots: 9, 5>      this character has only these slots instead
- *                            (e.g. a hound with just a Neck and an Accessory)
+ *   <Equip Slots: 9>         this character has only these slots instead
+ *   <Equip Slots: none>      this character can't equip anything
+ *   <Slot Names: Collar>     rename this character's slots, top to bottom
  *   <Start Equips: armor 12, armor 36, weapon 3>
  *                            extra starting equipment beyond what the
  *                            database's Initial Equipment can hold (a second
  *                            ring, more tattoos). Each goes into the first
  *                            empty slot of its type.
  *
- * Weapon note:
- *   <Offhand>   this weapon can also go in the Offhand slot. It adds its
- *               stats and its moves (for weapon skills) like the main weapon.
+ * Off hand: shields, or a weapon of an Offhand Weapon Type. An off-hand weapon
+ * gives no stats or traits, only its moves plus the Offhand Move. Skills that
+ * use the off-hand move wear down the off-hand weapon.
+ *
+ * Two-handed weapons: while one is in the Melee slot, the Offhand slot is
+ * locked, and anything in it goes back to the bag.
  *
  * Initial Equipment in the database is matched by equipment type, so it
  * doesn't matter which row it was entered in.
@@ -68,6 +85,9 @@ SmokingIsle.Equipment = SmokingIsle.Equipment || {};
     };
     $.slotOrder = $.parseIds(params['Slot Order'] || '3,9,10,4,11,12,13,13,14,15,16,1,6,2,5,5,5');
     $.offhandType = Number(params['Offhand Equip Type'] || 2);
+    $.offhandWeaponTypes = $.parseIds(params['Offhand Weapon Types'] || '1');
+    $.offhandMove = String(params['Offhand Move'] || 'offhand').trim().toLowerCase();
+    $.twoHandedTypes = $.parseIds(params['Two-Handed Weapon Types'] || '3,4,6');
     $.slotNames = {};
     String(params['Slot Names'] || '').split(';').forEach(function(part) {
         var m = /^\s*(\d+)\s*:(.*)$/.exec(part);
@@ -87,7 +107,10 @@ SmokingIsle.Equipment = SmokingIsle.Equipment || {};
         if (!_DataManager_isDatabaseLoaded.call(this)) return false;
         if (!$._loaded) {
             $dataWeapons.forEach(function(w) {
-                if (w) w.siOffhand = /<Offhand>/i.test(w.note || '');
+                if (!w) return;
+                var note = w.note || '';
+                w.siTwoHanded = /<Two-Handed>/i.test(note) ||
+                    ($.twoHandedTypes.indexOf(w.wtypeId) >= 0 && !/<One-Handed>/i.test(note));
             });
             $._loaded = true;
         }
@@ -103,12 +126,16 @@ SmokingIsle.Equipment = SmokingIsle.Equipment || {};
         return m;
     };
 
+    $.isOffhandWeapon = function(item) {
+        return DataManager.isWeapon(item) && $.offhandWeaponTypes.indexOf(item.wtypeId) >= 0;
+    };
+
     //-------------------------------------------------------------------------
     // Slots
     //-------------------------------------------------------------------------
 
     Game_Actor.prototype.equipSlots = function() {
-        var custom = $.note(this, /<Equip Slots:\s*([\d,\s]+)>/i);
+        var custom = $.note(this, /<Equip Slots:\s*([^>]*)>/i);
         return custom ? $.parseIds(custom[1]) : $.slotOrder.slice();
     };
 
@@ -123,6 +150,11 @@ SmokingIsle.Equipment = SmokingIsle.Equipment || {};
     };
 
     Game_Actor.prototype.equipSlotName = function(slotId) {
+        var custom = $.note(this, /<Slot Names:\s*([^>]*)>/i);
+        if (custom) {
+            var list = custom[1].split(',').map(function(s) { return s.trim(); });
+            if (list[slotId]) return list[slotId];
+        }
         var slots = this.equipSlots();
         var etype = slots[slotId];
         var name = $dataSystem.equipTypes[etype] || '';
@@ -146,11 +178,11 @@ SmokingIsle.Equipment = SmokingIsle.Equipment || {};
         return 170;
     };
 
-    // Which items a slot takes: its own type, plus <Offhand> weapons in the off hand.
+    // Which items a slot takes: its own type, plus knives in the off hand.
     $.slotAccepts = function(etype, item) {
         if (!item) return true;
         if (item.etypeId === etype) return true;
-        return etype === $.offhandType && DataManager.isWeapon(item) && item.siOffhand;
+        return etype === $.offhandType && $.isOffhandWeapon(item);
     };
 
     Game_Actor.prototype.slotAccepts = function(slotId, item) {
@@ -179,14 +211,100 @@ SmokingIsle.Equipment = SmokingIsle.Equipment || {};
         this.changeEquip(slotId, itemId > 0 ? list[itemId] : null);
     };
 
+    //-------------------------------------------------------------------------
+    // Off hand and two-handed weapons
+    //-------------------------------------------------------------------------
+
+    Game_Actor.prototype.offhandSlotId = function() {
+        return this.slotOfType($.offhandType);
+    };
+
+    Game_Actor.prototype.offhandWeapon = function() {
+        var slotId = this.offhandSlotId();
+        var item = slotId >= 0 ? this.equips()[slotId] : null;
+        return DataManager.isWeapon(item) ? item : null;
+    };
+
+    Game_Actor.prototype.isTwoHanded = function() {
+        return this.weapons().some(function(w) {
+            return w.siTwoHanded;
+        });
+    };
+
+    // weapons() is the main hand only; the off-hand knife lends moves, nothing else.
+    Game_Actor.prototype.weapons = function() {
+        var off = this.offhandSlotId();
+        return this.equips().filter(function(item, i) {
+            return item && DataManager.isWeapon(item) && i !== off;
+        });
+    };
+
+    // Equipment that counts for stats and traits: everything but an off-hand weapon.
+    // (By slot, since the same knife can be in both hands.)
+    Game_Actor.prototype.statEquips = function() {
+        var off = this.offhandWeapon() ? this.offhandSlotId() : -1;
+        return this.equips().filter(function(item, i) {
+            return item && i !== off;
+        });
+    };
+
+    var _Game_Actor_traitObjects = Game_Actor.prototype.traitObjects;
+    Game_Actor.prototype.traitObjects = function() {
+        var off = this.offhandWeapon();
+        if (!off) return _Game_Actor_traitObjects.call(this);
+        var objects = _Game_Actor_traitObjects.call(this);
+        objects.splice(objects.lastIndexOf(off), 1);
+        return objects;
+    };
+
+    Game_Actor.prototype.paramPlus = function(paramId) {
+        var value = Game_Battler.prototype.paramPlus.call(this, paramId);
+        this.statEquips().forEach(function(item) {
+            value += item.params[paramId];
+        });
+        return value;
+    };
+
+    var _Game_Actor_availableMoves = Game_Actor.prototype.availableMoves;
+    Game_Actor.prototype.availableMoves = function() {
+        var moves = _Game_Actor_availableMoves.call(this);
+        var off = this.offhandWeapon();
+        if (off) {
+            (off.siMoves || []).concat([$.offhandMove]).forEach(function(move) {
+                if (moves.indexOf(move) < 0) moves.push(move);
+            });
+        }
+        return moves;
+    };
+
+    // A skill that needs the off-hand move wears the off-hand weapon.
+    if (Game_Actor.prototype.weaponSlotForSkill) {
+        var _Game_Actor_weaponSlotForSkill = Game_Actor.prototype.weaponSlotForSkill;
+        Game_Actor.prototype.weaponSlotForSkill = function(skill) {
+            var required = (skill && skill.siRequiredMoves) || [];
+            if (required.indexOf($.offhandMove) >= 0 && this.offhandWeapon()) {
+                return this.offhandSlotId();
+            }
+            return _Game_Actor_weaponSlotForSkill.call(this, skill);
+        };
+    }
+
+    var _Game_Actor_isEquipChangeOk = Game_Actor.prototype.isEquipChangeOk;
+    Game_Actor.prototype.isEquipChangeOk = function(slotId) {
+        if (slotId === this.offhandSlotId() && this.isTwoHanded()) return false;
+        return _Game_Actor_isEquipChangeOk.call(this, slotId);
+    };
+
     Game_Actor.prototype.releaseUnequippableItems = function(forcing) {
         for (;;) {
             var slots = this.equipSlots();
             var equips = this.equips();
+            var off = this.offhandSlotId();
+            var twoHanded = this.isTwoHanded();
             var changed = false;
             for (var i = 0; i < equips.length; i++) {
                 var item = equips[i];
-                if (item && (!this.canEquip(item) || !$.slotAccepts(slots[i], item))) {
+                if (item && (!this.canEquip(item) || !$.slotAccepts(slots[i], item) || (i === off && twoHanded))) {
                     if (!forcing) this.tradeItemWithParty(null, item);
                     this._equips[i].setObject(null);
                     changed = true;

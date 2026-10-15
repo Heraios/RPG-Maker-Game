@@ -50,5 +50,6 @@ null,
 {"id":48,"atypeId":1,"description":"Goat hide.","etypeId":13,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":142,"name":"Hide Gloves","note":"","params":[0,0,0,1,0,0,0,0],"price":100},
 {"id":49,"atypeId":1,"description":"Dried grass and fibre.","etypeId":14,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":157,"name":"Grass Skirt","note":"","params":[0,0,0,1,0,0,0,0],"price":100},
 {"id":50,"atypeId":4,"description":"Bronze. Unbreakable, but heavy (+1 Fatigue per turn).","etypeId":15,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":141,"name":"Bronze Greaves","note":"<Fatigue Per Turn: 1>","params":[0,0,0,3,0,0,0,0],"price":100},
-{"id":51,"atypeId":1,"description":"Light and quiet.","etypeId":16,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":140,"name":"Reed Sandals","note":"","params":[0,0,0,0,0,0,1,0],"price":100}
+{"id":51,"atypeId":1,"description":"Light and quiet.","etypeId":16,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":140,"name":"Reed Sandals","note":"","params":[0,0,0,0,0,0,1,0],"price":100},
+{"id":52,"atypeId":13,"description":"Plaited cord with a carved bone tag.","etypeId":9,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":144,"name":"Woven Collar","note":"","params":[0,0,0,1,0,0,0,0],"price":50}
 ]
