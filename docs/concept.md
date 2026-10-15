@@ -325,6 +325,60 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 - Enemy "Turn" conditions count that enemy's own turns. Troop event turns advance on every
   battler's turn.
 
+### Weapon skills
+Weapons list the **moves** they allow; a skill needs one of its moves (or, for Conducting Edge,
+all of them). Fatigue: very low 1, low 2, medium 3, medium-high 4, high 5, very high 7.
+
+| Family (move) | Weapons | Skills |
+|---------------|---------|--------|
+| Thrust | Knife, Spear, Staff (Quick Jab and Vital only), straight Sword | **Quick Jab** (very low, Pierce ×0.8) · **Measured Thrust** (medium, ×1.1) · **Vital Strike** (high, ×1.5, +25% crit; knife/staff/sword) |
+| Slash | Knife, Sword, curved Axes | **Quick Slash** (very low, Cut ×0.8) · **Raking Cut** (medium, ×1.1, 40% Bleed) · **Flaying Strike** (high, ×1.5, DEF down) |
+| Chop | Axe, Khopesh | **Heavy Chop** (medium-high, Cut ×1.6) · **Rending Blow** (high, ×1.9, DEF down) · **Cleave** (very high, ×2.4, also hits an adjacent enemy) |
+| Bludgeon | Club, Staff, Axe (poll side) | **Overhead Smash** (medium, Crush ×1.1) · **Skull Crack** (high, ×1.5, 50% Disoriented) |
+| Sweep | Staff, Spear | **Wide Sweep** (medium, Crush ×0.7, all enemies) · **Trip** (low, ×0.3, AGI down 1 turn) |
+| Sword only | Swords | **Pommel Strike** (very low, Crush ×0.8) · **Conducting Edge** (medium, electric Burn ×1.1; metal sword + **Voltaic Pile** accessory) |
+| Ranged | Bow, Sling | **Aimed Shot** (medium, Pierce, never misses) · **Covering Fire** (low, light Pierce/Crush, AGI down) · **Stone Rain** (high, sling only: spends all stones, one random hit each) |
+
+Weapon move sets: Flint Knife (jab, thrust, vital, slash); Obsidian Spear (jab, thrust, sweep);
+Walking Staff (jab, vital, bludgeon, sweep); Stone Axe (chop, bludgeon); Hardwood Club
+(bludgeon); Copper Khopesh (chop, slash, sword, metal: **no** jab); Bronze Leaf Blade (jab,
+thrust, vital, slash, sword, metal); Fishing Harpoon (jab, thrust, sweep, throw; 50% Bleed).
+
+**For testing, everyone knows every skill their weapons allow.** When each is learned (early,
+mid-game, late) is still to be decided.
+
+### Yoon's skills
+The Ghost's versions hit all enemies or all allies; human Yoon's versions hit one target.
+
+| Skill | Effect |
+|-------|--------|
+| Burning / Chilling / Cutting / Crushing Touch | Inflict Smoldering / Wet / Disoriented / Burdened (states only, no cycle) |
+| Two-state Touches (6, placeholder names, later) | Inflict two base states |
+| Infernal Touch (late) | Inflicts all four base states |
+| Spirit Surge | Purges every elemental state, leaving the matching one-turn removal states (extra turn if a second tier was purged) |
+| Infernal Surge (late) | Spirit Surge plus MAT/2 damage per state purged |
+| Spiritual Writhe / Infernal Writhe (late) | Upgrade every base state on one target / all enemies |
+| Ghostly Touch | Drains MP |
+| Become Ethereal (human Rest skill) | Recover 35 Fatigue; for 3 turns take 25% physical damage, but MDF, AGI and MAT drop and no Physical skills |
+| -Wail (Bewildering, Maddening, Mournful, Terrifying) | Inflict Confused, Enraged, Despair, Panicked |
+| -Cry (Focusing, Calming, Joyful, Rallying) | Grant Focused, Calm, Happy, Brave |
+
+### Mental states
+| State | Effect |
+|-------|--------|
+| Confused | Deals 25% less damage, takes 25% more; may do nothing (20%) or flee (10%) |
+| Enraged | ATK up; AGI and DEF down; no Magic (also: won't listen to Talk) |
+| Despair | Loses 10% MP per turn; may do nothing or flee |
+| Panicked | MAT up; AGI and MDF down; no Physical skills |
+| Focused (buff) | Next damaging attack is a guaranteed critical |
+| Calm (buff) | All stats +10%; the next mental ailment removes Calm instead of landing |
+| Happy (buff) | Gains 10% MP per turn; cures and blocks mental ailments |
+| Brave (buff) | Acts twice per turn; recovers 1 Fatigue per turn |
+
+Only enemies can flee. Insight's mental resistance covers Rage, Confused, Fascination, Sleep,
+Enraged, Feverish, Despair and Panicked. **Bleed** (from Raking Cut and the harpoon) loses 6% HP per
+turn.
+
 ### Weapon moves
 Weapons carry **moves** (`jab`, `chop`, `bash`...). A physical skill requires a move, so a
 character must both *know* the skill and have a weapon that *allows* it. The weapon type
@@ -834,6 +888,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Elemental state cycle | Done: `SI_ElementalStates.js` |
 | Resting skills and conditioning | Done: `SI_CombatCore.js` |
 | Ranged weapons, ammo, flying | Done: `SI_Ranged.js` |
+| Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

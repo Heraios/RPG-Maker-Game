@@ -26,6 +26,9 @@
  *   <Ranged Power: 8>       power added by ranged skills (not to melee ATK)
  *
  * Skill note:
+ *   <Ammo Volley>           (ranged) spends ALL remaining ammo from the
+ *                           item, hitting a random enemy once per shot
+ *                           (Stone Rain). Use a "1 random enemy" scope.
  *   <Ranged>                a ranged skill: needs an equipped item with a
  *                           matching move and ammo left; each use spends 1
  *                           ammo from that item. Ignores evasion (accurate).
@@ -77,7 +80,9 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
                 });
             });
             $dataSkills.forEach(function(skill) {
-                if (skill) skill.siRanged = /<Ranged>/i.test(skill.note);
+                if (!skill) return;
+                skill.siRanged = /<Ranged>/i.test(skill.note);
+                skill.siVolley = /<Ammo Volley>/i.test(skill.note);
             });
             $dataStates.forEach(function(state) {
                 if (state) state.siUntilRanged = /<Until Ranged>/i.test(state.note);
@@ -146,7 +151,8 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
             this._siRangedSlot = slot;
             if (slot >= 0) {
                 this._siAmmoUsed = this._siAmmoUsed || {};
-                this._siAmmoUsed[slot] = this.ammoUsed(slot) + 1;
+                var spend = item.siVolley ? this.ammoLeft(slot) : 1;
+                this._siAmmoUsed[slot] = this.ammoUsed(slot) + spend;
             }
         }
         _Game_Battler_useItem.call(this, item);
@@ -188,6 +194,18 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
             subject._siRangedSlot = subject.rangedSourceSlot(this.item());
         }
         return _Game_Action_evalDamageFormula.call(this, target);
+    };
+
+    // Volley: one random hit per shot left (counted before the ammo is spent).
+    var _Game_Action_numTargets = Game_Action.prototype.numTargets;
+    Game_Action.prototype.numTargets = function() {
+        var item = this.item();
+        var subject = this.subject();
+        if (item && item.siVolley && subject.isActor()) {
+            var slot = subject.rangedSourceSlot(item);
+            return slot >= 0 ? subject.ammoLeft(slot) : 1;
+        }
+        return _Game_Action_numTargets.call(this);
     };
 
     $.isFlying = function(battler) {

@@ -9,5 +9,6 @@ null,
 {"id":7,"atypeId":9,"description":"One throw per battle.","etypeId":6,"traits":[],"iconIndex":100,"name":"Javelin","note":"<Moves: throw>\n<Ammo: 1>\n<Ranged Power: 16>","params":[0,0,0,0,0,0,0,0],"price":80},
 {"id":8,"atypeId":10,"description":"Entangles. One cast per battle.","etypeId":6,"traits":[],"iconIndex":176,"name":"Fishing Net","note":"<Moves: net>\n<Ammo: 1>\n<Ranged Power: 3>","params":[0,0,0,0,0,0,0,0],"price":60},
 {"id":9,"atypeId":4,"description":"Bronze. Unbreakable, but heavy (+1 Fatigue per turn).","etypeId":3,"traits":[],"iconIndex":130,"name":"Bronze Helm","note":"<Fatigue Per Turn: 1>","params":[0,0,0,3,0,0,0,0],"price":400},
-{"id":10,"atypeId":4,"description":"Bronze. Unbreakable, but heavy (+2 Fatigue per turn).","etypeId":4,"traits":[],"iconIndex":135,"name":"Bronze Cuirass","note":"<Fatigue Per Turn: 2>","params":[0,0,0,6,0,0,0,0],"price":800}
+{"id":10,"atypeId":4,"description":"Bronze. Unbreakable, but heavy (+2 Fatigue per turn).","etypeId":4,"traits":[],"iconIndex":135,"name":"Bronze Cuirass","note":"<Fatigue Per Turn: 2>","params":[0,0,0,6,0,0,0,0],"price":800},
+{"id":11,"atypeId":1,"description":"A stack of copper, zinc and brine-soaked cloth. Lets a metal sword conduct electricity.","etypeId":5,"traits":[],"iconIndex":145,"name":"Voltaic Pile","note":"<Moves: voltaic>","params":[0,0,0,0,0,0,0,0],"price":600}
 ]
