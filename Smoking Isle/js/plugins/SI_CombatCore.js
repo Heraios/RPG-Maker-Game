@@ -72,6 +72,8 @@
  *   use. It is removed when Fatigue falls below the Weary Recovery value.
  * - "TP Cost" is not used by this system; leave it at 0.
  * - A negative "TP Regeneration" trait recovers Fatigue every turn.
+ * - <No Fatigue> (actor, class, equipment or state note): Fatigue always
+ *   stays at 0 (the Ghost has no body to tire).
  */
 
 var Imported = Imported || {};
@@ -207,7 +209,14 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
         }
     };
 
+    Game_BattlerBase.prototype.hasNoFatigue = function() {
+        return this.traitObjects().some(function(obj) {
+            return obj && /<No Fatigue>/i.test(obj.note);
+        });
+    };
+
     Game_Battler.prototype.setTp = function(tp) {
+        if (this.hasNoFatigue()) tp = 0;
         Game_BattlerBase.prototype.setTp.call(this, tp);
         this.updateWeary();
     };

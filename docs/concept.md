@@ -556,11 +556,15 @@ lines plus optional scripted moments (a common event with choices) for important
   - Normal walking adds nothing, except in a handful of late-game areas (underwater, certain
     lava tubes, the volcano crater, the volcanic desert).
   - **Recovery:** camping at set spots, shelters and the village.
+  - **The Ghost has no Fatigue at all** (`<No Fatigue>` on the Ghost class). Fatigue arrives
+    when Yoon gets a body.
 - **Losing a fight:**
   - **Early game** (Ghost, Sib and Lasa): Sib runs back to their house.
   - **Acts 2–3** (with Pada, then Juda): the adult carries the children back to the nearest save
     point.
-  - **After that:** Game Over.
+  - **Cost of being rescued:** defeated or pacified enemies come back, and Pada scolds you (not
+    strictly a punishment).
+  - **After Act 3:** a hard Game Over, and the game warns the player when this starts.
 
 ### Implementation status
 | Piece | Status |
