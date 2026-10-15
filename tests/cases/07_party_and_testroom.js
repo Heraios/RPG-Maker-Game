@@ -40,7 +40,7 @@ module.exports = {
         const battle = await h.eval(() => ({ members: $gameParty.battleMembers().map(a => a.name()), statusRows: SceneManager._scene._statusWindow.maxItems(), patienceWindow: !!SceneManager._scene._pseudoStatusWindow }));
         t.eq(battle.members.join(','), 'Yoon,Sib,Lasa,Pada,Patience', 'Patience fights as a fifth battler');
         t.eq(battle.statusRows, 4, 'the status window keeps four rows');
-        await h.eval(() => { $gameTroop.members().forEach(e => e._siMood = 60); $gameActors.actor(12).addState(1); });   // Patience would bite and anger it
+        await h.eval(() => $gameTroop.members().forEach(e => e._siMood = 60));
         let offered = false;
         for (let k = 0; k < 300; k++) {
             const s = await h.eval(() => ({ battle: SceneManager._scene instanceof Scene_Battle, choice: $gameMessage.isChoice(), cmd: BattleManager.isInputting() && !!BattleManager.actor() }));
