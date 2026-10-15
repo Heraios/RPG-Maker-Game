@@ -767,7 +767,7 @@ healing *states* or remove ailments and debuffs (e.g. Bandages: about 20 HP and 
 
 All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all of them for testing.
 
-**Spell acquisition (designed, not built yet).** Spells are glyphs, read aloud:
+**Spell acquisition** (`SI_Glyphs.js`). Spells are glyphs, read aloud:
 
 | Who | How spells are gained |
 |-----|-----------------------|
@@ -775,6 +775,17 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
 | All-Seafarers (Parl, Theenmy) | A single **Codex** accessory slot; each codex grants **3–6 spells** and its own stat boosts |
 | Tou, Falmi, Lasa | Innately, no medium (learned like normal skills) |
 | Ghost Yoon | Only the unique ghost abilities; regular magic and weapon skills come after gaining a body |
+
+- **Tattoos** are equipment items that grant one spell each (MV's "Add Skill" trait): one "Glyph"
+  tattoo exists for every spell (Glyph: Ahi ... Glyph: Mahu-Ara).
+- **Tattoos are permanent** while the switch "Tattoo removal (late game)" is off: empty tattoo slots
+  can be filled, but an occupied one can't be removed or replaced, and Optimize/Clear never touch
+  tattoos.
+- **Codices** (examples): Codex of Embers (Ahi, Ahiben, Ahigun; MAT +2), Codex of Mending (Mahu,
+  Mahuben, Mahugun, Ara; MDF +2), Sailor's Codex (Rari, Hagu, Keri and their -ben forms; AGI +2).
+- **Starting glyphs:** Sib has Mahu and Ahi; Juda has Mahu, Mahuben, Ara, Ahiben, Rariben; Dama has
+  Rari; Theenmy carries the Codex of Mending. Human Yoon's new body starts blank.
+- The test room's **Tattooist** gives every glyph and codex and toggles the removal switch.
 
 ### Damage types
 **Six damage types:** Physical, Magical, Cut, Pierce, Crush, Burn. Physical Burn covers
@@ -907,7 +918,8 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Resting skills and conditioning | Done: `SI_CombatCore.js` |
 | Ranged weapons, ammo, flying | Done: `SI_Ranged.js` |
 | Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
-| Automated tests | `tests/` (21 tests, about 160 checks; see tests/README.md) |
+| Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
+| Automated tests | `tests/` (22 tests, about 175 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

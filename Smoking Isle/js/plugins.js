@@ -17,5 +17,6 @@ var $plugins =
 {"name":"SI_DamageTypes","status":true,"description":"Smoking Isle: mixed damage types (Cut, Pierce, Crush, Burn...) and magic sources.","parameters":{"Element Ids":"1,2,3,4,5,6","Source Ids":"7,8,9,10,11"}},
 {"name":"SI_ElementalStates","status":true,"description":"Smoking Isle: the elemental state cycle (inflict, upgrade, remove, extra turns).","parameters":{"State Ids":"14,15,16,17,18,19,20,21,22,23,24,25","Inflict Chance":"100","Feverish Lash Out Chance":"30","Extra Turn Message":"%1 seizes the moment!"}},
 {"name":"SI_Ranged","status":true,"description":"Smoking Isle: ranged weapons (ammo per battle, ranged power), flying, Steady Aim.","parameters":{"Flying Evasion":"0.75"}},
-{"name":"SI_Ailments","status":true,"description":"Smoking Isle: mental states, weapon skill extras, and Yoon's spirit skills.","parameters":{"Hesitate Message":"%1 hesitates and does nothing.","Flee Message":"%1 flees in terror!","Bleed State":"28"}}
+{"name":"SI_Ailments","status":true,"description":"Smoking Isle: mental states, weapon skill extras, and Yoon's spirit skills.","parameters":{"Hesitate Message":"%1 hesitates and does nothing.","Flee Message":"%1 flees in terror!","Bleed State":"28"}},
+{"name":"SI_Glyphs","status":true,"description":"Smoking Isle: tattoo and codex equipment slots (spells as glyphs).","parameters":{"Tattoo Equip Type":"7","Codex Equip Type":"8","Tattoo Removal Switch":"2"}}
 ];
