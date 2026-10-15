@@ -245,6 +245,16 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
         this.setTp(0);
     };
 
+    // Fatigue can be fractional (e.g. party switching); show it as a whole number.
+    Window_Base.prototype.drawActorTp = function(actor, x, y, width) {
+        width = width || 96;
+        this.drawGauge(x, y, width, actor.tpRate(), this.tpGaugeColor1(), this.tpGaugeColor2());
+        this.changeTextColor(this.systemColor());
+        this.drawText(TextManager.tpA, x, y, 44);
+        this.changeTextColor(this.tpColor(actor));
+        this.drawText(Math.floor(actor.tp), x + width - 64, y, 64, 'right');
+    };
+
     var _Game_BattlerBase_recoverAll = Game_BattlerBase.prototype.recoverAll;
     Game_BattlerBase.prototype.recoverAll = function() {
         _Game_BattlerBase_recoverAll.call(this);

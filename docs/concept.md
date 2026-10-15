@@ -307,7 +307,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Fatigue | Replaces TP. Builds with most actions, **carries over between battles**, and causes **Weary** at 100 |
 | Durability | **Condition tiers**: worn weapons turn into weaker items, and bronze never degrades |
 | Weapon swapping | Mid-battle; costs the turn (Theenmy swaps for free) |
-| Party swapping | Mid-battle, in the style of FFX |
+| Party swapping | Mid-battle, in the style of FFX: free, but adds a little Fatigue |
 | Talking | SMT-style conversations with one shared framework for animals, spirits, rituals and sapient enemies |
 | Leveling | **Insight**: gained only from talking, and it never raises damage or teaches skills (see below) |
 
@@ -351,10 +351,21 @@ These are placeholder examples to show how the system works; the real weapon and
 still to be designed.
 
 ### Battle menu
-**Punch, Skills, Guard, Swap, Item** (Talk and party swapping will be added). **Skills** opens a
+**Punch, Skills, Guard, Swap, Item, Switch** (Talk will be added). **Skills** opens a
 list of the character's skill types (Magic, Physical, Rest) in the same place, and Cancel steps
 back one window at a time. A character with only one skill type goes straight to its list, and
 sealed types (e.g. while Weary) are greyed out.
+
+### Party switching
+- **Switch** battle command: lists reserve members (everyone beyond the four battle slots).
+- **Free:** the incoming character takes the current character's place *and their turn*, and acts
+  immediately. They gain a little Fatigue (default 1, scaled by TP Charge Rate) so switching
+  can't be spammed.
+- Knocked-out reserve members can't be switched in.
+- `<No Switch>` on an actor keeps them out of the reserve list and stops them being switched out
+  (for Patience).
+- Guest characters only exist while the party has four or fewer members, so they never need
+  switching rules.
 
 ### Weapon swapping and wear
 - **Swap** battle command: lists carried weapons the character can equip. Swapping uses the turn
@@ -471,7 +482,7 @@ decided):
 | Visible turn order | Done: `SI_TurnOrder.js` |
 | Skills submenu | Done: `SI_BattleMenu.js` |
 | Weapon swapping | Done: `SI_Gear.js` |
-| Party swapping | Not started |
+| Party switching | Done: `SI_PartySwitch.js` |
 | Durability tiers | Done: `SI_Gear.js` |
 | Talking | Not started |
 | Insight (leveling) | Designed; "Level" renamed to Insight. Systems not started |

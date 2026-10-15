@@ -7,5 +7,6 @@ var $plugins =
 {"name":"SI_CombatCore","status":true,"description":"Smoking Isle core combat: weapon moves, Punch, and Fatigue.","parameters":{"Weary State":"11","Weary Recovery":"50","Fatigue From Damage":"false","Recover All Clears Fatigue":"true","Hide Unusable Moves In Battle":"true"}},
 {"name":"SI_TurnOrder","status":true,"description":"Smoking Isle: FFX-style turn order. Faster battlers act more often.","parameters":{"Speed Formula":"a.agi + 30","Window Width":"170"}},
 {"name":"SI_Gear","status":true,"description":"Smoking Isle: weapon swapping in battle and equipment wear tiers.","parameters":{"Swap Skill":"15","Swap Command":"Swap","Worn Message":"%1's %2 wore down into %3!","Broken Message":"%1's %2 broke!","Broken Kept Message":"%1's %2 broke! Kept the %3."}},
-{"name":"SI_BattleMenu","status":true,"description":"Smoking Isle: groups skill types under one \"Skills\" battle command.","parameters":{"Skills Command":"Skills"}}
+{"name":"SI_BattleMenu","status":true,"description":"Smoking Isle: groups skill types under one \"Skills\" battle command.","parameters":{"Skills Command":"Skills"}},
+{"name":"SI_PartySwitch","status":true,"description":"Smoking Isle: FFX-style party switching in battle.","parameters":{"Switch Command":"Switch","Switch Fatigue":"1"}}
 ];
