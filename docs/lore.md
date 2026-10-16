@@ -449,6 +449,11 @@ Destroyer** (revealed later).
 | **Shark teeth** | Knives; one-handed **paddle-swords** (teeth set along a wooden paddle) | Pacific-style edged wood; a fisher's and hunter's weapon |
 | **Obsidian** | Knives, spears, one-handed obsidian **paddle-swords** | Very sharp, a little brittle. Replaces flint: there's no flint on a volcanic island |
 | **Basalt** | Axes, clubs and hammers | Heavy and tough, not sharp |
+| **Andesite** | One-handed adzes and hammers | Lighter than basalt |
+| **Chalcedony** | Knives (small blades, scrapers, arrowheads) | From hot springs and gas pockets in lava; tougher than obsidian, only in small pieces |
+| **Jasper** | Ceremonial knives (priests) | Red chalcedony, sacred; spirits respect it |
+| **Chert** | — | Not local (it forms in marine sediment). Imported from the crater rim if at all; hot-spring **sinter** is the poor local stand-in |
+| Other stones | Pumice (abrasive, polishing), tuff (soft; the Stonemen), phonolite (rings when struck: bell or ritual stone) | |
 | **Copper**, **copper-silver** | Knives, spears, axes, maces | The Islanders' metals. Copper-silver is a little more durable and adds a little magic damage |
 | **Tin-bronze** | Knives, spears, axes, maces, **swords** | All-Seafarer; tin comes from the crater rim |
 | **"Black bronze"** (copper, silver, gold) | Late-game legendary weapons | First Sailor work |

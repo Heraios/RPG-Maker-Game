@@ -204,6 +204,8 @@
  * Speakers
  * ============================================================================
  *   <Talk Specialty: animal, sea>   (actor or class) matches Talk Type/Tags.
+ *   <Talk Bonus: rite 50>           (weapon/armor) that approach works 50%
+ *                                   better while it's equipped (Jasper Knife).
  *
  * Positive mood changes grow with the speaker's specialty and Insight
  * (level), and with Patience in the battle party for animals.
@@ -554,6 +556,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         }
         if (delta > 0) {
             delta *= this.talkMultiplier(enemy) * (0.85 + Math.random() * 0.3);
+            if (this.subject().isActor()) delta *= 1 + this.subject().talkEquipBonus(approach) / 100;
         }
         return Math.round(delta);
     };
@@ -894,6 +897,14 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     };
 
     // The tell Yoon notices this battle (picked once), or null.
+    // Equipment that helps an approach: <Talk Bonus: rite 50> (+50% when it works).
+    Game_Actor.prototype.talkEquipBonus = function(approach) {
+        return this.equips().reduce(function(sum, item) {
+            var m = item && new RegExp('<Talk Bonus:\\s*' + approach + '\\s+(\\d+)>', 'i').exec(item.note || '');
+            return sum + (m ? Number(m[1]) : 0);
+        }, 0);
+    };
+
     Game_Enemy.prototype.talkTell = function() {
         if (!this._siTell) {   // picked once per battle; keeps looking until one is readable
             var insight = $.yoonInsight();

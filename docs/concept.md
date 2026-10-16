@@ -358,7 +358,12 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
 | Sword (bronze only, plus wood) | | | | | Dragonheart Greatsword (15, two-handed) | | | Bronze Khopesh (14; no jab), Bronze Leaf Blade (16) |
 | Staff (jab, vital, bludgeon, sweep) | | | | | Heather Staff (7); Toromiro Staff (6, MAT +4) | | | |
 
-- **Metal** weapons also have the **metal** move (Conducting Edge with a Voltaic Pile).
+- **Local stones:** **Chalcedony Knife** (5; wears at 2%, the dependable knife); **Jasper Knife** (5; magic
+  attack +3, Rite +50% while held; a **Ritual Knife** only Yoon, Sib and Juda can use, still fits the off
+  hand); **Andesite Adze** (10; chop, bludgeon) and **Andesite Hammer** (10; bludgeon): light and
+  **one-handed**, where basalt is heavy and two-handed. **Obsidian is keen:** +5% critical on every
+  obsidian weapon.
+- **Metal** weapons also have the **metal** move (Conducting Blade with a Voltaic Pile).
 - **Copper-silver** has `<Magic Edge: 15>`: weapon skills deal 15% extra damage as magic.
 - **Black Bronze Blade** (22, Magic Edge 30, never wears): a placeholder for the late-game First Sailor
   legendaries.

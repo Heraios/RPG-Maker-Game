@@ -1,6 +1,39 @@
 // Weapon swapping and wear tiers (SI_Gear).
 
 module.exports = {
+    'local stones: chalcedony lasts, jasper is a priest\'s blade, andesite is one-handed, obsidian is keen': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const W = n => $dataWeapons.find(w => w && w.name === n), A = id => $gameActors.actor(id), out = {};
+            out.wear = ['Obsidian Knife', 'Chalcedony Knife', 'Jasper Knife'].map(n => W(n).siWearChance).join(',');
+            out.jasperWho = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].filter(id => A(id).canEquip(W('Jasper Knife'))).map(id => A(id).name()).join(',');
+            const sib = A(3); sib.forceChangeEquip(sib.slotOfType(1), W('Jasper Knife')); out.mat = sib.mat;
+            sib.forceChangeEquip(sib.slotOfType(1), W('Chalcedony Knife')); out.matPlain = sib.mat;
+            out.offhandJasper = sib.slotAccepts(sib.slotOfType(2), W('Jasper Knife'));
+            // Rite bonus while holding the Jasper Knife
+            const fixed = f => { const rnd = Math.random; Math.random = () => 0.5; try { return f(); } finally { Math.random = rnd; } };
+            const rite = () => fixed(() => { const e = new Game_Enemy(12, 0, 0); $gameTroop._enemies.push(e); e._siMood = 10; const x = new Game_Action(sib); x.setSkill(20); e.clearResult(); x.apply(e); return e.talkMood() - 10; });
+            const plain = rite(); sib.forceChangeEquip(sib.slotOfType(1), W('Jasper Knife')); const jasper = rite(); out.riteRatio = jasper / plain;
+            // andesite: one-handed; basalt: two-handed
+            const pada = A(5);
+            pada.forceChangeEquip(pada.slotOfType(1), W('Andesite Adze')); out.adzeFree = pada.isEquipChangeOk(pada.slotOfType(2));
+            pada.forceChangeEquip(pada.slotOfType(1), W('Andesite Hammer')); out.hammerFree = pada.isEquipChangeOk(pada.slotOfType(2));
+            pada.forceChangeEquip(pada.slotOfType(1), W('Basalt Axe')); out.basaltLocks = !pada.isEquipChangeOk(pada.slotOfType(2));
+            // obsidian keenness
+            const yoon = A(2); yoon.forceChangeEquip(yoon.slotOfType(1), W('Obsidian Knife')); const cObs = yoon.cri;
+            yoon.forceChangeEquip(yoon.slotOfType(1), W('Chalcedony Knife')); out.keen = +(cObs - yoon.cri).toFixed(3);
+            return out;
+        });
+        t.eq(r.wear, '5,2,2', 'obsidian wears fastest; chalcedony and jasper last');
+        t.eq(r.jasperWho, 'Yoon,Sib,Juda', 'only Yoon, Sib and Juda can hold the Jasper Knife');
+        t.eq(r.mat - r.matPlain, 3, 'the Jasper Knife gives magic attack +3');
+        t.ok(r.offhandJasper, 'it still fits the off hand, like any knife');
+        t.between(r.riteRatio, 1.45, 1.55, 'Rite works 50% better while holding it (x' + r.riteRatio.toFixed(2) + ')');
+        t.ok(r.adzeFree && r.hammerFree, 'andesite tools are one-handed');
+        t.ok(r.basaltLocks, 'basalt stays two-handed');
+        t.eq(r.keen, 0.05, 'obsidian is keen: +5% critical');
+    },
+
     'weapon materials: copper-silver magic edge, paddle-swords, unbreakable bronze, two-handed maul': async (h, t) => {
         await h.battle();
         const r = await h.eval(() => {
