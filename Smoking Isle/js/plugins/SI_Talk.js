@@ -50,6 +50,17 @@
  * Override per enemy with <Talk Hit: -20>.
  * @default -10
  *
+ * @param Approach Insight
+ * @type number
+ * @desc Yoon's Insight needed to see which approaches an enemy responds to
+ * (and which offend it) when choosing a Talk target.
+ * @default 4
+ *
+ * @param Tell Insight
+ * @type number
+ * @desc Default Insight needed to notice an enemy's tells.
+ * @default 3
+ *
  * @param Question Chance
  * @desc % chance an enemy with unasked questions asks one after it is
  * talked to (each question at most once per battle).
@@ -154,6 +165,17 @@
  *      optional result (leave, flee, lash, gift item 6, steal 10). [5] means
  *      only shown when actor 5 is in the battle party. Up to 6 answers.
  *
+ * ============================================================================
+ * What Yoon can read (Insight)
+ * ============================================================================
+ * When choosing a Talk target, a hint box shows what Yoon can tell:
+ *   Mood Insight      its mood, as a word
+ *   Approach Insight  which approaches it responds to, and which offend it
+ *   its tells         <Talk Tell: It keeps sniffing toward your bag.>
+ *                     <Talk Tell 5: ...>  (needs Insight 5; default: Tell
+ *                     Insight). Several tells: one is picked per battle.
+ * At the start of a battle Yoon also points out any tell they can read.
+ *
  * Mood: Enraged (0) - Hostile - Wary (35+) - Calm (70+) - Pacified (100).
  * An Enraged enemy gets the Enraged state and won't listen until it wears
  * off, then calms back down to Hostile.
@@ -212,6 +234,8 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     $.specialtyBonus = Number(params['Specialty Bonus'] || 0.5);
     $.insightBonus = Number(params['Insight Bonus'] || 0.03);
     $.waitSkillId = Number(params['Wait Skill'] || 0);
+ $.approachInsight = Number(params['Approach Insight'] || 4);
+    $.tellInsight = Number(params['Tell Insight'] || 3);
     $.questionChance = Number(params['Question Chance'] !== undefined && params['Question Chance'] !== '' ? params['Question Chance'] : 40);
     $.hitMood = Number(params['Hit Mood Change'] !== undefined && params['Hit Mood Change'] !== '' ? params['Hit Mood Change'] : -10);
     $.patienceActorId = Number(params['Patience Actor'] || 0);
@@ -333,6 +357,9 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         t.results = {};
         var rr = /<Talk (\w+) Results:\s*([^>]*)>/gi;
         while ((m = rr.exec(note))) t.results[m[1].toLowerCase()] = $.parseResults(m[2]);
+        t.tells = [];
+        var tr = /<Talk Tell(?:\s+(\d+))?:\s*([^>]*)>/gi;
+        while ((m = tr.exec(note))) t.tells.push({ insight: m[1] ? Number(m[1]) : $.tellInsight, text: m[2].trim() });
         t.questions = [];
         var qr = /<Talk Question>([\s\S]*?)<\/Talk Question>/gi;
         while ((m = qr.exec(note))) {
@@ -851,6 +878,149 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         $.prompts = [];
         $.currentPrompt = null;
         _BattleManager_setup.call(this, troopId, canEscape, canLose);
+    };
+
+    //-------------------------------------------------------------------------
+    // What Yoon can read
+    //-------------------------------------------------------------------------
+
+    $.APPROACHES = ['soothe', 'offer', 'ask', 'rite', 'threaten', 'plead'];
+
+    // Base mood change of an approach on this enemy (before speaker bonuses).
+    Game_Enemy.prototype.talkBaseDelta = function(approach) {
+        var data = this.talkData();
+        if (data.overrides[approach] !== undefined) return data.overrides[approach];
+        return ($.defaults[data.type] || {})[approach] || 0;
+    };
+
+    // The tell Yoon notices this battle (picked once), or null.
+    Game_Enemy.prototype.talkTell = function() {
+        if (!this._siTell) {   // picked once per battle; keeps looking until one is readable
+            var insight = $.yoonInsight();
+            var readable = (this.talkData().tells || []).filter(function(t) { return insight >= t.insight; });
+            this._siTell = readable.length ? readable[Math.randomInt(readable.length)].text : null;
+        }
+        return this._siTell;
+    };
+
+    $.cap = function(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    };
+
+    // Up to two lines for the Talk target hint box.
+    Game_Enemy.prototype.talkHint = function() {
+        var data = this.talkData();
+        var insight = $.yoonInsight();
+        var first = this.name();
+        if (!data.type) {
+            first += ' doesn\'t respond to talk.';
+        } else {
+            if ($.canSeeMood()) first += ': ' + (this.isEnraged() ? 'Enraged' : $.moodLevel(this.talkMood())) + '.';
+            if (insight >= $.approachInsight) {
+                var likes = [], dislikes = [];
+                $.APPROACHES.forEach(function(a) {
+                    var d = this.talkBaseDelta(a);
+                    if (d >= 15) likes.push($.cap(a));
+                    else if (d < 0) dislikes.push($.cap(a));
+                }, this);
+                if (data.type === 'animal') likes.push('Stalk');
+                if (likes.length) first += ' Responds to ' + likes.join(', ') + '.';
+                if (dislikes.length) first += ' Not ' + dislikes.join(', ') + '.';
+            }
+        }
+        return [first, this.talkTell() || ''];
+    };
+
+    $.yoonName = function() {
+        var yoon = $gameParty.battleMembers().filter(function(a) {
+            return a.actorId() === 1 || a.actorId() === 2;
+        })[0];
+        return yoon ? yoon.name() : null;
+    };
+
+    // At the start of a battle, Yoon points out what they notice (once per kind of enemy).
+    var _BattleManager_displayStartMessages = BattleManager.displayStartMessages;
+    BattleManager.displayStartMessages = function() {
+        _BattleManager_displayStartMessages.call(this);
+        var name = $.yoonName();
+        if (!name) return;
+        var seen = {};
+        $gameTroop.members().forEach(function(enemy) {
+            if (seen[enemy.enemyId()] || !enemy.isAppeared()) return;
+            seen[enemy.enemyId()] = true;
+            var tell = enemy.talkTell();
+            if (tell) $gameMessage.add('%1 notices: %2'.format(name, tell));
+        });
+    };
+
+    // The hint box while choosing a Talk target.
+    var _Scene_Battle_createEnemyWindow = Scene_Battle.prototype.createEnemyWindow;
+    Scene_Battle.prototype.createEnemyWindow = function() {
+        _Scene_Battle_createEnemyWindow.call(this);
+        this._enemyWindow.setHelpWindow(this._helpWindow);
+    };
+
+    // Help text whose lines shrink to fit instead of running off the edge.
+    Window_Help.prototype.setFittedLines = function(lines) {
+        var text = lines.join('\n');
+        if (this._siFitLines && this._text === text) return;
+        this._siFitLines = lines;
+        this._text = text;
+        this.refresh();
+    };
+
+    var _Window_Help_setText = Window_Help.prototype.setText;
+    Window_Help.prototype.setText = function(text) {
+        if (this._siFitLines) {
+            this._siFitLines = null;
+            this._text = null;
+        }
+        _Window_Help_setText.call(this, text);
+    };
+
+    var _Window_Help_refresh = Window_Help.prototype.refresh;
+    Window_Help.prototype.refresh = function() {
+        if (!this._siFitLines) {
+            _Window_Help_refresh.call(this);
+            return;
+        }
+        this.contents.clear();
+        var width = this.contentsWidth() - this.textPadding() * 2;
+        this._siFitLines.forEach(function(line, i) {
+            var size = this.standardFontSize();
+            this.contents.fontSize = size;
+            while (size > 18 && this.textWidth(line) > width) this.contents.fontSize = --size;
+            this.drawText(line, this.textPadding(), i * this.lineHeight(), width);
+        }, this);
+        this.resetFontSettings();
+    };
+
+    Window_BattleEnemy.prototype.isTalkTargeting = function() {
+        var action = BattleManager.inputtingAction();
+        return !!action && $.isTalkSkill(action.item());
+    };
+
+    var _Window_BattleEnemy_show = Window_BattleEnemy.prototype.show;
+    Window_BattleEnemy.prototype.show = function() {
+        _Window_BattleEnemy_show.call(this);
+        if (this.isTalkTargeting()) this.showHelpWindow();
+    };
+
+    var _Window_BattleEnemy_hide = Window_BattleEnemy.prototype.hide;
+    Window_BattleEnemy.prototype.hide = function() {
+        if (this.visible) this.hideHelpWindow();
+        _Window_BattleEnemy_hide.call(this);
+    };
+
+    Window_BattleEnemy.prototype.updateHelp = function() {
+        if (!this._helpWindow) return;
+        var enemy = this.enemy();
+        if (this.isTalkTargeting() && enemy) {
+            this._helpWindow.setFittedLines(enemy.talkHint());
+            this._helpWindow.show();
+        } else {
+            this._helpWindow.hide();
+        }
     };
 
     Game_Action.prototype.applyStalk = function(enemy) {

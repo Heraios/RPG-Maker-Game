@@ -672,6 +672,10 @@ lines plus optional scripted moments (a common event with choices) for important
   **flee**, **lash** (hits the speaker), **gift**, **demand** (wants another item: a yes/no prompt),
   **info**, **event**. Bad results are twice as likely while it's Hostile and half as likely when the
   speaker's specialty matches.
+- **What Yoon can read (Insight):** choosing a Talk target shows a hint box. At Insight 2 it shows the
+  enemy's mood; at 4, which approaches it responds to and which offend it; and from 3 up, its **tells**
+  (`<Talk Tell: It keeps sniffing toward your bag.>`, `<Talk Tell 5: ...>` for deeper ones). At the
+  start of a battle Yoon points out any tell they can read ("Yoon notices: ...").
 - **Enemies ask questions** (40% chance after being talked to, each once per battle) through a choice
   window. Answers change mood, get a reply, and can have results (leave, flee, lash, gift, steal).
   **Some answers only appear when a particular character is there** (Pada to the Boar-Men, Parl to
@@ -993,8 +997,8 @@ Prank skills (Pilfer, Pantsing, Blinding Light, Mock) stop once the prankster is
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
-| Talk reactions, weighted results, enemy questions | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
-| Automated tests | `tests/` (32 tests, about 330 checks; see tests/README.md) |
+| Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
+| Automated tests | `tests/` (34 tests, about 340 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

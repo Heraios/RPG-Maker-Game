@@ -85,5 +85,38 @@ module.exports = {
         const after = await h.eval(() => $gameTroop.members()[0].talkMood());
         t.ok(after !== before, 'the answer changed its mood (' + before + ' -> ' + after + ')');
         t.ok(await h.eval(() => SceneManager._scene instanceof Scene_Battle), 'the battle carries on');
+    },
+    'Insight decides what Yoon can read: mood, approaches, tells': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const yoon = $gameActors.actor(2), ghost = $gameActors.actor(1);
+            const at = lvl => { yoon.changeLevel(lvl, false); ghost.changeLevel(lvl, false); const e = new Game_Enemy(11, 0, 0); e._siMood = 50; return e.talkHint(); };
+            return { i1: at(1), i2: at(2), i4: at(4), i5: [0, 1, 2, 3, 4, 5].map(() => at(5)[1]) };
+        });
+        t.eq(r.i1[0], 'Boar-Man', 'Insight 1: just the name');
+        t.eq(r.i1[1], '', 'and no tell');
+        t.eq(r.i2[0], 'Boar-Man: Wary.', 'Insight 2: its mood');
+        t.ok(/Responds to Soothe, Plead\. Not Offer\./.test(r.i4[0]), 'Insight 4: what it responds to and what offends it: ' + r.i4[0]);
+        t.ok(/plain words/.test(r.i4[1]), 'and a tell: ' + r.i4[1]);
+        t.ok(r.i5.some(x => /Gifts/.test(x)), 'Insight 5 unlocks a deeper tell');
+    },
+
+    'the hint box shows while choosing a Talk target, and Yoon points out tells': async (h, t) => {
+        await h.battle();
+        const start = await h.eval(() => { $gameActors.actor(2).changeLevel(5, false); $gameMessage.clear(); const e = $gameTroop.members()[0]; e._siTell = undefined; BattleManager.displayStartMessages(); return $gameMessage._texts.join(' / '); });
+        t.ok(/Yoon notices: /.test(start), 'Yoon points out a tell at the start: ' + start);
+        await h.eval(() => $gameMessage.clear());
+        t.eq(await h.toCommand(), 'input', 'reached a command menu');
+        const r = await h.eval(() => {
+            const sc = SceneManager._scene, a = BattleManager.actor(); a.learnSkill(17);
+            sc._actorCommandWindow.selectSymbol('talk'); sc._actorCommandWindow.processOk();
+            const w = sc._skillWindow; w.select(w._data.findIndex(s => s && s.id === 17)); w.processOk();
+            const help = { visible: sc._helpWindow.visible, text: sc._helpWindow._text || '' };
+            sc._enemyWindow.processCancel();
+            const back = sc._helpWindow._text || '';
+            return { help, back };
+        });
+        t.ok(r.help.visible && /Boar-Man: /.test(r.help.text), 'the hint box shows the target: ' + r.help.text.replace('\n', ' | '));
+        t.ok(!/Boar-Man: /.test(r.back), 'cancelling goes back to the skill description');
     }
 };
