@@ -19,7 +19,8 @@
  * - Punch is no longer a main command; it is the first Physical skill (give
  *   skill #1 the Physical skill type).
  * - Skill lists use one wide column and show every cost: MP, the Fatigue a
- *   skill adds (+2 FT) or recovers (-15~20 FT), and ranged ammo left (x3).
+ *   skill adds (+2 FT) or recovers (-15~20 FT), ranged ammo left (x3), and
+ *   Voltaic Pile charge spent and left (1 Ch (3)).
  * - Fatigue turns yellow above the Rest Threshold and red at 100.
  * - The enemy target list uses one column with each enemy's state icons.
  *
@@ -83,6 +84,8 @@ SmokingIsle.Layout = SmokingIsle.Layout || {};
         if (SmokingIsle.Ranged && SmokingIsle.Ranged.isRanged(skill) && this._actor && $gameParty.inBattle()) {
             parts.push({ text: 'x' + this._actor.rangedAmmoForSkill(skill), color: this.systemColor() });
         }
+        var ch = SmokingIsle.Voltaic ? SmokingIsle.Voltaic.costText(this._actor, skill) : null;
+        if (ch) parts.push({ text: ch, color: this.textColor(6) });
         var mp = this._actor ? this._actor.skillMpCost(skill) : skill.mpCost;
         if (mp > 0) parts.push({ text: mp + ' MP', color: this.mpCostColor() });
         var f = $.fatigueText(skill);
@@ -95,6 +98,39 @@ SmokingIsle.Layout = SmokingIsle.Layout || {};
             right -= w + this.textWidth('  ');
         }
         this.resetTextColor();
+    };
+
+    //-------------------------------------------------------------------------
+    // Help text wraps onto its second line instead of running off the edge
+    //-------------------------------------------------------------------------
+
+    Window_Help.prototype.wrapLines = function(text) {
+        var width = this.contentsWidth() - this.textPadding() * 2;
+        var lines = [];
+        String(text || '').split('\n').forEach(function(paragraph) {
+            var line = '';
+            paragraph.split(' ').forEach(function(word) {
+                var next = line ? line + ' ' + word : word;
+                if (line && this.textWidth(next) > width) {
+                    lines.push(line);
+                    line = word;
+                } else {
+                    line = next;
+                }
+            }, this);
+            lines.push(line);
+        }, this);
+        if (lines.length > 2) lines = [lines[0], lines.slice(1).join(' ')];
+        return lines;
+    };
+
+    var _Window_Help_setItem = Window_Help.prototype.setItem;
+    Window_Help.prototype.setItem = function(item) {
+        if (item && this.setFittedLines && !/\\/.test(item.description)) {
+            this.setFittedLines(this.wrapLines(item.description));
+        } else {
+            _Window_Help_setItem.call(this, item);
+        }
     };
 
     //-------------------------------------------------------------------------

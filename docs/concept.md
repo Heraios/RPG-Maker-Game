@@ -342,7 +342,7 @@ all of them). Fatigue: very low 1, low 2, medium 3, medium-high 4, high 5, very 
 | Bludgeon | Club, mace, hammer, Staff, Axe (poll side), paddle-swords | **Overhead Smash** (medium, Crush ×1.1) · **Skull Crack** (high, ×1.5, 50% Disoriented) |
 | Sweep | Staff, Spear | **Wide Sweep** (medium, Crush ×0.7, all enemies) · **Trip** (low, ×0.3, AGI down 1 turn) |
 | Sword only | Swords | **Pommel Strike** (very low, Crush ×0.8) |
-| Electric | Any **metal blade** (knife, axe, sword) | **Conducting Edge** (medium, electric Burn ×1.1; needs a **Voltaic Pile** accessory). An Islander technique |
+| Electric | Any **metal blade** (knife, axe, sword) | **Conducting Blade** (medium, electric Burn ×1.1; needs a **Voltaic Pile**). An Islander technique: see Voltaic techniques |
 | Ranged | Bow, Sling | **Aimed Shot** (medium, Pierce, never misses) · **Covering Fire** (low, light Pierce/Crush, AGI down) · **Stone Rain** (high, sling only: spends all stones, one random hit each) |
 
 **The weapon roster, by material** (lore: "Weapon materials"). ATK in brackets; every non-bronze
@@ -475,6 +475,40 @@ skirts), **Greaves** (leg armor), **Feet** (shoes, boots), **Melee**, **Ranged**
   as `<Start Equips: armor 37, armor 39>`.
 - Placeholder items for the new slots: Shell Necklace, Bark-Cloth Cloak, Woven Armlets, Hide Gloves,
   Grass Skirt, Bronze Greaves (+1 Fatigue per turn), Reed Sandals. The test room's chest gives them.
+
+### Voltaic techniques (Islander electricity)
+`SI_Voltaic.js`. The **Voltaic Pile** (a Charm) lets **Islanders** (Yoon, Sib, Pada, Dama, Juda) use
+electrical techniques, under their own **Voltaic** skill type. Nobody else can wear a pile: it's
+Islander technology, and the bronze-armed All-Seafarers don't have it.
+
+- **Charge:** a pile holds **3 charge**. Techniques spend it, and it **carries over between battles**.
+  Refill with **Acid Jars** (+2; acid from the hot springs) or a **battery tender** (full). The skill list
+  shows "1 Ch (3)": spends 1, 3 left.
+- **Electricity is physical Burn**, powered by the pile (Shock Power 14), reduced by Defense.
+- **Water conducts:** electric techniques do **+50%** to a Wet or Sodden target (on top of Wet's own
+  +15%), and **stun** a Sodden one (it loses its next turn). A **Wet user shocks themself** (10% of max HP).
+- **Metal draws the current:** Live Wire does **×1.75** to enemies wearing metal (`<Metal>`: the
+  bronze-armored invaders).
+
+| Technique | Who | Charge | Effect |
+|-----------|-----|--------|--------|
+| Conducting Blade | Anyone (metal blade) | 1 | Electric Burn through the blade |
+| Electric Cautery | Anyone | 1 | Stops Bleed and Venom on an ally, at 5% of their max HP |
+| Fire Wire | Anyone | 1 | Light Burn and **Smoldering**: fire in the elemental cycle without magic |
+| Galvanic Jolt | Anyone | All (2+) | Revives a fallen ally at 10% HP |
+| Live Wire | Anyone | 1 | Electric Burn; ×1.75 against metal-wearing enemies |
+| Quickening Current | Sib, Juda | 1 | Cures Sleep, Hypnotized and Confused |
+| Chlorine Cloud | Juda; **Sib learns it from Juda's notes** | 2 | All enemies: light Burn, Venom (60%), Panicked (30%) |
+| Shock Net | Dama | 1 + a net | Entangles, with electric Burn |
+| Lye Flask | Dama | 1 | Acid Burn and Defense down |
+
+**Field uses (to build with the overworld):** battery lamps (light in the lava tubes, spending charge);
+**electric fences** set before an invader patrol arrives (they take damage when the battle starts);
+**electroplating** at a battery tender (copper into copper-silver; with crafting); the **telegraph**
+(travel and story) and **seismographs** (watching the volcano).
+
+Test room: the **Battery Tender** recharges every pile; **Juda's Notes** teach Sib Chlorine Cloud; the
+weapon chest has four piles and acid jars.
 
 ### Party switching
 - **Switch** battle command: lists reserve members (everyone beyond the four battle slots).
@@ -1049,7 +1083,8 @@ some enemies are better fought: gentle words fail on centipedes, and only Pada c
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
-| Automated tests | `tests/` (34 tests, about 340 checks; see tests/README.md) |
+| Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
+| Automated tests | `tests/` (38 tests, about 380 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

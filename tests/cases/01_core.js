@@ -10,15 +10,18 @@ module.exports = {
             yoon.forceChangeEquip(yoon.slotOfType(1), W(1)); const knife = usable(yoon);
             yoon.forceChangeEquip(yoon.slotOfType(1), W(6)); const staff = usable(yoon);
             th.forceChangeEquip(th.slotOfType(1), W(3)); const khopesh = usable(th);
-            const conductNoPile = th.canUse(S(47));
-            th.forceChangeEquip(th.slotOfType(5), $dataArmors.find(a => a && a.name === 'Voltaic Pile'));
-            return { knife, staff, khopesh, conductNoPile, conductPile: th.canUse(S(47)) };
+            const pada = A(5), pile = $dataArmors.find(a => a && a.name === 'Voltaic Pile');
+            pada.forceChangeEquip(pada.slotOfType(1), $dataWeapons.find(w => w && w.name === 'Copper Knife'));
+            const conductNoPile = pada.canUse(S(47));
+            pada.forceChangeEquip(pada.slotOfType(5), pile);
+            return { knife, staff, khopesh, conductNoPile, conductPile: pada.canUse(S(47)), islanderOnly: pada.canEquip(pile) && !th.canEquip(pile) };
         });
         t.ok(r.knife.includes('Quick Jab') && r.knife.includes('Raking Cut') && !r.knife.includes('Overhead Smash'), 'knife moves: ' + r.knife);
         t.ok(r.staff.includes('Wide Sweep') && r.staff.includes('Vital Strike') && !r.staff.includes('Measured Thrust'), 'staff moves: ' + r.staff);
         t.ok(r.khopesh.includes('Heavy Chop') && !r.khopesh.includes('Quick Jab'), 'khopesh cannot jab: ' + r.khopesh);
-        t.eq(r.conductNoPile, false, 'Conducting Edge without a Voltaic Pile');
-        t.eq(r.conductPile, true, 'Conducting Edge with a Voltaic Pile');
+        t.eq(r.conductNoPile, false, 'Conducting Blade without a Voltaic Pile');
+        t.eq(r.conductPile, true, 'Conducting Blade with a Voltaic Pile and a copper knife');
+        t.ok(r.islanderOnly, 'only Islanders can use a Voltaic Pile (Pada yes, Theenmy no)');
     },
 
     'punch ignores weapon ATK and armor never blocks all damage': async (h, t) => {
