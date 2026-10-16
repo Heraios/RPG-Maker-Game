@@ -9,7 +9,7 @@
  * @param State Ids
  * @desc In order: Smoldering, Enflamed, Wet, Sodden, Burdened, Mired,
  * Disoriented, Feverish, Cracked, Steam, Chilled, Grounded.
- * @default 14,15,16,17,18,19,20,21,22,23,24,25
+ * @default 72,73,74,75,76,77,78,79,80,81,82,83
  *
  * @param Inflict Chance
  * @desc % chance an elemental hit applies its state effects.

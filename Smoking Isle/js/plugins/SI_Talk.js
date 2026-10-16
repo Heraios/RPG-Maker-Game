@@ -13,11 +13,11 @@
  *
  * @param Enraged State
  * @type state
- * @default 12
+ * @default 42
  *
  * @param Hunted State
  * @type state
- * @default 13
+ * @default 43
  *
  * @param Mood Insight
  * @type number
@@ -35,7 +35,7 @@
  * @param Wait Skill
  * @type skill
  * @desc Used by an enemy with nothing it is willing to do (e.g. Calm).
- * @default 7
+ * @default 5
  *
  * @param Patience Actor
  * @type actor

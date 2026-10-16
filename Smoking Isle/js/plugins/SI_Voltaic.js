@@ -11,16 +11,16 @@
  * @type state
  * @desc State for a Sodden target hit by an electric technique (loses its
  * next turn).
- * @default 38
+ * @default 118
  *
  * @param Wet States
  * @desc Wet and Sodden state ids (electricity +50% against them; a Wet user
  * shocks themself).
- * @default 16,17
+ * @default 74,75
  *
  * @param Sodden State
  * @type state
- * @default 17
+ * @default 75
  *
  * @param Self Shock
  * @desc Share of max HP a Wet user loses using an electric technique.
@@ -66,9 +66,9 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
     'use strict';
 
     var params = PluginManager.parameters('SI_Voltaic');
-    $.stunState = Number(params['Stun State'] || 38);
-    $.wetStates = String(params['Wet States'] || '16,17').split(',').map(Number);
-    $.soddenState = Number(params['Sodden State'] || 17);
+    $.stunState = Number(params['Stun State'] || 118);
+    $.wetStates = String(params['Wet States'] || '74,75').split(',').map(Number);
+    $.soddenState = Number(params['Sodden State'] || 75);
     $.selfShock = Number(params['Self Shock'] || 0.1);
 
     //-------------------------------------------------------------------------

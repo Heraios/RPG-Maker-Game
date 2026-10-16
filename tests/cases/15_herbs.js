@@ -11,32 +11,32 @@ module.exports = {
             const yoon = A(2), e = $gameTroop.members()[0];
             const cures = (name, states) => { fresh(yoon); states.forEach(s => yoon.addState(s)); yoon.clearResult(); use(name, yoon); return states.every(s => !yoon.isStateAffected(s)); };
             out.cures = {
-                'Bitterwood Tea': cures('Bitterwood Tea', [21]), 'Hill Thyme Tea': cures('Hill Thyme Tea', [4]),
-                'Burnwort Poultice': cures('Burnwort Poultice', [14, 15]), 'Burnwort Draught': cures('Burnwort Draught', [30, 12]),
-                'Laurel Oil': cures('Laurel Oil', [18, 19, 24]), 'Cliff Mint Tea': cures('Cliff Mint Tea', [24, 16]),
-                'Ti Leaf Wrap': cures('Ti Leaf Wrap', [21, 14]), 'Yellowroot Drops': cures('Yellowroot Drops', [20, 8]),
-                'Milo Bark': cures('Milo Bark', [37]), 'Wart Fern Poultice': cures('Wart Fern Poultice', [5]), 'Bandage': cures('Bandage', [28])
+                'Bitterwood Tea': cures('Bitterwood Tea', [79]), 'Hill Thyme Tea': cures('Hill Thyme Tea', [112]),
+                'Burnwort Poultice': cures('Burnwort Poultice', [72, 73]), 'Burnwort Draught': cures('Burnwort Draught', [156, 42]),
+                'Laurel Oil': cures('Laurel Oil', [76, 77, 82]), 'Cliff Mint Tea': cures('Cliff Mint Tea', [82, 74]),
+                'Ti Leaf Wrap': cures('Ti Leaf Wrap', [79, 72]), 'Yellowroot Drops': cures('Yellowroot Drops', [78, 152]),
+                'Milo Bark': cures('Milo Bark', [117]), 'Wart Fern Poultice': cures('Wart Fern Poultice', [113]), 'Bandage': cures('Bandage', [116])
             };
-            out.teaNotVenom = (fresh(yoon), yoon.addState(4), yoon.clearResult(), use('Bitterwood Tea', yoon), yoon.isStateAffected(4));
-            out.sorrelNoBleed = (fresh(yoon), yoon.addState(28), yoon.clearResult(), use('Moon Sorrel', yoon), yoon.isStateAffected(28) && yoon.isStateAffected(41));
+            out.teaNotVenom = (fresh(yoon), yoon.addState(112), yoon.clearResult(), use('Bitterwood Tea', yoon), yoon.isStateAffected(112));
+            out.sorrelNoBleed = (fresh(yoon), yoon.addState(116), yoon.clearResult(), use('Moon Sorrel', yoon), yoon.isStateAffected(116) && yoon.isStateAffected(234));
             fresh(yoon); yoon.setTp(30); use('Laurel Oil', yoon); out.laurelFatigue = 30 - yoon.tp;
             fresh(yoon); yoon.setHp(10); yoon.clearResult(); use('Ti Leaf Wrap', yoon); const h0 = yoon.hp; yoon.onTurnEnd(); out.mendTick = yoon.hp - h0;
             // Dragon's Blood: revive + resin ward
             fresh(yoon); yoon.addState(1); use("Dragon's Blood", yoon);
-            out.revived = yoon.isAlive() && Math.abs(yoon.hp - yoon.mhp * 0.1) <= 1.5 && yoon.isStateAffected(39);
-            const hp1 = yoon.hp; const hit = new Game_Action(e); hit.setSkill(24); yoon.clearResult(); fixed(() => hit.apply(yoon));
-            out.wardBlocked = yoon.hp === hp1 && !yoon.isStateAffected(39);
+            out.revived = yoon.isAlive() && Math.abs(yoon.hp - yoon.mhp * 0.1) <= 1.5 && yoon.isStateAffected(232);
+            const hp1 = yoon.hp; const hit = new Game_Action(e); hit.setSkill(372); yoon.clearResult(); fixed(() => hit.apply(yoon));
+            out.wardBlocked = yoon.hp === hp1 && !yoon.isStateAffected(232);
             yoon.clearResult(); fixed(() => hit.apply(yoon)); out.secondHits = yoon.hp < hp1;
             // Smudge: party clears Despair/Panicked, Rite +30%
-            fresh(A(3)); A(3).addState(29); A(3).addState(30); A(3).clearResult(); use('Bitterwood Smudge', A(3));
-            out.smudge = !A(3).isStateAffected(29) && !A(3).isStateAffected(30) && A(3).talkEquipBonus('rite') === 30;
+            fresh(A(3)); A(3).addState(155); A(3).addState(156); A(3).clearResult(); use('Bitterwood Smudge', A(3));
+            out.smudge = !A(3).isStateAffected(155) && !A(3).isStateAffected(156) && A(3).talkEquipBonus('rite') === 30;
             // Spurge
-            e.clearResult(); use('Spurge Milk', e); out.spurgeMilk = e.isStateAffected(37);
-            fresh(A(5)); use('Spurge Coating', A(5)); out.coating = A(5).attackStates().includes(4);
+            e.clearResult(); use('Spurge Milk', e); out.spurgeMilk = e.isStateAffected(117);
+            fresh(A(5)); use('Spurge Coating', A(5)); out.coating = A(5).attackStates().includes(112);
             // Yellowroot Paint: Calm; Ti Root: animals like it
-            fresh(yoon); use('Yellowroot Paint', yoon); out.paint = yoon.isStateAffected(32);
+            fresh(yoon); use('Yellowroot Paint', yoon); out.paint = yoon.isStateAffected(194);
             out.tiLiked = $dataEnemies[1].siTalk.likes.includes(IT('Ti Root').id);
-            out.noBleedElsewhere = $dataItems.filter(i => i && i.effects.some(ef => ef.code === 22 && ef.dataId === 28)).map(i => i.name).join(',');
+            out.noBleedElsewhere = $dataItems.filter(i => i && i.effects.some(ef => ef.code === 22 && ef.dataId === 116)).map(i => i.name).join(',');
             return out;
         });
         Object.entries(r.cures).forEach(([n, ok]) => t.ok(ok, n + ' cures what it should'));

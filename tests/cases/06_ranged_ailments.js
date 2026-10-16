@@ -7,17 +7,17 @@ module.exports = {
             const A = id => $gameActors.actor(id), S = id => $dataSkills[id], AR = n => $dataArmors.find(a => a && a.name === n);
             const pada = A(5), yoon = A(2), dama = A(7);
             pada.forceChangeEquip(pada.slotOfType(6), AR('Juniper Bow')); yoon.forceChangeEquip(yoon.slotOfType(6), AR('Sling'));
-            pada.onBattleStart(); let arrows = 0; while (pada.canUse(S(33)) && arrows < 10) { pada.useItem(S(33)); arrows++; }
-            pada.onBattleStart(); const refilled = pada.rangedAmmoForSkill(S(33));
-            yoon.onBattleStart(); yoon.useItem(S(32)); yoon.useItem(S(32));
-            const volley = new Game_Action(yoon); volley.setSkill(50); const volleyHits = volley.makeTargets().length; yoon.useItem(S(50));
-            dama.forceChangeEquip(dama.slotOfType(1), $dataWeapons[12]); dama.forceChangeEquip(dama.slotOfType(6), AR('Fishing Net')); dama.onBattleStart();
-            const harpoonThrows = dama.rangedAmmoForSkill(S(34)), nets = dama.rangedAmmoForSkill(S(35));
+            pada.onBattleStart(); let arrows = 0; while (pada.canUse(S(123)) && arrows < 10) { pada.useItem(S(123)); arrows++; }
+            pada.onBattleStart(); const refilled = pada.rangedAmmoForSkill(S(123));
+            yoon.onBattleStart(); yoon.useItem(S(122)); yoon.useItem(S(122));
+            const volley = new Game_Action(yoon); volley.setSkill(128); const volleyHits = volley.makeTargets().length; yoon.useItem(S(128));
+            dama.forceChangeEquip(dama.slotOfType(1), $dataWeapons[92]); dama.forceChangeEquip(dama.slotOfType(6), AR('Fishing Net')); dama.onBattleStart();
+            const harpoonThrows = dama.rangedAmmoForSkill(S(124)), nets = dama.rangedAmmoForSkill(S(125));
             const bat = new Game_Enemy(12, 0, 0); $gameTroop._enemies.push(bat);   // Owl of Ill Omen (flying)
             const eva = id => { const a = new Game_Action(yoon); a.setSkill(id); return a.itemEva(bat); };
-            const mino = $gameTroop.members()[0]; const net = new Game_Action(dama); net.setSkill(35); mino.clearResult(); const rnd = Math.random; Math.random = () => 0.5; net.apply(mino); Math.random = rnd;   // no miss
-            return { arrows, refilled, volleyHits, stonesLeft: yoon.rangedAmmoForSkill(S(32)), harpoonThrows, nets,
-                     jabEva: eva(11), slingEva: eva(32), magicEva: eva(56), entangled: !mino.canMove() };
+            const mino = $gameTroop.members()[0]; const net = new Game_Action(dama); net.setSkill(125); mino.clearResult(); const rnd = Math.random; Math.random = () => 0.5; net.apply(mino); Math.random = rnd;   // no miss
+            return { arrows, refilled, volleyHits, stonesLeft: yoon.rangedAmmoForSkill(S(122)), harpoonThrows, nets,
+                     jabEva: eva(72), slingEva: eva(122), magicEva: eva(242), entangled: !mino.canMove() };
         });
         t.eq(r.arrows, 3, 'a Juniper Bow has 3 arrows per battle');
         t.eq(r.refilled, 3, 'ammo refills next battle');
@@ -41,12 +41,12 @@ module.exports = {
             const [s1, s2] = $gameTroop.members();
             const names = x => x.states().map(s => s.name).sort().join(',');
             const use = (a, id, targets) => { a._siExtraTurn = false; const x = new Game_Action(a); x.setSkill(id); (targets || x.makeTargets()).forEach(y => { y.clearResult(); x.apply(y); }); };
-            use(ghost, 86); const ghostTouch = [names(s1), names(s2)];
-            use(yoon, 91, [s1]); const touch2 = names(s1);
-            use(yoon, 103, [s1]); const writhe = names(s1);
-            const hp = s1.hp; use(yoon, 102, [s1]); const surge = { dmg: hp - s1.hp, states: names(s1), extra: yoon._siExtraTurn };
-            s2.clearResult(); s2.removeState(14); use(yoon, 100, [s2]); const infernal = names(s2);
-            return { ghostTouch, touch2, writhe, surge, infernal, mat: yoon.mat, ghostSpark: ghost.isLearnedSkill(10) };
+            use(ghost, 302); const ghostTouch = [names(s1), names(s2)];
+            use(yoon, 307, [s1]); const touch2 = names(s1);
+            use(yoon, 319, [s1]); const writhe = names(s1);
+            const hp = s1.hp; use(yoon, 318, [s1]); const surge = { dmg: hp - s1.hp, states: names(s1), extra: yoon._siExtraTurn };
+            s2.clearResult(); s2.removeState(72); use(yoon, 316, [s2]); const infernal = names(s2);
+            return { ghostTouch, touch2, writhe, surge, infernal, mat: yoon.mat, ghostSpark: ghost.isLearnedSkill(427) };
         });
         t.eq(r.ghostTouch.join('|'), 'Smoldering|Smoldering', "the Ghost's Touch hits all enemies");
         t.eq(r.touch2, 'Smoldering,Wet', 'Touches only add states (no cycle)');
@@ -65,15 +65,15 @@ module.exports = {
             const names = x => x.states().map(s => s.name).join(',');
             let skip = 0, fled = 0;
             let seed = 7; const rnd = Math.random; Math.random = () => (seed = seed * 16807 % 2147483647) / 2147483647;   // repeatable rolls
-            for (let i = 0; i < 600; i++) { const e = new Game_Enemy(4, 0, 0); $gameTroop._enemies.push(e); e.addState(8); if (BattleManager.ctbShouldSkipTurn(e)) { if (e.isHidden()) fled++; else skip++; } }
+            for (let i = 0; i < 600; i++) { const e = new Game_Enemy(4, 0, 0); $gameTroop._enemies.push(e); e.addState(152); if (BattleManager.ctbShouldSkipTurn(e)) { if (e.isHidden()) fled++; else skip++; } }
             Math.random = rnd;
-            sib.addState(32); sib.addState(8); const calmWard = names(sib);
-            sib.addState(8); sib.addState(33); const happyCure = names(sib);
-            yoon.addState(34); yoon.makeActions(); const brave = yoon.numActions();
-            th.forceChangeEquip(th.slotOfType(1), $dataWeapons[11]);
+            sib.addState(194); sib.addState(152); const calmWard = names(sib);
+            sib.addState(152); sib.addState(195); const happyCure = names(sib);
+            yoon.addState(196); yoon.makeActions(); const brave = yoon.numActions();
+            th.forceChangeEquip(th.slotOfType(1), $dataWeapons[56]);
             const e = $gameTroop.members()[0];
             const crit = id => { let c = 0; for (let i = 0; i < 2000; i++) { const a = new Game_Action(th); a.setSkill(id); if (Math.random() < a.itemCri(e)) c++; } return c / 2000; };
-            const base = crit(36), vital = crit(37); th.addState(31); const focused = crit(36);
+            const base = crit(76), vital = crit(77); th.addState(193); const focused = crit(76);
             return { skip: skip / 600, fled: fled / 600, calmWard, happyCure, brave, base, vital, focused };
         });
         t.between(r.skip, 0.13, 0.27, 'Confused enemies hesitate about 20%');

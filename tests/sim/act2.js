@@ -20,7 +20,7 @@ module.exports = {
                     a.initEquips($dataActors[id].equips);
                     a.clearStates(); a.clearBuffs(); a.recoverAll(); a.setTp(0);
                 });
-                $gameParty._items = {}; $gameParty.gainItem($dataItems[6], 3); $gameParty.gainItem($dataItems[7], 3);
+                $gameParty._items = {}; $gameParty.gainItem($dataItems[42], 3); $gameParty.gainItem($dataItems[43], 3);
             };
 
             const avgDamage = (a, skill, target) => { const x = new Game_Action(a); x.setSkill(skill.id); return x.makeDamageValue(target, false); };
@@ -43,7 +43,7 @@ module.exports = {
                 const act = a.inputtingAction();
                 const heel = a.skills().find(s => s.name === 'Heel, Girl!');
                 const patience = $gameActors.actor(12);
-                if (heel && a.canUse($dataSkills[heel.id]) && patience.isAlive() && !patience.isStateAffected(36)) { act.setSkill(heel.id); return; }
+                if (heel && a.canUse($dataSkills[heel.id]) && patience.isAlive() && !patience.isStateAffected(6)) { act.setSkill(heel.id); return; }
                 const foes = $gameTroop.aliveMembers().filter(e => e.talkData().type && !e.isEnraged());
                 if (!foes.length) { fightPolicy(a); return; }
                 const target = foes.reduce((m, e) => (e.talkMood() > m.talkMood() ? e : m), foes[0]);

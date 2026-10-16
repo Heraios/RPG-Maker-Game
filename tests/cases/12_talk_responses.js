@@ -8,21 +8,21 @@ module.exports = {
             const fresh = id => { const e = new Game_Enemy(id, 0, 0); $gameTroop._enemies.push(e); return e; };
             const withRoll = (v, f) => { const rnd = Math.random; Math.random = () => v; try { return f(); } finally { Math.random = rnd; } };
             const talk = (a, skillId, e, roll, offer) => withRoll(roll, () => { const x = new Game_Action(a); x.setSkill(skillId); if (offer) x._siOfferItemId = offer; e.clearResult(); x.apply(e); return e._siTalkMessages.join(' / '); });
-            $gameParty.gainItem($dataItems[6], 9); $gameParty.gainItem($dataItems[7], 9);
-            out.boarSoothe = talk(A(2), 17, fresh(1), 0.5);
-            out.bmOffer = talk(A(2), 18, fresh(11), 0.5, 6);
-            out.crabDefault = talk(A(2), 17, fresh(3), 0.5);          // no custom Soothe- line? uses its own Soothe+
-            out.marineThreat = talk(A(5), 21, fresh(13), 0.5);
+            $gameParty.gainItem($dataItems[42], 9); $gameParty.gainItem($dataItems[43], 9);
+            out.boarSoothe = talk(A(2), 162, fresh(1), 0.5);
+            out.bmOffer = talk(A(2), 163, fresh(11), 0.5, 42);
+            out.crabDefault = talk(A(2), 162, fresh(3), 0.5);          // no custom Soothe- line? uses its own Soothe+
+            out.marineThreat = talk(A(5), 166, fresh(13), 0.5);
             // results: low roll = first entry (normal), high roll = the twist
-            const seal = fresh(5); const hp = A(5).hp; out.sealLash = talk(A(5), 21, seal, 0.99); out.padaHurt = A(5).hp < hp;
-            const crab = fresh(3); out.crabFlee = talk(A(2), 21, crab, 0.99); out.crabGone = crab.isHidden();
-            const boar = fresh(1); out.boarLeave = talk(A(2), 18, boar, 0.99, 6); out.boarGone = boar.isHidden();
-            T.prompts = []; const goat = fresh(6); talk(A(2), 18, goat, 0.99, 6);
+            const seal = fresh(5); const hp = A(5).hp; out.sealLash = talk(A(5), 166, seal, 0.99); out.padaHurt = A(5).hp < hp;
+            const crab = fresh(3); out.crabFlee = talk(A(2), 166, crab, 0.99); out.crabGone = crab.isHidden();
+            const boar = fresh(1); out.boarLeave = talk(A(2), 163, boar, 0.99, 42); out.boarGone = boar.isHidden();
+            T.prompts = []; const goat = fresh(6); talk(A(2), 163, goat, 0.99, 42);
             const p = T.prompts.find(x => x.enemy === goat); out.demand = p ? p.text + ' [' + p.answers.map(a => a.label).join(', ') + ']' : 'none';
             const before = goat.talkMood(); T.currentPrompt = p; $gameMessage.clear(); T.answer(0); out.demandGain = goat.talkMood() - before;
             // bad results are rarer for a specialist (Pada with animals): with a 0.6 roll, a hostile seal lashes at Yoon (46% chance) but not at Pada (30%)
-            const s1 = fresh(5); s1._siMood = 20; const yoonRes = talk(A(2), 21, s1, 0.6);
-            const s2 = fresh(5); s2._siMood = 20; const padaRes = talk(A(5), 21, s2, 0.6);
+            const s1 = fresh(5); s1._siMood = 20; const yoonRes = talk(A(2), 166, s1, 0.6);
+            const s2 = fresh(5); s2._siMood = 20; const padaRes = talk(A(5), 166, s2, 0.6);
             out.yoonLashed = /lashes|lunges/.test(yoonRes); out.padaLashed = /lashes|lunges/.test(padaRes);
             return out;
         });
@@ -68,8 +68,8 @@ module.exports = {
         await h.eval(() => { SmokingIsle.Talk.questionChance = 100; $gameTroop.members()[0]._siMood = 40; });
         t.eq(await h.toCommand(), 'input', 'reached a command menu');
         await h.eval(() => {
-            const sc = SceneManager._scene, a = BattleManager.actor(); a.learnSkill(17);
-            const act = a.inputtingAction(); act.setSkill(17); act.setTarget(0);
+            const sc = SceneManager._scene, a = BattleManager.actor(); a.learnSkill(162);
+            const act = a.inputtingAction(); act.setSkill(162); act.setTarget(0);
             sc._actorCommandWindow.deactivate(); sc.selectNextCommand();
         });
         let seen = null;
@@ -108,9 +108,9 @@ module.exports = {
         await h.eval(() => $gameMessage.clear());
         t.eq(await h.toCommand(), 'input', 'reached a command menu');
         const r = await h.eval(() => {
-            const sc = SceneManager._scene, a = BattleManager.actor(); a.learnSkill(17);
+            const sc = SceneManager._scene, a = BattleManager.actor(); a.learnSkill(162);
             sc._actorCommandWindow.selectSymbol('talk'); sc._actorCommandWindow.processOk();
-            const w = sc._skillWindow; w.select(w._data.findIndex(s => s && s.id === 17)); w.processOk();
+            const w = sc._skillWindow; w.select(w._data.findIndex(s => s && s.id === 162)); w.processOk();
             const help = { visible: sc._helpWindow.visible, text: sc._helpWindow._text || '' };
             sc._enemyWindow.processCancel();
             const back = sc._helpWindow._text || '';

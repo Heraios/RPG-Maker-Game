@@ -17,7 +17,7 @@
  *
  * @param Mental States
  * @desc State ids counted as mental.
- * @default 7,8,9,10
+ * @default 152,153,154,42,79,155,156
  *
  * @param Mind Element
  * @type number
