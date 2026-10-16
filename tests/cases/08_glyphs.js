@@ -11,11 +11,11 @@ module.exports = {
             [sib, yoon, th, tou, ghost].forEach(a => a.initEquips($dataActors[a.actorId()].equips));
             const tattooSlots = a => a.equipSlots().filter(e => e === 7).length;
             const codexSlots = a => a.equipSlots().filter(e => e === 8).length;
-            const spells = a => a.skills().filter(s => s.id >= 56 && s.id <= 85).map(s => s.name);   // the regular spell families
+            const spells = a => a.skills().filter(s => s.id >= 242 && s.id <= 271).map(s => s.name);   // the regular spell families
             const out = {
                 sibTattoos: tattooSlots(sib), sibCodex: codexSlots(sib), thTattoos: tattooSlots(th), thCodex: codexSlots(th),
                 touSlots: tattooSlots(tou) + codexSlots(tou), sibSpells: spells(sib), thSpells: spells(th),
-                yoonSpells: spells(yoon), ghostSpells: spells(ghost), sibLearnedAhi: sib.isLearnedSkill(56)
+                yoonSpells: spells(yoon), ghostSpells: spells(ghost), sibLearnedAhi: sib.isLearnedSkill(242)
             };
             const slot = i => sib.equipSlots().indexOf(7) + i;
             out.occupiedLocked = !sib.isEquipChangeOk(slot(0));

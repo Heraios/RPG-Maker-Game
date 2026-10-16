@@ -9,7 +9,7 @@
  * @param Swap Skill
  * @type skill
  * @desc Skill used as the action when swapping weapons costs the turn.
- * @default 15
+ * @default 6
  *
  * @param Swap Command
  * @desc Name of the battle command.

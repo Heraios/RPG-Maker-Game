@@ -16,7 +16,7 @@
  * @param Weary State
  * @type state
  * @desc State applied when Fatigue reaches its maximum.
- * @default 11
+ * @default 5
  *
  * @param Weary Recovery
  * @type number

@@ -20,19 +20,19 @@ module.exports = {
             const plain = new Game_Enemy(13, 0, 0); plain.enemy = () => Object.assign({}, $dataEnemies[13], { siMetal: false });
             out.metalRatio = avg(pada, 'Live Wire', marine) / avg(pada, 'Live Wire', plain);
             // water conducts
-            const dry = avg(pada, 'Live Wire', e); e.addState(16); const wet = avg(pada, 'Live Wire', e); out.wetRatio = wet / dry;
-            e.removeState(16); e.addState(17); use(pada, 'Live Wire', e); out.soddenStun = e.isStateAffected(38);
+            const dry = avg(pada, 'Live Wire', e); e.addState(74); const wet = avg(pada, 'Live Wire', e); out.wetRatio = wet / dry;
+            e.removeState(74); e.addState(75); use(pada, 'Live Wire', e); out.soddenStun = e.isStateAffected(118);
             // Fire Wire feeds the elemental cycle
-            e.clearStates(); use(pada, 'Fire Wire', e); out.fireWire = e.isStateAffected(14);
+            e.clearStates(); use(pada, 'Fire Wire', e); out.fireWire = e.isStateAffected(72);
             // empty pile
             out.empty = pada.charge(); out.blocked = !pada.canUse(S('Live Wire'));
             // acid jar refills 2
             $gameParty.gainItem(IT('Acid Jar'), 1); fixed(() => { const x = new Game_Action(sib); x.setItem(IT('Acid Jar').id); x.apply(pada); }); out.refilled = pada.charge();
             // cautery stops bleed and venom at a small cost
-            yoon.addState(28); yoon.addState(4); const hp = yoon.hp; use(sib, 'Electric Cautery', yoon);
-            out.cautery = !yoon.isStateAffected(28) && !yoon.isStateAffected(4) && yoon.hp < hp;
+            yoon.addState(116); yoon.addState(112); const hp = yoon.hp; use(sib, 'Electric Cautery', yoon);
+            out.cautery = !yoon.isStateAffected(116) && !yoon.isStateAffected(112) && yoon.hp < hp;
             // quickening current
-            yoon.addState(10); use(sib, 'Quickening Current', yoon); out.quicken = !yoon.isStateAffected(10);
+            yoon.addState(154); use(sib, 'Quickening Current', yoon); out.quicken = !yoon.isStateAffected(154);
             // galvanic jolt: needs 2+, spends all, revives
             sib._siCharge = 3; yoon.addState(1); use(sib, 'Galvanic Jolt', yoon); out.jolt = yoon.isAlive() && sib.charge() === 0;
             // tender
@@ -73,7 +73,7 @@ module.exports = {
         const r = await h.eval(() => {
             const a = BattleManager.actor(), pile = $dataArmors.find(x => x && x.name === 'Voltaic Pile');
             window.__log = []; const add = Window_BattleLog.prototype.addText; Window_BattleLog.prototype.addText = function(x) { window.__log.push(x); add.call(this, x); };
-            a.forceChangeEquip(a.slotOfType(5), pile); a._siCharge = 3; a.addState(16);
+            a.forceChangeEquip(a.slotOfType(5), pile); a._siCharge = 3; a.addState(74);
             const act = a.inputtingAction(); act.setSkill($dataSkills.find(s => s && s.name === 'Live Wire').id); act.setTarget(0);
             const sc = SceneManager._scene; sc._actorCommandWindow.deactivate(); sc.selectNextCommand();
             return { name: a.name(), hp: a.hp };

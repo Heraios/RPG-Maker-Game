@@ -17,7 +17,7 @@
  * @param Bleed State
  * @type state
  * @desc State inflicted by <Bleed Chance> equipment.
- * @default 28
+ * @default 116
  *
  * @help
  * Requires SI_CombatCore, SI_TurnOrder, SI_ElementalStates and SI_Insight
@@ -80,7 +80,7 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
     var params = PluginManager.parameters('SI_Ailments');
     $.hesitateMessage = String(params['Hesitate Message'] || '%1 hesitates and does nothing.');
     $.fleeMessage = String(params['Flee Message'] || '%1 flees in terror!');
-    $.bleedStateId = Number(params['Bleed State'] || 28);
+    $.bleedStateId = Number(params['Bleed State'] || 116);
 
     var E = SmokingIsle.ElementalStates;
 

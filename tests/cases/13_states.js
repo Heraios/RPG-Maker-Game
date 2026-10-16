@@ -11,32 +11,32 @@ module.exports = {
             const pada = A(5), sib = A(3), yoon = A(2);
             const e = $gameTroop.members()[0];
             // Venom
-            pada.clearResult(); pada.addState(4); const hp = pada.hp; turnEnd(pada); out.venomTick = hp - pada.hp;
-            pada.setHp(50); use(sib, 1, pada, true); out.potionUnderVenom = pada.hp - 50;
-            use(sib, 3, pada, true); out.herbCures = !pada.isStateAffected(4);
+            pada.clearResult(); pada.addState(112); const hp = pada.hp; turnEnd(pada); out.venomTick = hp - pada.hp;
+            pada.setHp(50); use(sib, 2, pada, true); out.potionUnderVenom = pada.hp - 50;
+            use(sib, 4, pada, true); out.herbCures = !pada.isStateAffected(112);
             // Salting: runs its course
-            sib.clearResult(); sib.addState(5); for (let i = 0; i < 3; i++) { sib.clearResult(); turnEnd(sib); }
+            sib.clearResult(); sib.addState(113); for (let i = 0; i < 3; i++) { sib.clearResult(); turnEnd(sib); }
             out.salted = sib.isDead();
             sib.revive(); sib.setHp(sib.mhp); sib.clearResult();
             // Salting: washed off with Fresh Water
-            sib.addState(5); turnEnd(sib); const fw = $dataItems.findIndex(i => i && i.name === 'Fresh Water');
-            $gameParty.gainItem($dataItems[fw], 1); use(yoon, fw, sib, true); out.waterCures = !sib.isStateAffected(5);
+            sib.addState(113); turnEnd(sib); const fw = $dataItems.findIndex(i => i && i.name === 'Fresh Water');
+            $gameParty.gainItem($dataItems[fw], 1); use(yoon, fw, sib, true); out.waterCures = !sib.isStateAffected(113);
             // ...and by a water spell on an enemy
-            e.addState(5); yoon.learnSkill(62); yoon.setMp(99); use(yoon, 62, e); out.rariCures = !e.isStateAffected(5);
+            e.addState(113); yoon.learnSkill(248); yoon.setMp(99); use(yoon, 248, e); out.rariCures = !e.isStateAffected(113);
             // Dragged Below: freed by hitting the dragger
-            use(e, 140, yoon); out.dragged = yoon.isStateAffected(6) && !yoon.canMove();
-            const yhp = yoon.hp; const hit = new Game_Action(e); hit.setSkill(24); yoon.clearResult(); hit.apply(yoon); out.outOfReach = yoon.hp === yhp;
-            use(pada, 1, e); out.freed = !yoon.isStateAffected(6);
+            use(e, 393, yoon); out.dragged = yoon.isStateAffected(114) && !yoon.canMove();
+            const yhp = yoon.hp; const hit = new Game_Action(e); hit.setSkill(372); yoon.clearResult(); hit.apply(yoon); out.outOfReach = yoon.hp === yhp;
+            use(pada, 1, e); out.freed = !yoon.isStateAffected(114);
             // ...or lost if nobody does
-            use(e, 140, yoon); for (let i = 0; i < 3; i++) { yoon.clearResult(); turnEnd(yoon); } out.lost = yoon.isDead();
+            use(e, 393, yoon); for (let i = 0; i < 3; i++) { yoon.clearResult(); turnEnd(yoon); } out.lost = yoon.isDead();
             yoon.revive(); yoon.setHp(yoon.mhp);
             // Hypnotized: attacks its own side
-            pada.clearResult(); pada.addState(9); const conf = new Game_Action(pada); conf.setConfusion();
+            pada.clearResult(); pada.addState(153); const conf = new Game_Action(pada); conf.setConfusion();
             out.hypnoTargets = [...new Set(Array.from({ length: 30 }, () => conf.makeTargets()[0]).map(x => x.isActor() ? 'party' : 'enemy'))].join(',');
-            pada.removeState(9);
+            pada.removeState(153);
             // Sleep: can't act, a hit wakes it
-            sib.clearResult(); sib.addState(10); out.asleep = !sib.canMove();
-            const wake = new Game_Action(e); wake.setSkill(24); sib.clearResult(); fixed(() => wake.apply(sib)); out.woke = !sib.isStateAffected(10);
+            sib.clearResult(); sib.addState(154); out.asleep = !sib.canMove();
+            const wake = new Game_Action(e); wake.setSkill(372); sib.clearResult(); fixed(() => wake.apply(sib)); out.woke = !sib.isStateAffected(154);
             out.mentalList = SmokingIsle.Insight ? String(PluginManager.parameters('SI_Insight')['Mental States']) : '';
             return out;
         });

@@ -14,24 +14,24 @@ module.exports = {
             out.thCuirass = at(th, 'Cuirass'); out.thCodex = at(th, 'Codex');
             out.judaTattoos = juda.equips().filter(e => e && e.etypeId === 7).length;
             const off = sib.slotOfType(2);
-            $gameParty.gainItem($dataWeapons[1], 1); $gameParty.gainItem($dataWeapons[2], 1);
-            sib.changeEquip(off, $dataWeapons[1]); out.knifeOffhand = (sib.equips()[off] || {}).name;
-            sib.changeEquip(off, $dataWeapons[2]); out.spearRejected = (sib.equips()[off] || {}).name;
+            $gameParty.gainItem($dataWeapons[6], 1); $gameParty.gainItem($dataWeapons[93], 1);
+            sib.changeEquip(off, $dataWeapons[6]); out.knifeOffhand = (sib.equips()[off] || {}).name;
+            sib.changeEquip(off, $dataWeapons[93]); out.spearRejected = (sib.equips()[off] || {}).name;
             sib.refresh(); out.knifeKept = (sib.equips()[off] || {}).name;
             out.mainOnly = sib.weapons().length;
-            out.noStats = sib.atk === (() => { sib._equips[off].setObject(null); const a = sib.atk; sib._equips[off].setObject($dataWeapons[1]); return a; })();
+            out.noStats = sib.atk === (() => { sib._equips[off].setObject(null); const a = sib.atk; sib._equips[off].setObject($dataWeapons[6]); return a; })();
             out.offMoves = sib.availableMoves().includes('offhand');
             // Two-handed: a spear sends the shield back to the bag and locks the off hand.
             const yoon = A(2), yoff = yoon.slotOfType(2), shields = $gameParty.numItems(AR('Shield'));
-            $gameParty.gainItem($dataWeapons[2], 1);
-            yoon.changeEquip(yoon.slotOfType(1), $dataWeapons[2]);
+            $gameParty.gainItem($dataWeapons[93], 1);
+            yoon.changeEquip(yoon.slotOfType(1), $dataWeapons[93]);
             out.twoHanded = !yoon.equips()[yoff] && $gameParty.numItems(AR('Shield')) === shields + 1 && !yoon.isEquipChangeOk(yoff);
-            $gameParty.gainItem($dataWeapons[4], 1); $gameParty.gainItem(AR('Shield'), 1);
+            $gameParty.gainItem($dataWeapons[132], 1); $gameParty.gainItem(AR('Shield'), 1);
             const falmi = A(10);   // a club user who can carry a shield
-            falmi.changeEquip(falmi.slotOfType(1), $dataWeapons[5]); falmi.changeEquip(falmi.slotOfType(2), AR('Shield'));
+            falmi.changeEquip(falmi.slotOfType(1), $dataWeapons[172]); falmi.changeEquip(falmi.slotOfType(2), AR('Shield'));
             out.clubKeepsShield = (falmi.equips()[falmi.slotOfType(1)] || {}).name + '+' + (falmi.equips()[falmi.slotOfType(2)] || {}).name;
-            $dataWeapons[4].siTwoHanded = false; falmi.changeEquip(falmi.slotOfType(1), $dataWeapons[4]);
-            out.oneHandedAxe = falmi.isEquipChangeOk(falmi.slotOfType(2)) && !!falmi.equips()[falmi.slotOfType(2)]; $dataWeapons[4].siTwoHanded = true;
+            $dataWeapons[132].siTwoHanded = false; falmi.changeEquip(falmi.slotOfType(1), $dataWeapons[132]);
+            out.oneHandedAxe = falmi.isEquipChangeOk(falmi.slotOfType(2)) && !!falmi.equips()[falmi.slotOfType(2)]; $dataWeapons[132].siTwoHanded = true;
             out.ghost = A(1).equipSlots().length;
             out.patience = names(A(12)).join(',') + ':' + (A(12).equips()[0] || {}).name;
             $gameParty.gainItem(AR('Hide Gloves'), 1);

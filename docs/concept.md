@@ -1153,6 +1153,21 @@ starting position back to **MAP001 (8, 6)** (Database → System), then delete t
 - Weapon types: Dagger, Sword, Spear, Staff, Club, Axe, Bow, Sling, Javelin, Net, Fist, Claw.
 - Elements: Physical, Magical, Cut, Pierce, Crush, Burn, Air, Water, Earth, Fire, Mind.
 
+### Database layout
+Every list is grouped into categories. Each category starts with a header entry
+(`------- Name -------`, never used in game) on an ID ending in 1 (except right after the fixed entries), followed by its entries and
+at least 25 blank slots for new things of that kind. Add new entries in the blank slots of their
+category. RPG Maker's fixed entries stay first: Skill 1 (Punch, the Attack command), Skill 2
+(Guard) and State 1 (Knockout). Plugin parameters and tests refer to these IDs, so moving an
+entry later means updating those references too (the reorganization used a script for this).
+
+- **Items:** Supplies 1; Food & Drink 41; Herbal Remedies 71; Materials 121; Key Items 161
+- **Weapons:** Knives 1; Swords & Paddle-Swords 51; Spears 91; Axes & Adzes 131; Clubs, Hammers & Maces 171; Staves 211
+- **Armors:** Clothing & Armor 1; Offhand & Charms 41; Ranged 71; Glyphs (Tattoos) 111; Codices 171; Collars 201
+- **Skills:** Basic 3; Rest 41; Weapon Techniques 71; Ranged 121; Talk 161; Voltaic 201; Magic 241; Yoon (Ghost) 301; Enemy Skills 371; Unused (MV defaults) 421
+- **States:** Core 2; Talk 41; Elemental 71; Ailments 111; Mental 151; Boons 191; Remedies 231
+- Saves made before the reorganization point at the old IDs: start a New Game.
+
 ---
 
 ## Open Questions
