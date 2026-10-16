@@ -131,8 +131,10 @@ class Check {
 // ---------------------------------------------------------------------------
 
 (async () => {
-    const filters = process.argv.slice(2);
-    const caseDir = path.join(__dirname, 'cases');
+    // `node run.js --sim` runs the balance simulations in sim/ instead of the tests.
+    const sim = process.argv.includes('--sim');
+    const filters = process.argv.slice(2).filter(a => a !== '--sim');
+    const caseDir = path.join(__dirname, sim ? 'sim' : 'cases');
     const files = fs.readdirSync(caseDir).filter(f => f.endsWith('.js'))
         .filter(f => filters.length === 0 || filters.some(x => f.includes(x))).sort();
 

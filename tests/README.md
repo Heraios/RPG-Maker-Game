@@ -43,3 +43,10 @@ module.exports = {
 
 `h.newGame()` starts a New Game (the test room) instead, `h.toCommand()` advances a battle until a
 command menu is open, and `h.pumpMessages()` presses OK through messages and events.
+
+## Balance simulation
+
+`node run.js --sim` runs `sim/act2.js`: the Act 2 party (with and without Pada) fights every Act 2
+troop 40 times by attacking only and 40 times by talking only, headless with the game's real rules,
+and prints win rate, party turns, enemy turns, HP lost, knockouts, Fatigue gained, gear worn and
+how many enemies were talked away. Rerun it after changing enemy or party numbers.
