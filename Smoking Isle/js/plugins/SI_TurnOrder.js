@@ -384,6 +384,8 @@ SmokingIsle.TurnOrder = SmokingIsle.TurnOrder || {};
 
     Window_TurnOrder.prototype.update = function() {
         Window_Base.prototype.update.call(this);
+        // Out of the way while a message or a choice (e.g. an enemy's question) is up.
+        this.visible = !$gameMessage.isBusy();
         var cost = BattleManager.isInputting() ? this._pendingCost : BattleManager._ctbCost;
         var entries = BattleManager.ctbPreview(this.maxEntries(), cost);
         var signature = entries.map(function(e) {

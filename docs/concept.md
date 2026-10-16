@@ -663,6 +663,20 @@ lines plus optional scripted moments (a common event with choices) for important
   10 mood (`<Talk Hit: -20>` per enemy). At 0 it becomes Enraged. Fighting and talking work
   against each other.
 
+**Reactions, results and questions** (mostly predictable; smart enemies can be the capricious exceptions)
+- **Every approach gets its own reaction** from each enemy: one for when it works, one for when it
+  backfires, with random variants (`<Talk Soothe+: ... | ...>`, `<Talk Offer-: ...>`). Enemies without
+  custom lines use defaults for their talk type.
+- **Weighted results:** an approach usually does its normal mood change, but can have twists
+  (`<Talk Offer Results: 85 normal | 15 leave "...">`): **leave** (takes it and goes, no reward),
+  **flee**, **lash** (hits the speaker), **gift**, **demand** (wants another item: a yes/no prompt),
+  **info**, **event**. Bad results are twice as likely while it's Hostile and half as likely when the
+  speaker's specialty matches.
+- **Enemies ask questions** (40% chance after being talked to, each once per battle) through a choice
+  window. Answers change mood, get a reply, and can have results (leave, flee, lash, gift, steal).
+  **Some answers only appear when a particular character is there** (Pada to the Boar-Men, Parl to
+  the Marines, Lasa to the Children of the Caves, Falmi to the imps).
+
 **Enemy moods and behaviour**
 - Enemies can **start calmer** (`<Talk Mood: Wary>` or a number); the default is Hostile (25).
 - **Calm enemies don't attack.** They only use non-harmful actions, or wait.
@@ -979,7 +993,8 @@ Prank skills (Pilfer, Pantsing, Blinding Light, Mock) stop once the prankster is
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
-| Automated tests | `tests/` (29 tests, about 300 checks; see tests/README.md) |
+| Talk reactions, weighted results, enemy questions | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
+| Automated tests | `tests/` (32 tests, about 330 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

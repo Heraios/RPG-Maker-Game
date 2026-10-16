@@ -50,6 +50,11 @@
  * Override per enemy with <Talk Hit: -20>.
  * @default -10
  *
+ * @param Question Chance
+ * @desc % chance an enemy with unasked questions asks one after it is
+ * talked to (each question at most once per battle).
+ * @default 40
+ *
  * @param Repeat EXP Rate
  * @desc Share of EXP for succeeding again with an enemy type (0.2 = 20%).
  * @default 0.2
@@ -113,6 +118,42 @@
  *   <Talk Line Hostile: text>   lines shown when its mood changes to
  *   <Talk Line Wary: text>      that level (also Calm, Pacified, Enraged).
  *
+ * ============================================================================
+ * Reactions, results and questions
+ * ============================================================================
+ *   <Talk Soothe+: line | line>   what it does when that approach works (+),
+ *   <Talk Soothe-: line>          backfires (-) or does nothing (0). Several
+ *   <Talk Soothe0: line>          lines separated by | : one is picked at
+ *                                 random. %1 = its name, %2 = the speaker.
+ *                                 Without these, defaults for its talk type.
+ *
+ *   <Talk Offer Results: 80 normal | 20 leave "It grabs it and runs.">
+ *      Weighted results for an approach (default: always normal). Kinds:
+ *        normal              the usual mood change and reaction
+ *        leave               it takes what it's given and wanders off
+ *                            (no outcome, no EXP)
+ *        flee                it runs off
+ *        lash                it lashes out at the speaker
+ *        gift item 6         it gives you something (item/weapon/armor)
+ *        demand item 6       it wants (another) item 6: a yes/no prompt
+ *                            (yes: +20 mood, no: -10)
+ *        info                it tells you its <Talk Info>
+ *        event 7             runs common event 7
+ *      A "quoted line" after a kind is shown when that result happens.
+ *      Lash, flee and leave are bad results: twice as likely when it is
+ *      Hostile, half as likely when the speaker's specialty matches.
+ *
+ *   <Talk Question>
+ *   Why do you walk our forest?
+ *   - We need something. We'll take only that. | +20 | Hrm. Honest.
+ *   - [5] I hunt here, by the agreement. | +25 | Pada. Good.
+ *   - The forest belongs to everyone. | -15 | It belongs to the Lady!
+ *   </Talk Question>
+ *      It may ask this (Question Chance) after it's talked to, at most
+ *      once per battle. Each answer: text | mood change | its reply |
+ *      optional result (leave, flee, lash, gift item 6, steal 10). [5] means
+ *      only shown when actor 5 is in the battle party. Up to 6 answers.
+ *
  * Mood: Enraged (0) - Hostile - Wary (35+) - Calm (70+) - Pacified (100).
  * An Enraged enemy gets the Enraged state and won't listen until it wears
  * off, then calms back down to Hostile.
@@ -171,6 +212,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     $.specialtyBonus = Number(params['Specialty Bonus'] || 0.5);
     $.insightBonus = Number(params['Insight Bonus'] || 0.03);
     $.waitSkillId = Number(params['Wait Skill'] || 0);
+    $.questionChance = Number(params['Question Chance'] !== undefined && params['Question Chance'] !== '' ? params['Question Chance'] : 40);
     $.hitMood = Number(params['Hit Mood Change'] !== undefined && params['Hit Mood Change'] !== '' ? params['Hit Mood Change'] : -10);
     $.patienceActorId = Number(params['Patience Actor'] || 0);
     $.patienceBonus = Number(params['Patience Bonus'] || 0.25);
@@ -197,6 +239,34 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     $.tag = function(note, name) {
         var m = new RegExp('<' + name + ':\\s*([^>]*)>', 'i').exec(note || '');
         return m ? m[1].trim() : null;
+    };
+
+    // "80 normal | 20 leave \"line\" | 10 gift item 6"
+    $.parseResults = function(text) {
+        return text.split('|').map(function(part) {
+            var line = null;
+            part = part.replace(/"([^"]*)"/, function(_, l) { line = l; return ''; }).trim();
+            var words = part.split(/\s+/);
+            var weight = parseFloat(words.shift()) || 0;
+            return { weight: weight, kind: (words.shift() || 'normal').toLowerCase(), args: words, line: line };
+        }).filter(function(r) { return r.weight > 0; });
+    };
+
+    $.parseQuestion = function(block) {
+        var lines = block.split(/\r?\n/).map(function(l) { return l.trim(); }).filter(function(l) { return l; });
+        var text = lines.shift();
+        if (!text) return null;
+        var answers = lines.filter(function(l) { return l.charAt(0) === '-'; }).map(function(l) {
+            var f = l.slice(1).split('|').map(function(x) { return x.trim(); });
+            var actorId = 0;
+            var label = (f[0] || '').replace(/^\[(\d+)\]\s*/, function(_, id) { actorId = Number(id); return ''; });
+            return { text: label, actorId: actorId, mood: Number(f[1] || 0), reply: f[2] || '', result: (f[3] || '').trim() };
+        });
+        return { text: text, answers: answers };
+    };
+
+    $.pick = function(list) {
+        return list && list.length ? list[Math.randomInt(list.length)] : null;
     };
 
     $.list = function(text) {
@@ -255,6 +325,20 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         });
         t.lines = {};
         t.flees = $.list($.tag(note, 'Talk Flees')).map(function(a) { return a.toLowerCase(); });
+        t.reactions = {};
+        var re = /<Talk (\w+)([+\-0]):\s*([^>]*)>/gi, m;
+        while ((m = re.exec(note))) {
+            t.reactions[m[1].toLowerCase() + m[2]] = m[3].split('|').map(function(x) { return x.trim(); }).filter(function(x) { return x; });
+        }
+        t.results = {};
+        var rr = /<Talk (\w+) Results:\s*([^>]*)>/gi;
+        while ((m = rr.exec(note))) t.results[m[1].toLowerCase()] = $.parseResults(m[2]);
+        t.questions = [];
+        var qr = /<Talk Question>([\s\S]*?)<\/Talk Question>/gi;
+        while ((m = qr.exec(note))) {
+            var q = $.parseQuestion(m[1]);
+            if (q) t.questions.push(q);
+        }
         ['Enraged', 'Hostile', 'Wary', 'Calm', 'Pacified', 'Flee'].forEach(function(level) {
             var line = $.tag(note, 'Talk Line ' + level);
             if (line) t.lines[level] = line;
@@ -265,6 +349,59 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     //-------------------------------------------------------------------------
     // Helpers
     //-------------------------------------------------------------------------
+
+    // Default reactions per talk type: approach + "+" (worked), "-" (backfired), "0" (nothing).
+    $.DEFAULT_REACTIONS = {
+        animal: {
+            'soothe+': ['%1\'s ears flick toward the voice.', '%1 stops pawing the ground.'],
+            'soothe-': ['%1 doesn\'t trust the voice.'],
+            'offer+': ['%1 sniffs the offering and gulps it down.', '%1 noses at the offering, then eats.'],
+            'offer-': ['%1 bats the offering away.'],
+            'ask-': ['%1 just stares.', '%1 doesn\'t understand.'],
+            'rite-': ['%1 shies away from the strange chanting.'],
+            'threaten+': ['%1 backs off a step.'],
+            'threaten-': ['%1 bares its teeth.', '%1 bristles.'],
+            'plead+': ['%1 tilts its head.'],
+            'plead-': ['%1 ignores the plea.']
+        },
+        spirit: {
+            'soothe+': ['%1 grows still, listening.'],
+            'soothe-': ['%1 flickers, unmoved.'],
+            'offer+': ['%1 accepts the offering.'],
+            'offer-': ['%1 recoils from the offering.'],
+            'ask+': ['%1 seems to consider the question.'],
+            'ask-': ['%1 won\'t answer. Not yet.'],
+            'rite+': ['%1 sways with the rite.', 'The rite settles over %1 like a cloak.'],
+            'rite-': ['%1 hisses at the wrong rite!'],
+            'threaten+': ['%1 shrinks back.'],
+            'threaten-': ['%1\'s anger rises like smoke.'],
+            'plead+': ['%1 softens at the plea.'],
+            'plead-': ['%1 is unmoved.']
+        },
+        sapient: {
+            'soothe+': ['%1 lowers their guard a little.', '%1 listens, wary.'],
+            'soothe-': ['%1 scoffs.'],
+            'offer+': ['%1 takes the gift with a nod.'],
+            'offer-': ['%1 is insulted by the offer!'],
+            'ask+': ['%1 thinks about it.'],
+            'ask-': ['"Why should I tell you anything?"'],
+            'rite+': ['%1 respects the old ways.'],
+            'rite-': ['%1 finds the rite strange.'],
+            'threaten+': ['%1 takes the threat seriously.'],
+            'threaten-': ['%1 is provoked!'],
+            'plead+': ['%1 hesitates.'],
+            'plead-': ['%1 is unmoved by begging.']
+        }
+    };
+
+    Game_Enemy.prototype.talkReaction = function(approach, sign, speaker) {
+        var data = this.talkData();
+        var key = approach + sign;
+        var line = $.pick(data.reactions && data.reactions[key]) ||
+            $.pick(($.DEFAULT_REACTIONS[data.type] || {})[key]) ||
+            (sign === '+' ? '%1 seems calmer.' : sign === '-' ? '%1 bristles.' : '%1 doesn\'t react.');
+        return line.format(this.name(), speaker ? speaker.name() : '');
+    };
 
     $.isTalkSkill = function(item) {
         return DataManager.isSkill(item) && !!item.siApproach;
@@ -447,19 +584,79 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
             return;
         }
 
-        var before = $.moodLevel(enemy.talkMood());
+        var result = this.rollTalkResult(enemy, approach);
+        if (result && result.kind !== 'normal') {
+            if (this.applyTalkResult(enemy, result)) return;
+        }
         var delta = this.talkDelta(enemy, approach);
         if (approach === 'ask' && enemy.talkMood() < 70) delta = Math.min(delta, -5);
+        this.talkSay(enemy, enemy.talkReaction(approach, delta > 0 ? '+' : delta < 0 ? '-' : '0', this.subject()));
+        this.talkChangeMood(enemy, delta);
+        if (enemy.isAppeared() && !enemy.isEnraged()) $.maybeAsk(enemy, this.subject());
+    };
+
+    // Picks a weighted result for this approach (null: the normal result).
+    Game_Action.prototype.rollTalkResult = function(enemy, approach) {
+        var list = enemy.talkData().results[approach];
+        if (!list || list.length === 0) return null;
+        var speaker = this.subject();
+        var kinds = enemy.talkData().kinds;
+        var specialist = speaker.isActor() && speaker.talkSpecialties().some(function(k) { return kinds.indexOf(k) >= 0; });
+        var hostile = enemy.talkMood() < 35;
+        var weights = list.map(function(r) {
+            var bad = ['lash', 'flee', 'leave'].indexOf(r.kind) >= 0;
+            return r.weight * (bad && hostile ? 2 : 1) * (bad && specialist ? 0.5 : 1);
+        });
+        var total = weights.reduce(function(a, b) { return a + b; }, 0);
+        var roll = Math.random() * total;
+        for (var i = 0; i < list.length; i++) {
+            roll -= weights[i];
+            if (roll < 0) return list[i];
+        }
+        return list[list.length - 1];
+    };
+
+    // Applies a special result. Returns true if the normal mood change is skipped.
+    Game_Action.prototype.applyTalkResult = function(enemy, r) {
+        var name = enemy.name();
+        if (r.line) this.talkSay(enemy, r.line.format(name, this.subject().name()));
+        switch (r.kind) {
+        case 'leave':
+            if (!r.line) this.talkSay(enemy, '%1 takes it and wanders off.'.format(name));
+            enemy.escape();
+            return true;
+        case 'flee':
+            if (!r.line) this.talkSay(enemy, '%1 runs off!'.format(name));
+            enemy.escape();
+            return true;
+        case 'lash':
+            $.lashOut(enemy, this.subject(), this.talkSay.bind(this, enemy));
+            this.talkChangeMood(enemy, -5);
+            return true;
+        case 'gift':
+            $.giveFrom(enemy, r.args, this.talkSay.bind(this, enemy));
+            return false;
+        case 'demand':
+            $.queuePrompt($.demandPrompt(enemy, this.subject(), r.args));
+            return true;
+        case 'info':
+            var info = enemy.talkData().info;
+            if (info) this.talkSay(enemy, '%1: "%2"'.format(name, info));
+            return false;
+        case 'event':
+            $gameTemp.reserveCommonEvent(Number(r.args[0]));
+            return false;
+        }
+        return false;
+    };
+
+    // Changes mood and handles the consequences (level lines, Enraged, Pacified).
+    Game_Action.prototype.talkChangeMood = function(enemy, delta) {
+        var name = enemy.name();
+        var data = enemy.talkData();
+        var before = $.moodLevel(enemy.talkMood());
         enemy._siMood = (enemy.talkMood() + delta).clamp(0, 100);
         var after = $.moodLevel(enemy.talkMood());
-
-        if (delta > 0) {
-            this.talkSay(enemy, '%1 seems calmer.'.format(name));
-        } else if (delta < 0) {
-            this.talkSay(enemy, '%1 bristles.'.format(name));
-        } else {
-            this.talkSay(enemy, '%1 doesn\'t react.'.format(name));
-        }
         if (after !== before) {
             if (data.lines[after]) this.talkSay(enemy, '%1: "%2"'.format(name, data.lines[after]));
             if ($.canSeeMood() && after !== 'Pacified') this.talkSay(enemy, '%1 is now %2.'.format(name, after));
@@ -471,6 +668,189 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
             this.talkSuccess(enemy);
             this.talkLeave(enemy);
         }
+    };
+
+    //-------------------------------------------------------------------------
+    // Prompts: enemy questions and demands (shown between actions)
+    //-------------------------------------------------------------------------
+
+    $.prompts = [];
+    $.currentPrompt = null;
+
+    $.queuePrompt = function(prompt) {
+        if (prompt && prompt.answers.length > 0) $.prompts.push(prompt);
+    };
+
+    // A stand-in action so prompt answers can reuse the talk helpers.
+    $.promptAction = function(speaker) {
+        var action = new Game_Action(speaker);
+        action.setSkill($dataSkills.findIndex(function(s) { return s && s.siApproach === 'soothe'; }) || 0);
+        return action;
+    };
+
+    $.flush = function(enemy, lines) {
+        (lines || []).concat(enemy._siTalkMessages || []).forEach(function(line) {
+            if (line) $gameMessage.add(line);
+        });
+        enemy._siTalkMessages = [];
+    };
+
+    $.lashOut = function(enemy, speaker, say) {
+        var action = new Game_Action(enemy);
+        action.setSkill(enemy.attackSkillId());
+        var value = Math.max(action.makeDamageValue(speaker, false), 1);
+        speaker.clearResult();
+        action.executeHpDamage(speaker, value);
+        speaker.startDamagePopup();
+        say('%1 lashes out at %2! (%3 damage)'.format(enemy.name(), speaker.name(), value));
+        if (speaker.isDead()) {
+            speaker.performCollapse();
+            say('%1 falls!'.format(speaker.name()));
+        }
+    };
+
+    $.giveFrom = function(enemy, args, say) {
+        var kind = (args[0] || 'item').toLowerCase();
+        var list = kind === 'weapon' ? $dataWeapons : kind === 'armor' ? $dataArmors : $dataItems;
+        var obj = list[Number(args[1])];
+        if (obj) {
+            $gameParty.gainItem(obj, 1);
+            say('%1 gives you %2.'.format(enemy.name(), obj.name));
+        }
+    };
+
+    // Applies a prompt answer's result word ("leave", "flee", "lash", "gift item 6", "steal 10").
+    $.applyAnswerResult = function(enemy, speaker, result, say) {
+        var words = result.split(/\s+/);
+        switch ((words[0] || '').toLowerCase()) {
+        case 'leave':
+            say('%1 wanders off.'.format(enemy.name()));
+            enemy.escape();
+            break;
+        case 'flee':
+            say('%1 runs off!'.format(enemy.name()));
+            enemy.escape();
+            break;
+        case 'lash':
+            $.lashOut(enemy, speaker, say);
+            break;
+        case 'gift':
+            $.giveFrom(enemy, words.slice(1), say);
+            break;
+        case 'steal':
+            var gold = Math.min($gameParty.gold(), Number(words[1] || 10));
+            if (gold > 0) {
+                $gameParty.loseGold(gold);
+                if (SmokingIsle.Pranks) $gameSystem.siHoard().gold += gold;
+                say('%1 helps itself to %2 %3!'.format(enemy.name(), gold, TextManager.currencyUnit));
+            }
+            break;
+        }
+    };
+
+    $.questionPrompt = function(enemy, speaker, q) {
+        var members = $gameParty.battleMembers();
+        var answers = q.answers.filter(function(a) {
+            return !a.actorId || members.some(function(m) { return m.actorId() === a.actorId; });
+        }).slice(0, 6);
+        return {
+            enemy: enemy, speaker: speaker,
+            text: '%1: "%2"'.format(enemy.name(), q.text),
+            answers: answers.map(function(a) {
+                return {
+                    label: a.text,
+                    apply: function() {
+                        var action = $.promptAction(speaker);
+                        var lines = a.reply ? ['%1: "%2"'.format(enemy.name(), a.reply)] : [];
+                        var say = function(t) { lines.push(t); };
+                        if (a.result) $.applyAnswerResult(enemy, speaker, a.result, say);
+                        $.flush(enemy, lines);
+                        if (a.mood && enemy.isAppeared()) {
+                            enemy._siTalkMessages = [];
+                            action.talkChangeMood(enemy, a.mood);
+                            $.flush(enemy);
+                        }
+                    }
+                };
+            })
+        };
+    };
+
+    $.demandPrompt = function(enemy, speaker, args) {
+        var kind = (args[0] || 'item').toLowerCase();
+        var list = kind === 'weapon' ? $dataWeapons : kind === 'armor' ? $dataArmors : $dataItems;
+        var item = list[Number(args[1])];
+        if (!item) return null;
+        var change = function(delta, approach) {
+            var action = $.promptAction(speaker);
+            enemy._siTalkMessages = [];
+            action.talkSay(enemy, enemy.talkReaction(approach, delta > 0 ? '+' : '-', speaker));
+            action.talkChangeMood(enemy, delta);
+            $.flush(enemy);
+        };
+        var answers = $gameParty.hasItem(item) ? [
+            { label: 'Give ' + item.name, apply: function() { $gameParty.loseItem(item, 1); change(20, 'offer'); } },
+            { label: 'Refuse', apply: function() { change(-10, 'offer'); } }
+        ] : [
+            { label: 'You have none', apply: function() { change(-5, 'offer'); } }
+        ];
+        return { enemy: enemy, speaker: speaker, text: '%1 wants %2.'.format(enemy.name(), item.name), answers: answers };
+    };
+
+    // After being talked to, an enemy may ask one of its questions.
+    $.maybeAsk = function(enemy, speaker) {
+        var data = enemy.talkData();
+        if (!data.questions || data.questions.length === 0 || !speaker.isActor()) return;
+        enemy._siAsked = enemy._siAsked || [];
+        var open = data.questions.filter(function(q, i) { return enemy._siAsked.indexOf(i) < 0; });
+        if (open.length === 0 || Math.random() * 100 >= $.questionChance) return;
+        var q = open[Math.randomInt(open.length)];
+        enemy._siAsked.push(data.questions.indexOf(q));
+        $.queuePrompt($.questionPrompt(enemy, speaker, q));
+    };
+
+    $.promptList = function(prompt) {
+        var list = [
+            { code: 101, indent: 0, parameters: ['', 0, 0, 2] },
+            { code: 401, indent: 0, parameters: [prompt.text] },
+            { code: 102, indent: 0, parameters: [prompt.answers.map(function(a) { return a.label; }), -1, 0, 0, 0] }
+        ];
+        prompt.answers.forEach(function(a, i) {
+            list.push({ code: 402, indent: 0, parameters: [i, a.label] });
+            list.push({ code: 355, indent: 1, parameters: ['SmokingIsle.Talk.answer(' + i + ')'] });
+            list.push({ code: 0, indent: 1, parameters: [] });
+        });
+        list.push({ code: 404, indent: 0, parameters: [] });
+        list.push({ code: 0, indent: 0, parameters: [] });
+        return list;
+    };
+
+    $.answer = function(index) {
+        var prompt = $.currentPrompt;
+        $.currentPrompt = null;
+        if (prompt && prompt.answers[index]) prompt.answers[index].apply();
+    };
+
+    var _Game_Troop_setupBattleEvent = Game_Troop.prototype.setupBattleEvent;
+    Game_Troop.prototype.setupBattleEvent = function() {
+        if (!this._interpreter.isRunning()) {
+            while ($.prompts.length > 0) {
+                var prompt = $.prompts.shift();
+                if (prompt.enemy.isAlive() && !prompt.enemy.isHidden()) {
+                    $.currentPrompt = prompt;
+                    this._interpreter.setup($.promptList(prompt));
+                    return;
+                }
+            }
+        }
+        _Game_Troop_setupBattleEvent.call(this);
+    };
+
+    var _BattleManager_setup = BattleManager.setup;
+    BattleManager.setup = function(troopId, canEscape, canLose) {
+        $.prompts = [];
+        $.currentPrompt = null;
+        _BattleManager_setup.call(this, troopId, canEscape, canLose);
     };
 
     Game_Action.prototype.applyStalk = function(enemy) {
