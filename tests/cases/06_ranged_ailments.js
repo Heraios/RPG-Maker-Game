@@ -13,7 +13,7 @@ module.exports = {
             const volley = new Game_Action(yoon); volley.setSkill(50); const volleyHits = volley.makeTargets().length; yoon.useItem(S(50));
             dama.forceChangeEquip(dama.slotOfType(1), $dataWeapons[12]); dama.forceChangeEquip(dama.slotOfType(6), AR('Fishing Net')); dama.onBattleStart();
             const harpoonThrows = dama.rangedAmmoForSkill(S(34)), nets = dama.rangedAmmoForSkill(S(35));
-            const bat = new Game_Enemy(1, 0, 0); $gameTroop._enemies.push(bat);
+            const bat = new Game_Enemy(12, 0, 0); $gameTroop._enemies.push(bat);   // Owl of Ill Omen (flying)
             const eva = id => { const a = new Game_Action(yoon); a.setSkill(id); return a.itemEva(bat); };
             const mino = $gameTroop.members()[0]; const net = new Game_Action(dama); net.setSkill(35); mino.clearResult(); const rnd = Math.random; Math.random = () => 0.5; net.apply(mino); Math.random = rnd;   // no miss
             return { arrows, refilled, volleyHits, stonesLeft: yoon.rangedAmmoForSkill(S(32)), harpoonThrows, nets,

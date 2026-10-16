@@ -32,7 +32,7 @@ module.exports = {
             const avg = (a, id, x, n = 300) => { let s = 0; for (let i = 0; i < n; i++) { const act = new Game_Action(a); act.setSkill(id); s += act.makeDamageValue(x, false); } return s / n; };
             const out = { chopYoon: avg(pada, 12, yoon), chopTou: avg(pada, 12, tou), ahiYoon: avg(sib, 56, yoon), ahiTou: avg(sib, 56, tou),
                           rariTou: avg(sib, 62, tou), chopGhost: avg(pada, 12, ghost), ahiGhost: avg(sib, 56, ghost) };
-            const slime = new Game_Enemy(2, 0, 0); $gameTroop._enemies.push(slime);
+            const slime = new Game_Enemy(9, 0, 0); $gameTroop._enemies.push(slime);   // any enemy, made fire-immune
             slime.elementRate = id => id === 10 ? 0 : 1;
             out.fireImmuneAhi = avg(sib, 56, slime); out.fireImmuneSpark = avg(sib, 10, slime);
             return out;
@@ -50,7 +50,7 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const sib = $gameActors.actor(3);
-            const e = new Game_Enemy(4, 0, 0); $gameTroop._enemies.push(e);
+            const e = new Game_Enemy(11, 0, 0); $gameTroop._enemies.push(e); e.addParam(0, 500); e.setHp(e.mhp);
             const names = () => e.states().filter(s => s.name !== 'Enraged').map(s => s.name).sort().join(',');   // repeated hits enrage it
             const cast = id => { e.clearResult(); sib._siExtraTurn = false; const a = new Game_Action(sib); a.setSkill(id); a.apply(e); return names() + (sib._siExtraTurn ? '+EXTRA' : ''); };
             return [cast(56), cast(68), cast(56), cast(62), cast(74), cast(56)];
@@ -89,7 +89,7 @@ module.exports = {
         t.between(r.taken[0], 1.10, 1.20, 'Wet: about +15% physical damage taken');
         t.between(r.taken[1], 1.29, 1.41, 'Sodden: about +35%');
         t.between(r.taken[2], 1.52, 1.68, 'Cracked: about +60%');
-        t.eq(r.lash, 'Strike', 'a Feverish enemy lashes out with its own attack');
+        t.eq(r.lash, 'Boar Club', 'a Feverish enemy lashes out with its own attack');
         t.ok(r.burnKills, "burning can kill");
         t.eq(r.upgradeMsgs, 'Enflamed,Disoriented / removed: ', 'an upgrade shows no "wears off" line for the base state');
 

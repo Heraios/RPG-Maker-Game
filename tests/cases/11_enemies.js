@@ -5,10 +5,10 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const out = [];
-            for (let id = 5; id <= 16; id++) { $gameTroop.setup(id); out.push($dataTroops[id].name + ':' + $gameTroop.members().map(e => e.name()).join('+')); }
+            for (let id = 1; id <= 14; id++) { $gameTroop.setup(id); out.push($dataTroops[id].name + ':' + $gameTroop.members().map(e => e.name()).join('+')); }
             return out;
         });
-        t.eq(r.length, 12, 'twelve new troops');
+        t.eq(r.length, 14, 'fourteen troops');
         t.ok(r.every(x => !/undefined|:$/.test(x)), 'all have named members: ' + r.join(' | '));
     },
 
@@ -19,7 +19,7 @@ module.exports = {
             const fixed = f => { const rnd = Math.random; Math.random = () => 0.5; try { return f(); } finally { Math.random = rnd; } };
             const out = {}, sib = A(3), yoon = A(2);   // (Lasa flies, so she'd often dodge a grab)
             sib.initEquips($dataActors[3].equips); yoon.initEquips($dataActors[2].equips);
-            $gameTroop.setup(12); const [girl, boy] = $gameTroop.members();
+            $gameTroop.setup(8); const [girl, boy] = $gameTroop.members();
             const use = (who, id, target) => fixed(() => { const a = new Game_Action(who); a.setSkill(id); target.clearResult(); a.apply(target); });
             out.lasaRing = sib.equips().some(e => e && e.name === 'Ring');
             use(boy, 132, sib); out.noFailLine = sib.result().success;
@@ -55,14 +55,14 @@ module.exports = {
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id), out = {};
             const talk = (a, skillId, e) => { const x = new Game_Action(a); x.setSkill(skillId); e.clearResult(); x.apply(e); return (e._siTalkMessages || []).join(' / '); };
-            $gameTroop.setup(13); const [imp, horse] = $gameTroop.members();
+            $gameTroop.setup(9); const [imp, horse] = $gameTroop.members();
             const exp = A(2).currentExp(); out.threat = talk(A(5), 21, imp); out.impFled = imp.isHidden() && A(2).currentExp() === exp;
             out.horseEva = +horse.eva.toFixed(2); horse.addState(16); out.wetEva = horse.eva; horse.clearStates();
-            $gameTroop.setup(14); const bm = $gameTroop.members()[0]; const m0 = bm.talkMood();
+            $gameTroop.setup(10); const bm = $gameTroop.members()[0]; const m0 = bm.talkMood();
             talk(A(2), 18, bm); out.offerBackfires = bm.talkMood() < m0;
-            $gameTroop.setup(15); out.owlTou = (talk(A(9), 17, $gameTroop.members()[0]), !$gameTroop.members()[0].isAppeared());
-            $gameTroop.setup(12); out.lasaKids = (talk(A(4), 17, $gameTroop.members()[0]), !$gameTroop.members()[0].isAppeared());
-            $gameTroop.setup(11); const goat = $gameTroop.members()[0]; goat.setHp(5);
+            $gameTroop.setup(11); out.owlTou = (talk(A(9), 17, $gameTroop.members()[0]), !$gameTroop.members()[0].isAppeared());
+            $gameTroop.setup(8); out.lasaKids = (talk(A(4), 17, $gameTroop.members()[0]), !$gameTroop.members()[0].isAppeared());
+            $gameTroop.setup(7); const goat = $gameTroop.members()[0]; goat.setHp(5);
             out.goatFlees = goat.enemy().actions.filter(a => goat.isActionValid(a)).map(a => $dataSkills[a.skillId].name).includes('Escape');
             return out;
         });

@@ -34,13 +34,13 @@ module.exports = {
         t.eq(setup.party.join(','), 'Yoon,Sib,Lasa,Pada,Patience', 'test room party');
         await h.eval(() => $gameMap.event(2).start()); await h.pumpMessages();
         t.ok(await h.eval(() => $gameParty.weapons().length >= 7 && $gameParty.armors().length >= 6), 'the chest gives weapons and ranged gear');
-        await h.eval(() => $gameMap.events().find(e => e.event().name.startsWith('Battle: Slime')).start());
+        await h.eval(() => { BattleManager.setup(13, true, true); SceneManager.push(Scene_Battle); });   // a Boar-Man; when Wary it offers to let you leave
         for (let i = 0; i < 20 && !(await h.eval(() => SceneManager._scene instanceof Scene_Battle)); i++) { await h.page.keyboard.press('Enter'); await h.page.waitForTimeout(150); }
         await h.page.waitForFunction(() => SceneManager._scene instanceof Scene_Battle && SceneManager._sceneStarted);
         const battle = await h.eval(() => ({ members: $gameParty.battleMembers().map(a => a.name()), statusRows: SceneManager._scene._statusWindow.maxItems(), patienceWindow: !!SceneManager._scene._pseudoStatusWindow }));
         t.eq(battle.members.join(','), 'Yoon,Sib,Lasa,Pada,Patience', 'Patience fights as a fifth battler');
         t.eq(battle.statusRows, 4, 'the status window keeps four rows');
-        await h.eval(() => $gameTroop.members().forEach(e => e._siMood = 60));
+        await h.eval(() => $gameTroop.members().forEach(e => e._siMood = 95));   // Calm: it only offers to let you leave
         let offered = false;
         for (let k = 0; k < 300; k++) {
             const s = await h.eval(() => ({ battle: SceneManager._scene instanceof Scene_Battle, choice: $gameMessage.isChoice(), cmd: BattleManager.isInputting() && !!BattleManager.actor() }));
@@ -49,7 +49,7 @@ module.exports = {
             if (s.cmd) { await h.eval(() => { const sc = SceneManager._scene, a = BattleManager.actor(); a.inputtingAction().setGuard(); [sc._skillTypeWindow, sc._skillWindow, sc._itemWindow, sc._tacticsWindow, sc._enemyWindow, sc._actorWindow].forEach(w => w && (w.deactivate(), w.hide())); sc._actorCommandWindow.deactivate(); sc.selectNextCommand(); }); continue; }
             await h.page.waitForTimeout(80); if (await h.eval(() => $gameMessage.isBusy())) await h.page.keyboard.press('Enter');
         }
-        t.ok(offered, 'the Slime offered passage');
+        t.ok(offered, 'the Boar-Man offered to let the party leave');
         t.ok(await h.eval(() => SceneManager._scene instanceof Scene_Map && BattleManager._escaped), 'leaving peacefully ends the battle');
     }
 };
