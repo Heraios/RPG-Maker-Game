@@ -67,7 +67,7 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const out = {}, e = $gameTroop.members()[0], sib = $gameActors.actor(3);
-            e.addParam(0, 1910); e.setHp(e.mhp);   // 2000 HP
+            e.addParam(0, 2000 - e.mhp); e.setHp(e.mhp);   // 2000 HP
             const ownTurn = () => { e.onCtbTurnStart(); const skip = BattleManager.ctbShouldSkipTurn(e); e.onTurnEnd(); return skip; };
             e.addState(14); const hp0 = e.hp, ticks = [];
             for (let i = 0, prev = hp0; i < 4; i++) { ownTurn(); ticks.push(prev - e.hp); prev = e.hp; }

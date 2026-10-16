@@ -955,23 +955,38 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 Placeholder art for now. Test room: the three Monster NPCs in the top-right corner, plus the **Cave
 Hoard** chest, which gives back everything stolen.
 
-| Enemy | HP | ATK | DEF | AGI | Attacks | Notes |
-|-------|----|-----|-----|-----|---------|-------|
-| Wild Boar | 55 | 12 | 6 | 26 | Gore (crush/pierce) | Thick hide: Cut ×0.75. Animal: Stalk |
-| Giant Centipede | 20 | 9 | 3 | 44 | Venom Bite (pierce + Burn) | Hard to soothe. Crush ×1.25 |
-| Red Rock Crab | 16 | 7 | 14 | 22 | Pinch | Shell: Cut ×0.5, Pierce ×0.75, **Crush ×1.5**. Comes in threes |
-| Giant Cave Rat | 12 | 6 | 2 | 38 | Gnaw | Packs of four |
-| Monk Seal | 80 | 11 | 6 | 14 | Body Slam | Starts Wary. Crush ×0.75, Water ×0.5 |
-| Feral Goat | 30 | 9 | 4 | 36 | Headbutt | Bolts below 30% HP |
-| Cave Girl | 22 | 5 | 3 | 40 | Blinding Light (Dazzled), Pilfer | Prankster. Lasa: instant |
-| Cave Boy | 26 | 6 | 4 | 34 | Pantsing, Pilfer | Prankster. Lasa: instant |
-| Forest Imp | 18 | 5 | 3 | 46 | Trip (Disoriented), Mock (Panicked) | Prankster. Threaten: flees. Plead +40. Falmi: instant |
-| Green Horse | 35 | 8 | 4 | 50 | Trample | 60% evasion, **0 while Wet/Sodden/Burdened/Mired**. Fire ×2. No talk |
-| Boar-Man | 80 | 15 | 8 | 24 | Club (crush), Spear (pierce) | Soothe +15, Plead +20, **Offer −15**, Threaten +5. Ask (Calm): the forest rules |
-| Owl of Ill Omen | 40 | 12 | 4 | 48 | Saber Beak (drain, Bleed 30%) | Flying. Tou: instant |
+| Enemy | HP | ATK | DEF | AGI | Attacks | Notes | Drops |
+|-------|----|-----|-----|-----|---------|-------|-------|
+| Wild Boar | 80 | 12 | 6 | 34 | Gore (crush/pierce) | Thick hide: Cut ×0.75. Likes bread | Raw Meat, Hide (1/2), Boar Tusk (1/4) |
+| Giant Centipede | 30 | 9 | 3 | 46 | Venom Bite (pierce + Burn) | Hard to soothe; **a threat may send it off** (60%). Crush ×1.25 | Venom Sac (1/2) |
+| Red Rock Crab | 24 | 9 | 14 | 28 | Pinch | Shell: Cut ×0.5, Pierce ×0.75, **Crush ×1.5**. A threat may scatter it | Shell (1/2), Raw Meat (1/3) |
+| Giant Cave Rat | 18 | 6 | 2 | 40 | Gnaw | Packs. A threat may scatter it | Hide (1/4) |
+| Monk Seal | 100 | 10 | 6 | 24 | Body Slam | Starts Wary. Crush ×0.75, Water ×0.5. Likes fish | Raw Meat, Hide (1/2) |
+| Feral Goat | 45 | 9 | 4 | 40 | Headbutt | Bolts below 30% HP. Likes bread (and wants more) | Raw Meat (1/2), Hide (1/3) |
+| Cave Girl | 33 | 5 | 3 | 42 | Blinding Light (Dazzled), Pilfer | Prankster. Lasa: instant | — |
+| Cave Boy | 39 | 6 | 4 | 38 | Pantsing, Pilfer | Prankster. Lasa: instant | — |
+| Forest Imp | 27 | 5 | 3 | 48 | Trip (Disoriented), Mock (Panicked) | Prankster. Threaten: flees. Plead +40. Falmi: instant | — |
+| Green Horse | 50 | 8 | 4 | 50 | Trample | 60% evasion, **0 while Wet/Sodden/Burdened/Mired**. Fire ×2. No talk | — |
+| Boar-Man | 110 | 15 | 8 | 30 | Club (crush), Spear (pierce) | Soothe +15, Plead +20, **Offer −15**, Threaten +5 | — |
+| Owl of Ill Omen | 55 | 12 | 4 | 50 | Saber Beak (drain, Bleed 30%) | Flying. Tou: instant | Owl Feather (1/2) |
 
 Forest beings (Boar-Man, Owl, Imp, Green Horse) resist Earth (×0.5) and take extra Fire (×1.5).
-Prank skills (Pilfer, Pantsing, Blinding Light, Mock) stop once the prankster is Calm.
+Prank skills (Pilfer, Pantsing, Blinding Light, Mock) stop once the prankster is Calm. Animals drop
+**materials** (Raw Meat, Hide, Boar Tusk, Shell, Venom Sac, Owl Feather) so fighting has its own reward;
+talking gives Insight and outcomes, and never wears gear.
+
+**Troops are about the party's size** (3–6): Wild Boars ×3; a laurel forest mix (2 boars, 2
+centipedes); Centipedes ×4; Crabs ×5; Cave Rats ×6; seals and crabs (2 + 2); Goats ×4; Children of
+the Caves ×4; Imps and Green Horses (2 + 2); Boar-Men ×3; Owls ×3; Forest Patrol (2 Boar-Men, 1 Owl).
+
+**Simulated balance** (`node tests/run.js --sim`: 40 battles each, a party that always picks its best
+move; real players will take more damage). With the full Act 2 party, an ordinary fight costs about
+**5–20% HP**, enemies get **4–10 turns**, and knockouts are rare; Owls (36%) and the Forest Patrol
+(28%) are the hard, "you broke the forest's rules" fights. Without Pada, the shore and tube fights
+stay fair (13–34%), but **Boar-Men, Owls and the Patrol can wipe the party**: place them where Pada
+has joined. Fatigue: about 8–20 per fight. Gear wears at a third of the earlier rate (a starting
+knife lasts roughly ten fights before chipping). Talking costs far less Fatigue than fighting, but
+some enemies are better fought: gentle words fail on centipedes, and only Pada can threaten.
 
 ### Implementation status
 | Piece | Status |

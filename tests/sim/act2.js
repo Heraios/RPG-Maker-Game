@@ -56,6 +56,8 @@ module.exports = {
                         if (!liked) return; d *= 2; if (d > bestD) offer = liked;
                     }
                     if (s.siApproach === 'ask' && target.talkMood() < 70) d = -5;
+                    const res = target.talkData().results[s.siApproach];   // an approach that usually scares it off counts as a win
+                    if (res) { const tot = res.reduce((x, r) => x + r.weight, 0), flee = res.filter(r => r.kind === 'flee').reduce((x, r) => x + r.weight, 0); if (flee / tot >= 0.5) d = 50; }
                     if (d > bestD) { bestD = d; best = s; }
                 });
                 if (!best || bestD <= 0) { act.setGuard(); return; }
