@@ -451,7 +451,27 @@ how he based the first glyphs on the **crack patterns in eggshells**. Some glyph
 | **Coral** (proposed) | Studs on clubs (rasping, Crush + Cut); inlays as glyph foci. **First Sailor "grown" coral**, magic-hardened, for rare, unsettling blades from the ruins | Natural coral is too brittle for an edge; it's the same material as the soul-holding moai eyes |
 | **Star-metal** | A late-game weapon tied to **the Destroyer** | Iron from the stolen star's fall: a piece of what he took. Open question: taken from his side, or forged or hidden by Juda? |
 
-Wood and other organics: to come.
+### Woods (decided)
+| Wood | Where | Used for | Notes |
+|------|-------|----------|-------|
+| **Dragonheart** | Dragon trees, dry slopes | Fire-hardened two-handed swords | The wood itself is soft and spongy; *dragonheart* is the heartwood soaked in the tree's own red resin and fire-hardened, which makes it sword-worthy |
+| **Canary ebony** (barbusano) | Laurel rainforest | Clubs, mace hafts, paddle-sword bodies | Very hard and dark |
+| **Pine heartwood** | Highland pine forest | Spear shafts, shields, building | Resin-soaked, rot-proof, **fire-resistant** (the trees survive volcanic fires) |
+| **Tree heather** | Laurel forest edges, uplands | Staves, spear shafts, vaulting poles | Hard and springy; shepherds vault ravines on heather poles |
+| **Juniper** | Dry slopes | Hafts, small bows | Durable, aromatic |
+| **Yew** | Alpine forest | Bows | The Shepherd of the Deer's territory |
+| **Ash** | Alpine forest | Spear shafts | |
+| **Toromiro** | Rare; sacred groves | Ritual objects, priests' staffs, **First Sailor relics** (Kavakava figures, glyph tablets) | Sacred carving wood. Juda's staff could be toromiro |
+| **Til** (stinking laurel) | Laurel rainforest | Not a weapon wood | Sacred: the island's rain tree is a til (after El Hierro's Garoé). A place and a quest, not a material |
+
+### Other organics (decided)
+| Group | Materials | Used for |
+|-------|-----------|----------|
+| **Fibres and cloth** | Bark cloth (paper mulberry), palm fibre and leaves, hibiscus bast, reeds, wool, goat hair | Clothing (the Bark-Cloth Cloak), rope, fishing line, mats, baskets, thatch, reed boats (marsh, crater lakes) |
+| **Resins and latex** | **Dragon's blood** (the dragon tree's red resin), **pine pitch**, rubber latex (lore), **euphorbia latex** | Dragon's blood: varnish, red dye, medicine, and priests' **mummification**. Pitch: hafting glue (obsidian into wood), torches, waterproofing. Rubber: telegraph insulation. Euphorbia latex: the Guanche stunned fish with it; here, a **poison coating for blades** (adds a Burn part) |
+| **Dyes** | Orchil (lore: the red lichen dye, a major export), dragon's blood | Cloth, tattoos?, trade |
+| **Animal** | Hide, raw meat, boar tusk, shell, owl feather (in game); bone, antler, horn (goat, aurochs), sinew, shark teeth, tortoiseshell, pearls and cowries (lore), seal oil, fish glue, hide glue | Leather armor, knives (tusk, shell, shark teeth), bowstrings and lashing (sinew), handles, lamp fuel (seal oil), glue, trade |
+| **Mythic trophies** | Green Horse boughs (light, living wood), Guardian Lizard scales, Black Hound pelt (demonic), Hag-crane feathers, Zezengorri's horn | Each makes one or a few special items |
 
 **Swords:** only bronze makes true swords. Islander "swords" are paddle-swords (shark-tooth or
 obsidian-edged wood) and the fire-hardened dragonheart two-handers.
