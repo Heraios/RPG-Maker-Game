@@ -36,6 +36,8 @@
  *                       hitting whoever inflicted it (any HP damage) ends it
  *                       (Dragged Below: hit the hound to pull them free)
  *   <Cured By Water>    any water-sourced hit or item removes it (Salting)
+ *   <Ward>              blocks the next damaging hit completely, then breaks
+ *                       (Resin, from Dragon's Blood)
  *   <Mental Ward>       a mental ailment that would land removes this
  *                       state instead (Calm)
  *   <Cures Mental>      removes mental ailments when applied and at the end
@@ -317,7 +319,8 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
             state._siTags = {
                 expireKO: ko ? ko[1].trim() : null,
                 releaseByInflicter: /<Released When Inflicter Hit>/i.test(note),
-                curedByWater: /<Cured By Water>/i.test(note)
+                curedByWater: /<Cured By Water>/i.test(note),
+                ward: /<Ward>/i.test(note)
             };
         }
         return state._siTags;
@@ -346,9 +349,30 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
         }
     };
 
+    // A ward takes the whole of the next damaging hit, then breaks.
+    $.wardState = function(battler) {
+        return battler.states().filter(function(st) { return $.stateTags(st).ward; })[0] || null;
+    };
+
+    var _Game_Action_makeDamageValue_ward = Game_Action.prototype.makeDamageValue;
+    Game_Action.prototype.makeDamageValue = function(target, critical) {
+        var value = _Game_Action_makeDamageValue_ward.call(this, target, critical);
+        var ward = value > 0 && this.isHpEffect() ? $.wardState(target) : null;
+        if (ward) {
+            target._siWardBroken = ward.id;
+            return 0;
+        }
+        return value;
+    };
+
     var _Game_Action_apply_states = Game_Action.prototype.apply;
     Game_Action.prototype.apply = function(target) {
+        target._siWardBroken = 0;
         _Game_Action_apply_states.call(this, target);
+        if (target._siWardBroken) {
+            target.removeState(target._siWardBroken);
+            target._siWardBroken = 0;
+        }
         var subject = this.subject();
         var result = target.result();
         // Remember who inflicted states that can be lifted by hitting them.

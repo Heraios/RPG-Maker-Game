@@ -410,9 +410,9 @@ Feverish, Despair and Panicked.
 ### Other ailments
 | State | Effect | From | Cured by |
 |-------|--------|------|----------|
-| Bleed | 6% HP per turn, 3 turns | Raking Cut, the harpoon, shark-tooth weapons, Owls | Bandages (to come) |
-| Venom | 5% HP per turn and healing halved, 4 turns | Centipedes (40% per bite); euphorbia-coated blades later | Dispel Herb |
-| Salting | AGI −30%; **if it runs its 3 turns, the victim turns to salt** (knocked out) | Stoneman chiefs' Salt Glyph | **Water**: Fresh Water, or any water-sourced hit |
+| Bleed | 6% HP per turn, 3 turns | Raking Cut, the harpoon, shark-tooth weapons, Owls | **Bandage**; Electric Cautery |
+| Venom | 5% HP per turn and healing halved, 4 turns | Centipedes (40% per bite); Spurge Coating | Hill Thyme Tea; Electric Cautery |
+| Salting | AGI −30%; **if it runs its 3 turns, the victim turns to salt** (knocked out) | Stoneman chiefs' Salt Glyph | **Water** (Fresh Water, any water-sourced hit); Wart Fern Poultice |
 | Dragged Below | Out of the fight and out of reach; **lost (knocked out) after 3 turns** | Black Hounds' Drag Below (and the wells) | **Hit the dragger** to pull them free |
 | Dazzled | Hit −50% for a turn | Children of the Caves | — |
 
@@ -514,6 +514,35 @@ Islander technology, and the bronze-armed All-Seafarers don't have it.
 
 Test room: the **Battery Tender** recharges every pile; **Juda's Notes** teach Sib Chlorine Cloud; the
 weapon chest has four piles and acid jars.
+
+### Herbal remedies
+Each remedy has **one job**; nothing is redundant. Made and sold by **Mada** (the village herbalist);
+rarer recipes from the **Stream Maidens**; ritual ones kept by **priests**.
+
+| Remedy | Plant (real basis) | Effect |
+|--------|--------------------|--------|
+| **Dragon's Blood** | Dragon tree resin | **Revives** at 10% HP inside a **Resin** shell that **blocks the next attack** completely |
+| Bitterwood Tea | Wormwood (incienso) | Cures **Feverish** (only fever) |
+| Bitterwood Smudge | Wormwood, burned | Party: clears **Despair** and **Panicked**; **Rite +30%** for 5 turns (temple incense) |
+| Cliff Mint Tea | Té de risco | Fatigue −10; cures **Chilled** and **Wet** |
+| Hill Thyme Tea | Thyme | Cures **Venom** |
+| Ironwort Tonic | Chahorra ("mountain tea") | Mends 5% HP per turn for 3 turns; Fatigue −5 |
+| Burnwort Poultice | Malfurada (Canary St John's wort) | +20 HP; cures **Smoldering** and **Enflamed** |
+| Burnwort Draught | Malfurada (sedative) | Cures **Panicked** and **Enraged** |
+| Laurel Oil | Laurel | Fatigue −20; cures **Burdened**, **Mired** and **Chilled** |
+| Moon Sorrel | Vinagrera | +8 HP and slow mending (2% per turn for 6 turns). Cheap, common. **No** Bleed cure |
+| Spurge Milk | Cardón latex (thrown) | Burn damage and **Dazzled** |
+| Spurge Coating | Cardón latex (on a blade) | For the battle, attacks may envenom (30%) |
+| Ti Leaf Wrap | Ti leaves | Mends 5% HP per turn for 3 turns; cures **Feverish** and **Smoldering** |
+| Ti Root | Ti root | +10 HP, Fatigue −5; animals like it as an Offer |
+| Yellowroot Drops | Turmeric (ear complaints) | Cures **Disoriented** and **Confused** |
+| Yellowroot Paint | Turmeric (ritual body dye) | **Calm** (wards off the next mental ailment) |
+| Milo Bark | Mako'i (portia tree) | Cures **Dazzled** |
+| Wart Fern Poultice | Microsorum fern | Cures **Salting** (besides water) |
+| **Bandage** | Cloth, **burrbark** (hauhau) or **paper** | The only item that stops **Bleed** |
+
+The old **Potion** and **Dispel Herb** (RPG Maker leftovers) still exist; Dispel Herb now overlaps several
+of these and should be retired once a Sleep and Hypnotized cure is placed.
 
 ### Party switching
 - **Switch** battle command: lists reserve members (everyone beyond the four battle slots).
@@ -1105,7 +1134,7 @@ some enemies are better fought: gentle words fail on centipedes, and only Pada c
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
-| Automated tests | `tests/` (38 tests, about 380 checks; see tests/README.md) |
+| Automated tests | `tests/` (41 tests, about 450 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

@@ -480,6 +480,7 @@ Destroyer** (revealed later).
 | **Resins and latex** | **Dragon's blood** (the dragon tree's red resin), **pine pitch**, rubber latex (lore), **euphorbia latex** | Dragon's blood: varnish, red dye, medicine, and priests' **mummification**. Pitch: hafting glue (obsidian into wood), torches, waterproofing. Rubber: telegraph insulation. Euphorbia latex: the Guanche stunned fish with it; here, a **poison coating for blades** (adds a Burn part) |
 | **Dyes** | Orchil (lore: the red lichen dye, a major export), dragon's blood | Cloth, tattoos?, trade |
 | **Animal** | Hide, raw meat, boar tusk, shell, owl feather (in game); bone, antler, horn (goat, aurochs), sinew, shark teeth, tortoiseshell, pearls and cowries (lore), seal oil, fish glue, hide glue | Leather armor, knives (tusk, shell, shark teeth), bowstrings and lashing (sinew), handles, lamp fuel (seal oil), glue, trade |
+| **Medicinal plants** | Dragon tree (resin), bitterwood (wormwood), cliff mint, hill thyme, pennyroyal, ironwort, burnwort, laurel, moon sorrel, blister spurge, ti, yellowroot (turmeric), milo, wart fern, burrbark (hauhau) | Remedies (see concept.md, "Herbal remedies"): Mada's trade, the Stream Maidens' lore, the priests' ritual uses (smudge, body paint, dragon's blood for mummification) |
 | **Mythic trophies** | Green Horse boughs (light, living wood), Guardian Lizard scales, Black Hound pelt (demonic), Hag-crane feathers, Zezengorri's horn | Each makes one or a few special items |
 
 **Swords:** only bronze makes true swords. Islander "swords" are paddle-swords (shark-tooth or
