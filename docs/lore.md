@@ -427,6 +427,10 @@ how he based the first glyphs on the **crack patterns in eggshells**. Some glyph
 **the Destroyer's distortion of the system**, which the First Sailors used. (So the All-Seafarer
 "slave marks" slur mocks a sacred script they cannot read.)
 
+**Where tattoos go:** the lower and upper arms, and **the face, which only priests may tattoo**. Yoon's
+face carries a glyph nobody can read, which holds their ghost abilities: **the name of the
+Destroyer** (revealed later).
+
 ### Weapons and metal
 - Islanders make **copper spears, axes, maces and long knives**, but **not swords proper**. Their only
   "swords" are fire-hardened two-handed swords of native **dragonheart wood**, and obsidian-edged

@@ -115,7 +115,7 @@ there. The player chooses Yoon's gender and appearance.
 
 ### Sib — The Young Priest
 Yoon's best friend since basically birth, who wants to help Yoon get a body back. Intersex, and
-holds a third-gender social role that is very common for priests for that reason. Has a massive
+holds a third-gender social role that is very common for priests for that reason. **They/them.** Has a massive
 crush on Yoon. Juda's apprentice.
 
 - **Weapons:** knives and slings only. The narrowest selection in the party: a child trained
@@ -462,7 +462,7 @@ necklaces), **Shoulders** (capes, cloaks), **Body** (shirts), **Cuirass** (chest
 (armlets, bracelets, vambraces), **Left Hand** and **Right Hand** (gloves, rings), **Legs** (pants,
 skirts), **Greaves** (leg armor), **Feet** (shoes, boots), **Melee**, **Ranged**, **Offhand**
 (shields or a knife), **Charm 1–3** (carried or tied-on charms, idols, pouches, belts, earrings and piercings, gadgets like the Voltaic Pile), then **Codex** (All-Seafarers) or
-**Tattoo 1–8** (Islanders).
+**tattoo slots** on the body (Islanders: Lower L/R Arm, Upper L/R Arm, and a priest's Face).
 - A slot only offers what the class may equip. `<Equip Slots: ...>` gives a character a custom list:
   the **Ghost has none**; **Patience** has only a **Collar** (a Neck slot; collars are their own armor
   type, so only she wears them; she starts with a Woven Collar).
@@ -892,11 +892,27 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
 
 | Who | How spells are gained |
 |-----|-----------------------|
-| Islanders (Human Yoon, Sib, Pada, Juda, Dama) | **Tattoo** equipment slots, **up to 8** per character, each tattoo encoding one spell. Tattoos can only be swapped in the late game (magical healing) |
+| Islanders (Human Yoon, Sib, Pada, Juda, Dama; Parl if he joins the village) | **Tattoo** slots on the body, each tattoo encoding one spell (see below). Tattoos can only be swapped in the late game (magical healing) |
 | All-Seafarers (Parl, Theenmy) | A single **Codex** accessory slot; each codex grants **3–6 spells** and its own stat boosts |
 | Tou, Falmi, Lasa | Innately, no medium (learned like normal skills) |
 | Ghost Yoon | Only the unique ghost abilities; regular magic and weapon skills come after gaining a body |
 
+- **Tattoo slots are body positions:** Lower L Arm, Lower R Arm, Upper L Arm, Upper R Arm (filled in
+  that order), and the **Face, which only priests may have**. Fewer slots than spells, and permanent,
+  so every glyph is a commitment.
+
+  | Who | Slots | Grows to |
+  |-----|-------|----------|
+  | Yoon | 3: two arms, and the **Face**, permanently taken by the **??? Glyph** | 4 (a third arm) |
+  | Sib | 4 arms | 5: the **Face**, at their ordination as a priest |
+  | Juda | 5: four arms and the Face (a priest) | — |
+  | Pada, Dama | 4 arms | — |
+  | Parl | 2 arms, only **if he joins the Islander village** (switch "Parl joined the village") | — |
+
+  Growth comes from story events: `SmokingIsle.Glyphs.addArmSlot(actorId)` and `grantFace(actorId)`.
+- **The ??? Glyph** on Human Yoon's face grants all their ghost abilities (the Touches, Spirit Surge
+  and Writhe, Ghostly Touch, Become Ethereal, the Wails and the Cries). Nobody can read it, and it can
+  never be removed (`<Permanent>`). It is later revealed to be **the name of the Destroyer**.
 - **Tattoos** are equipment items that grant one spell each (MV's "Add Skill" trait): one "Glyph"
   tattoo exists for every spell (Glyph: Ahi ... Glyph: Mahu-Ara).
 - **Tattoos are permanent** while the switch "Tattoo removal (late game)" is off: empty tattoo slots
