@@ -345,7 +345,7 @@ all of them). Fatigue: very low 1, low 2, medium 3, medium-high 4, high 5, very 
 | Electric | Any **metal blade** (knife, axe, sword) | **Conducting Edge** (medium, electric Burn ×1.1; needs a **Voltaic Pile** accessory). An Islander technique |
 | Ranged | Bow, Sling | **Aimed Shot** (medium, Pierce, never misses) · **Covering Fire** (low, light Pierce/Crush, AGI down) · **Stone Rain** (high, sling only: spends all stones, one random hit each) |
 
-Weapon move sets: Flint Knife (jab, thrust, vital, slash); Obsidian Spear (jab, thrust, sweep);
+Weapon move sets: Obsidian Knife (jab, thrust, vital, slash); Obsidian Spear (jab, thrust, sweep);
 Walking Staff (jab, vital, bludgeon, sweep); Stone Axe (chop, bludgeon); Hardwood Club
 (bludgeon); Copper Khopesh (chop, slash, sword, metal: **no** jab); Bronze Leaf Blade (jab,
 thrust, vital, slash, sword, metal); Fishing Harpoon (jab, thrust, sweep, throw; 50% Bleed).
@@ -392,7 +392,7 @@ character must both *know* the skill and have a weapon that *allows* it. The wea
 
 | Weapon | Type | Moves |
 |--------|------|-------|
-| Flint Knife | Dagger | jab |
+| Obsidian Knife | Dagger | jab |
 | Obsidian Spear | Spear | jab |
 | Copper Khopesh | Sword | chop (a sword that **can't** Quick Jab) |
 | Stone Axe | Axe | chop |
@@ -518,7 +518,7 @@ slings; Pada and Parl bows; Dama, Falmi and Theenmy javelins; Dama nets.
 
 | Weapon | Wears into | Chance per use |
 |--------|-----------|----------------|
-| Flint Knife | Chipped Flint Knife, then breaks | 15%, then 20% |
+| Obsidian Knife | Chipped Obsidian Knife, then breaks | 5%, then 7% |
 | Obsidian Spear | Cracked Obsidian Spear, then breaks | 12%, then 20% |
 | Copper Khopesh | Bent Copper Khopesh, then breaks into a Broken Copper Khopesh item | 10%, then 15% |
 | Stone Axe | Chipped Stone Axe, then breaks | 10%, then 15% |
@@ -944,7 +944,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Enemy Strike | ATK × 1.0 | +1 |
 
 **Measured against the placeholder enemies:**
-- Yoon's Quick Jab with a Flint Knife does about 8–9, so a Bat (18 HP) dies in 2 hits.
+- Yoon's Quick Jab with an Obsidian Knife does about 8–9.
 - Pada's Heavy Chop does about 32 to an Orc (45 HP).
 - Children go down in about 3–4 Orc hits, and Sib in about 2 Minotaur hits. Pada takes about 11
   Minotaur hits and Theenmy about 17.

@@ -18,7 +18,7 @@ module.exports = {
             pada.forceChangeEquip(pada.slotOfType(1), W(10)); const m4 = pada.rollWear(pada.slotOfType(1));
             return { m1, after1, m2, after2, m3, remains, m4 };
         });
-        t.eq(r.after1, 'Chipped Flint Knife', 'Flint Knife wears into the chipped tier');
+        t.eq(r.after1, 'Chipped Obsidian Knife', 'Obsidian Knife wears into the chipped tier');
         t.eq(r.after2, 'none', 'the chipped knife then breaks');
         t.ok(/Kept the Broken Copper Khopesh/.test(r.m3), 'copper breaks into a kept item: ' + r.m3);
         t.eq(r.remains, 1, 'the broken copper item is in the bag');

@@ -437,6 +437,25 @@ how he based the first glyphs on the **crack patterns in eggshells**. Some glyph
 - **Cattle:** domesticated cattle came with the All-Seafarers; the island has rare wild,
   aurochs-like cattle.
 
+### Weapon materials (decided)
+| Material | Made into | Notes |
+|----------|-----------|-------|
+| **Shell** | Knives | Cheap, coastal. Crabs and seals drop Shell |
+| **Boar tusk** | Knives | Forest-made. Wild boars drop Boar Tusk |
+| **Shark teeth** | Knives; one-handed **paddle-swords** (teeth set along a wooden paddle) | Pacific-style edged wood; a fisher's and hunter's weapon |
+| **Obsidian** | Knives, spears, one-handed obsidian **paddle-swords** | Very sharp, a little brittle. Replaces flint: there's no flint on a volcanic island |
+| **Basalt** | Axes, clubs and hammers | Heavy and tough, not sharp |
+| **Copper**, **copper-silver** | Knives, spears, axes, maces | The Islanders' metals. Copper-silver is a little more durable and adds a little magic damage |
+| **Tin-bronze** | Knives, spears, axes, maces, **swords** | All-Seafarer; tin comes from the crater rim |
+| **"Black bronze"** (copper, silver, gold) | Late-game legendary weapons | First Sailor work |
+| **Coral** (proposed) | Studs on clubs (rasping, Crush + Cut); inlays as glyph foci. **First Sailor "grown" coral**, magic-hardened, for rare, unsettling blades from the ruins | Natural coral is too brittle for an edge; it's the same material as the soul-holding moai eyes |
+| **Star-metal** | A late-game weapon tied to **the Destroyer** | Iron from the stolen star's fall: a piece of what he took. Open question: taken from his side, or forged or hidden by Juda? |
+
+Wood and other organics: to come.
+
+**Swords:** only bronze makes true swords. Islander "swords" are paddle-swords (shark-tooth or
+obsidian-edged wood) and the fire-hardened dragonheart two-handers.
+
 ### Economy
 **Currency: cowrie shells.** Pearls, metal ingots and similar goods are trade goods and crafting
 materials (vendor items), not money.

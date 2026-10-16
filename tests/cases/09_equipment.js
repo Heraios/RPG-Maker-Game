@@ -46,9 +46,9 @@ module.exports = {
         t.eq(r.judaTattoos, 5, 'Juda starts with five tattoos');
         t.eq(r.thCuirass, 'Bronze Cuirass', 'bronze cuirass sits in the Cuirass slot');
         t.eq(r.thCodex, 'Codex of Mending', "Theenmy's codex");
-        t.eq(r.knifeOffhand, 'Flint Knife', 'a knife fits the off hand');
-        t.eq(r.spearRejected, 'Flint Knife', 'a spear does not');
-        t.eq(r.knifeKept, 'Flint Knife', 'refreshing keeps the off-hand knife');
+        t.eq(r.knifeOffhand, 'Obsidian Knife', 'a knife fits the off hand');
+        t.eq(r.spearRejected, 'Obsidian Knife', 'a spear does not');
+        t.eq(r.knifeKept, 'Obsidian Knife', 'refreshing keeps the off-hand knife');
         t.eq(r.mainOnly, 1, 'weapons() is the main hand only');
         t.ok(r.noStats, 'an off-hand knife adds no stats');
         t.ok(r.offMoves, "an off-hand knife provides the 'offhand' move");
