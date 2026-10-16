@@ -39,6 +39,11 @@
  * attack by the target's rate for that source element: a fire spirit can
  * shrug off fire magic yet still be hurt by other Burn damage.
  *
+ * Weapon note:
+ *   <Magic Edge: 15>   weapon skills used with it deal 15% extra damage as
+ *                      magic (against the target's magic damage rate):
+ *                      copper-silver and First Sailor black bronze.
+ *
  * A skill without <Damage> but used with a weapon that has one (e.g. the
  * Attack command) uses the weapon's profile. Anything without a profile
  * works the way MV normally does.
@@ -75,6 +80,8 @@ SmokingIsle.DamageTypes = SmokingIsle.DamageTypes || {};
             });
             if (obj.siDamage.length === 0) obj.siDamage = null;
         }
+        var edge = /<Magic Edge:\s*(\d+)>/i.exec(obj.note || '');
+        obj.siMagicEdge = edge ? Number(edge[1]) : 0;
         var s = /<Source:\s*(\w+)>/i.exec(obj.note || '');
         obj.siSource = s ? $.SOURCE[s[1].toLowerCase()] || 0 : 0;
     };
@@ -117,8 +124,26 @@ SmokingIsle.DamageTypes = SmokingIsle.DamageTypes || {};
         return weight > 0 ? total / weight : 1;
     };
 
+    // The weapon behind a weapon skill (the one whose move it uses), or null.
+    Game_Action.prototype.skillWeapon = function() {
+        var subject = this.subject(), item = this.item();
+        if (!subject.isActor() || !DataManager.isSkill(item) || !(item.siRequiredMoves || []).length) return null;
+        var slotId = subject.weaponSlotForSkill ? subject.weaponSlotForSkill(item) : -1;
+        var weapon = slotId >= 0 ? subject.equips()[slotId] : subject.weapons()[0];
+        return DataManager.isWeapon(weapon) ? weapon : null;
+    };
+
     var _Game_Action_makeDamageValue = Game_Action.prototype.makeDamageValue;
     Game_Action.prototype.makeDamageValue = function(target, critical) {
+        var value = this.makeProfiledDamageValue(target, critical);
+        var weapon = this.skillWeapon();
+        if (weapon && weapon.siMagicEdge > 0 && value > 0 && this.isPhysical()) {
+            value += Math.round(value * weapon.siMagicEdge / 100 * target.mdr * target.elementRate($.TYPE.magical));
+        }
+        return value;
+    };
+
+    Game_Action.prototype.makeProfiledDamageValue = function(target, critical) {
         var profile = this.damageProfile();
         if (!profile) return _Game_Action_makeDamageValue.call(this, target, critical);
         var item = this.item();

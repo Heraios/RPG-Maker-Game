@@ -1,6 +1,29 @@
 // Weapon swapping and wear tiers (SI_Gear).
 
 module.exports = {
+    'weapon materials: copper-silver magic edge, paddle-swords, unbreakable bronze, two-handed maul': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const W = n => $dataWeapons.find(w => w && w.name === n), yoon = $gameActors.actor(2), pada = $gameActors.actor(5);
+            const e = $gameTroop.members()[0];
+            const jab = weapon => { yoon.forceChangeEquip(yoon.slotOfType(1), weapon); let s = 0; for (let i = 0; i < 400; i++) { const a = new Game_Action(yoon); a.setSkill(11); s += a.makeDamageValue(e, false); } return s / 400; };
+            const out = { edge: jab(W('Copper-Silver Knife')) / jab(W('Copper Knife')) };
+            out.yoonPaddle = yoon.canEquip(W('Obsidian Paddle'));
+            out.sibPaddle = $gameActors.actor(3).canEquip(W('Obsidian Paddle'));
+            out.bronzeWears = ['Bronze Knife', 'Bronze Spear', 'Bronze Axe', 'Bronze Mace', 'Bronze Khopesh', 'Bronze Leaf Blade'].some(n => W(n).siWearChance > 0);
+            out.copperScrap = W('Bent Copper Mace').siBreaksInto === 5;
+            pada.forceChangeEquip(pada.slotOfType(1), W('Basalt Hammer')); out.mawlLocks = !pada.isEquipChangeOk(pada.slotOfType(2));
+            pada.forceChangeEquip(pada.slotOfType(1), W('Copper Axe')); out.hatchetFree = pada.isEquipChangeOk(pada.slotOfType(2));
+            return out;
+        });
+        t.between(r.edge, 1.08, 1.22, 'copper-silver adds about 15% magic damage to weapon skills (x' + r.edge.toFixed(2) + ')');
+        t.ok(r.yoonPaddle && !r.sibPaddle, 'Yoon can use a paddle-sword; Sib (junior priest) cannot');
+        t.ok(!r.bronzeWears, 'bronze never wears');
+        t.ok(r.copperScrap, 'copper weapons break into Scrap Copper');
+        t.ok(r.mawlLocks, 'the Basalt Hammer needs both hands');
+        t.ok(r.hatchetFree, 'the Copper Axe is a one-handed hatchet');
+    },
+
     'weapons and armor wear down, break, and copper leaves remains': async (h, t) => {
         await h.battle();
         const r = await h.eval(() => {
@@ -20,8 +43,8 @@ module.exports = {
         });
         t.eq(r.after1, 'Chipped Obsidian Knife', 'Obsidian Knife wears into the chipped tier');
         t.eq(r.after2, 'none', 'the chipped knife then breaks');
-        t.ok(/Kept the Broken Copper Khopesh/.test(r.m3), 'copper breaks into a kept item: ' + r.m3);
-        t.eq(r.remains, 1, 'the broken copper item is in the bag');
+        t.ok(/Kept the Scrap Copper/.test(r.m3), 'copper breaks into Scrap Copper: ' + r.m3);
+        t.eq(r.remains, 1, 'the scrap copper is in the bag');
         t.ok(/broke!$/.test(r.m4), 'stone breaks and disappears: ' + r.m4);
     },
 

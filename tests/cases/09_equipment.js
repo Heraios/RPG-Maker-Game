@@ -53,7 +53,7 @@ module.exports = {
         t.ok(r.noStats, 'an off-hand knife adds no stats');
         t.ok(r.offMoves, "an off-hand knife provides the 'offhand' move");
         t.ok(r.twoHanded, 'a two-handed spear returns the shield and locks the slot');
-        t.eq(r.clubKeepsShield, 'Hardwood Club+Shield', 'a one-handed club keeps the shield');
+        t.eq(r.clubKeepsShield, 'Ebony Club+Shield', 'a one-handed club keeps the shield');
         t.ok(r.oneHandedAxe, 'an axe marked one-handed leaves the off hand free');
         t.eq(r.ghost, 0, 'the Ghost has no equipment slots');
         t.eq(r.patience, 'Collar:Woven Collar', 'Patience has only a collar');

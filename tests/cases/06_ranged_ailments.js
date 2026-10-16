@@ -6,7 +6,7 @@ module.exports = {
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id), S = id => $dataSkills[id], AR = n => $dataArmors.find(a => a && a.name === n);
             const pada = A(5), yoon = A(2), dama = A(7);
-            pada.forceChangeEquip(pada.slotOfType(6), AR('Short Bow')); yoon.forceChangeEquip(yoon.slotOfType(6), AR('Sling'));
+            pada.forceChangeEquip(pada.slotOfType(6), AR('Juniper Bow')); yoon.forceChangeEquip(yoon.slotOfType(6), AR('Sling'));
             pada.onBattleStart(); let arrows = 0; while (pada.canUse(S(33)) && arrows < 10) { pada.useItem(S(33)); arrows++; }
             pada.onBattleStart(); const refilled = pada.rangedAmmoForSkill(S(33));
             yoon.onBattleStart(); yoon.useItem(S(32)); yoon.useItem(S(32));
@@ -19,7 +19,7 @@ module.exports = {
             return { arrows, refilled, volleyHits, stonesLeft: yoon.rangedAmmoForSkill(S(32)), harpoonThrows, nets,
                      jabEva: eva(11), slingEva: eva(32), magicEva: eva(56), entangled: !mino.canMove() };
         });
-        t.eq(r.arrows, 3, 'a Short Bow has 3 arrows per battle');
+        t.eq(r.arrows, 3, 'a Juniper Bow has 3 arrows per battle');
         t.eq(r.refilled, 3, 'ammo refills next battle');
         t.eq(r.volleyHits, 3, 'Stone Rain fires every stone left');
         t.eq(r.stonesLeft, 0, 'Stone Rain empties the sling');

@@ -338,17 +338,33 @@ all of them). Fatigue: very low 1, low 2, medium 3, medium-high 4, high 5, very 
 |---------------|---------|--------|
 | Thrust | Knife, Spear, Staff (Quick Jab and Vital only), straight Sword | **Quick Jab** (very low, Pierce ×0.8) · **Measured Thrust** (medium, ×1.1) · **Vital Strike** (high, ×1.5, +25% crit; knife/staff/sword) |
 | Slash | Knife, Sword, curved Axes | **Quick Slash** (very low, Cut ×0.8) · **Raking Cut** (medium, ×1.1, 40% Bleed) · **Flaying Strike** (high, ×1.5, DEF down) |
-| Chop | Axe, Khopesh | **Heavy Chop** (medium-high, Cut ×1.6) · **Rending Blow** (high, ×1.9, DEF down) · **Cleave** (very high, ×2.4, also hits an adjacent enemy) |
-| Bludgeon | Club, Staff, Axe (poll side) | **Overhead Smash** (medium, Crush ×1.1) · **Skull Crack** (high, ×1.5, 50% Disoriented) |
+| Chop | Axe, Khopesh, paddle-swords | **Heavy Chop** (medium-high, Cut ×1.6) · **Rending Blow** (high, ×1.9, DEF down) · **Cleave** (very high, ×2.4, also hits an adjacent enemy) |
+| Bludgeon | Club, mace, hammer, Staff, Axe (poll side), paddle-swords | **Overhead Smash** (medium, Crush ×1.1) · **Skull Crack** (high, ×1.5, 50% Disoriented) |
 | Sweep | Staff, Spear | **Wide Sweep** (medium, Crush ×0.7, all enemies) · **Trip** (low, ×0.3, AGI down 1 turn) |
 | Sword only | Swords | **Pommel Strike** (very low, Crush ×0.8) |
 | Electric | Any **metal blade** (knife, axe, sword) | **Conducting Edge** (medium, electric Burn ×1.1; needs a **Voltaic Pile** accessory). An Islander technique |
 | Ranged | Bow, Sling | **Aimed Shot** (medium, Pierce, never misses) · **Covering Fire** (low, light Pierce/Crush, AGI down) · **Stone Rain** (high, sling only: spends all stones, one random hit each) |
 
-Weapon move sets: Obsidian Knife (jab, thrust, vital, slash); Obsidian Spear (jab, thrust, sweep);
-Walking Staff (jab, vital, bludgeon, sweep); Stone Axe (chop, bludgeon); Hardwood Club
-(bludgeon); Copper Khopesh (chop, slash, sword, metal: **no** jab); Bronze Leaf Blade (jab,
-thrust, vital, slash, sword, metal); Fishing Harpoon (jab, thrust, sweep, throw; 50% Bleed).
+**The weapon roster, by material** (lore: "Weapon materials"). ATK in brackets; every non-bronze
+weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thirds ATK.
+
+| Form | Shell | Tusk | Shark tooth | Obsidian | Basalt / wood | Copper | Copper-silver | Bronze |
+|------|-------|------|-------------|----------|---------------|--------|---------------|--------|
+| Knife (jab, thrust, vital, slash) | Shell Knife (3; jab, slash) | Tusk Knife (4; no slash) | Shark-Tooth Knife (5; jab, slash; 30% Bleed) | Obsidian Knife (6) | | Copper Knife (6) | Copper-Silver Knife (6) | Bronze Knife (8) |
+| Paddle-sword (one-handed; slash, chop, bludgeon) | | | Shark-Tooth Paddle (9; 30% Bleed) | Obsidian Paddle (11) | | | | |
+| Spear (jab, thrust, sweep) | | | | Obsidian Spear (10) | | Copper Spear (10) | Copper-Silver Spear (10) | Bronze Spear (13) |
+| Axe (chop, bludgeon) | | | | | Basalt Axe (12) | Copper Axe (12, **one-handed** hatchet) | Copper-Silver Axe (12) | Bronze Axe (15) |
+| Club / mace / hammer (bludgeon) | | | | | Ebony Club (9, never wears); Basalt Hammer (13, two-handed) | Copper Mace (11) | Copper-Silver Mace (11) | Bronze Mace (14) |
+| Sword (bronze only, plus wood) | | | | | Dragonheart Greatsword (15, two-handed) | | | Bronze Khopesh (14; no jab), Bronze Leaf Blade (16) |
+| Staff (jab, vital, bludgeon, sweep) | | | | | Heather Staff (7); Toromiro Staff (6, MAT +4) | | | |
+
+- **Metal** weapons also have the **metal** move (Conducting Edge with a Voltaic Pile).
+- **Copper-silver** has `<Magic Edge: 15>`: weapon skills deal 15% extra damage as magic.
+- **Black Bronze Blade** (22, Magic Edge 30, never wears): a placeholder for the late-game First Sailor
+  legendaries.
+- Fishing Harpoon (11; jab, thrust, sweep, throw; 50% Bleed). Bows: **Juniper Bow** (small, the old Short
+  Bow) and **Yew Longbow** (alpine, hits harder).
+- Who can use paddle-swords: Yoon, Pada, Dama, Falmi and Theenmy.
 
 **For testing, everyone knows every skill their weapons allow.** When each is learned (early,
 mid-game, late) is still to be decided.
@@ -394,10 +410,10 @@ character must both *know* the skill and have a weapon that *allows* it. The wea
 |--------|------|-------|
 | Obsidian Knife | Dagger | jab |
 | Obsidian Spear | Spear | jab |
-| Copper Khopesh | Sword | chop (a sword that **can't** Quick Jab) |
-| Stone Axe | Axe | chop |
-| Hardwood Club | Club | bash |
-| Walking Staff | Staff | bash |
+| Bronze Khopesh | Sword | chop (a sword that **can't** Quick Jab) |
+| Basalt Axe | Axe | chop |
+| Ebony Club | Club | bash |
+| Heather Staff | Staff | bash |
 
 | Skill | Move | Fatigue | Damage |
 |-------|------|---------|--------|
@@ -487,7 +503,7 @@ Ranged weapons go in a separate **Ranged** equipment slot and can't be swapped m
 | Weapon | Skill | Damage | Uses per battle |
 |--------|-------|--------|-----------------|
 | Sling | Sling Stone | Crush | 5 |
-| Bow | Loose Arrow | Pierce | 2–4 (per bow; Short Bow 3) |
+| Bow | Loose Arrow | Pierce | 2–4 (per bow; Juniper Bow and Yew Longbow 3) |
 | Javelin | Hurl Javelin | 30% Cut, 70% Pierce | 1 |
 | Net | Cast Net | light Crush + **Entangled** (loses its next turn) | 1 |
 
@@ -518,11 +534,16 @@ slings; Pada and Parl bows; Dama, Falmi and Theenmy javelins; Dama nets.
 
 | Weapon | Wears into | Chance per use |
 |--------|-----------|----------------|
-| Obsidian Knife | Chipped Obsidian Knife, then breaks | 5%, then 7% |
-| Obsidian Spear | Cracked Obsidian Spear, then breaks | 12%, then 20% |
-| Copper Khopesh | Bent Copper Khopesh, then breaks into a Broken Copper Khopesh item | 10%, then 15% |
-| Stone Axe | Chipped Stone Axe, then breaks | 10%, then 15% |
-| Bronze Leaf Blade | never wears | — |
+| Material | Wears into | Chance per use (then the worn tier) |
+|----------|-----------|----------------|
+| Shell | Chipped, then breaks | 6%, then 9% |
+| Obsidian (brittle) | Chipped/Cracked, then breaks | 4–5%, then 6–8% |
+| Tusk, shark tooth | Cracked/Gap-Toothed, then breaks | 4%, then 6% |
+| Basalt | Chipped, then breaks | 3%, then 5% |
+| Copper | Bent, then breaks into **Scrap Copper** (kept) | 2%, then 3% |
+| Copper-silver | Bent, then breaks into **Scrap Copper-Silver** (kept) | 1%, then 2% |
+| Dragonheart wood | Cracked, then breaks | 1%, then 2% |
+| Ebony, heather, toromiro, bronze, black bronze | never wear | — |
 
 These are placeholder examples; real wear rates need playtesting.
 

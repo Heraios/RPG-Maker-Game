@@ -5,7 +5,7 @@ null,
 {"id":3,"atypeId":1,"description":"","etypeId":4,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":135,"name":"Cloth","note":"","params":[0,0,0,2,0,0,0,0],"price":300},
 {"id":4,"atypeId":1,"description":"Worn on a finger.","etypeId":13,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":145,"name":"Ring","note":"<Shiny>","params":[0,0,0,0,0,2,0,0],"price":300},
 {"id":5,"atypeId":7,"description":"Woven sling. 5 shots per battle.","etypeId":6,"traits":[],"iconIndex":98,"name":"Sling","note":"<Moves: sling>\n<Ammo: 5>\n<Ranged Power: 8>","params":[0,0,0,0,0,0,0,0],"price":30},
-{"id":6,"atypeId":8,"description":"A hunter's bow. 3 arrows per battle.","etypeId":6,"traits":[],"iconIndex":102,"name":"Short Bow","note":"<Moves: shoot>\n<Ammo: 3>\n<Ranged Power: 12>","params":[0,0,0,0,0,0,0,0],"price":200},
+{"id":6,"atypeId":8,"description":"A small juniper bow. 3 arrows per battle.","etypeId":6,"traits":[],"iconIndex":102,"name":"Juniper Bow","note":"<Moves: shoot>\n<Ammo: 3>\n<Ranged Power: 12>","params":[0,0,0,0,0,0,0,0],"price":200},
 {"id":7,"atypeId":9,"description":"One throw per battle.","etypeId":6,"traits":[],"iconIndex":100,"name":"Javelin","note":"<Moves: throw>\n<Ammo: 1>\n<Ranged Power: 16>","params":[0,0,0,0,0,0,0,0],"price":80},
 {"id":8,"atypeId":10,"description":"Entangles. One cast per battle.","etypeId":6,"traits":[],"iconIndex":176,"name":"Fishing Net","note":"<Moves: net>\n<Ammo: 1>\n<Ranged Power: 3>","params":[0,0,0,0,0,0,0,0],"price":60},
 {"id":9,"atypeId":4,"description":"Bronze. Unbreakable, but heavy (+1 Fatigue per turn).","etypeId":3,"traits":[],"iconIndex":132,"name":"Bronze Helm","note":"<Fatigue Per Turn: 1>\n<Shiny>","params":[0,0,0,3,0,0,0,0],"price":400},
@@ -51,5 +51,6 @@ null,
 {"id":49,"atypeId":1,"description":"Dried grass and fibre.","etypeId":14,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":157,"name":"Grass Skirt","note":"","params":[0,0,0,1,0,0,0,0],"price":100},
 {"id":50,"atypeId":4,"description":"Bronze. Unbreakable, but heavy (+1 Fatigue per turn).","etypeId":15,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":141,"name":"Bronze Greaves","note":"<Fatigue Per Turn: 1>\n<Shiny>","params":[0,0,0,3,0,0,0,0],"price":100},
 {"id":51,"atypeId":1,"description":"Light and quiet.","etypeId":16,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":140,"name":"Reed Sandals","note":"","params":[0,0,0,0,0,0,1,0],"price":100},
-{"id":52,"atypeId":13,"description":"Plaited cord with a carved bone tag.","etypeId":9,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":144,"name":"Woven Collar","note":"","params":[0,0,0,1,0,0,0,0],"price":50}
+{"id":52,"atypeId":13,"description":"Plaited cord with a carved bone tag.","etypeId":9,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":144,"name":"Woven Collar","note":"","params":[0,0,0,1,0,0,0,0],"price":50},
+{"id":53,"atypeId":8,"description":"An alpine yew longbow. 3 arrows per battle, hits harder.","etypeId":6,"traits":[],"iconIndex":102,"name":"Yew Longbow","note":"<Moves: shoot>\n<Ammo: 3>\n<Ranged Power: 16>","params":[0,0,0,0,0,0,0,0],"price":450}
 ]

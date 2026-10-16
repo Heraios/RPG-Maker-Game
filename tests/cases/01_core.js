@@ -31,7 +31,7 @@ module.exports = {
             const strike = a.makeDamageValue(pada, false);
             return { atk: pada.atk, unarmed: pada.unarmedAtk(), strike };
         });
-        t.eq(r.atk - r.unarmed, 12, 'unarmed ATK excludes the Stone Axe');
+        t.eq(r.atk - r.unarmed, 12, 'unarmed ATK excludes the Basalt Axe');
         t.ok(r.strike > 0, 'enemy Strike still does damage through armor');
     },
 
