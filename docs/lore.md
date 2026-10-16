@@ -605,6 +605,55 @@ the sooner Dama arrives** in the fight against Juda after he burns Pada to death
 and **the better armed and prepared the villagers with her are**, so **Juda kills fewer NPCs** before
 "dying".
 
+## 3e. Wildlife and Creatures
+
+**Ordinary animals are realistic**, drawn from the real-world roots (Canary Islands, Rapa Nui,
+Iberia, Iceland). The strangeness is saved for spirits and First Sailor creations, so it lands harder.
+
+| Biome | Animals |
+|-------|---------|
+| Coast and beaches | **Monk seals** (territorial on the rocks), **red rock crabs** on the black shore, **shearwaters** (night calls like crying babies: the "haunted" coast, an echo of the Master of Deception's crying-child disguise), morays and octopus in tide pools, **Giant Clams** offshore |
+| Laurel rainforest | **Wild boar** (the Lady's favorite), **giant centipedes** (venomous), laurel pigeons, **ravens** (omen birds) |
+| Salt marsh | Cranes and herons (any crane may be a Hag), eels, leeches |
+| Highlands and volcanic desert | **Giant lizards** (over a metre; the Guardian Lizards are their spirit kin), **giant tortoises**, **Egyptian vultures** (they join fights late and pick on the weakest), **feral goats** |
+| Alpine forest | Ibex, red deer and mouflon (the Shepherd's flock), golden eagles. **No wolves**: that empty niche is where the Black Hounds fit |
+| Lava tubes | Blind white cave crabs (harmless), **giant cave rats**, bats, cave crickets |
+| Rare | **Aurochs**, wild cattle |
+
+**Mythic and chimeric beings** follow the island's own patterns: chimeras of goat, pig, bull, snake
+and owl; animals the Ladies turned into peoples; and **the First Sailors' "various creations"**.
+- **Akerbeltz, the black he-goat:** a spirit that protects herds and keeps sickness off livestock.
+- **The sacred rain pig** (after the Guanche Aranfaybo): holy to the Lady's porcine aspect. Talk-only;
+  killing it brings drought.
+- **Zezengorri, the red bull:** breathes fire and guards cave treasure in the Destroyer's tubes; the
+  bull family next to the Bulls of Water and Heaven.
+- **Herensuge, the serpent:** a cave or well serpent, or what the Daughters of the Wells are taken for.
+- **Birdmen** (after Rapa Nui's tangata manu; **confirmed**): bird-headed First Sailor creations that
+  still race each spring for the first sooty tern egg on a sea-stack islet. Tied to Sooty Bird and the
+  eggshell glyphs; Tou knows the ceremony.
+- **Kavakava figures:** rib-thin carved ancestor figures guarding First Sailor tombs. Weak to fire and
+  Crush.
+- **Crew-beasts** (**confirmed**): guard and work animals bred by the First Sailors (coral-eyed dogs,
+  goats with too many horns), feral since the fall, still guarding the ruins. They obey Tou.
+- **Possessed animals:** demons can ride any carcass, not only dogs: a dead aurochs as a battering
+  ram, a drowned seal on the shore at night.
+
+**Pranksters.** The Children of the Caves and the forest child-fae are enemies in **prank fights**:
+- They **never knock anyone out**, and when beaten they **run off** instead of dying.
+- Children of the Caves **steal shiny things** (copper, silver and bronze gear, cowries) and **pull clothes
+  off**. The girls' light dazzles. **Lasa talks them down at once.**
+- Stolen things go to **hidden hoards** in the lava tubes, found later. That's a reason to explore, and
+  a place the copper ball could turn up.
+- Child-fae trip and mock. **Threaten makes one dissolve into a puddle** and flee, with no reward;
+  **Plead works** (they feel bad when kids cry). **Falmi talks them down at once.**
+
+**Ghosts** are fought normally: Yoon is always in the party and points them out. (No "Unseen"
+mechanic.)
+
+**Elements follow the domains** in general: forest beings (the Woods, Earth) resist earth and take
+extra fire; the sea and the Red Bowl lean Water; the Lady of the Wind's marsh and coasts lean Air; the
+Sun and the Destroyer lean Fire.
+
 ---
 
 ## 4. Inferences (assistant's reading; to confirm or correct)
@@ -666,10 +715,11 @@ and **the better armed and prepared the villagers with her are**, so **Juda kill
 ### Enemy roster by layer
 | Layer | Beings | Talk |
 |-------|--------|------|
-| Island wildlife | Boars, deer, the Great Boar, marsh birds | Animal (Pada, Patience; Stalk) |
-| Forest people | Boar-men, child-fae, Owls of Ill Omen | Sapient/spirit; **directness works, cleverness backfires** (boar-men); Tou may stop the owls |
+| Island wildlife | See 3e: boar, seals, crabs, centipedes, cave rats, goats, lizards, tortoises, vultures, deer, the Great Boar | Animal (Pada, Patience; Stalk) |
+| Pranksters | Children of the Caves, forest child-fae (Green Horses) | Lasa / Falmi talk them down; Threaten scares fae off |
+| Forest people | Boar-men, Owls of Ill Omen | Sapient/spirit; **directness works, cleverness backfires** (boar-men); Tou may stop the owls |
 | Local spirits | Ghosts, Guardian Lizards, Sleep Demons, Daughters of the Wells | Spirit (Sib's Rite, Yoon's ghost kinship) |
-| First Sailor remnants | Stonemen, ancient ghosts, Hags | **Tou** (Stonemen surrender, ghosts report, Hags conflicted); Yoon (Hags dote on Yoon) |
+| First Sailor remnants | Stonemen, ancient ghosts, Hags, Birdmen, Crew-beasts, Kavakava figures | **Tou** (Stonemen surrender, ghosts report, Hags conflicted); Yoon (Hags dote on Yoon) |
 | Servants of the Destroyer | Black Hounds, Hunched | Hounds: **cannot talk**. Hunched: **Talk to free them** |
 | All-Seafarers | Soldiers, officers; the Princess's troops | Sapient (Parl, Theenmy; spare children vs. not) |
 | Sea | Giant Clams | None |

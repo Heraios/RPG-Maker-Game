@@ -933,6 +933,28 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 - Armor rescaled: Shield DEF 3, Hat 1, Cloth 2, Ring MDF 2. Potion heals 30 and Magic Water
   restores 15.
 
+### Act 2 enemies (first batch)
+Placeholder art for now. Test room: the three Monster NPCs in the top-right corner, plus the **Cave
+Hoard** chest, which gives back everything stolen.
+
+| Enemy | HP | ATK | DEF | AGI | Attacks | Notes |
+|-------|----|-----|-----|-----|---------|-------|
+| Wild Boar | 55 | 12 | 6 | 26 | Gore (crush/pierce) | Thick hide: Cut ×0.75. Animal: Stalk |
+| Giant Centipede | 20 | 9 | 3 | 44 | Venom Bite (pierce + Burn) | Hard to soothe. Crush ×1.25 |
+| Red Rock Crab | 16 | 7 | 14 | 22 | Pinch | Shell: Cut ×0.5, Pierce ×0.75, **Crush ×1.5**. Comes in threes |
+| Giant Cave Rat | 12 | 6 | 2 | 38 | Gnaw | Packs of four |
+| Monk Seal | 80 | 11 | 6 | 14 | Body Slam | Starts Wary. Crush ×0.75, Water ×0.5 |
+| Feral Goat | 30 | 9 | 4 | 36 | Headbutt | Bolts below 30% HP |
+| Cave Girl | 22 | 5 | 3 | 40 | Blinding Light (Dazzled), Pilfer | Prankster. Lasa: instant |
+| Cave Boy | 26 | 6 | 4 | 34 | Pantsing, Pilfer | Prankster. Lasa: instant |
+| Forest Imp | 18 | 5 | 3 | 46 | Trip (Disoriented), Mock (Panicked) | Prankster. Threaten: flees. Plead +40. Falmi: instant |
+| Green Horse | 35 | 8 | 4 | 50 | Trample | 60% evasion, **0 while Wet/Sodden/Burdened/Mired**. Fire ×2. No talk |
+| Boar-Man | 80 | 15 | 8 | 24 | Club (crush), Spear (pierce) | Soothe +15, Plead +20, **Offer −15**, Threaten +5. Ask (Calm): the forest rules |
+| Owl of Ill Omen | 40 | 12 | 4 | 48 | Saber Beak (drain, Bleed 30%) | Flying. Tou: instant |
+
+Forest beings (Boar-Man, Owl, Imp, Green Horse) resist Earth (×0.5) and take extra Fire (×1.5).
+Prank skills (Pilfer, Pantsing, Blinding Light, Mock) stop once the prankster is Calm.
+
 ### Implementation status
 | Piece | Status |
 |-------|--------|
@@ -956,7 +978,8 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
-| Automated tests | `tests/` (26 tests, about 260 checks; see tests/README.md) |
+| Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
+| Automated tests | `tests/` (29 tests, about 300 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)

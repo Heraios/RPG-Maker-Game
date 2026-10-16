@@ -107,6 +107,9 @@
  *        debuff agi 3           the remaining enemies get an AGI debuff
  *        info                   shows its <Talk Info> (and sets the switch)
  *        event 7                runs common event #7 (scripted moments)
+ *   <Talk Flees: threaten>      these approaches scare it off at once: it
+ *                               leaves with no outcome and no EXP
+ *                               (line: <Talk Line Flee: text>).
  *   <Talk Line Hostile: text>   lines shown when its mood changes to
  *   <Talk Line Wary: text>      that level (also Calm, Pacified, Enraged).
  *
@@ -251,7 +254,8 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
             return s.trim().split(/\s+/);
         });
         t.lines = {};
-        ['Enraged', 'Hostile', 'Wary', 'Calm', 'Pacified'].forEach(function(level) {
+        t.flees = $.list($.tag(note, 'Talk Flees')).map(function(a) { return a.toLowerCase(); });
+        ['Enraged', 'Hostile', 'Wary', 'Calm', 'Pacified', 'Flee'].forEach(function(level) {
             var line = $.tag(note, 'Talk Line ' + level);
             if (line) t.lines[level] = line;
         });
@@ -423,6 +427,12 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
             this.applyOutcomes(enemy);
             this.talkSuccess(enemy);
             this.talkLeave(enemy);
+            return;
+        }
+        if (data.flees && data.flees.indexOf(approach) >= 0) {
+            if (data.lines.Flee) this.talkSay(enemy, '%1: "%2"'.format(name, data.lines.Flee));
+            this.talkSay(enemy, '%1 flees!'.format(name));
+            enemy.escape();
             return;
         }
         if (approach === 'stalk') {
