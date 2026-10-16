@@ -28,6 +28,14 @@
  * ============================================================================
  *   <Hesitate: 25>      25% chance each turn to do nothing
  *   <Flee: 10>          (enemies) 10% chance each turn to flee the battle
+ *   <Expires Into Knockout: %1 turns to salt!>
+ *                       if this state runs out on its own (not cured), the
+ *                       battler is knocked out, with this line (Salting,
+ *                       Dragged Below)
+ *   <Released When Inflicter Hit>
+ *                       hitting whoever inflicted it (any HP damage) ends it
+ *                       (Dragged Below: hit the hound to pull them free)
+ *   <Cured By Water>    any water-sourced hit or item removes it (Salting)
  *   <Mental Ward>       a mental ailment that would land removes this
  *                       state instead (Calm)
  *   <Cures Mental>      removes mental ailments when applied and at the end
@@ -295,6 +303,82 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
             if (chance > 0 && Math.random() * 100 < chance * target.stateRate($.bleedStateId)) {
                 target.addState($.bleedStateId);
             }
+        }
+    };
+
+    //-------------------------------------------------------------------------
+    // States that end badly, states lifted by hitting their source, water cures
+    //-------------------------------------------------------------------------
+
+    $.stateTags = function(state) {
+        if (!state._siTags) {
+            var note = state.note || '';
+            var ko = /<Expires Into Knockout:\s*([^>]*)>/i.exec(note);
+            state._siTags = {
+                expireKO: ko ? ko[1].trim() : null,
+                releaseByInflicter: /<Released When Inflicter Hit>/i.test(note),
+                curedByWater: /<Cured By Water>/i.test(note)
+            };
+        }
+        return state._siTags;
+    };
+
+    var _Game_Battler_removeStatesAuto = Game_Battler.prototype.removeStatesAuto;
+    Game_Battler.prototype.removeStatesAuto = function(timing) {
+        var doomed = this.states().filter(function(state) {
+            return $.stateTags(state).expireKO && state.autoRemovalTiming === timing && this.isStateExpired(state.id);
+        }, this);
+        _Game_Battler_removeStatesAuto.call(this, timing);
+        if (doomed.length > 0 && this.isAlive()) {
+            // It didn't wear off; it ran its course. No "wears off" line.
+            var removed = this.result().removedStates;
+            doomed.forEach(function(state) {
+                var i = removed.indexOf(state.id);
+                if (i >= 0) removed.splice(i, 1);
+            });
+            var line = $.stateTags(doomed[0]).expireKO.format(this.name());
+            if ($gameParty.inBattle() && BattleManager._logWindow) {
+                BattleManager._logWindow.push('addText', line);
+                BattleManager._logWindow.push('wait');
+            }
+            this.addState(this.deathStateId());
+            this.performCollapse && this.performCollapse();
+        }
+    };
+
+    var _Game_Action_apply_states = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        _Game_Action_apply_states.call(this, target);
+        var subject = this.subject();
+        var result = target.result();
+        // Remember who inflicted states that can be lifted by hitting them.
+        result.addedStates.forEach(function(id) {
+            if ($.stateTags($dataStates[id]).releaseByInflicter) {
+                target._siInflicter = target._siInflicter || {};
+                target._siInflicter[id] = subject;
+            }
+        });
+        // Hitting an inflicter frees its victims.
+        if (result.hpDamage > 0) {
+            var victims = target.isEnemy() ? $gameParty.members() : $gameTroop.members();
+            victims.forEach(function(victim) {
+                var map = victim._siInflicter || {};
+                Object.keys(map).forEach(function(id) {
+                    if (map[id] === target && victim.isStateAffected(Number(id))) {
+                        victim.removeState(Number(id));
+                        delete map[id];
+                        target._siPrankMessages = (target._siPrankMessages || []).concat(['%1 is pulled free!'.format(victim.name())]);
+                    }
+                });
+            });
+        }
+        // Water washes off what water cures.
+        var item = this.item();
+        var water = SmokingIsle.DamageTypes ? SmokingIsle.DamageTypes.SOURCE.water : 0;
+        if (item && water && item.siSource === water) {
+            target.states().forEach(function(state) {
+                if ($.stateTags(state).curedByWater) target.removeState(state.id);
+            });
         }
     };
 

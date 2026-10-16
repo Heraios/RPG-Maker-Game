@@ -396,10 +396,25 @@ The Ghost's versions hit all enemies or all allies; human Yoon's versions hit on
 | Calm (buff) | All stats +10%; the next mental ailment removes Calm instead of landing |
 | Happy (buff) | Gains 10% MP per turn; cures and blocks mental ailments |
 | Brave (buff) | Acts twice per turn; recovers 1 Fatigue per turn |
+| Hypnotized | Attacks its own side for 2 turns; a hit may snap it out (50%). The Bull of Water's gaze |
+| Sleep | Can't act for 3 turns; any hit wakes it. Sleep Demons |
 
-Only enemies can flee. Insight's mental resistance covers Rage, Confused, Fascination, Sleep,
-Enraged, Feverish, Despair and Panicked. **Bleed** (from Raking Cut and the harpoon) loses 6% HP per
-turn.
+Only enemies can flee. Insight's mental resistance covers Confused, Hypnotized, Sleep, Enraged,
+Feverish, Despair and Panicked.
+
+### Other ailments
+| State | Effect | From | Cured by |
+|-------|--------|------|----------|
+| Bleed | 6% HP per turn, 3 turns | Raking Cut, the harpoon, shark-tooth weapons, Owls | Bandages (to come) |
+| Venom | 5% HP per turn and healing halved, 4 turns | Centipedes (40% per bite); euphorbia-coated blades later | Dispel Herb |
+| Salting | AGI −30%; **if it runs its 3 turns, the victim turns to salt** (knocked out) | Stoneman chiefs' Salt Glyph | **Water**: Fresh Water, or any water-sourced hit |
+| Dragged Below | Out of the fight and out of reach; **lost (knocked out) after 3 turns** | Black Hounds' Drag Below (and the wells) | **Hit the dragger** to pull them free |
+| Dazzled | Hit −50% for a turn | Children of the Caves | — |
+
+Dispel Herb cures Venom, Hypnotized, Sleep and Confused. State notes: `<Expires Into Knockout: ...>`,
+`<Released When Inflicter Hit>`, `<Cured By Water>` (`SI_Ailments.js`). Enemy skills ready for later
+enemies: Salt Glyph, Drag Below, Hypnotic Gaze, Nightmare. RPG Maker's default Rage state was cleared
+(it duplicated Enraged); Immortal is kept for scripted fights.
 
 ### Weapon moves
 Weapons carry **moves** (`jab`, `chop`, `bash`...). A physical skill requires a move, so a
