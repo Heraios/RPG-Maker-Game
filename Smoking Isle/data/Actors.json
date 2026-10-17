@@ -1,7 +1,7 @@
 [
 null,
 {"id":1,"battlerName":"","characterIndex":7,"characterName":"October-RBx3","classId":1,"equips":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":30,"name":"Ghost","nickname":"","note":"<Child>\n<Equip Slots: none>","profile":""},
-{"id":2,"battlerName":"","characterIndex":3,"characterName":"JADE_1_1","classId":2,"equips":[6,42,2,6,0,72,112,0,0,0,0,0,0,0,0,0],"faceIndex":7,"faceName":"","traits":[],"initialLevel":1,"maxLevel":30,"name":"Yoon","nickname":"","note":"<Child>","profile":""},
+{"id":2,"battlerName":"","characterIndex":3,"characterName":"JADE_1_1","classId":2,"equips":[6,42,2,6,0,72,112,0,0,0,0,0,0,0,0,0],"faceIndex":7,"faceName":"","traits":[],"initialLevel":1,"maxLevel":30,"name":"Yoon","nickname":"","note":"<Child>\n<Weapon Type If Switch 4: 2>","profile":""},
 {"id":3,"battlerName":"Actor3_8","characterIndex":7,"characterName":"Actor3","classId":3,"equips":[6,0,2,6,0,72,137,0,0,0,0,0,10,0,0,0],"faceIndex":7,"faceName":"Actor3","traits":[],"initialLevel":1,"maxLevel":15,"name":"Sib","nickname":"","note":"<Talk Specialty: spirit, forest>\n<Child>\n<Start Equips: armor 113>","profile":""},
 {"id":4,"battlerName":"Actor2_7","characterIndex":6,"characterName":"Actor2","classId":4,"equips":[6,0,2,6,0,0,0,0,0,0,0,0,10,0,0,0],"faceIndex":6,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":12,"name":"Lasa","nickname":"","note":"<Talk Specialty: fae, cave>\n<Flying>","profile":""},
 {"id":5,"battlerName":"","characterIndex":0,"characterName":"","classId":5,"equips":[132,0,0,0,0,73,0,0,0,0,0,0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":5,"name":"Pada","nickname":"","note":"<Talk Specialty: animal>\n<Protects: 1:100, 2:100, 3:80>","profile":""},

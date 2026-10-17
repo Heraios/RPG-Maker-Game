@@ -118,8 +118,8 @@ Yoon's best friend since basically birth, who wants to help Yoon get a body back
 holds a third-gender social role that is very common for priests for that reason. **They/them.** Has a massive
 crush on Yoon. Juda's apprentice.
 
-- **Weapons:** knives and slings only. The narrowest selection in the party: a child trained
-  for spiritual work, not combat.
+- **Weapons:** knives, staffs and slings, plus the priests' Jasper Knife and Jasper Spear. A narrow
+  selection: a child trained for spiritual work, not combat.
 - **Quirks:** lowest HP in the party, permanently. Largest and most sustainable MP pool. Widest
   spell list, which keeps growing as Sib learns magic without a teacher. Advantages in spirit and
   monster pre-combat encounters through ritual knowledge and relationships with forest spirits.
@@ -142,7 +142,7 @@ She finds Yoon as a ghost and immediately decides to help.
 ### Pada — The Hunter / The Father
 Yoon's father, a mighty hunter respected by the Islanders.
 
-- **Weapons:** knives, staffs/spears, axes, clubs/maces, bows. The widest selection in the early
+- **Weapons:** knives, spears, axes, clubs/maces, paddle-swords, bows. The widest selection in the early
   game.
 - **Quirks:** by far the highest HP and ATK in the early party. Very limited magic. Advantages in
   animal pre-combat encounters through tracking and wilderness skill. **Adult protection:** takes
@@ -189,7 +189,7 @@ The village priest, deeply respected by the Islanders, very knowledgeable and wi
 Leads the Islanders' spearfishers and militia. Investigates Yoon's death and discovers that Juda
 did it. Becomes Chieftess by default over the course of the war.
 
-- **Weapons:** knives, staffs/spears, nets, javelins. Her unique **fishing harpoon** works as both
+- **Weapons:** knives, spears, paddle-swords, nets, javelins. Her unique **fishing harpoon** works as both
   a melee spear and a thrown javelin, with a high bleed chance.
 - **Quirks:** tankier than the children, with good damage and strong debuffs through nets. Nets
   give her ranged battlefield control, slowing enemies rather than damaging them. Her **underwater
@@ -206,7 +206,7 @@ An All-Seafarer deserter sent ahead as a scout before the invasion, disguised as
 stole a bag of pearls from the village. A pearl is needed for Yoon's body, so finding him is an
 important early quest.
 
-- **Weapons:** knives, staffs/spears, axes, slings or bows. A scrappy survivalist kit from months
+- **Weapons:** knives, swords, spears, axes, slings or bows. A scrappy survivalist kit from months
   alone in the highlands.
 - **Quirks:** survival specialist, thief and ranged fighter. Tankier than the children but the
   least tanky adult. High AGI. Decent at almost everything but best at nothing.
@@ -223,8 +223,7 @@ important early quest.
 ### Theenmy — The Prince
 The Prince of the invaders, who always ends up siding with the party.
 
-- **Weapons:** every melee type, including swords and javelins. The only character who can use
-  swords as soon as he joins. His personal sword is a unique, irreplaceable masterwork bronze
+- **Weapons:** every melee type except staffs, including swords and javelins. His personal sword is a unique, irreplaceable masterwork bronze
   leaf blade. **Can swap melee weapons once per turn and still make a basic attack.**
 - **Quirks:** highest HP and DEF in the game, very high ATK, lowest AGI (a bronze-armored
   glacier). Powerful paladin-style magic. **All his gear is bronze and therefore unbreakable.**
@@ -239,7 +238,7 @@ The Prince of the invaders, who always ends up siding with the party.
 A child the Lady of the Woods (a minor deity and queen of the forest spirits) grew from a plant
 over four hundred years to be her heir. Develops a crush on Tou.
 
-- **Weapons:** knives, axes, clubs, spears, staffs, slings, javelins. The widest selection of any
+- **Weapons:** knives, swords, paddle-swords, axes, clubs, spears, slings, javelins. The widest selection of any
   child. The only child who can use full-sized shields, including dragon-tree wood shields painted
   with geometric patterns.
 - **Quirks:** a combat-focused child who tanks by avoiding hits. Average HP, high AGI,
@@ -387,7 +386,8 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
   legendaries.
 - Fishing Harpoon (11; jab, thrust, sweep, throw; 50% Bleed). Bows: **Juniper Bow** (small, the old Short
   Bow) and **Yew Longbow** (alpine, hits harder).
-- Who can use paddle-swords: Yoon, Pada, Dama, Falmi and Theenmy.
+- Who can use paddle-swords: Yoon, Pada, Dama, Falmi and Theenmy. Swords: Theenmy, Falmi, Parl, and Yoon
+  after Theenmy's sidequest (switch 4). Staffs: Yoon, Sib, Juda and Tou only.
 
 **For testing, everyone knows every skill their weapons allow.** When each is learned (early,
 mid-game, late) is still to be decided.

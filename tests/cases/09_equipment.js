@@ -58,5 +58,19 @@ module.exports = {
         t.eq(r.ghost, 0, 'the Ghost has no equipment slots');
         t.eq(r.patience, 'Collar:Woven Collar', 'Patience has only a collar');
         t.eq(r.gloves, 'Hide Gloves/Ring', '"Change Equipment" fills the empty hand');
+    },
+
+    'who can use swords and staves; Yoon learns swords from Theenmy': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const A = id => $gameActors.actor(id), W = n => $dataWeapons.find(w => w && w.name === n);
+            const who = n => [2, 3, 4, 5, 6, 7, 8, 9, 10, 11].filter(id => A(id).canEquip(W(n))).map(id => A(id).name()).join(',');
+            const out = { swords: who('Bronze Leaf Blade'), staves: who('Heather Staff') };
+            $gameSwitches.setValue(4, true); out.trained = A(2).canEquip(W('Bronze Leaf Blade')); $gameSwitches.setValue(4, false);
+            return out;
+        });
+        t.eq(r.swords, 'Parl,Falmi,Thenmy', 'swords: Parl, Falmi and Theenmy');
+        t.eq(r.staves, 'Yoon,Sib,Juda,Tou', 'staves: Yoon, Sib, Juda and Tou only');
+        t.ok(r.trained, 'Yoon can use swords once switch 4 (Theenmy quest) is on');
     }
 };

@@ -54,6 +54,9 @@
  *                            database's Initial Equipment can hold (a second
  *                            ring, more tattoos). Each goes into the first
  *                            empty slot of its type.
+ *   <Weapon Type If Switch 4: 2>
+ *                            can also use weapon type 2 (Sword) while switch
+ *                            4 is ON (training learned in a quest)
  *
  * Off hand: shields, or a weapon of an Offhand Weapon Type. An off-hand weapon
  * gives no stats or traits, only its moves plus the Offhand Move. Skills that
@@ -288,6 +291,18 @@ SmokingIsle.Equipment = SmokingIsle.Equipment || {};
             return _Game_Actor_weaponSlotForSkill.call(this, skill);
         };
     }
+
+    // Weapon types unlocked by a switch (<Weapon Type If Switch s: t>).
+    var _Game_Actor_isEquipWtypeOk = Game_Actor.prototype.isEquipWtypeOk;
+    Game_Actor.prototype.isEquipWtypeOk = function(wtypeId) {
+        if (_Game_Actor_isEquipWtypeOk.call(this, wtypeId)) return true;
+        var note = this.actor().note + '\n' + this.currentClass().note;
+        var re = /<Weapon Type If Switch (\d+):\s*(\d+)>/gi, m;
+        while ((m = re.exec(note))) {
+            if (Number(m[2]) === wtypeId && $gameSwitches.value(Number(m[1]))) return true;
+        }
+        return false;
+    };
 
     var _Game_Actor_isEquipChangeOk = Game_Actor.prototype.isEquipChangeOk;
     Game_Actor.prototype.isEquipChangeOk = function(slotId) {
