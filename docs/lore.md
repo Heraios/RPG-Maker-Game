@@ -646,8 +646,13 @@ smuggle home to get rich.
 - **Patience:** the family dog.
 
 ### Yoon and Sib
-Best friends since basically birth. They liked to play in **the lava tubes near the village**. Sib
-possibly had (and has) a little puppy-love crush on Yoon, whatever gender the player chooses.
+Best friends since basically birth. They liked to play in **the lava tubes near the village**. Sib has
+a **massive puppy-love crush** on Yoon, whatever gender the player chooses. Whether Yoon returns it is
+up to the player, and they're kids: it never goes beyond **holding hands**, and at most a **childhood
+betrothal promise** in certain endings.
+
+- Sib **never suspected Juda** before Act 3.
+- After Act 3, Sib becomes the village priest **de facto**: Juda is gone and the island is being invaded.
 
 ### The murder (what really happened)
 1. **Juda kidnapped Yoon** while they were playing alone in the lava tubes.

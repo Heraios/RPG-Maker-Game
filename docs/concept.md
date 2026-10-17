@@ -135,7 +135,9 @@ agnostic; the game respects whichever stance the player takes and never confirms
 ### Sib — The Young Priest
 Yoon's best friend since basically birth, who wants to help Yoon get a body back. Intersex, and
 holds a third-gender social role that is very common for priests for that reason. **They/them.** Has a massive
-crush on Yoon. Juda's apprentice.
+puppy-love crush on Yoon (returned or not, as the player chooses; kids, so never beyond holding hands and,
+in certain endings, a childhood betrothal promise). Juda's apprentice; never suspects him. After Act 3,
+the village priest de facto, since Juda is gone and the island is being invaded.
 
 - **Weapons:** knives, staffs and slings, plus the priests' Jasper Knife and Jasper Spear. A narrow
   selection: a child trained for spiritual work, not combat.
