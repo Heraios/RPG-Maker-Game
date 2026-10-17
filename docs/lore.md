@@ -404,8 +404,10 @@ village, a logging camp, mining camps, and so on.
 
 ### Priests
 Priests heal, hold funerals, **mummify the dead**, talk to ghosts and spirits, and read omens. They
-are usually chosen from third gender and intersex children, **twins**, or **orphans raised by
-priests**. **Juda's (false) backstory is that he was an orphan.**
+are chosen from the children Islander culture already counts as **priests or potential priests**:
+**twins**, **orphans** (often raised by priests), **intersex and third gender** children, and those who
+have metaphorically **"died and come back"** (mostly children revived after drowning). **Juda's (false)
+backstory is that he was an orphan.**
 
 ### Death
 The dead are mummified and laid in **stone-cut tombs in the lava tubes**. A ghost is not alarming
@@ -415,9 +417,11 @@ going missing. **The ritual Sib uses to build Yoon a body is
 forbidden**: Sib learned it from **notes Juda made about First Sailor homunculus production**.
 
 ### Seeing the dead
-**Only priests, and twins, can see ghosts without help.** Ordinary people, adults and children alike,
-cannot. (Children see the Children of the Caves, not ghosts.) Twins have the gift by nature, which is
-one reason priests are chosen from them. **Yoon's twin siblings can see ghost Yoon.** This is why Act 1 is spent struggling to make
+**Only priests and potential priests can see ghosts without help:** twins, orphans, intersex and third
+gender people, and those who "died and came back". Belief is magic on the island: because the culture
+counts them as priests, they can see the dead. Ordinary people, adults and children alike, cannot.
+(Children see the Children of the Caves, not ghosts.) **Sib** (intersex, third gender, and a priest's
+apprentice) and **Yoon's twin siblings** can all see ghost Yoon. This is why Act 1 is spent struggling to make
 contact, and why Sib, a priest's apprentice, is the one Yoon reaches. It also means **Juda can see
 ghost Yoon**.
 
@@ -628,10 +632,11 @@ smuggle home to get rich.
 ## 3d. Yoon, Their Family, and the Murder
 
 ### Yoon's family
-- **Mada:** Yoon's mother, the **village herbalist**, lame in one leg.
+- **Mada:** Yoon's mother, the **village herbalist**, lame in one leg. Keeps some of her own blood for
+  ritual potions, which is where the body's ritual gets hers.
 - **Pada:** Yoon's father, the hunter.
 - **The twins:** Yoon's younger twin siblings, a boy and a girl. As twins they can see ghosts: they
-  see Yoon, and they're the ones who tell Pada that Yoon is a ghost.
+  see Yoon, they're the ones who tell Pada that Yoon is a ghost, and they give their blood for the body.
 - **Ladder:** the family goat, named because he climbs ladders. Somehow.
 - **Patience:** the family dog.
 

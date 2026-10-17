@@ -25,8 +25,9 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 - Patience joins alongside Sib.
 - **The body's ingredients**, gathered in this order:
   1. **Flesh of a Great Boar** of the forest → the flesh (the Act 2 climactic boss).
-  2. **A little blood from as many of the dead child's kin as possible** (Yoon's parents, little
-     sister and little brother) → the blood.
+  2. **A little blood from as many of the dead child's kin as possible** → the blood. The **twins**
+     (who can see Yoon) give theirs; **Mada** keeps some of her own for ritual potions; **Pada** gives
+     his when he confronts the party and joins (so this ingredient is only complete after the snow).
   3. **Snow**, trapped in an urn and kept magically frozen until the right moment → the brain.
   4. **A bit of pure silver**, worked into a bracelet.
   5. **A pearl from the sea**, set into the bracelet → anchors the soul.
