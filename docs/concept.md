@@ -496,6 +496,17 @@ character must both *know* the skill and have a weapon that *allows* it. The wea
 These are placeholder examples to show how the system works; the real weapon and skill list is
 still to be designed.
 
+### Screen and battle layout
+- The game runs at **1280 x 720** (Community_Basic). Battle backgrounds and the title image are scaled
+  to fill it until there is widescreen art; enemies keep their troop layout, centred to the right of the
+  skill lists (`SI_Screen.js`).
+- **FFX-style battle screen:** the turn order runs as a strip across the top; the battle log sits under
+  it; commands bottom-left, party status bottom-right; skill, item, swap and switch lists open above the
+  commands with the help box above them, leaving the enemies visible.
+- **Dialogue and the battle log wrap** at word boundaries (dialogue continues on the next page).
+- **Options > Battle Text:** Slow / Normal / Fast (each battle message stays up 72 / 48 / 24 frames;
+  RPG Maker's default was 16). Holding OK still speeds it up.
+
 ### Battle menu
 **Skills, Talk, Guard, Tactics**.
 - **Skills** opens the character's skill types (Magic, Physical, Rest) in the same place. **Punch** is
@@ -1297,7 +1308,8 @@ some enemies are better fought: gentle words fail on centipedes, and only Pada c
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
 | Armor sets, charms, size rules | Done: `SI_Outfits.js` (after SI_Layout) |
-| Meals (food raises stats) | Done: `SI_Meals.js` (load last) |
+| Meals (food raises stats) | Done: `SI_Meals.js` |
+| Widescreen, battle layout, word wrap, battle text speed | Done: `SI_Screen.js` (load last) |
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |

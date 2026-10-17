@@ -150,7 +150,7 @@ class Check {
     for (const file of files) {
         const cases = require(path.join(caseDir, file));
         for (const [name, fn] of Object.entries(cases)) {
-            const page = await browser.newPage({ viewport: { width: 816, height: 624 } });
+            const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
             const errors = [];
             page.on('pageerror', e => errors.push(String(e)));
             const check = new Check();
