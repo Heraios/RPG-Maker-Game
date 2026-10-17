@@ -415,8 +415,9 @@ going missing. **The ritual Sib uses to build Yoon a body is
 forbidden**: Sib learned it from **notes Juda made about First Sailor homunculus production**.
 
 ### Seeing the dead
-**Only priests can see ghosts without help.** Ordinary people, adults and children alike, cannot.
-(Children see the Children of the Caves, not ghosts.) This is why Act 1 is spent struggling to make
+**Only priests, and twins, can see ghosts without help.** Ordinary people, adults and children alike,
+cannot. (Children see the Children of the Caves, not ghosts.) Twins have the gift by nature, which is
+one reason priests are chosen from them. **Yoon's twin siblings can see ghost Yoon.** This is why Act 1 is spent struggling to make
 contact, and why Sib, a priest's apprentice, is the one Yoon reaches. It also means **Juda can see
 ghost Yoon**.
 
@@ -629,7 +630,8 @@ smuggle home to get rich.
 ### Yoon's family
 - **Mada:** Yoon's mother, the **village herbalist**, lame in one leg.
 - **Pada:** Yoon's father, the hunter.
-- **The twins:** Yoon's younger twin siblings, a boy and a girl.
+- **The twins:** Yoon's younger twin siblings, a boy and a girl. As twins they can see ghosts: they
+  see Yoon, and they're the ones who tell Pada that Yoon is a ghost.
 - **Ladder:** the family goat, named because he climbs ladders. Somehow.
 - **Patience:** the family dog.
 

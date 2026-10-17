@@ -34,7 +34,8 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
   7. **A framework of dragon-tree wood** → the skeleton.
 - **Pada joins after the snow (ingredient 3).** He's suspicious of why Sib, who is normally *not*
   an outdoorsy child, keeps traipsing around, and he's worried about the children since Yoon's
-  "disappearance". Sib and Lasa spill the beans: Yoon is dead, a ghost, and they're attempting a
+  "disappearance". Then Yoon's younger **twins**, who as twins can see ghosts, tell him Yoon is a
+  ghost. He confronts Sib, and Sib and Lasa spill the beans: Yoon is dead, a ghost, and they're attempting a
   forbidden ritual to restore the body. Pada agrees to help.
 - **Parl's quest comes at the pearl (ingredient 5).** The party hears that one of the Seafarers has
   stolen a bag of pearls meant as tribute, and hunts him down. How they deal with him decides
@@ -96,7 +97,7 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 | 1/2 | Yoon (Ghost / Human form) | Protagonist; support generalist | Start | Never |
 | 3 | Sib | Healer and magic damage | Contact with Sib | Never |
 | 4 | Lasa | Early damage crutch and debuffer | With Sib (with Yoon from the start outside combat) | — |
-| 5 | Pada | Tank, physical damage, protector | After the siblings reveal Yoon | Dies on the mountain |
+| 5 | Pada | Tank, physical damage, protector | Act 2, after the snow; the twins see Yoon's ghost | Dies on the mountain |
 | 6 | Juda | Temporary powerhouse guest | Memory ritual trek | Betrays on the mountain |
 | 7 | Dama | Adult anchor, tank, battlefield control | During or after the mountain | Never |
 | 8 | Parl | Utility fighter and intelligence | Optional (pearl thief outcome) | — |
@@ -163,7 +164,8 @@ Yoon's father, a mighty hunter respected by the Islanders.
 - **Core role:** tank, physical damage dealer and party protector. His presence makes everything
   feel safe, and his absence makes everything feel dangerous.
 - Joins in Act 2 after the snow (the third body ingredient): worried about the children and
-  suspicious of Sib's sudden trips, he gets the truth from Sib and Lasa and agrees to help. Dies on
+  suspicious of Sib's sudden trips, he hears from Yoon's twins (who can see ghosts) that Yoon is a
+  ghost, gets the rest from Sib and Lasa, and agrees to help. Dies on
   the mountain. Any of his sidequests left unfinished are permanently missed.
 
 ### Patience — The Dog
