@@ -51,13 +51,22 @@ SmokingIsle.Placeholders = SmokingIsle.Placeholders || {};
         console.warn('[Smoking Isle] Missing file (using a placeholder): ' + url);
     };
 
-    // folder/EngineName -> folder/YourName
-    var _ImageManager_loadBitmap = ImageManager.loadBitmap;
-    ImageManager.loadBitmap = function(folder, filename, hue, smooth) {
-        var key = String(folder).replace(/^img\//, '').replace(/\/$/, '') + '/' + filename;
-        if ($.nameFixes[key]) filename = $.nameFixes[key];
-        return _ImageManager_loadBitmap.call(this, folder, filename, hue, smooth);
+    // img/folder/EngineName.png -> img/folder/YourName.png (every way images are loaded).
+    $.fixPath = function(path) {
+        var m = /^img\/(.+)\/([^\/]+)\.png$/.exec(String(path));
+        if (!m) return path;
+        var fix = $.nameFixes[m[1] + '/' + decodeURIComponent(m[2])];
+        return fix ? 'img/' + m[1] + '/' + encodeURIComponent(fix) + '.png' : path;
     };
+
+    ['loadNormalBitmap', 'reserveNormalBitmap', 'requestNormalBitmap'].forEach(function(name) {
+        var original = ImageManager[name];
+        ImageManager[name] = function(path) {
+            var args = Array.prototype.slice.call(arguments);
+            args[0] = $.fixPath(path);
+            return original.apply(this, args);
+        };
+    });
 
     // A failed image load swaps in a transparent pixel, which then "loads".
     var _Bitmap_requestImage = Bitmap.prototype._requestImage;
