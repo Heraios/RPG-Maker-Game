@@ -25,7 +25,7 @@ module.exports = {
             use(boy, 385, sib); out.noFailLine = sib.result().success;
             out.ringGone = !sib.equips().some(e => e && e.name === 'Silver Ring') && $gameParty.numItems(AR('Silver Ring')) === 0;
             out.boyFled = boy.isHidden(); out.hoard = SmokingIsle.Pranks.hoardSize();
-            $gameParty.gainGold(100); const s2 = A(5); s2.initEquips([0]); use(girl, 385, s2);
+            $gameParty.allItems().filter(i => i.siShiny).forEach(i => $gameParty.loseItem(i, 99)); $gameParty.gainGold(100); const s2 = A(5); s2.initEquips([0]); use(girl, 385, s2);
             out.goldTaken = 100 - $gameParty.gold();
             out.recovered = SmokingIsle.Pranks.recoverHoard(); out.ringBack = $gameParty.numItems(AR('Silver Ring')) === 1 && $gameParty.gold() === 100;
             boy.appear(); use(boy, 384, yoon); out.stripped = !yoon.equips()[yoon.slotOfType(4)];

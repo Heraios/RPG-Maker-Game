@@ -13,7 +13,7 @@ module.exports = {
             // Venom
             pada.clearResult(); pada.addState(112); const hp = pada.hp; turnEnd(pada); out.venomTick = hp - pada.hp;
             pada.setHp(50); use(sib, 2, pada, true); out.potionUnderVenom = pada.hp - 50;
-            use(sib, 4, pada, true); out.herbCures = !pada.isStateAffected(112);
+            use(sib, $dataItems.find(i => i && i.name === 'Hill Thyme Tea').id, pada, true); out.herbCures = !pada.isStateAffected(112);
             // Salting: runs its course
             sib.clearResult(); sib.addState(113); for (let i = 0; i < 3; i++) { sib.clearResult(); turnEnd(sib); }
             out.salted = sib.isDead();
@@ -42,7 +42,7 @@ module.exports = {
         });
         t.between(r.venomTick, 4, 6, 'Venom: about 5% HP per turn (' + r.venomTick + ')');
         t.eq(r.potionUnderVenom, 15, 'Venom halves healing (Potion 30 -> 15)');
-        t.ok(r.herbCures, 'Dispel Herb cures Venom');
+        t.ok(r.herbCures, 'Hill Thyme Tea cures Venom');
         t.ok(r.salted, 'Salting that runs its course turns the victim to salt (knocked out)');
         t.ok(r.waterCures, 'Fresh Water washes the salt off');
         t.ok(r.rariCures, 'so does a water spell');

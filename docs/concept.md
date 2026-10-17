@@ -189,8 +189,8 @@ The village priest, deeply respected by the Islanders, very knowledgeable and wi
 Leads the Islanders' spearfishers and militia. Investigates Yoon's death and discovers that Juda
 did it. Becomes Chieftess by default over the course of the war.
 
-- **Weapons:** knives, spears, paddle-swords, nets, javelins. Her unique **fishing harpoon** works as both
-  a melee spear and a thrown javelin, with a high bleed chance.
+- **Weapons:** knives, spears, paddle-swords, nets, javelins. Her **Fishing Gear** (ranged) holds one net cast
+  and two javelin throws a battle; any harpoon adds one more throw.
 - **Quirks:** tankier than the children, with good damage and strong debuffs through nets. Nets
   give her ranged battlefield control, slowing enemies rather than damaging them. Her **underwater
   breathing** spell opens submerged areas nobody else can reach. Has adult protection.
@@ -384,7 +384,13 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
 - **Copper-silver** has `<Magic Edge: 15>`: weapon skills deal 15% extra damage as magic.
 - **Black Bronze Blade** (22, Magic Edge 30, never wears): a placeholder for the late-game First Sailor
   legendaries.
-- Fishing Harpoon (11; jab, thrust, sweep, throw; 50% Bleed). Bows: **Juniper Bow** (small, the old Short
+- **Harpoons** are light spears that anyone can throw once a battle: Bone Harpoon (6; 30% Bleed), Fishing
+  Harpoon (8; 40% Bleed), Shark-Tooth Harpoon (9; 60% Bleed). **Dama's Fishing Gear** (ranged) gives one
+  net cast and two javelin throws (`<Ammo: net 1, throw 2>`).
+- **Priest staves:** Jasper-Tipped Staff (Rite +25%), Glyph-Carved Staff (MAT +6), First Sailor Relic Staff
+  (late). **Glyph staves** (Staff of Ahi, Rari, Hagu, Keri, Mahu) work like that tattoo while held: they
+  grant the tier-1 spell.
+- **Broken obsidian** weapons leave **Obsidian Caltrops** (a battle item). Bows: **Juniper Bow** (small, the old Short
   Bow) and **Yew Longbow** (alpine, hits harder).
 - Who can use paddle-swords: Yoon, Pada, Dama, Falmi and Theenmy. Swords: Theenmy, Falmi, Parl, and Yoon
   after Theenmy's sidequest (switch 4). Staffs: Yoon, Sib, Juda and Tou only.
@@ -434,7 +440,7 @@ Feverish, Despair and Panicked.
 | Dragged Below | Out of the fight and out of reach; **lost (knocked out) after 3 turns** | Black Hounds' Drag Below (and the wells) | **Hit the dragger** to pull them free |
 | Dazzled | Hit −50% for a turn | Children of the Caves | — |
 
-Dispel Herb cures Venom, Hypnotized, Sleep and Confused. State notes: `<Expires Into Knockout: ...>`,
+Pennyroyal Sprig cures Sleep and Hypnotized. State notes: `<Expires Into Knockout: ...>`,
 `<Released When Inflicter Hit>`, `<Cured By Water>` (`SI_Ailments.js`). Enemy skills ready for later
 enemies: Salt Glyph, Drag Below, Hypnotic Gaze, Nightmare. RPG Maker's default Rage state was cleared
 (it duplicated Enraged); Immortal is kept for scripted fights.
@@ -593,7 +599,6 @@ Islander technology, and the bronze-armed All-Seafarers don't have it.
 | Quickening Current | Sib, Juda | 1 | Cures Sleep, Hypnotized and Confused |
 | Chlorine Cloud | Juda; **Sib learns it from Juda's notes** | 2 | All enemies: light Burn, Venom (60%), Panicked (30%) |
 | Shock Net | Dama | 1 + a net | Entangles, with electric Burn |
-| Lye Flask | Dama | 1 | Acid Burn and Defense down |
 
 **Field uses (to build with the overworld):** battery lamps (light in the lava tubes, spending charge);
 **electric fences** set before an invader patrol arrives (they take damage when the battle starts);
@@ -635,8 +640,41 @@ drink while Tipsy turns it into **Disoriented**. It's foreign: the Islanders don
 from Marines (a 1-in-3 drop), Parl, Theenmy or trade, and **All-Seafarer Marines like being offered it**.
 Islander remedies cure cleanly; the outsiders' medicine has a cost.
 
-The old **Dispel Herb** (an RPG Maker leftover) still exists; it overlaps several of these and should be
-retired once a Sleep and Hypnotized cure is placed.
+**Supplies:** Well Water (+15 MP), **Kava** (+40 MP, Fatigue +10), **Til Dew** (+80 MP), **Pennyroyal Sprig**
+(cures Sleep and Hypnotized), **Ephedra Twigs** (Fatigue −20), **Burnt Feather** (revives with 1 HP), Bandage,
+Acid Jar. (Magic Water, Dispel Herb and Stimulant were renamed into these.)
+
+**Battle items:** Lye Flask (acid Burn, DEF down), Pitch Firepot (fire, Smoldering), Chlorine Jar (all enemies,
+may Venom), Ash Bag (Dazzled), Spurge Fish-Stunner (Stunned, sea creatures only), Obsidian Caltrops (all
+enemies may Bleed), Lead Shot (+3 sling stones, harder shots), Smoke Pot (escape, where allowed), Torch (cave
+hit +10%, Threaten +25% on animals), Bait Pouch (an animal's mood +15), Purifying Salt (harms spirits only).
+
+### Meals (how stats grow)
+Levels (Insight) only raise MDF and LUK, so **food is how HP, MP, ATK, DEF, MAT and AGI grow**
+(`SI_Meals.js`). A meal is eaten outside battle: a small heal plus a permanent gain.
+- **One meal per rest:** a character who has eaten is full until the next rest (Recover All, e.g. the
+  campfire).
+- **Each food counts 3 times per character** (Default Cap); after that it only heals. The Sooty Tern Egg
+  counts once.
+- The item screen's help box shows who has eaten it (e.g. "Yoon 2/3 (full)").
+
+| Stat | Foods |
+|---|---|
+| Max HP | Barley Bread (+3), Gofio (+5) |
+| Max MP | Limpets (+3), Goat Milk (+3) |
+| ATK | Grilled Meat, Goat Cheese (+1) |
+| DEF | Dried Fish, Lentil Stew (+1; the stew feeds the whole party) |
+| MAT | Palm Honey (+1, also 10 MP), Islander Wine (+1, 15 MP, Tipsy) |
+| AGI | Dried Figs, Grapes (+1) |
+| All | Sooty Tern Egg (ATK, DEF, MAT, AGI +1, max HP +5; once) |
+
+Talk: the Cave children and forest child-fae like **Dried Figs**; seals and crabs **Limpets**; cave rats
+**Grilled Meat**; Boar-Men **Islander Wine**. Raw Meat waits for crafting (cooking).
+
+**Materials** drop from enemies now and are kept for crafting: Sinew, Bone, Antler, Goat Wool, Mouflon Wool,
+Seal Skin, Tortoise Scute, Obsidian Shard, Lead/Copper/Silver Ore, Tin, Sulfur, Pine Pitch, Orchil Lichen,
+Clay, Coral, Pearl, and trophies (Green Horse Bough, Guardian Lizard Scale, Black Hound Pelt, Hag-Crane
+Feather). Crafting will spend cowries directly from money.
 
 ### Party switching
 - **Switch** battle command: lists reserve members (everyone beyond the four battle slots).
@@ -1227,12 +1265,13 @@ some enemies are better fought: gentle words fail on centipedes, and only Pada c
 | Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
-| Armor sets, charms, size rules | Done: `SI_Outfits.js` (load last) |
+| Armor sets, charms, size rules | Done: `SI_Outfits.js` (after SI_Layout) |
+| Meals (food raises stats) | Done: `SI_Meals.js` (load last) |
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
-| Automated tests | `tests/` (49 tests, about 520 checks; see tests/README.md) |
+| Automated tests | `tests/` (52 tests, about 560 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
@@ -1259,7 +1298,7 @@ category. RPG Maker's fixed entries stay first: Skill 1 (Punch, the Attack comma
 (Guard) and State 1 (Knockout). Plugin parameters and tests refer to these IDs, so moving an
 entry later means updating those references too (the reorganization used a script for this).
 
-- **Items:** Supplies 1; Food & Drink 41; Herbal Remedies 71; Materials 121; Key Items 161
+- **Items:** Supplies 1; Food & Drink 41; Herbal Remedies 71; Materials 121; Battle Items 181; Key Items 221
 - **Weapons:** Knives 1; Swords & Paddle-Swords 51; Spears 91; Axes & Adzes 131; Clubs, Hammers & Maces 171; Staves 211
 - **Armors:** Clothing & Armor 1; Neck 61; Hands (Rings & Gloves) 101; Shields 141; Charms 171; Ranged 241; Glyphs (Tattoos) 281; Codices 341; Collars 371
 - **Skills:** Basic 3; Rest 41; Weapon Techniques 71; Ranged 121; Talk 161; Voltaic 201; Magic 241; Yoon (Ghost) 301; Enemy Skills 371; Unused (MV defaults) 421

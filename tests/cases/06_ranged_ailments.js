@@ -11,7 +11,7 @@ module.exports = {
             pada.onBattleStart(); const refilled = pada.rangedAmmoForSkill(S(123));
             yoon.onBattleStart(); yoon.useItem(S(122)); yoon.useItem(S(122));
             const volley = new Game_Action(yoon); volley.setSkill(128); const volleyHits = volley.makeTargets().length; yoon.useItem(S(128));
-            dama.forceChangeEquip(dama.slotOfType(1), $dataWeapons[92]); dama.forceChangeEquip(dama.slotOfType(6), AR('Fishing Net')); dama.onBattleStart();
+            dama.forceChangeEquip(dama.slotOfType(1), $dataWeapons[92]); dama.forceChangeEquip(dama.slotOfType(6), AR('Fishing Gear')); dama.onBattleStart();
             const harpoonThrows = dama.rangedAmmoForSkill(S(124)), nets = dama.rangedAmmoForSkill(S(125));
             const bat = new Game_Enemy(12, 0, 0); $gameTroop._enemies.push(bat);   // Owl of Ill Omen (flying)
             const eva = id => { const a = new Game_Action(yoon); a.setSkill(id); return a.itemEva(bat); };
@@ -23,7 +23,7 @@ module.exports = {
         t.eq(r.refilled, 3, 'ammo refills next battle');
         t.eq(r.volleyHits, 3, 'Stone Rain fires every stone left');
         t.eq(r.stonesLeft, 0, 'Stone Rain empties the sling');
-        t.eq(r.harpoonThrows, 2, "Dama's harpoon gives 2 javelin throws");
+        t.eq(r.harpoonThrows, 3, "Dama: 1 javelin throw from the harpoon + 2 from her Fishing Gear");
         t.eq(r.nets, 1, '1 net per battle');
         t.eq(r.jabEva, 0.75, 'flyers dodge melee 75%');
         t.eq(r.slingEva, 0, 'ranged attacks ignore evasion');

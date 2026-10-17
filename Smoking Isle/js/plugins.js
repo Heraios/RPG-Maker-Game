@@ -23,5 +23,6 @@ var $plugins =
 {"name":"SI_Equipment","status":true,"description":"Smoking Isle: body-part equipment slots, paired hands, multiple accessories, off-hand knives and two-handed weapons.","parameters":{"Slot Order":"3,9,10,4,11,12,13,13,14,15,16,1,6,2,5,5,5","Slot Names":"13: Left Hand, Right Hand","Offhand Equip Type":"2","Offhand Weapon Types":"1, 14","Offhand Move":"offhand","Two-Handed Weapon Types":"3,4,6"}},
 {"name":"SI_Glyphs","status":true,"description":"Smoking Isle: tattoo and codex equipment slots (spells as glyphs).","parameters":{"Tattoo Equip Type":"7","Codex Equip Type":"8","Tattoo Removal Switch":"2"}},
 {"name":"SI_Layout","status":true,"description":"Smoking Isle: readability layout for battle and equipment screens.","parameters":{"Rest Threshold":"85"}},
-{"name":"SI_Outfits","status":true,"description":"Smoking Isle: armor sets with bonuses, and charm effects (caves, first hits, ranged, criticals, crumbling wards, whispers...).","parameters":{"Set Evasion Cap":"0.15"}}
+{"name":"SI_Outfits","status":true,"description":"Smoking Isle: armor sets with bonuses, and charm effects (caves, first hits, ranged, criticals, crumbling wards, whispers...).","parameters":{"Set Evasion Cap":"0.15"}},
+{"name":"SI_Meals","status":true,"description":"Smoking Isle: food raises stats for good, one meal per rest, a few times per food.","parameters":{"Default Cap":"3"}}
 ];

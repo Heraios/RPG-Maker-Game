@@ -24,6 +24,12 @@
  *   <Moves: sling>          the ranged move it allows (SI_CombatCore)
  *   <Ammo: 5>               uses per battle
  *   <Ranged Power: 8>       power added by ranged skills (not to melee ATK)
+ *   <Ammo: net 1, throw 2>  separate ammo per move (Dama's Fishing Gear)
+ *   <Ranged Power: net 3, throw 16>   power per move
+ *
+ * State note (e.g. from the Lead Shot item):
+ *   <Extra Ammo: sling 3>          +3 uses for items with that move
+ *   <Ranged Power Bonus: sling 6>  +6 power for that move
  *
  * Skill note:
  *   <Ammo Volley>           (ranged) spends ALL remaining ammo from the
@@ -73,10 +79,12 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
             [$dataWeapons, $dataArmors].forEach(function(list) {
                 list.forEach(function(obj) {
                     if (!obj) return;
-                    var ammo = /<Ammo:\s*(\d+)>/i.exec(obj.note);
-                    var power = /<Ranged Power:\s*(\d+)>/i.exec(obj.note);
-                    obj.siAmmo = ammo ? Number(ammo[1]) : 0;
-                    obj.siRangedPower = power ? Number(power[1]) : 0;
+                    var ammo = /<Ammo:\s*([^>]+)>/i.exec(obj.note);
+                    var power = /<Ranged Power:\s*([^>]+)>/i.exec(obj.note);
+                    obj.siAmmoByMove = ammo ? $.perMove(ammo[1]) : null;
+                    obj.siAmmo = ammo ? (obj.siAmmoByMove ? $.total(obj.siAmmoByMove) : Number(ammo[1])) : 0;
+                    obj.siPowerByMove = power ? $.perMove(power[1]) : null;
+                    obj.siRangedPower = power && !obj.siPowerByMove ? Number(power[1]) : 0;
                 });
             });
             $dataSkills.forEach(function(skill) {
@@ -92,6 +100,31 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         return true;
     };
 
+    // "net 1, throw 2" -> { net: 1, throw: 2 }; a plain number -> null.
+    $.perMove = function(text) {
+        if (/^\s*\d+\s*$/.test(text)) return null;
+        var out = {};
+        text.split(',').forEach(function(part) {
+            var w = part.trim().split(/\s+/);
+            if (w.length === 2) out[w[0].toLowerCase()] = Number(w[1]);
+        });
+        return out;
+    };
+
+    $.total = function(map) {
+        return Object.keys(map).reduce(function(sum, k) { return sum + map[k]; }, 0);
+    };
+
+    // Which of the item's per-move ammo a skill would use ('' = shared ammo).
+    $.ammoMove = function(item, skill) {
+        if (!item || !item.siAmmoByMove) return '';
+        var required = (skill && skill.siRequiredMoves) || [];
+        var moves = Object.keys(item.siAmmoByMove).filter(function(m) {
+            return required.length === 0 || required.indexOf(m) >= 0;
+        });
+        return moves[0] || null;
+    };
+
     $.isRanged = function(item) {
         return DataManager.isSkill(item) && !!item.siRanged;
     };
@@ -100,13 +133,35 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
     // Ammo
     //-------------------------------------------------------------------------
 
-    Game_Actor.prototype.ammoUsed = function(slotId) {
-        return (this._siAmmoUsed && this._siAmmoUsed[slotId]) || 0;
+    // <Extra Ammo: sling 3> / <Ranged Power Bonus: sling 6> from states, for an item's moves.
+    Game_Actor.prototype.stateRangedBonus = function(item, tag, move) {
+        if (!item) return 0;
+        var moves = move ? [move] : (item.siMoves || []);
+        return this.states().reduce(function(sum, st) {
+            var re = new RegExp('<' + tag + ':\\s*(\\w+)\\s+(\\d+)>', 'gi'), m;
+            while ((m = re.exec(st.note || ''))) {
+                if (moves.indexOf(m[1].toLowerCase()) >= 0) sum += Number(m[2]);
+            }
+            return sum;
+        }, 0);
     };
 
-    Game_Actor.prototype.ammoLeft = function(slotId) {
+    Game_Actor.prototype.ammoUsed = function(slotId, move) {
+        return (this._siAmmoUsed && this._siAmmoUsed[move ? slotId + ':' + move : slotId]) || 0;
+    };
+
+    // Ammo left in a slot: for one skill's move when given, else in total.
+    Game_Actor.prototype.ammoLeft = function(slotId, skill) {
         var item = this.equips()[slotId];
-        return item ? Math.max((item.siAmmo || 0) - this.ammoUsed(slotId), 0) : 0;
+        if (!item) return 0;
+        if (!item.siAmmoByMove) {
+            if (!item.siAmmo) return 0;
+            return Math.max(item.siAmmo + this.stateRangedBonus(item, 'Extra Ammo') - this.ammoUsed(slotId), 0);
+        }
+        var moves = skill ? [$.ammoMove(item, skill)] : Object.keys(item.siAmmoByMove);
+        return moves.reduce(function(sum, m) {
+            return m ? sum + Math.max(item.siAmmoByMove[m] + this.stateRangedBonus(item, 'Extra Ammo', m) - this.ammoUsed(slotId, m), 0) : sum;
+        }.bind(this), 0);
     };
 
     // The equip slot that would supply a ranged skill: matching move, ammo left.
@@ -119,7 +174,7 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
             var matches = required.length === 0 || (item.siMoves || []).some(function(m) {
                 return required.indexOf(m) >= 0;
             });
-            if (matches && this.ammoLeft(i) > 0) return i;
+            if (matches && this.ammoLeft(i, skill) > 0) return i;
         }
         return -1;
     };
@@ -131,7 +186,7 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
             if (item && item.siAmmo && (required.length === 0 || (item.siMoves || []).some(function(m) {
                 return required.indexOf(m) >= 0;
             }))) {
-                total += this.ammoLeft(i);
+                total += this.ammoLeft(i, skill);
             }
         }, this);
         return total;
@@ -151,8 +206,10 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
             this._siRangedSlot = slot;
             if (slot >= 0) {
                 this._siAmmoUsed = this._siAmmoUsed || {};
-                var spend = item.siVolley ? this.ammoLeft(slot) : 1;
-                this._siAmmoUsed[slot] = this.ammoUsed(slot) + spend;
+                var move = $.ammoMove(this.equips()[slot], item);
+                this._siRangedMove = move;
+                var spend = item.siVolley ? this.ammoLeft(slot, item) : 1;
+                this._siAmmoUsed[move ? slot + ':' + move : slot] = this.ammoUsed(slot, move) + spend;
             }
         }
         _Game_Battler_useItem.call(this, item);
@@ -178,7 +235,10 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
     Game_BattlerBase.prototype.rangedPower = function() {
         if (!this.isActor()) return 0;
         var item = this.equips()[this._siRangedSlot];
-        return item ? item.siRangedPower || 0 : 0;
+        if (!item) return 0;
+        var bonus = this.stateRangedBonus(item, 'Ranged Power Bonus', this._siRangedMove || null);
+        if (item.siPowerByMove) return (item.siPowerByMove[this._siRangedMove] || 0) + bonus;
+        return (item.siRangedPower || 0) + bonus;
     };
 
     Game_BattlerBase.prototype.rangedDamage = function(target, rate) {
@@ -192,6 +252,7 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         var subject = this.subject();
         if ($.isRanged(this.item()) && subject.isActor() && !(subject._siRangedSlot >= 0)) {
             subject._siRangedSlot = subject.rangedSourceSlot(this.item());
+            subject._siRangedMove = $.ammoMove(subject.equips()[subject._siRangedSlot], this.item());
         }
         return _Game_Action_evalDamageFormula.call(this, target);
     };
@@ -203,7 +264,7 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         var subject = this.subject();
         if (item && item.siVolley && subject.isActor()) {
             var slot = subject.rangedSourceSlot(item);
-            return slot >= 0 ? subject.ammoLeft(slot) : 1;
+            return slot >= 0 ? subject.ammoLeft(slot, item) : 1;
         }
         return _Game_Action_numTargets.call(this);
     };

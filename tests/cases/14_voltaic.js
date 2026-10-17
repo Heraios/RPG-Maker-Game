@@ -40,7 +40,7 @@ module.exports = {
             // who knows what
             const knows = (id, n) => $gameActors.actor(id).isLearnedSkill(S(n).id);
             out.sibQuicken = knows(3, 'Quickening Current'); out.sibChlorine = knows(3, 'Chlorine Cloud');
-            out.damaNet = knows(7, 'Shock Net') && knows(7, 'Lye Flask'); out.lasaNone = !knows(4, 'Live Wire');
+            out.damaNet = knows(7, 'Shock Net') && !$dataSkills.some(s => s && s.name === 'Lye Flask'); out.lasaNone = !knows(4, 'Live Wire');
             return out;
         });
         t.eq(r.start, 3, 'a Voltaic Pile starts with 3 charge');
@@ -58,7 +58,7 @@ module.exports = {
         t.ok(r.jolt, 'Galvanic Jolt revives, spending all charge');
         t.eq(r.tender, '3/3', 'a battery tender recharges every pile');
         t.ok(r.sibQuicken && !r.sibChlorine, 'Sib starts with Quickening Current; Chlorine Cloud comes from Juda\'s notes');
-        t.ok(r.damaNet, 'Dama knows Shock Net and Lye Flask');
+        t.ok(r.damaNet, 'Dama knows Shock Net; the Lye Flask skill is gone (it is an item now)');
         t.ok(r.lasaNone, 'non-Islanders have no techniques');
     },
 

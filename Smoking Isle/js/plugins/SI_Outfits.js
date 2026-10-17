@@ -50,6 +50,11 @@
  *                            state
  *   <Escape Bonus: 20>       escaping is 20 points likelier (whole party)
  *
+ * Item tags:
+ *   <Only Vs: sea>           only hits enemies of that kind (Talk Type/Tags)
+ *   <Lure: animal 15>        raises an enemy of that kind's mood by 15
+ *   <Needs Escape>           can only be used where escaping is allowed
+ *
  * Elsewhere: <Talk Start Mood>, <Talk Bonus ... vs kind>, <Insight Bonus>
  * (SI_Talk), <Steal Proof> (SI_Pranks), <Extra Charge>, <Metal> (SI_Voltaic),
  * <Wear Rate>, <Wear Reduce> (SI_Gear), <Battle Start State> (SI_Ailments).
@@ -211,8 +216,14 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
     // Hit, evasion, criticals, damage
     //-------------------------------------------------------------------------
 
+    $.kinds = function(battler) {
+        return battler.isEnemy() && battler.talkData ? battler.talkData().kinds || [] : [];
+    };
+
     var _Game_Action_itemHit = Game_Action.prototype.itemHit;
     Game_Action.prototype.itemHit = function(target) {
+        var only = this.item() && /<Only Vs:\s*([\w-]+)>/i.exec(this.item().note || '');
+        if (only && $.kinds(target).indexOf(only[1].toLowerCase()) < 0) return 0;
         var hit = _Game_Action_itemHit.call(this, target);
         if ($.isCave()) hit += $.sum(this.subject(), 'caveHit');
         return hit;
@@ -246,9 +257,21 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         return value;
     };
 
+    var _Game_Action_testApply = Game_Action.prototype.testApply;
+    Game_Action.prototype.testApply = function(target) {
+        var item = this.item();
+        if (item && /<Needs Escape>/i.test(item.note || '') && !($gameParty.inBattle() && BattleManager.canEscape())) return false;
+        return _Game_Action_testApply.call(this, target);
+    };
+
     var _Game_Action_apply = Game_Action.prototype.apply;
     Game_Action.prototype.apply = function(target) {
         _Game_Action_apply.call(this, target);
+        var lure = this.item() && /<Lure:\s*([\w-]+)\s+(\d+)>/i.exec(this.item().note || '');
+        if (lure && target.isEnemy() && target.result().isHit() && $.kinds(target).indexOf(lure[1].toLowerCase()) >= 0) {
+            target._siMood = (target.talkMood() + Number(lure[2])).clamp(0, 100);
+            target.result().success = true;
+        }
         if (target.isActor() && this.subject().isEnemy() && $gameParty.inBattle()) {
             target._siFirstHitDone = true;
             if (this.isPhysical() && target.result().isHit()) target._siFirstPhysicalDone = true;
