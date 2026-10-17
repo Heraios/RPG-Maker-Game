@@ -3,6 +3,7 @@
 var $plugins =
 [
 {"name":"Community_Basic","status":true,"description":"Basic plugin for manipulating important parameters.","parameters":{"cacheLimit":"20","screenWidth":"1280","screenHeight":"720","changeWindowWidthTo":"1280","changeWindowHeightTo":"720","renderingMode":"auto","alwaysDash":"off"}},
+{"name":"SI_Placeholders","status":true,"description":"Smoking Isle: keeps the game running while art and sound are being replaced. Missing files become invisible/silent stand-ins.","parameters":{"Image Name Fixes":"system/IconSet=Iconset, system/Balloon=balloon, system/Shadow1=Shadow"}},
 {"name":"MadeWithMv","status":true,"description":"Show a Splash Screen \"Made with MV\" and/or a Custom Splash Screen before going to main screen.","parameters":{"Show Made With MV":"true","Made with MV Image":"MadeWithMv","Show Custom Splash":"false","Custom Image":"","Fade Out Time":"120","Fade In Time":"120","Wait Time":"160"}},
 {"name":"SI_CombatCore","status":true,"description":"Smoking Isle core combat: weapon moves, Punch, and Fatigue.","parameters":{"Defense Scale":"20","Weary State":"5","Weary Recovery":"100","Fatigue From Damage":"false","Recover All Clears Fatigue":"true","Hide Unusable Moves In Battle":"true"}},
 {"name":"SI_TurnOrder","status":true,"description":"Smoking Isle: FFX-style turn order. Faster battlers act more often.","parameters":{"Speed Formula":"a.agi + 30","Window Width":"170"}},
