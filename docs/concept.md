@@ -113,6 +113,10 @@ summoned by Juda through the child's murder, who believes it is the child. Their
 out who they were, learn language, recover their body and recover their memories spirals from
 there. The player chooses Yoon's gender and appearance.
 
+**Ghost or demon is genuinely ambiguous, and the game never answers it.** The evidence supports both
+readings. In dialogue the player can have Yoon (and the people around them) lean either way, or stay
+agnostic; the game respects whichever stance the player takes and never confirms it.
+
 - **Weapons (Human form):** knives, staffs/spears, slings. Swords if Theenmy's sidequest is
   completed. Bows if all of Pada's sidequests are completed before his death.
 - **Ghost form:** very low HP. Dodges nearly all physical attacks and takes almost no damage from
@@ -1342,4 +1346,5 @@ entry later means updating those references too (the reorganization used a scrip
 - **The mystery:** how much active deduction is there (gathering evidence, accusations, being
   wrong) versus story-driven reveals? Dama is the one who uncovers Juda; what does the player
   find out themselves?
-- **Is Yoon a ghost or a demon?** Does the game ever answer this, or does it stay ambiguous?
+- ~~Is Yoon a ghost or a demon?~~ **Decided:** it stays genuinely ambiguous; the player can lean
+  either way or stay agnostic.
