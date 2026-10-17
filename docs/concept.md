@@ -416,7 +416,18 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
 - **Priest staves:** Jasper-Tipped Staff (Rite +25%), Glyph-Carved Staff (MAT +6), First Sailor Relic Staff
   (late). **Glyph staves** (Staff of Ahi, Rari, Hagu, Keri, Mahu) work like that tattoo while held: they
   grant the tier-1 spell.
-- **Broken obsidian** weapons leave **Obsidian Caltrops** (a battle item). Bows: **Juniper Bow** (small, the old Short
+- **Broken obsidian** weapons leave **Obsidian Caltrops** (a battle item).
+- **Late and rare weapons:** the **black bronze** legendaries (Knife, Spear, Axe, Mace, plus the Blade;
+  Magic Edge 30, never wear); **grown-coral** First Sailor blades (Grown-Coral Knife and Blade: water spells
+  +15%, 40% Bleed); **Zezengorri's Horn** (a fire spear from the red bull: fire spells +15%, may set targets
+  Smoldering, 20% less Fire damage); the **Living Bough Staff** (a Green Horse's bough: MAT +6, heals 3%
+  HP a turn). Also the **Ash Spear** (light, AGI +2) and the crumbly early **Sinter Knife**.
+- **Shields:** Wicker Buckler and **Hide Buckler** (small, anyone); **Pine Shield** (large, 15% less Fire
+  damage), **Painted Dragon-Tree Shield** (large, Falmi's kind: DEF, MDF, evasion), Tortoise-Shell and Bronze.
+- **Trophy and special gear:** Guardian Lizard Scale (cuirass, fire-proof), Black Hound Pelt (strong cloak
+  that whispers Panicked), Copper-Silver Circlet (priests), **Rubber-Coated Gloves** (insulated: no Voltaic
+  self-shock when Wet), Jasper Ring (Rite +15%), Pearl Earring (charm).
+- **Ranged:** Horn Bow (strongest Islander bow), Copper-Tipped Javelin, Bronze Javelins (Seafarer, 2 throws). Bows: **Juniper Bow** (small, the old Short
   Bow) and **Yew Longbow** (alpine, hits harder).
 - Who can use paddle-swords: Yoon, Pada, Dama, Falmi and Theenmy. Swords: Theenmy, Falmi, Parl, and Yoon
   after Theenmy's sidequest (switch 4). Staffs: Yoon, Sib, Juda and Tou only.
@@ -697,6 +708,23 @@ Acid Jar. (Magic Water, Dispel Herb and Stimulant were renamed into these.)
 may Venom), Ash Bag (Dazzled), Spurge Fish-Stunner (Stunned, sea creatures only), Obsidian Caltrops (all
 enemies may Bleed), Lead Shot (+3 sling stones, harder shots), Smoke Pot (escape, where allowed), Torch (cave
 hit +10%, Threaten +25% on animals), Bait Pouch (an animal's mood +15), Purifying Salt (harms spirits only).
+
+**Healing principle:** states are mostly cured by **items** (remedies, supplies), and HP is mostly
+restored by **healing spells**, so both matter. The exceptions are small: All-Seafarer Grog (the foreign
+"medicine", 30 HP with a cost), revives, and meals (small heals, outside battle).
+
+**Upkeep and buffs:**
+- **Repair items** mend an equipped worn weapon back to its fresh tier: **Pine-Pitch Glue** (stone:
+  obsidian, basalt, andesite, chalcedony, jasper, sinter), **Copper Patch** (copper, copper-silver),
+  **Sinew Binding** (shell, tusk, shark tooth, wood). They can't be used when nothing needs mending.
+- **Battery Discs** restore 3 Voltaic charge.
+- **War paints and snuff** (battle buffs, 5 turns): Orchil War Paint (ATK up), Dragon's-Blood Paint (DEF
+  up), Mint Snuff (AGI up).
+- **Treasures** to sell: Kavakava Figurine, Glyph Tablet Shard, First Sailor Bead.
+
+**Key items:** the body ingredients (Great Boar Flesh, Kin's Blood, Snow Urn, Silver Bracelet, Sea Pearl,
+Canary Bellflower, Dragon-Tree Framework) and clues (Juda's Notes, Parl's Notebook, Tribute Ledger,
+Telegraph Log, Copper Ball, Broken Staff).
 
 ### Meals (how stats grow)
 Levels (Insight) only raise MDF and LUK, so **food is how HP, MP, ATK, DEF, MAT and AGI grow**

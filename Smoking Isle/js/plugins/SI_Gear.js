@@ -49,6 +49,14 @@
  *   <Shatter Hit: 150>  (weapon) the swing that breaks it deals 150% damage
  *                       and may cause Bleed (50%): flying shards (ceramic).
  *
+ * Repair:
+ *   <Repair Kind: stone>   (worn weapon) what repairs it: stone, metal, organic
+ *   <Repair: stone>        (item) restores the target's equipped worn weapons
+ *                          of that kind to the tier they wore down from
+ *                          (Pine-Pitch Glue: stone; Copper Patch: metal;
+ *                          Sinew Binding: organic). Can't be used if nothing
+ *                          needs it.
+ *
  * Items without <Degrades To> never wear (bronze, unique items...).
  *
  * - A weapon is "used" when its owner performs a skill that needs one of the
@@ -101,9 +109,21 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
                     obj.siDegradesTo = to ? Number(to[1]) : -1;
                     obj.siWearChance = chance ? Number(chance[1]) : 0;
                     obj.siBreaksInto = remains ? Number(remains[1]) : 0;
+                    var rk = /<Repair Kind:\s*(\w+)>/i.exec(obj.note);
+                    obj.siRepairKind = rk ? rk[1].toLowerCase() : null;
                     var shatter = /<Shatter Hit:\s*(\d+)>/i.exec(obj.note);
                     obj.siShatterHit = shatter ? Number(shatter[1]) / 100 : 0;
                 });
+            });
+            $dataItems.forEach(function(item) {
+                if (!item) return;
+                var r = /<Repair:\s*(\w+)>/i.exec(item.note || '');
+                item.siRepair = r ? r[1].toLowerCase() : null;
+            });
+            // Worn tier -> the weapon it wore down from.
+            $.baseOf = {};
+            $dataWeapons.forEach(function(w) {
+                if (w && w.siDegradesTo > 0) $.baseOf[w.siDegradesTo] = w.id;
             });
             $._notesParsed = true;
         }
@@ -119,6 +139,40 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
     };
 
     // Rolls wear for the item in the given equip slot. Returns a log message or null.
+    // Equip slots holding a worn weapon this kind of repair can fix.
+    Game_Actor.prototype.repairableSlots = function(kind) {
+        return this.equips().map(function(item, i) {
+            return DataManager.isWeapon(item) && item.siRepairKind === kind && $.baseOf[item.id] ? i : -1;
+        }).filter(function(i) { return i >= 0; });
+    };
+
+    var _Game_Action_testApply = Game_Action.prototype.testApply;
+    Game_Action.prototype.testApply = function(target) {
+        var item = this.item();
+        if (DataManager.isItem(item) && item.siRepair) {
+            return target.isActor() && target.repairableSlots(item.siRepair).length > 0;
+        }
+        return _Game_Action_testApply.call(this, target);
+    };
+
+    var _Game_Action_applyRepair = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        _Game_Action_applyRepair.call(this, target);
+        var item = this.item();
+        if (!DataManager.isItem(item) || !item.siRepair || !target.isActor()) return;
+        var messages = [];
+        target.repairableSlots(item.siRepair).forEach(function(slotId) {
+            var worn = target.equips()[slotId], fixed = $dataWeapons[$.baseOf[worn.id]];
+            target._equips[slotId].setObject(fixed);
+            messages.push('%1\'s %2 is mended into a %3!'.format(target.name(), worn.name, fixed.name));
+        });
+        if (messages.length) {
+            target.refresh();
+            target.result().success = true;
+            if ($gameParty.inBattle()) target._siWearMessages = (target._siWearMessages || []).concat(messages);
+        }
+    };
+
     // Wear chance after the wearer's whetstones and polishing stones (weapons only).
     Game_Actor.prototype.wearChanceFor = function(item) {
         var chance = item.siWearChance;

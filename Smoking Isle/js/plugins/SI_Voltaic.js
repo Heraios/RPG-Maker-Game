@@ -39,6 +39,7 @@
  * Other armor (charms):
  *   <Extra Charge: 1>    a worn pile holds 1 more (Lodestone)
  *   <Metal>              (armor/state) the wearer counts as metal too
+ *   <Insulated>          (armor) a Wet wearer doesn't shock themself
  *
  * Skill note:
  *   <Charge Cost: 1>     charge it spends (needs that much to use)
@@ -175,6 +176,10 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
         return battler.traitObjects().some(function(obj) { return obj && /<Metal>/i.test(obj.note || ''); });
     };
 
+    $.isInsulated = function(battler) {
+        return battler.isActor() && battler.armors().some(function(a) { return /<Insulated>/i.test(a.note || ''); });
+    };
+
     $.isWet = function(battler) {
         return $.wetStates.some(function(id) { return battler.isStateAffected(id); });
     };
@@ -211,7 +216,7 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
         var action = subject ? subject.currentAction() : null;
         var item = action ? action.item() : null;
         _BattleManager_startAction.call(this);
-        if (item && DataManager.isSkill(item) && item.siElectric && $.isWet(subject)) {
+        if (item && DataManager.isSkill(item) && item.siElectric && $.isWet(subject) && !$.isInsulated(subject)) {
             var dmg = Math.max(1, Math.floor(subject.mhp * $.selfShock));
             subject.gainHp(-Math.min(dmg, subject.hp - 1));
             subject.startDamagePopup && subject.startDamagePopup();
