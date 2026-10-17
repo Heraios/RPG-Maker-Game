@@ -106,8 +106,8 @@ there. The player chooses Yoon's gender and appearance.
 - **Human form:** slightly tankier than Sib physically. Single-target buffs and debuffs replace
   the all-target ghost versions. MP is much lower than in Ghost form but still fairly high. Learns
   weaker versions of other party members' abilities through relationship sidequests. The
-  demon/homunculus body is stronger than a normal child's, so Yoon can use some adult-sized
-  weapons and some bronze armor (helms, greaves).
+  demon/homunculus body is stronger than a normal child's, so Yoon can use two-handed weapons and
+  heavy helms and greaves (but not heavy body armor or large shields).
 - **Core role:** support and generalist. Never the best at anything, but potentially competent
   at everything depending on sidequest completion. The player's investment in relationships
   directly determines combat ability.
@@ -498,6 +498,66 @@ skirts), **Greaves** (leg armor), **Feet** (shoes, boots), **Melee**, **Ranged**
   as `<Start Equips: armor 37, armor 39>`.
 - Placeholder items for the new slots: Shell Necklace, Bark-Cloth Cloak, Woven Armlets, Hide Gloves,
   Grass Skirt, Bronze Greaves (+1 Fatigue per turn), Reed Sandals. The test room's chest gives them.
+
+### Armor sets, charms and size rules (design, not built yet)
+**Sets.** Clothing and armor pieces belong to sets. Wearing **2 pieces** of a set gives a small
+bonus; the **whole set** gives the full bonus. A set with only two pieces gives its small bonus with
+**one piece**. Charms never count toward sets. The equip screen shows the set and the count
+("Tapa 3/4").
+
+- Bonuses from different sets **stack** (a clothing set under an armor set is the normal outfit).
+- **Evasion from sets is capped** (about +15% in total).
+- **Talk bonuses stack too**: wearing two groups' gear (e.g. Boar Hide and Bronze) keeps both.
+- The **Feather** set is priest-only (Sib, Juda, Yoon).
+
+| Set | Slots | Small bonus | Full bonus |
+|---|---|---|---|
+| Tapa (bark cloth) | Head, Shoulders, Body, Legs | +5% evasion | +10% evasion; the first enemy attack each battle is likelier to miss |
+| Goat-Skin (tamarco) | Shoulders, Body, Legs, Feet | +10% max HP | Resting outdoors sheds 1 more Fatigue per turn |
+| Boar Hide | Head, Cuirass, Arms, Greaves | +DEF | Boar-Men and boars start one mood step friendlier; Threaten works better on them |
+| Seal Leather | Head, Body, Feet | Resists Wet | Immune to Wet and Sodden; water spells hurt less |
+| Reed and Palm | Head, Legs, Feet | +AGI | +evasion while Wet; still weak to fire |
+| Mouflon Wool | Head, Shoulders, Legs | Resists Chilled | Immune to Chilled; Fatigue builds 10% slower |
+| Feather (priests) | Head, Shoulders | +MAT (1 piece) | Rite +25%; Yoon's Insight reads one level deeper on spirits |
+| Pine Pitch–Hardened Hide | Cuirass, Arms | 10% less Fire damage (1 piece) | Immune to Smoldering |
+| Tortoise Shell | Cuirass, Offhand (large shield) | +DEF (1 piece) | The first physical hit each battle is halved |
+| Lava-Tube Gear | Head, Body | +evasion in caves | The Children of the Caves can't steal from you; prank fights start friendlier |
+| All-Seafarer Bronze | Head, Cuirass, Greaves (+ shield) | +DEF | Marines treat you as one of theirs (Ask, Plead), but you count as `<Metal>` |
+
+Good outfits: Feather + Tapa (the priest), Goat-Skin + Pine Pitch (volcanic desert), Goat-Skin + Boar
+Hide (the hunter), Seal Leather + Tortoise Shell (coastal tank), Mouflon Wool + Boar Hide (alpine),
+Lava-Tube + Pine Pitch (the tubes), Goat-Skin + Bronze (a Marine's padded under-tunic). Seal + Reed
+cancel out (immune to Wet vs. strong while Wet), which players can discover.
+
+**Size rules (children).** The children are **Yoon, Lasa, Sib, Tou and Falmi**. Heavy gear is split
+into armor types by where it is worn:
+
+| Armor type | Examples | Adults | Falmi | Yoon | Lasa, Sib, Tou |
+|---|---|---|---|---|---|
+| Heavy Body | Bronze Cuirass, tortoise-shell cuirass | ✔ | ✘ | ✘ | ✘ |
+| Heavy Head & Legs | Bronze Helm, Bronze Greaves | ✔ | ✔ (long legs) | ✔ | ✘ |
+| Large Shield | Bronze and tortoise-shell shields, dragon-tree wood shields | ✔ | ✔ | ✘ | ✘ |
+| Small Shield | Shield, bucklers | ✔ | ✔ | ✔ | ✔ |
+| Clothing, light leather, wool, feathers | Every other set | ✔ | ✔ | ✔ | ✔ |
+
+- **Falmi** can use every shield and wears bronze helms and greaves, so they can get Bronze's
+  2-piece bonus.
+- **Yoon's** demon/homunculus body is stronger than a child's: heavy helms and greaves and
+  **two-handed weapons**, but no large shields.
+
+**Charms** (first ideas, by biome): shark-tooth necklace, bone fishhook pendant, cowrie anklet,
+coral pendant (water spells +10%) on the beach; reed charm-bundle, hag-crane feather, leech jar in the
+marsh; cave-glow stone, cave-cricket cage, blind crab shell in the lava tubes; copper bracelet,
+silver-plated idol, lead sinker, lodestone (Voltaic) from the mines; goat-horn amulet (Akerbeltz),
+pintadera clay stamp, barley-doll idol in the grasslands; clay idol (Calm at battle start), ceramic
+bead necklace (earth spells +10%), ink pouch, bark-paper prayer strip in the village; til leaf, boar
+tusk pendant, raven feather in the laurel forest; antler toggle, ibex horn, yew bead bracelet,
+juniper smudge bundle in the alpine forest; eagle feather, snow quartz, shell wind-chime on the peak;
+lizard-scale charm, tortoise-shell amulet, vulture feather, obsidian amulet (fire spells +10%) in the
+desert; phonolite bell, basalt whetstone, pumice stone in the quarry; sulfur lump, tin bead,
+hot-spring sinter in the crater; sailor's compass, bronze signet (All-Seafarer); reimiro and a
+whispering **coral eye fragment** (First Sailor relics). Patience's collars: Woven → Hide →
+Shark-Tooth → Coral-Eyed. Rings: silver, bone, obsidian; gloves: hide, sinew wraps.
 
 ### Voltaic techniques (Islander electricity)
 `SI_Voltaic.js`. The **Voltaic Pile** (a Charm) lets **Islanders** (Yoon, Sib, Pada, Dama, Juda) use
