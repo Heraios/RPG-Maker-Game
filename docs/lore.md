@@ -688,8 +688,15 @@ impact crater**: the Red Bowl myth is literally true.
   conquer "All the Sea", which is the entire world as far as anyone knows.
 - **The royal family:** the King has literally dozens of sons and daughters by a comically large
   number of wives, and uses them as his administrators and governors.
-- **Relations with the island:** a **tributary relationship** was established about a decade before
-  Yoon and Sib were born.
+- **Relations with the island:** a **tributary relationship**, paid for **about 30 years** on Juda's
+  advice. **At the start of the game relations are peaceful**, and neither side pushes the point: the
+  Seafarers consider the island a **vassal polity**; the Islanders see the Seafarers as **"rich,
+  friendly strangers we trade with"**.
+- **The Seafarer presence before the invasion** is small:
+  - A **little garrison in Zonfahare**.
+  - A few **ships docked at Mansehare**, with **warehouses** and dock infrastructure.
+  - **Iras**, the tributary official, **married to an Islander woman**.
+  - **Warhus**, the dock-master at Mansehare.
 
 ### Theenmy's plan
 Theenmy fully believes in his father's destiny and loves him, but also happens to be a decent man.
