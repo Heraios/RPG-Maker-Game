@@ -724,13 +724,17 @@ informal militia) with finding out how he stole the pearls and tracking him down
 ## 3d. Yoon, Their Family, and the Murder
 
 ### Yoon's family
-- **Mada:** Yoon's mother, the **village herbalist**, lame in one leg. Keeps some of her own blood for
+- **Mada:** Yoon's mother, the **village herbalist** (considered **the best on the island**), lame in one leg. Keeps some of her own blood for
   ritual potions, which is where the body's ritual gets hers.
-- **Pada:** Yoon's father, the hunter.
+- **Pada:** Yoon's father, considered **the best hunter on the island**.
 - **The twins:** Yoon's younger twin siblings, a boy and a girl. As twins they can see ghosts: they
   see Yoon, they're the ones who tell Pada that Yoon is a ghost, and they give their blood for the body.
 - **Ladder:** the family goat, named because he climbs ladders. Somehow.
 - **Patience:** the family dog.
+
+**Yoon's expected path (flavour only):** a boy would be expected to follow Pada as a hunter, a girl
+Mada as an herbalist, and a third-gender or nonbinary child would be expected to become a priest. Yoon's
+gender and appearance are the player's choice; this only colours dialogue.
 
 ### Yoon and Sib
 Best friends since basically birth. They liked to play in **the lava tubes near the village**. Sib has
