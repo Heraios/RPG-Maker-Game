@@ -421,7 +421,12 @@ forbidden**: Sib learned it from **notes Juda made about First Sailor homunculus
 gender people, and those who "died and came back". Belief is magic on the island: because the culture
 counts them as priests, they can see the dead. Ordinary people, adults and children alike, cannot.
 (Children see the Children of the Caves, not ghosts.) **Sib** (intersex, third gender, and a priest's
-apprentice) and **Yoon's twin siblings** can all see ghost Yoon. This is why Act 1 is spent struggling to make
+apprentice) and **Yoon's twin siblings** can all see ghost Yoon.
+
+**Yoon counts as a priest.** Yoon literally died and came back, the purest case of what drowning
+survivors only do metaphorically (hence the class name, **Returned Child**). That is why Yoon can bear a
+**Face tattoo** (priests only), use priestly gear (jasper weapons, the Feather set, staves) and read
+spirits through Insight. This is why Act 1 is spent struggling to make
 contact, and why Sib, a priest's apprentice, is the one Yoon reaches. It also means **Juda can see
 ghost Yoon**.
 
