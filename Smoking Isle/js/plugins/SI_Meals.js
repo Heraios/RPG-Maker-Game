@@ -28,6 +28,8 @@
  *                   this character won't eat meals (Pada and Juda put the
  *                   children first; Lasa can't eat human food). Trying to
  *                   feed them shows the line instead.
+ *   <Refuses Meals Narrated: You try to eat it, but...>
+ *                   the same, shown as narration (no name or quotes)
  *
  * Resting (Recover All, e.g. the campfire) makes everyone hungry again.
  * Script: SmokingIsle.Meals.rest()     the same without healing
@@ -72,8 +74,14 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
     };
 
     Game_Actor.prototype.mealRefusal = function() {
-        var m = /<Refuses Meals:\s*([^>]*)>/i.exec(this.actor().note || '');
+        var m = /<Refuses Meals(?: Narrated)?:\s*([^>]*)>/i.exec(this.actor().note || '');
         return m ? m[1].trim() : null;
+    };
+
+    Game_Actor.prototype.mealRefusalText = function() {
+        var line = this.mealRefusal();
+        if (/<Refuses Meals Narrated:/i.test(this.actor().note || '')) return line;
+        return this.name() + ': "' + line + '"';
     };
 
     Game_Actor.prototype.isFed = function() {
@@ -134,7 +142,8 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
         if ($.isMeal(item) && actor && !this._actorWindow.cursorAll() && actor.mealRefusal() !== null) {
             SoundManager.playBuzzer();
             this.onActorCancel();   // back to the item list, so the help box shows
-            this._helpWindow.setText(actor.name() + ': "' + actor.mealRefusal() + '"');
+            var text = actor.mealRefusalText(), help = this._helpWindow;
+            if (help.setFittedLines) help.setFittedLines(help.wrapLines(text)); else help.setText(text);
             return;
         }
         _Scene_ItemBase_onActorOk.call(this);

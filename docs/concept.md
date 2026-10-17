@@ -660,6 +660,8 @@ Levels (Insight) only raise MDF and LUK, so **food is how HP, MP, ATK, DEF, MAT 
 - **Pada and Juda won't eat** ("I'm not hungry. Give it to the children." / "The children need it more than
   I do."), and **Lasa can't eat human food** ("Thank you, but I can't eat human food."). Food goes to the
   ones who stay, and it's a quiet hint that they are guests in the party. (`<Refuses Meals: line>`)
+- **The Ghost can't eat:** "You try to eat it, but it slips through your barely-corporeal hands."
+  (`<Refuses Meals Narrated: ...>`, shown as narration.)
 
 | Stat | Foods |
 |---|---|
