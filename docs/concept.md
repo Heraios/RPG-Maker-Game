@@ -39,7 +39,8 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
   ghost. He confronts Sib, and Sib and Lasa spill the beans: Yoon is dead, a ghost, and they're attempting a
   forbidden ritual to restore the body. Pada agrees to help.
 - **Parl's quest comes at the pearl (ingredient 5).** The party hears that one of the Seafarers has
-  stolen a bag of pearls meant as tribute, and hunts him down. How they deal with him decides
+  stolen some of the tribute pearls (Dama and her spearwives are investigating for Chief Tama and the
+  Seafarer official Iras), and hunts him down. How they deal with him decides
   whether he's dead, an enemy, or an ally in Act 4, and Dama's attitude later on.
 
 ### Act 3 — The Mountain
@@ -209,7 +210,7 @@ The village priest, deeply respected by the Islanders, very knowledgeable and wi
   becomes an antagonist. The party loses his combat power exactly when they need it most.
 
 ### Dama — The Chieftess
-Leads the Islanders' spearfishers and militia. Investigates Yoon's death and discovers that Juda
+Leads Mansehare's spearfishers and its informal militia, the **spearwives**. Investigates Yoon's death and discovers that Juda
 did it. Becomes Chieftess by default over the course of the war.
 
 - **Weapons:** knives, spears, paddle-swords, nets, javelins. Her **Fishing Gear** (ranged) holds one net cast
@@ -225,8 +226,10 @@ did it. Becomes Chieftess by default over the course of the war.
 - Cannot die or leave.
 
 ### Parl — The Pearl Thief
-An All-Seafarer deserter sent ahead as a scout before the invasion, disguised as a merchant. He
-stole a bag of pearls meant as tribute. A pearl is the fifth ingredient for Yoon's body, so hunting
+A crewman on the All-Seafarer tribute collector's ship and a literate spy, recording the Islanders
+before the invasion. He stole some of the tribute pearls to fence back home, was found out, and
+deserted into the highlands. Chief Tama and the Seafarer tributary official Iras put Dama and her
+spearwives (Mansehare's informal militia) on the case. A pearl is the fifth ingredient for Yoon's body, so hunting
 him down is an important Act 2 quest.
 
 - **Weapons:** knives, swords, spears, axes, slings or bows. A scrappy survivalist kit from months

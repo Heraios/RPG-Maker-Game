@@ -705,9 +705,12 @@ with the whole situation and **seizes control of the invasion force in a coup**,
 subjugate the island through straightforward brutality (the Princess of Act 5).
 
 ### Parl
-One of the crew of a trader and tribute collector, from **a big city in the All-Seafarer homeland**.
-He deserted the ship after the Islanders realized he had stolen a bag of pearls, which he meant to
-smuggle home to get rich.
+A crewman on the All-Seafarer **tribute collector's** ship, from **a big city in the All-Seafarer
+homeland**, and also a **literate spy**: his job was to write down and record things about the Islanders
+before the invasion. He stole some of the **tribute pearls**, meaning to hide them on the ship and fence
+them back in the capital. He was found out and deserted into the highlands. **Chief Tama** and the
+Seafarer tributary official **Iras** tasked **Dama** and a few of her **spearwives** (Mansehare's
+informal militia) with finding out how he stole the pearls and tracking him down.
 
 ---
 
@@ -1023,8 +1026,6 @@ turns the more evidence was found, the villagers with her are better armed, and 
 - **What are the Navigator-Lord remnants?**
 - **The island's geography:** the settlements are placed (see "Settlements and networks"); the exact map
   layout (which coast faces which way, where the volcano sits) is still open.
-- **Parl's past:** the cast notes call him "a deserter sent as a scout before the invasion,
-  disguised as a merchant"; the lore calls him "a tribute collector's crewman who stole pearls and
-  deserted". Is he both, or only the second?
+- ~~Parl's past~~ **Decided:** both. A tribute collector's crewman *and* a literate spy (see Parl).
 - **Names:** the King of All the Sea, the Princess.
 
