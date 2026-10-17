@@ -15,6 +15,8 @@ module.exports = {
             out.egg = yoon.atk - atk0;
             const sib = $gameActors.actor(3); const def0 = sib.def; out.stew = (eat(sib, 'Lentil Stew'), sib.def - def0);
             out.menuOnly = IT('Gofio').occasion === 2;
+            out.refuse = [5, 6, 4].map(id => { const x = new Game_Action(yoon); x.setItem(IT('Gofio').id); return x.testApply($gameActors.actor(id)) ? 'eats' : $gameActors.actor(id).mealRefusal(); }).join(' | ');
+            const pada = $gameActors.actor(5), pdef = pada.def; { const x = new Game_Action(yoon); x.setItem(IT('Lentil Stew').id); pada.clearResult(); if (x.testApply(pada)) x.apply(pada); } out.padaStew = pada.def - pdef;
             return out;
         });
         t.ok(r.first, 'a hungry character can eat');
@@ -24,6 +26,8 @@ module.exports = {
         t.eq(r.egg, 1, 'a Sooty Tern Egg counts only once');
         t.eq(r.stew, 1, 'Lentil Stew: DEF +1');
         t.ok(r.menuOnly, 'meals are eaten outside battle');
+        t.ok(/children/.test(r.refuse) && /more than I do/.test(r.refuse) && /human food/.test(r.refuse) && !/eats/.test(r.refuse), 'Pada, Juda and Lasa refuse meals: ' + r.refuse);
+        t.eq(r.padaStew, 0, 'Pada gets nothing from the party stew');
     },
 
     'supplies and battle items': async (h, t) => {

@@ -23,6 +23,12 @@
  *                       that it only heals).
  *   <Meal Cap: 1>   this food's own cap (a rare Sooty Tern Egg: once)
  *
+ * Actor note:
+ *   <Refuses Meals: Give it to the children.>
+ *                   this character won't eat meals (Pada and Juda put the
+ *                   children first; Lasa can't eat human food). Trying to
+ *                   feed them shows the line instead.
+ *
  * Resting (Recover All, e.g. the campfire) makes everyone hungry again.
  * Script: SmokingIsle.Meals.rest()     the same without healing
  *
@@ -65,6 +71,11 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
         return (this._siMeals && this._siMeals[item.id]) || 0;
     };
 
+    Game_Actor.prototype.mealRefusal = function() {
+        var m = /<Refuses Meals:\s*([^>]*)>/i.exec(this.actor().note || '');
+        return m ? m[1].trim() : null;
+    };
+
     Game_Actor.prototype.isFed = function() {
         return !!this._siFed;
     };
@@ -82,7 +93,7 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
     // A full character can't eat another meal until they rest.
     var _Game_Action_testApply = Game_Action.prototype.testApply;
     Game_Action.prototype.testApply = function(target) {
-        if ($.isMeal(this.item()) && target.isActor() && target.isFed()) return false;
+        if ($.isMeal(this.item()) && target.isActor() && (target.isFed() || target.mealRefusal() !== null)) return false;
         return _Game_Action_testApply.call(this, target);
     };
 
@@ -110,8 +121,23 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
         if (!$.isMeal(item)) return '';
         return $gameParty.members().map(function(a) {
             var n = Math.min(a.mealsEaten(item), item.siMealCap);
+            if (a.mealRefusal() !== null) return a.name() + ' (won\'t eat)';
             return a.name() + ' ' + n + '/' + item.siMealCap + (a.isFed() ? ' (full)' : '');
         }).join(' · ');
+    };
+
+    // Feeding someone who refuses: they say why.
+    var _Scene_ItemBase_onActorOk = Scene_ItemBase.prototype.onActorOk;
+    Scene_ItemBase.prototype.onActorOk = function() {
+        var item = this.item();
+        var actor = $gameParty.members()[this._actorWindow.index()];
+        if ($.isMeal(item) && actor && !this._actorWindow.cursorAll() && actor.mealRefusal() !== null) {
+            SoundManager.playBuzzer();
+            this.onActorCancel();   // back to the item list, so the help box shows
+            this._helpWindow.setText(actor.name() + ': "' + actor.mealRefusal() + '"');
+            return;
+        }
+        _Scene_ItemBase_onActorOk.call(this);
     };
 
     var _Window_Help_setItem = Window_Help.prototype.setItem;

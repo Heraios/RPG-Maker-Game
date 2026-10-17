@@ -657,6 +657,9 @@ Levels (Insight) only raise MDF and LUK, so **food is how HP, MP, ATK, DEF, MAT 
 - **Each food counts 3 times per character** (Default Cap); after that it only heals. The Sooty Tern Egg
   counts once.
 - The item screen's help box shows who has eaten it (e.g. "Yoon 2/3 (full)").
+- **Pada and Juda won't eat** ("I'm not hungry. Give it to the children." / "The children need it more than
+  I do."), and **Lasa can't eat human food** ("Thank you, but I can't eat human food."). Food goes to the
+  ones who stay, and it's a quiet hint that they are guests in the party. (`<Refuses Meals: line>`)
 
 | Stat | Foods |
 |---|---|
