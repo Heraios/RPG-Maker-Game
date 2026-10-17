@@ -45,6 +45,7 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
     $.BASE_HEIGHT = 624;
     $.LIST_WIDTH = 560;   // skill and item lists (bottom-left, above the commands)
     $.LIST_ROWS = 6;
+    $.COMMAND_WIDTH = 240;  // battle command column (bottom-left)
 
     //-------------------------------------------------------------------------
     // Art made for 816 x 624: scale to cover the screen
@@ -111,6 +112,21 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
 
     Scene_Battle.prototype.layoutForWidescreen = function() {
         var status = this._statusWindow;
+        // A wider command column, so "Weapon Swap" and "Party Swap" fit.
+        var cmdWidth = $.COMMAND_WIDTH;
+        [this._partyCommandWindow, this._actorCommandWindow, this._skillTypeWindow, this._tacticsWindow].forEach(function(win) {
+            if (!win) return;
+            win._windowWidth = cmdWidth;
+            win.width = cmdWidth;
+            win.createContents();
+            win.refresh();
+        });
+        [status, this._enemyWindow, this._actorWindow].forEach(function(win) {
+            if (!win) return;
+            win.move(cmdWidth, win.y, Graphics.boxWidth - cmdWidth, win.height);
+            win.createContents();
+            win.refresh();
+        });
         var top = 0;
         var order = this._turnOrderWindow;
         if (order) {

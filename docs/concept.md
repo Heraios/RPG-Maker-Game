@@ -508,19 +508,31 @@ still to be designed.
   RPG Maker's default was 16). Holding OK still speeds it up.
 
 ### Battle menu
-**Skills, Talk, Guard, Tactics**.
-- **Skills** opens the character's skill types (Magic, Physical, Rest) in the same place. **Punch** is
-  the first Physical skill (every character with Physical skills has it).
+**Fight, Talk, Tactics** (`SI_BattleMenu.js`).
+```
+Fight
+├─ Physical   Punch, Guard, then weapon and ranged skills
+├─ Magical    spells
+├─ Cultural   Islander Voltaic techniques; Seafarer techniques later
+└─ Innate     magical beings' own powers: Yoon's ghost skills (also Lasa, Falmi, Tou later)
+Talk          Soothe, Offer, Ask, Rite, Threaten, Plead, Stalk, Heel, Girl!
+Tactics
+├─ Resting      Catch Breath, Heavy Panting, Hunter's Repose, Become Ethereal
+├─ Weapon Swap
+├─ Party Swap   (only with reserve members)
+├─ Item
+└─ Escape       (only where escaping is allowed)
+```
+- A Fight category only appears if the character has a skill in it; with only one, Fight goes straight
+  to that list. Sealed types are greyed out (e.g. Weary seals Physical, Magical and Innate).
+- Skill types in the database: 1 Magical, 2 Physical, 3 Resting, 4 Talk, 5 Cultural, 6 Innate.
 - Skill lists are one wide column and show every cost: MP, the Fatigue a skill adds (+3 FT, in green)
-  or recovers (−15~20 FT, in light green), and ranged ammo left (x3).
+  or recovers (−15~20 FT, in light green), ranged ammo left (x3) and Voltaic charge.
 - The FT number turns **yellow above 85** (resting skills unlock) and **red at 100** (Weary).
 - The enemy target list is one column and shows each enemy's state icons.
-- Equip screen: the slot list runs the full height of the right side so all 14 slots fit with little
-  scrolling; the item list sits under the stats. (`SI_Layout.js`; window art and icons are placeholders.)
-- **Tactics** opens **Swap, Item, Switch, Escape** the same way, and is greyed out if none can be used.
-  A failed escape uses up the current character's turn.
-- Cancel steps back one window at a time. A character with only one skill type goes straight to its list, and
-sealed types (e.g. while Weary) are greyed out.
+- Equip screen: the slot list runs the full height of the right side; the item list sits under the stats.
+- Tactics is greyed out if none of its commands can be used. A failed escape uses up the turn.
+- Cancel steps back one window at a time.
 
 ### Equipment slots
 `SI_Equipment.js`. Top to bottom: **Head** (helmets, hats, circlets, bandanas), **Neck** (amulets,

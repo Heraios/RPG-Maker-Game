@@ -3,35 +3,44 @@
 //=============================================================================
 
 /*:
- * @plugindesc Smoking Isle: Skills and Tactics submenus for the battle command menu.
+ * @plugindesc Smoking Isle: Fight / Talk / Tactics battle menu with submenus.
  * @author Smoking Isle
  *
  * @param Skills Command
- * @desc Name of the battle command that opens the skill type list.
- * Leave empty to use the database's "Skill" term.
- * @default
+ * @desc Name of the battle command that opens the fighting skill types.
+ * @default Fight
+ *
+ * @param Fight Types
+ * @desc Skill type ids listed under Fight, in order (Physical, Magical,
+ * Cultural, Innate).
+ * @default 2,1,5,6
+ *
+ * @param Rest Type
+ * @desc Skill type id of resting skills (listed under Tactics as Rest).
+ * @default 3
  *
  * @param Tactics Command
- * @desc Name of the battle command that groups Swap, Item and Switch.
+ * @desc Name of the battle command that groups Rest, Swap, Switch, Item and Escape.
  * @default Tactics
  *
  * @param Tactics Symbols
  * @desc Commands moved under Tactics, by internal symbol, in order.
- * @default swap,item,switch,escape
+ * @default rest,swap,switch,item,escape
  *
  * @help
- * The actor command window shows a single Skills command instead of one
- * command per skill type (Magic, Physical, Rest...). Choosing it opens a
- * list of the character's skill types in the same place; choosing a type
- * opens that skill list. Cancel steps back one window at a time.
+ * The battle menu is Fight / Talk / Tactics.
  *
- * A character with only one skill type goes straight to that skill list.
- * Sealed skill types (e.g. while Weary) are shown greyed out.
+ * Fight opens the character's fighting skill types (Fight Types, in that
+ * order: Physical, Magical, Cultural, Innate). A type only appears if the
+ * character has a skill of it; with only one, Fight goes straight to that
+ * list. Physical always holds Punch and Guard first. Sealed types (e.g.
+ * while Weary) are greyed out.
  *
- * Tactics works the same way for Swap (SI_Gear), Item, Switch
- * (SI_PartySwitch) and Escape. It is greyed out when none of them can be
+ * Tactics opens Rest (resting skills), Swap (SI_Gear), Switch
+ * (SI_PartySwitch), Item and Escape. It is greyed out when none can be
  * used. Escape is shown when the battle allows escaping; a failed escape
- * uses up the current character's turn.
+ * uses up the current character's turn. Cancel steps back one window at a
+ * time.
  */
 
 var Imported = Imported || {};
@@ -44,20 +53,38 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
     'use strict';
 
     var params = PluginManager.parameters('SI_BattleMenu');
-    $.commandName = String(params['Skills Command'] || '');
+    $.commandName = String(params['Skills Command'] || 'Fight');
+    $.fightTypes = String(params['Fight Types'] || '2,1,5,6').split(',').map(Number);
+    $.restType = Number(params['Rest Type'] || 3);
     $.tacticsName = String(params['Tactics Command'] || 'Tactics');
-    $.tacticsSymbols = String(params['Tactics Symbols'] || 'swap,item,switch,escape').split(',').map(function(s) {
+    $.tacticsSymbols = String(params['Tactics Symbols'] || 'rest,swap,switch,item,escape').split(',').map(function(s) {
         return s.trim();
     });
 
-    // Skill types shown under Skills. Talk (SI_Talk) has its own command.
+    $.hasSkillOfType = function(actor, stypeId) {
+        return actor.skills().some(function(skill) { return skill.stypeId === stypeId; });
+    };
+
+    // Skill types shown under Fight, in Fight Types order: only the ones the
+    // character has a skill of (Physical always: Punch and Guard live there).
     $.skillTypes = function(actor) {
-        var talk = SmokingIsle.Talk ? SmokingIsle.Talk.stypeId : -1;
-        return actor.addedSkillTypes().filter(function(id) {
-            return id !== talk;
-        }).sort(function(a, b) {
-            return a - b;
+        var added = actor.addedSkillTypes();
+        return $.fightTypes.filter(function(id) {
+            return added.indexOf(id) >= 0 && (id === 2 || $.hasSkillOfType(actor, id));
         });
+    };
+
+    // Physical lists Punch, then Guard, then the weapon skills.
+    var _Window_BattleSkill_makeItemList = Window_BattleSkill.prototype.makeItemList;
+    Window_BattleSkill.prototype.makeItemList = function() {
+        _Window_BattleSkill_makeItemList.call(this);
+        if (this._actor && this._stypeId === 2) {
+            var guard = $dataSkills[this._actor.guardSkillId()];
+            var punch = $dataSkills[this._actor.attackSkillId()];
+            if (guard && this._data.indexOf(guard) < 0) {
+                this._data.splice(this._data[0] === punch ? 1 : 0, 0, guard);
+            }
+        }
     };
 
     //-------------------------------------------------------------------------
@@ -77,9 +104,14 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
         _Window_ActorCommand_makeCommandList.call(this);
         this._tacticsCommands = [];
         if (!this._actor) return;
+        if (this._actor.addedSkillTypes().indexOf($.restType) >= 0 && $.hasSkillOfType(this._actor, $.restType)) {
+            this.addCommand($dataSystem.skillTypes[$.restType] || 'Rest', 'rest', !this._actor.isSkillTypeSealed($.restType));
+        }
         if (BattleManager.canEscape()) {
             this.addCommand(TextManager.escape, 'escape', true);
         }
+        // Guard is a Physical skill now, not a main command.
+        this._list = this._list.filter(function(command) { return command.symbol !== 'guard'; });
         var insertAt = -1;
         this._list = this._list.filter(function(command, i) {
             if ($.tacticsSymbols.indexOf(command.symbol) < 0) return true;
@@ -198,6 +230,7 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
         this.addWindow(this._tacticsWindow);
         this._actorCommandWindow.setHandler('tactics', this.commandTactics.bind(this));
         this._actorCommandWindow.setHandler('escape', this.commandEscape.bind(this));
+        this._actorCommandWindow.setHandler('rest', this.commandRest.bind(this));
     };
 
     // Windows bind their cancel handlers when created, so wrap them before that.
@@ -246,6 +279,12 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
         win.activate();
     };
 
+    // Rest (under Tactics): the resting skill list.
+    Scene_Battle.prototype.commandRest = function() {
+        this._skillTypeWindow.hide();
+        this.openSkillList($.restType);
+    };
+
     Scene_Battle.prototype.onTacticsCancel = function() {
         this._tacticsWindow.hide();
         this._actorCommandWindow.activate();
@@ -279,6 +318,13 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
     ['onEnemyCancel', 'onActorCancel'].forEach(function(name) {
         var original = Scene_Battle.prototype[name];
         Scene_Battle.prototype[name] = function() {
+            if (this._actorCommandWindow.currentSymbol() === 'tactics' &&
+                    this._tacticsWindow.currentSymbol() === 'rest') {
+                (name === 'onEnemyCancel' ? this._enemyWindow : this._actorWindow).hide();
+                this._skillWindow.show();
+                this._skillWindow.activate();
+                return;
+            }
             if (this._actorCommandWindow.currentSymbol() === 'tactics' &&
                     this._tacticsWindow.currentSymbol() === 'item') {
                 (name === 'onEnemyCancel' ? this._enemyWindow : this._actorWindow).hide();
@@ -327,6 +373,8 @@ SmokingIsle.BattleMenu = SmokingIsle.BattleMenu || {};
         this._skillWindow.hide();
         if (this._skillTypeWindow.visible) {
             this._skillTypeWindow.activate();
+        } else if (this._tacticsWindow.visible) {
+            this._tacticsWindow.activate();
         } else {
             this._actorCommandWindow.activate();
         }

@@ -16,7 +16,7 @@ module.exports = {
         t.ok(r.quick < r.slow, `a cheap action lands sooner (${r.quick}) than a slow one (${r.slow})`);
     },
 
-    'main menu, Skills submenu and Tactics submenu': async (h, t) => {
+    'main menu: Fight, Talk, Tactics and their submenus': async (h, t) => {
         await h.battle();
         t.eq(await h.toCommand(), 'input', 'reached a command menu');
         const r = await h.eval(() => {
@@ -34,12 +34,20 @@ module.exports = {
             const itemOpen = s._itemWindow.active;
             s._itemWindow.processCancel();
             const backToTactics = s._tacticsWindow.active;
-            return { main, tactics, types, physical, itemOpen, backToTactics };
+            s._tacticsWindow.selectSymbol('rest'); s._tacticsWindow.processOk();
+            const rest = s._skillWindow.active ? s._skillWindow._data.map(x => x && x.name) : [];
+            s._skillWindow.processCancel();
+            const restBack = s._tacticsWindow.active;
+            const yoon2 = $gameActors.actor(2); ['Ahi', 'Burning Touch'].forEach(n => yoon2.learnSkill($dataSkills.find(x => x && x.name === n).id)); const yoonTypes = SmokingIsle.BattleMenu.skillTypes(yoon2).map(id => $dataSystem.skillTypes[id]);
+            return { main, tactics, types, physical, itemOpen, backToTactics, rest, restBack, yoonTypes };
         });
-        t.eq(r.main.join('/'), 'Skills/Talk/Guard/Tactics', 'main menu');
-        t.eq(r.tactics.join('/'), 'Swap/Item/Escape', 'Tactics submenu (no reserve members, so no Switch)');
-        t.eq(r.types.join('/'), 'Magic/Physical/Rest', 'Skills submenu leaves Talk out');
-        t.eq(r.physical[0], 'Punch', 'Punch is the first Physical skill: ' + r.physical);
+        t.eq(r.main.join('/'), 'Fight/Talk/Tactics', 'main menu');
+        t.eq(r.tactics.join('/'), 'Resting/Weapon Swap/Item/Escape', 'Tactics submenu (no reserve members, so no Switch)');
+        t.eq(r.types.join('/'), 'Physical/Magical', 'Fight: only the types this character has skills in');
+        t.eq(r.physical.slice(0, 2).join('/'), 'Punch/Guard', 'Physical starts with Punch and Guard: ' + r.physical);
+        t.ok(r.rest.includes('Catch Breath'), 'Resting (under Tactics) lists the resting skills: ' + r.rest);
+        t.ok(r.restBack, 'Cancel from Resting returns to Tactics');
+        t.eq(r.yoonTypes.join('/'), 'Physical/Magical/Cultural/Innate', "Yoon's Fight menu (ghost skills are Innate)");
         t.ok(r.itemOpen, 'Item opens from Tactics');
         t.ok(r.backToTactics, 'Cancel from Item returns to Tactics');
     },
