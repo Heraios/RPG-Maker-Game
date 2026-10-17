@@ -43,6 +43,9 @@
  *                       can be sold or repaired. Without it, broken stone,
  *                       bone and wood gear simply disappears.
  *
+ *   <Shatter Hit: 150>  (weapon) the swing that breaks it deals 150% damage
+ *                       and may cause Bleed (50%): flying shards (ceramic).
+ *
  * Items without <Degrades To> never wear (bronze, unique items...).
  *
  * - A weapon is "used" when its owner performs a skill that needs one of the
@@ -95,6 +98,8 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
                     obj.siDegradesTo = to ? Number(to[1]) : -1;
                     obj.siWearChance = chance ? Number(chance[1]) : 0;
                     obj.siBreaksInto = remains ? Number(remains[1]) : 0;
+                    var shatter = /<Shatter Hit:\s*(\d+)>/i.exec(obj.note);
+                    obj.siShatterHit = shatter ? Number(shatter[1]) / 100 : 0;
                 });
             });
             $._notesParsed = true;
@@ -111,9 +116,12 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
     };
 
     // Rolls wear for the item in the given equip slot. Returns a log message or null.
-    Game_Actor.prototype.rollWear = function(slotId) {
+    // worn: a roll made earlier (see startAction); omitted = roll now.
+    Game_Actor.prototype.rollWear = function(slotId, worn) {
         var item = this.equips()[slotId];
-        if (!$.canWear(item) || Math.random() * 100 >= item.siWearChance) return null;
+        if (!$.canWear(item)) return null;
+        if (worn === undefined) worn = Math.random() * 100 < item.siWearChance;
+        if (!worn) return null;
         var list = DataManager.isWeapon(item) ? $dataWeapons : $dataArmors;
         var next = item.siDegradesTo > 0 ? list[item.siDegradesTo] : null;
         this._equips[slotId].setObject(next);
@@ -145,13 +153,50 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
         return -1;
     };
 
+    // Weapon wear is rolled when the action starts, so a weapon that is about
+    // to break can shatter on that very swing (<Shatter Hit>).
+    var _BattleManager_startAction = BattleManager.startAction;
+    BattleManager.startAction = function() {
+        var subject = this._subject;
+        var action = subject ? subject.currentAction() : null;
+        var item = action ? action.item() : null;
+        if (subject && subject.isActor()) {
+            subject._siPendingWear = null;
+            var slotId = DataManager.isSkill(item) ? subject.weaponSlotForSkill(item) : -1;
+            var weapon = slotId >= 0 ? subject.equips()[slotId] : null;
+            if ($.canWear(weapon)) {
+                subject._siPendingWear = { slotId: slotId, worn: Math.random() * 100 < weapon.siWearChance };
+            }
+        }
+        _BattleManager_startAction.call(this);
+    };
+
+    // The pending wear will break this weapon, and it shatters (<Shatter Hit>).
+    Game_Actor.prototype.isShattering = function() {
+        var p = this._siPendingWear;
+        var weapon = p && p.worn ? this.equips()[p.slotId] : null;
+        return !!weapon && weapon.siShatterHit > 0 && weapon.siDegradesTo === 0 ? weapon : null;
+    };
+
+    var _Game_Action_executeDamage = Game_Action.prototype.executeDamage;
+    Game_Action.prototype.executeDamage = function(target, value) {
+        var subject = this.subject();
+        var weapon = subject.isActor() && this.isPhysical() ? subject.isShattering() : null;
+        if (weapon && value > 0) value = Math.round(value * weapon.siShatterHit);
+        _Game_Action_executeDamage.call(this, target, value);
+        var bleed = SmokingIsle.Ailments ? SmokingIsle.Ailments.bleedStateId : 0;
+        if (weapon && value > 0 && bleed && target.isAlive() && Math.random() < 0.5) target.addState(bleed);
+    };
+
     var _BattleManager_endAction = BattleManager.endAction;
     BattleManager.endAction = function() {
         var subject = this._subject;
         var item = this._action ? this._action.item() : null;
+        var pending = subject && subject.isActor() ? subject._siPendingWear : null;
+        if (subject && subject.isActor()) subject._siPendingWear = null;
         if (subject && subject.isActor() && DataManager.isSkill(item)) {
             var slotId = subject.weaponSlotForSkill(item);
-            var message = slotId >= 0 ? subject.rollWear(slotId) : null;
+            var message = slotId >= 0 ? subject.rollWear(slotId, pending && pending.slotId === slotId ? pending.worn : undefined) : null;
             if (message) {
                 this._logWindow.push('addText', message);
                 this._logWindow.push('wait');

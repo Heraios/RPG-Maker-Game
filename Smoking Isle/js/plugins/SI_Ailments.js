@@ -44,6 +44,9 @@
  *                       of each turn (Happy)
  *   <Guaranteed Crit>   the next damaging attack is a critical; removed
  *                       after it (Focused)
+ *   <Stacks Into: Disoriented>
+ *                       getting this state again while already affected
+ *                       turns it into the named state instead (Tipsy)
  * Mental ailments are the "Mental States" set on SI_Insight.
  *
  * ============================================================================
@@ -66,6 +69,9 @@
  * ============================================================================
  *   <Bleed Chance: 50>   physical hits by the wearer may inflict the
  *                        Bleed State (e.g. Dama's harpoon)
+ *   <Battle Start State: Resin>
+ *                        the wearer starts every battle with this state
+ *                        (the Dragonheart Greatsword)
  */
 
 var Imported = Imported || {};
@@ -88,6 +94,18 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
     // Note tags
     //-------------------------------------------------------------------------
 
+    $.stateByName = function(name) {
+        name = String(name || '').trim().toLowerCase();
+        var state = $dataStates.filter(function(st) { return st && st.name.toLowerCase() === name; })[0];
+        return state ? state.id : 0;
+    };
+
+    $.stateTag = function(note, tag) {
+        var m = new RegExp('<' + tag + ':\\s*([^>]+)>', 'i').exec(note || '');
+        if (!m) return 0;
+        return /^\d+$/.test(m[1].trim()) ? Number(m[1]) : $.stateByName(m[1]);
+    };
+
     $.num = function(note, tag) {
         var m = new RegExp('<' + tag + ':\\s*(\\d+)>', 'i').exec(note || '');
         return m ? Number(m[1]) : 0;
@@ -104,6 +122,7 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
                 s.siMentalWard = /<Mental Ward>/i.test(s.note);
                 s.siCuresMental = /<Cures Mental>/i.test(s.note);
                 s.siGuaranteedCrit = /<Guaranteed Crit>/i.test(s.note);
+                s.siStacksInto = $.stateTag(s.note, 'Stacks Into');
             });
             $dataSkills.forEach(function(s) {
                 if (!s) return;
@@ -115,7 +134,11 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
                 s.siRequiredAllMoves = all ? SmokingIsle.Combat.parseList(all[1]) : [];
             });
             [$dataWeapons, $dataArmors].forEach(function(list) {
-                list.forEach(function(obj) { if (obj) obj.siBleedChance = $.num(obj.note, 'Bleed Chance'); });
+                list.forEach(function(obj) {
+                    if (!obj) return;
+                    obj.siBleedChance = $.num(obj.note, 'Bleed Chance');
+                    obj.siBattleStartState = $.stateTag(obj.note, 'Battle Start State');
+                });
             });
             $._notesParsed = true;
         }
@@ -159,6 +182,12 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
 
     var _Game_Battler_addState = Game_Battler.prototype.addState;
     Game_Battler.prototype.addState = function(stateId) {
+        var stacks = $dataStates[stateId] && $dataStates[stateId].siStacksInto;
+        if (stacks && this.isStateAffected(stateId) && this.isStateAddable(stacks)) {
+            this.eraseState(stateId);
+            this.addState(stacks);
+            return;
+        }
         if ($.isMental(stateId) && this.isStateAddable(stateId)) {
             var ward = this.states().filter(function(s) { return s.siMentalWard; })[0];
             if (ward) {
@@ -170,6 +199,17 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
         _Game_Battler_addState.call(this, stateId);
         var added = $dataStates[stateId];
         if (added && added.siCuresMental && this.isStateAffected(stateId)) this.cureMentalAilments();
+    };
+
+    // Equipment that starts every battle with a state (Resin).
+    var _Game_Battler_onBattleStart = Game_Battler.prototype.onBattleStart;
+    Game_Battler.prototype.onBattleStart = function() {
+        _Game_Battler_onBattleStart.call(this);
+        if (!this.isActor()) return;
+        this.equips().forEach(function(item) {
+            if (item && item.siBattleStartState) this.addState(item.siBattleStartState);
+        }, this);
+        this.clearResult();
     };
 
     Game_Battler.prototype.cureMentalAilments = function() {

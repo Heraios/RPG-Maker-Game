@@ -457,7 +457,9 @@ Destroyer** (revealed later).
 | **Copper**, **copper-silver** | Knives, spears, axes, maces | The Islanders' metals. Copper-silver is a little more durable and adds a little magic damage |
 | **Tin-bronze** | Knives, spears, axes, maces, **swords** | All-Seafarer; tin comes from the crater rim |
 | **"Black bronze"** (copper, silver, gold) | Late-game legendary weapons | First Sailor work |
-| **Coral** (proposed) | Studs on clubs (rasping, Crush + Cut); inlays as glyph foci. **First Sailor "grown" coral**, magic-hardened, for rare, unsettling blades from the ruins | Natural coral is too brittle for an edge; it's the same material as the soul-holding moai eyes |
+| **Coral** | Studs on clubs (rasping, festering cuts; the **Coral-Studded Club** draws on water magic); inlays as glyph foci. **First Sailor "grown" coral**, magic-hardened, for rare, unsettling blades from the ruins | Natural coral is too brittle for an edge; it's the same material as the soul-holding moai eyes |
+| **Ceramic** (fired clay) | Cheap mace heads | Brittle: hits hard and shatters. Fired earth, so it lends itself to earth magic. Any village with a kiln can make it |
+| **Obsidian** and fire | — | Volcanic glass carries the mountain's fire: every obsidian weapon strengthens fire magic |
 | **Star-metal** | A late-game weapon tied to **the Destroyer** | Iron from the stolen star's fall: a piece of what he took. Open question: taken from his side, or forged or hidden by Juda? |
 
 ### Woods (decided)

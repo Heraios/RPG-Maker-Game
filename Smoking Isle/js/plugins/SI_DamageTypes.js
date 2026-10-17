@@ -44,6 +44,12 @@
  *                      magic (against the target's magic damage rate):
  *                      copper-silver and First Sailor black bronze.
  *
+ * Weapon / armor note:
+ *   <Spell Boost: fire 10>   magic skills of that source (<Source: fire>) used
+ *                            while it is equipped deal 10% more (obsidian:
+ *                            fire, coral: water, ceramic: earth). Several
+ *                            pieces add up.
+ *
  * A skill without <Damage> but used with a weapon that has one (e.g. the
  * Attack command) uses the weapon's profile. Anything without a profile
  * works the way MV normally does.
@@ -93,6 +99,13 @@ SmokingIsle.DamageTypes = SmokingIsle.DamageTypes || {};
             [$dataSkills, $dataItems, $dataWeapons].forEach(function(list) {
                 list.forEach(function(obj) { if (obj) $.parse(obj); });
             });
+            [$dataWeapons, $dataArmors].forEach(function(list) {
+                list.forEach(function(obj) {
+                    if (!obj) return;
+                    var b = /<Spell Boost:\s*(\w+)\s+(\d+)>/i.exec(obj.note || '');
+                    obj.siSpellBoost = b && $.SOURCE[b[1].toLowerCase()] ? { source: $.SOURCE[b[1].toLowerCase()], rate: Number(b[2]) / 100 } : null;
+                });
+            });
             $._notesParsed = true;
         }
         return true;
@@ -140,7 +153,18 @@ SmokingIsle.DamageTypes = SmokingIsle.DamageTypes || {};
         if (weapon && weapon.siMagicEdge > 0 && value > 0 && this.isPhysical()) {
             value += Math.round(value * weapon.siMagicEdge / 100 * target.mdr * target.elementRate($.TYPE.magical));
         }
+        var boost = this.spellBoost();
+        if (boost > 0 && value > 0) value = Math.round(value * (1 + boost));
         return value;
+    };
+
+    // Extra share for a magic skill from the user's <Spell Boost> equipment.
+    Game_Action.prototype.spellBoost = function() {
+        var item = this.item(), subject = this.subject();
+        if (!item || !item.siSource || !this.isMagical() || !subject.isActor()) return 0;
+        return subject.equips().reduce(function(sum, eq) {
+            return eq && eq.siSpellBoost && eq.siSpellBoost.source === item.siSource ? sum + eq.siSpellBoost.rate : sum;
+        }, 0);
     };
 
     Game_Action.prototype.makeProfiledDamageValue = function(target, critical) {

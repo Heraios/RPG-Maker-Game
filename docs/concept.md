@@ -352,17 +352,35 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
 |------|-------|------|-------------|----------|---------------|--------|---------------|--------|
 | Knife (jab, thrust, vital, slash) | Shell Knife (3; jab, slash) | Tusk Knife (4; no slash) | Shark-Tooth Knife (5; jab, slash; 30% Bleed) | Obsidian Knife (6) | | Copper Knife (6) | Copper-Silver Knife (6) | Bronze Knife (8) |
 | Paddle-sword (one-handed; slash, chop, bludgeon) | | | Shark-Tooth Paddle (9; 30% Bleed) | Obsidian Paddle (11) | | | | |
-| Spear (jab, thrust, sweep) | | | | Obsidian Spear (10) | | Copper Spear (10) | Copper-Silver Spear (10) | Bronze Spear (13) |
+| Spear (jab, thrust, sweep) | | | | Obsidian Spear (10) | Wooden Spear (6); Fire-Hardened Spear (6) | Copper Spear (10) | Copper-Silver Spear (10) | Bronze Spear (13) |
 | Axe (chop, bludgeon) | | | | | Basalt Axe (12) | Copper Axe (12, **one-handed** hatchet) | Copper-Silver Axe (12) | Bronze Axe (15) |
-| Club / mace / hammer (bludgeon) | | | | | Ebony Club (9, never wears); Basalt Hammer (13, two-handed) | Copper Mace (11) | Copper-Silver Mace (11) | Bronze Mace (14) |
+| Club / mace / hammer (bludgeon) | | | | | Ebony Club (9) and Fire-Hardened Ebony Club; Basalt Hammer (13, two-handed); Coral-Studded Club (11); Ceramic Mace (13) | Copper Mace (11) | Copper-Silver Mace (11) | Bronze Mace (14) |
 | Sword (bronze only, plus wood) | | | | | Dragonheart Greatsword (15, two-handed) | | | Bronze Khopesh (14; no jab), Bronze Leaf Blade (16) |
-| Staff (jab, vital, bludgeon, sweep) | | | | | Heather Staff (7); Toromiro Staff (6, MAT +4) | | | |
+| Staff (jab, vital, bludgeon, sweep) | | | | | Heather Staff (7); Toromiro Staff (6, MAT +4); fire-hardened versions of both | | | |
 
 - **Local stones:** **Chalcedony Knife** (5; wears at 2%, the dependable knife); **Jasper Knife** (5; magic
   attack +3, Rite +50% while held; a **Ritual Knife** only Yoon, Sib and Juda can use, still fits the off
   hand); **Andesite Adze** (10; chop, bludgeon) and **Andesite Hammer** (10; bludgeon): light and
   **one-handed**, where basalt is heavy and two-handed. **Obsidian is keen:** +5% critical on every
   obsidian weapon.
+- **Stone spears:** **Chalcedony Spear** (9; wears at 2%); **Andesite Spear** (11, AGI −2; a heavy head);
+  **Jasper Spear** (9; MAT +3, Rite +50%; a **Ritual Spear**, a weapon type only Yoon, Sib and Juda can use;
+  two-handed). Each has a Chipped tier.
+- **Elemental materials** (`<Spell Boost: fire 10>`): spells of that element deal **10% more** while the
+  weapon is equipped. **Obsidian = fire** (every obsidian weapon), **coral = water**, **ceramic = earth**.
+  Air has no material yet.
+- **Coral-Studded Club** (11; 30% Bleed, water spells +10%): the studs break off fast (6%), leaving a
+  **Bare Club** (8, raw wood).
+- **Ceramic Mace** (13; earth spells +10%): fired clay. Cheap, hits hard, wears fast (10%) and breaks
+  outright, but **the swing that breaks it hits 50% harder** and may cause **Bleed** (flying shards,
+  50%). Meant to be used up.
+- **Wood and fire-hardening:** raw wood (Ebony Club, Heather Staff, Toromiro Staff, Wooden Spear, Bare
+  Club) wears slowly (2%) and splits. **Fire-hardened** versions never wear, and their wielder takes
+  **10% less Fire damage**. Hardening will be a campfire crafting action later; for now they are found
+  or bought.
+- **Dragonheart Greatsword:** naturally fire-hardened by its resin (10% less Fire damage, wears at only
+  1%), and **starts every battle sealed in Resin** (blocks the first hit). The Cracked one keeps the fire
+  resistance but has lost its resin shell.
 - **Metal** weapons also have the **metal** move (Conducting Blade with a Voltaic Pile).
 - **Copper-silver** has `<Magic Edge: 15>`: weapon skills deal 15% extra damage as magic.
 - **Black Bronze Blade** (22, Magic Edge 30, never wears): a placeholder for the late-game First Sailor
@@ -541,8 +559,14 @@ rarer recipes from the **Stream Maidens**; ritual ones kept by **priests**.
 | Wart Fern Poultice | Microsorum fern | Cures **Salting** (besides water) |
 | **Bandage** | Cloth, **burrbark** (hauhau) or **paper** | The only item that stops **Bleed** |
 
-The old **Potion** and **Dispel Herb** (RPG Maker leftovers) still exist; Dispel Herb now overlaps several
-of these and should be retired once a Sleep and Hypnotized cure is placed.
+**All-Seafarer Grog** replaced the old Potion: sailors' rum and water. Heals **30 HP** but leaves the
+drinker **Tipsy** for 3 turns (hit −10%, but **liquid courage**: immune to Despair and Panicked). A second
+drink while Tipsy turns it into **Disoriented**. It's foreign: the Islanders don't make it. It comes
+from Marines (a 1-in-3 drop), Parl, Theenmy or trade, and **All-Seafarer Marines like being offered it**.
+Islander remedies cure cleanly; the outsiders' medicine has a cost.
+
+The old **Dispel Herb** (an RPG Maker leftover) still exists; it overlaps several of these and should be
+retired once a Sleep and Hypnotized cure is placed.
 
 ### Party switching
 - **Switch** battle command: lists reserve members (everyone beyond the four battle slots).
@@ -626,7 +650,10 @@ slings; Pada and Parl bows; Dama, Falmi and Theenmy javelins; Dama nets.
 | Copper | Bent, then breaks into **Scrap Copper** (kept) | 2%, then 3% |
 | Copper-silver | Bent, then breaks into **Scrap Copper-Silver** (kept) | 1%, then 2% |
 | Dragonheart wood | Cracked, then breaks | 1%, then 2% |
-| Ebony, heather, toromiro, bronze, black bronze | never wear | — |
+| Coral studs | Bare Club (raw wood) | 6% |
+| Ceramic | Shatters (breaks; that swing hits ×1.5) | 10% |
+| Raw wood (ebony, heather, toromiro) | Splits and breaks | 2% |
+| Fire-hardened wood, bronze, black bronze | never wear | — |
 
 These are placeholder examples; real wear rates need playtesting.
 
@@ -1068,7 +1095,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 - Pada's Heavy Chop does about 32 to an Orc (45 HP).
 - Children go down in about 3–4 Orc hits, and Sib in about 2 Minotaur hits. Pada takes about 11
   Minotaur hits and Theenmy about 17.
-- Armor rescaled: Shield DEF 3, Hat 1, Cloth 2, Ring MDF 2. Potion heals 30 and Magic Water
+- Armor rescaled: Shield DEF 3, Hat 1, Cloth 2, Ring MDF 2. Potion (now All-Seafarer Grog) heals 30 and Magic Water
   restores 15.
 
 ### Act 2 enemies (first batch)
@@ -1134,7 +1161,7 @@ some enemies are better fought: gentle words fail on centipedes, and only Pada c
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
-| Automated tests | `tests/` (41 tests, about 450 checks; see tests/README.md) |
+| Automated tests | `tests/` (44 tests, about 475 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
