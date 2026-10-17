@@ -402,6 +402,41 @@ An informal, fairly democratic chiefdom (a "big man" society) with an unusual am
 bureaucracy for that level. **One main town** (Zonfahare), larger satellite towns with their own
 priests, and small resource villages. See "Settlements and networks" below.
 
+### Government
+A nebulous middle ground between a big-man society and a "democratic" chiefdom: customary and
+kinship-based at heart, with an odd amount of bureaucracy for its size (it runs on printing and wire).
+Real models: Melanesian big men, the Guanche *tagoror* council circle, Rapa Nui clans and scribes, and
+Iceland's assembly and lawspeaker.
+
+- **Households and kin lines** settle most things: marriages, land, feuds, debts. Disputes end in
+  **compensation** between kin lines, with a priest as go-between; **exile** is the worst punishment.
+- **Big People:** each town has a Big Man or Big Woman (Dama in Mansehare). Not hereditary: standing
+  comes from **giving** (feasts, sponsoring boats, covering debts, organising hunts and harvests), and
+  people follow by choice. A big kin line helps.
+- **The Island Chief** is the Big Person the others recognise as first among equals at **the Assembly**:
+  a seasonal island-wide meeting at a **stone circle in Zonfahare**. Any head of a household may speak;
+  decisions are by consensus. The Chief mostly persuades, settles disputes between towns, and speaks for
+  the island to outsiders. **Towns that can't send anyone follow the Assembly by telegraph**: speeches
+  are read out at the far relay and answers tapped back.
+- **The odd bureaucracy:**
+  - **The Printed Custom:** after each Assembly the year's decisions and customs are printed and sent to
+    every town. A **Keeper of Custom** (lawspeaker) remembers, recites and rules on custom.
+  - **Telegraph keepers** staff every relay and **log every message** (mystery evidence).
+  - **Rotating duties** (*keu*, "communal enterprise"): households take turns at line repair, bothy
+    upkeep, battery tending and water rights.
+  - **Priests as registrars:** births, deaths, mummifications, omens, the **register of the dead**. This
+    gives Juda quiet power over what the village believes about deaths and missing children.
+  - **Tally houses:** cowrie accounts, the orchil trade, and the **tribute ledger**.
+
+**Tama, the Island Chief.** Likable, gregarious and smart, but a bit spineless. He goes to **Juda** for
+advice on many things, and he's the main advocate of **paying the All-Seafarers' tribute** and keeping the
+peace with them. The island has paid tribute for **about 30 years, on Juda's advice** (part of Juda's
+collaboration). When the invasion comes, **Theenmy keeps Tama around as a puppet** chief; the Islanders
+follow whoever actually provides and protects, which is how **Dama becomes Chieftess by default**.
+
+**Why it matters in the story:** the All-Seafarers expect a king to deal with or behead; the Islanders
+have a consensus web held together by kin, giving and wire, so a puppet chief doesn't buy obedience.
+
 ### Priests
 Priests heal, hold funerals, **mummify the dead**, talk to ghosts and spirits, and read omens. They
 are chosen from the children Islander culture already counts as **priests or potential priests**:
