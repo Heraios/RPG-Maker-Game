@@ -64,6 +64,7 @@ module.exports = {
       const s = await status('event ' + ev);
       if (s.err) break;
     }
-    t.eq(logs.filter(l => l.startsWith('error')).join(' | '), '', 'no console errors');
+    // Missing art/sound (404s) is expected while placeholders are in use (SI_Placeholders); real errors are not.
+    t.eq(logs.filter(l => l.startsWith('error') && !/Failed to load resource.*404/.test(l)).join(' | '), '', 'no console errors');
   }
 };
