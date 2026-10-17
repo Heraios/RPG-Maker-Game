@@ -21,13 +21,13 @@ module.exports = {
             sib.initEquips($dataActors[3].equips); yoon.initEquips($dataActors[2].equips);
             $gameTroop.setup(8); const [girl, boy] = $gameTroop.members();
             const use = (who, id, target) => fixed(() => { const a = new Game_Action(who); a.setSkill(id); target.clearResult(); a.apply(target); });
-            out.lasaRing = sib.equips().some(e => e && e.name === 'Ring');
+            out.lasaRing = sib.equips().some(e => e && e.name === 'Silver Ring');
             use(boy, 385, sib); out.noFailLine = sib.result().success;
-            out.ringGone = !sib.equips().some(e => e && e.name === 'Ring') && $gameParty.numItems(AR('Ring')) === 0;
+            out.ringGone = !sib.equips().some(e => e && e.name === 'Silver Ring') && $gameParty.numItems(AR('Silver Ring')) === 0;
             out.boyFled = boy.isHidden(); out.hoard = SmokingIsle.Pranks.hoardSize();
             $gameParty.gainGold(100); const s2 = A(5); s2.initEquips([0]); use(girl, 385, s2);
             out.goldTaken = 100 - $gameParty.gold();
-            out.recovered = SmokingIsle.Pranks.recoverHoard(); out.ringBack = $gameParty.numItems(AR('Ring')) === 1 && $gameParty.gold() === 100;
+            out.recovered = SmokingIsle.Pranks.recoverHoard(); out.ringBack = $gameParty.numItems(AR('Silver Ring')) === 1 && $gameParty.gold() === 100;
             boy.appear(); use(boy, 384, yoon); out.stripped = !yoon.equips()[yoon.slotOfType(4)];
             yoon.onBattleEnd(); out.dressed = (yoon.equips()[yoon.slotOfType(4)] || {}).name;
             sib.setHp(1); boy.addParam(2, 200); use(boy, 372, sib); out.nonlethal = sib.hp;
@@ -45,7 +45,7 @@ module.exports = {
         t.eq(r.recovered, 2, 'the hoard gives back both');
         t.ok(r.ringBack, 'Ring and cowries are back');
         t.ok(r.stripped, "Pantsing pulls Yoon's body armor off");
-        t.eq(r.dressed, 'Cloth', 'it goes back on after the battle');
+        t.eq(r.dressed, 'Tapa Wrap', 'it goes back on after the battle');
         t.eq(r.nonlethal, 1, 'pranksters never knock anyone out');
         t.eq(r.calmActions, '', 'a Calm prankster stops pranking (and attacking): it just waits');
     },

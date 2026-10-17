@@ -43,6 +43,9 @@
  *                       can be sold or repaired. Without it, broken stone,
  *                       bone and wood gear simply disappears.
  *
+ *   <Wear Rate: 50>     (armor, e.g. a charm) the wearer's weapons wear half
+ *                       as often (Basalt Whetstone).
+ *   <Wear Reduce: 1>    (armor) weapon wear chances -1 point (Pumice Stone).
  *   <Shatter Hit: 150>  (weapon) the swing that breaks it deals 150% damage
  *                       and may cause Bleed (50%): flying shards (ceramic).
  *
@@ -116,11 +119,23 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
     };
 
     // Rolls wear for the item in the given equip slot. Returns a log message or null.
+    // Wear chance after the wearer's whetstones and polishing stones (weapons only).
+    Game_Actor.prototype.wearChanceFor = function(item) {
+        var chance = item.siWearChance;
+        if (!DataManager.isWeapon(item)) return chance;
+        this.armors().forEach(function(a) {
+            var r = /<Wear Rate:\s*(\d+)>/i.exec(a.note || ''), d = /<Wear Reduce:\s*(\d+)>/i.exec(a.note || '');
+            if (r) chance *= Number(r[1]) / 100;
+            if (d) chance -= Number(d[1]);
+        });
+        return Math.max(chance, 0);
+    };
+
     // worn: a roll made earlier (see startAction); omitted = roll now.
     Game_Actor.prototype.rollWear = function(slotId, worn) {
         var item = this.equips()[slotId];
         if (!$.canWear(item)) return null;
-        if (worn === undefined) worn = Math.random() * 100 < item.siWearChance;
+        if (worn === undefined) worn = Math.random() * 100 < this.wearChanceFor(item);
         if (!worn) return null;
         var list = DataManager.isWeapon(item) ? $dataWeapons : $dataArmors;
         var next = item.siDegradesTo > 0 ? list[item.siDegradesTo] : null;
@@ -165,7 +180,7 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
             var slotId = DataManager.isSkill(item) ? subject.weaponSlotForSkill(item) : -1;
             var weapon = slotId >= 0 ? subject.equips()[slotId] : null;
             if ($.canWear(weapon)) {
-                subject._siPendingWear = { slotId: slotId, worn: Math.random() * 100 < weapon.siWearChance };
+                subject._siPendingWear = { slotId: slotId, worn: Math.random() * 100 < subject.wearChanceFor(weapon) };
             }
         }
         _BattleManager_startAction.call(this);

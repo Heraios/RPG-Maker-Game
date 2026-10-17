@@ -22,13 +22,13 @@ module.exports = {
             out.noStats = sib.atk === (() => { sib._equips[off].setObject(null); const a = sib.atk; sib._equips[off].setObject($dataWeapons[6]); return a; })();
             out.offMoves = sib.availableMoves().includes('offhand');
             // Two-handed: a spear sends the shield back to the bag and locks the off hand.
-            const yoon = A(2), yoff = yoon.slotOfType(2), shields = $gameParty.numItems(AR('Shield'));
+            const yoon = A(2), yoff = yoon.slotOfType(2), shields = $gameParty.numItems(AR('Wicker Buckler'));
             $gameParty.gainItem($dataWeapons[93], 1);
             yoon.changeEquip(yoon.slotOfType(1), $dataWeapons[93]);
-            out.twoHanded = !yoon.equips()[yoff] && $gameParty.numItems(AR('Shield')) === shields + 1 && !yoon.isEquipChangeOk(yoff);
-            $gameParty.gainItem($dataWeapons[132], 1); $gameParty.gainItem(AR('Shield'), 1);
+            out.twoHanded = !yoon.equips()[yoff] && $gameParty.numItems(AR('Wicker Buckler')) === shields + 1 && !yoon.isEquipChangeOk(yoff);
+            $gameParty.gainItem($dataWeapons[132], 1); $gameParty.gainItem(AR('Wicker Buckler'), 1);
             const falmi = A(10);   // a club user who can carry a shield
-            falmi.changeEquip(falmi.slotOfType(1), $dataWeapons[172]); falmi.changeEquip(falmi.slotOfType(2), AR('Shield'));
+            falmi.changeEquip(falmi.slotOfType(1), $dataWeapons[172]); falmi.changeEquip(falmi.slotOfType(2), AR('Wicker Buckler'));
             out.clubKeepsShield = (falmi.equips()[falmi.slotOfType(1)] || {}).name + '+' + (falmi.equips()[falmi.slotOfType(2)] || {}).name;
             $dataWeapons[132].siTwoHanded = false; falmi.changeEquip(falmi.slotOfType(1), $dataWeapons[132]);
             out.oneHandedAxe = falmi.isEquipChangeOk(falmi.slotOfType(2)) && !!falmi.equips()[falmi.slotOfType(2)]; $dataWeapons[132].siTwoHanded = true;
@@ -41,7 +41,7 @@ module.exports = {
         t.eq(r.sibNames, 'Head,Neck,Shoulders,Body,Cuirass,Arms,Left Hand,Right Hand,Legs,Greaves,Feet,Melee,Ranged,Offhand,' +
             'Charm 1,Charm 2,Charm 3,Lower L Arm,Lower R Arm,Upper L Arm,Upper R Arm', 'Sib\'s slot list');
         t.eq(r.thNames, 'Charm 3,Codex', 'Theenmy ends with a codex slot and no tattoos');
-        t.eq(r.sibRing, 'Ring', 'the ring starts in the Left Hand');
+        t.eq(r.sibRing, 'Silver Ring', 'the ring starts in the Left Hand');
         t.eq(r.sibTattoos, 2, 'Sib starts with two tattoos');
         t.eq(r.judaTattoos, 5, 'Juda starts with five tattoos');
         t.eq(r.thCuirass, 'Bronze Cuirass', 'bronze cuirass sits in the Cuirass slot');
@@ -53,11 +53,11 @@ module.exports = {
         t.ok(r.noStats, 'an off-hand knife adds no stats');
         t.ok(r.offMoves, "an off-hand knife provides the 'offhand' move");
         t.ok(r.twoHanded, 'a two-handed spear returns the shield and locks the slot');
-        t.eq(r.clubKeepsShield, 'Ebony Club+Shield', 'a one-handed club keeps the shield');
+        t.eq(r.clubKeepsShield, 'Ebony Club+Wicker Buckler', 'a one-handed club keeps the shield');
         t.ok(r.oneHandedAxe, 'an axe marked one-handed leaves the off hand free');
         t.eq(r.ghost, 0, 'the Ghost has no equipment slots');
         t.eq(r.patience, 'Collar:Woven Collar', 'Patience has only a collar');
-        t.eq(r.gloves, 'Hide Gloves/Ring', '"Change Equipment" fills the empty hand');
+        t.eq(r.gloves, 'Hide Gloves/Silver Ring', '"Change Equipment" fills the empty hand');
     },
 
     'who can use swords and staves; Yoon learns swords from Theenmy': async (h, t) => {

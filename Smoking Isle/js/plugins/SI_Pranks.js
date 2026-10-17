@@ -30,6 +30,8 @@
  *
  * Item / weapon / armor note:
  *   <Shiny>            thieves want it (copper, silver, bronze, pearls...).
+ *   <Steal Proof>      (armor/state) thieves can't take anything from the
+ *                      wearer (the Lava-Tube set).
  *
  * The hidden hoard (found later in a Children of the Caves stash):
  *   Script: SmokingIsle.Pranks.hoardSize()      number of stolen things
@@ -203,6 +205,12 @@ SmokingIsle.Pranks = SmokingIsle.Pranks || {};
                 target.result().success = true;
             }
         }
+        if (item.siSteal && subject.isEnemy() && target.isActor() && target.traitObjects().some(function(obj) {
+            return obj && /<Steal Proof>/i.test(obj.note || '');
+        })) {
+            target._siPrankMessages.push('%1 can\'t get a grip on anything!'.format(subject.name()));
+            return;
+        }
         if (item.siSteal && subject.isEnemy()) {
             var hoard = $gameSystem.siHoard();
             var stolen = $.stealFrom(target);
@@ -213,7 +221,7 @@ SmokingIsle.Pranks = SmokingIsle.Pranks || {};
                 var gold = Math.min($gameParty.gold(), $.goldMin + Math.randomInt($.goldMax - $.goldMin + 1));
                 $gameParty.loseGold(gold);
                 hoard.gold += gold;
-                target._siPrankMessages.push('%1 runs off with %2 %3!'.format(subject.name(), gold, TextManager.currencyUnit));
+                target._siPrankMessages.push('%1 runs off with %2 cowries!'.format(subject.name(), gold));
             } else {
                 target._siPrankMessages.push('%1 finds nothing shiny.'.format(subject.name()));
                 return;

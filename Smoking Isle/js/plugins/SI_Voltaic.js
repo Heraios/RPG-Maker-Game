@@ -36,6 +36,10 @@
  *   <Charge: 3>          how much charge it holds
  *   <Shock Power: 14>    strength of its current (a.shockDamage(b, rate))
  *
+ * Other armor (charms):
+ *   <Extra Charge: 1>    a worn pile holds 1 more (Lodestone)
+ *   <Metal>              (armor/state) the wearer counts as metal too
+ *
  * Skill note:
  *   <Charge Cost: 1>     charge it spends (needs that much to use)
  *   <Charge Cost: all>   needs at least 2 and spends everything
@@ -116,7 +120,11 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
 
     Game_BattlerBase.prototype.maxCharge = function() {
         var pile = this.pile();
-        return pile ? pile.siCharge : 0;
+        if (!pile) return 0;
+        return pile.siCharge + this.armors().reduce(function(sum, a) {
+            var m = /<Extra Charge:\s*(\d+)>/i.exec(a.note || '');
+            return sum + (m ? Number(m[1]) : 0);
+        }, 0);
     };
 
     Game_BattlerBase.prototype.charge = function() {
@@ -162,6 +170,11 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
         return SmokingIsle.Combat.reduce(power, target.def);
     };
 
+    $.isMetal = function(battler) {
+        if (battler.isEnemy()) return battler.enemy().siMetal;
+        return battler.traitObjects().some(function(obj) { return obj && /<Metal>/i.test(obj.note || ''); });
+    };
+
     $.isWet = function(battler) {
         return $.wetStates.some(function(id) { return battler.isStateAffected(id); });
     };
@@ -172,7 +185,7 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
         var item = this.item();
         if (!DataManager.isSkill(item) || value <= 0) return value;
         if (item.siElectric && $.isWet(target)) value = Math.round(value * 1.5);
-        if (item.siMetalBonus !== 1 && target.isEnemy() && target.enemy().siMetal) value = Math.round(value * item.siMetalBonus);
+        if (item.siMetalBonus !== 1 && $.isMetal(target)) value = Math.round(value * item.siMetalBonus);
         return value;
     };
 

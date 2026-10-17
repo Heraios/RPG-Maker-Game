@@ -496,10 +496,20 @@ skirts), **Greaves** (leg armor), **Feet** (shoes, boots), **Melee**, **Ranged**
   item goes back to the bag. Tag a weapon `<One-Handed>` (some axes) or `<Two-Handed>` to override.
 - Starting equipment is matched by type; extra pieces (more tattoos, a second ring) go in the actor note
   as `<Start Equips: armor 37, armor 39>`.
-- Placeholder items for the new slots: Shell Necklace, Bark-Cloth Cloak, Woven Armlets, Hide Gloves,
-  Grass Skirt, Bronze Greaves (+1 Fatigue per turn), Reed Sandals. The test room's chest gives them.
+- Clothing, neck pieces, rings, shields, charms and collars: see "Armor sets, charms and size rules"
+  below. The test room's chest gives one of everything.
 
-### Armor sets, charms and size rules (design, not built yet)
+### Armor sets, charms and size rules
+Built (`SI_Outfits.js`). Set bonuses are states in the **Set Bonuses** category of the States list
+(`<Set Bonus: Tapa 2>`, `<Set Bonus: Tapa all>`); armor pieces carry `<Set: Tapa>`. The equip screen's
+help box shows the set's progress ("Tapa set 2/4") and which bonuses are on. Size rules use armor types:
+**Heavy Body**, **Heavy Head & Legs**, **Small Shield**, **Large Shield**, plus **Priestly** (Feather
+set, Tattooist's Ink Pouch). Neck pieces (necklaces, pendants, amulets) use the Neck slot; rings and
+gloves the hands; everything else in the list below is a Charm. The old placeholders were folded in:
+Bark-Cloth Cloak → **Tapa Cape**, Cloth → **Tapa Wrap**, Ring → **Silver Ring**, Shield → **Wicker
+Buckler**; the Hat and Shell Necklace were retired. Money is **cowries (CW)**.
+Cave and lava-tube maps need `<Cave>` in their map note (as well as `<Indoors>`) for the cave charms
+and the Lava-Tube set to work.
 **Sets.** Clothing and armor pieces belong to sets. Wearing **2 pieces** of a set gives a small
 bonus; the **whole set** gives the full bonus. A set with only two pieces gives its small bonus with
 **one piece**. Charms never count toward sets. The equip screen shows the set and the count
@@ -545,7 +555,7 @@ into armor types by where it is worn:
 - **Yoon's** demon/homunculus body is stronger than a child's: heavy helms and greaves and
   **two-handed weapons**, but no large shields.
 
-**Charms** (first ideas, by biome): shark-tooth necklace, bone fishhook pendant, cowrie anklet,
+**Charms** (by biome): shark-tooth necklace, bone fishhook pendant, cowrie anklet,
 coral pendant (water spells +10%) on the beach; reed charm-bundle, hag-crane feather, leech jar in the
 marsh; cave-glow stone, cave-cricket cage, blind crab shell in the lava tubes; copper bracelet,
 silver-plated idol, lead sinker, lodestone (Voltaic) from the mines; goat-horn amulet (Akerbeltz),
@@ -1217,11 +1227,12 @@ some enemies are better fought: gentle words fail on centipedes, and only Pada c
 | Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
+| Armor sets, charms, size rules | Done: `SI_Outfits.js` (load last) |
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
-| Automated tests | `tests/` (44 tests, about 475 checks; see tests/README.md) |
+| Automated tests | `tests/` (49 tests, about 520 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
@@ -1250,9 +1261,9 @@ entry later means updating those references too (the reorganization used a scrip
 
 - **Items:** Supplies 1; Food & Drink 41; Herbal Remedies 71; Materials 121; Key Items 161
 - **Weapons:** Knives 1; Swords & Paddle-Swords 51; Spears 91; Axes & Adzes 131; Clubs, Hammers & Maces 171; Staves 211
-- **Armors:** Clothing & Armor 1; Offhand & Charms 41; Ranged 71; Glyphs (Tattoos) 111; Codices 171; Collars 201
+- **Armors:** Clothing & Armor 1; Neck 61; Hands (Rings & Gloves) 101; Shields 141; Charms 171; Ranged 241; Glyphs (Tattoos) 281; Codices 341; Collars 371
 - **Skills:** Basic 3; Rest 41; Weapon Techniques 71; Ranged 121; Talk 161; Voltaic 201; Magic 241; Yoon (Ghost) 301; Enemy Skills 371; Unused (MV defaults) 421
-- **States:** Core 2; Talk 41; Elemental 71; Ailments 111; Mental 151; Boons 191; Remedies 231
+- **States:** Core 2; Talk 41; Elemental 71; Ailments 111; Mental 151; Boons 191; Remedies 231; Set Bonuses 271
 - Saves made before the reorganization point at the old IDs: start a New Game.
 
 ---

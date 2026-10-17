@@ -39,7 +39,7 @@ module.exports = {
             [ghost, yoon].forEach(a => a.setMp(999));
             $gameTroop.setup(2); $gameParty._inBattle = true;
             const [s1, s2] = $gameTroop.members();
-            const names = x => x.states().map(s => s.name).sort().join(',');
+            const names = x => x.states().filter(s => x.isStateAffected(s.id)).map(s => s.name).sort().join(',');
             const use = (a, id, targets) => { a._siExtraTurn = false; const x = new Game_Action(a); x.setSkill(id); (targets || x.makeTargets()).forEach(y => { y.clearResult(); x.apply(y); }); };
             use(ghost, 302); const ghostTouch = [names(s1), names(s2)];
             use(yoon, 307, [s1]); const touch2 = names(s1);
@@ -62,7 +62,7 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const yoon = $gameActors.actor(2), sib = $gameActors.actor(3), th = $gameActors.actor(11);
-            const names = x => x.states().map(s => s.name).join(',');
+            const names = x => x.states().filter(s => x.isStateAffected(s.id)).map(s => s.name).join(',');
             let skip = 0, fled = 0;
             let seed = 7; const rnd = Math.random; Math.random = () => (seed = seed * 16807 % 2147483647) / 2147483647;   // repeatable rolls
             for (let i = 0; i < 600; i++) { const e = new Game_Enemy(4, 0, 0); $gameTroop._enemies.push(e); e.addState(152); if (BattleManager.ctbShouldSkipTurn(e)) { if (e.isHidden()) fled++; else skip++; } }

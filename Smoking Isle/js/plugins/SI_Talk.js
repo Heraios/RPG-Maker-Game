@@ -204,6 +204,10 @@
  * Speakers
  * ============================================================================
  *   <Talk Specialty: animal, sea>   (actor or class) matches Talk Type/Tags.
+ *   <Talk Start Mood: animal 10>    (weapon/armor/state) enemies of that kind
+ *                                   (or "all") start 10 mood higher (or lower
+ *                                   with a minus) while the wearer is in the party.
+ *   <Talk Bonus: rite 50 vs wind>   as below, but only on enemies of that kind
  *   <Talk Bonus: rite 50>           (weapon/armor/state) that approach works
  *                                   50% better (Jasper Knife; Bitterwood
  *                                   Smudge's incense).
@@ -451,6 +455,16 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
             return a.actorId() === 1 || a.actorId() === 2;
         }).reduce(function(max, a) {
             return Math.max(max, a.level);
+        }, 0) + $.gearInsight();
+    };
+
+    // <Insight Bonus: 1> on anything the battle party wears (Raven Feather).
+    $.gearInsight = function() {
+        return $gameParty.battleMembers().reduce(function(sum, actor) {
+            return actor.equips().concat(actor.states()).reduce(function(s, obj) {
+                var m = obj && /<Insight Bonus:\s*(\d+)>/i.exec(obj.note || '');
+                return s + (m ? Number(m[1]) : 0);
+            }, sum);
         }, 0);
     };
 
@@ -471,7 +485,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     };
 
     Game_Enemy.prototype.talkMood = function() {
-        if (this._siMood === undefined) this._siMood = this.talkData().mood;
+        if (this._siMood === undefined) this._siMood = (this.talkData().mood + $.startMoodBonus(this)).clamp(0, 100);
         return this._siMood;
     };
 
@@ -557,7 +571,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         }
         if (delta > 0) {
             delta *= this.talkMultiplier(enemy) * (0.85 + Math.random() * 0.3);
-            if (this.subject().isActor()) delta *= 1 + this.subject().talkEquipBonus(approach) / 100;
+            if (this.subject().isActor()) delta *= 1 + this.subject().talkEquipBonus(approach, enemy) / 100;
         }
         return Math.round(delta);
     };
@@ -773,7 +787,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
             if (gold > 0) {
                 $gameParty.loseGold(gold);
                 if (SmokingIsle.Pranks) $gameSystem.siHoard().gold += gold;
-                say('%1 helps itself to %2 %3!'.format(enemy.name(), gold, TextManager.currencyUnit));
+                say('%1 helps itself to %2 cowries!'.format(enemy.name(), gold));
             }
             break;
         }
@@ -899,10 +913,29 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
 
     // The tell Yoon notices this battle (picked once), or null.
     // Equipment that helps an approach: <Talk Bonus: rite 50> (+50% when it works).
-    Game_Actor.prototype.talkEquipBonus = function(approach) {
+    // <Talk Bonus: rite 50 vs wind> only counts against enemies of that kind.
+    Game_Actor.prototype.talkEquipBonus = function(approach, enemy) {
+        var kinds = enemy ? enemy.talkData().kinds : null;
         return this.equips().concat(this.states()).reduce(function(sum, item) {
-            var m = item && new RegExp('<Talk Bonus:\\s*' + approach + '\\s+(\\d+)>', 'i').exec(item.note || '');
-            return sum + (m ? Number(m[1]) : 0);
+            var re = new RegExp('<Talk Bonus:\\s*' + approach + '\\s+(\\d+)(?:\\s+vs\\s+([\\w-]+))?>', 'gi'), m;
+            while (item && (m = re.exec(item.note || ''))) {
+                if (!m[2] || (kinds && kinds.indexOf(m[2].toLowerCase()) >= 0)) sum += Number(m[1]);
+            }
+            return sum;
+        }, 0);
+    };
+
+    // <Talk Start Mood: kind N> on anything the battle party wears.
+    $.startMoodBonus = function(enemy) {
+        var kinds = enemy.talkData().kinds || [];
+        return $gameParty.battleMembers().reduce(function(sum, actor) {
+            return actor.equips().concat(actor.states()).reduce(function(s, obj) {
+                var re = /<Talk Start Mood:\s*([\w-]+)\s+([+-]?\d+)>/gi, m;
+                while (obj && (m = re.exec(obj.note || ''))) {
+                    if (m[1].toLowerCase() === 'all' || kinds.indexOf(m[1].toLowerCase()) >= 0) s += Number(m[2]);
+                }
+                return s;
+            }, sum);
         }, 0);
     };
 
