@@ -399,8 +399,8 @@ abandoned. They know the moai and ruins were built by people.
 
 ### Society
 An informal, fairly democratic chiefdom (a "big man" society) with an unusual amount of customary
-bureaucracy for that level. **One main town** plus resource hamlets: a fishing village, a marsh
-village, a logging camp, mining camps, and so on.
+bureaucracy for that level. **One main town** (Zonfahare), larger satellite towns with their own
+priests, and small resource villages. See "Settlements and networks" below.
 
 ### Priests
 Priests heal, hold funerals, **mummify the dead**, talk to ghosts and spirits, and read omens. They
@@ -538,6 +538,48 @@ Despite having no bronze, the Islanders have **electricity, telegraphs and print
 | Alpine forests and meadows | The Lady's goat-centaur aspect; the Shepherd of the Deer |
 | Snowcapped high mountains | The Lady of the Wind's peak |
 | Dried lava tubes | An island-wide network linking the mines, tombs, the Children's village and the Destroyer's depths |
+
+### Settlements and networks (draft map)
+A few thousand Islanders in all. Wet-side lands feed the island, the dry side and the lava tubes are
+mined, and the main town sits where the two meet. **Naming:** towns are a Guanche word + Rapa Nui
+*hare* ("household"); small villages a Guanche word + Rapa Nui *keu* ("communal enterprise"); ritual
+sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegraph relay.**
+
+**Towns** (*-hare*, each with its own priest):
+| Town | Meaning | Where | Population | What happens there |
+|---|---|---|---|---|
+| **Zonfahare** | "Navel town" | On the ridge between the salt marsh and the dry grasslands | ~1,000-1,500 | The main town: chief, trade, telegraph hub. Juda's (later Sib's) seat. Yoon's family lives here |
+| **Mansehare** | "Shore town" | Rocky wet-side coast near the river mouth | ~200-400 | Spearfishing, pearl diving, boats; the tribute goes out from here. **Dama** leads its spearfishers and is its impromptu "mayor" (the Big Woman); later Chieftess of the island |
+| **Afarohare** | "Grain town" | Upland grassland terraces and vineyard slopes | ~200-400 | Barley, lentils, grapes, goats; gofio mills |
+| **Namethare** | "Bone town" | The copper mine, in the lava-tube country | ~150-300 | Copper; battery works. **Doubles as the island's main graveyard** (tombs in the tubes) |
+| **Celhare** | "Moon town" (silver) | The silver-lead mine | ~150-300 | Silver and lead; electroplating |
+
+**Villages** (*-keu*, no priest of their own; a visiting priest comes round):
+| Village | Where | What they do |
+|---|---|---|
+| **Aguerekeu** | The salt marsh, on stilts at the river mouth | Reed boats, eels, salt pans, leeches. Lives warily alongside the Hags |
+| **Idekeu** | Highland pine forest | Loggers and pitch-burners: pine pitch, charcoal |
+| **Chafakeu** | Alpine meadows | Seasonal shepherds (summer pastures); the Shepherd of the Deer's territory |
+| **Tabonakeu** | The stone quarry, edge of the volcanic desert | Stonecutters: basalt, andesite, phonolite |
+| **Corajakeu** | Dry-side sea cliffs | Orchil (dye lichen) gatherers on ropes; the great export |
+| **Tacandakeu** | The hot springs and fumaroles near the crater | Battery tenders collecting acid |
+
+**Ritual sites** (*-tapu*, with resident priests):
+| Site | What it is |
+|---|---|
+| **Tiltapu** | The sacred til (rain tree) grove and its keeper; Til Dew |
+| **Jarcotapu** | The main mummification site and a secondary graveyard, near Namethare |
+| **Amentapu** | The tern watch: a cliff-top site facing the Birdmen's sea-stack islet (after Orongo) |
+| **Banotapu** | The sacred toromiro grove (priests' staffs) |
+
+**Networks:**
+- **Telegraph:** lines along the main tracks link Zonfahare to every town, village and ritual site,
+  each with a relay. Stations sit at **Bird idols** (fast travel). In Act 4 the lines are strategic:
+  defend them, cut the invaders', warn the villages.
+- **Bothies:** simple stone rest shelters about a day's walk apart along the trails, each with a **Star
+  Mother idol** (heal and rest: a campfire rest, so everyone can eat a meal again). Some double as
+  telegraph relay huts.
+- **Save points:** Red Bowl idols in the towns and villages.
 
 ---
 
@@ -944,7 +986,8 @@ turns the more evidence was found, the villagers with her are better armed, and 
 - **What is the "demon"** Juda tried to summon: a servant of the Destroyer, or something else?
 - **Do the four elements map onto the four great domains** (section 4)?
 - **What are the Navigator-Lord remnants?**
-- **The island's geography:** where the main town, the hamlets, the mines and the volcano sit.
+- **The island's geography:** the settlements are placed (see "Settlements and networks"); the exact map
+  layout (which coast faces which way, where the volcano sits) is still open.
 - **Parl's past:** the cast notes call him "a deserter sent as a scout before the invasion,
   disguised as a merchant"; the lore calls him "a tribute collector's crewman who stole pearls and
   deserted". Is he both, or only the second?
