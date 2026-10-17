@@ -915,7 +915,9 @@ turns the more evidence was found, the villagers with her are better armed, and 
 
 ### Already connected
 - **Red Bowl idols are the save points** (and the "nearest save point" for defeat rescues).
-- The Great Boar provides **the flesh** for Yoon's body.
+- **Yoon's body** (concept.md, Act 2): Great Boar flesh (flesh), kin's blood (blood), magically frozen
+  snow in an urn (brain), a pure silver bracelet set with a sea pearl (anchors the soul), a living Canary
+  bellflower kept magically alive (heart), and a dragon-tree wood framework (skeleton).
 - The Bull of Heaven's bellowing is a **mystery clue** about Juda.
 - The Bull of Water's **hypnosis** maps onto mental ailments (Confused, Fascination).
 

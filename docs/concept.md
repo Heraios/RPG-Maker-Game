@@ -24,8 +24,22 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
   body from materials found all over the island.
 - Patience joins alongside Sib. Pada joins after Yoon's younger siblings accidentally reveal
   that Yoon is "alive".
-- The pearl thief quest happens here (a pearl is needed for the body). Its outcome decides
-  Parl's fate and Dama's attitude later on.
+- **The body's ingredients**, gathered in this order:
+  1. **Flesh of a Great Boar** of the forest → the flesh (the Act 2 climactic boss).
+  2. **A little blood from as many of the dead child's kin as possible** (Yoon's parents, little
+     sister and little brother) → the blood.
+  3. **Snow**, trapped in an urn and kept magically frozen until the right moment → the brain.
+  4. **A bit of pure silver**, worked into a bracelet.
+  5. **A pearl from the sea**, set into the bracelet → anchors the soul.
+  6. **A living Canary bellflower** (*Canarina canariensis*), kept magically alive → the heart.
+  7. **A framework of dragon-tree wood** → the skeleton.
+- **Juda joins after the snow (ingredient 3).** He's suspicious of why Sib, who is normally *not*
+  an outdoorsy child, keeps traipsing around, and he's worried about the children since Yoon's
+  "disappearance". Sib and Lasa spill the beans: Yoon is dead, a ghost, and they're attempting a
+  forbidden ritual to restore the body. Juda agrees to help (the murderer helping rebuild his victim).
+- **Parl's quest comes at the pearl (ingredient 5).** The party hears that one of the Seafarers has
+  stolen a bag of pearls meant as tribute, and hunts him down. How they deal with him decides
+  whether he's dead, an enemy, or an ally in Act 4, and Dama's attitude later on.
 
 ### Act 3 — The Mountain
 - Now in a physical body, Yoon sets out with Juda to gather materials for a ritual to restore
@@ -182,7 +196,9 @@ The village priest, deeply respected by the Islanders, very knowledgeable and wi
   that the player truly values him, so the betrayal is a gameplay loss as well as a story one.
 - **Core role:** temporary powerhouse who covers the children's weaknesses. His strength is the
   trap.
-- A mandatory temporary guest during the memory ritual trek. Betrays the party, kills Pada and
+- Joins in **Act 2** after the snow (the third body ingredient), suspicious of Sib's sudden trips and
+  worried about the children; Sib and Lasa tell him the truth and he agrees to help build the body.
+  Stays through the memory ritual trek (Act 3). Betrays the party, kills Pada and
   becomes an antagonist. The party loses his combat power exactly when they need it most.
 
 ### Dama — The Chieftess
@@ -203,8 +219,8 @@ did it. Becomes Chieftess by default over the course of the war.
 
 ### Parl — The Pearl Thief
 An All-Seafarer deserter sent ahead as a scout before the invasion, disguised as a merchant. He
-stole a bag of pearls from the village. A pearl is needed for Yoon's body, so finding him is an
-important early quest.
+stole a bag of pearls meant as tribute. A pearl is the fifth ingredient for Yoon's body, so hunting
+him down is an important Act 2 quest.
 
 - **Weapons:** knives, swords, spears, axes, slings or bows. A scrappy survivalist kit from months
   alone in the highlands.
