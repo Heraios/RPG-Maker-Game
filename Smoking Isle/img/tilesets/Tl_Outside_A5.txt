@@ -1,0 +1,128 @@
+﻿Black|黒
+Dark Brown|濃い茶色
+Light Blue|水色
+Blue|青
+Ledge A (Snow, Brick, Left and Right)|段差A（雪・レンガ・左右）
+Ledge A (Snow, Brick, Left)|段差A（雪・レンガ・左）
+Ledge A (Snow, Brick, Center)|段差A（雪・レンガ・中央）
+Ledge A (Snow, Brick, Right)|段差A（雪・レンガ・右）
+Ledge B (Dirt, Left and Right)|段差B（土・左右）
+Ledge B (Dirt, Left)|段差B（土・左）
+Ledge B (Dirt, Center)|段差B（土・中央）
+Ledge B (Dirt, Right)|段差B（土・右）
+Ledge C (Dirt, Left and Right)|段差C（土・左右）
+Ledge C (Dirt, Left)|段差C（土・左）
+Ledge C (Dirt, Center)|段差C（土・中央）
+Ledge C (Dirt, Right)|段差C（土・右）
+Green|緑
+Dirt A|土A
+Dirt B|土B
+Desert A|砂地A
+Desert B|砂地B
+Bald Meadow A|禿げた草地A
+Bald Meadow B|禿げた草地B
+Bald Meadow C|禿げた草地C
+Ledge D (Dirt, Left and Right)|段差D（土・左右）
+Ledge D (Dirt, Left)|段差D（土・左）
+Ledge D (Dirt, Center)|段差D（土・中央）
+Ledge D (Dirt, Right)|段差D（土・右）
+Ledge E (Snow, Dirt, Left and Right)|段差E（雪・土・左右）
+Ledge E (Snow, Dirt, Left)|段差E（雪・土・左）
+Ledge E (Snow, Dirt, Center)|段差E（雪・土・中央）
+Ledge E (Snow, Dirt, Right)|段差E（雪・土・右）
+Cobblestones A|石畳A
+Cobblestones B (Moss)|石畳B(苔)
+Cobblestones C (Desert)|石畳C(砂地)
+Cobblestones D (Snow)|石畳D（雪）
+Cobblestones E|石畳E
+Cobblestones F (Moss)|石畳F(苔)
+Cobblestones G (Desert)|石畳G(砂地)
+Cobblestones H (Snow)|石畳H（雪）
+Ledge F (Brick, Left and Right)|段差F（レンガ・左右）
+Ledge F (Brick, Left)|段差F（レンガ・左）
+Ledge F (Brick, Center)|段差F（レンガ・中央）
+Ledge F (Brick, Right)|段差F（レンガ・右）
+Ledge G (Brick, Left and Right)|段差G（レンガ・左右）
+Ledge G (Brick, Left)|段差G（レンガ・左）
+Ledge G (Brick, Center)|段差G（レンガ・中央）
+Ledge G (Brick, Right)|段差G（レンガ・右）
+Meadow A|草地A
+Meadow B|草地B
+Snow|雪
+Ice|氷
+Shade Of Ice|氷の影
+Super Ancient Cobblestone A|超古代の石畳A
+Super Ancient Cobblestone B|超古代の石畳B
+Super Ancient Cobblestone C|超古代の石畳C
+Frozen Waterfall|凍った滝
+Drainage Outfall A|排水口A
+Drainage Outfall B|排水口B
+Drainage Outfall C|排水口C
+Bush A|草むらA
+Bush B|草むらB
+Flowers|花
+Yellow|黄色
+Stairs (Paved, Left)|階段（舗装・左）
+Stairs (Paved, Center)|階段（舗装・中央）
+Stairs (Paved, Right)|階段（舗装・右）
+Stairs (Paved)|階段（舗装）
+Stairs (Dirt, Left)|階段（土・左）
+Stairs (Dirt, Center)|階段（土・中央）
+Stairs (Dirt, Right)|階段（土・右）
+Stairs (Dirt)|階段（土）
+Stairs (Desert, Left)|階段（砂地・左）
+Stairs (Desert, Center)|階段（砂地・中央）
+Stairs (Desert, Right)|階段（砂地・右）
+Stairs (Desert)|階段（砂地）
+Stairs (Snow, Left)|階段（雪・左）
+Stairs (Snow, Center)|階段（雪・中央）
+Stairs (Snow, Right)|階段（雪・右）
+Stairs (Snow)|階段（雪）
+Field With Crops A|畑と作物A
+Field A|畑A
+Field With Crops B|畑と作物B
+Field B|畑B
+Field With Crops C|畑と作物C
+Field C|畑C
+Field D (Snow)|畑D(雪)
+Grey|灰色
+Stone Bridge A(Top, Side)|石橋A(上・横)
+Stone Bridge B(Top, Side)|石橋B(上・横)
+Stone Bridge C(Top, Side)|石橋C(上・横)
+Small Stone Bridge A(Side)|石橋A(横)
+Small Stone Bridge A(Vertical)|石橋A(縦)
+Wooden Bridge A (Left, Vertical)|木造の橋A（左・縦）
+Wooden Bridge A (Right, Vertical)|木造の橋A（右・縦）
+Wooden Bridge A (Center, Vertical)|木造の橋A（中央・縦）
+Stone Bridge A(Center, Side)|石橋A(中央・横)
+Stone Bridge B(Center, Side)|石橋B(中央・横)
+Stone Bridge C(Center, Side)|石橋C(中央・横)
+Small Stone Bridge B(Side)|石橋B(横)
+Small Stone Bridge B(Vertical)|石橋B(縦)
+Wooden Bridge B (Snow, Left, Vertical)|木造の橋B（雪・左・縦）
+Wooden Bridge B (Snow, Right, Vertical)|木造の橋B（雪・右・縦）
+Wooden Bridge B (Snow, Center, Vertical)|木造の橋B（雪・中央・縦）
+Stone Bridge A(Under, Side)|石橋A(下・横)
+Stone Bridge B(Under, Side)|石橋B(下・横)
+Stone Bridge C(Under, Side)|石橋C(下・横)
+Small Stone Bridge C(Side)|石橋C(横)
+Small Stone Bridge C(Vertical)|石橋C(縦)
+Brown|茶色
+Wooden Bridge C (Snow, Center, Side)|木造の橋C（雪・中央・横）
+Wooden Bridge D (Center, Side)|木造の橋D（中央・横）
+Stone Bridge A(Top, Left, Vertical)|石橋A(上・左・縦)
+Stone Bridge A(Top, Right, Vertical)|石橋A(上・右・縦)
+Stone Bridge B(Top, Left, Vertical)|石橋B(上・左・縦)
+Stone Bridge B(Top, Right, Vertical)|石橋B(上・右・縦)
+Stone Bridge C(Top, Left, Vertical)|石橋C(上・左・縦)
+Stone Bridge C(Top, Right, Vertical)|石橋C(上・右・縦)
+Wooden Bridge C (Snow, Top, Side)|木造の橋C（雪・上・横）
+Wooden Bridge D (Top, Side)|木造の橋D（上・横）
+Stone Bridge A(Under, Left, Vertical)|石橋A(下・左・縦)
+Stone Bridge A(Under, Right, Vertical)|石橋A(下・右・縦)
+Stone Bridge B(Under, Left, Vertical)|石橋B(下・左・縦)
+Stone Bridge B(Under, Right, Vertical)|石橋B(下・右・縦)
+Stone Bridge C(Under, Left, Vertical)|石橋C(下・左・縦)
+Stone Bridge C(Under, Right, Vertical)|石橋C(下・右・縦)
+Wooden Bridge C (Snow, Under, Side)|木造の橋C（雪・下・横）
+Wooden Bridge D (Under, Side)|木造の橋D（下・横）

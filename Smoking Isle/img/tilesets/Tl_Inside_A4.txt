@@ -1,0 +1,48 @@
+﻿Wall A (Plaster)|壁A（漆喰）
+Wall B (Chinese)|壁B（中華風）
+Wall C (Brick)|壁C（レンガ）
+Wall D (Clay Brick)|壁D（土レンガ）
+Wall E (Ice Brick)|壁E（氷のレンガ）
+Wall F (Temple)|壁F（神殿）
+Wall G (Stone)|壁G（石）
+Wall H (Log)|壁H（丸太）
+Wall A (Plaster)|壁A（漆喰）
+Wall B (Chinese)|壁B（中華風）
+Wall C (Brick)|壁C（レンガ）
+Wall D (Clay Brick)|壁D（土レンガ）
+Wall E (Ice Brick)|壁E（氷のレンガ）
+Wall F (Temple)|壁F（神殿）
+Wall G (Stone)|壁G（石）
+Wall H (Log)|壁H（丸太）
+Wall I(Wood)|壁I（木造）
+Wall J(Straw)|壁J（藁）
+Wall K (Soil)|壁K（土）
+Wall L (Wood)|壁L（木造）
+Wall M (Cloth)|壁M（布）
+Wall N (Stone)|壁N（石）
+Wall O (Desert)|壁O（砂漠風）
+Wall P (Castle)|壁P（砦）
+Wall I(Wood)|壁I（木造）
+Wall J(Straw)|壁J（藁）
+Wall K (Soil)|壁K（土）
+Wall L (Wood)|壁L（木造）
+Wall M (Cloth)|壁M（布）
+Wall N (Stone)|壁N（石）
+Wall O (Desert)|壁O（砂漠風）
+Wall P (Rock)|壁P（岩肌）
+Super Ancient Wall A|超古代の壁A
+Super Ancient Wall B|超古代の壁B
+Super Ancient Wall C|超古代の壁C
+Super Ancient Wall D|超古代の壁D
+Super Ancient Wall E|超古代の壁E
+Iron Wawll A|鉄壁A
+Iron Wawll B|鉄壁B
+Fence|フェンス
+Super Ancient Wall A|超古代の壁A
+Super Ancient Wall B|超古代の壁B
+Super Ancient Wall C|超古代の壁C
+Super Ancient Wall D|超古代の壁D
+Super Ancient Wall E|超古代の壁E
+Iron Wawll A|鉄壁A
+Iron Wawll B|鉄壁B
+Fence|フェンス

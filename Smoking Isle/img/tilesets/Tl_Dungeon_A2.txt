@@ -1,0 +1,32 @@
+﻿Ground A (Bald-Headed Grass)|床A（禿げた草むら）
+Carpet A|カーペットA
+Carpet B|カーペットB
+Carpet C|カーペットC
+Hole A (Blue-Green)|穴A（青緑色）
+Hole B (Deep Blue)|穴B（深い青色）
+Hole C (Deep Purple)|穴C（濃い紫色）
+Fissures|ひび割れ
+Ground B (Machine)|床B（機械）
+Carpet D|カーペットD
+Carpet E|カーペットE
+Carpet F|カーペットF
+Hole D (Deep Green)|穴D（深緑）
+Hole E (Red)|穴E（赤）
+Hole F (Square Brown Cave)|穴F（四角茶色）
+Soil|汚れ
+Cloud|雲
+Carpet G|カーペットG
+Carpet H|カーペットH
+Carpet I|カーペットI
+Hole G (Brown)|穴G（茶色）
+Hole H (Blue)|穴H（青色）
+Hole I (Square Green Cave)|穴I（四角緑色）
+Hole J (Square Blue Cave)|穴J（四角青色）
+Carpet J|カーペットJ
+Carpet K|カーペットK
+Carpet L|カーペットL
+Carpet M|カーペットM
+Hole K (Purple)|穴K（紫色）
+Hole L (Ice)|穴L（氷）
+Hole M (Square Red Cave)|穴M（四角赤色）
+Hole N (Square Deep Blue Cave)|穴N（四角深い青色）

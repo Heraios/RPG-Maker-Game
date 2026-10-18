@@ -1,0 +1,256 @@
+﻿Hanging Foodstuff A|吊るした食材A
+Hanging Foodstuff B|吊るした食材B
+Hanging Meat A|吊るし肉A
+Hanging Meat B|吊るし肉B
+Cooking Utensils A|調理器具A
+Cooking Utensils B|調理器具B
+Cooking Utensils C|調理器具C
+Cooking Utensils D|調理器具D
+Teapot A|ティーポットA
+Teapot B|ティーポットB
+Cup A|カップA
+Glass A|グラスA
+Glass B|グラスB
+Fork|フォーク
+Dish A|皿A
+Knife|ナイフ
+Teapot C|ティーポットC
+Teapot D|ティーポットD
+Cup B|カップB
+Glass C|グラスC
+Glass D|グラスD
+Dishes A|皿(複数）A
+Dish B|皿B
+Dishes B|皿(複数）B
+Pint Mug|ジョッキ
+Soup A|スープA
+Soup B|スープB
+Soup C|スープC
+Cake|ケーキ
+Cooking A|料理A
+Cooking B|料理B
+Cooking C|料理C
+Bottle|ボトル
+Wine Glass A|ワイングラスA
+Wine Glass B|ワイングラスB
+Wine Glass C|ワイングラスC
+Stew A|シチューA
+Stew B|シチューB
+Basket A|バスケットA
+Basket B|バスケットB
+Pot A|ポットA
+Pot B|ポットB
+Pot C|ポットC
+Pot D|ポットD
+Pot E|ポットE
+Globe A|地球儀A
+Globe B|地球儀B
+Globe C|地球儀C
+Closed Book A|閉じた本A
+Closed Book B|閉じた本B
+Closed Book C|閉じた本C
+Closed Book D|閉じた本D
+Closed Book E|閉じた本E
+Bell A|ベルA
+Bell B|ベルB
+Bell C|ベルC
+Open Book A|開いた本A
+Open Book B|開いた本B
+Open Book C|開いた本C
+Open Book D|開いた本D
+Open Book E|開いた本E
+Stuffed Doll A|ぬいぐるみA
+Stuffed Doll B|ぬいぐるみB
+Stuffed Doll C|ぬいぐるみC
+Scrolls A|巻物A
+Scrolls B|巻物B
+Scrolls C|巻物C
+Scrolls D|巻物D
+Scrolls E|巻物E
+Scrolls F|巻物F
+Scrolls G|巻物G
+Scrolls H|巻物H
+Envelope A|封筒A
+Envelope B|封筒B
+Envelope C|封筒C
+Envelope D|封筒D
+Envelope E|封筒E
+Balance A|天秤A
+Balance B|天秤B
+Balance C|天秤C
+Note A|メモA
+Note B|メモB
+Note C|メモC
+Note D|メモD
+Note E|メモE
+Gold Bricks|金の延べ棒
+Silver Bricks|銀の延べ棒
+Potted Plant|植木鉢
+Note F|メモF
+Note G|メモG
+Note H|メモH
+Note I|メモI
+Note J|メモJ
+Hourglass A|砂時計A
+Hourglass B|砂時計B
+Hourglass C|砂時計C
+Pen A|ペンA
+Pen B|ペンB
+Pen C|ペンC
+Pen D|ペンD
+Pen E|ペンE
+Closed Jewelry Case A|閉じた宝石ケースA
+Closed Jewelry Case B|閉じた宝石ケースB
+Closed Jewelry Case C|閉じた宝石ケースC
+Gifts A|プレゼントA
+Gifts B|プレゼントB
+Gifts C|プレゼントC
+Gifts D|プレゼントD
+Gifts E|プレゼントE
+Open Jewelry Case A|開いた宝石ケースA
+Open Jewelry Case B|開いた宝石ケースB
+Open Jewelry Case C|開いた宝石ケースC
+Potion A|液体入り瓶A
+Potion B|液体入り瓶B
+Potion C|液体入り瓶C
+Potion D|液体入り瓶D
+Rug A|敷物A
+Rug A|敷物A
+Rug B|敷物B
+Rug B|敷物B
+Potion E|液体入り瓶E
+Blacksmith's Table|金床
+Hammers|ハンマー
+Scrap Metal|鉄くず
+Rug A|敷物A
+Rug A|敷物A
+Rug B|敷物B
+Rug B|敷物B
+Torchlight A|松明A
+Torchlight B|松明B
+Torchlight C|松明C
+Torchlight D|松明D
+Fire Catcher A|火の受け皿A
+Fire Catcher B|火の受け皿B
+Hunting Trophy A|ハンティング・トロフィーA
+Hunting Trophy B|ハンティング・トロフィーB
+Candlestand A|燭台A
+Candlestand B|燭台B
+Candlestand C|燭台C
+Candlestand D|燭台D
+Candlestand E|燭台E
+Candlestand F|燭台F
+Candlestand G|燭台G
+Candlestand H|燭台H
+Banister A (Wood)|階段用手すりA（木製）
+Banister A (Wood)|階段用手すりA（木製）
+Church Table A|教会机A
+Church Table A|教会机A
+Church Table A|教会机A
+Church Table B|教会机B
+Church Table B|教会机B
+Church Table B|教会机B
+Banister A (Wood)|階段用手すりA（木製）
+Banister A (Wood)|階段用手すりA（木製）
+Church Table A|教会机A
+Church Table A|教会机A
+Church Table A|教会机A
+Church Table B|教会机B
+Church Table B|教会机B
+Church Table B|教会机B
+Banister A (Wood)|階段用手すりA（木製）
+Banister A (Wood)|階段用手すりA（木製）
+Church Table C|教会机C
+Church Table C|教会机C
+Church Table C|教会机C
+Church Table D|教会机D
+Church Table D|教会机D
+Church Table D|教会机D
+Banister B (Wood)|階段用手すりB（木製）
+Banister B (Wood)|階段用手すりB（木製）
+Church Table C|教会机C
+Church Table C|教会机C
+Church Table C|教会机C
+Church Table D|教会机D
+Church Table D|教会机D
+Church Table D|教会机D
+Banister B (Wood)|階段用手すりB（木製）
+Banister B (Wood)|階段用手すりB（木製）
+Crystal Ball A|水晶玉A
+Crystal Ball B|水晶玉B
+Cloth A(Magic Circle)|布A（魔法陣）
+Cloth B(Magic Circle)|布B（魔法陣）
+Dais A|台座A
+Dais B|台座B
+Banister B (Wood)|階段用手すりB（木製）
+Banister B (Wood)|階段用手すりB（木製）
+Crystal Ball C|水晶玉C
+Crystal Ball D|水晶玉D
+Cloth C(Magic Circle)|布C（魔法陣）
+Cloth D(Magic Circle)|布D（魔法陣）
+Dais C|台座C
+Dais D|台座D
+Railings A (Wood)|段差用手すりA（木製）
+Railings A (Wood)|段差用手すりA（木製）
+Railings A (Wood)|段差用手すりA（木製）
+Railings A (Wood)|段差用手すりA（木製）
+Railings B (Wood)|段差用手すりB（木製）
+Railings B (Wood)|段差用手すりB（木製）
+Railings B (Wood)|段差用手すりB（木製）
+Railings B (Wood)|段差用手すりB（木製）
+Railings(Stone)|段差用手すり（石製）
+Railings(Stone)|段差用手すり（石製）
+Railings(Stone)|段差用手すり（石製）
+Railings(Stone)|段差用手すり（石製）
+Railings(Ice)|段差用手すり（氷製）
+Railings(Ice)|段差用手すり（氷製）
+Railings(Ice)|段差用手すり（氷製）
+Railings(Ice)|段差用手すり（氷製）
+Banister(Stone)|階段用手すり（石）
+Banister(Stone)|階段用手すり（石）
+Big Dais|大きな台座
+Big Dais|大きな台座
+Big Dais|大きな台座
+Curtains A|カーテンA
+Curtains A|カーテンA
+Curtains A|カーテンA
+Banister(Stone)|階段用手すり（石）
+Banister(Stone)|階段用手すり（石）
+Big Dais|大きな台座
+Big Dais|大きな台座
+Big Dais|大きな台座
+Curtains A|カーテンA
+Curtains A|カーテンA
+Curtains A|カーテンA
+Banister(Stone)|階段用手すり（石）
+Banister(Stone)|階段用手すり（石）
+Big Dais|大きな台座
+Big Dais|大きな台座
+Big Dais|大きな台座
+Curtains A|カーテンA
+Curtains A|カーテンA
+Curtains A|カーテンA
+Banister(Ice)|階段用手すり（氷）
+Banister(Ice)|階段用手すり（氷）
+Curtains B|カーテンB
+Curtains B|カーテンB
+Curtains B|カーテンB
+Stone Enclosure|石の囲い
+Stone Enclosure|石の囲い
+Stone Enclosure|石の囲い
+Banister(Ice)|階段用手すり（氷）
+Banister(Ice)|階段用手すり（氷）
+Curtains B|カーテンB
+Curtains B|カーテンB
+Curtains B|カーテンB
+Stone Enclosure|石の囲い
+Stone Enclosure|石の囲い
+Stone Enclosure|石の囲い
+Banister(Ice)|階段用手すり（氷）
+Banister(Ice)|階段用手すり（氷）
+Curtains B|カーテンB
+Curtains B|カーテンB
+Curtains B|カーテンB
+Stone Enclosure|石の囲い
+Stone Enclosure|石の囲い
+Stone Enclosure|石の囲い

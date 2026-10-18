@@ -1,0 +1,48 @@
+﻿Wall A (Rock 1)|壁A（岩1）
+Wall B (Rock 2)|壁B（岩2）
+Wall C (Masonry 1)|壁C（石積み1）
+Wall D (Masonry 2)|壁D（石積み2）
+Wall E (Lava)|壁E（溶岩）
+Wall F (Crystal 1)|壁F（水晶1）
+Wall G (Grass)|壁G（草）
+Wall H (In Body)|壁H（体内）
+Wall A (Rock 1)|壁A（岩1）
+Wall B (Rock 2)|壁B（岩2）
+Wall C (Masonry 1)|壁C（石積み1）
+Wall D (Masonry 2)|壁D（石積み2）
+Wall E (Lava)|壁E（溶岩）
+Wall F (Crystal 1)|壁F（水晶1）
+Wall G (Grass)|壁G（草）
+Wall H (In Body)|壁H（体内）
+Wall I (Masonry 3)|壁I（石積み3）
+Wall J (Brick)|壁J（レンガ）
+Wall K (Fortress)|壁K（城）
+Wall L (Temple 1)|壁L（神殿1）
+Wall M (Temple 2)|壁M（神殿2）
+Wall N (Gold)|壁N（黄金）
+Wall O (Machine 1)|壁O（機械1）
+Wall P (Machine 2)|壁P（機械2）
+(Masonry 3)|壁I（石積み3）
+Wall J (Brick)|壁J（レンガ）
+Wall K (Fortress)|壁K（城）
+Wall L (Temple 1)|壁L（神殿1）
+Wall M (Temple 2)|壁M（神殿2）
+Wall N (Gold)|壁N（黄金）
+Wall O (Machine 1)|壁O（機械1）
+Wall P (Machine 2)|壁P（機械2）
+Wall Q (Tower 1)|壁Q（塔1）
+Wall R (Tower 2)|壁R（塔2）
+Wall S (Otherworldly 1)|壁S（異世界1）
+Wall T (Crystal 2)|壁T（水晶2）
+Wall U (Otherworldly 2)|壁U（異世界2）
+Wall V (Archaeozoic Era 1)|壁V（超古代1）
+Wall W (Archaeozoic Era 2)|壁W（超古代2）
+Wall X (Archaeozoic Era 3)|壁X（超古代3）
+Wall Q (Tower 1)|壁Q（塔1）
+Wall R (Tower 2)|壁R（塔2）
+Wall S (Otherworldly 1)|壁S（異世界1）
+Wall T (Crystal 2)|壁T（水晶2）
+Wall U (Otherworldly 2)|壁U（異世界2）
+Wall V (Archaeozoic Era 1)|壁V（超古代1）
+Wall W (Archaeozoic Era 2)|壁W（超古代2）
+Wall X (Archaeozoic Era 3)|壁X（超古代3）

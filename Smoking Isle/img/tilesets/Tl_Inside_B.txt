@@ -1,0 +1,256 @@
+﻿Transparent|透明
+Entrance A|入口A
+Ladder A|はしごA
+Ladder B|はしごB
+Ladder C|はしごC
+Ladder D|はしごD
+Ladder E|はしごE
+Ladder F|はしごF
+Entrance B|入口B
+Gradation A|グラデーションA
+Stairs A (Up)|階段A（上り）
+Stairs B (Up)|階段B（上り）
+Stairs C (Up)|階段C（上り）
+Stairs D (Up)|階段D（上り）
+Stairs E (Up)|階段E（上り）
+Stairs F (Up)|階段F（上り）
+Gradation B|グラデーションB
+Vines|ツタ
+Stairs A (Down)|階段A（下り）
+Stairs B (Down)|階段B（下り）
+Stairs C (Down)|階段C（下り）
+Stairs D (Down)|階段D（下り）
+Stairs E (Down)|階段E（下り）
+Stairs F (Down)|階段F（下り）
+Shop Sign (Inn)|看板（宿）
+Shop Sign (Pub)|看板（酒場）
+Shop Sign (Sword)|看板（剣）
+Shop Sign (Armor)|看板（鎧）
+Shop Sign (Crystal Jade)|看板（水晶玉）
+Shop Sign (Bottle)|看板（ビン）
+Shop Sign (Sack)|看板（袋）
+Shop Sign (Eatery)|看板（食堂）
+Boundary Line A (Upper Left)|境界線A(左上)
+Boundary Line A (Center)|境界線A(真ん中)
+Boundary Line A (Upper Right)|境界線A(右上)
+Boundary Line B (Upper Left)|境界線B(左上)
+Boundary Line B (Center)|境界線B(真ん中)
+Boundary Line B (Upper Right)|境界線B(右上)
+Sign A|立て札A
+Sign B|立て札B
+Boundary Line A (Left)|境界線A(左)
+Boundary Line A (Gathering)|境界線A(集合)
+Boundary Line A (Right)|境界線A(右)
+Boundary Line B (Left)|境界線B(左)
+Boundary Line B (Gathering)|境界線B(集合)
+Boundary Line B (Right)|境界線B(右)
+Post A|ポストA
+Post B|ポストB
+Window A|窓A
+Window B|窓B
+Window C|窓C
+Window D|窓D
+Window E|窓E
+Window F|窓F
+Crate A|木箱A
+Crate B|木箱B
+Window G|窓G
+Window H|窓H
+Window I|窓I
+Window J|窓J
+Window K|窓K
+Window L|窓L
+Barrel A|樽A
+Barrel B|樽B
+Stained Glass Window A|ステンドグラスA
+Stained Glass Window B|ステンドグラスB
+Stained Glass Window C|ステンドグラスC
+Stained Glass Window D|ステンドグラスD
+Stained Glass Window E|ステンドグラスE
+Stained Glass Window F|ステンドグラスF
+Beer Barrel A|ビール樽A
+Beer Barrel B|ビール樽B
+Stained Glass Window A|ステンドグラスA
+Stained Glass Window B|ステンドグラスB
+Stained Glass Window C|ステンドグラスC
+Stained Glass Window D|ステンドグラスD
+Stained Glass Window E|ステンドグラスE
+Stained Glass Window F|ステンドグラスF
+Pot A|壺A
+Pot B|壺B
+Stone Pillar A|石の柱A
+Stone Pillar B|石の柱B
+Stone Pillar C|石の柱C
+Stone Pillar D|石の柱D
+Iron‐Barred Window A|鉄格子A
+Iron‐Barred Window B|鉄格子B
+Iron‐Barred Window C|鉄格子C
+Pot C|壺C
+Stone Pillar A|石の柱A
+Stone Pillar B|石の柱B
+Stone Pillar C|石の柱C
+Stone Pillar D|石の柱D
+Broken Stone Pillar A|折れた石の柱A
+Broken Stone Pillar B|折れた石の柱B
+Broken Stone Pillar C|折れた石の柱C
+Broken Stone Pillar D|折れた石の柱D
+Stone Pillar A|石の柱A
+Stone Pillar B|石の柱B
+Stone Pillar C|石の柱C
+Stone Pillar D|石の柱D
+Broken Stone Pillar A|折れた石の柱A
+Broken Stone Pillar B|折れた石の柱B
+Broken Stone Pillar C|折れた石の柱C
+Broken Stone Pillar D|折れた石の柱D
+Angel Statue A|天使像A
+Angel Statue B|天使像B
+Broken Angel Statue A|壊れた天使像A
+Broken Angel Statue B|壊れた天使像B
+Demon Statue A|悪魔像A
+Demon Statue B|悪魔像B
+Bones A|骸骨A
+Bones B|骸骨B
+Angel Statue A|天使像A
+Angel Statue B|天使像B
+Broken Demon Statue A|壊れた悪魔像A
+Broken Demon Statue B|壊れた悪魔像B
+Demon Statue A|悪魔像A
+Demon Statue B|悪魔像B
+Bones C|骸骨C
+Mirror B|鏡B
+Sack A|麻袋A
+Sack B|麻袋B
+Clock A|時計A
+Clock B|時計B
+Painting|絵画
+World Map|世界地図
+Mirror A|鏡A
+Mirror B|鏡B
+Fireplace A (Stone)|暖炉A（石）
+Fireplace B (Brick)|暖炉B（レンガ）
+Fireplace C (Cray)|暖炉C（土）
+Fireplace D (Iron)|暖炉D（鉄）
+Large Bed|大きなベッド
+Large Bed|大きなベッド
+Large Quilt|大きな掛け布団
+Large Quilt|大きな掛け布団
+Fireplace A (Stone)|暖炉A（石）
+Fireplace B (Brick)|暖炉B（レンガ）
+Fireplace C (Cray)|暖炉C（土）
+Fireplace D (Iron)|暖炉D（鉄）
+Large Bed|大きなベッド
+Large Bed|大きなベッド
+Quilt A|掛け布団A
+Quilt B|掛け布団B
+Fireplace A (Stone)|暖炉A（石）
+Fireplace B (Brick)|暖炉B（レンガ）
+Fireplace C (Cray)|暖炉C（土）
+Fireplace D (Iron)|暖炉D（鉄）
+Bed A|ベッドA
+Bed B|ベッドB
+Bed C|ベッドC
+Quilt C|掛け布団C
+Fireplace A (Stone)|暖炉A（石）
+Fireplace B (Brick)|暖炉B（レンガ）
+Fireplace C (Cray)|暖炉C（土）
+Fireplace D (Iron)|暖炉D（鉄）
+Bed A|ベッドA
+Bed B|ベッドB
+Bed C|ベッドC
+Posted Notice|貼り紙
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Piano|ピアノ
+Piano|ピアノ
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Piano|ピアノ
+Piano|ピアノ
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Bookshelf A|本棚A
+Bookshelf B|本棚B
+Table A|テーブルA
+Table B|テーブルB
+Table C|テーブルC
+Lantern A|ランタンA
+Inside The Tent|テント内部
+Lantern B|ランタンB
+Bookshelf A|本棚A
+Bookshelf B|本棚B
+Chair A (Wood)|背もたれ椅子A（木製）
+Chair B (Stone)|背もたれ椅子B（石）
+Chair C (Noble)|背もたれ椅子C（貴族）
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Dish Cabinet A|食器棚A
+Bookshelf C|本棚C
+Chair A (Wood)|背もたれ椅子A（木製）
+Chair B (Stone)|背もたれ椅子B（石）
+Chair C (Noble)|背もたれ椅子C（貴族）
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Dish Cabinet A|食器棚A
+Bookshelf C|本棚C
+Stool A|椅子A
+Stool B|椅子B
+Stool C|椅子C
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Dish Cabinet B|食器棚B
+Dish Cabinet C|食器棚C
+Oven A|かまどA
+Sink A|流しA
+Kitchen Counter A|調理台A
+Stool D|椅子D
+Firewood A|薪A
+Firewood B|薪B
+Dish Cabinet B|食器棚B
+Dish Cabinet C|食器棚C
+Oven B|かまどB
+Sink B|流しB
+Kitchen Counter B|調理台B
+Fissures|亀裂
+Stain|汚れ
+Chest of Drawers A|タンスA
+Sundries Shelf A|雑貨棚A
+Sundries Shelf B|雑貨棚B
+Oven C|かまどC
+Sink C|流しC
+Kitchen Counter C|調理台C
+Armor|鎧
+Shield|盾
+Chest of Drawers A|タンスA
+Sundries Shelf A|雑貨棚A
+Sundries Shelf B|雑貨棚B
+Tapestry A|タペストリーA
+Tapestry B|タペストリーB
+Tapestry C|タペストリーC
+Sword|剣
+Axe|斧
+Chest of Drawers B|タンスB
+Chest of Drawers C|タンスC
+Sundries Shelf C|雑貨棚C
+Tapestry A|タペストリーA
+Tapestry B|タペストリーB
+Tapestry C|タペストリーC
+Spear|槍
+Spear|槍
+Chest of Drawers B|タンスB
+Chest of Drawers C|タンスC
+Sundries Shelf C|雑貨棚C

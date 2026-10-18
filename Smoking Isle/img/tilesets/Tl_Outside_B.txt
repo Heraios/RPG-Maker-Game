@@ -1,0 +1,281 @@
+Transparent|透明
+Entrance A|入口A
+Ladder A|はしごA
+Ladder B|はしごB
+Ladder C|はしごC
+Ladder D|はしごD
+Ladder E|はしごE
+Ladder F|はしごF
+Entrance B|入口B
+Gradation A|グラデーションA
+Stairs A (Up)|階段A（上り）
+Stairs B (Up)|階段B（上り）
+Stairs C (Up)|階段C（上り）
+Stairs D (Up)|階段D（上り）
+Stairs E (Up,Snow)|階段E（上り・雪）
+Stairs F (Up,Snow)|階段F（上り・雪）
+Gradation B|グラデーションB
+Vines|ツタ
+Stairs A (Down)|階段A（下り）
+Stairs B (Down)|階段B（下り）
+Stairs C (Down)|階段C（下り）
+Stairs D (Down)|階段D（下り）
+Stairs E (Down,Snow)|階段E（下り・雪）
+Stairs F (Down,Snow)|階段F（下り・雪）
+Shop Sign (Inn)|看板（宿）
+Shop Sign (Pub)|看板（酒場）
+Shop Sign (Sword)|看板（剣）
+Shop Sign (Armor)|看板（鎧）
+Shop Sign (Crystal Jade)|看板（水晶玉）
+Shop Sign (Bottle)|看板（ビン）
+Shop Sign (Sack)|看板（袋）
+Shop Sign (Eatery)|看板（食堂）
+Big Bridge Pier A|橋脚大A
+Big Bridge Pier B|橋脚大B
+Big Bridge Pier C|橋脚大C
+Arch Bridge A|アーチ橋A
+Arch Bridge B|アーチ橋B
+Arch Bridge C|アーチ橋C
+Sign A|立て札A
+Sign B|立て札B
+Big Bridge Pier A|橋脚大A
+Big Bridge Pier B|橋脚大B
+Big Bridge Pier C|橋脚大C
+Floating Cliffs|浮遊する崖
+Floating Cliffs|浮遊する崖
+Floating Cliffs|浮遊する崖
+Sign C|立て札C
+Sign D (Snow)|立て札D(雪)
+Big Bridge Pier A|橋脚大A
+Big Bridge Pier B|橋脚大B
+Big Bridge Pier C|橋脚大C
+Floating Cliffs|浮遊する崖
+Floating Cliffs|浮遊する崖
+Floating Cliffs|浮遊する崖
+Post A|ポストA
+Post B|ポストB
+Boundary Line A (Upper Left)|境界線A(左上)
+Boundary Line A (Center)|境界線A(真ん中)
+Boundary Line A (Upper Right)|境界線A(右上)
+Boundary Line B (Upper Left)|境界線B(左上)
+Boundary Line B (Center)|境界線B(真ん中)
+Boundary Line B (Upper Right)|境界線B(右上)
+Post C|ポストC
+Post D (Snow)|ポストD (雪)
+Boundary Line A (Left)|境界線A(左)
+Boundary Line A (Gathering)|境界線A(集合)
+Boundary Line A (Right)|境界線A(右)
+Boundary Line B (Left)|境界線B(左)
+Boundary Line B (Gathering)|境界線B(集合)
+Boundary Line B (Right)|境界線B(右)
+Fissures|亀裂
+Stain|汚れ
+Window A|窓A
+Chimney A|煙突A
+Chimney B|煙突B
+Chimney C|煙突C
+Chimney D (Snow)|煙突D(雪)
+Chimney E (Snow)|煙突E(雪)
+Chimney F|煙突F
+Chimney G|煙突G
+Window B|窓B
+Window C|窓C
+Window D|窓D
+Window E|窓E
+Window F|窓F
+Big Dais|大きな台座
+Big Dais|大きな台座
+Big Dais|大きな台座
+Roof Bay Window A|屋根の出窓A
+Roof Bay Window B|屋根の出窓B
+Roof Bay Window C|屋根の出窓C
+Roof Bay Window D|屋根の出窓D
+Window G|窓G
+Big Dais|大きな台座
+Big Dais|大きな台座
+Big Dais|大きな台座
+Large Window A|大型窓A
+Large Window B|大型窓B
+Large Window C|大型窓C
+Large Window D|大型窓D
+Large Window E (Snow)|大型窓E(雪)
+Big Dais|大きな台座
+Big Dais|大きな台座
+Big Dais|大きな台座
+Stained Glass Window A|ステンドグラスA
+Stained Glass Window B|ステンドグラスB
+Stained Glass Window C|ステンドグラスC
+Stained Glass Window D|ステンドグラスD
+Stained Glass Window E (Snow)|ステンドグラスE(雪)
+Stained Glass Window F (Snow)|ステンドグラスF(雪)
+Window I|窓I
+Window J|窓J
+Stained Glass Window A|ステンドグラスA
+Stained Glass Window B|ステンドグラスB
+Stained Glass Window C|ステンドグラスC
+Stained Glass Window D|ステンドグラスD
+Stained Glass Window E (Snow)|ステンドグラスE(雪)
+Stained Glass Window F (Snow)|ステンドグラスF(雪)
+Window K|窓K
+Window L (Snow)|窓L(雪)
+Iron‐Barred Window A|鉄格子A
+Iron‐Barred Window B|鉄格子B
+Iron‐Barred Window C|鉄格子C
+Iron‐Barred Window D (Snow)|鉄格子D(雪)
+Middle Window A|中型窓A
+Middle Window B|中型窓B
+Middle Window C|中型窓C
+Middle Window D (Snow)|中型窓D(雪)
+Crate A|木箱A
+Crate B|木箱B
+Crate C|木箱C
+Crate D (Snow)|木箱D(雪)
+Crate E|木箱E
+Crate F|木箱F
+Crate G|木箱G
+Pot A(Snow)|壺A（雪）
+Barrel A|樽A
+Barrel B|樽B
+Barrel C|樽C
+Barrel D(Snow)|樽D(雪)
+Pot B|壺B
+Pot C|壺C
+Pot D|壺D
+Pot E|壺E
+Well A|井戸A
+Well B|井戸B
+Well C|井戸C
+Well D(Snow)|井戸D(雪)
+Bones A|骸骨A
+Bones B|骸骨B
+Bones C|骸骨C
+Bones D(Snow)|骸骨D(雪)
+Stump A|切り株A
+Stump B|切り株B
+Stump C (Snow)|切り株C(雪)
+Burnt Residue|焚火跡
+Grave A|墓A
+Grave B|墓B
+Grave C|墓C
+Grave D(Snow)|墓D(雪)
+Dead Tree|枯れ木
+Dead Tree|枯れ木
+Conifer Tree (Snow)|針葉樹（雪）
+Conifer Tree|針葉樹
+Large Tree|大木
+Large Tree|大木
+Large Tree|大木
+Large Tree|大木
+Dead Tree|枯れ木
+Dead Tree|枯れ木
+Conifer Tree (Snow)|針葉樹（雪）
+Conifer Tree|針葉樹
+Large Tree|大木
+Large Tree|大木
+Large Tree|大木
+Large Tree|大木
+Palm Tree|ヤシの木
+Palm Tree|ヤシの木
+Conifer Tree (Snow)|針葉樹（雪）
+Conifer Tree|針葉樹
+Large Tree (Snow)|大木（雪）
+Large Tree (Snow)|大木（雪）
+Large Tree (Snow)|大木（雪）
+Large Tree (Snow)|大木（雪）
+Cactus|サボテン
+Palm Tree|ヤシの木
+Snowman|雪だるま
+Mushrooms|キノコ
+Large Tree (Snow)|大木（雪）
+Large Tree (Snow)|大木（雪）
+Large Tree (Snow)|大木（雪）
+Large Tree (Snow)|大木（雪）
+Angel Statue A|天使像A
+Angel Statue B|天使像B
+Angel Statue C|天使像C
+Angel Statue D (Snow)|天使像D（雪)
+Broken Angel Statue A|壊れた天使像A
+Broken Angel Statue B|壊れた天使像B
+Tapestry A|タペストリーA
+Tapestry B|タペストリーB
+Angel Statue A|天使像A
+Angel Statue B|天使像B
+Angel Statue C|天使像C
+Angel Statue D (Snow)|天使像D（雪)
+Broken Angel Statue C|壊れた天使像C
+Broken Angel Statue D (Snow)|壊れた天使像D（雪)
+Tapestry A|タペストリーA
+Tapestry B|タペストリーB
+Demon Statue A|悪魔像A
+Demon Statue B|悪魔像B
+Demon Statue C|悪魔像C
+Demon Statue D (Snow)|悪魔像D（雪)
+Broken Demon Statue A|壊れた悪魔像A
+Broken Demon Statue B|壊れた悪魔像B
+Tapestry C|タペストリーC
+Tapestry D|タペストリーD
+Demon Statue A|悪魔像A
+Demon Statue B|悪魔像B
+Demon Statue C|悪魔像C
+Demon Statue D (Snow)|悪魔像D（雪)
+Broken Demon Statue C|壊れた悪魔像C
+Broken Demon Statue D (Snow)|壊れた悪魔像D（雪)
+Tapestry C|タペストリーC
+Tapestry D|タペストリーD
+Suspension Bridge A|吊り橋A
+Suspension Bridge A|吊り橋A
+Suspension Bridge A|吊り橋A
+Suspension Bridge A|吊り橋A
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Firewood A|薪A
+Suspension Bridge A|吊り橋A
+Suspension Bridge A|吊り橋A
+Suspension Bridge A|吊り橋A
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Firewood B|薪B
+Suspension Bridge C|吊り橋C
+Suspension Bridge C|吊り橋C
+Suspension Bridge C|吊り橋C
+Suspension Bridge C|吊り橋C
+Suspension Bridge D(Snow)|吊り橋D（雪)
+Suspension Bridge D(Snow)|吊り橋D（雪)
+Suspension Bridge D(Snow)|吊り橋D（雪)
+Firewood C|薪C
+Suspension Bridge C|吊り橋C
+Suspension Bridge C|吊り橋C
+Suspension Bridge C|吊り橋C
+Suspension Bridge D(Snow)|吊り橋D（雪)
+Suspension Bridge D(Snow)|吊り橋D（雪)
+Suspension Bridge D(Snow)|吊り橋D（雪)
+Suspension Bridge D(Snow)|吊り橋D（雪)
+Firewood D(Snow)|薪D（雪）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

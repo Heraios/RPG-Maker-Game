@@ -1,0 +1,257 @@
+﻿Transparent|透明
+Entrance A|入口A
+Ladder A|はしごA
+Ladder B|はしごB
+Ladder C|はしごC
+Ladder D|はしごD
+Fissures|亀裂
+Stain|汚れ
+Entrance B|入口B
+Gradation A|グラデーションA
+Stairs A (Up)|階段A（上り）
+Stairs B (Up)|階段B（上り）
+Stairs C (Up)|階段C（上り）
+Stairs D (Up)|階段D（上り）
+Stairs E (Up)|階段E（上り）
+Stairs F (Up)|階段F（上り）
+Gradation B|グラデーションB
+Rope|ロープ
+Stairs A (Down)|階段A（下り）
+Stairs B (Down)|階段B（下り）
+Stairs C (Down)|階段C（下り）
+Stairs D (Down)|階段D（下り）
+Stairs E (Down)|階段E（下り）
+Stairs F (Down)|階段F（下り）
+Boundary Line A (Upper Left)|境界線A(左上)
+Boundary Line A (Center)|境界線A(真ん中)
+Boundary Line A (Upper Right)|境界線A(右上)
+Boundary Line B (Upper Left)|境界線B(左上)
+Boundary Line B (Center)|境界線B(真ん中)
+Boundary Line B (Upper Right)|境界線B(右上)
+Stairs G (Up)|階段G（上り）
+Stairs H (Up)|階段H（上り）
+Boundary Line A (Left)|境界線A(左)
+Boundary Line A (Gathering)|境界線A(集合)
+Boundary Line A (Right)|境界線A(右)
+Boundary Line B (Left)|境界線B(左)
+Boundary Line B (Gathering)|境界線B(集合)
+Boundary Line B (Right)|境界線B(右)
+Stairs G (Down)|階段G（下り）
+Stairs H (Down)|階段H（下り）
+Shop Sign (Inn)|看板（宿）
+Shop Sign (Pub)|看板（酒場）
+Shop Sign (Sword)|看板（剣）
+Shop Sign (Armor)|看板（鎧）
+Shop Sign (Crystal Jade)|看板（水晶玉）
+Shop Sign (Bottle)|看板（ビン）
+Shop Sign (Sack)|看板（袋）
+Shop Sign (Eatery)|看板（食堂）
+Window A|窓A
+Window B|窓B
+Window C|窓C
+Window D|窓D
+Helm(Front)|舵（正面）
+Helm(Front)|舵（正面）
+Helm(Front)|舵（正面）
+Helm(Side)|舵（側面）
+Window E|窓E
+Window F|窓F
+Window G|窓G
+Window H|窓H
+Helm(Front)|舵（正面）
+Helm(Front)|舵（正面）
+Helm(Front)|舵（正面）
+Helm(Side)|舵（側面）
+Circular Window A|丸窓A
+Circular Window B|丸窓B
+Circular Window C|丸窓C
+Circular Window D|丸窓D
+Lever A(Side)|レバーA(側面)
+Lever A(Front)|レバーA(正面)
+Cockpit A|操縦席A
+Cockpit A|操縦席A
+Circular Window E|丸窓E
+Circular Window F|丸窓F
+Circular Window G|丸窓G
+Circular Window H|丸窓H
+Lever B(Side)|レバーB(側面)
+Lever B(Front)|レバーB(正面)
+Cockpit A|操縦席A
+Cockpit A|操縦席A
+Sofa A(Two-Seater,Side)|ソファーA(二人掛け・側面)
+Sofa B(Side)|ソファーB(側面)
+Sofa B(Two-Seater,Side)|ソファーB(二人掛け・側面)
+Sofa A(Front)|ソファーA(正面)
+Sofa A(Back)|ソファーA(背面)
+Phone A|電話A
+Cockpit B|操縦席B
+Cockpit B|操縦席B
+Sofa A(Two-Seater,Side)|ソファーA(二人掛け・側面)
+Sofa A(Side)|ソファーA(側面)
+Sofa B(Two-Seater,Side)|ソファーB(二人掛け・側面)
+Sofa B(Front)|ソファーB(正面)
+Sofa B(Back)|ソファーB(背面)
+Phone B|電話B
+Cockpit B|操縦席B
+Cockpit B|操縦席B
+Sofa C(Two-Seater,Side)|ソファーC(二人掛け・側面)
+Sofa D(Side)|ソファーD(側面)
+Sofa D(Two-Seater,Side)|ソファーD(二人掛け・側面)
+Sofa D(Front)|ソファーD(正面)
+Sofa D(Back)|ソファーD(背面)
+Microphone A|マイクA
+Cockpit C|操縦席C
+Cockpit C|操縦席C
+Sofa C(Two-Seater,Side)|ソファーC(二人掛け・側面)
+Sofa C(Side)|ソファーC(側面)
+Sofa D(Two-Seater,Side)|ソファーD(二人掛け・側面)
+Sofa C(Front)|ソファーC(正面)
+Sofa C(Back)|ソファーC(背面)
+Microphone B|マイクB
+Cockpit C|操縦席C
+Cockpit C|操縦席C
+Emergency Medical Kit A|救急医療キットA
+Emergency Medical Kit B|救急医療キットB
+Emergency Medical Kit C|救急医療キットC
+Emergency Medical Kit D|救急医療キットD
+Emergency Medical Kit E|救急医療キットE
+Sack|麻袋
+Pot A|壺A
+Pot B|壺B
+Float A|浮き輪A
+Float B|浮き輪B
+Float C|浮き輪C
+Anchor A|錨A
+Anchor B|錨B
+Anchor C|錨C
+Barrel|樽
+Crate|木箱
+Log(Supplement to Raft)|丸太(いかだ補足)
+Fireplace A|暖炉A
+Fireplace B|暖炉B
+Fireplace C|暖炉C
+Large Bed|大きなベッド
+Large Bed|大きなベッド
+Bed A|ベッドA
+Bed B|ベッドB
+Log(Supplement to Raft)|丸太(いかだ補足)
+Fireplace A|暖炉A
+Fireplace B|暖炉B
+Fireplace C|暖炉C
+Large Bed|大きなベッド
+Large Bed|大きなベッド
+Bed A|ベッドA
+Bed B|ベッドB
+Log(Supplement to Raft)|丸太(いかだ補足)
+Fireplace A|暖炉A
+Fireplace B|暖炉B
+Fireplace C|暖炉C
+Large Quilt|大きな掛け布団
+Large Quilt|大きな掛け布団
+Quilt A|掛け布団A
+Quilt B|掛け布団B
+Posted Notice|貼り紙
+Fireplace A|暖炉A
+Fireplace B|暖炉B
+Fireplace C|暖炉C
+Clock A|時計A
+Clock B|時計B
+Clock C|時計C
+Painting|絵画
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Piano|ピアノ
+Piano|ピアノ
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Piano|ピアノ
+Piano|ピアノ
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace A|大きな暖炉A
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Large Fireplace B|大きな暖炉B
+Bookshelf|本棚
+Dish Cabinet|食器棚
+Book A|本A
+Book B|本B
+Book C|本C
+Kitchen Counter A|調理台A
+Kitchen Counter A|調理台A
+Kitchen Counter A|調理台A
+Bookshelf|本棚
+Dish Cabinet|食器棚
+Pot A|ポットA
+Pot B|ポットB
+Pot C|ポットC
+Kitchen Counter B|調理台B
+Kitchen Counter B|調理台B
+Kitchen Counter B|調理台B
+Sundries Shelf|雑貨棚
+Chest of Drawers|タンス
+Table|テーブル
+Beer Barrel|ビール樽
+Pint Mug|ジョッキ
+Hanging Meat|吊るし肉
+Cooking Utensils A|調理器具A
+Cooking Utensils B|調理器具B
+Sundries Shelf|雑貨棚
+Chest of Drawers|タンス
+Chair A (Wood)|背もたれ椅子A（木製）
+Chair B (Noble)|背もたれ椅子B（貴族）
+Bottle|ボトル
+Cup|カップ
+Pen A|ペンA
+Pen B|ペンB
+Pen C|ペンC
+Globe|地球儀
+Chair A (Wood)|背もたれ椅子A（木製）
+Chair B (Noble)|背もたれ椅子B（貴族）
+Soup|スープ
+Note|メモ
+Mirror A|鏡A
+Candlestand A|燭台A
+Candlestand B|燭台B
+Candlestand C|燭台C
+Stool A|椅子A
+Stool B|椅子B
+Potted Plant|植木鉢
+Mirror B|鏡B
+Mirror A|鏡A
+Candlestand D|燭台D
+Candlestand E|燭台E
+Candlestand F|燭台F
+Stool C|椅子C
+Spear|槍
+Spear|槍
+Sword|剣
+Axe|斧
+Armor|鎧
+Shield|盾
+Bones A|骸骨A
+Tapestry A|タペストリーA
+Tapestry B|タペストリーB
+Angel Statue|天使像
+Broken Angel Statue|壊れた天使像
+Demon Statue|悪魔像
+Rug|敷物
+Rug|敷物
+Bones B|骸骨B
+Tapestry A|タペストリーA
+Tapestry B|タペストリーB
+Angel Statue|天使像
+Broken Demon Statue|壊れた悪魔像
+Demon Statue|悪魔像
+Rug|敷物
+Rug|敷物
+Hunting Trophy|ハンティング・トロフィー
+

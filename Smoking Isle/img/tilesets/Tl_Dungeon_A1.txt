@@ -1,0 +1,16 @@
+﻿Water A|水場A
+Deep Water|深い水場
+Lotus Pads|蓮の葉
+Swamp Grass|水草
+Swamp A|沼A
+Bubbles (Swamp)|泡(沼)
+Swamp B|沼B
+Swirl|渦
+Water B|水場B
+Waterfall|滝
+Lava|溶岩
+Waterfall (Lava)|滝(溶岩)
+Swamp Of Poison A|毒の沼A
+Bubbles (Swamp Of Poison)|泡(毒の沼)
+Swamp Of Poison B|毒の沼B
+Bubbles|泡

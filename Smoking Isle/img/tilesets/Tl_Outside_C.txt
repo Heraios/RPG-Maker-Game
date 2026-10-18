@@ -1,0 +1,256 @@
+Stone Enclosure A|石の囲いA
+Stone Enclosure A|石の囲いA
+Stone Enclosure A|石の囲いA
+Stone Enclosure B(Snow)|石の囲いB(雪)
+Stone Enclosure B(Snow)|石の囲いB(雪)
+Stone Enclosure B(Snow)|石の囲いB(雪)
+Monument A|石碑A
+Monument A|石碑A
+Stone Enclosure A|石の囲いA
+Nothing|無し
+Stone Enclosure A|石の囲いA
+Stone Enclosure B(Snow)|石の囲いB(雪)
+Nothing|無し
+Stone Enclosure B(Snow)|石の囲いB(雪)
+Monument A|石碑A
+Monument A|石碑A
+Stone Enclosure A|石の囲いA
+Stone Enclosure A|石の囲いA
+Stone Enclosure A|石の囲いA
+Stone Enclosure B(Snow)|石の囲いB(雪)
+Stone Enclosure B(Snow)|石の囲いB(雪)
+Stone Enclosure B(Snow)|石の囲いB(雪)
+Monument B|石碑B
+Monument B|石碑B
+Tent|テント
+Tent|テント
+Tent|テント
+Stone Pillar A|石の柱A
+Stone Pillar B|石の柱B
+Stone Pillar C (Snow)|石の柱C（雪）
+Monument B|石碑B
+Monument B|石碑B
+Tent|テント
+Tent|テント
+Tent|テント
+Stone Pillar A|石の柱A
+Stone Pillar B|石の柱B
+Stone Pillar C (Snow)|石の柱C（雪）
+Monument C (Snow)|石碑C（雪）
+Monument C (Snow)|石碑C（雪）
+Tent|テント
+Tent|テント
+Tent|テント
+Stone Pillar A|石の柱A
+Stone Pillar B|石の柱B
+Stone Pillar C (Snow)|石の柱C（雪）
+Monument C (Snow)|石碑C（雪）
+Monument C (Snow)|石碑C（雪）
+Streetlight A|街灯A
+Obelisk|オベリスク
+Broken Obelisk|折れたオベリスク
+Broken Stone Pillar A|折れた石の柱A
+Broken Stone Pillar B|折れた石の柱B
+Broken Stone Pillar C (Snow)|折れた石の柱C（雪）
+Monument D|石碑D
+Monument D|石碑D
+Streetlight A|街灯A
+Obelisk|オベリスク
+Broken Obelisk|折れたオベリスク
+Broken Stone Pillar A|折れた石の柱A
+Broken Stone Pillar B|折れた石の柱B
+Broken Stone Pillar C (Snow)|折れた石の柱C（雪）
+Monument D|石碑D
+Monument D|石碑D
+Streetlight A|街灯A
+Obelisk|オベリスク
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Small Desk|小さい机
+Streetlight B (Snow)|街灯B（雪）
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Streetlight B (Snow)|街灯B（雪）
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Streetlight B (Snow)|街灯B（雪）
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Roof A|屋根A
+Mooring Bollard A|ビットA
+Lantern|ランタン
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Nothing|無し
+Mooring Bollard B|ビットB
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Mooring Bollard C(Snow)|ビットC（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Brick Ground Area (Snow)|レンガ接地部分（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Roof B (Snow)|屋根B（雪）
+Rooftop A (Upper Left)|屋上A(左上）
+Rooftop A (Above)|屋上A(上）
+Rooftop A (Upper Right)|屋上A(右上）
+Rooftop A (Inner Part 1)|屋上A(内側1）
+Rooftop A (Inner Part 2)|屋上A(内側2）
+Rooftop B (Upper Left)|屋上B(左上）
+Rooftop B (Above)|屋上B(上）
+Rooftop B (Upper Right)|屋上B(右上）
+Rooftop A (Left)|屋上A(左）
+Rooftop A (Center)|屋上A(真ん中）
+Rooftop A (Right)|屋上A(右）
+Rooftop A (Inner Part 3)|屋上A(内側3）
+Rooftop A (Inner Part 4)|屋上A(内側4）
+Rooftop B (Left)|屋上B(左）
+Rooftop B (Center)|屋上B(真ん中）
+Rooftop B (Right)|屋上B(右）
+Rooftop A (Lower Left)|屋上A(左下）
+Rooftop A (Below)|屋上A(下）
+Rooftop A (Lower Right)|屋上A(右下）
+Rooftop B (Inner Part 1)|屋上B(内側1）
+Rooftop B (Inner Part 2)|屋上B(内側2）
+Rooftop B (Lower Left)|屋上B(左下）
+Rooftop B (Below)|屋上B(下）
+Rooftop B (Lower Right)|屋上B(右下）
+Brick (Left)|レンガ（左）
+Brick (Center)|レンガ（真ん中）
+Brick (Right)|レンガ（右）
+Rooftop B (Inner Part 3)|屋上B(内側3）
+Rooftop B (Inner Part 4)|屋上B(内側4）
+Rooftop C (Upper Left)|屋上C(左上）
+Rooftop C (Above)|屋上C(上）
+Rooftop C (Upper Right)|屋上C(右上）
+Brick (Lower Left)|レンガ（左下）
+Brick (Below)|レンガ（下）
+Brick (Lower Right)|レンガ（右下）
+Rooftop C (Inner Part 1)|屋上C(内側1）
+Rooftop C (Inner Part 2)|屋上C(内側2）
+Rooftop C (Left)|屋上C(左）
+Rooftop C (Center)|屋上C(真ん中）
+Rooftop C (Right)|屋上C(右）
+Rooftop D (Upper Left, Snow)|屋上D(左上・雪）
+Rooftop D (Above, Snow)|屋上D(上・雪）
+Rooftop D (Upper Right, Snow)|屋上D(右上・雪）
+Rooftop C (Inner Part 3)|屋上C(内側3）
+Rooftop C (Inner Part 4)|屋上C(内側4）
+Rooftop C (Lower Left)|屋上C(左下）
+Rooftop C (Below)|屋上C(下）
+Rooftop C (Lower Right)|屋上C(右下）
+Rooftop D (Left, Snow)|屋上D(左・雪）
+Rooftop D (Center, Snow)|屋上D(真ん中・雪）
+Rooftop D (Right, Snow)|屋上D(右・雪）
+Rooftop D (Inner Part 1, Snow)|屋上D(内側1・雪）
+Rooftop D (Inner Part 2, Snow)|屋上D(内側2・雪）
+Round Tower D (Supplement)|円塔D（補足）
+Round Tower D|円塔D
+Round Tower D|円塔D
+Rooftop D (Lower Left, Snow)|屋上D(左下・雪）
+Rooftop D (Below, Snow)|屋上D(下・雪）
+Rooftop D (Lower Right, Snow)|屋上D(右下・雪）
+Rooftop D (Inner Part 3, Snow)|屋上D(内側3・雪）
+Rooftop D (Inner Part 4, Snow)|屋上D(内側4・雪）
+Round Tower C (Supplement)|円塔C（補足）
+Round Tower D|円塔D
+Round Tower D|円塔D
+Round Tower A|円塔A
+Round Tower A|円塔A
+Round Tower B|円塔B
+Round Tower B|円塔B
+Round Tower C|円塔C
+Round Tower C|円塔C
+Round Tower D|円塔D
+Round Tower D|円塔D
+Round Tower A|円塔A
+Round Tower A|円塔A
+Round Tower B|円塔B
+Round Tower B|円塔B
+Round Tower C|円塔C
+Round Tower C|円塔C
+Round Tower D|円塔D
+Round Tower D|円塔D
+Round Tower A|円塔A
+Round Tower A|円塔A
+Round Tower B|円塔B
+Round Tower B|円塔B
+Round Tower C|円塔C
+Round Tower C|円塔C
+Triangular Roof A|三角屋根A
+Triangular Roof A|三角屋根A
+Round Tower A|円塔A
+Round Tower A|円塔A
+Round Tower B|円塔B
+Round Tower B|円塔B
+Round Tower C|円塔C
+Round Tower C|円塔C
+Triangular Roof A|三角屋根A
+Triangular Roof A|三角屋根A
+Dome A|ドームA
+Dome A|ドームA
+Round Tower E|円塔E
+Round Tower E|円塔E
+Round Tower F(Snow)|円塔F(雪)
+Round Tower F(Snow)|円塔F(雪)
+Triangular Roof A|三角屋根A
+Triangular Roof A|三角屋根A
+Dome A|ドームA
+Dome A|ドームA
+Round Tower E|円塔E
+Round Tower E|円塔E
+Round Tower F(Snow)|円塔F(雪)
+Round Tower F(Snow)|円塔F(雪)
+Triangular Roof B(Snow)|三角屋根B(雪)
+Triangular Roof B(Snow)|三角屋根B(雪)
+Dome B|ドームB
+Dome B|ドームB
+Round Tower E|円塔E
+Round Tower E|円塔E
+Round Tower F(Snow)|円塔F(雪)
+Round Tower F(Snow)|円塔F(雪)
+Triangular Roof B(Snow)|三角屋根B(雪)
+Triangular Roof B(Snow)|三角屋根B(雪)
+Dome B|ドームB
+Dome B|ドームB
+Round Tower E|円塔E
+Round Tower E|円塔E
+Round Tower F(Snow)|円塔F(雪)
+Round Tower F(Snow)|円塔F(雪)
+Triangular Roof B(Snow)|三角屋根B(雪)
+Triangular Roof B(Snow)|三角屋根B(雪)

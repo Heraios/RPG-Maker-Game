@@ -1,0 +1,48 @@
+﻿Brick(Red)|レンガ（赤）
+Brick|レンガ
+Brick(Moss)|レンガ（苔）
+Brick(Sun-Dried)|レンガ（日干し）
+Brick(Snow)|レンガ（雪）
+Temple|神殿
+Stone Wall|石壁
+Stone Wall(Snow)|石壁(雪）
+Brick(Red)|レンガ（赤）
+Brick|レンガ
+Brick(Moss)|レンガ（苔）
+Brick(Sun-Dried)|レンガ（日干し）
+Brick(Snow)|レンガ（雪）
+Temple|神殿
+Stone Wall|石壁
+Stone Wall(Snow)|石壁(雪）
+Board|板
+Board(Snow)|板(雪）
+Forest|森
+Forest(Snow)|森(雪)
+Cliff A|崖A
+Cliff B|崖B
+Cliff C|崖C
+Cliff D(Snow)|崖D（雪）
+Board|板
+Board(Snow)|板(雪）
+Forest|森
+Forest(Snow)|森(雪)
+Cliff A|崖A
+Cliff B|崖B
+Cliff C|崖C
+Cliff D(Snow)|崖D（雪）
+Super Ancient Wall A|超古代の壁A
+Super Ancient Wall B|超古代の壁B
+Super Ancient Wall C|超古代の壁C
+Super Ancient Wall D|超古代の壁D
+Super Ancient Wall E|超古代の壁E
+Iron Wawll A|鉄壁A
+Iron Wawll B|鉄壁B
+Fence|フェンス
+Super Ancient Wall A|超古代の壁A
+Super Ancient Wall B|超古代の壁B
+Super Ancient Wall C|超古代の壁C
+Super Ancient Wall D|超古代の壁D
+Super Ancient Wall E|超古代の壁E
+Iron Wawll A|鉄壁A
+Iron Wawll B|鉄壁B
+Fence|フェンス

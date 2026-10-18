@@ -1,0 +1,32 @@
+﻿Dirt A (Meadow)|土A（草地）
+Dirt B (Meadow)|土B（草地）
+Desert|砂漠
+Cobblestones A (Sand)|石畳A (砂地)
+Bush|茂み
+Wooden Fence A|木製の柵A
+Stone Fence A|石造りの柵A
+Fissures|ひび割れ
+Cobblestones B (Sand)|石畳B (砂地)
+Dirt C (Meadow)|土C（草地）
+Dirt D (Meadow)|土D（草地）
+Sand (Meadow)|砂地（草地）
+Grass A|草A
+Wooden Fence B|木製の柵B
+Stone Fence B|石造りの柵B
+Soil|汚れ
+Hole A|穴A
+Hole B|穴B
+Hole C|穴C
+Hole D|穴D
+Grass B|草B
+Wooden Fence C|木製の柵C
+Stone Fence C|石造りの柵C
+Carpet A|カーペットA
+Large Clouds|大きな雲
+Cobblestones C (Snow)|石畳C（雪）
+Cobblestones D (Snow)|石畳D（雪）
+Dirt E (Snow)|土E（雪）
+Bush (Snow)|茂み（雪）
+Wooden Fence D (Snow)|木製の柵B (雪)
+Stone Fence B (Snow)|石造りの柵B (雪)
+Carpet B|カーペットB

@@ -1,0 +1,256 @@
+﻿Pier Legs|桟橋の脚
+Mooring Bollard|ビット
+Roof B (Supplement)|屋根B(補足)
+Roof B (Supplement)|屋根B(補足)
+Roof C (Supplement)|屋根C(補足)
+Roof C (Supplement)|屋根C(補足)
+Roof D (Supplement)|屋根D(補足)
+Roof D (Supplement)|屋根D(補足)
+Roof A(Diagonal)|屋根A(斜め)
+Roof A(Diagonal)|屋根A(斜め)
+Roof B(Diagonal)|屋根B(斜め)
+Roof B(Diagonal)|屋根B(斜め)
+Roof C(Diagonal)|屋根C(斜め)
+Roof C(Diagonal)|屋根C(斜め)
+Roof D(Diagonal)|屋根D(斜め)
+Roof D(Diagonal)|屋根D(斜め)
+Wall A(Diagonal, Cobbling Together)|壁A(斜め・つぎはぎ)
+Wall A(Diagonal, Cobbling Together)|壁A(斜め・つぎはぎ)
+Wall B(Diagonal, Light Blue)|壁B(斜め・水色)
+Wall B(Diagonal, Light Blue)|壁B(斜め・水色)
+Wall C(Diagonal, Gray)|壁C(斜め・灰色)
+Wall C(Diagonal, Gray)|壁C(斜め・灰色)
+Wall D(Diagonal, Wooden Deck)|壁D(斜め・木造甲板)
+Wall D(Diagonal, Wooden Deck)|壁D(斜め・木造甲板)
+Wall A(Diagonal, Cobbling Together)|壁A(斜め・つぎはぎ)
+Wall A(Diagonal, Cobbling Together)|壁A(斜め・つぎはぎ)
+Wall B(Diagonal, Light Blue)|壁B(斜め・水色)
+Wall B(Diagonal, Light Blue)|壁B(斜め・水色)
+Wall C(Diagonal, Gray)|壁C(斜め・灰色)
+Wall C(Diagonal, Gray)|壁C(斜め・灰色)
+Wall D(Diagonal, Wooden Deck)|壁D(斜め・木造甲板)
+Wall D(Diagonal, Wooden Deck)|壁D(斜め・木造甲板)
+Wall A(Diagonal, Cobbling Together)|壁A(斜め・つぎはぎ)
+Wall A(Diagonal, Cobbling Together)|壁A(斜め・つぎはぎ)
+Wall B(Diagonal, Light Blue)|壁B(斜め・水色)
+Wall B(Diagonal, Light Blue)|壁B(斜め・水色)
+Wall C(Diagonal, Gray)|壁C(斜め・灰色)
+Wall C(Diagonal, Gray)|壁C(斜め・灰色)
+Wall D(Diagonal, Wooden Deck)|壁D(斜め・木造甲板)
+Wall D(Diagonal, Wooden Deck)|壁D(斜め・木造甲板)
+Roof E (Supplement)|屋根E(補足)
+Roof E (Supplement)|屋根E(補足)
+Roof F (Supplement)|屋根F(補足)
+Roof F (Supplement)|屋根F(補足)
+Roof G (Supplement)|屋根G(補足)
+Roof G (Supplement)|屋根G(補足)
+Roof H (Supplement)|屋根H(補足)
+Roof H (Supplement)|屋根H(補足)
+Roof E(Diagonal)|屋根E(斜め)
+Roof E(Diagonal)|屋根E(斜め)
+Roof F(Diagonal)|屋根F(斜め)
+Roof F(Diagonal)|屋根F(斜め)
+Roof G(Diagonal)|屋根G(斜め)
+Roof G(Diagonal)|屋根G(斜め)
+Roof H(Diagonal)|屋根H(斜め)
+Roof H(Diagonal)|屋根H(斜め)
+Wall E(Diagonal, Wood A)|壁E(斜め・木造A)
+Wall E(Diagonal, Wood A)|壁E(斜め・木造A)
+Wall F(Diagonal, Wood B)|壁F(斜め・木造B)
+Wall F(Diagonal, Wood B)|壁F(斜め・木造B)
+Wall G(Diagonal, Deck A)|壁G(斜め・甲板A)
+Wall G(Diagonal, Deck A)|壁G(斜め・甲板A)
+Wall H(Diagonal, Deck B)|壁H(斜め・甲板B)
+Wall H(Diagonal, Deck B)|壁H(斜め・甲板B)
+Wall E(Diagonal, Wood A)|壁E(斜め・木造A)
+Wall E(Diagonal, Wood A)|壁E(斜め・木造A)
+Wall F(Diagonal, Wood B)|壁F(斜め・木造B)
+Wall F(Diagonal, Wood B)|壁F(斜め・木造B)
+Wall G(Diagonal, Deck A)|壁G(斜め・甲板A)
+Wall G(Diagonal, Deck A)|壁G(斜め・甲板A)
+Wall H(Diagonal, Deck B)|壁H(斜め・甲板B)
+Wall H(Diagonal, Deck B)|壁H(斜め・甲板B)
+Wall E(Diagonal, Wood A)|壁E(斜め・木造A)
+Wall E(Diagonal, Wood A)|壁E(斜め・木造A)
+Wall F(Diagonal, Wood B)|壁F(斜め・木造B)
+Wall F(Diagonal, Wood B)|壁F(斜め・木造B)
+Wall G(Diagonal, Deck A)|壁G(斜め・甲板A)
+Wall G(Diagonal, Deck A)|壁G(斜め・甲板A)
+Wall H(Diagonal, Deck B)|壁H(斜め・甲板B)
+Wall H(Diagonal, Deck B)|壁H(斜め・甲板B)
+Rooftop A|屋上A
+Rooftop A|屋上A
+Rooftop A|屋上A
+Bullet A|弾丸A
+Tank Gun|戦車砲
+Rooftop B|屋上B
+Rooftop B|屋上B
+Rooftop B|屋上B
+Rooftop A|屋上A
+Rooftop A|屋上A
+Rooftop A|屋上A
+Bullet B|弾丸B
+Tank Gun|戦車砲
+Rooftop B|屋上B
+Rooftop B|屋上B
+Rooftop B|屋上B
+Rooftop A|屋上A
+Rooftop A|屋上A
+Rooftop A|屋上A
+Bullet B|弾丸B
+Tank Gun|戦車砲
+Rooftop B|屋上B
+Rooftop B|屋上B
+Rooftop B|屋上B
+Rooftop C|屋上C
+Rooftop C|屋上C
+Rooftop C|屋上C
+Tank Gun|戦車砲
+Tank Gun|戦車砲
+Tank Gun|戦車砲
+Keel|竜骨
+Outside Light|外灯
+Rooftop C|屋上C
+Rooftop C|屋上C
+Rooftop C|屋上C
+Tank Gun|戦車砲
+Tank Gun|戦車砲
+Tank Gun|戦車砲
+Keel|竜骨
+Outside Light|外灯
+Rooftop C|屋上C
+Rooftop C|屋上C
+Rooftop C|屋上C
+Mast Yard A|マストのヤードA
+Mast Yard A|マストのヤードA
+Mast Yard A|マストのヤードA
+Keel|竜骨
+Outside Light|外灯
+Nothing|無し
+Tent|テント
+Nothing|無し
+Mast|帆柱
+Flag|旗
+Flag|旗
+Flag|旗
+Mast|帆柱
+Tent|テント
+Tent|テント
+Tent|テント
+Mast|帆柱
+Flag|旗
+Flag|旗
+Flag|旗
+Mast|帆柱
+Tent|テント
+Tent|テント
+Tent|テント
+Mast|帆柱
+Lantern|ランタン
+Mast Yard B|マストのヤードB
+Mast Yard B|マストのヤードB
+Mast Yard B|マストのヤードB
+Tent|テント
+Tent|テント
+Tent|テント
+Handrail A|手すりA
+Handrail A|手すりA
+Sail|帆
+Sail|帆
+Sail|帆
+Nothing|無し
+Inside The Tent|テント内部
+Nothing|無し
+Handrail A|手すりA
+Handrail A|手すりA
+Handrail A|手すりA
+Handrail A|手すりA
+Handrail A|手すりA
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Handrail A|手すりA
+Handrail A|手すりA
+Handrail A|手すりA
+Handrail A|手すりA
+Handrail A|手すりA
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Handrail A|手すりA
+Handrail C|手すりC
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail B|手すりB
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Inside The Tent|テント内部
+Handrail A|手すりA
+Handrail C|手すりC
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail A|手すりA
+Handrail A|手すりA
+Handrail A|手すりA
+Handrail A|手すりA
+Handrail C|手すりC
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail C|手すりC
+Handrail B|手すりB
+Handrail B|手すりB
+Handrail B|手すりB
+Interceptor System A|迎撃システムA
+Interceptor System A|迎撃システムA
+Interceptor System A|迎撃システムA
+Interceptor System B|迎撃システムB
+Interceptor System B|迎撃システムB
+Interceptor System B|迎撃システムB
+Cannon A(Facing Left)|大砲A(左向き)
+Cannon A(Facing Left)|大砲A(左向き)
+Interceptor System A|迎撃システムA
+Interceptor System A|迎撃システムA
+Interceptor System A|迎撃システムA
+Interceptor System B|迎撃システムB
+Interceptor System B|迎撃システムB
+Interceptor System B|迎撃システムB
+Cannon A(Facing Right)|大砲A(右向き)
+Cannon A(Facing Right)|大砲A(右向き)
+Interceptor System A|迎撃システムA
+Interceptor System A|迎撃システムA
+Interceptor System A|迎撃システムA
+Interceptor System B|迎撃システムB
+Interceptor System B|迎撃システムB
+Interceptor System B|迎撃システムB
+Cannon B(Facing Left)|大砲B(左向き)
+Cannon B(Facing Left)|大砲B(左向き)
+Interceptor System A|迎撃システムA
+Interceptor System A|迎撃システムA
+Interceptor System A|迎撃システムA
+Interceptor System B|迎撃システムB
+Interceptor System B|迎撃システムB
+Interceptor System B|迎撃システムB
+Cannon B(Facing Right)|大砲B(右向き)
+Cannon B(Facing Right)|大砲B(右向き)

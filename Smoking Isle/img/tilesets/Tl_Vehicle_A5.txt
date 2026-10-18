@@ -1,0 +1,129 @@
+﻿Black|黒
+White|白
+Light Blue|水色
+Blue|青
+Brown|茶色
+Gray|灰色
+Khaki|カーキー色
+Dark Blue|濃い青色
+Ledge A (Tile, Left and Right)|段差A（タイル・左右）
+Ledge A (Tile, Left)|段差A（タイル・左）
+Ledge A (Tile, Center)|段差A（タイル・中央）
+Ledge A (Tile, Right)|段差A（タイル・右）
+Ledge B (Tile, Left and Right)|段差B（タイル・左右）
+Ledge B (Tile, Left)|段差B（タイル・左）
+Ledge B (Tile, Center)|段差B（タイル・中央）
+Ledge B (Tile, Right)|段差B（タイル・右）
+Dark Brown|濃い茶色
+Meadow|草地
+Cobblestones A|石畳A
+Cobblestones B|石畳B
+Cobbling Together A|つぎはぎA
+Cobbling Together B|つぎはぎB
+Cobbling Together C|つぎはぎC
+Cobbling Together D|つぎはぎD
+Ledge C (Tile, Left and Right)|段差C（タイル・左右）
+Ledge C (Tile, Left)|段差C（タイル・左）
+Ledge C (Tile, Center)|段差C（タイル・中央）
+Ledge C (Tile, Right)|段差C（タイル・右）
+Ledge D (Tile, Left and Right)|段差D（タイル・左右）
+Ledge D (Tile, Left)|段差D（タイル・左）
+Ledge D (Tile, Center)|段差D（タイル・中央）
+Ledge D (Tile, Right)|段差D（タイル・右）
+Ground A (Wood A, V)|床A（木造A・縦）
+Ground B (Wood A, H)|床B（木造A・横）
+Ground C (Wood B, V)|床C（木造B・縦）
+Ground D (Wood B, H)|床D（木造B・横）
+Ground E (Wood C, V)|床E（木造C・縦）
+Ground F (Wood C, H)|床F（木造C・横）
+Ground G (Wood D, V)|床G（木造D・縦）
+Ground H (Wood D, H)|床H（木造D・横）
+Ledge E(Brick, Left and Right)|段差E（レンガ・左右）
+Ledge E (Brick, Left)|段差E（レンガ・左）
+Ledge E (Brick, Center)|段差E（レンガ・中央）
+Ledge E (Brick, Right)|段差E（レンガ・右）
+Ledge F (Dirt, Left and Right)|段差F（土・左右）
+Ledge F (Dirt, Left)|段差F（土・左）
+Ledge F (Dirt, Center)|段差F（土・中央）
+Ledge F (Dirt, Right)|段差F（土・右）
+Ground I (Stone Floor X Tile 1)|床I（石X字タイル床1）
+Ground J (Stone Floor X Tile 2)|床J（石X字タイル床2）
+Ground K (Wood Floor)|床K（木の床）
+Ground L (Machine 1)|床L（機械1）
+Ground M (Machine 2)|床M（機械2）
+Ground N (Metal 1)|床N（金属1）
+Ground O (Metal 2)|床O（金属2）
+Dark Gray|濃い灰色
+Design|模様
+Bush|草むら
+Ice|氷
+Frozen Waterfall|凍った滝
+Drainage Outfall A|排水口A
+Drainage Outfall B|排水口B
+Drainage Outfall C|排水口C
+Drainage Outfall D|排水口D
+Stairs A (Left)|階段A（左）
+Stairs A(Center)|階段A（中央）
+Stairs A(Right)|階段A（右）
+Stairs A(Assembly)|階段A（集合）
+Stairs B (Left)|階段B（左）
+Stairs B(Center)|階段B（中央）
+Stairs B(Right)|階段B（右）
+Stairs B(Assembly)|階段B（集合）
+Stairs C (Left)|階段C（左）
+Stairs C(Center)|階段C（中央）
+Stairs C(Right)|階段C（右）
+Stairs C(Assembly)|階段C（集合）
+Stairs D (Left)|階段D（左）
+Stairs D(Center)|階段D（中央）
+Stairs D(Right)|階段D（右）
+Stairs D(Assembly)|階段D（集合）
+Stairs E (Left)|階段E（左）
+Stairs E(Center)|階段E（中央）
+Stairs E(Right)|階段E（右）
+Stairs E(Assembly)|階段E（集合）
+Stairs F (Left)|階段F（左）
+Stairs F(Center)|階段F（中央）
+Stairs F(Right)|階段F（右）
+Stairs F(Assembly)|階段F（集合）
+Downstairs A|下り階段A
+Downstairs B|下り階段B
+Downstairs C|下り階段C
+Downstairs D|下り階段D
+Ledge G (Wood)|段差G（木）
+Ledge H|段差H
+Ledge I|段差I
+Ledge J|段差J
+Small Vents A|小さい通気口A
+Small Vents B|小さい通気口B
+Small Vents C|小さい通気口C
+Small Vents D|小さい通気口D
+Small Vents E|小さい通気口E
+Ledge K|段差K
+Bridge(H)|橋(横)
+Bridge(V)|橋(縦)
+Vents A|通気口A
+Vents B|通気口B
+Vents C|通気口C
+Vents D|通気口D
+Vents E|通気口E
+Rug|じゅうたん
+Rug|じゅうたん
+Rug|じゅうたん
+Vents A|通気口A
+Vents B|通気口B
+Vents C|通気口C
+Vents D|通気口D
+Vents E|通気口E
+Rug|じゅうたん
+Rug|じゅうたん
+Rug|じゅうたん
+Vents A|通気口A
+Vents B|通気口B
+Vents C|通気口C
+Vents D|通気口D
+Vents E|通気口E
+Rug|じゅうたん
+Rug|じゅうたん
+Rug|じゅうたん
+

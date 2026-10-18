@@ -1,0 +1,16 @@
+Water A|水場A
+Deep Water|深い水場
+Lotus Pads|蓮の葉
+Swamp Grass|水草
+Water B (Stone Floor X Tile)|水場B（石X字タイル床）
+Bubbles A|泡A
+Water C (Complex Masonry)|水場C（複雑な石組の床）
+Bubbles B|泡B
+Water D (Stone Floor Tile)|水場D（石タイル床）
+Waterfall|滝
+Water E(Flagstone)|水場E（石畳）
+Whirlpool |渦
+Water G|水場G
+Dirty Bubbles A|汚い泡A
+Dirty Water|汚い水場
+Dirty Bubbles B|汚い泡B

@@ -1,0 +1,256 @@
+﻿Transparent|透明
+Entrance A|入口A
+Boundary Line A (Upper Left)|境界線A(左上)
+Boundary Line A (Center)|境界線A(真ん中)
+Boundary Line A (Upper Right)|境界線A(右上)
+Boundary Line B (Upper Left)|境界線B(左上)
+Boundary Line B (Center)|境界線B(真ん中)
+Boundary Line B (Upper Right)|境界線B(右上)
+Entrance B|入口B
+Gradation A|グラデーションA
+Boundary Line A (Left)|境界線A(左)
+Boundary Line A (Gathering)|境界線A(集合)
+Boundary Line A (Right)|境界線A(右)
+Boundary Line B (Left)|境界線B(左)
+Boundary Line B (Gathering)|境界線B(集合)
+Boundary Line B (Right)|境界線B(右)
+Gradation B|グラデーションB
+Fissures|亀裂
+Stairs A (Up 1)|階段A（上り1）
+Stairs A (Up 2)|階段A（上り2）
+Stairs B (Up 1)|階段B（上り1）
+Stairs B (Up 2)|階段B（上り2）
+Stairs C (Up 1)|階段C（上り1）
+Stairs C (Up 2)|階段C（上り2）
+Gradation C|グラデーションC
+Stain|汚れ
+Stairs A (Down 1)|階段A（下り1）
+Stairs A (Down 2)|階段A（下り2）
+Stairs B (Down 1)|階段B（下り1）
+Stairs B (Down 2)|階段B（下り2）
+Stairs C (Down 1)|階段C（下り1）
+Stairs C (Down 2)|階段C（下り2）
+Stairs D (Up 1)|階段D（上り1）
+Stairs D (Up 2)|階段D（上り2）
+Stairs E (Up 1)|階段E（上り1）
+Stairs E (Up 2)|階段E（上り2）
+Stairs F (Up 1)|階段F（上り1）
+Stairs F (Up 2)|階段F（上り2）
+Stairs G (Up 1)|階段G（上り1）
+Stairs G (Up 2)|階段G（上り2）
+Stairs D (Down 1)|階段D（下り1）
+Stairs D (Down 2)|階段D（下り2）
+Stairs E (Down 1)|階段E（下り1）
+Stairs E (Down 2)|階段E（下り2）
+Stairs F (Down 1)|階段F（下り1）
+Stairs F (Down 2)|階段F（下り2）
+Stairs G (Down 1)|階段G（下り1）
+Stairs G (Down 2)|階段G（下り2）
+Stairs H (Up 1)|階段H（上り1）
+Stairs H (Up 2)|階段H（上り2）
+Stairs I (Up 1)|階段I（上り1）
+Stairs I (Up 2)|階段I（上り2）
+Stairs J (Up 1)|階段J（上り1）
+Stairs J (Up 2)|階段J（上り2）
+Stairs K (Up 1)|階段K（上り1）
+Stairs K (Up 2)|階段K（上り2）
+Stairs H (Down 1)|階段H（下り1）
+Stairs H (Down 2)|階段H（下り2）
+Stairs I (Down 1)|階段I（下り1）
+Stairs I (Down 2)|階段I（下り2）
+Stairs J (Down 1)|階段J（下り1）
+Stairs J (Down 2)|階段J（下り2）
+Stairs K (Down 1)|階段K（下り1）
+Stairs K (Down 2)|階段K（下り2）
+Vines A|ツタA
+Vines B|ツタB
+Ladder A|はしごA
+Ladder B|はしごB
+Ladder C|はしごC
+Ladder D|はしごD
+Ladder E|はしごE
+Ladder F|はしごF
+Ladder G|はしごG
+Ladder H|はしごH
+Ladder I|はしごI
+Ladder J|はしごJ
+Pot A|壺A
+Pot B|壺B
+Barrel A|樽A
+Barrel B|樽B
+Wooden Bridge (V)|木の橋（縦）
+Wooden Bridge (V)|木の橋（縦）
+Wooden Bridge (V)|木の橋（縦）
+Wooden Bridge (H)|木の橋（横）
+Wooden Bridge (H, Broken)|木の橋（横、破壊）
+Wooden Bridge (H)|木の橋（横）
+Rails|線路
+Rails|線路
+Wooden Bridge (V, Broken)|木の橋（縦、破壊）
+Wooden Bridge (V, Broken)|木の橋（縦、破壊）
+Wooden Bridge (V, Broken)|木の橋（縦、破壊）
+Wooden Bridge (H)|木の橋（横）
+Wooden Bridge (H, Broken)|木の橋（横、破壊）
+Wooden Bridge (H, Broken)|木の橋（横、破壊）
+Rails|線路
+Rails|線路
+Stone Bridge (V)|石の橋（縦）
+Stone Bridge (V)|石の橋（縦）
+Stone Bridge (V, Broken)|石の橋（縦、破壊）
+Stone Bridge (V, Broken)|石の橋（縦、破壊）
+Stone Bridge (H)|石の橋（横）
+Rails|線路
+Rails|線路
+Rails|線路
+Stone Bridge (V)|石の橋（縦）
+Stone Bridge (V)|石の橋（縦）
+Stone Bridge (V, Broken)|石の橋（縦、破壊）
+Stone Bridge (V, Broken)|石の橋（縦、破壊）
+Stone Bridge (H)|石の橋（横）
+Rails|線路
+Rails|線路
+Rails|線路
+Stone Bridge (V, Broken)|石の橋（縦、破壊）
+Stone Bridge (H, Broken)|石の橋（横、破壊）
+Stone Bridge (Center)|石の橋（中央）
+Otherworldly Bridge (H)|異世界の橋（横）
+Otherworldly Bridge (V)|異世界の橋（縦）
+Otherworldly Bridge (V)|異世界の橋（縦）
+Otherworldly Bridge (V, Broken)|異世界の橋（縦、破壊）
+Otherworldly Bridge (V, Broken)|異世界の橋（縦、破壊）
+Otherworldly Bridge (H, Broken)|異世界の橋（横、破壊）
+Otherworldly Bridge (V, Broken)|異世界の橋（縦、破壊）
+Otherworldly Bridge (Center)|異世界の橋（中央）
+Otherworldly Bridge (H)|異世界の橋（横）
+Otherworldly Bridge (V)|異世界の橋（縦）
+Otherworldly Bridge (V)|異世界の橋（縦）
+Otherworldly Bridge (V, Broken)|異世界の橋（縦、破壊）
+Otherworldly Bridge (V, Broken)|異世界の橋（縦、破壊）
+Suspension Bridge A|吊り橋A
+Suspension Bridge A|吊り橋A
+Suspension Bridge A|吊り橋A
+Suspension Bridge A(Broken)|吊り橋A(破壊）
+Suspension Bridge A|吊り橋A
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Suspension Bridge A|吊り橋A
+Suspension Bridge A|吊り橋A
+Suspension Bridge A|吊り橋A
+Suspension Bridge B(Broken)|吊り橋B(破壊）
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Suspension Bridge B|吊り橋B
+Suspension Bridge C|吊り橋C
+Suspension Bridge C|吊り橋C
+Suspension Bridge C|吊り橋C
+Suspension Bridge C(Broken)|吊り橋C(破壊）
+Suspension Bridge C|吊り橋C
+Suspension Bridge D|吊り橋D
+Suspension Bridge D|吊り橋D
+Suspension Bridge D|吊り橋D
+Suspension Bridge C|吊り橋C
+Suspension Bridge C|吊り橋C
+Suspension Bridge C|吊り橋C
+Suspension Bridge D(Broken)|吊り橋D(破壊）
+Suspension Bridge D|吊り橋D
+Suspension Bridge D|吊り橋D
+Suspension Bridge D|吊り橋D
+Suspension Bridge D|吊り橋D
+Shovel|スコップ
+Pickax|つるはし
+Rope|ロープ
+Scrap Iron|鉄くず
+Crate A|木箱A
+Crate B(Gold Dust)|木箱B（金）
+Crate C|木箱C
+Crate D|木箱D
+Gold Bricks A|金の延べ棒A
+Gold Bricks B|金の延べ棒B
+Gold Mound A|金の山A
+Gold Mound B|金の山B
+Boulder A|岩A
+Boulder B|岩B
+Gravel Mound A|土砂A
+Gravel Mound B|土砂B
+Boulder C(Lava)|岩C(溶岩)
+Crystal|水晶
+Sign A|立て札A
+Sign B|立て札B
+Bones A|骸骨A
+Bones B|骸骨B
+Bones C|骸骨C
+Bones D|骸骨D
+Spherical Lump|球状突起物
+Jail Bars|鉄格子
+Jail Bars|鉄格子
+Jail Bars|鉄格子
+Bones E|骸骨E
+Bones F|骸骨F
+Bones G|骸骨G
+Bones H|骸骨H
+Window A|窓A
+Window B|窓B
+Window C|窓C
+Window D|窓D
+Window E|窓E
+Window F|窓F
+Latticed Window A|格子窓A
+Latticed Window B|格子窓B
+Torchlight A|松明A
+Torchlight B|松明B
+Torchlight C|松明C
+Torchlight D|松明D
+Torchlight E|松明E
+Torchlight F|松明F
+Torchlight G|松明G
+Torchlight H|松明H
+Fire Catcher A|火の受け皿A
+Fire Catcher B|火の受け皿B
+Fire Catcher C|火の受け皿C
+Fire Catcher D|火の受け皿D
+Fire Catcher E|火の受け皿E
+Fire Catcher F|火の受け皿F
+Fire Catcher G|火の受け皿G
+Fire Catcher H|火の受け皿H
+Wall Relief A|壁のレリーフA
+Wall Relief B|壁のレリーフB
+Wall Relief C|壁のレリーフC
+Wall Relief D|壁のレリーフD
+Wall Relief E|壁のレリーフE
+Wall Relief F|壁のレリーフF
+Mural A|壁画A
+Mural A|壁画A
+Wall Relief A(Right)|壁のレリーフA(右)
+Wall Relief B(Right)|壁のレリーフB(右)
+Wall Relief C(Right)|壁のレリーフC(右)
+Wall Relief D(Right)|壁のレリーフD(右)
+Wall Relief E(Right)|壁のレリーフE(右)
+Wall Relief F(Right)|壁のレリーフF(右)
+Mural B|壁画B
+Mural B|壁画B
+Wall Relief A(Left)|壁のレリーフA(左)
+Wall Relief B(Left)|壁のレリーフB(左)
+Wall Relief C(Left)|壁のレリーフC(左)
+Wall Relief D(Left)|壁のレリーフD(左)
+Wall Relief E(Left)|壁のレリーフE(左)
+Wall Relief F(Left)|壁のレリーフF(左)
+Mural C|壁画C
+Mural C|壁画C
+Demonic Gate A|悪の門A
+Demonic Gate A|悪の門A
+Demonic Gate B|悪の門B
+Demonic Gate B|悪の門B
+Demonic Gate C|悪の門C
+Demonic Gate C|悪の門C
+Mural D|壁画D
+Mural D|壁画D
+Demonic Gate A|悪の門A
+Demonic Gate A|悪の門A
+Demonic Gate B|悪の門B
+Demonic Gate B|悪の門B
+Demonic Gate C|悪の門C
+Demonic Gate C|悪の門C
+Mural E|壁画E
+Mural E|壁画E

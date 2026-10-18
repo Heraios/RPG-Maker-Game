@@ -1,0 +1,128 @@
+﻿Black|黒
+White|白
+Light Blue|水色
+Blue|青
+Ledge A (Cliff, Left and Right)|段差A（崖・左右）
+Ledge A (Cliff, Left)|段差A（崖・左）
+Ledge A (Cliff, Center)|段差A（崖・中央）
+Ledge A (Cliff, Right)|段差A（崖・右）
+Ledge B (Brick 1, Left and Right)|段差B（レンガ1・左右）
+Ledge B (Brick 1, Left)|段差B（レンガ1・左）
+Ledge B (Brick 1, Center)|段差B（レンガ1・中央）
+Ledge B (Brick 1, Right)|段差B（レンガ1・右）
+Ledge C (Brick 2, Left and Right)|段差C（レンガ2・左右）
+Ledge C (Brick 2, Left)|段差C（レンガ2・左）
+Ledge C (Brick 2, Center)|段差C（レンガ2・中央）
+Ledge C (Brick 2, Right)|段差C（レンガ2・右）
+Ground A (Wasteland 1)|床A（荒地1）
+Ground B (Wasteland 2)|床B（荒地2）
+Ground C (Wasteland 3)|床C（荒地3）
+Ground D (Wasteland 4)|床D（荒地4）
+Ground E (Lava)|床E（溶岩）
+Ground F (Blue Flagstone)|床F（青い石畳）
+Ground G (Bush)|床G（草むら）
+Ground H (Inside The Body)|床H（体内）
+Ledge D (Brick 3, Left and Right)|段差D（レンガ3・左右）
+Ledge D (Brick 3, Left)|段差D（レンガ3・左）
+Ledge D (Brick 3, Center)|段差D（レンガ3・中央）
+Ledge D (Brick 3, Right)|段差D（レンガ3・右）
+Ledge E (Stone 1, Left and Right)|段差E（石垣1・左右）
+Ledge E (Stone 1, Left)|段差E（石垣1・左）
+Ledge E (Stone 1, Center)|段差E（石垣1・中央）
+Ledge E (Stone 1, Right)|段差E（石垣1・右）
+Ground I (Flagstone 1)|床I（石畳1）
+Ground J (Flagstone 2)|床J（石畳2）
+Ground K (Flagstone 3)|床K（石畳3）
+Ground L (Decorative Tile 1)|床L（装飾タイル1）
+Ground M (Decorative Tile 2)|床M（装飾タイル2）
+Ground N (Decorative Tile 3)|床N（装飾タイル3）
+Ground O (Machine 1)|床O（機械1）
+Ground P (Machine 2)|床P（機械2）
+Ledge F (Stone 2, Left and Right)|段差F（石垣2・左右）
+Ledge F (Stone 2, Left)|段差F（石垣2・左）
+Ledge F (Stone 2, Center)|段差F（石垣2・中央）
+Ledge F (Stone 2, Right)|段差F（石垣2・右）
+Ledge G (Stone 3, Left and Right)|段差G（石垣3・左右）
+Ledge G (Stone 3, Left)|段差G（石垣3・左）
+Ledge G (Stone 3, Center)|段差G（石垣3・中央）
+Ledge G (Stone 3, Right)|段差G（石垣3・右）
+Ground Q (Wasteland 5)|床Q（荒地5）
+Ground R (Cobblestones)|床R（石畳）
+Ground S (Otherworldly 1)|床S（異世界1）
+Ground T (Otherworldly 2)|床T（異世界2）
+Ground U (Otherworldly 3)|床U（異世界3）
+Ground V (Otherworldly 4)|床V（異世界4）
+Ground W (Otherworldly 5)|床W（異世界5）
+Ground X (Otherworldly 6)|床X（異世界6）
+Ledge H (Tile, Left and Right)|段差H（タイル・左右）
+Ledge H (Tile, Left)|段差H（タイル・左）
+Ledge H (Tile, Center)|段差H（タイル・中央）
+Ledge H (Tile, Right)|段差H（タイル・右）
+Ledge I (Otherworldly, Left and Right)|段差I（異世界・左右）
+Ledge I (Otherworldly, Left)|段差I（異世界・左）
+Ledge I (Otherworldlyk, Center)|段差I（異世界・中央）
+Ledge I (Otherworldly, Right)|段差I（異世界・右）
+Simple Stairs A|シンプルな階段A
+Simple Stairs B|シンプルな階段B
+Simple Stairs C|シンプルな階段C
+Simple Stairs D|シンプルな階段D
+Simple Stairs E|シンプルな階段E
+Simple Stairs F|シンプルな階段F
+Simple Stairs G|シンプルな階段G
+Simple Stairs H|シンプルな階段H
+Stairs A (Paved, Left)|階段A（舗装・左）
+Stairs A (Paved, Center)|階段A（舗装・中央）
+Stairs A (Paved, Right)|階段A（舗装・右）
+Stairs A (Paved)|階段A（舗装）
+Stairs B (Dirt, Left)|階段B（土・左）
+Stairs B (Dirt, Center)|階段B（土・中央）
+Stairs B (Dirt, Right)|階段B（土・右）
+Stairs B (Dirt)|階段B（土）
+Stairs C (Carpet, Left)|階段C（じゅうたん・左）
+Stairs C (Carpet, Center)|階段C（じゅうたん・中央）
+Stairs C (Carpet, Right)|階段C（じゅうたん・右）
+Stairs C (Carpet)|階段C（じゅうたん）
+Stairs D (Ice, Left)|階段D（氷・左）
+Stairs D (Ice, Center)|階段D（氷・中央）
+Stairs D (Ice, Right)|階段D（氷・右）
+Stairs D (Ice)|階段D（氷）
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Drainage Outlet|排水口
+Frozen Waterfall|凍った滝
+Ground Y (Ice)|床Y（氷）
+Ground Z(Metal)|床Z（金属床）
+Gray|灰色
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Symbol Of Wind A|風のシンボルA
+Symbol Of The Earth A|地のシンボルA
+Symbol Of Wind B|風のシンボルB
+Symbol Of The Earth B|地のシンボルB
+Deep Green|深緑
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Symbol Of Fire A|火のシンボル A
+Symbol Of Water A|水のシンボル A
+Symbol Of Fire B|火のシンボルB
+Symbol Of Water B|水のシンボルB
+Deep Blue|深い青
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Large Relief Floor Tile|大きなレリーフ床
+Large Relief Floor Tile|大きなレリーフ床
+Symbol Of Wind C|風のシンボルC
+Symbol Of The Earth C|地のシンボルC
+Dark Brown|濃い茶色
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Large Relief Floor Tile|大きなレリーフ床
+Large Relief Floor Tile|大きなレリーフ床
+Symbol Of Fire C|火のシンボルC
+Symbol Of Water C|水のシンボルC
+Red|赤

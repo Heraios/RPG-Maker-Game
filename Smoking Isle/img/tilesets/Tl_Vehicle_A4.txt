@@ -1,0 +1,49 @@
+﻿Wall A (Yellow)|壁A（黄色）
+Wall B (Light Blue)|壁B（水色）
+Wall C (Colorless)|壁C（無彩色）
+Wall D (Cobbling Together A)|壁D（つぎはぎA）
+Wall E (Cobbling Together B)|壁E（つぎはぎB）
+Wall F (Wood A)|壁F（木造A）
+Wall G (Prairie Schooner)|壁G（幌馬車）
+Wall H (Tent)|壁H（テント）
+Wall A (Yellow)|壁A（黄色）
+Wall B (Light Blue)|壁B（水色）
+Wall C (Colorless)|壁C（無彩色）
+Wall D (Cobbling Together A)|壁D（つぎはぎA）
+Wall E (Cobbling Together B)|壁E（つぎはぎB）
+Wall F (Wood A)|壁F（木造A）
+Wall G (Prairie Schooner)|壁G（幌馬車）
+Wall H (Tent)|壁H（テント）
+Wall I(Deck, Wood)|壁I（甲板・木造）
+Wall J(Inboard A, Wood)|壁J（船内A・木造）
+Wall K (Inboard B, Wood)|壁K（船内B・木造）
+Wall L (Wood B)|壁L（木造B）
+Wall M(Deck, Metal A)|壁M（甲板・金属A）
+Wall N (Control Tower A)|壁N（管制塔A)
+Wall O (Deck, Metal B)|壁O（甲板・金属B）
+Wall P (Control Tower B)|壁P（管制塔B)
+Wall I(Deck, Wood)|壁I（甲板・木造）
+Wall J(Inboard A, Wood)|壁J（船内A・木造）
+Wall K (Inboard B, Wood)|壁K（船内B・木造）
+Wall L (Wood B)|壁L（木造B）
+Wall M(Deck, Metal A)|壁M（甲板・金属A）
+Wall N (Control Tower A)|壁N（管制塔A)
+Wall O (Deck, Metal B)|壁O（甲板・金属B）
+Wall P (Control Tower B)|壁P（管制塔B)
+Wall Q(Interior Of A Cruise Ship A)|壁Q（客船内部A）
+Wall R(Interior Of A Cruise Ship B)|壁R（客船内部B）
+Wall S(Interior Of A Cruise Ship C)|壁S（客船内部C）
+Wall T(Interior Of A Cruise Ship D)|壁T（客船内部D）
+Wall U (Machine A)|壁U(機械A)
+Wall V (Machine B)|壁V(機械B)
+Wall W (Metal A)|壁W(金属A)
+Wall X (Window)|壁X（窓際）
+Wall Q(Interior Of A Cruise Ship A)|壁Q（客船内部A）
+Wall R(Interior Of A Cruise Ship B)|壁R（客船内部B）
+Wall S(Interior Of A Cruise Ship C)|壁S（客船内部C）
+Wall T(Interior Of A Cruise Ship D)|壁T（客船内部D）
+Wall U (Machine A)|壁U(機械A)
+Wall V (Machine B)|壁V(機械B)
+Wall W (Metal A)|壁W(金属A)
+Wall X (Window)|壁X（窓際）
+

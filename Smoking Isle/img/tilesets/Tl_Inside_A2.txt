@@ -1,0 +1,32 @@
+Ground A (Stone Floor Tile)|床A（石タイル床）
+Ground B (Stone Floor X Tile)|床B（石X字タイル床）
+Ground C (Complex Masonry 1)|床C（複雑な石組の床1）
+Carpet A|カーペットA
+Hole A (Gray Cave)|穴A（灰色）
+Hole B (Square Gray Cave)|穴B（四角灰色）
+Fissures|ひび割れ
+Counter A|カウンターA
+Ground D (Cray Floor Tile)|床D（土タイル床）
+Ground E (Wood Floor)|床E（木の床）
+Ground F (Complex Masonry 2)|床F（複雑な石組の床2）
+Carpet B|カーペットB
+Hole C (Deep Green)|穴C（深緑）
+Hole D (Square Brown Cave)|穴D（四角茶色）
+Soil|汚れ
+Counter B|カウンターB
+Ground G (Flagstone 1)|床G（石畳1）
+Ground H (Wood Floor Stripe)|床H（木目縦床）
+Ground I (Complex Masonry 3)|床I（複雑な石組の床3）
+Carpet C|カーペットC
+Hole E (Wood Cave)|穴E（木の穴）
+Hole F (Square Blue Cave)|穴F（四角青色）
+Table A (Wood 1)|テーブルA（木製1）
+Table B (Marble)|テーブルB（大理石）
+Ground J (Flagstone 2)|床J（石畳2）
+Ground K (Dirt Floor)|床K（土床）
+Ground L (Metal)|床L（金属床）
+Flower Bed|花壇
+Hole G (Blue Cave)|穴G（青い穴）
+Table C (Gorgeous)|テーブルC（豪華）
+Table D (Wood 2)|テーブルD（木製2）
+Table E (White Cloth)|テーブルE（白布）

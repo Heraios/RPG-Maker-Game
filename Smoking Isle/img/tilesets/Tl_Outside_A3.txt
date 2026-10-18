@@ -1,0 +1,32 @@
+﻿Roof A (Tile)|屋根A（瓦）
+Roof B (Western-Style Tile)|屋根B（西洋瓦）
+Roof C (Snow Covered Tiles)|屋根C（雪の積もった瓦）
+Roof D (Greek Temple)|屋根D（ギリシャ神殿）
+Roof E (Snow Covered Western-Style Tiles)|屋根E（雪の積もった西洋瓦）
+Roof F (Board)|屋根F（板）
+Roof G (Old Tile)|屋根G（古い瓦）
+Roof H (Wood)|屋根H（木造）
+Outer Wall A (Plaster)|外壁A（石膏壁）
+Outer Wall B (Red Brick)|外壁B（赤レンガ）
+Outer Wall C (Snow Covered Plaster)|外壁C（雪の積もった石膏壁）
+Outer Wall D (Temple)|外壁D（神殿）
+Outer Wall E (Brick)|外壁E（レンガ）
+Outer Wall F (Rock Wall)|外壁F（石壁）
+Outer Wall G (Log)|外壁G（丸太）
+Outer Wall H (Board)|外壁H（板）
+Roof I (Thatched A)|屋根I（茅葺A）
+Roof J (Thatched B)|屋根J（茅葺B）
+Roof K (Thatched C)|屋根K（茅葺C）
+Roof L (Thatched D)|屋根L（茅葺D）
+Roof M (Tent)|屋根M（テント）
+Roof N (Snow Covered Board)|屋根N（雪の積もった板）
+Roof O (Snow Covered Wood)|屋根O（雪の積もった木造）
+Roof P (Snow Covered Thatched)|屋根P（雪の積もった茅葺）
+Outer Wall I (Thatched)|外壁I（茅葺）
+Outer Wall J (Mud)|外壁J（土壁）
+Outer Wall K (Sun-Dried Bricks)|外壁K（日干しレンガ）
+Outer Wall L (Dried Mud)|外壁L（渇いた土壁）
+Outer Wall M (Tent)|外壁M（テント）
+Outer Wall N (Snow Covered Brick)|外壁N（雪の積もったレンガ）
+Outer Wall O (Snow Covered Log)|外壁O（雪の積もった丸太）
+Outer Wall P (Snow Covered Rock)|外壁P（雪の積もった石壁）

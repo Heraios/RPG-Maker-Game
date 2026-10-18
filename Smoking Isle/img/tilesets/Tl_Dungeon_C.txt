@@ -1,0 +1,256 @@
+Angel Statue A|天使像A
+Angel Statue B|天使像B
+Angel Statue C|天使像C
+Angel Statue D|天使像D
+Demon Statue A|悪魔像A
+Demon Statue B|悪魔像B
+Demon Statue C|悪魔像C
+Demon Statue D|悪魔像D
+Angel Statue A|天使像A
+Angel Statue B|天使像B
+Angel Statue C|天使像C
+Angel Statue D|天使像D
+Demon Statue A|悪魔像A
+Demon Statue B|悪魔像B
+Demon Statue C|悪魔像C
+Demon Statue D|悪魔像D
+Broken Angel Statue A|壊れた天使像A
+Broken Angel Statue B|壊れた天使像B
+Broken Angel Statue C|壊れた天使像C
+Broken Angel Statue D|壊れた天使像D
+Broken Demon Statue A|壊れた悪魔像A
+Broken Demon Statue B|壊れた悪魔像B
+Broken Demon Statue C|壊れた悪魔像C
+Broken Demon Statue D|壊れた悪魔像D
+Grave A|墓A
+Grave B|墓B
+Grave C|墓C
+Grave D|墓D
+Grave E|墓E
+Grave F|墓F
+Grave G|墓G
+Grave H|墓H
+Monument A|石碑A
+Monument A|石碑A
+Monument B|石碑B
+Monument B|石碑B
+Monument C|石碑C
+Monument C|石碑C
+Monument D|石碑D
+Monument D|石碑D
+Monument A|石碑A
+Monument A|石碑A
+Monument B|石碑B
+Monument B|石碑B
+Monument C|石碑C
+Monument C|石碑C
+Monument D|石碑D
+Monument D|石碑D
+Dais A|台座A
+Dais B|台座B
+Dais C|台座C
+Dais D|台座D
+Dais E|台座E
+Dais F|台座F
+Dais G|台座G
+Dais H|台座H
+Dais I|台座I
+Dais J|台座J
+Hexagram A|魔法陣A
+Hexagram B|魔法陣B
+Hexagram C|魔法陣C
+Hexagram D|魔法陣D
+Hexagram E|魔法陣E
+Hexagram F|魔法陣F
+Stone Pillar A|石の柱A
+Stone Pillar B|石の柱B
+Stone Pillar C|石の柱C
+Obelisk|オベリスク
+Hexagram G|魔法陣G
+Hexagram H|魔法陣H
+Hexagram I|魔法陣I
+Hexagram J|魔法陣J
+Stone Pillar A|石の柱A
+Stone Pillar B|石の柱B
+Stone Pillar C|石の柱C
+Obelisk|オベリスク
+Coffin A (V)|棺A（縦）
+Coffin A (H)|棺A（横）
+Coffin A (H)|棺A（横）
+Coffin A (V,Open)|棺A（縦,開）
+Stone Pillar A|石の柱A
+Stone Pillar B|石の柱B
+Stone Pillar C|石の柱C
+Obelisk|オベリスク
+Coffin A (V)|棺A（縦）
+Coffin A (H,Open)|棺A（横,開）
+Coffin A (H,Open)|棺A（横,開）
+Coffin A (V,Open)|棺A（縦,開）
+Broken Stone Pillar A|折れた石の柱A
+Broken Stone Pillar B|折れた石の柱B
+Broken Stone Pillar C|折れた石の柱C
+Broken Obelisk|折れたオベリスク
+Coffin B (V)|棺B（縦）
+Coffin B (H)|棺B（横）
+Coffin B (H)|棺B（横）
+Coffin B (V,Open)|棺B（縦,開）
+Broken Stone Pillar A|折れた石の柱A
+Broken Stone Pillar B|折れた石の柱B
+Broken Stone Pillar C|折れた石の柱C
+Broken Obelisk|折れたオベリスク
+Coffin B (V)|棺B（縦）
+Coffin B (H,Open)|棺B（横,開）
+Coffin B (H,Open)|棺B（横,開）
+Coffin B (V,Open)|棺B（縦,開）
+Meter A|計器A
+Meter B|計器B
+Monitor A|モニターA
+Monitor A|モニターA
+Monitor B|モニターB
+Monitor B|モニターB
+Monitor C|モニターC
+Monitor C|モニターC
+Computer A|コンピューターA
+Computer A|コンピューターA
+Computer A|コンピューターA
+Computer B|コンピューターB
+Computer B|コンピューターB
+Computer B|コンピューターB
+Chair A|背もたれ椅子A
+Chair B|背もたれ椅子B
+Computer A|コンピューターA
+Computer A|コンピューターA
+Computer A|コンピューターA
+Computer B|コンピューターB
+Computer B|コンピューターB
+Computer B|コンピューターB
+Chair A|背もたれ椅子A
+Chair B|背もたれ椅子B
+Bookshelf A|本棚A
+Bookshelf B|本棚B
+Dish Cabinet A|食器棚A
+Dish Cabinet B|食器棚B
+Sundries Shelf A|雑貨棚A
+Sundries Shelf B|雑貨棚B
+Chest of Drawers A|タンスA
+Chest of Drawers B|タンスB
+Bookshelf A|本棚A
+Bookshelf B|本棚B
+Dish Cabinet A|食器棚A
+Dish Cabinet B|食器棚B
+Sundries Shelf A|雑貨棚A
+Sundries Shelf B|雑貨棚B
+Chest of Drawers A|タンスA
+Chest of Drawers B|タンスB
+Large Bed|大きなベッド
+Large Bed|大きなベッド
+Bed A|ベッドA
+Bed B|ベッドB
+Railings A|段差用手すりA
+Railings A|段差用手すりA
+Railings B|段差用手すりB
+Railings B|段差用手すりB
+Large Bed|大きなベッド
+Large Bed|大きなベッド
+Bed A|ベッドA
+Bed B|ベッドB
+Railings A|段差用手すりA
+Railings A|段差用手すりA
+Railings B|段差用手すりB
+Railings B|段差用手すりB
+Large Quilt|大きな掛け布団
+Large Quilt|大きな掛け布団
+Quilt A|掛け布団A
+Quilt B|掛け布団B
+Railings A|段差用手すりA
+Railings A|段差用手すりA
+Railings B|段差用手すりB
+Railings B|段差用手すりB
+Railings A|段差用手すりA
+Railings A|段差用手すりA
+Railings A|段差用手すりA
+Railings A|段差用手すりA
+Railings C|段差用手すりC
+Railings C|段差用手すりC
+Railings D|段差用手すりD
+Railings D|段差用手すりD
+Railings B|段差用手すりB
+Railings B|段差用手すりB
+Railings B|段差用手すりB
+Railings B|段差用手すりB
+Railings C|段差用手すりC
+Railings C|段差用手すりC
+Railings D|段差用手すりD
+Railings D|段差用手すりD
+Railings C|段差用手すりC
+Railings C|段差用手すりC
+Railings C|段差用手すりC
+Railings C|段差用手すりC
+Railings C|段差用手すりC
+Railings C|段差用手すりC
+Railings D|段差用手すりD
+Railings D|段差用手すりD
+Railings D|段差用手すりD
+Railings D|段差用手すりD
+Railings D|段差用手すりD
+Railings D|段差用手すりD
+Mirror|鏡
+Floating Cliffs A|浮遊する崖A
+Floating Cliffs A|浮遊する崖A
+Floating Cliffs A|浮遊する崖A
+Big Dais|大きい台座
+Big Dais|大きい台座
+Big Dais|大きい台座
+Table A|テーブルA
+Mirror|鏡
+Floating Cliffs A|浮遊する崖A
+Floating Cliffs A|浮遊する崖A
+Floating Cliffs A|浮遊する崖A
+Big Dais|大きい台座
+Big Dais|大きい台座
+Big Dais|大きい台座
+Stool A|椅子A
+Table B|テーブルB
+Floating Cliffs B|浮遊する崖B
+Floating Cliffs B|浮遊する崖B
+Floating Cliffs B|浮遊する崖B
+Big Dais|大きい台座
+Big Dais|大きい台座
+Big Dais|大きい台座
+Stool B|椅子B
+Stool C|椅子C
+Floating Cliffs B|浮遊する崖B
+Floating Cliffs B|浮遊する崖B
+Floating Cliffs B|浮遊する崖B
+Woman's Face A|女性の顔A
+Woman's Face A|女性の顔A
+Woman's Face A|女性の顔A
+Male Face A|男性の顔A
+Male Face A|男性の顔A
+Floating Cliffs C|浮遊する崖C
+Floating Cliffs C|浮遊する崖C
+Floating Cliffs C|浮遊する崖C
+Woman's Face A|女性の顔A
+Woman's Face A|女性の顔A
+Woman's Face A|女性の顔A
+Male Face A|男性の顔A
+Male Face A|男性の顔A
+Floating Cliffs C|浮遊する崖C
+Floating Cliffs C|浮遊する崖C
+Floating Cliffs C|浮遊する崖C
+Woman's Face B|女性の顔B
+Woman's Face B|女性の顔B
+Woman's Face B|女性の顔B
+Male Face B|男性の顔B
+Male Face B|男性の顔B
+Floating Cliffs D|浮遊する崖D
+Floating Cliffs D|浮遊する崖D
+Floating Cliffs D|浮遊する崖D
+Woman's Face B|女性の顔B
+Woman's Face B|女性の顔B
+Woman's Face B|女性の顔B
+Male Face B|男性の顔B
+Male Face B|男性の顔B
+Floating Cliffs D|浮遊する崖D
+Floating Cliffs D|浮遊する崖D
+Floating Cliffs D|浮遊する崖D

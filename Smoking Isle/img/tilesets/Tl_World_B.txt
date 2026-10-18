@@ -1,0 +1,256 @@
+﻿Transparent|透明
+Vine|つる
+Rope Ladder|縄梯子
+Stairs A|階段A
+Stairs B|階段B
+West Estuary|河口西
+River (H)|川（横）
+East Estuary|河口東
+Up Stairs|登り階段
+Down Stairs|下り階段
+Stone Bridge (H)|石橋（横）
+Stone Bridge (V)|石橋（縦）
+Broken Stone Bridge (H)|壊れた石橋（横）
+Broken Stone Bridge (V)|壊れた石橋（縦）
+Sign|立て札
+North Estuary|河口北
+Bridge (H)|橋（横）
+Bridge (V)|橋（縦）
+Pier (H)|桟橋（横）
+Pier (V)|桟橋（縦）
+Cave A|洞窟A
+Cave B|洞窟B
+Tunnel|トンネル
+River (V)|川（縦）
+Tent|テント
+Igloo|氷の家
+Cottage|コテージ
+Pit House|竪穴式住居
+Pyramid|ピラミッド
+Village A|村A
+Village B|村B
+South Estuary|河口南
+Temple A|神殿A
+Temple B|神殿B
+Temple C|神殿C
+House of Soil A|土の家A
+House of Soil B|土の家B
+House of Soil C|土の家C
+Town (Desert)|町（砂漠）
+Town (Desert)|町（砂漠）
+Mansion A|屋敷A
+Mansion B|屋敷B
+Mansion C|屋敷C
+Shrine|ほこら
+Town A|町A
+Town A|町A
+Town B|町B
+Town B|町B
+Castle A|城A
+Castle A|城A
+Castle B|城B
+Castle B|城B
+Castle A(Ruins)|城A（廃墟）
+Castle A(Ruins)|城A（廃墟）
+Castle B(Ruins)|城B（廃墟）
+Castle B(Ruins)|城B（廃墟）
+Castle A|城A
+Castle A|城A
+Castle B|城B
+Castle B|城B
+Castle A(Ruins)|城A（廃墟）
+Castle A(Ruins)|城A（廃墟）
+Castle B(Ruins)|城B（廃墟）
+Castle B(Ruins)|城B（廃墟）
+Earthen Fort|土の砦
+Earthen Fort|土の砦
+Earthen Fort(Ruins)|土の砦（廃墟）
+Earthen Fort(Ruins)|土の砦（廃墟）
+Demon Castle A|魔王城A
+Demon Castle A|魔王城A
+Demon Castle B|魔王城B
+Demon Castle B|魔王城B
+Earthen Fort|土の砦
+Earthen Fort|土の砦
+Earthen Fort(Ruins)|土の砦（廃墟）
+Earthen Fort(Ruins)|土の砦（廃墟）
+Demon Castle A|魔王城A
+Demon Castle A|魔王城A
+Demon Castle B|魔王城B
+Demon Castle B|魔王城B
+Steel Tower|鉄塔
+Tower A|塔A
+Tower A (Ruins)|塔A（廃墟）
+Tower B|塔B
+Tower B (Ruins)|塔B（廃墟）
+Castle Wall A|城壁A
+Castle Wall A|城壁A
+Castle Wall A|城壁A
+Steel Tower|鉄塔
+Tower A|塔A
+Tower A (Ruins)|塔A（廃墟）
+Tower B|塔B
+Tower B (Ruins)|塔B（廃墟）
+Castle Wall A|城壁A
+Megalithic Gate|巨石の門
+Castle Wall A|城壁A
+Obelisk |オベリスク
+Tower C|塔C
+Tower C (Ruins)|塔C（廃墟）
+Castle Wall A|城壁A
+Castle Wall A|城壁A
+Castle Wall A|城壁A
+Castle Wall A|城壁A
+Castle Wall A|城壁A
+Obelisk |オベリスク
+Tower C|塔C
+Tower C (Ruins)|塔C（廃墟）
+Castle Wall A|城壁A
+Castle Wall A|城壁A
+Castle Wall B|城壁B
+Castle Wall B|城壁B
+Castle Wall B|城壁B
+Warehouse|倉庫
+Tower D|塔D
+Tower D (Ruins)|塔D（廃墟）
+Castle Wall B|城壁B
+Castle Wall B|城壁B
+Castle Wall B|城壁B
+Megalith|巨石
+Castle Wall B|城壁B
+Warehouse|倉庫
+Tower D|塔D
+Tower D (Ruins)|塔D（廃墟）
+Castle Wall B|城壁B
+Castle Wall B|城壁B
+Castle Wall B|城壁B
+Castle Wall B|城壁B
+Castle Wall B|城壁B
+Giant Pyramid (Light)|巨大ピラミッド（光）
+Giant Pyramid (Light)|巨大ピラミッド（光）
+Giant Pyramid |巨大ピラミッド
+Giant Pyramid |巨大ピラミッド
+Shelter|シェルター
+Shelter|シェルター
+Monolith|モノリス
+Monolith|モノリス
+Giant Pyramid (Light)|巨大ピラミッド（光）
+Giant Pyramid (Light)|巨大ピラミッド（光）
+Giant Pyramid |巨大ピラミッド
+Giant Pyramid |巨大ピラミッド
+Shelter|シェルター
+Shelter|シェルター
+Monolith|モノリス
+Monolith|モノリス
+Rock Mountain A|岩山A
+Rock Mountain A|岩山A
+Rock Mountain A|岩山A
+Rock Mountain A|岩山A
+Mountain Road A|山道A
+Rock Mountain A|岩山A
+Volcano Crater A|火口A
+Volcano Crater A (Lava)|火口A（溶岩）
+Rock Mountain A|岩山A
+Rock Mountain A|岩山A
+Rock Mountain A|岩山A
+Rock Mountain A|岩山A
+Mountain Road A|山道A
+Rock Mountain A|岩山A
+Volcano Crater B|火口B
+Volcano Crater B|火口B
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain A|岩山A
+Volcano Crater B (Lava)|火口B（溶岩）
+Volcano Crater B (Lava)|火口B（溶岩）
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain (Snow)|岩山（雪）
+Small Crater|小さなクレーター
+Big Crater|大きなクレーター
+Big Crater|大きなクレーター
+Rock Mountain B|岩山B
+Rock Mountain B|岩山B
+Rock Mountain B|岩山B
+Rock Mountain B|岩山B
+Rock Mountain (Snow)|岩山（雪）
+Rock Mountain B|岩山B
+Big Crater|大きなクレーター
+Big Crater|大きなクレーター
+Rock Mountain B|岩山B
+Rock Mountain B|岩山B
+Rock Mountain B|岩山B
+Rock Mountain B|岩山B
+Mountain Road B|山道B
+Rock Mountain B|岩山B
+Cliff|崖
+Cliff|崖
+Strangely Shaped Rocks|奇岩
+Strangely Shaped Rocks|奇岩
+Strangely Shaped Rocks|奇岩
+Cactus|サボテン
+Mountain Road B|山道B
+Rock Mountain B|岩山B
+Cliff|崖
+Cliff|崖
+Strangely Shaped Rocks|奇岩
+Giant Tower|巨大な塔
+Strangely Shaped Rocks|奇岩
+Strangely Shaped Rocks|奇岩
+Strangely Shaped Rocks|奇岩
+Strangely Shaped Rocks|奇岩
+Cliff|崖
+Strangely Shaped Rocks|奇岩
+Nothing|何もなし
+Giant Tower|巨大な塔
+Nothing|何もなし
+Strangely Shaped Rocks|奇岩
+Strangely Shaped Rocks|奇岩
+Cliff|崖
+Giant Tree|巨樹
+Cliff|崖
+Nothing|何もなし
+Giant Tower|巨大な塔
+Nothing|何もなし
+Face Of The Earth|大地の顔
+Face Of The Earth|大地の顔
+Cliff|崖
+Cliff|崖
+Cliff|崖
+Giant Tower|巨大な塔
+Giant Tower|巨大な塔
+Giant Tower|巨大な塔
+Face Of The Earth|大地の顔
+Face Of The Earth|大地の顔
+Floating Continental Cliffs|浮遊大陸の崖
+Floating Continental Cliffs|浮遊大陸の崖
+Floating Continental Cliffs|浮遊大陸の崖
+Giant Tower|巨大な塔
+Giant Tower|巨大な塔
+Giant Tower|巨大な塔
+Floating Continent|浮遊大陸
+Floating Continent|浮遊大陸
+Floating Continental Cliffs|浮遊大陸の崖
+Floating Continental Cliffs|浮遊大陸の崖
+Floating Continental Cliffs|浮遊大陸の崖
+Giant Tower|巨大な塔
+Giant Tower|巨大な塔
+Giant Tower|巨大な塔
+Floating Continent|浮遊大陸
+Floating Continent|浮遊大陸
+Floating Continental Cliffs|浮遊大陸の崖
+Floating Continental Cliffs|浮遊大陸の崖
+Floating Continental Cliffs|浮遊大陸の崖
+Giant Tower|巨大な塔
+Giant Tower|巨大な塔
+Giant Tower|巨大な塔
+Floating Continent (Shadow)|浮遊大陸（影）
+Floating Continent (Shadow)|浮遊大陸（影）
+Floating Continental Cliffs|浮遊大陸の崖
+Floating Continental Cliffs|浮遊大陸の崖
+Floating Continental Cliffs|浮遊大陸の崖

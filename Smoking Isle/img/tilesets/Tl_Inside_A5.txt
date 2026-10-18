@@ -1,0 +1,128 @@
+﻿Black|黒
+White|白
+Light Blue|水色
+Blue|青
+Ledge A (Wood, Left and Right)|段差A（木造・左右）
+Ledge A (Wood, Left)|段差A（木造・左）
+Ledge A (Wood, Center)|段差A（木造・中央）
+Ledge A (Wood, Right)|段差A（木造・右）
+Ledge B (Tile, Left and Right)|段差B（タイル・左右）
+Ledge B (Tile, Left)|段差B（タイル・左）
+Ledge B (Tile, Center)|段差B（タイル・中央）
+Ledge B (Tile, Right)|段差B（タイル・右）
+Ledge C (Ice Tile, Left and Right)|段差C（氷のタイル・左右）
+Ledge C (Ice Tile, Left)|段差C（氷のタイル・左）
+Ledge C (Ice Tile, Center)|段差C（氷のタイル・中央）
+Ledge C (Ice Tile, Right)|段差C（氷のタイル・右）
+Ground A (Stone Floor Tile)|床A（石タイル床）
+Ground B (Cray Floor Tile)|床B（土タイル床）
+Ground C (Ice Tile)|床C（氷タイル床）
+Ground D (Flagstone 1)|床D（石畳1）
+Ground E (Flagstone 2)|床E（石畳2）
+Ground F (Flagstone 3)|床F（石畳3）
+Ground G (Stone Floor X Tile 1)|床G（石X字タイル床1）
+Ground H (Stone Floor X Tile 2)|床H（石X字タイル床2）
+Ledge D (Brick, Left and Right)|段差D（レンガ・左右）
+Ledge D (Brick, Left)|段差D（レンガ・左）
+Ledge D (Brick, Center)|段差D（レンガ・中央）
+Ledge D (Brick, Right)|段差D（レンガ・右）
+Ledge E (Cray Brick, Left and Right)|段差E（土レンガ・左右）
+Ledge E (Cray Brick, Left)|段差E（土レンガ・左）
+Ledge E (Cray Brick, Center)|段差E（土レンガ・中央）
+Ledge E (Cray Brick, Right)|段差E（土レンガ・右）
+Ground I (Wood Floor 1)|床I（木の床1）
+Ground J (Wood Floor 2)|床J（木の床2）
+Ground K (Wood Floor Stripe 1)|床K（木目縦床1）
+Ground L (Wood Floor Stripe 2)|床L（木目縦床2）
+Ground M (Dirt Floor 1)|床M（土床1）
+Ground N (Dirt Floor 2)|床N（土床2）
+Ground O (Ice Floor 1)|床O（氷床1）
+Ground P (Ice Floor 2)|床P（氷床2）
+Ledge F (Stone Wall 1, Left and Right)|段差F（石垣1・左右）
+Ledge F (Stone Wall 1, Left)|段差F（石垣1・左）
+Ledge F (Stone Wall 1, Center)|段差F（石垣1・中央）
+Ledge F (Stone Wall 1, Right)|段差F（石垣1・右）
+Ledge G (Stone Wall 2, Left and Right)|段差G（石垣2・左右）
+Ledge G (Stone Wall 2, Left)|段差G（石垣2・左）
+Ledge G (Stone Wall 2, Center)|段差G（石垣2・中央）
+Ledge G (Stone Wall 2, Right)|段差G（石垣2・右）
+Ground Q (Complex Masonry 1)|床Q（複雑な石組の床1）
+Ground R (Complex Masonry 2)|床R（複雑な石組の床2）
+Ground S (Complex Masonry 3)|床S（複雑な石組の床3）
+Ground T (Metal)|床T（金属床）
+Bush|草むら
+Dark Brown|濃い茶色
+Dark Blue|濃い青色
+Dark Green|濃い緑色
+Stone Bridge (H, Top)|石の橋（横・上)
+Stone Bridge (V, Upper Left)|石の橋（縦・左上）
+Stone Bridge (V, Upper Right)|石の橋（縦・右上）
+Gray (Stone Bridge, Center)|灰色（石の橋・真ん中）
+Frozen Waterfall|凍った滝
+Drainage Outfall A|排水口A
+Drainage Outfall B|排水口B
+Drainage Outfall C|排水口C
+Stone Bridge (H, Bottom)|石の橋（横・下)
+Stone Bridge (V, Lower Left)|石の橋（縦・左下）
+Stone Bridge (V, Lower Right)|石の橋（縦・右下）
+Brown|茶色
+Ledge H (Marble)|段差H（大理石）
+Ledge I (Stone)|段差I（石）
+Ledge J (Cray)|段差J（土）
+Ledge K (Ice)|段差K（氷）
+Stairs A (Paved, Left)|階段A（舗装・左）
+Stairs A (Paved, Center)|階段A（舗装・中央）
+Stairs A (Paved, Right)|階段A（舗装・右）
+Stairs A (Paved)|階段A（舗装）
+Stairs B (Dirt, Left)|階段B（土・左）
+Stairs B (Dirt, Center)|階段B（土・中央）
+Stairs B (Dirt, Right)|階段B（土・右）
+Stairs B (Dirt)|階段B（土）
+Stairs C (Carpet, Left)|階段C（じゅうたん・左）
+Stairs C (Carpet, Center)|階段C（じゅうたん・中央）
+Stairs C (Carpet, Right)|階段C（じゅうたん・右）
+Stairs C (Carpet)|階段C（じゅうたん）
+Stairs D (Ice, Left)|階段D（氷・左）
+Stairs D (Ice, Center)|階段D（氷・中央）
+Stairs D (Ice, Right)|階段D（氷・右）
+Stairs D (Ice)|階段D（氷）
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Ledge L (Carpet)|段差L（じゅうたん）
+Ledge M (Stone)|段差M（石）
+Ledge N (Cray)|段差N（土）
+Ledge O (Ice)|段差O（氷）
+Ledge P (Blue)|段差P（青）
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Symbol Of Wind|風のシンボル
+Symbol Of The Earth|地のシンボル
+Ledge Q (Wood 1)|段差Q（木1）
+Ledge R (Cloth 1)|段差R（布1）
+Ledge S (Cloth 2)|段差S（布2）
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Symbol Of Fire|火のシンボル
+Symbol Of Water|水のシンボル
+Ledge T (Wood 2)|段差T（木2）
+Design A|模様A
+Design B|模様B
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Large Relief Floor Tile|大きなレリーフ床
+Large Relief Floor Tile|大きなレリーフ床
+Design C|模様C
+Design D|模様D
+Design E|模様E
+Stairs Across The Floor A (Stone)|階をまたぐ階段A（石）
+Stairs Across The Floor B (Cray)|階をまたぐ階段B（土）
+Stairs Across The Floor C (Ice)|階をまたぐ階段C（氷）
+Large Relief Floor Tile|大きなレリーフ床
+Large Relief Floor Tile|大きなレリーフ床
+Design F|模様F
+Design G|模様G
+Dark Gray|濃い灰色

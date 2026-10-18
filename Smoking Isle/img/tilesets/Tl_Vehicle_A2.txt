@@ -1,0 +1,33 @@
+Ground A (Brown)|床A（茶色）
+Ground B (Light Blue)|床B（水色）
+Ground C (Khaki)|床C（カーキー色）
+Carpet A|カーペットA
+Window A|窓A
+Counter A|カウンターA
+Counter B|カウンターB
+Fissures|ひび割れ
+Ground D (With Vents A)|床D（通気口ありA）
+Ground E (With Vents B)|床E（通気口ありB）
+Ground F (With Vents C)|床F（通気口ありC）
+Carpet B|カーペットB
+Window B|窓B
+Table A (Wood A)|テーブルA（木製A）
+Table B (Wood B)|テーブルB（木製B）
+Soil|汚れ
+Ground G (Screw Fastening A)|床G（ネジ止めA）
+Ground H (Screw Fastening B)|床H（ネジ止めB）
+Ground I (Screw Fastening C)|床I（ネジ止めC）
+Carpet C|カーペットC
+Window C|窓C
+Table C (White Cloth A)|テーブルC（白布A）
+Table C (White Cloth B)|テーブルC（白布B）
+Stone Fence |石造りの柵
+Sky|空
+Ground J (Log A)|床J（丸太A）
+Ground K (Log B)|床K（丸太B）
+Ground L (Machine)|床L（機械）
+Window D|窓D
+Table B (Marble)|テーブルB（大理石）
+Hole(Wood Cave)|穴（木の穴）
+Wooden Fence|木製の柵
+

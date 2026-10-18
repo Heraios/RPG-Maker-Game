@@ -1,0 +1,16 @@
+﻿Water A|水場A
+Depth Of The Water|水場の深み
+Swamp Grass A|水草A
+Swamp Grass B|水草B
+Ice|氷
+Bubbles A|泡A
+Shade Of Water B|水場Bの影
+Bubbles B|泡B
+Water B|水場B
+Waterfall|滝
+Water C|水場C
+Whirlpool |渦
+Shade Of Water C|水場Cの影
+Dirty Bubbles A|汚い泡A
+Dirty Water|汚い水場
+Dirty Bubbles B|汚い泡B
