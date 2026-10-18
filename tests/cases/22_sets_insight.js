@@ -45,5 +45,23 @@ module.exports = {
         t.between(r.partyAgi, 1.03, 1.07, "the Officer's Kit raises everyone's AGI");
         t.eq(r.lizard, 'Guardian Lizard (1),Guardian Lizard (all)', 'the Guardian Lizard set');
         t.eq(r.terms, 'Spirit/Wits', 'MDF and LUK are shown as Spirit and Wits');
+    },
+
+    'aiming, Flaying Strike and the cleared default skills': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const A = id => $gameActors.actor(id), S = n => $dataSkills.find(s => s && s.name === n), ST = n => $dataStates.find(s => s && s.name === n).id, out = {};
+            const pada = A(5), cri0 = pada.cri; pada.addState(ST('Steady Aim')); out.aimCrit = +(pada.cri - cri0).toFixed(2); pada.removeState(ST('Steady Aim'));
+            out.aimedFormula = S('Aimed Shot').damage.formula;
+            out.flaying = S('Flaying Strike').effects.filter(e => e.code === 32).map(e => e.dataId).join(',');
+            out.defaultsGone = !['Dual Attack', 'Double Attack', 'Triple Attack', 'Heal', 'Fire', 'Spark'].some(n => S(n));
+            out.lasaHeals = $dataClasses[A(4).actor().classId].learnings.some(l => $dataSkills[l.skillId].name === 'Mahu');
+            return out;
+        });
+        t.eq(r.aimCrit, 0.25, 'Steady Aim: +25% critical chance');
+        t.eq(r.aimedFormula, 'a.rangedDamage(b, 1.2, 0.5)', 'Aimed Shot ignores half the DEF');
+        t.eq(r.flaying, '6', 'Flaying Strike lowers AGI');
+        t.ok(r.defaultsGone, 'the unused default skills are gone');
+        t.ok(r.lasaHeals, 'Lasa learns Mahu instead of the default Heal');
     }
 };

@@ -54,6 +54,8 @@
  * Damage formula for ranged skills:
  *   a.rangedDamage(b, 1.0)  (unarmed ATK + the item's Ranged Power) x rate,
  *                           reduced by b.def like physDamage.
+ *   a.rangedDamage(b, 1.2, 0.5)   the same, counting only half of b.def
+ *                           (Aimed Shot).
  *
  * Ammo resets at the start of every battle. The skill list shows how many
  * uses are left instead of a cost.
@@ -296,9 +298,9 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         return proof ? 1 : $.WET_BOW_RATE;
     };
 
-    Game_BattlerBase.prototype.rangedDamage = function(target, rate) {
+    Game_BattlerBase.prototype.rangedDamage = function(target, rate, defRate) {
         var power = (this.unarmedAtk() + this.rangedPower()) * rate;
-        return SmokingIsle.Combat.reduce(power, target.def);
+        return SmokingIsle.Combat.reduce(power, target.def * (defRate === undefined ? 1 : defRate));
     };
 
     // Damage previews (e.g. auto battle) before useItem: pick the slot now.

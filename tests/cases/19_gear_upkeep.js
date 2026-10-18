@@ -20,6 +20,7 @@ module.exports = {
             out.bigShield = [5, 10, 3].map(id => A(id).canEquip(AR('Pine Shield'))).join(',');
             out.buckler = A(3).canEquip(AR('Hide Buckler'));
             out.zez = W("Heaven's Horn").traits.some(tr => tr.code === 32);
+            const falmi = A(10); falmi.forceChangeEquip(falmi.slotOfType(2), AR('Painted Dragon-Tree Shield')); falmi.onBattleStart(); out.shieldResin = falmi.isStateAffected($dataStates.find(s => s && s.name === 'Resin').id);
             return out;
         });
         t.ok(r.patchRefused, 'a Copper Patch can\'t fix a stone knife');
@@ -32,5 +33,6 @@ module.exports = {
         t.eq(r.bigShield, 'true,true,false', 'large Pine Shield: adults and Falmi, not Sib');
         t.ok(r.buckler, 'anyone can use the Hide Buckler');
         t.ok(r.zez, "Heaven's Horn can set targets Smoldering");
+        t.ok(r.shieldResin, 'the Painted Dragon-Tree Shield starts each battle in Resin');
     }
 };

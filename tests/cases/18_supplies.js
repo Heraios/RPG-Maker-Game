@@ -40,7 +40,8 @@ module.exports = {
             yoon.addState(ST('Sleep')); use('Pennyroyal Sprig', yoon); out.awake = !yoon.isStateAffected(ST('Sleep'));
             yoon.setTp(50); use('Ephedra Twigs', yoon); out.ephedra = yoon.tp;
             yoon.setMp(0); yoon.setTp(0); use('Kava', yoon); out.kava = (yoon.mp === Math.min(40, yoon.mmp) ? 'mp ok' : yoon.mp) + '/' + yoon.tp;
-            yoon.addState(1); use('Burnt Feather', yoon); out.revived = yoon.isAlive() && yoon.hp <= 2;
+            yoon.setTp(100); yoon.addState(5); yoon.addState(118); use('Burnt Feather', yoon); out.roused = !yoon.isStateAffected(5) && !yoon.isStateAffected(118) && yoon.tp === 85;
+            yoon.addState(1); out.noRevive = !use('Burnt Feather', yoon) || yoon.isDead(); yoon.removeState(1);
             const fresh = id => { const e = new Game_Enemy(id, 0, 0); $gameTroop._enemies.push(e); return e; };
             const hitOn = (n, id) => { const x = new Game_Action(A(3)); x.setItem(IT(n).id); return x.itemHit(fresh(id)); };
             out.stunCrab = hitOn('Spurge Fish-Stunner', 3); out.stunBoar = hitOn('Spurge Fish-Stunner', 1);
@@ -60,7 +61,8 @@ module.exports = {
         t.ok(r.awake, 'Pennyroyal Sprig cures Sleep');
         t.eq(r.ephedra, 30, 'Ephedra Twigs: Fatigue -20');
         t.eq(r.kava, 'mp ok/10', 'Kava: +40 MP, Fatigue +10');
-        t.ok(r.revived, 'Burnt Feather revives with 1 HP');
+        t.ok(r.roused, 'Burnt Feather shakes off Weary and Stunned (Fatigue -15)');
+        t.ok(r.noRevive, 'Burnt Feather no longer revives');
         t.ok(r.stunCrab > 0 && r.stunBoar === 0, 'the fish-stunner only works on sea creatures');
         t.ok(r.saltImp > 0 && r.saltBoar === 0, 'Purifying Salt only harms spirits');
         t.eq(r.bait, 15, 'Bait Pouch: an animal\'s mood +15');

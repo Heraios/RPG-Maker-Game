@@ -46,7 +46,7 @@ module.exports = {
             use(yoon, 319, [s1]); const writhe = names(s1);
             const hp = s1.hp; use(yoon, 318, [s1]); const surge = { dmg: hp - s1.hp, states: names(s1), extra: yoon._siExtraTurn };
             s2.clearResult(); s2.removeState(72); use(yoon, 316, [s2]); const infernal = names(s2);
-            return { ghostTouch, touch2, writhe, surge, infernal, mat: yoon.mat, ghostSpark: ghost.isLearnedSkill(427) };
+            return { ghostTouch, touch2, writhe, surge, infernal, mat: yoon.mat, ghostSpark: ghost.skills().some(s => s.id >= 242 && s.id <= 271) };
         });
         t.eq(r.ghostTouch.join('|'), 'Smoldering|Smoldering', "the Ghost's Touch hits all enemies");
         t.eq(r.touch2, 'Smoldering,Wet', 'Touches only add states (no cycle)');

@@ -11,12 +11,16 @@ module.exports = {
             const yoon = A(2), e = $gameTroop.members()[0];
             const cures = (name, states) => { fresh(yoon); states.forEach(s => yoon.addState(s)); yoon.clearResult(); use(name, yoon); return states.every(s => !yoon.isStateAffected(s)); };
             out.cures = {
-                'Bitterwood Tea': cures('Bitterwood Tea', [79]), 'Hill Thyme Tea': cures('Hill Thyme Tea', [112]),
+                'Bitterwood Tea': cures('Bitterwood Tea', [79, 82]), 'Hill Thyme Tea': cures('Hill Thyme Tea', [112]),
                 'Burnwort Poultice': cures('Burnwort Poultice', [72, 73]), 'Burnwort Draught': cures('Burnwort Draught', [156, 42]),
-                'Laurel Oil': cures('Laurel Oil', [76, 77, 82]), 'Cliff Mint Tea': cures('Cliff Mint Tea', [82, 74]),
-                'Ti Leaf Wrap': cures('Ti Leaf Wrap', [79, 72]), 'Yellowroot Drops': cures('Yellowroot Drops', [78, 152]),
-                'Milo Bark': cures('Milo Bark', [117]), 'Wart Fern Poultice': cures('Wart Fern Poultice', [113]), 'Bandage': cures('Bandage', [116])
+                'Laurel Oil': cures('Laurel Oil', [76, 77, 82]), 'Cliff Mint Tea': cures('Cliff Mint Tea', [82, 74, 75]),
+                'Ti Leaf Wrap': cures('Ti Leaf Wrap', [79, 72, 73]), 'Yellowroot Drops': cures('Yellowroot Drops', [78, 79, 152]),
+                'Milo Bark': cures('Milo Bark', [117]), 'Bandage': cures('Bandage', [116])
             };
+            out.fernWard = (fresh(yoon), use('Wart Fern Poultice', yoon), yoon.addState(113), !yoon.isStateAffected(113));
+            const ST = n => $dataStates.find(x => x && x.name === n).id;
+            fresh(yoon); use('Ti Leaf Wrap', yoon); use('Ironwort Tonic', yoon); out.stack = yoon.isStateAffected(ST('Mending')) && yoon.isStateAffected(ST('Tonic'));
+            fresh(yoon); yoon.setMp(0); yoon.setTp(40); use('Berry Syrup', yoon); out.syrup = yoon.mp + '/' + yoon.tp;
             out.teaNotVenom = (fresh(yoon), yoon.addState(112), yoon.clearResult(), use('Bitterwood Tea', yoon), yoon.isStateAffected(112));
             out.sorrelNoBleed = (fresh(yoon), yoon.addState(116), yoon.clearResult(), use('Moon Sorrel', yoon), yoon.isStateAffected(116) && yoon.isStateAffected(234));
             fresh(yoon); yoon.setTp(30); use('Laurel Oil', yoon); out.laurelFatigue = 30 - yoon.tp;
@@ -40,6 +44,9 @@ module.exports = {
             return out;
         });
         Object.entries(r.cures).forEach(([n, ok]) => t.ok(ok, n + ' cures what it should'));
+        t.ok(r.fernWard, 'Wart Fern Poultice keeps Salting off');
+        t.ok(r.stack, 'Ironwort Tonic and Ti Leaf Wrap heal over time together');
+        t.eq(r.syrup, '10/25', 'Berry Syrup: 10 MP and Fatigue -15');
         t.ok(r.teaNotVenom, 'Bitterwood Tea cures only fever (not Venom)');
         t.ok(r.sorrelNoBleed, 'Moon Sorrel mends slowly but does not stop Bleed');
         t.eq(r.laurelFatigue, 20, 'Laurel Oil eases 20 Fatigue');

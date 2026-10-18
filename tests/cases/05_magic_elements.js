@@ -35,7 +35,7 @@ module.exports = {
                           rariTou: avg(sib, 248, tou), chopGhost: avg(pada, 73, ghost), ahiGhost: avg(sib, 242, ghost) };
             const slime = new Game_Enemy(9, 0, 0); $gameTroop._enemies.push(slime);   // any enemy, made fire-immune
             slime.elementRate = id => id === 10 ? 0 : 1;
-            out.fireImmuneAhi = avg(sib, 242, slime); out.fireImmuneSpark = avg(sib, 427, slime);
+            out.fireImmuneAhi = avg(sib, 242, slime); out.fireImmuneSpark = avg(sib, 206, slime);   // Live Wire
             return out;
         });
         t.ok(r.chopTou > r.chopYoon * 1.2, 'Heavy Chop (mostly Cut) hurts Tou more');

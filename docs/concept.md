@@ -384,13 +384,13 @@ all of them). Fatigue: very low 1, low 2, medium 3, medium-high 4, high 5, very 
 | Family (move) | Weapons | Skills |
 |---------------|---------|--------|
 | Thrust | Knife, Spear, Staff (Quick Jab and Vital only), straight Sword | **Quick Jab** (very low, Pierce ×0.8) · **Measured Thrust** (medium, ×1.1) · **Vital Strike** (high, ×1.5, +25% crit; knife/staff/sword) |
-| Slash | Knife, Sword, curved Axes | **Quick Slash** (very low, Cut ×0.8) · **Raking Cut** (medium, ×1.1, 40% Bleed) · **Flaying Strike** (high, ×1.5, DEF down) |
+| Slash | Knife, Sword, curved Axes | **Quick Slash** (very low, Cut ×0.8) · **Raking Cut** (medium, ×1.1, 40% Bleed) · **Flaying Strike** (high, ×1.5, hamstrings: AGI down) |
 | Chop | Axe, crescent sword, paddle-swords | **Heavy Chop** (medium-high, Cut ×1.6) · **Rending Blow** (high, ×1.9, DEF down) · **Cleave** (very high, ×2.4, also hits an adjacent enemy) |
 | Bludgeon | Club, mace, hammer, Staff, Axe (poll side), paddle-swords | **Overhead Smash** (medium, Crush ×1.1) · **Skull Crack** (high, ×1.5, 50% Disoriented) |
 | Sweep | Staff, Spear | **Wide Sweep** (medium, Crush ×0.7, all enemies) · **Trip** (low, ×0.3, AGI down 1 turn) |
 | Sword only | Swords | **Pommel Strike** (very low, Crush ×0.8) |
 | Electric | Any **metal blade** (knife, axe, sword) | **Conducting Blade** (medium, electric Burn ×1.1; needs a **Voltaic Pile**). An Islander technique: see Voltaic techniques |
-| Ranged | Bow, Sling | **Aimed Shot** (medium, Pierce, never misses) · **Covering Fire** (low, light Pierce/Crush, AGI down) · **Stone Rain** (high, sling only: spends all stones, one random hit each) |
+| Ranged | Bow, Sling | **Aimed Shot** (medium, Pierce, ignores half the target's DEF) · **Covering Fire** (low, light Pierce/Crush, AGI down) · **Stone Rain** (high, sling only: spends all stones, one random hit each) |
 
 **The weapon roster, by material** (lore: "Weapon materials"). ATK in brackets; every non-bronze
 weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thirds ATK.
@@ -445,7 +445,7 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
   Smoldering, 20% less Fire damage); the **Living Bough Staff** (a Green Horse's bough: MAT +6, heals 3%
   HP a turn). Also the **Ash Spear** (light, AGI +2) and the crumbly early **Sinter Knife**.
 - **Shields:** Wicker Buckler and **Hide Buckler** (small, anyone); **Pine Shield** (large, 15% less Fire
-  damage), **Painted Dragon-Tree Shield** (large, Falmi's kind: DEF, MDF, evasion), Tortoise-Shell and Bronze.
+  damage), **Painted Dragon-Tree Shield** (large, Falmi's kind: DEF, Spirit, evasion; starts each battle in Resin), Tortoise-Shell and Bronze.
 - **Trophy and special gear:** Guardian Lizard Scale (cuirass, fire-proof), Black Hound Pelt (strong cloak
   that whispers Panicked), Copper-Silver Circlet (priests), **Rubber-Coated Gloves** (insulated: no Voltaic
   self-shock when Wet), Jasper Ring (Rite +15%), Pearl Earring (charm).
@@ -495,7 +495,7 @@ Feverish, Despair and Panicked.
 |-------|--------|------|----------|
 | Bleed | 6% HP per turn, 3 turns | Raking Cut, the harpoon, shark-tooth weapons, Owls | **Bandage**; Electric Cautery |
 | Venom | 5% HP per turn and healing halved, 4 turns | Centipedes (40% per bite); Spurge Coating | Hill Thyme Tea; Electric Cautery |
-| Salting | AGI −30%; **if it runs its 3 turns, the victim turns to salt** (knocked out) | Stoneman chiefs' Salt Glyph | **Water** (Fresh Water, any water-sourced hit); Wart Fern Poultice |
+| Salting | AGI −30%; **if it runs its 3 turns, the victim turns to salt** (knocked out) | Stoneman chiefs' Salt Glyph | **Water** (Fresh Water, any water-sourced hit); Wart Fern Poultice keeps it off for the battle |
 | Dragged Below | Out of the fight and out of reach; **lost (knocked out) after 3 turns** | Black Hounds' Drag Below (and the wells) | **Hit the dragger** to pull them free |
 | Dazzled | Hit −50% for a turn | Children of the Caves | — |
 
@@ -729,23 +729,23 @@ rarer recipes from the **Stream Maidens**; ritual ones kept by **priests**.
 | Remedy | Plant (real basis) | Effect |
 |--------|--------------------|--------|
 | **Dragon's Blood** | Dragon tree resin | **Revives** at 10% HP inside a **Resin** shell that **blocks the next attack** completely |
-| Bitterwood Tea | Wormwood (incienso) | Cures **Feverish** (only fever) |
+| Bitterwood Tea | Wormwood (incienso) | Cures **Feverish** and **Chilled** (a hot tea) |
 | Bitterwood Smudge | Wormwood, burned | Party: clears **Despair** and **Panicked**; **Rite +30%** for 5 turns (temple incense) |
-| Cliff Mint Tea | Té de risco | Fatigue −10; cures **Chilled** and **Wet** |
+| Cliff Mint Tea | Té de risco | Fatigue −10; cures **Chilled**, **Wet** and **Sodden** |
 | Hill Thyme Tea | Thyme | Cures **Venom** |
-| Ironwort Tonic | Chahorra ("mountain tea") | Mends 5% HP per turn for 3 turns; Fatigue −5 |
+| Ironwort Tonic | Chahorra ("mountain tea") | **Tonic**: mends 3% HP per turn for 6 turns, stacking with Ti Leaf's Mending; Fatigue −5 |
 | Burnwort Poultice | Malfurada (Canary St John's wort) | +20 HP; cures **Smoldering** and **Enflamed** |
 | Burnwort Draught | Malfurada (sedative) | Cures **Panicked** and **Enraged** |
 | Laurel Oil | Laurel | Fatigue −20; cures **Burdened**, **Mired** and **Chilled** |
 | Moon Sorrel | Vinagrera | +8 HP and slow mending (2% per turn for 6 turns). Cheap, common. **No** Bleed cure |
 | Spurge Milk | Cardón latex (thrown) | Burn damage and **Dazzled** |
 | Spurge Coating | Cardón latex (on a blade) | For the battle, attacks may envenom (30%) |
-| Ti Leaf Wrap | Ti leaves | Mends 5% HP per turn for 3 turns; cures **Feverish** and **Smoldering** |
+| Ti Leaf Wrap | Ti leaves | Mends 5% HP per turn for 3 turns; cures **Feverish**, **Smoldering** and **Enflamed** |
 | Ti Root | Ti root | +10 HP, Fatigue −5; animals like it as an Offer |
-| Yellowroot Drops | Turmeric (ear complaints) | Cures **Disoriented** and **Confused** |
+| Yellowroot Drops | Turmeric (ear complaints) | Cures **Disoriented**, **Feverish** and **Confused** |
 | Yellowroot Paint | Turmeric (ritual body dye) | **Calm** (wards off the next mental ailment) |
 | Milo Bark | Mako'i (portia tree) | Cures **Dazzled** |
-| Wart Fern Poultice | Microsorum fern | Cures **Salting** (besides water) |
+| Wart Fern Poultice | Microsorum fern | **Prevents Salting** for the battle (Fresh Water is the cure) |
 | **Bandage** | Cloth, **burrbark** (hauhau) or **paper** | The only item that stops **Bleed** |
 
 **All-Seafarer Grog** replaced the old Potion: sailors' rum and water. Heals **30 HP** but leaves the
@@ -755,8 +755,8 @@ from Marines (a 1-in-3 drop), Parl, Theenmy or trade, and **All-Seafarer Marines
 Islander remedies cure cleanly; the outsiders' medicine has a cost.
 
 **Supplies:** Well Water (+15 MP), **Kava** (+40 MP, Fatigue +10), **Sacred Dew** (+80 MP), **Pennyroyal Sprig**
-(cures Sleep and Hypnotized), **Ephedra Twigs** (Fatigue −20), **Burnt Feather** (revives with 1 HP), Bandage,
-Acid Jar, **Brine Jar** (+1 Voltaic charge), **Berry Syrup** (+20 MP), **Palm Wine** (+25 MP, Fatigue −10, Tipsy),
+(cures Sleep and Hypnotized), **Ephedra Twigs** (Fatigue −20), **Burnt Feather** (shakes off Weary and Stunned; Fatigue −15; it doesn't revive), Bandage,
+Acid Jar, **Brine Jar** (+1 Voltaic charge), **Berry Syrup** (+10 MP, Fatigue −15), **Palm Wine** (+25 MP, Fatigue −10, Tipsy),
 **Shearwater Oil** (a Torch that lasts two battles), **Myrtle Wax** (this battle: +1 arrow, bows ignore Wet),
 **Myrtle Candle** (field item, for later). **White Clay Draught** cures **Tipsy**. (Magic Water, Dispel Herb and
 Stimulant were renamed into these.)
@@ -769,7 +769,9 @@ hit +10%, Threaten +25% on animals), Bait Pouch (an animal's mood +15), Purifyin
 damage; cures Chilled on the whole party), **Octopus Ink** (Dazzled on every sea creature).
 
 **Healing principle:** states are mostly cured by **items** (remedies, supplies), and HP is mostly
-restored by **healing spells**, so both matter. The exceptions are small: All-Seafarer Grog (the foreign
+restored by **healing spells**, so both matter. **Anything that cures a base elemental state also cures its
+stronger form** (Wet and Sodden, Smoldering and Enflamed, Burdened and Mired, Disoriented and Feverish).
+**Revival is never cheap:** no common item revives. The exceptions are small: All-Seafarer Grog (the foreign
 "medicine", 30 HP with a cost), revives, and meals (small heals, outside battle).
 
 **Upkeep and buffs:**
@@ -810,7 +812,7 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
 | AGI | Dried Figs, Grapes, Smoked Eel (+1), Strawberry-Tree Fruit (+1; 30% Tipsy) |
 | Once only | Sooty Bird Egg (ATK, DEF, MAT, AGI +1, max HP +5), Bellflower Fruit (max MP +5), Turtle Stew (max HP +5, DEF +1) |
 
-Syrup Berries aren't a meal: Fatigue −5, and they boil into Berry Syrup.
+Syrup Berries aren't a meal: Fatigue −5 (every basic wild fruit eases Fatigue by 5; each biome has its own), and they boil into Berry Syrup.
 
 Talk: the Cave children and forest child-fae like **Dried Figs**; seals and crabs **Shellfish**; cave rats
 **Grilled Meat**; Boar-Men **Islander Wine**. Raw Meat waits for crafting (cooking).
@@ -843,7 +845,7 @@ menu, so effects that block Physical skills (Weary, Mired) don't block resting.
 |-------|-----|------|---------|
 | Catch Breath | Everyone | Only above 85 Fatigue; not while Weary | −15 to −20 |
 | Heavy Panting | Everyone | Only above 85 Fatigue; works while Weary | −5 |
-| Hunter's Repose | Pada | Only above 75; not while Weary; grants **Steady Aim** (+25% hit on his next ranged attack) | −20 to −25 |
+| Hunter's Repose | Pada | Only above 75; not while Weary; grants **Steady Aim** (+25% critical chance on his next ranged attack) | −20 to −25 |
 
 Weary lifts as soon as Fatigue drops below 100, so letting a character reach 100 costs a turn of
 Heavy Panting before Catch Breath. Since nothing works below 85 (75 for Pada), **Fatigue can't
