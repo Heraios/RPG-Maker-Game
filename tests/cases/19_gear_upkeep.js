@@ -19,7 +19,7 @@ module.exports = {
             out.keys = $dataItems.filter(i => i && i.itypeId === 2 && i.name && !i.name.startsWith('---')).length;
             out.bigShield = [5, 10, 3].map(id => A(id).canEquip(AR('Pine Shield'))).join(',');
             out.buckler = A(3).canEquip(AR('Hide Buckler'));
-            out.zez = W("Zezengorri's Horn").traits.some(tr => tr.code === 32);
+            out.zez = W("Heaven's Horn").traits.some(tr => tr.code === 32);
             return out;
         });
         t.ok(r.patchRefused, 'a Copper Patch can\'t fix a stone knife');
@@ -31,6 +31,6 @@ module.exports = {
         t.eq(r.keys, 13, '13 key items (7 body ingredients, 6 clues)');
         t.eq(r.bigShield, 'true,true,false', 'large Pine Shield: adults and Falmi, not Sib');
         t.ok(r.buckler, 'anyone can use the Hide Buckler');
-        t.ok(r.zez, "Zezengorri's Horn can set targets Smoldering");
+        t.ok(r.zez, "Heaven's Horn can set targets Smoldering");
     }
 };

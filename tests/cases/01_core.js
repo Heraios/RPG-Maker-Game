@@ -18,7 +18,7 @@ module.exports = {
         });
         t.ok(r.knife.includes('Quick Jab') && r.knife.includes('Raking Cut') && !r.knife.includes('Overhead Smash'), 'knife moves: ' + r.knife);
         t.ok(r.staff.includes('Wide Sweep') && r.staff.includes('Vital Strike') && !r.staff.includes('Measured Thrust'), 'staff moves: ' + r.staff);
-        t.ok(r.khopesh.includes('Heavy Chop') && !r.khopesh.includes('Quick Jab'), 'khopesh cannot jab: ' + r.khopesh);
+        t.ok(r.khopesh.includes('Heavy Chop') && !r.khopesh.includes('Quick Jab'), 'crescent sword cannot jab: ' + r.khopesh);
         t.eq(r.conductNoPile, false, 'Conducting Blade without a Voltaic Pile');
         t.eq(r.conductPile, true, 'Conducting Blade with a Voltaic Pile and a copper knife');
         t.ok(r.islanderOnly, 'only Islanders can use a Voltaic Pile (Pada yes, Theenmy no)');

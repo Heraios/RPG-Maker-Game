@@ -31,7 +31,7 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
   3. **Snow**, trapped in an urn and kept magically frozen until the right moment → the brain.
   4. **A bit of pure silver**, worked into a bracelet.
   5. **A pearl from the sea**, set into the bracelet → anchors the soul.
-  6. **A living Canary bellflower** (*Canarina canariensis*), kept magically alive → the heart.
+  6. **A living bellflower**, kept magically alive → the heart.
   7. **A framework of dragon-tree wood** → the skeleton.
 - **Pada joins after the snow (ingredient 3).** He's suspicious of why Sib, who is normally *not*
   an outdoorsy child, keeps traipsing around, and he's worried about the children since Yoon's
@@ -250,7 +250,7 @@ him down is an important Act 2 quest.
 The Prince of the invaders, who always ends up siding with the party.
 
 - **Weapons:** every melee type except staffs, including swords and javelins. His personal sword is a unique, irreplaceable masterwork bronze
-  leaf blade. **Can swap melee weapons once per turn and still make a basic attack.**
+  leaf sword. **Can swap melee weapons once per turn and still make a basic attack.**
 - **Quirks:** highest HP and DEF in the game, very high ATK, lowest AGI (a bronze-armored
   glacier). Powerful paladin-style magic. **All his gear is bronze and therefore unbreakable.**
   Has adult protection, the hint that he isn't so bad: the colonizer prince instinctively shields
@@ -363,7 +363,7 @@ all of them). Fatigue: very low 1, low 2, medium 3, medium-high 4, high 5, very 
 |---------------|---------|--------|
 | Thrust | Knife, Spear, Staff (Quick Jab and Vital only), straight Sword | **Quick Jab** (very low, Pierce ×0.8) · **Measured Thrust** (medium, ×1.1) · **Vital Strike** (high, ×1.5, +25% crit; knife/staff/sword) |
 | Slash | Knife, Sword, curved Axes | **Quick Slash** (very low, Cut ×0.8) · **Raking Cut** (medium, ×1.1, 40% Bleed) · **Flaying Strike** (high, ×1.5, DEF down) |
-| Chop | Axe, Khopesh, paddle-swords | **Heavy Chop** (medium-high, Cut ×1.6) · **Rending Blow** (high, ×1.9, DEF down) · **Cleave** (very high, ×2.4, also hits an adjacent enemy) |
+| Chop | Axe, crescent sword, paddle-swords | **Heavy Chop** (medium-high, Cut ×1.6) · **Rending Blow** (high, ×1.9, DEF down) · **Cleave** (very high, ×2.4, also hits an adjacent enemy) |
 | Bludgeon | Club, mace, hammer, Staff, Axe (poll side), paddle-swords | **Overhead Smash** (medium, Crush ×1.1) · **Skull Crack** (high, ×1.5, 50% Disoriented) |
 | Sweep | Staff, Spear | **Wide Sweep** (medium, Crush ×0.7, all enemies) · **Trip** (low, ×0.3, AGI down 1 turn) |
 | Sword only | Swords | **Pommel Strike** (very low, Crush ×0.8) |
@@ -380,8 +380,8 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
 | Spear (jab, thrust, sweep) | | | | Obsidian Spear (10) | Wooden Spear (6); Fire-Hardened Spear (6) | Copper Spear (10) | Copper-Silver Spear (10) | Bronze Spear (13) |
 | Axe (chop, bludgeon) | | | | | Basalt Axe (12) | Copper Axe (12, **one-handed** hatchet) | Copper-Silver Axe (12) | Bronze Axe (15) |
 | Club / mace / hammer (bludgeon) | | | | | Ebony Club (9) and Fire-Hardened Ebony Club; Basalt Hammer (13, two-handed); Coral-Studded Club (11); Ceramic Mace (13) | Copper Mace (11) | Copper-Silver Mace (11) | Bronze Mace (14) |
-| Sword (bronze only, plus wood) | | | | | Dragonheart Greatsword (15, two-handed) | | | Bronze Khopesh (14; no jab), Bronze Leaf Blade (16) |
-| Staff (jab, vital, bludgeon, sweep) | | | | | Heather Staff (7); Toromiro Staff (6, MAT +4); fire-hardened versions of both | | | |
+| Sword (bronze only, plus wood) | | | | | Dragonheart Greatsword (15, two-handed) | | | Bronze Crescent Sword (14; no jab), Bronze Leaf Sword (16) |
+| Staff (jab, vital, bludgeon, sweep) | | | | | Heather Staff (7); Rain-Tree Staff (6, MAT +4); fire-hardened versions of both | | | |
 
 - **Local stones:** **Chalcedony Knife** (5; wears at 2%, the dependable knife); **Jasper Knife** (5; magic
   attack +3, Rite +50% while held; a **Ritual Knife** only Yoon, Sib and Juda can use, still fits the off
@@ -399,7 +399,7 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
 - **Ceramic Mace** (13; earth spells +10%): fired clay. Cheap, hits hard, wears fast (10%) and breaks
   outright, but **the swing that breaks it hits 50% harder** and may cause **Bleed** (flying shards,
   50%). Meant to be used up.
-- **Wood and fire-hardening:** raw wood (Ebony Club, Heather Staff, Toromiro Staff, Wooden Spear, Bare
+- **Wood and fire-hardening:** raw wood (Ebony Club, Heather Staff, Rain-Tree Staff, Wooden Spear, Bare
   Club) wears slowly (2%) and splits. **Fire-hardened** versions never wear, and their wielder takes
   **10% less Fire damage**. Hardening will be a campfire crafting action later; for now they are found
   or bought.
@@ -408,7 +408,7 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
   resistance but has lost its resin shell.
 - **Metal** weapons also have the **metal** move (Conducting Blade with a Voltaic Pile).
 - **Copper-silver** has `<Magic Edge: 15>`: weapon skills deal 15% extra damage as magic.
-- **Black Bronze Blade** (22, Magic Edge 30, never wears): a placeholder for the late-game First Sailor
+- **Black Bronze Leaf Sword** (22, Magic Edge 30, never wears): a placeholder for the late-game First Sailor
   legendaries.
 - **Harpoons** are light spears that anyone can throw once a battle: Bone Harpoon (6; 30% Bleed), Fishing
   Harpoon (8; 40% Bleed), Shark-Tooth Harpoon (9; 60% Bleed). **Dama's Fishing Gear** (ranged) gives one
@@ -417,9 +417,9 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
   (late). **Glyph staves** (Staff of Ahi, Rari, Hagu, Keri, Mahu) work like that tattoo while held: they
   grant the tier-1 spell.
 - **Broken obsidian** weapons leave **Obsidian Caltrops** (a battle item).
-- **Late and rare weapons:** the **black bronze** legendaries (Knife, Spear, Axe, Mace, plus the Blade;
+- **Late and rare weapons:** the **black bronze** legendaries (Knife, Spear, Axe, Mace, plus the Leaf Sword;
   Magic Edge 30, never wear); **grown-coral** First Sailor blades (Grown-Coral Knife and Blade: water spells
-  +15%, 40% Bleed); **Zezengorri's Horn** (a fire spear from the red bull: fire spells +15%, may set targets
+  +15%, 40% Bleed); **Heaven's Horn** (a fire spear from the Bull of Heaven: fire spells +15%, may set targets
   Smoldering, 20% less Fire damage); the **Living Bough Staff** (a Green Horse's bough: MAT +6, heals 3%
   HP a turn). Also the **Ash Spear** (light, AGI +2) and the crumbly early **Sinter Knife**.
 - **Shields:** Wicker Buckler and **Hide Buckler** (small, anyone); **Pine Shield** (large, 15% less Fire
@@ -491,7 +491,7 @@ character must both *know* the skill and have a weapon that *allows* it. The wea
 |--------|------|-------|
 | Obsidian Knife | Dagger | jab |
 | Obsidian Spear | Spear | jab |
-| Bronze Khopesh | Sword | chop (a sword that **can't** Quick Jab) |
+| Bronze Crescent Sword | Sword | chop (a sword that **can't** Quick Jab) |
 | Basalt Axe | Axe | chop |
 | Ebony Club | Club | bash |
 | Heather Staff | Staff | bash |
@@ -589,7 +589,7 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Set | Slots | Small bonus | Full bonus |
 |---|---|---|---|
 | Tapa (bark cloth) | Head, Shoulders, Body, Legs | +5% evasion | +10% evasion; the first enemy attack each battle is likelier to miss |
-| Goat-Skin (tamarco) | Shoulders, Body, Legs, Feet | +10% max HP | Resting outdoors sheds 1 more Fatigue per turn |
+| Goat-Skin | Shoulders, Body, Legs, Feet | +10% max HP | Resting outdoors sheds 1 more Fatigue per turn |
 | Boar Hide | Head, Cuirass, Arms, Greaves | +DEF | Boar-Men and boars start one mood step friendlier; Threaten works better on them |
 | Seal Leather | Head, Body, Feet | Resists Wet | Immune to Wet and Sodden; water spells hurt less |
 | Reed and Palm | Head, Legs, Feet | +AGI | +evasion while Wet; still weak to fire |
@@ -624,14 +624,14 @@ into armor types by where it is worn:
 **Charms** (by biome): shark-tooth necklace, bone fishhook pendant, cowrie anklet,
 coral pendant (water spells +10%) on the beach; reed charm-bundle, hag-crane feather, leech jar in the
 marsh; cave-glow stone, cave-cricket cage, blind crab shell in the lava tubes; copper bracelet,
-silver-plated idol, lead sinker, lodestone (Voltaic) from the mines; goat-horn amulet (Akerbeltz),
-pintadera clay stamp, barley-doll idol in the grasslands; clay idol (Calm at battle start), ceramic
-bead necklace (earth spells +10%), ink pouch, bark-paper prayer strip in the village; til leaf, boar
+silver-plated idol, lead sinker, lodestone (Voltaic) from the mines; master's horn amulet (Master of Deception),
+family seal (clay stamp), barley-doll idol in the grasslands; clay idol (Calm at battle start), ceramic
+bead necklace (earth spells +10%), ink pouch, bark-paper prayer strip in the village; sacred leaf charm, boar
 tusk pendant, raven feather in the laurel forest; antler toggle, ibex horn, yew bead bracelet,
 juniper smudge bundle in the alpine forest; eagle feather, snow quartz, shell wind-chime on the peak;
 lizard-scale charm, tortoise-shell amulet, vulture feather, obsidian amulet (fire spells +10%) in the
 desert; phonolite bell, basalt whetstone, pumice stone in the quarry; sulfur lump, tin bead,
-hot-spring sinter in the crater; sailor's compass, bronze signet (All-Seafarer); reimiro and a
+hot-spring sinter in the crater; sailor's compass, bronze signet (All-Seafarer); crescent pectoral and a
 whispering **coral eye fragment** (First Sailor relics). Patience's collars: Woven → Hide →
 Shark-Tooth → Coral-Eyed. Rings: silver, bone, obsidian; gloves: hide, sinew wraps.
 
@@ -700,7 +700,7 @@ drink while Tipsy turns it into **Disoriented**. It's foreign: the Islanders don
 from Marines (a 1-in-3 drop), Parl, Theenmy or trade, and **All-Seafarer Marines like being offered it**.
 Islander remedies cure cleanly; the outsiders' medicine has a cost.
 
-**Supplies:** Well Water (+15 MP), **Kava** (+40 MP, Fatigue +10), **Til Dew** (+80 MP), **Pennyroyal Sprig**
+**Supplies:** Well Water (+15 MP), **Kava** (+40 MP, Fatigue +10), **Sacred Dew** (+80 MP), **Pennyroyal Sprig**
 (cures Sleep and Hypnotized), **Ephedra Twigs** (Fatigue −20), **Burnt Feather** (revives with 1 HP), Bandage,
 Acid Jar. (Magic Water, Dispel Herb and Stimulant were renamed into these.)
 
@@ -720,10 +720,10 @@ restored by **healing spells**, so both matter. The exceptions are small: All-Se
 - **Battery Discs** restore 3 Voltaic charge.
 - **War paints and snuff** (battle buffs, 5 turns): Orchil War Paint (ATK up), Dragon's-Blood Paint (DEF
   up), Mint Snuff (AGI up).
-- **Treasures** to sell: Kavakava Figurine, Glyph Tablet Shard, First Sailor Bead.
+- **Treasures** to sell: Skeletal Figurine, Glyph Tablet Shard, First Sailor Bead.
 
 **Key items:** the body ingredients (Great Boar Flesh, Kin's Blood, Snow Urn, Silver Bracelet, Sea Pearl,
-Canary Bellflower, Dragon-Tree Framework) and clues (Juda's Notes, Parl's Notebook, Tribute Ledger,
+Bellflower, Dragon-Tree Framework) and clues (Juda's Notes, Parl's Notebook, Tribute Ledger,
 Telegraph Log, Copper Ball, Broken Staff).
 
 ### Meals (how stats grow)
@@ -731,7 +731,7 @@ Levels (Insight) only raise MDF and LUK, so **food is how HP, MP, ATK, DEF, MAT 
 (`SI_Meals.js`). A meal is eaten outside battle: a small heal plus a permanent gain.
 - **One meal per rest:** a character who has eaten is full until the next rest (Recover All, e.g. the
   campfire).
-- **Each food counts 3 times per character** (Default Cap); after that it only heals. The Sooty Tern Egg
+- **Each food counts 3 times per character** (Default Cap); after that it only heals. The Sooty Bird Egg
   counts once.
 - The item screen's help box shows who has eaten it (e.g. "Yoon 2/3 (full)").
 - **Pada and Juda won't eat** ("I'm not hungry. Give it to the children." / "The children need it more than
@@ -742,13 +742,13 @@ Levels (Insight) only raise MDF and LUK, so **food is how HP, MP, ATK, DEF, MAT 
 
 | Stat | Foods |
 |---|---|
-| Max HP | Barley Bread (+3), Gofio (+5) |
+| Max HP | Barley Bread (+3), Toasted Barley (+5) |
 | Max MP | Limpets (+3), Goat Milk (+3) |
 | ATK | Grilled Meat, Goat Cheese (+1) |
 | DEF | Dried Fish, Lentil Stew (+1; the stew feeds the whole party) |
 | MAT | Palm Honey (+1, also 10 MP), Islander Wine (+1, 15 MP, Tipsy) |
 | AGI | Dried Figs, Grapes (+1) |
-| All | Sooty Tern Egg (ATK, DEF, MAT, AGI +1, max HP +5; once) |
+| All | Sooty Bird Egg (ATK, DEF, MAT, AGI +1, max HP +5; once) |
 
 Talk: the Cave children and forest child-fae like **Dried Figs**; seals and crabs **Limpets**; cave rats
 **Grilled Meat**; Boar-Men **Islander Wine**. Raw Meat waits for crafting (cooking).
@@ -842,7 +842,7 @@ slings; Pada and Parl bows; Dama, Falmi and Theenmy javelins; Dama nets.
 | Dragonheart wood | Cracked, then breaks | 1%, then 2% |
 | Coral studs | Bare Club (raw wood) | 6% |
 | Ceramic | Shatters (breaks; that swing hits ×1.5) | 10% |
-| Raw wood (ebony, heather, toromiro) | Splits and breaks | 2% |
+| Raw wood (ebony, heather, rain-tree) | Splits and breaks | 2% |
 | Fire-hardened wood, bronze, black bronze | never wear | — |
 
 These are placeholder examples; real wear rates need playtesting.

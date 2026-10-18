@@ -21,7 +21,7 @@
  *                       they can't eat again until they rest), and
  *                     - up to the cap for that food per character (after
  *                       that it only heals).
- *   <Meal Cap: 1>   this food's own cap (a rare Sooty Tern Egg: once)
+ *   <Meal Cap: 1>   this food's own cap (a rare Sooty Bird Egg: once)
  *
  * Actor note:
  *   <Refuses Meals: Give it to the children.>

@@ -43,7 +43,7 @@ module.exports = {
             const out = { edge: jab(W('Copper-Silver Knife')) / jab(W('Copper Knife')) };
             out.yoonPaddle = yoon.canEquip(W('Obsidian Paddle'));
             out.sibPaddle = $gameActors.actor(3).canEquip(W('Obsidian Paddle'));
-            out.bronzeWears = ['Bronze Knife', 'Bronze Spear', 'Bronze Axe', 'Bronze Mace', 'Bronze Khopesh', 'Bronze Leaf Blade'].some(n => W(n).siWearChance > 0);
+            out.bronzeWears = ['Bronze Knife', 'Bronze Spear', 'Bronze Axe', 'Bronze Mace', 'Bronze Crescent Sword', 'Bronze Leaf Sword'].some(n => W(n).siWearChance > 0);
             out.copperScrap = W('Bent Copper Mace').siBreaksInto === 122;
             pada.forceChangeEquip(pada.slotOfType(1), W('Basalt Hammer')); out.mawlLocks = !pada.isEquipChangeOk(pada.slotOfType(2));
             pada.forceChangeEquip(pada.slotOfType(1), W('Copper Axe')); out.hatchetFree = pada.isEquipChangeOk(pada.slotOfType(2));

@@ -57,8 +57,8 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id), W = n => $dataWeapons.find(w => w && w.name === n), out = {};
-            out.raw = ['Ebony Club', 'Heather Staff', 'Toromiro Staff', 'Wooden Spear', 'Bare Club'].map(n => W(n).siWearChance).join(',');
-            out.hardened = ['Fire-Hardened Ebony Club', 'Fire-Hardened Heather Staff', 'Fire-Hardened Toromiro Staff', 'Fire-Hardened Spear'].every(n => W(n).siDegradesTo < 0);
+            out.raw = ['Ebony Club', 'Heather Staff', 'Rain-Tree Staff', 'Wooden Spear', 'Bare Club'].map(n => W(n).siWearChance).join(',');
+            out.hardened = ['Fire-Hardened Ebony Club', 'Fire-Hardened Heather Staff', 'Fire-Hardened Rain-Tree Staff', 'Fire-Hardened Spear'].every(n => W(n).siDegradesTo < 0);
             const pada = A(5); pada.forceChangeEquip(pada.slotOfType(1), W('Fire-Hardened Spear')); out.fireRate = pada.elementRate(10);
             pada.forceChangeEquip(pada.slotOfType(1), W('Wooden Spear')); out.rawRate = pada.elementRate(10);
             const th = A(11); th.forceChangeEquip(th.slotOfType(1), W('Dragonheart Greatsword')); th.clearStates(); th.onBattleStart();
