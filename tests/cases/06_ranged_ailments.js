@@ -11,7 +11,7 @@ module.exports = {
             pada.onBattleStart(); const refilled = pada.rangedAmmoForSkill(S(123));
             yoon.onBattleStart(); yoon.useItem(S(122)); yoon.useItem(S(122));
             const volley = new Game_Action(yoon); volley.setSkill(128); const volleyHits = volley.makeTargets().length; yoon.useItem(S(128));
-            dama.forceChangeEquip(dama.slotOfType(1), $dataWeapons[92]); dama.forceChangeEquip(dama.slotOfType(6), AR('Fishing Gear')); dama.onBattleStart();
+            dama.clearEquipments(); dama.forceChangeEquip(dama.slotOfType(1), $dataWeapons[92]); dama.forceChangeEquip(dama.slotOfType(6), AR('Fishing Gear')); dama.onBattleStart();
             const harpoonThrows = dama.rangedAmmoForSkill(S(124)), nets = dama.rangedAmmoForSkill(S(125));
             const bat = new Game_Enemy(12, 0, 0); $gameTroop._enemies.push(bat);   // Owl of Ill Omen (flying)
             const eva = id => { const a = new Game_Action(yoon); a.setSkill(id); return a.itemEva(bat); };

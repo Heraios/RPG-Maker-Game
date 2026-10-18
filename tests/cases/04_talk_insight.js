@@ -100,18 +100,19 @@ module.exports = {
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id);
             const sib = A(3);
-            const snap = a => ({ mhp: a.mhp, atk: a.atk, mdf: a.mdf, luk: a.luk, eva: a.eva, conf: a.stateRate(152), tcr: a.tcr });
+            const snap = a => ({ mhp: a.mhp, atk: a.atk, mdf: a.mdf, luk: a.luk, eva: a.eva, conf: a.stateRate(152), cri: a.cri, tcr: a.tcr });
             const s1 = snap(sib); sib.changeLevel(15, false); const s15 = snap(sib); sib.changeLevel(40, false);
             const yoon = A(2), ghost = A(1); yoon.gainExp(200);
             return { s1, s15, cap: sib.level, yoon: yoon.level, ghost: ghost.level };
         });
         t.eq(r.s15.mhp, r.s1.mhp, 'Insight does not raise HP');
         t.eq(r.s15.atk, r.s1.atk, 'Insight does not raise ATK');
-        t.eq(r.s15.mdf - r.s1.mdf, 14, 'MDF +1 per Insight');
-        t.eq(r.s15.luk - r.s1.luk, 14, 'LUK +1 per Insight');
+        t.eq(r.s15.mdf - r.s1.mdf, 14, 'Spirit (MDF) +1 per Insight');
+        t.eq(r.s15.luk - r.s1.luk, 14, 'Wits (LUK) +1 per Insight');
         t.between(r.s15.eva - r.s1.eva, 0.069, 0.071, 'evasion +0.5% per Insight');
         t.between(r.s15.conf, 0.71, 0.73, 'mental states land 28% less at Insight 15');
-        t.between(r.s15.tcr / r.s1.tcr, 0.85, 0.87, 'Fatigue builds 14% slower at Insight 15');
+        t.between(r.s15.cri - r.s1.cri, 0.139, 0.141, 'critical chance +1% per Insight');
+        t.eq(r.s15.tcr, r.s1.tcr, 'Insight no longer changes how fast Fatigue builds');
         t.eq(r.cap, 15, "Sib's Insight cap is 15");
         t.eq(r.ghost, r.yoon, 'Ghost and Human Yoon share Insight');
     }

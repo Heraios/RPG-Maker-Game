@@ -37,7 +37,9 @@
  *   <Shock Power: 14>    strength of its current (a.shockDamage(b, rate))
  *
  * Other armor (charms):
- *   <Extra Charge: 1>    a worn pile holds 1 more (Lodestone)
+ *   <Extra Charge: 1>    (armor/state) a worn pile holds 1 more (Lodestone)
+ *   <Electric Boost: 15> (armor/state) electric techniques deal 15% more
+ *                        (the Telegrapher's Kit)
  *   <Metal>              (armor/state) the wearer counts as metal too
  *   <Insulated>          (armor) a Wet wearer doesn't shock themself
  *
@@ -122,7 +124,7 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
     Game_BattlerBase.prototype.maxCharge = function() {
         var pile = this.pile();
         if (!pile) return 0;
-        return pile.siCharge + this.armors().reduce(function(sum, a) {
+        return pile.siCharge + this.armors().concat(this.states()).reduce(function(sum, a) {
             var m = /<Extra Charge:\s*(\d+)>/i.exec(a.note || '');
             return sum + (m ? Number(m[1]) : 0);
         }, 0);
@@ -190,6 +192,14 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
         var item = this.item();
         if (!DataManager.isSkill(item) || value <= 0) return value;
         if (item.siElectric && $.isWet(target)) value = Math.round(value * 1.5);
+        var subject = this.subject();
+        if (item.siElectric && subject.isActor()) {
+            var boost = subject.armors().concat(subject.states()).reduce(function(sum, o) {
+                var m = /<Electric Boost:\s*(\d+)>/i.exec(o.note || '');
+                return sum + (m ? Number(m[1]) : 0);
+            }, 0);
+            if (boost) value = Math.round(value * (1 + boost / 100));
+        }
         if (item.siMetalBonus !== 1 && $.isMetal(target)) value = Math.round(value * item.siMetalBonus);
         return value;
     };

@@ -92,8 +92,8 @@ module.exports = {
             return out;
         });
         t.eq(r.padaThrows, 1, 'a harpoon gives anyone one javelin throw');
-        t.eq(r.dama, '3/1', 'Dama: harpoon throw + 2 from Fishing Gear, and 1 net');
-        t.eq(r.afterNet, '3/0', 'casting the net leaves the javelins');
+        t.eq(r.dama, '3/2', "Dama: harpoon throw + 2 from Fishing Gear; 1 net + 1 from her Fisher's Gear set");
+        t.eq(r.afterNet, '3/1', 'casting a net leaves the javelins and the other net');
         t.eq(r.caltrops, 1, 'a broken obsidian weapon leaves Obsidian Caltrops: ' + r.msg);
         t.ok(!r.sibAhi && r.staffAhi, 'the Staff of Keri grants Keri, like the tattoo');
         t.eq(r.staffWho, 'Yoon,Sib,Juda,Tou', 'glyph staves: staff users only');

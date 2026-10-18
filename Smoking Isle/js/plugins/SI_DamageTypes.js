@@ -49,6 +49,9 @@
  *                            while it is equipped deal 10% more (obsidian:
  *                            fire, coral: water, ceramic: earth). Several
  *                            pieces add up.
+ *   <Spell Boost: first-sailor 15>   the same for spells of a school
+ *                            (skill note <School: first-sailor>)
+ *   Set-bonus and other states can carry <Spell Boost> too.
  *   <Echo Boost: 15>         spells of the same source as the wearer's last
  *                            spell this battle deal 15% more (Fire Opal)
  *
@@ -101,11 +104,17 @@ SmokingIsle.DamageTypes = SmokingIsle.DamageTypes || {};
             [$dataSkills, $dataItems, $dataWeapons].forEach(function(list) {
                 list.forEach(function(obj) { if (obj) $.parse(obj); });
             });
-            [$dataWeapons, $dataArmors].forEach(function(list) {
+            $dataSkills.forEach(function(obj) {
+                var school = obj && /<School:\s*([\w-]+)>/i.exec(obj.note || '');
+                if (obj) obj.siSchool = school ? school[1].toLowerCase() : '';
+            });
+            [$dataWeapons, $dataArmors, $dataStates].forEach(function(list) {
                 list.forEach(function(obj) {
                     if (!obj) return;
-                    var b = /<Spell Boost:\s*(\w+)\s+(\d+)>/i.exec(obj.note || '');
-                    obj.siSpellBoost = b && $.SOURCE[b[1].toLowerCase()] ? { source: $.SOURCE[b[1].toLowerCase()], rate: Number(b[2]) / 100 } : null;
+                    var b = /<Spell Boost:\s*([\w-]+)\s+(\d+)>/i.exec(obj.note || '');
+                    var key = b ? b[1].toLowerCase() : '';
+                    obj.siSpellBoost = !b ? null : $.SOURCE[key] ? { source: $.SOURCE[key], rate: Number(b[2]) / 100 }
+                                                                : { school: key, rate: Number(b[2]) / 100 };
                     var e = /<Echo Boost:\s*(\d+)>/i.exec(obj.note || '');
                     obj.siEchoBoost = e ? Number(e[1]) / 100 : 0;
                 });
@@ -165,11 +174,12 @@ SmokingIsle.DamageTypes = SmokingIsle.DamageTypes || {};
     // Extra share for a magic skill from the user's <Spell Boost> equipment.
     Game_Action.prototype.spellBoost = function() {
         var item = this.item(), subject = this.subject();
-        if (!item || !item.siSource || !this.isMagical() || !subject.isActor()) return 0;
-        var echo = subject._siLastSpellSource === item.siSource;
-        return subject.equips().reduce(function(sum, eq) {
+        if (!item || !(item.siSource || item.siSchool) || !this.isMagical() || !subject.isActor()) return 0;
+        var echo = item.siSource && subject._siLastSpellSource === item.siSource;
+        return subject.equips().concat(subject.states()).reduce(function(sum, eq) {
             if (!eq) return sum;
-            if (eq.siSpellBoost && eq.siSpellBoost.source === item.siSource) sum += eq.siSpellBoost.rate;
+            var b = eq.siSpellBoost;
+            if (b && ((b.source && b.source === item.siSource) || (b.school && b.school === item.siSchool))) sum += b.rate;
             if (echo) sum += eq.siEchoBoost || 0;
             return sum;
         }, 0);

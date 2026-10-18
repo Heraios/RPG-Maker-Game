@@ -609,19 +609,32 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 - **Evasion from sets is capped** (about +15% in total).
 - **Talk bonuses stack too**: wearing two groups' gear (e.g. Boar Hide and Bronze) keeps both.
 - The **Feather** set is priest-only (Sib, Juda, Yoon).
+- **Parts:** a set is made of parts, one per slot unless a piece names its own part. Pieces for the same
+  part are substitutes, and several charms of one set still count once (the First Sailor Regalia names
+  the eye and the pupil as separate parts). One piece can belong to two sets (Goat-Skin Moccasins).
+- "First Sailor spells" are spells tagged `<School: first-sailor>` (none yet: Tou's spells are still to
+  come); enemies tagged `first-sailor` (Stonemen, First Sailor ghosts) are still to come too.
 
 | Set | Slots | Small bonus | Full bonus |
 |---|---|---|---|
-| Tapa (bark cloth) | Head, Shoulders, Body, Legs | +5% evasion | +10% evasion; the first enemy attack each battle is likelier to miss |
-| Goat-Skin | Shoulders, Body, Legs, Feet | +10% max HP | Resting outdoors sheds 1 more Fatigue per turn |
+| Tapa (bark cloth) | Head, Shoulders, Body (Wrap or Ochre-Stamped Wrap), Legs | +5% evasion | +10% evasion; the first enemy attack each battle is likelier to miss |
+| Goat-Skin | Shoulders, Body, Hands (Hide Gloves), Legs, Feet | +10% max HP | Resting outdoors sheds 1 more Fatigue per turn |
 | Boar Hide | Head, Cuirass, Arms, Greaves | +DEF | Boar-Men and boars start one mood step friendlier; Threaten works better on them |
 | Seal Leather | Head, Body, Feet | Resists Wet | Immune to Wet and Sodden; water spells hurt less |
-| Reed and Palm | Head, Legs, Feet | +AGI | +evasion while Wet; still weak to fire |
-| Mouflon Wool | Head, Shoulders, Legs | Resists Chilled | Immune to Chilled; Fatigue builds 10% slower |
-| Feather (priests) | Head, Shoulders | +MAT (1 piece) | Rite +25%; Yoon's Insight reads one level deeper on spirits |
-| Pine Pitch–Hardened Hide | Cuirass, Arms | 10% less Fire damage (1 piece) | Immune to Smoldering |
-| Tortoise Shell | Cuirass, Offhand (large shield) | +DEF (1 piece) | The first physical hit each battle is halved |
-| Lava-Tube Gear | Head, Body | +evasion in caves | The Children of the Caves can't steal from you; prank fights start friendlier |
+| Reed and Palm | Head, Arms (Woven Armlets), Legs, Feet, Offhand (Wicker Buckler) | +AGI | +evasion while Wet; still weak to fire |
+| Mouflon Wool | Head, Shoulders, Legs, Feet (Goat-Skin Moccasins, also Goat-Skin) | Resists Chilled | Immune to Chilled; Fatigue builds 10% slower |
+| Feather (priests' regalia) | Head (Feather Crown or Copper-Silver Circlet), Shoulders | +MAT (1 piece) | Rite +25%; Yoon's Insight reads one level deeper on spirits |
+| Pine Pitch–Hardened Hide | Cuirass, Arms, Offhand (Pine Shield) | 10% less Fire damage (2 pieces) | Immune to Smoldering |
+| Tortoise Shell | Cuirass, Offhand (Tortoise-Shell Shield or Sea-Turtle Buckler) | +DEF (1 piece) | The first physical hit each battle is halved |
+| Lava-Tube Gear | Head, Body, Charm (Cave-Glow Stone) | +evasion in caves (2 pieces) | The Children of the Caves can't steal from you; prank fights start friendlier |
+| Guardian Lizard (trophy) | Cuirass (Guardian Lizard Scale), Charm (Lizard-Scale Charm) | 10% less Fire damage (1 piece) | Immune to Smoldering and Enflamed |
+| Telegrapher's Kit | Hands (Rubber-Coated Gloves), Charm (Lodestone, Hot-Spring Sinter or Copper Bracelet), Battery (Voltaic Pile) | +1 max charge | Electric techniques +15% |
+| Fisher's Gear | Neck (Bone Fishhook Pendant or Shark-Tooth Necklace), Charm (Net Floats), Ranged (Fishing Gear or Palm-Fibre Net) | +1 net cast | Sea creatures start friendlier; +10% evasion while Wet |
+| Ritualist's Things | Neck (Sandalwood Beads), Hands (Jasper Ring), Charm (Gourd Rattle or Silver-Plated Idol) | Rite +15% | Spirits start friendlier; Spirit +10% |
+| Officer's Kit | Hands (Bronze Signet), Charm (Sailor's Compass), Codex (any) | Ask +15% on soldiers | Escape +15%; the whole party AGI +5% |
+| First Sailor Regalia | Neck (Crescent Pectoral), the Coral Eye Fragment **and** the Scoria Pupil | Spirit +10% | Stonemen and First Sailor ghosts start friendlier; First Sailor spells +15% |
+| Shore Dog (Patience) | Booties (Seal-Skin), Bell (Shell) | +10% evasion while Wet | Sea creatures start friendlier |
+| Cave Dog (Patience) | Collar (Glow-Bead), Booties (Hide) | +10% evasion in caves | Cave creatures start friendlier |
 | All-Seafarer Bronze | Head, Cuirass, Greaves (+ shield) | +DEF | Marines treat you as one of theirs (Ask, Plead), but you count as `<Metal>` |
 
 Good outfits: Feather + Tapa (the priest), Goat-Skin + Pine Pitch (volcanic desert), Goat-Skin + Boar
@@ -774,7 +787,7 @@ Telegraph Log, Copper Ball, Broken Staff), plus the **Trachyte Quern** (crafting
 and crater lakes), both waiting on later systems.
 
 ### Meals (how stats grow)
-Levels (Insight) only raise MDF and LUK, so **food is how HP, MP, ATK, DEF, MAT and AGI grow**
+Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP, ATK, DEF, MAT and AGI grow**
 (`SI_Meals.js`). A meal is eaten outside battle: a small heal plus a permanent gain.
 - **One meal per rest:** a character who has eaten is full until the next rest (Recover All, e.g. the
   campfire).
@@ -923,11 +936,11 @@ relationships, inscriptions and the story.
 
 **Every character has their own Insight**, used for:
 - **Stats** (per-class growth curves). Insight affects **only**:
-  - **MDF** (magic defense)
-  - **Evasion**
+  - **Spirit** (MDF, magic defense): you understand magic and spirits, so they hurt you less
+  - **Wits** (LUK): your ailments land, and theirs don't
+  - **Evasion**: you read what a creature is about to do
   - **Mental resistance** (mental states and the Mind element)
-  - **Slower Fatigue build-up**
-  - **LUK**
+  - **Critical-hit chance**: you see where it is weak
 
   Everything else (HP, MP, ATK, DEF, MAT, AGI) is unaffected by Insight.
 - **HP and MP** grow from:
@@ -978,11 +991,12 @@ decided):
 
 | Per Insight point above 1 | Amount |
 |---------------------------|--------|
-| MDF | +1 (class curve) |
-| LUK | +1 (class curve) |
+| Spirit (MDF) | +1 (class curve) |
+| Wits (LUK) | +1 (class curve) |
 | Evasion | +0.5% |
 | Mental states (Rage, Confusion, Fascination, Sleep) and Mind element | land 2% less often |
-| Fatigue build-up | 1% slower |
+| Critical-hit chance | +1% |
+| Talk (mood changes) | +3% stronger (`SI_Talk`'s Insight Bonus) |
 
 | Insight cap | Characters |
 |-------------|------------|
