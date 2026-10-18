@@ -18,13 +18,20 @@
  * Armor sets
  * ============================================================================
  * Armor note:   <Set: Tapa>
+ *               <Set: Goat-Skin>  <Set: Mouflon Wool>   (one piece, two sets)
+ *               <Set: First Sailor Regalia (eye)>       (a named part)
+ *
+ * A set is made of parts. A piece's part is its equipment type unless it
+ * names one, so pieces for the same slot are substitutes (Tapa Wrap or the
+ * Ochre-Stamped Wrap), and three charms of one set still count as one part
+ * unless they name different parts (the Coral Eye and Scoria Pupil).
  *
  * A set's bonuses are states in the database (the "Set Bonuses" category).
  * They are never really inflicted: while enough pieces are worn, the state
  * simply counts as one of the actor's states (traits and note tags work; it
  * has no icon). State note:
- *   <Set Bonus: Tapa 2>     active with 2 or more Tapa pieces worn
- *   <Set Bonus: Tapa all>   active with every Tapa piece worn
+ *   <Set Bonus: Tapa 2>     active with 2 or more Tapa parts worn
+ *   <Set Bonus: Tapa all>   active with every Tapa part worn
  *   <Set Text: +5% evasion> shown in the equip screen's help box
  * Evasion from all set bonuses together is capped (Set Evasion Cap).
  *
@@ -49,6 +56,8 @@
  *   <Whisper: Despair 10>    10% chance at the end of each turn to get that
  *                            state
  *   <Escape Bonus: 20>       escaping is 20 points likelier (whole party)
+ *   <Party Param: agi 5>     everyone in the battle party gets +5% AGI
+ *                            (hp, mp, atk, def, mat, mdf, agi, luk)
  *   <Spikes: 30>             an enemy that lands a physical hit on the wearer
  *                            takes 30% of that damage back (Spiked Collar)
  *   <Guard Vs: spirit 30>    30% less damage from enemies of that kind
@@ -121,8 +130,10 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         t.dragBack = /<Drag Back>/i.test(note);
         var q = /<Quiets Whisper:\s*([^>]+)>/i.exec(note);
         t.quiets = q ? q[1].trim() : '';
-        var set = /<Set:\s*([^>]+)>/i.exec(note);
-        t.set = set ? set[1].trim() : null;
+        var setRe = /<Set:\s*([^>(]+?)\s*(?:\(([^)]+)\))?\s*>/gi, sm;
+        t.sets = [];
+        while ((sm = setRe.exec(note))) t.sets.push({ name: sm[1].trim(), part: sm[2] ? sm[2].trim().toLowerCase() : 'slot ' + obj.etypeId });
+        t.set = t.sets.length ? t.sets[0].name : null;
         var bonus = /<Set Bonus:\s*(.+?)\s+(\d+|all)>/i.exec(note);
         t.setBonus = bonus ? { set: bonus[1].trim(), need: bonus[2].toLowerCase() === 'all' ? 'all' : Number(bonus[2]) } : null;
         var text = /<Set Text:\s*([^>]+)>/i.exec(note);
@@ -137,13 +148,13 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
             [$dataWeapons, $dataArmors, $dataStates].forEach(function(list) {
                 list.forEach(function(obj) { if (obj) $.parse(obj); });
             });
-            // A set's size is the number of slots its pieces cover.
-            var slots = {};
+            // A set's size is the number of parts its pieces cover.
+            var parts = {};
             $dataArmors.forEach(function(a) {
-                if (a && a.siOutfit.set) (slots[a.siOutfit.set] = slots[a.siOutfit.set] || {})[a.etypeId] = true;
+                if (a) a.siOutfit.sets.forEach(function(s) { (parts[s.name] = parts[s.name] || {})[s.part] = true; });
             });
             $.sets = {};
-            Object.keys(slots).forEach(function(set) { $.sets[set] = Object.keys(slots[set]).length; });
+            Object.keys(parts).forEach(function(set) { $.sets[set] = Object.keys(parts[set]).length; });
             $.bonusStates = $dataStates.filter(function(s) { return s && s.siOutfit.setBonus; });
             $._loaded = true;
         }
@@ -167,16 +178,39 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         return battler.traitObjects().filter(function(obj) { return obj && obj.siOutfit && obj.siOutfit[key]; });
     };
 
+    // <Party Param: agi 5>: worn or set-bonus states that lift the whole party.
+    $.PARAMS = ['hp', 'mp', 'atk', 'def', 'mat', 'mdf', 'agi', 'luk'];
+    var _Game_Actor_paramRate = Game_Actor.prototype.paramRate;
+    Game_Actor.prototype.paramRate = function(paramId) {
+        var rate = _Game_Actor_paramRate.call(this, paramId);
+        if (!$gameParty.inBattle() || $._partyParamBusy) return rate;
+        $._partyParamBusy = true;   // reading the party can create actors, whose stats come back here
+        try {
+            var bonus = $gameParty.battleMembers().reduce(function(sum, member) {
+                return sum + member.equips().concat(member.states()).reduce(function(s, o) {
+                    var re = /<Party Param:\s*(\w+)\s+(\d+)>/gi, m;
+                    while (o && (m = re.exec(o.note || ''))) if ($.PARAMS.indexOf(m[1].toLowerCase()) === paramId) s += Number(m[2]);
+                    return s;
+                }, 0);
+            }, 0);
+        } finally {
+            $._partyParamBusy = false;
+        }
+        return rate * (1 + bonus / 100);
+    };
+
     //-------------------------------------------------------------------------
     // Sets
     //-------------------------------------------------------------------------
 
+    // Parts worn per set (substitutes for the same part count once).
     Game_Actor.prototype.setPieceCounts = function() {
-        var counts = {};
+        var worn = {};
         this.armors().forEach(function(a) {
-            var set = a.siOutfit && a.siOutfit.set;
-            if (set) counts[set] = (counts[set] || 0) + 1;
+            (a.siOutfit ? a.siOutfit.sets : []).forEach(function(s) { (worn[s.name] = worn[s.name] || {})[s.part] = true; });
         });
+        var counts = {};
+        Object.keys(worn).forEach(function(set) { counts[set] = Object.keys(worn[set]).length; });
         return counts;
     };
 
@@ -411,14 +445,17 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
     //-------------------------------------------------------------------------
 
     $.setLine = function(actor, item) {
-        var set = item && DataManager.isArmor(item) && item.siOutfit ? item.siOutfit.set : null;
-        if (!set || !actor) return '';
-        var have = actor.setPieceCounts()[set] || 0, total = $.sets[set];
-        var parts = $.bonusStates.filter(function(s) { return s.siOutfit.setBonus.set === set; }).map(function(s) {
-            var need = s.siOutfit.setBonus.need === 'all' ? total : s.siOutfit.setBonus.need;
-            return (have >= need ? '✓' : '') + need + ': ' + s.siOutfit.setText;
-        });
-        return set + ' set ' + have + '/' + total + ' — ' + parts.join(' · ');
+        var sets = item && DataManager.isArmor(item) && item.siOutfit ? item.siOutfit.sets : [];
+        if (!sets.length || !actor) return '';
+        var counts = actor.setPieceCounts();
+        return sets.map(function(entry) {
+            var set = entry.name, have = counts[set] || 0, total = $.sets[set];
+            var parts = $.bonusStates.filter(function(s) { return s.siOutfit.setBonus.set === set; }).map(function(s) {
+                var need = s.siOutfit.setBonus.need === 'all' ? total : s.siOutfit.setBonus.need;
+                return (have >= need ? '✓' : '') + need + ': ' + s.siOutfit.setText;
+            });
+            return set + ' set ' + have + '/' + total + ' — ' + parts.join(' · ');
+        }).join('  |  ');
     };
 
     var _Window_Help_setItem = Window_Help.prototype.setItem;

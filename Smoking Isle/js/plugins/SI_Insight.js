@@ -24,9 +24,9 @@
  * @desc Element id of Mind (0 = none).
  * @default 11
  *
- * @param Fatigue Resist Per Insight
- * @desc Fatigue builds this much slower per Insight point above 1
- * (0.01 = 1% slower). Applies to TP Charge Rate.
+ * @param Critical Per Insight
+ * @desc Critical-hit chance added per Insight point above 1 (0.01 = +1%):
+ * you see where a creature is weak.
  * @default 0.01
  *
  * @param Shared Insight Actors
@@ -34,17 +34,19 @@
  * @default 1,2
  *
  * @help
- * Insight is the level. It raises MDF and LUK through the class parameter
- * curves (set in the database), and this plugin adds, per Insight point
- * above 1:
- *   - evasion
+ * Insight is the level: your insight into the world and the beings in it.
+ * It raises Spirit (MDF) and Wits (LUK) through the class parameter curves
+ * (set in the database), and this plugin adds, per Insight point above 1:
+ *   - evasion (you read what a creature is about to do)
  *   - resistance to mental states and the Mind element
- *   - slower Fatigue build-up
+ *   - critical-hit chance (you see where it is weak)
+ * Talk also works better with Insight (SI_Talk's Insight Bonus), and some
+ * enemy tells need a minimum Insight.
  *
  * Per-class overrides (class note):
  *   <Insight Evasion: 0.01>
  *   <Insight Mental Resist: 0.03>
- *   <Insight Fatigue Resist: 0.02>
+ *   <Insight Critical: 0.02>
  *
  * Insight caps are each actor's "Max Level" in the database.
  *
@@ -69,7 +71,7 @@ SmokingIsle.Insight = SmokingIsle.Insight || {};
     $.mentalResist = Number(params['Mental Resist Per Insight'] || 0);
     $.mentalStates = list(params['Mental States']);
     $.mindElement = Number(params['Mind Element'] || 0);
-    $.fatigueResist = Number(params['Fatigue Resist Per Insight'] || 0);
+    $.critical = Number(params['Critical Per Insight'] || 0);
     $.sharedActors = list(params['Shared Insight Actors']);
 
     $.classValue = function(actor, tag, fallback) {
@@ -95,13 +97,10 @@ SmokingIsle.Insight = SmokingIsle.Insight || {};
         return value;
     };
 
-    var _Game_Actor_sparam = Game_Actor.prototype.sparam;
-    Game_Actor.prototype.sparam = function(sparamId) {
-        var value = _Game_Actor_sparam.call(this, sparamId);
-        if (sparamId === 5) {
-            var per = $.classValue(this, 'Fatigue Resist', $.fatigueResist);
-            value *= Math.max(1 - per * this.insightSteps(), 0.1);
-        }
+    var _Game_Actor_xparamCrit = Game_Actor.prototype.xparam;
+    Game_Actor.prototype.xparam = function(xparamId) {
+        var value = _Game_Actor_xparamCrit.call(this, xparamId);
+        if (xparamId === 2) value += $.classValue(this, 'Critical', $.critical) * this.insightSteps();
         return value;
     };
 

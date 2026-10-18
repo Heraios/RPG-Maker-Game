@@ -56,7 +56,7 @@ module.exports = {
             put(pada, 'Bronze Signet'); out.askSoldier = pada.talkEquipBonus('ask', fresh(13)); out.askBoar = pada.talkEquipBonus('ask', fresh(1));
             const ins0 = SmokingIsle.Talk.yoonInsight(); put(yoon, 'Raven Feather'); out.insight = SmokingIsle.Talk.yoonInsight() - ins0;
             // Lava-Tube set: thieves can't grab anything
-            const sib = A(3); put(sib, 'Glow Headband'); put(sib, 'Dark Wraps');
+            const sib = A(3); put(sib, 'Glow Headband'); put(sib, 'Dark Wraps'); put(sib, 'Cave-Glow Stone');
             const boy = fresh(8); const x = new Game_Action(boy); x.setSkill($dataSkills.find(s => s && s.name === 'Pilfer').id);
             const rnd = Math.random; Math.random = () => 0.5; sib.clearResult(); x.apply(sib); Math.random = rnd;
             out.stealProof = (sib._siPrankMessages || []).join(' ') + '|' + sib.equips().some(e => e && e.name === 'Silver Ring');
@@ -79,7 +79,7 @@ module.exports = {
         t.eq(r.askSoldier + '/' + r.askBoar, '25/0', 'Bronze Signet: Ask +25% only on soldiers');
         t.eq(r.insight, 1, 'Raven Feather: +1 Insight');
         t.ok(/can't get a grip/.test(r.stealProof) && /true$/.test(r.stealProof), 'Lava-Tube set: thieves can\'t steal: ' + r.stealProof);
-        t.eq(r.charge1 - r.charge0, 1, 'Lodestone: the pile holds 1 more charge');
+        t.eq(r.charge1 - r.charge0, 2, "Lodestone: +1 charge, and with the pile it makes the Telegrapher's Kit's small bonus (+1 more)");
         t.eq(r.sinter, 1, 'Hot-Spring Sinter restores 1 charge at battle start');
         t.ok(!r.metalBefore && r.metal, 'the full Bronze set makes the wearer metal');
         t.eq(r.whet, 2.5, 'Basalt Whetstone halves weapon wear (5% -> 2.5%)');
