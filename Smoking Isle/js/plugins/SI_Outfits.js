@@ -49,10 +49,16 @@
  *   <Whisper: Despair 10>    10% chance at the end of each turn to get that
  *                            state
  *   <Escape Bonus: 20>       escaping is 20 points likelier (whole party)
+ *   <Quiets Whisper: Coral Eye Fragment>
+ *                            worn together, that item's whisper stays silent
+ *
+ * A set's "all" bonus needs one piece in every slot the set covers, so a set
+ * can have two pieces for the same slot (Tapa Wrap, Ochre-Stamped Wrap).
  *
  * Item tags:
  *   <Only Vs: sea>           only hits enemies of that kind (Talk Type/Tags)
  *   <Lure: animal 15>        raises an enemy of that kind's mood by 15
+ *                            (several tags for several kinds)
  *   <Needs Escape>           can only be used where escaping is allowed
  *
  * Elsewhere: <Talk Start Mood>, <Talk Bonus ... vs kind>, <Insight Bonus>
@@ -104,6 +110,8 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         var wh = /<Whisper:\s*([^>]+?)\s+(\d+)>/i.exec(note);
         t.whisper = wh ? { state: $.stateByName(wh[1]), chance: Number(wh[2]) / 100 } : null;
         t.escape = $.num(note, 'Escape Bonus') / 100;
+        var q = /<Quiets Whisper:\s*([^>]+)>/i.exec(note);
+        t.quiets = q ? q[1].trim() : '';
         var set = /<Set:\s*([^>]+)>/i.exec(note);
         t.set = set ? set[1].trim() : null;
         var bonus = /<Set Bonus:\s*(.+?)\s+(\d+|all)>/i.exec(note);
@@ -120,10 +128,13 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
             [$dataWeapons, $dataArmors, $dataStates].forEach(function(list) {
                 list.forEach(function(obj) { if (obj) $.parse(obj); });
             });
-            $.sets = {};
+            // A set's size is the number of slots its pieces cover.
+            var slots = {};
             $dataArmors.forEach(function(a) {
-                if (a && a.siOutfit.set) $.sets[a.siOutfit.set] = ($.sets[a.siOutfit.set] || 0) + 1;
+                if (a && a.siOutfit.set) (slots[a.siOutfit.set] = slots[a.siOutfit.set] || {})[a.etypeId] = true;
             });
+            $.sets = {};
+            Object.keys(slots).forEach(function(set) { $.sets[set] = Object.keys(slots[set]).length; });
             $.bonusStates = $dataStates.filter(function(s) { return s && s.siOutfit.setBonus; });
             $._loaded = true;
         }
@@ -267,10 +278,12 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
     var _Game_Action_apply = Game_Action.prototype.apply;
     Game_Action.prototype.apply = function(target) {
         _Game_Action_apply.call(this, target);
-        var lure = this.item() && /<Lure:\s*([\w-]+)\s+(\d+)>/i.exec(this.item().note || '');
-        if (lure && target.isEnemy() && target.result().isHit() && $.kinds(target).indexOf(lure[1].toLowerCase()) >= 0) {
-            target._siMood = (target.talkMood() + Number(lure[2])).clamp(0, 100);
-            target.result().success = true;
+        var re = /<Lure:\s*([\w-]+)\s+(\d+)>/gi, lure, note = this.item() ? this.item().note || '' : '';
+        while ((lure = re.exec(note))) {
+            if (target.isEnemy() && target.result().isHit() && $.kinds(target).indexOf(lure[1].toLowerCase()) >= 0) {
+                target._siMood = (target.talkMood() + Number(lure[2])).clamp(0, 100);
+                target.result().success = true;
+            }
         }
         if (target.isActor() && this.subject().isEnemy() && $gameParty.inBattle()) {
             target._siFirstHitDone = true;
@@ -312,7 +325,9 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
     Game_Battler.prototype.onTurnEnd = function() {
         _Game_Battler_onTurnEnd.call(this);
         if (!this.isActor() || !this.isAlive() || !$gameParty.inBattle()) return;
+        var quiet = $.objects(this, 'quiets').map(function(obj) { return obj.siOutfit.quiets; });
         $.objects(this, 'whisper').forEach(function(obj) {
+            if (quiet.indexOf(obj.name) >= 0) return;
             var w = obj.siOutfit.whisper;
             if (w.state && Math.random() < w.chance) this.addState(w.state);
         }, this);

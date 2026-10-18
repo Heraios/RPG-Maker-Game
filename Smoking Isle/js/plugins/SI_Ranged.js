@@ -27,9 +27,14 @@
  *   <Ammo: net 1, throw 2>  separate ammo per move (Dama's Fishing Gear)
  *   <Ranged Power: net 3, throw 16>   power per move
  *
- * State note (e.g. from the Lead Shot item):
+ * State or other worn gear (e.g. the Lead Shot item, arrow add-ons):
  *   <Extra Ammo: sling 3>          +3 uses for items with that move
- *   <Ranged Power Bonus: sling 6>  +6 power for that move
+ *   <Ranged Power Bonus: sling 6>  +6 power for that move (can be negative)
+ *   <Ranged Inflict: net Wet>      hits with that move also add the state
+ *   <Waterproof Bow>               bows keep full power while Wet
+ *
+ * Wet or Sodden archers: a wet bowstring stretches, so bows (move "shoot")
+ * lose 30% of their power unless something worn is <Waterproof Bow>.
  *
  * Skill note:
  *   <Ammo Volley>           (ranged) spends ALL remaining ammo from the
@@ -133,12 +138,17 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
     // Ammo
     //-------------------------------------------------------------------------
 
-    // <Extra Ammo: sling 3> / <Ranged Power Bonus: sling 6> from states, for an item's moves.
+    // States and worn gear other than the ranged item itself.
+    Game_Actor.prototype.rangedBonusSources = function(item) {
+        return this.states().concat(this.equips().filter(function(eq) { return eq && eq !== item; }));
+    };
+
+    // <Extra Ammo: sling 3> / <Ranged Power Bonus: sling 6> from states and gear, for an item's moves.
     Game_Actor.prototype.stateRangedBonus = function(item, tag, move) {
         if (!item) return 0;
         var moves = move ? [move] : (item.siMoves || []);
-        return this.states().reduce(function(sum, st) {
-            var re = new RegExp('<' + tag + ':\\s*(\\w+)\\s+(\\d+)>', 'gi'), m;
+        return this.rangedBonusSources(item).reduce(function(sum, st) {
+            var re = new RegExp('<' + tag + ':\\s*(\\w+)\\s+(-?\\d+)>', 'gi'), m;
             while ((m = re.exec(st.note || ''))) {
                 if (moves.indexOf(m[1].toLowerCase()) >= 0) sum += Number(m[2]);
             }
@@ -237,8 +247,19 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         var item = this.equips()[this._siRangedSlot];
         if (!item) return 0;
         var bonus = this.stateRangedBonus(item, 'Ranged Power Bonus', this._siRangedMove || null);
-        if (item.siPowerByMove) return (item.siPowerByMove[this._siRangedMove] || 0) + bonus;
-        return (item.siRangedPower || 0) + bonus;
+        var power = (item.siPowerByMove ? item.siPowerByMove[this._siRangedMove] || 0 : item.siRangedPower || 0) + bonus;
+        return Math.max(Math.round(power * this.wetBowRate(item)), 0);
+    };
+
+    $.WET_BOW_RATE = 0.7;
+    Game_Actor.prototype.wetBowRate = function(item) {
+        var moves = this._siRangedMove ? [this._siRangedMove] : (item.siMoves || []);
+        if (moves.indexOf('shoot') < 0) return 1;
+        var A = SmokingIsle.Ailments;
+        var wet = A && [A.stateByName('Wet'), A.stateByName('Sodden')].some(function(id) { return id && this.isStateAffected(id); }, this);
+        if (!wet) return 1;
+        var proof = this.rangedBonusSources(item).some(function(o) { return /<Waterproof Bow>/i.test(o.note || ''); });
+        return proof ? 1 : $.WET_BOW_RATE;
     };
 
     Game_BattlerBase.prototype.rangedDamage = function(target, rate) {
@@ -280,6 +301,22 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         var eva = _Game_Action_itemEva.call(this, target);
         if (this.isPhysical() && $.isFlying(target)) eva = Math.max(eva, $.flyingEvasion);
         return eva;
+    };
+
+    // <Ranged Inflict: net Wet>: hits with that move also add the state.
+    var _Game_Action_apply = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        _Game_Action_apply.call(this, target);
+        var item = this.item(), subject = this.subject();
+        if (!$.isRanged(item) || !subject.isActor() || !target.result().isHit() || !SmokingIsle.Ailments) return;
+        var moves = item.siRequiredMoves || [];
+        subject.rangedBonusSources(null).forEach(function(o) {
+            var re = /<Ranged Inflict:\s*(\w+)\s+([^>]+)>/gi, m;
+            while ((m = re.exec(o.note || ''))) {
+                var id = SmokingIsle.Ailments.stateByName(m[2].trim());
+                if (id && moves.indexOf(m[1].toLowerCase()) >= 0) target.addState(id);
+            }
+        });
     };
 
     // After a ranged attack: drop <Until Ranged> states and forget the slot.

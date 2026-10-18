@@ -72,6 +72,17 @@
  *   <Battle Start State: Resin>
  *                        the wearer starts every battle with this state
  *                        (the Dragonheart Greatsword)
+ *   <Mental Shorten: 1>  mental ailments on the wearer last 1 turn less
+ *                        (never under 1)
+ *
+ * Item note:
+ *   <Party Cure: Chilled>   using it also removes that state from the
+ *                           user's whole party (Heated Scoria)
+ *
+ * State note:
+ *   <Lasts Battles: 2>   isn't removed when a battle ends until that many
+ *                        battles have ended (Lamplight, from Shearwater Oil).
+ *                        Turn the state's "Remove at Battle End" off.
  */
 
 var Imported = Imported || {};
@@ -123,6 +134,10 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
                 s.siCuresMental = /<Cures Mental>/i.test(s.note);
                 s.siGuaranteedCrit = /<Guaranteed Crit>/i.test(s.note);
                 s.siStacksInto = $.stateTag(s.note, 'Stacks Into');
+                s.siLastsBattles = $.num(s.note, 'Lasts Battles');
+            });
+            $dataItems.forEach(function(i) {
+                if (i) i.siPartyCure = $.stateTag(i.note, 'Party Cure');
             });
             $dataSkills.forEach(function(s) {
                 if (!s) return;
@@ -138,6 +153,7 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
                     if (!obj) return;
                     obj.siBleedChance = $.num(obj.note, 'Bleed Chance');
                     obj.siBattleStartState = $.stateTag(obj.note, 'Battle Start State');
+                    obj.siMentalShorten = $.num(obj.note, 'Mental Shorten');
                 });
             });
             $._notesParsed = true;
@@ -210,6 +226,43 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
             if (item && item.siBattleStartState) this.addState(item.siBattleStartState);
         }, this);
         this.clearResult();
+    };
+
+    // <Mental Shorten>: mental ailments on the wearer wear off sooner.
+    var _Game_BattlerBase_resetStateCounts = Game_BattlerBase.prototype.resetStateCounts;
+    Game_BattlerBase.prototype.resetStateCounts = function(stateId) {
+        _Game_BattlerBase_resetStateCounts.call(this, stateId);
+        if (!this.isActor() || !$.isMental(stateId)) return;
+        var cut = this.equips().reduce(function(sum, eq) { return sum + (eq ? eq.siMentalShorten || 0 : 0); }, 0);
+        if (cut > 0) this._stateTurns[stateId] = Math.max(this._stateTurns[stateId] - cut, 1);
+    };
+
+    // <Party Cure: Chilled>: one use also warms the whole party.
+    var _Game_Battler_useItem = Game_Battler.prototype.useItem;
+    Game_Battler.prototype.useItem = function(item) {
+        _Game_Battler_useItem.call(this, item);
+        if (DataManager.isItem(item) && item.siPartyCure) {
+            this.friendsUnit().aliveMembers().forEach(function(m) { m.removeState(item.siPartyCure); });
+        }
+    };
+
+    // <Lasts Battles: N>: count battles down; removed after the last one.
+    var _Game_Battler_addNewState = Game_Battler.prototype.addNewState;
+    Game_Battler.prototype.addNewState = function(stateId) {
+        _Game_Battler_addNewState.call(this, stateId);
+        var st = $dataStates[stateId];
+        if (st && st.siLastsBattles) (this._siBattlesLeft = this._siBattlesLeft || {})[stateId] = st.siLastsBattles;
+    };
+
+    var _Game_Battler_onBattleEnd = Game_Battler.prototype.onBattleEnd;
+    Game_Battler.prototype.onBattleEnd = function() {
+        _Game_Battler_onBattleEnd.call(this);
+        var left = this._siBattlesLeft || {};
+        Object.keys(left).forEach(function(id) {
+            id = Number(id);
+            if (!this.isStateAffected(id)) { delete left[id]; return; }
+            if (--left[id] <= 0) { delete left[id]; this.removeState(id); }
+        }, this);
     };
 
     Game_Battler.prototype.cureMentalAilments = function() {

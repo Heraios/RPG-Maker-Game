@@ -49,6 +49,8 @@
  *                            while it is equipped deal 10% more (obsidian:
  *                            fire, coral: water, ceramic: earth). Several
  *                            pieces add up.
+ *   <Echo Boost: 15>         spells of the same source as the wearer's last
+ *                            spell this battle deal 15% more (Fire Opal)
  *
  * A skill without <Damage> but used with a weapon that has one (e.g. the
  * Attack command) uses the weapon's profile. Anything without a profile
@@ -104,6 +106,8 @@ SmokingIsle.DamageTypes = SmokingIsle.DamageTypes || {};
                     if (!obj) return;
                     var b = /<Spell Boost:\s*(\w+)\s+(\d+)>/i.exec(obj.note || '');
                     obj.siSpellBoost = b && $.SOURCE[b[1].toLowerCase()] ? { source: $.SOURCE[b[1].toLowerCase()], rate: Number(b[2]) / 100 } : null;
+                    var e = /<Echo Boost:\s*(\d+)>/i.exec(obj.note || '');
+                    obj.siEchoBoost = e ? Number(e[1]) / 100 : 0;
                 });
             });
             $._notesParsed = true;
@@ -162,9 +166,29 @@ SmokingIsle.DamageTypes = SmokingIsle.DamageTypes || {};
     Game_Action.prototype.spellBoost = function() {
         var item = this.item(), subject = this.subject();
         if (!item || !item.siSource || !this.isMagical() || !subject.isActor()) return 0;
+        var echo = subject._siLastSpellSource === item.siSource;
         return subject.equips().reduce(function(sum, eq) {
-            return eq && eq.siSpellBoost && eq.siSpellBoost.source === item.siSource ? sum + eq.siSpellBoost.rate : sum;
+            if (!eq) return sum;
+            if (eq.siSpellBoost && eq.siSpellBoost.source === item.siSource) sum += eq.siSpellBoost.rate;
+            if (echo) sum += eq.siEchoBoost || 0;
+            return sum;
         }, 0);
+    };
+
+    // Remember each battler's last spell source (for <Echo Boost>).
+    var _BattleManager_endAction = BattleManager.endAction;
+    BattleManager.endAction = function() {
+        var subject = this._subject, action = this._action;
+        if (subject && action && action.item() && action.isMagical() && action.item().siSource) {
+            subject._siLastSpellSource = action.item().siSource;
+        }
+        _BattleManager_endAction.call(this);
+    };
+
+    var _Game_Battler_onBattleStart = Game_Battler.prototype.onBattleStart;
+    Game_Battler.prototype.onBattleStart = function() {
+        _Game_Battler_onBattleStart.call(this);
+        this._siLastSpellSource = 0;
     };
 
     Game_Action.prototype.makeProfiledDamageValue = function(target, critical) {

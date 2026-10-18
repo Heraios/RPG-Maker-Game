@@ -635,6 +635,23 @@ hot-spring sinter in the crater; sailor's compass, bronze signet (All-Seafarer);
 whispering **coral eye fragment** (First Sailor relics). Patience's collars: Woven → Hide →
 Shark-Tooth → Coral-Eyed. Rings: silver, bone, obsidian; gloves: hide, sinew wraps.
 
+**Island goods** (stone, pigment, salt, sea and forest):
+- **Stone:** Peridot Ring (MDF +3, LUK +2), **Volcano Tear** (olivine: earth spells +10%, resists Burdened
+  and Mired), **Scoria Pupil** (fire spells +10%; worn with the Coral Eye Fragment it stills the eye's
+  whisper), **Fire Opal** (spells of the same element as your last one +15%), Opal Earring (LUK +4, but
+  enemies go for the wearer more).
+- **Salt Pouch:** mental ailments land half as often, but spirits start 10 less friendly.
+- **Ochre-Stamped Wrap:** a second Tapa body piece (Ask +10%). A set's "all" bonus counts slots, so a set
+  can have two pieces for one slot.
+- **Sea:** Eelskin Wraps (immune to Entangled, Dragged Below half as often), Sea-Turtle Buckler (small
+  shield, resists Wet), Turtle-Shell Comb (MDF +2).
+- **Forest and village:** Mahogany Buckler (the best small shield before bronze), **Palm-Leaf Fan** (air
+  spells +10%, the only air boost; resists Smoldering), **Sandalwood Beads** (MDF +3; mental ailments wear
+  off a turn sooner), Reed Flute (Soothe +25%), Gourd Rattle (priests: Rite +15%, resists Sleep), Reed Mat
+  (resting outdoors sheds 1 more Fatigue).
+- **Weapons:** Mahogany Club and Mahogany Paddle (red mahogany never splits, so they never wear), and the
+  priests' **Sandalwood Staff** (MAT +5, starts each battle Calm).
+
 ### Voltaic techniques (Islander electricity)
 `SI_Voltaic.js`. The **Voltaic Pile** (a Charm) lets **Islanders** (Yoon, Sib, Pada, Dama, Juda) use
 electrical techniques, under their own **Voltaic** skill type. Nobody else can wear a pile: it's
@@ -702,12 +719,17 @@ Islander remedies cure cleanly; the outsiders' medicine has a cost.
 
 **Supplies:** Well Water (+15 MP), **Kava** (+40 MP, Fatigue +10), **Sacred Dew** (+80 MP), **Pennyroyal Sprig**
 (cures Sleep and Hypnotized), **Ephedra Twigs** (Fatigue −20), **Burnt Feather** (revives with 1 HP), Bandage,
-Acid Jar. (Magic Water, Dispel Herb and Stimulant were renamed into these.)
+Acid Jar, **Brine Jar** (+1 Voltaic charge), **Berry Syrup** (+20 MP), **Palm Wine** (+25 MP, Fatigue −10, Tipsy),
+**Shearwater Oil** (a Torch that lasts two battles), **Myrtle Wax** (this battle: +1 arrow, bows ignore Wet),
+**Myrtle Candle** (field item, for later). **White Clay Draught** cures **Tipsy**. (Magic Water, Dispel Herb and
+Stimulant were renamed into these.)
 
 **Battle items:** Lye Flask (acid Burn, DEF down), Pitch Firepot (fire, Smoldering), Chlorine Jar (all enemies,
 may Venom), Ash Bag (Dazzled), Spurge Fish-Stunner (Stunned, sea creatures only), Obsidian Caltrops (all
 enemies may Bleed), Lead Shot (+3 sling stones, harder shots), Smoke Pot (escape, where allowed), Torch (cave
-hit +10%, Threaten +25% on animals), Bait Pouch (an animal's mood +15), Purifying Salt (harms spirits only).
+hit +10%, Threaten +25% on animals), Bait Pouch (an animal's mood +15), Purifying Salt (harms spirits only), **Salt Lick** (a grazer's mood +20),
+**Offering Hen** (a spirit's mood +30), **Mourning Paint** (every spirit's mood +15), **Heated Scoria** (fire
+damage; cures Chilled on the whole party), **Octopus Ink** (Dazzled on every sea creature).
 
 **Healing principle:** states are mostly cured by **items** (remedies, supplies), and HP is mostly
 restored by **healing spells**, so both matter. The exceptions are small: All-Seafarer Grog (the foreign
@@ -719,12 +741,13 @@ restored by **healing spells**, so both matter. The exceptions are small: All-Se
   **Sinew Binding** (shell, tusk, shark tooth, wood). They can't be used when nothing needs mending.
 - **Battery Discs** restore 3 Voltaic charge.
 - **War paints and snuff** (battle buffs, 5 turns): Orchil War Paint (ATK up), Dragon's-Blood Paint (DEF
-  up), Mint Snuff (AGI up).
-- **Treasures** to sell: Skeletal Figurine, Glyph Tablet Shard, First Sailor Bead.
+  up), Mint Snuff (AGI up), **Ochre Grave Paint** (MDF up).
+- **Treasures** to sell: Skeletal Figurine, Glyph Tablet Shard, First Sailor Bead, Sandalwood Casket.
 
 **Key items:** the body ingredients (Great Boar Flesh, Kin's Blood, Snow Urn, Silver Bracelet, Sea Pearl,
 Bellflower, Dragon-Tree Framework) and clues (Juda's Notes, Parl's Notebook, Tribute Ledger,
-Telegraph Log, Copper Ball, Broken Staff).
+Telegraph Log, Copper Ball, Broken Staff), plus the **Trachyte Quern** (crafting) and **Reed Boat** (marsh
+and crater lakes), both waiting on later systems.
 
 ### Meals (how stats grow)
 Levels (Insight) only raise MDF and LUK, so **food is how HP, MP, ATK, DEF, MAT and AGI grow**
@@ -742,20 +765,23 @@ Levels (Insight) only raise MDF and LUK, so **food is how HP, MP, ATK, DEF, MAT 
 
 | Stat | Foods |
 |---|---|
-| Max HP | Barley Bread (+3), Toasted Barley (+5) |
-| Max MP | Limpets (+3), Goat Milk (+3) |
-| ATK | Grilled Meat, Goat Cheese (+1) |
-| DEF | Dried Fish, Lentil Stew (+1; the stew feeds the whole party) |
-| MAT | Palm Honey (+1, also 10 MP), Islander Wine (+1, 15 MP, Tipsy) |
-| AGI | Dried Figs, Grapes (+1) |
-| All | Sooty Bird Egg (ATK, DEF, MAT, AGI +1, max HP +5; once) |
+| Max HP | Fern-Root Flour (+1, famine food), Barley Bread (+3), Seabird Eggs (+3), Toasted Barley (+5) |
+| Max MP | Shellfish (+3; raw, 10% Venom), Goat Milk (+3) |
+| ATK | Grilled Meat, Goat Cheese, Roast Chicken (+1) |
+| DEF | Dried Fish, Lentil Stew (+1; the stew feeds the whole party), Hen's Egg (+1) |
+| MAT | Palm Honey (+1, also 10 MP), Islander Wine (+1, 15 MP, Tipsy), Octopus (+1) |
+| AGI | Dried Figs, Grapes, Smoked Eel (+1), Strawberry-Tree Fruit (+1; 30% Tipsy) |
+| Once only | Sooty Bird Egg (ATK, DEF, MAT, AGI +1, max HP +5), Bellflower Fruit (max MP +5), Turtle Stew (max HP +5, DEF +1) |
 
-Talk: the Cave children and forest child-fae like **Dried Figs**; seals and crabs **Limpets**; cave rats
+Syrup Berries aren't a meal: Fatigue −5, and they boil into Berry Syrup.
+
+Talk: the Cave children and forest child-fae like **Dried Figs**; seals and crabs **Shellfish**; cave rats
 **Grilled Meat**; Boar-Men **Islander Wine**. Raw Meat waits for crafting (cooking).
 
 **Materials** drop from enemies now and are kept for crafting: Sinew, Bone, Antler, Goat Wool, Mouflon Wool,
 Seal Skin, Tortoise Scute, Obsidian Shard, Lead/Copper/Silver Ore, Tin, Sulfur, Pine Pitch, Orchil Lichen,
-Clay, Coral, Pearl, and trophies (Green Horse Bough, Guardian Lizard Scale, Black Hound Pelt, Hag-Crane
+Clay, Coral, Pearl, Olivine, Red Ochre, Sea Salt, Red Scoria, White Clay, Red Mahogany, Palm Fronds,
+Sandalwood, Gourd, and trophies (Green Horse Bough, Guardian Lizard Scale, Black Hound Pelt, Hag-Crane
 Feather). Crafting will spend cowries directly from money.
 
 ### Party switching
@@ -805,11 +831,15 @@ Ranged weapons go in a separate **Ranged** equipment slot and can't be swapped m
 | Net | Cast Net | light Crush + **Entangled** (loses its next turn) | 1 |
 
 - **Accurate:** ranged attacks ignore evasion. **High damage:** (unarmed ATK + the weapon's
-  Ranged Power) × the skill's rate, so Yoon's sling outdamages her knife, and Pada's bow matches
+  Ranged Power) × the skill's rate, so Yoon's sling outdamages their knife, and Pada's bow matches
   his Heavy Chop.
 - **Dama's Fishing Harpoon** is a melee spear that also gives **2 javelin throws** per battle,
   leaving her Ranged slot free for a net.
 - **Flying** enemies (and Lasa) dodge 75% of melee attacks, but not ranged or magic ones.
+- **Wet bowstrings stretch:** a Wet or Sodden archer's bow loses 30% of its power, unless they wear a
+  **Waxed Bowstring** or used **Myrtle Wax** this battle.
+- **Ranged add-ons** (charms): Seabird-Fletched Arrows (+1 arrow), Reed Arrows (+2 arrows, bow power −3),
+  **Net Floats** (nets also soak: Wet). The **Palm-Fibre Net** gives two net casts a battle.
 
 Who can use which ranged weapons follows the character notes: Yoon, Sib, Juda, Parl and Tou use
 slings; Pada and Parl bows; Dama, Falmi and Theenmy javelins; Dama nets.
