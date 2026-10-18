@@ -1,6 +1,6 @@
 [
 null,
-{"id":1,"atypeId":0,"description":"Category header (not used in game).","etypeId":2,"traits":[],"iconIndex":0,"name":"------- Clothing & Armor -------","note":"","params":[0,0,0,0,0,0,0,0],"price":0},
+{"id":1,"atypeId":0,"description":"Category header (not used in game).","etypeId":2,"traits":[],"iconIndex":1,"name":"------- Clothing & Armor -------","note":"","params":[0,0,0,0,0,0,0,0],"price":0},
 {"id":2,"atypeId":1,"description":"A band of beaten bark cloth.","etypeId":3,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":130,"name":"Tapa Headband","note":"<Set: Tapa>","params":[0,0,0,1,0,0,1,0],"price":60},
 {"id":3,"atypeId":1,"description":"A cape of beaten bark cloth.","etypeId":10,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":139,"name":"Tapa Cape","note":"<Set: Tapa>","params":[0,0,0,1,0,0,1,0],"price":100},
 {"id":4,"atypeId":1,"description":"A wrap of beaten bark cloth, the everyday Islander garment.","etypeId":4,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":135,"name":"Tapa Wrap","note":"<Set: Tapa>","params":[0,0,0,2,0,0,0,0],"price":300},
