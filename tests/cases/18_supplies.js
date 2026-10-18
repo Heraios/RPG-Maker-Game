@@ -7,23 +7,23 @@ module.exports = {
             const IT = n => $dataItems.find(i => i && i.name === n), yoon = $gameActors.actor(2), out = {};
             const eat = (who, n) => { const x = new Game_Action(who); x.setItem(IT(n).id); if (!x.testApply(who)) return false; who.clearResult(); x.apply(who); return true; };
             const hp0 = yoon.mhp;
-            out.first = eat(yoon, 'Gofio'); out.gain = yoon.mhp - hp0;
+            out.first = eat(yoon, 'Toasted Barley'); out.gain = yoon.mhp - hp0;
             out.full = !eat(yoon, 'Grilled Meat');
-            for (let i = 0; i < 4; i++) { yoon.recoverAll(); eat(yoon, 'Gofio'); }
+            for (let i = 0; i < 4; i++) { yoon.recoverAll(); eat(yoon, 'Toasted Barley'); }
             out.capped = yoon.mhp - hp0;                         // 3 meals count, the rest only heal
-            const atk0 = yoon.atk; yoon.recoverAll(); eat(yoon, 'Sooty Tern Egg'); yoon.recoverAll(); eat(yoon, 'Sooty Tern Egg');
+            const atk0 = yoon.atk; yoon.recoverAll(); eat(yoon, 'Sooty Bird Egg'); yoon.recoverAll(); eat(yoon, 'Sooty Bird Egg');
             out.egg = yoon.atk - atk0;
             const sib = $gameActors.actor(3); const def0 = sib.def; out.stew = (eat(sib, 'Lentil Stew'), sib.def - def0);
-            out.menuOnly = IT('Gofio').occasion === 2;
-            out.refuse = [5, 6, 4, 1].map(id => { const x = new Game_Action(yoon); x.setItem(IT('Gofio').id); return x.testApply($gameActors.actor(id)) ? 'eats' : $gameActors.actor(id).mealRefusalText(); }).join(' | ');
+            out.menuOnly = IT('Toasted Barley').occasion === 2;
+            out.refuse = [5, 6, 4, 1].map(id => { const x = new Game_Action(yoon); x.setItem(IT('Toasted Barley').id); return x.testApply($gameActors.actor(id)) ? 'eats' : $gameActors.actor(id).mealRefusalText(); }).join(' | ');
             const pada = $gameActors.actor(5), pdef = pada.def; { const x = new Game_Action(yoon); x.setItem(IT('Lentil Stew').id); pada.clearResult(); if (x.testApply(pada)) x.apply(pada); } out.padaStew = pada.def - pdef;
             return out;
         });
         t.ok(r.first, 'a hungry character can eat');
-        t.eq(r.gain, 5, 'Gofio: max HP +5 for good');
+        t.eq(r.gain, 5, 'Toasted Barley: max HP +5 for good');
         t.ok(r.full, 'one meal per rest: a full character can\'t eat again');
-        t.eq(r.capped, 15, 'each food counts up to 3 times per character (Gofio: +15 HP max)');
-        t.eq(r.egg, 1, 'a Sooty Tern Egg counts only once');
+        t.eq(r.capped, 15, 'each food counts up to 3 times per character (Toasted Barley: +15 HP max)');
+        t.eq(r.egg, 1, 'a Sooty Bird Egg counts only once');
         t.eq(r.stew, 1, 'Lentil Stew: DEF +1');
         t.ok(r.menuOnly, 'meals are eaten outside battle');
         t.ok(/children/.test(r.refuse) && /more than I do/.test(r.refuse) && /human food/.test(r.refuse) && /\| You try to eat it, but it slips/.test(r.refuse) && !/eats/.test(r.refuse), 'Pada, Juda, Lasa and the Ghost refuse meals: ' + r.refuse);
