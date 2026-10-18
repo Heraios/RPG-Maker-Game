@@ -75,11 +75,16 @@
  *   <Mental Shorten: 1>  mental ailments on the wearer last 1 turn less
  *                        (never under 1)
  *
- * Item note:
+ * Item or skill note:
  *   <Party Cure: Chilled>   using it also removes that state from the
  *                           user's whole party (Heated Scoria)
+ *   <User Cure: Wet, Sodden>  using it removes these from the user
+ *                           (Patience's Shake Off)
  *
  * State note:
+ *   <Exposed>            the next damaging hit on it from the party is a
+ *                        critical, then the state is gone (Patience's Point)
+ *   <No Flee>            can't flee or run off while it has this (Hold)
  *   <Lasts Battles: 2>   isn't removed when a battle ends until that many
  *                        battles have ended (Lamplight, from Shearwater Oil).
  *                        Turn the state's "Remove at Battle End" off.
@@ -135,9 +140,16 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
                 s.siGuaranteedCrit = /<Guaranteed Crit>/i.test(s.note);
                 s.siStacksInto = $.stateTag(s.note, 'Stacks Into');
                 s.siLastsBattles = $.num(s.note, 'Lasts Battles');
+                s.siExposed = /<Exposed>/i.test(s.note);
+                s.siNoFlee = /<No Flee>/i.test(s.note);
             });
-            $dataItems.forEach(function(i) {
-                if (i) i.siPartyCure = $.stateTag(i.note, 'Party Cure');
+            [$dataItems, $dataSkills].forEach(function(list) {
+                list.forEach(function(i) {
+                    if (!i) return;
+                    i.siPartyCure = $.stateTag(i.note, 'Party Cure');
+                    var u = /<User Cure:\s*([^>]+)>/i.exec(i.note || '');
+                    i.siUserCure = u ? u[1].split(',').map($.stateByName).filter(Boolean) : [];
+                });
             });
             $dataSkills.forEach(function(s) {
                 if (!s) return;
@@ -177,7 +189,7 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
     BattleManager.ctbShouldSkipTurn = function(battler) {
         var states = battler.states();
         var flee = states.reduce(function(m, s) { return Math.max(m, s.siFlee || 0); }, 0);
-        if (battler.isEnemy() && flee > 0 && Math.random() * 100 < flee) {
+        if (battler.isEnemy() && flee > 0 && !battler.isHeld() && Math.random() * 100 < flee) {
             this._logWindow.push('addText', $.fleeMessage.format(battler.name()));
             this._logWindow.push('wait');
             battler.escape();
@@ -237,13 +249,38 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
         if (cut > 0) this._stateTurns[stateId] = Math.max(this._stateTurns[stateId] - cut, 1);
     };
 
-    // <Party Cure: Chilled>: one use also warms the whole party.
+    // <Party Cure: Chilled>: one use also warms the whole party. <User Cure>: the user only.
     var _Game_Battler_useItem = Game_Battler.prototype.useItem;
     Game_Battler.prototype.useItem = function(item) {
         _Game_Battler_useItem.call(this, item);
-        if (DataManager.isItem(item) && item.siPartyCure) {
+        if (!item) return;
+        if (item.siPartyCure) {
             this.friendsUnit().aliveMembers().forEach(function(m) { m.removeState(item.siPartyCure); });
         }
+        (item.siUserCure || []).forEach(function(id) { this.removeState(id); }, this);
+    };
+
+    // <No Flee> (Held): can't flee or run off.
+    Game_Battler.prototype.isHeld = function() {
+        return this.states().some(function(s) { return s.siNoFlee; });
+    };
+
+    // <Exposed> (Pointed Out): the party's next damaging hit is a critical.
+    $.exposedState = function(target) {
+        return target.states().filter(function(s) { return s.siExposed; })[0] || null;
+    };
+
+    var _Game_Action_itemCriExposed = Game_Action.prototype.itemCri;
+    Game_Action.prototype.itemCri = function(target) {
+        if (this.subject().isActor() && this.item().damage.type === 1 && $.exposedState(target)) return 1;
+        return _Game_Action_itemCriExposed.call(this, target);
+    };
+
+    var _Game_Action_applyExposed = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        var exposed = this.subject().isActor() && $.exposedState(target);
+        _Game_Action_applyExposed.call(this, target);
+        if (exposed && target.result().hpDamage > 0) target.removeState(exposed.id);
     };
 
     // <Lasts Battles: N>: count battles down; removed after the last one.

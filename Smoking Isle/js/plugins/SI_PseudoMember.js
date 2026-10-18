@@ -21,12 +21,26 @@
  * Give their class the Auto Battle trait (Traits > Other > Special Flag)
  * so the player never commands them.
  *
+ * Their own skills:
+ *   <AI Priority: user Wet, Sodden>    used first, whenever the condition
+ *   <AI Priority: ally Despair, Panicked>   holds (aimed at the ally who
+ *                                      needs it, children first)
+ * Conditions: "user <states>", "ally <states>", "enemy <kind>" (Talk Type or
+ * Tags) and "ally thrown" (an ally has spent a javelin or harpoon throw).
+ * Skills left out of <AI Skills> and without <AI Priority> are only ever
+ * used when ordered.
+ *
  * Commands (e.g. "Heel, Girl!"):
  *   Skill note:  <Pseudo State: 36>   toggles state 36 on the pseudo members
  *                                     in battle. Only usable while one is
  *                                     up. (Scope: The User.)
  *   State note:  <Pseudo Guard>       while they have this state, they only
- *                                     guard.
+ *                                     guard (orders still get through).
+ *   Skill note:  <Pseudo Order: Ankle Bite>
+ *                on their next turn they use that skill, on the enemy the
+ *                commander picked (Sic 'Em!). Choices, first that fits:
+ *                <Pseudo Order: Alarm Bark if ally Sleep | Howl if enemy spirit | Growl>
+ *                If nothing fits, they act on their own.
  *
  * In battle they:
  * - act on their own turns (they appear in the Turn Order),
@@ -118,7 +132,8 @@ SmokingIsle.PseudoMember = SmokingIsle.PseudoMember || {};
     var _Game_BattlerBase_meetsSkillConditions = Game_BattlerBase.prototype.meetsSkillConditions;
     Game_BattlerBase.prototype.meetsSkillConditions = function(skill) {
         if (!_Game_BattlerBase_meetsSkillConditions.call(this, skill)) return false;
-        return !$.commandState(skill) || $.commandTargets().length > 0;
+        var command = $.commandState(skill) || /<Pseudo Order:/i.test(skill.note || '');
+        return !command || $.commandTargets().length > 0;
     };
 
     var _Game_Action_apply = Game_Action.prototype.apply;
@@ -151,6 +166,119 @@ SmokingIsle.PseudoMember = SmokingIsle.PseudoMember || {};
         }, this);
     };
 
+    //-------------------------------------------------------------------------
+    // Orders and priorities
+    //-------------------------------------------------------------------------
+
+    $.skillByName = function(name) {
+        name = String(name).trim().toLowerCase();
+        return $dataSkills.filter(function(s) { return s && s.name.toLowerCase() === name; })[0] || null;
+    };
+
+    // "Alarm Bark if ally Sleep | Howl if enemy spirit | Growl" -> [{skill, cond}]
+    $.parseChoices = function(text) {
+        return text.split('|').map(function(part) {
+            var m = /^\s*(.+?)(?:\s+if\s+(.+))?\s*$/i.exec(part);
+            return m ? { skill: $.skillByName(m[1]), cond: m[2] ? m[2].trim() : '' } : null;
+        }).filter(function(c) { return c && c.skill; });
+    };
+
+    $.orderOf = function(item) {
+        var m = item && /<Pseudo Order:\s*([^>]+)>/i.exec(item.note || '');
+        return m ? $.parseChoices(m[1]) : null;
+    };
+
+    $.hasState = function(battler, names) {
+        return names.some(function(n) {
+            var id = SmokingIsle.Ailments ? SmokingIsle.Ailments.stateByName(n) : 0;
+            return id && battler.isStateAffected(id);
+        });
+    };
+
+    $.isChild = function(actor) {
+        return /<Child>/i.test(actor.actor().note || '');
+    };
+
+    // Who a condition points at (empty: it doesn't hold). No condition: everyone fits.
+    $.conditionTargets = function(actor, cond) {
+        if (!cond) return [actor];
+        var m = /^(user|ally|enemy)\s+(.+)$/i.exec(cond);
+        if (!m) return [];
+        var who = m[1].toLowerCase(), what = m[2].split(',').map(function(w) { return w.trim(); });
+        if (who === 'user') return $.hasState(actor, what) ? [actor] : [];
+        if (who === 'enemy') {
+            var O = SmokingIsle.Outfits;
+            return $gameTroop.aliveMembers().filter(function(e) {
+                return O && what.some(function(k) { return O.kinds(e).indexOf(k.toLowerCase()) >= 0; });
+            });
+        }
+        var allies = $gameParty.battleMembers().filter(function(a) { return a.isAlive(); });
+        var hits = what[0].toLowerCase() === 'thrown'
+            ? allies.filter(function(a) { return a.spentAmmoKey && a.spentAmmoKey('throw'); })
+            : allies.filter(function(a) { return $.hasState(a, what); });
+        return hits.filter($.isChild).concat(hits.filter(function(a) { return !$.isChild(a); }));
+    };
+
+    // An action for a skill, aimed at the condition's target or the commander's pick.
+    $.actionFor = function(actor, skill, targets, enemyIndex) {
+        if (!actor.canUse(skill)) return null;
+        var action = new Game_Action(actor);
+        action.setSkill(skill.id);
+        if (action.isForOpponent() && enemyIndex >= 0 && $gameTroop.members()[enemyIndex] &&
+            $gameTroop.members()[enemyIndex].isAlive()) {
+            action.setTarget(enemyIndex);
+        } else if (action.isForFriend() && targets.length && targets[0].isActor()) {
+            action.setTarget($gameParty.battleMembers().indexOf(targets[0]));
+        } else if (action.isForOpponent() && targets.length && targets[0].isEnemy()) {
+            action.setTarget(targets[0].index());
+        } else {
+            action.decideRandomTarget();
+        }
+        return action;
+    };
+
+    // A pending order, else an <AI Priority> skill whose condition holds.
+    Game_Actor.prototype.pseudoPlannedAction = function() {
+        var order = this._siOrder;
+        this._siOrder = null;
+        if (order) {
+            var choices = $.parseChoices(order.text);
+            for (var i = 0; i < choices.length; i++) {
+                var targets = $.conditionTargets(this, choices[i].cond);
+                var action = targets.length ? $.actionFor(this, choices[i].skill, targets, order.enemyIndex) : null;
+                if (action) return action;
+            }
+        }
+        if (this.isPseudoGuarding()) return null;
+        var skills = this.skills().filter(function(s) { return /<AI Priority:/i.test(s.note || ''); });
+        for (var j = 0; j < skills.length; j++) {
+            var cond = /<AI Priority:\s*([^>]+)>/i.exec(skills[j].note)[1];
+            var hits = $.conditionTargets(this, cond.trim());
+            var act = hits.length ? $.actionFor(this, skills[j], hits, -1) : null;
+            if (act) return act;
+        }
+        return null;
+    };
+
+    // Giving an order: remembered for each pseudo member's next turn.
+    var _Game_Action_applyOrder = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        _Game_Action_applyOrder.call(this, target);
+        var m = this.item() && /<Pseudo Order:\s*([^>]+)>/i.exec(this.item().note || '');
+        if (!m) return;
+        var enemyIndex = target.isEnemy() ? target.index() : -1;
+        $.commandTargets().forEach(function(member) {
+            member._siOrder = { text: m[1], enemyIndex: enemyIndex };
+        });
+        target.result().success = true;
+    };
+
+    var _Game_Battler_onBattleStartOrder = Game_Battler.prototype.onBattleStart;
+    Game_Battler.prototype.onBattleStart = function() {
+        _Game_Battler_onBattleStartOrder.call(this);
+        this._siOrder = null;
+    };
+
     Game_Actor.prototype.isPseudoGuarding = function() {
         return this.states().some(function(state) {
             return /<Pseudo Guard>/i.test(state.note || '');
@@ -159,6 +287,13 @@ SmokingIsle.PseudoMember = SmokingIsle.PseudoMember || {};
 
     var _Game_Actor_makeAutoBattleActions = Game_Actor.prototype.makeAutoBattleActions;
     Game_Actor.prototype.makeAutoBattleActions = function() {
+        var planned = this.isPseudoMember() ? this.pseudoPlannedAction() : null;
+        if (planned) {
+            this.clearActions();
+            this.setAction(0, planned);
+            this.setActionState('waiting');
+            return;
+        }
         if (this.isPseudoGuarding()) {
             for (var g = 0; g < this.numActions(); g++) {
                 var guard = new Game_Action(this);

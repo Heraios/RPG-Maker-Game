@@ -48,6 +48,8 @@
  * Actor or class note:
  *   <Equip Slots: 9>         this character has only these slots instead
  *   <Equip Slots: none>      this character can't equip anything
+ *   <Extra Slots: 20>        the usual slots plus these (the Islanders'
+ *                            Battery slot)
  *   <Slot Names: Collar>     rename this character's slots, top to bottom
  *   <Start Equips: armor 12, armor 36, weapon 3>
  *                            extra starting equipment beyond what the
@@ -139,7 +141,9 @@ SmokingIsle.Equipment = SmokingIsle.Equipment || {};
 
     Game_Actor.prototype.equipSlots = function() {
         var custom = $.note(this, /<Equip Slots:\s*([^>]*)>/i);
-        return custom ? $.parseIds(custom[1]) : $.slotOrder.slice();
+        if (custom) return $.parseIds(custom[1]);
+        var extra = $.note(this, /<Extra Slots:\s*([^>]*)>/i);
+        return $.slotOrder.concat(extra ? $.parseIds(extra[1]) : []);
     };
 
     // The slot index of the nth (0-based) slot of an equipment type, or -1.

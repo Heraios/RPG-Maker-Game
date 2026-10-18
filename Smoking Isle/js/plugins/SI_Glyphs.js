@@ -40,6 +40,17 @@
  * Characters without these have neither (innate casters like Tou, Falmi and
  * Lasa learn spells normally instead).
  *
+ * Literacy and codices:
+ *   <Reads: islander, first-sailor>   the scripts this character can read.
+ *                       Anyone who reads at all gets a codex slot.
+ *   <Reads If Switch 5: seafarer>     reads that script once the switch is ON
+ *   <Codex Mastery>     gets a codex's full spell list (Theenmy)
+ * Codex note:
+ *   <Codex Move: 22>             a Cultural move for anyone who can read
+ *   <Codex Spells: 242, 243, 245>    the weaker spells, for readers of the
+ *                                     All-Seafarer script
+ *   <Codex Mastery Spells: 244, 246, 247>  the rest, for <Codex Mastery>
+ *
  * Tattoos and codices also need an armor type the class may equip, like any
  * other equipment.
  *
@@ -134,8 +145,61 @@ SmokingIsle.Glyphs = SmokingIsle.Glyphs || {};
         return _Game_Actor_equipSlotName ? _Game_Actor_equipSlotName.call(this, slotId) : '';
     };
 
+    $.scripts = function(text) {
+        return String(text || '').split(',').map(function(w) { return w.trim().toLowerCase(); }).filter(Boolean);
+    };
+
+    Game_Actor.prototype.scriptsRead = function() {
+        var list = [];
+        [this.actor(), this.currentClass()].forEach(function(obj) {
+            var note = obj.note || '', m;
+            var plain = /<Reads:\s*([^>]*)>/gi, cond = /<Reads If Switch (\d+):\s*([^>]*)>/gi;
+            while ((m = plain.exec(note))) list = list.concat($.scripts(m[1]));
+            while ((m = cond.exec(note))) if ($gameSwitches && $gameSwitches.value(Number(m[1]))) list = list.concat($.scripts(m[2]));
+        });
+        return list;
+    };
+
+    Game_Actor.prototype.reads = function(script) {
+        return this.scriptsRead().indexOf(script) >= 0;
+    };
+
+    Game_Actor.prototype.hasCodexMastery = function() {
+        return !!$.noteValue(this, /<Codex Mastery>/i);
+    };
+
     Game_Actor.prototype.hasCodexSlot = function() {
-        return !!$.noteValue(this, /<Codex Slot>/i);
+        return !!$.noteValue(this, /<Codex Slot>/i) || this.scriptsRead().length > 0;
+    };
+
+    $.codexIds = function(item, tag) {
+        var m = new RegExp('<' + tag + ':\\s*([^>]*)>', 'i').exec(item.note || '');
+        return m ? m[1].split(',').map(Number).filter(Boolean) : [];
+    };
+
+    // What an equipped codex teaches this reader.
+    Game_Actor.prototype.codexSkillIds = function() {
+        var readsAny = this.scriptsRead().length > 0, seafarer = this.reads('seafarer'), master = this.hasCodexMastery();
+        return this.armors().filter(function(a) { return a.etypeId === $.codexType; }).reduce(function(ids, codex) {
+            if (readsAny) ids = ids.concat($.codexIds(codex, 'Codex Move'));
+            if (seafarer) ids = ids.concat($.codexIds(codex, 'Codex Spells'));
+            if (seafarer && master) ids = ids.concat($.codexIds(codex, 'Codex Mastery Spells'));
+            return ids;
+        }, []);
+    };
+
+    var _Game_Actor_addedSkills = Game_Actor.prototype.addedSkills;
+    Game_Actor.prototype.addedSkills = function() {
+        var ids = _Game_Actor_addedSkills.call(this);
+        this.codexSkillIds().forEach(function(id) { if (ids.indexOf(id) < 0) ids.push(id); });
+        return ids;
+    };
+
+    // Only readers can make anything of a codex.
+    var _Game_BattlerBase_canEquip = Game_BattlerBase.prototype.canEquip;
+    Game_BattlerBase.prototype.canEquip = function(item) {
+        if (this.isActor() && item && DataManager.isArmor(item) && item.etypeId === $.codexType && this.scriptsRead().length === 0) return false;
+        return _Game_BattlerBase_canEquip.call(this, item);
     };
 
     // Standard slots minus tattoo/codex, then this character's own.

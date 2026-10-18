@@ -12,8 +12,9 @@ module.exports = {
             th.forceChangeEquip(th.slotOfType(1), W(57)); const khopesh = usable(th);
             const pada = A(5), pile = $dataArmors.find(a => a && a.name === 'Voltaic Pile');
             pada.forceChangeEquip(pada.slotOfType(1), $dataWeapons.find(w => w && w.name === 'Copper Knife'));
+            pada.forceChangeEquip(pada.slotOfType(20), null);
             const conductNoPile = pada.canUse(S(202));
-            pada.forceChangeEquip(pada.slotOfType(5), pile);
+            pada.forceChangeEquip(pada.slotOfType(20), pile);
             return { knife, staff, khopesh, conductNoPile, conductPile: pada.canUse(S(202)), islanderOnly: pada.canEquip(pile) && !th.canEquip(pile) };
         });
         t.ok(r.knife.includes('Quick Jab') && r.knife.includes('Raking Cut') && !r.knife.includes('Overhead Smash'), 'knife moves: ' + r.knife);
@@ -76,6 +77,7 @@ module.exports = {
             const falmi = A(10), tou = A(9), th = A(11);
             [10, 9, 11].forEach(id => $gameParty.addActor(id));
             th.forceChangeEquip(th.slotOfType(11), $dataArmors.find(a => a && a.name === 'Bronze Cuirass'));
+            th.forceChangeEquip(th.slotOfType(15), null); th.forceChangeEquip(th.slotOfType(2), null);   // helm + cuirass only
             const turn = a => { a.setTp(50); a.onTurnEnd(); return a.tp; };
             const out = { falmiOut: turn(falmi), touOut: turn(tou), thTrained: turn(th) };
             th.forgetSkill(87); out.thUntrained = turn(th);

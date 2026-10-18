@@ -183,10 +183,32 @@ Pada and Yoon's dog, a pointer-type breed.
 - **Quirks:** a **pseudo party member**, like Boney in *Mother 3* or King in *EarthBound*. She
   travels and fights alongside the party in addition to the four main slots, but isn't a full
   member: small passive benefits, occasional minor attacks or situational help.
-  - **Acts on her own** (AI-controlled). The one command she obeys is **"Heel, Girl!"**, a Talk
-    skill only **Sib, Pada and Human Yoon** have (the people she actually listens to): she only
-    guards until someone calls it again to let her loose. It costs half a turn and no Fatigue, and
-    keeps her from biting (and angering) an enemy the party is talking down.
+  - **Acts on her own** (AI-controlled). Left alone she **Bites**, **Growls** (ATK down) and
+    **Points** (the party's next damaging hit on that enemy is a critical).
+  - **She does these first when they're needed:** **Shake Off** when she's Wet (dries herself and
+    soaks an enemy), and **Nuzzle** when an ally (a child first) is in Despair or Panicked.
+  - **Orders** are Talk skills only **Sib, Pada and Human Yoon** have (the people she actually listens
+    to). Each costs half a turn and no Fatigue, and she carries it out on her next turn:
+    - **"Heel, Girl!"**: she only guards until someone calls it again. Keeps her from biting (and
+      angering) an enemy the party is talking down. Other orders still get through.
+    - **"Sic 'Em!"** (pick an enemy): **Ankle Bite**, light damage that pushes its next turn back.
+    - **"Catch 'Em!"** (pick an enemy): **Hold**, so it can't dodge, flee or run off with stolen
+      things for 2 turns.
+    - **"Fetch!"**: **Fetch** brings back a thrown javelin or harpoon (one more throw). With nothing
+      thrown, she does as she likes.
+    - **"Speak!"**: **Alarm Bark** if anyone is asleep (wakes the party), else **Howl** if there are
+      spirits (they may panic), else **Growl**.
+    Ankle Bite, Hold, Fetch, Howl and Alarm Bark are only ever used when ordered.
+  - **Gear:** four slots of her own.
+    - **Collar:** Woven, Hide, Shark-Tooth, Coral-Eyed, Glow-Bead (cave hit), Obsidian-Spiked (biters take
+      30% back; resists Dragged Below; for the Black Hounds), Salt-Pouch (30% less damage from spirits),
+      Bronze War-Dog.
+    - **Pack:** Javelin Pack (the whole party gets +1 javelin throw), Medicine Pack (once a battle, she
+      drags the first fallen ally back up at 1 HP).
+    - **Booties:** Hide (Burdened, Mired), Seal-Skin (Wet, Sodden), Wool (Chilled), Pitch-Hide
+      (Smoldering, Enflamed).
+    - **Bell:** Copper (no ambushes, but Stalk works 25% worse), Silver (spirits start friendlier),
+      Shell (sea creatures start friendlier).
   - **Has her own turns** in the Turn Order, based on her speed.
   - **Can be knocked out**, and is revived the same way as everyone else.
   - **Insight is capped at 1.** Her specialty (dogs and animals) works **passively**: with
@@ -550,11 +572,13 @@ Tactics
 necklaces), **Shoulders** (capes, cloaks), **Body** (shirts), **Cuirass** (chest armor), **Arms**
 (armlets, bracelets, vambraces), **Left Hand** and **Right Hand** (gloves, rings), **Legs** (pants,
 skirts), **Greaves** (leg armor), **Feet** (shoes, boots), **Melee**, **Ranged**, **Offhand**
-(shields or a knife), **Charm 1–3** (carried or tied-on charms, idols, pouches, belts, earrings and piercings, gadgets like the Voltaic Pile), then **Codex** (All-Seafarers) or
-**tattoo slots** on the body (Islanders: Lower L/R Arm, Upper L/R Arm, and a priest's Face).
+(shields or a knife), **Charm 1–3** (carried or tied-on charms, idols, pouches, belts, earrings and piercings),
+**Battery** (Islanders only: the Voltaic Pile), then **Codex** (anyone who can read) and **tattoo slots**
+on the body (Islanders: Lower L/R Arm, Upper L/R Arm, and a priest's Face).
 - A slot only offers what the class may equip. `<Equip Slots: ...>` gives a character a custom list:
-  the **Ghost has none**; **Patience** has only a **Collar** (a Neck slot; collars are their own armor
-  type, so only she wears them; she starts with a Woven Collar).
+  the **Ghost has none**; **Patience** has **Collar, Pack, Booties and Bell** (dog gear is its own armor
+  type, so only she wears it; she starts with a Woven Collar). `<Extra Slots: 20>` adds slots to the usual
+  list: the Islanders' **Battery** slot.
 - **Off hand:** shields, or a **knife** (only knives). An off-hand knife gives **no stats**, only its moves
   plus the move `offhand`, for skills that need an off-hand weapon (`<Requires Move: offhand>`); those
   skills wear the off-hand knife.
@@ -653,7 +677,7 @@ Shark-Tooth → Coral-Eyed. Rings: silver, bone, obsidian; gloves: hide, sinew w
   priests' **Sandalwood Staff** (MAT +5, starts each battle Calm).
 
 ### Voltaic techniques (Islander electricity)
-`SI_Voltaic.js`. The **Voltaic Pile** (a Charm) lets **Islanders** (Yoon, Sib, Pada, Dama, Juda) use
+`SI_Voltaic.js`. The **Voltaic Pile** (in its own **Battery** slot; every Islander starts with one) lets **Islanders** (Yoon, Sib, Pada, Dama, Juda) use
 electrical techniques, under their own **Voltaic** skill type. Nobody else can wear a pile: it's
 Islander technology, and the bronze-armed All-Seafarers don't have it.
 
@@ -1174,7 +1198,7 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
 | Who | How spells are gained |
 |-----|-----------------------|
 | Islanders (Human Yoon, Sib, Pada, Juda, Dama; Parl if he joins the village) | **Tattoo** slots on the body, each tattoo encoding one spell (see below). Tattoos can only be swapped in the late game (magical healing) |
-| All-Seafarers (Parl, Theenmy) | A single **Codex** accessory slot; each codex grants **3–6 spells** and its own stat boosts |
+| Readers (see Literacy below) | A single **Codex** slot; what a codex teaches depends on how well you read All-Seafarer script |
 | Tou, Falmi, Lasa | Innately, no medium (learned like normal skills) |
 | Ghost Yoon | Only the unique ghost abilities; regular magic and weapon skills come after gaining a body |
 
@@ -1199,8 +1223,20 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
 - **Tattoos are permanent** while the switch "Tattoo removal (late game)" is off: empty tattoo slots
   can be filled, but an occupied one can't be removed or replaced, and Optimize/Clear never touch
   tattoos. Once removal is allowed, a removed or replaced tattoo is **destroyed**, not returned to the bag.
-- **Codices** (examples): Codex of Embers (Ahi, Ahiben, Ahigun; MAT +2), Codex of Mending (Mahu,
-  Mahuben, Mahugun, Ara; MDF +2), Sailor's Codex (Rari, Hagu, Keri and their -ben forms; AGI +2).
+- **Literacy** is tracked per character (`<Reads: ...>`): Yoon (Islander), Sib (Islander; All-Seafarer
+  script later, switch "Sib reads Seafarer script"), Parl (All-Seafarer), Tou (First Sailor; All-Seafarer
+  later, switch "Tou reads Seafarer script"), Falmi (Islander, First Sailor), Juda (all three), Theenmy
+  (All-Seafarer, and **Codex Mastery**). Lasa, Pada and Dama can't read, so they have no codex slot.
+- **Codices** teach in three tiers:
+  - **Anyone who reads** gets the codex's **Cultural move**.
+  - **Readers of All-Seafarer script** (Parl, Juda, later Sib and Tou) also get its **three weaker spells**.
+  - **Theenmy** (Codex Mastery) gets **all six** spells.
+
+  | Codex | Cultural move | Weaker spells | Mastery adds | Bonus |
+  |---|---|---|---|---|
+  | Codex of Embers | **Fire Drill** (puts out Smoldering and Enflamed, party) | Ahi, Ahiben, Ahigun | Ahisin, Ahigunben, Ahihari | MAT +2 |
+  | Codex of Mending | **Field Dressing** (stops Bleed, starts Mending) | Mahu, Mahuben, Ara | Mahugun, Araben, Mahu-Ara | MDF +2 |
+  | Sailor's Codex | **Read the Wind** (party AGI up, 3 turns) | Rari, Hagu, Keri | Rariben, Haguben, Keriben | AGI +2 |
 - **Starting glyphs:** Sib has Mahu and Ahi; Juda has Mahu, Mahuben, Ara, Ahiben, Rariben; Dama has
   Rari; Theenmy carries the Codex of Mending. Human Yoon's new body starts blank.
 - The test room's **Tattooist** gives every glyph and codex and toggles the removal switch.

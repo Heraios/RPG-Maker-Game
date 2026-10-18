@@ -26,7 +26,7 @@ module.exports = {
             $gameParty.gainItem($dataWeapons[93], 1);
             yoon.changeEquip(yoon.slotOfType(1), $dataWeapons[93]);
             out.twoHanded = !yoon.equips()[yoff] && $gameParty.numItems(AR('Wicker Buckler')) === shields + 1 && !yoon.isEquipChangeOk(yoff);
-            $gameParty.gainItem($dataWeapons[132], 1); $gameParty.gainItem(AR('Wicker Buckler'), 1);
+            $gameParty.gainItem($dataWeapons[132], 1); $gameParty.gainItem($dataWeapons[172], 1); $gameParty.gainItem(AR('Wicker Buckler'), 1);
             const falmi = A(10);   // a club user who can carry a shield
             falmi.changeEquip(falmi.slotOfType(1), $dataWeapons[172]); falmi.changeEquip(falmi.slotOfType(2), AR('Wicker Buckler'));
             out.clubKeepsShield = (falmi.equips()[falmi.slotOfType(1)] || {}).name + '+' + (falmi.equips()[falmi.slotOfType(2)] || {}).name;
@@ -39,7 +39,7 @@ module.exports = {
             return out;
         });
         t.eq(r.sibNames, 'Head,Neck,Shoulders,Body,Cuirass,Arms,Left Hand,Right Hand,Legs,Greaves,Feet,Melee,Ranged,Offhand,' +
-            'Charm 1,Charm 2,Charm 3,Lower L Arm,Lower R Arm,Upper L Arm,Upper R Arm', 'Sib\'s slot list');
+            'Charm 1,Charm 2,Charm 3,Battery,Codex,Lower L Arm,Lower R Arm,Upper L Arm,Upper R Arm', 'Sib\'s slot list');
         t.eq(r.thNames, 'Charm 3,Codex', 'Theenmy ends with a codex slot and no tattoos');
         t.eq(r.sibRing, 'Silver Ring', 'the ring starts in the Left Hand');
         t.eq(r.sibTattoos, 2, 'Sib starts with two tattoos');
@@ -56,7 +56,7 @@ module.exports = {
         t.eq(r.clubKeepsShield, 'Ebony Club+Wicker Buckler', 'a one-handed club keeps the shield');
         t.ok(r.oneHandedAxe, 'an axe marked one-handed leaves the off hand free');
         t.eq(r.ghost, 0, 'the Ghost has no equipment slots');
-        t.eq(r.patience, 'Collar:Woven Collar', 'Patience has only a collar');
+        t.eq(r.patience, 'Collar,Pack,Booties,Bell:Woven Collar', 'Patience has dog gear slots only');
         t.eq(r.gloves, 'Hide Gloves/Silver Ring', '"Change Equipment" fills the empty hand');
     },
 

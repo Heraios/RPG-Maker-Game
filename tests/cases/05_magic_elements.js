@@ -28,6 +28,7 @@ module.exports = {
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id);
             const pada = A(5), sib = A(3), tou = A(9), yoon = A(2), ghost = A(1);
+            tou.clearEquipments();   // compare bodies, not gear
             [242, 248].forEach(id => sib.learnSkill(id));
             const avg = (a, id, x, n = 300) => { let s = 0; for (let i = 0; i < n; i++) { const act = new Game_Action(a); act.setSkill(id); s += act.makeDamageValue(x, false); } return s / n; };
             const out = { chopYoon: avg(pada, 73, yoon), chopTou: avg(pada, 73, tou), ahiYoon: avg(sib, 242, yoon), ahiTou: avg(sib, 242, tou),

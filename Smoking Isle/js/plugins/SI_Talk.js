@@ -208,6 +208,7 @@
  *                                   (or "all") start 10 mood higher (or lower
  *                                   with a minus) while the wearer is in the party.
  *   <Talk Bonus: rite 50 vs wind>   as below, but only on enemies of that kind
+ *   <Talk Bonus: stalk -25>         (a negative bonus: Patience's Copper Bell)
  *   <Talk Bonus: rite 50>           (weapon/armor/state) that approach works
  *                                   50% better (Jasper Knife; Bitterwood
  *                                   Smudge's incense).
@@ -917,7 +918,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
     Game_Actor.prototype.talkEquipBonus = function(approach, enemy) {
         var kinds = enemy ? enemy.talkData().kinds : null;
         return this.equips().concat(this.states()).reduce(function(sum, item) {
-            var re = new RegExp('<Talk Bonus:\\s*' + approach + '\\s+(\\d+)(?:\\s+vs\\s+([\\w-]+))?>', 'gi'), m;
+            var re = new RegExp('<Talk Bonus:\\s*' + approach + '\\s+(-?\\d+)(?:\\s+vs\\s+([\\w-]+))?>', 'gi'), m;
             while (item && (m = re.exec(item.note || ''))) {
                 if (!m[2] || (kinds && kinds.indexOf(m[2].toLowerCase()) >= 0)) sum += Number(m[1]);
             }

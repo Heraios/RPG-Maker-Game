@@ -49,6 +49,11 @@
  *   <Whisper: Despair 10>    10% chance at the end of each turn to get that
  *                            state
  *   <Escape Bonus: 20>       escaping is 20 points likelier (whole party)
+ *   <Spikes: 30>             an enemy that lands a physical hit on the wearer
+ *                            takes 30% of that damage back (Spiked Collar)
+ *   <Guard Vs: spirit 30>    30% less damage from enemies of that kind
+ *   <Drag Back>              once a battle, the first fallen ally is pulled
+ *                            back up at 1 HP (Patience's Medicine Pack)
  *   <Quiets Whisper: Coral Eye Fragment>
  *                            worn together, that item's whisper stays silent
  *
@@ -110,6 +115,10 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         var wh = /<Whisper:\s*([^>]+?)\s+(\d+)>/i.exec(note);
         t.whisper = wh ? { state: $.stateByName(wh[1]), chance: Number(wh[2]) / 100 } : null;
         t.escape = $.num(note, 'Escape Bonus') / 100;
+        t.spikes = $.num(note, 'Spikes') / 100;
+        var gv = /<Guard Vs:\s*([\w-]+)\s+(\d+)>/i.exec(note);
+        t.guardVs = gv ? { kind: gv[1].toLowerCase(), rate: Number(gv[2]) / 100 } : null;
+        t.dragBack = /<Drag Back>/i.test(note);
         var q = /<Quiets Whisper:\s*([^>]+)>/i.exec(note);
         t.quiets = q ? q[1].trim() : '';
         var set = /<Set:\s*([^>]+)>/i.exec(note);
@@ -265,7 +274,29 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
             var guard = Math.min($.sum(target, 'firstHitGuard'), 1);
             if (guard > 0) value = Math.round(value * (1 - guard));
         }
+        if (value > 0 && target.isActor() && this.subject().isEnemy()) {
+            var kinds = $.kinds(this.subject());
+            var cut = $.objects(target, 'guardVs').reduce(function(sum, obj) {
+                var g = obj.siOutfit.guardVs;
+                return kinds.indexOf(g.kind) >= 0 ? sum + g.rate : sum;
+            }, 0);
+            if (cut > 0) value = Math.round(value * (1 - Math.min(cut, 1)));
+        }
         return value;
+    };
+
+    // <Spikes>: biting the wearer hurts.
+    var _Game_Action_executeHpDamage = Game_Action.prototype.executeHpDamage;
+    Game_Action.prototype.executeHpDamage = function(target, value) {
+        _Game_Action_executeHpDamage.call(this, target, value);
+        var subject = this.subject();
+        var spikes = $.sum(target, 'spikes');
+        if (spikes > 0 && value > 0 && this.isPhysical() && subject.isEnemy() && subject.isAlive()) {
+            var back = Math.max(Math.round(value * spikes), 1);
+            subject.gainHp(-back);
+            if (subject.isDead()) subject.performCollapse();
+            target._siCommandMessages = (target._siCommandMessages || []).concat(['%1 is hurt by the spikes! (%2)'.format(subject.name(), back)]);
+        }
     };
 
     var _Game_Action_testApply = Game_Action.prototype.testApply;
@@ -300,6 +331,7 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         _Game_Battler_onBattleStart.call(this);
         this._siFirstHitDone = false;
         this._siFirstPhysicalDone = false;
+        this._siDragBackUsed = false;
         if (this.isActor() && this.gainCharge && this.pile && this.pile()) {
             var charge = $.sum(this, 'startCharge');
             if (charge > 0) this.gainCharge(charge);
@@ -331,6 +363,23 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
             var w = obj.siOutfit.whisper;
             if (w.state && Math.random() < w.chance) this.addState(w.state);
         }, this);
+    };
+
+    // <Drag Back>: after an action, the wearer pulls the first fallen ally back up (once a battle).
+    var _BattleManager_endAction = BattleManager.endAction;
+    BattleManager.endAction = function() {
+        var members = $gameParty.battleMembers();
+        members.forEach(function(rescuer) {
+            if (rescuer.isDead() || rescuer._siDragBackUsed || $.objects(rescuer, 'dragBack').length === 0) return;
+            var fallen = members.filter(function(m) { return m !== rescuer && m.isDead(); })[0];
+            if (!fallen) return;
+            rescuer._siDragBackUsed = true;
+            fallen.removeState(fallen.deathStateId());
+            fallen.setHp(1);
+            this._logWindow.push('addText', '%1 drags %2 back to their feet!'.format(rescuer.name(), fallen.name()));
+            this._logWindow.push('wait');
+        }, this);
+        _BattleManager_endAction.call(this);
     };
 
     var _BattleManager_makeEscapeRatio = BattleManager.makeEscapeRatio;

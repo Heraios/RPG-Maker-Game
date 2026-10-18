@@ -19,13 +19,14 @@ module.exports = {
             const fixed = f => { const rnd = Math.random; Math.random = () => 0.5; try { return f(); } finally { Math.random = rnd; } };
             const out = {}, sib = A(3), yoon = A(2);   // (Lasa flies, so she'd often dodge a grab)
             sib.initEquips($dataActors[3].equips); yoon.initEquips($dataActors[2].equips);
+            [sib, yoon].forEach(a => a.forceChangeEquip(a.slotOfType(20), null));   // piles are shiny too
             $gameTroop.setup(8); const [girl, boy] = $gameTroop.members();
             const use = (who, id, target) => fixed(() => { const a = new Game_Action(who); a.setSkill(id); target.clearResult(); a.apply(target); });
             out.lasaRing = sib.equips().some(e => e && e.name === 'Silver Ring');
             use(boy, 385, sib); out.noFailLine = sib.result().success;
             out.ringGone = !sib.equips().some(e => e && e.name === 'Silver Ring') && $gameParty.numItems(AR('Silver Ring')) === 0;
             out.boyFled = boy.isHidden(); out.hoard = SmokingIsle.Pranks.hoardSize();
-            $gameParty.allItems().filter(i => i.siShiny).forEach(i => $gameParty.loseItem(i, 99)); $gameParty.gainGold(100); const s2 = A(5); s2.initEquips([0]); use(girl, 385, s2);
+            $gameParty.allItems().filter(i => i.siShiny).forEach(i => $gameParty.loseItem(i, 99)); $gameParty.gainGold(100); const s2 = A(5); s2.initEquips([0]); s2.forceChangeEquip(s2.slotOfType(20), null); use(girl, 385, s2);
             out.goldTaken = 100 - $gameParty.gold();
             out.recovered = SmokingIsle.Pranks.recoverHoard(); out.ringBack = $gameParty.numItems(AR('Silver Ring')) === 1 && $gameParty.gold() === 100;
             boy.appear(); use(boy, 384, yoon); out.stripped = !yoon.equips()[yoon.slotOfType(4)];

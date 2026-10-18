@@ -8,7 +8,7 @@ module.exports = {
             const fixed = f => { const rnd = Math.random; Math.random = () => 0.3; try { return f(); } finally { Math.random = rnd; } };
             const pile = $dataArmors.find(a => a && a.name === 'Voltaic Pile');
             const sib = A(3), pada = A(5), yoon = A(2);
-            [sib, pada, yoon].forEach(a => { a.forceChangeEquip(a.slotOfType(5), pile); a._siCharge = undefined; });
+            [sib, pada, yoon].forEach(a => { a.forceChangeEquip(a.slotOfType(20), pile); a._siCharge = undefined; });
             const use = (who, name, target) => fixed(() => { const sk = S(name); const x = new Game_Action(who); x.setSkill(sk.id); who.useItem(sk); target.clearResult(); x.apply(target); return target.result(); });
             out.start = pada.charge();
             const e = $gameTroop.members()[0];
@@ -73,7 +73,7 @@ module.exports = {
         const r = await h.eval(() => {
             const a = BattleManager.actor(), pile = $dataArmors.find(x => x && x.name === 'Voltaic Pile');
             window.__log = []; const add = Window_BattleLog.prototype.addText; Window_BattleLog.prototype.addText = function(x) { window.__log.push(x); add.call(this, x); };
-            a.forceChangeEquip(a.slotOfType(5), pile); a._siCharge = 3; a.addState(74);
+            a.forceChangeEquip(a.slotOfType(20), pile); a._siCharge = 3; a.addState(74);
             const act = a.inputtingAction(); act.setSkill($dataSkills.find(s => s && s.name === 'Live Wire').id); act.setTarget(0);
             const sc = SceneManager._scene; sc._actorCommandWindow.deactivate(); sc.selectNextCommand();
             return { name: a.name(), hp: a.hp };

@@ -30,7 +30,7 @@ module.exports = {
             out.line = O.setLine(yoon, AR('Tapa Cape'));
             const cap = O.evasionCap; O.evasionCap = 0.07; out.capped = +(yoon.eva - eva0).toFixed(3); O.evasionCap = cap;
             const pada = A(5); const hp0 = pada.mhp; wear(pada, 'Goat-Skin Tunic', 'Goat-Skin Leggings'); out.goat = pada.mhp / hp0;
-            const juda = A(6); wear(juda, 'Feather Crown'); out.featherOne = sets(juda);
+            const juda = A(6); juda.clearEquipments(); wear(juda, 'Feather Crown'); out.featherOne = sets(juda);
             return out;
         });
         t.eq(r.start, 'Tapa (2)', 'Yoon starts in two Tapa pieces: the small bonus');
@@ -64,8 +64,8 @@ module.exports = {
             put(pada, 'Voltaic Pile', 0); pada._siCharge = undefined; out.charge0 = pada.maxCharge();
             put(pada, 'Lodestone', 1); out.charge1 = pada.maxCharge();
             put(pada, 'Hot-Spring Sinter', 2); pada._siCharge = 0; pada.onBattleStart(); out.sinter = pada.charge();
-            const th = A(11); out.metalBefore = SmokingIsle.Voltaic.isMetal(th);
-            ['Bronze Greaves', 'Bronze Shield'].forEach(n => put(th, n)); out.metal = SmokingIsle.Voltaic.isMetal(th);
+            const th = A(11); th.clearEquipments(); out.metalBefore = SmokingIsle.Voltaic.isMetal(th);
+            ['Bronze Helm', 'Bronze Cuirass', 'Bronze Greaves', 'Bronze Shield'].forEach(n => put(th, n)); out.metal = SmokingIsle.Voltaic.isMetal(th);
             // wear
             put(yoon, 'Basalt Whetstone', 1); out.whet = yoon.wearChanceFor(W('Obsidian Knife'));
             put(yoon, 'Pumice Stone', 2); out.pumice = yoon.wearChanceFor(W('Obsidian Knife'));
@@ -96,7 +96,7 @@ module.exports = {
             const fixed = f => { const rnd = Math.random; Math.random = () => 0.5; try { return f(); } finally { Math.random = rnd; } };
             const e = $gameTroop.members()[0], th = A(11), yoon = A(2), pada = A(5);
             // Tortoise Shell: first physical hit halved
-            put(th, 'Tortoise-Shell Cuirass'); put(th, 'Tortoise-Shell Shield'); th.onBattleStart();
+            th.clearEquipments(); put(th, 'Tortoise-Shell Cuirass'); put(th, 'Tortoise-Shell Shield'); th.onBattleStart();
             const hit = () => fixed(() => { th.setHp(th.mhp); th.clearResult(); const x = new Game_Action(e); x.setAttack(); x.apply(th); return th.mhp - th.hp; });
             const first = hit(), second = hit(); out.guard = first / second;
             // Tapa: the first attack is likelier to miss

@@ -212,6 +212,10 @@ SmokingIsle.Pranks = SmokingIsle.Pranks || {};
             return;
         }
         if (item.siSteal && subject.isEnemy()) {
+            if (subject.isHeld && subject.isHeld()) {   // held fast: it can't run off with anything
+                target._siPrankMessages.push('%1 snatches at something shiny, but is held fast!'.format(subject.name()));
+                return;
+            }
             var hoard = $gameSystem.siHoard();
             var stolen = $.stealFrom(target);
             if (stolen) {

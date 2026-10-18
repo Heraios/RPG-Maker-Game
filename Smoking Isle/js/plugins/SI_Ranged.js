@@ -32,6 +32,13 @@
  *   <Ranged Power Bonus: sling 6>  +6 power for that move (can be negative)
  *   <Ranged Inflict: net Wet>      hits with that move also add the state
  *   <Waterproof Bow>               bows keep full power while Wet
+ *   <Party Extra Ammo: throw 1>    the same for everyone in the battle party
+ *                                  (Patience's Javelin Pack)
+ *
+ * Skill note:
+ *   <Fetch: throw>   brings back one spent use of that move to the target
+ *                    ally (Patience's Fetch). Only usable on an ally who has
+ *                    spent one.
  *
  * Wet or Sodden archers: a wet bowstring stretches, so bows (move "shoot")
  * lose 30% of their power unless something worn is <Waterproof Bow>.
@@ -147,13 +154,40 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
     Game_Actor.prototype.stateRangedBonus = function(item, tag, move) {
         if (!item) return 0;
         var moves = move ? [move] : (item.siMoves || []);
-        return this.rangedBonusSources(item).reduce(function(sum, st) {
-            var re = new RegExp('<' + tag + ':\\s*(\\w+)\\s+(-?\\d+)>', 'gi'), m;
-            while ((m = re.exec(st.note || ''))) {
-                if (moves.indexOf(m[1].toLowerCase()) >= 0) sum += Number(m[2]);
-            }
-            return sum;
-        }, 0);
+        var count = function(sources, name) {
+            return sources.reduce(function(sum, st) {
+                var re = new RegExp('<' + name + ':\\s*(\\w+)\\s+(-?\\d+)>', 'gi'), m;
+                while ((m = re.exec(st.note || ''))) {
+                    if (moves.indexOf(m[1].toLowerCase()) >= 0) sum += Number(m[2]);
+                }
+                return sum;
+            }, 0);
+        };
+        var party = $gameParty.battleMembers().reduce(function(list, member) {
+            return list.concat(member.equips().filter(Boolean));
+        }, []);
+        return count(this.rangedBonusSources(item), tag) + count(party, 'Party ' + tag);
+    };
+
+    // The ammo key of a spent use of a move ('2' or '2:throw'), or null.
+    Game_Actor.prototype.spentAmmoKey = function(move) {
+        var used = this._siAmmoUsed || {};
+        var equips = this.equips();
+        for (var i = 0; i < equips.length; i++) {
+            var item = equips[i];
+            if (!item || !item.siAmmo) continue;
+            var key = item.siAmmoByMove ? (item.siAmmoByMove[move] !== undefined ? i + ':' + move : null)
+                                        : ((item.siMoves || []).indexOf(move) >= 0 ? String(i) : null);
+            if (key && used[key] > 0) return key;
+        }
+        return null;
+    };
+
+    var _Game_Action_testApply = Game_Action.prototype.testApply;
+    Game_Action.prototype.testApply = function(target) {
+        var fetch = this.item() && /<Fetch:\s*(\w+)>/i.exec(this.item().note || '');
+        if (fetch) return target.isActor() && !!target.spentAmmoKey(fetch[1].toLowerCase());
+        return _Game_Action_testApply.call(this, target);
     };
 
     Game_Actor.prototype.ammoUsed = function(slotId, move) {
@@ -303,11 +337,17 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         return eva;
     };
 
-    // <Ranged Inflict: net Wet>: hits with that move also add the state.
+    // <Ranged Inflict: net Wet>: hits with that move also add the state. <Fetch>: one use back.
     var _Game_Action_apply = Game_Action.prototype.apply;
     Game_Action.prototype.apply = function(target) {
         _Game_Action_apply.call(this, target);
         var item = this.item(), subject = this.subject();
+        var fetch = item && /<Fetch:\s*(\w+)>/i.exec(item.note || '');
+        var key = fetch && target.isActor() ? target.spentAmmoKey(fetch[1].toLowerCase()) : null;
+        if (key) {
+            target._siAmmoUsed[key]--;
+            target.result().success = true;
+        }
         if (!$.isRanged(item) || !subject.isActor() || !target.result().isHit() || !SmokingIsle.Ailments) return;
         var moves = item.siRequiredMoves || [];
         subject.rangedBonusSources(null).forEach(function(o) {
