@@ -583,7 +583,7 @@ sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegrap
 **Towns** (*-hare*, each with its own priest):
 | Town | Meaning | Where | Population | What happens there |
 |---|---|---|---|---|
-| **Zonfahare** | "Navel town" | On the ridge between the salt marsh and the dry grasslands | ~1,000-1,500 | The main town: chief, trade, telegraph hub. Juda's (later Sib's) seat. Yoon's family lives here |
+| **Zonfahare** | "Navel town" | On the ridge between the salt marsh and the dry grasslands | ~1,000-1,500 | The main town: chief, trade, telegraph hub. Juda's (later Sib's) seat. Yoon's family lives just outside it (see "Yoon's family") |
 | **Mansehare** | "Shore town" | Rocky wet-side coast near the river mouth | ~200-400 | Spearfishing, pearl diving, boats; the tribute goes out from here. **Dama** leads its spearfishers and is its impromptu "mayor" (the Big Woman); later Chieftess of the island |
 | **Afarohare** | "Grain town" | Upland grassland terraces and vineyard slopes | ~200-400 | Barley, lentils, grapes, goats; gofio mills |
 | **Namethare** | "Bone town" | The copper mine, in the lava-tube country | ~150-300 | Copper; battery works. **Doubles as the island's main graveyard** (tombs in the tubes) |
@@ -602,10 +602,10 @@ sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegrap
 **Ritual sites** (*-tapu*, with resident priests):
 | Site | What it is |
 |---|---|
-| **Tiltapu** | The sacred til (rain tree) grove and its keeper; Til Dew |
+| **Tiltapu** | The **living Rain Tree** (the sacred til) and its keeper: the great tree itself, catching mist and dripping Sacred Dew. A place of worship, never of wood; at most the keeper gives a fallen branch |
 | **Jarcotapu** | The main mummification site and a secondary graveyard, near Namethare |
 | **Amentapu** | The tern watch: a cliff-top site facing the Birdmen's sea-stack islet (after Orongo) |
-| **Banotapu** | The sacred toromiro grove (priests' staffs) |
+| **Banotapu** | **The dead stand:** a grove of rain trees that died long ago (drought, lava, or something older: an open mystery). Their wood is fair to take, never having been cut from a living tree, so this is where priests' staff wood (Rain-Tree Branches) comes from. Those who harvest leave an offering. In the middle stands **one sapling**, tended by the priests: the grove's future, and the island's hope (a natural Act 5 moment when the Princess's army burns the forests) |
 
 **Networks:**
 - **Telegraph:** lines along the main tracks link Zonfahare to every town, village and ritual site,
@@ -731,6 +731,10 @@ informal militia) with finding out how he stole the pearls and tracking him down
   see Yoon, they're the ones who tell Pada that Yoon is a ghost, and they give their blood for the body.
 - **Ladder:** the family goat, named because he climbs ladders. Somehow.
 - **Patience:** the family dog.
+
+**The family home** stands on a **rocky eyot in the river just north of Zonfahare proper**, on the edge of
+town where four lands meet: the town, the lowland forest, the grassland and the marsh. A hunter and an
+herbalist live where they can reach every kind of game and plant, a little apart from the town itself.
 
 **Yoon's expected path (flavour only):** a boy would be expected to follow Pada as a hunter, a girl
 Mada as an herbalist, and a third-gender or nonbinary child would be expected to become a priest. Yoon's
