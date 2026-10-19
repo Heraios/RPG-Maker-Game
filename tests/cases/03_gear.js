@@ -44,7 +44,7 @@ module.exports = {
             out.yoonPaddle = yoon.canEquip(W('Obsidian Paddle'));
             out.sibPaddle = $gameActors.actor(3).canEquip(W('Obsidian Paddle'));
             out.bronzeWears = ['Bronze Knife', 'Bronze Spear', 'Bronze Axe', 'Bronze Mace', 'Bronze Crescent Sword', 'Bronze Leaf Sword'].some(n => W(n).siWearChance > 0);
-            out.copperScrap = W('Bent Copper Mace').siBreaksInto === 122;
+            out.copperScrap = W('Bent Copper Mace').siBreaksInto.includes(122);
             pada.forceChangeEquip(pada.slotOfType(1), W('Basalt Hammer')); out.mawlLocks = !pada.isEquipChangeOk(pada.slotOfType(2));
             pada.forceChangeEquip(pada.slotOfType(1), W('Copper Axe')); out.hatchetFree = pada.isEquipChangeOk(pada.slotOfType(2));
             return out;
@@ -78,7 +78,7 @@ module.exports = {
         t.eq(r.after2, 'none', 'the chipped knife then breaks');
         t.ok(/Kept the Scrap Copper/.test(r.m3), 'copper breaks into Scrap Copper: ' + r.m3);
         t.eq(r.remains, 1, 'the scrap copper is in the bag');
-        t.ok(/broke!$/.test(r.m4), 'stone breaks and disappears: ' + r.m4);
+        t.ok(/Kept the Stone Caltrops and Scrap Wood/.test(r.m4), 'a stone axe breaks into Stone Caltrops and Scrap Wood: ' + r.m4);
     },
 
     'swapping costs the turn; Free Swap does not': async (h, t) => {

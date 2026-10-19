@@ -60,7 +60,7 @@ module.exports = {
             yoon.forceChangeEquip(slot(yoon, 5), AR('Opal Earring')); out.tgr = yoon.tgr;
             yoon.forceChangeEquip(slot(yoon, 13), AR('Eelskin Wraps')); out.slippery = yoon.isStateResist(ST('Entangled'));
             out.shellfish = !!IT('Shellfish') && !IT('Limpets');
-            out.keys = $dataItems.filter(i => i && i.itypeId === 2 && i.name && !i.name.startsWith('---')).length;
+            out.keys = $dataItems.filter(i => i && i.itypeId === 2 && i.name && !i.name.startsWith('---') && !/^(Recipe\.|Crafting equipment\.)/.test(i.note)).length;
             return out;
         });
         t.ok(r.sober, 'White Clay Draught cures Tipsy');

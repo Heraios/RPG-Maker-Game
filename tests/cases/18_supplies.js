@@ -85,8 +85,8 @@ module.exports = {
             dama.useItem(S('Cast Net')); out.afterNet = dama.rangedAmmoForSkill(S('Hurl Javelin')) + '/' + dama.rangedAmmoForSkill(S('Cast Net'));
             // a chipped obsidian knife breaks into caltrops
             const yoon = A(2), knife = W('Chipped Obsidian Knife'); yoon.forceChangeEquip(yoon.slotOfType(1), knife);
-            const cal = $dataItems.find(i => i && i.name === 'Obsidian Caltrops'); $gameParty.loseItem(cal, 99); const n0 = 0;
-            out.msg = yoon.rollWear(yoon.slotOfType(1), true); out.caltrops = $gameParty.numItems($dataItems.find(i => i && i.name === 'Obsidian Caltrops')) - n0;
+            const cal = $dataItems.find(i => i && i.name === 'Stone Caltrops'); $gameParty.loseItem(cal, 99); const n0 = 0;
+            out.msg = yoon.rollWear(yoon.slotOfType(1), true); out.caltrops = $gameParty.numItems(cal) - n0;
             // glyph staves
             const sib = A(3); out.sibAhi = sib.skills().some(s => s.name === 'Keri');
             sib.forceChangeEquip(sib.slotOfType(1), W('Staff of Keri')); out.staffAhi = sib.skills().some(s => s.name === 'Keri');
@@ -96,7 +96,7 @@ module.exports = {
         t.eq(r.padaThrows, 1, 'a harpoon gives anyone one javelin throw');
         t.eq(r.dama, '3/2', "Dama: harpoon throw + 2 from Fishing Gear; 1 net + 1 from her Fisher's Gear set");
         t.eq(r.afterNet, '3/1', 'casting a net leaves the javelins and the other net');
-        t.eq(r.caltrops, 1, 'a broken obsidian weapon leaves Obsidian Caltrops: ' + r.msg);
+        t.eq(r.caltrops, 1, 'a broken stone weapon leaves Stone Caltrops: ' + r.msg);
         t.ok(!r.sibAhi && r.staffAhi, 'the Staff of Keri grants Keri, like the tattoo');
         t.eq(r.staffWho, 'Yoon,Sib,Juda,Tou', 'glyph staves: staff users only');
     }

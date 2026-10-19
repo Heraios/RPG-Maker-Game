@@ -37,11 +37,15 @@
  *   <Degrades To: 7>    Becomes weapon (or armor) #7 when it wears out.
  *                       Use 0 for "breaks and is gone".
  *   <Wear Chance: 15>   % chance to wear out each time it is used.
- *   <Breaks Into: 5>    When it breaks (Degrades To: 0), item #5 is added to
- *                       the inventory instead of nothing being left. Use it
- *                       for metal (copper) gear: an unusable broken item that
- *                       can be sold or repaired. Without it, broken stone,
- *                       bone and wood gear simply disappears.
+ *   <Breaks Into: 5, 9> When it breaks (Degrades To: 0), items #5 and #9 are
+ *                       added to the inventory: nothing that wears ever
+ *                       breaks into nothing (stone leaves Stone Caltrops,
+ *                       bone and shell Bonemeal, ceramic Potsherds, copper
+ *                       Scrap, and a haft or shaft Scrap Wood).
+ *   <Sheds: 9>          When it wears down to its next tier, item #9 is
+ *                       added: the part that came off (coral studs leave
+ *                       Bonemeal; a mahogany paddle's edging leaves its
+ *                       stone or teeth, and the mahogany body remains).
  *
  *   <Wear Rate: 50>     (armor, e.g. a charm) the wearer's weapons wear half
  *                       as often (Basalt Whetstone).
@@ -50,12 +54,15 @@
  *                       and may cause Bleed (50%): flying shards (ceramic).
  *
  * Repair:
- *   <Repair Kind: stone>   (worn weapon) what repairs it: stone, metal, organic
- *   <Repair: stone>        (item) restores the target's equipped worn weapons
+ *   <Repair Kind: sinew>   (worn weapon) what repairs it, by how it was made:
+ *                          sinew (lashed: knives, spears, harpoons), glue
+ *                          (set in glue: axes, hammers, clubs, maces,
+ *                          paddle-swords), or smith (bent copper: only a
+ *                          smith straightens it, for a fee)
+ *   <Repair: sinew>        (item) restores the target's equipped worn weapons
  *                          of that kind to the tier they wore down from
- *                          (Pine-Pitch Glue: stone; Copper Patch: metal;
- *                          Sinew Binding: organic). Can't be used if nothing
- *                          needs it.
+ *                          (Sinew Binding: sinew; Glue: glue). Can't be used
+ *                          if nothing needs it.
  *
  * Items without <Degrades To> never wear (bronze, unique items...).
  *
@@ -105,10 +112,12 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
                     if (!obj) return;
                     var to = /<Degrades To:\s*(\d+)>/i.exec(obj.note);
                     var chance = /<Wear Chance:\s*(\d+)>/i.exec(obj.note);
-                    var remains = /<Breaks Into:\s*(\d+)>/i.exec(obj.note);
+                    var remains = /<Breaks Into:\s*([\d,\s]+)>/i.exec(obj.note);
+                    var sheds = /<Sheds:\s*(?:item\s*)?(\d+)>/i.exec(obj.note);
+                    obj.siSheds = sheds ? Number(sheds[1]) : 0;
                     obj.siDegradesTo = to ? Number(to[1]) : -1;
                     obj.siWearChance = chance ? Number(chance[1]) : 0;
-                    obj.siBreaksInto = remains ? Number(remains[1]) : 0;
+                    obj.siBreaksInto = remains ? remains[1].split(',').map(Number).filter(Boolean) : [];
                     var rk = /<Repair Kind:\s*(\w+)>/i.exec(obj.note);
                     obj.siRepairKind = rk ? rk[1].toLowerCase() : null;
                     var shatter = /<Shatter Hit:\s*(\d+)>/i.exec(obj.note);
@@ -196,12 +205,14 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
         this._equips[slotId].setObject(next);
         this.refresh();
         if (next) {
-            return $.wornMessage.format(this.name(), item.name, next.name);
+            var shed = item.siSheds > 0 ? $dataItems[item.siSheds] : null;
+            if (shed) $gameParty.gainItem(shed, 1);
+            return $.wornMessage.format(this.name(), item.name, next.name) + (shed ? ' (' + shed.name + ' left over)' : '');
         }
-        var remains = item.siBreaksInto > 0 ? $dataItems[item.siBreaksInto] : null;
-        if (remains) {
-            $gameParty.gainItem(remains, 1);
-            return $.brokenKeptMessage.format(this.name(), item.name, remains.name);
+        var remains = (item.siBreaksInto || []).map(function(id) { return $dataItems[id]; }).filter(Boolean);
+        if (remains.length) {
+            remains.forEach(function(r) { $gameParty.gainItem(r, 1); });
+            return $.brokenKeptMessage.format(this.name(), item.name, remains.map(function(r) { return r.name; }).join(' and '));
         }
         return $.brokenMessage.format(this.name(), item.name);
     };
@@ -244,7 +255,7 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
     Game_Actor.prototype.isShattering = function() {
         var p = this._siPendingWear;
         var weapon = p && p.worn ? this.equips()[p.slotId] : null;
-        return !!weapon && weapon.siShatterHit > 0 && weapon.siDegradesTo === 0 ? weapon : null;
+        return !!weapon && weapon.siShatterHit > 0 && (weapon.siDegradesTo === 0 || weapon.siSheds > 0) ? weapon : null;
     };
 
     var _Game_Action_executeDamage = Game_Action.prototype.executeDamage;

@@ -423,8 +423,7 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
   50%). Meant to be used up.
 - **Wood and fire-hardening:** raw wood (Ebony Club, Heather Staff, Rain-Tree Staff, Wooden Spear, Bare
   Club) wears slowly (2%) and splits. **Fire-hardened** versions never wear, and their wielder takes
-  **10% less Fire damage**. Hardening will be a campfire crafting action later; for now they are found
-  or bought.
+  **10% less Fire damage**. Fire-hardening is a campfire recipe (see Crafting).
 - **Dragonheart Greatsword:** naturally fire-hardened by its resin (10% less Fire damage, wears at only
   1%), and **starts every battle sealed in Resin** (blocks the first hit). The Cracked one keeps the fire
   resistance but has lost its resin shell.
@@ -815,13 +814,98 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
 Syrup Berries aren't a meal: Fatigue −5 (every basic wild fruit eases Fatigue by 5; each biome has its own), and they boil into Berry Syrup.
 
 Talk: the Cave children and forest child-fae like **Dried Figs**; seals and crabs **Shellfish**; cave rats
-**Grilled Meat**; Boar-Men **Islander Wine**. Raw Meat waits for crafting (cooking).
+**Grilled Meat**; Boar-Men **Islander Wine**. Raw Meat is cooked into Grilled Meat at a campfire (see Crafting).
 
 **Materials** drop from enemies now and are kept for crafting: Sinew, Bone, Antler, Goat Wool, Mouflon Wool,
-Seal Skin, Tortoise Scute, Obsidian Shard, Lead/Copper/Silver Ore, Tin, Sulfur, Pine Pitch, Orchil Lichen,
-Clay, Coral, Pearl, Olivine, Red Ochre, Sea Salt, Red Scoria, White Clay, Red Mahogany, Palm Fronds,
-Sandalwood, Gourd, and trophies (Green Horse Bough, Guardian Lizard Scale, Black Hound Pelt, Hag-Crane
-Feather). Crafting will spend cowries directly from money.
+Seal Skin, Tortoise Scute, Obsidian Shard, Lead and Copper Ore, Sulfur, Pine Pitch, Orchil Lichen,
+Clay, Coral, Pearl, Olivine, Red Ochre, Sea Salt, Red Scoria, White Clay, Palm Fronds, Gourd, and trophies
+(Green Horse Bough, Guardian Lizard Scale, Black Hound Pelt, Hag-Crane Feather). Wood, fuel, stones, ingots
+and remains are listed under Crafting.
+
+### Crafting
+`SI_Crafting.js`. Crafting happens at **places**: you interact with a station.
+
+**Stations**
+- **Campfire:** in the wilds, often at Red Bowl, Sooty Bird or Star Mother idols. Must be **lit** with a
+  **Fire-Starting Kit** (used up, once per session) and fed **fuel**. Not a rest point.
+- **Earth oven:** villages, some ritual sites and resting areas. Always lit (unless the plot abandons the
+  village), but still needs fuel, and gets more from it. Does every campfire recipe plus pottery, baking,
+  drying and salting.
+- **NPC crafters:** smith, tanner, weaver, tattooist, herbalist, electroplater. They take **materials plus
+  cowries**, know all their own recipes, and sell recipes and portable equipment. If the plot abandons
+  their village, they usually move away or die.
+- Crafting yourself costs **materials only**. Party members don't matter.
+
+**Fuel** adds charges to the fire for this session. A recipe that needs the fire uses 1 charge; carving,
+knapping, lashing and sewing don't. **Melting metal** also needs peat or coal to have gone in this session.
+**Leaving the area** ends the session and unused charges are lost (the station warns you; a map note
+`<Area: name>` lets a village's buildings share one area).
+
+| Fuel | Campfire | Earth oven |
+|---|---|---|
+| Scrap Wood (also all driftwood) | 1 | 1 |
+| Branch | 2 | 3 |
+| Log | 3 | 4 |
+| Peat (marshes) | 4 | 5 |
+| Brown Coal (marshes, caves) | 5 | 7 |
+
+**Recipes** are items (the Recipes category). You know a campfire or oven recipe while you carry it. Each is
+bought **or** found, never both. **Carving is always known.** Every recipe takes **one of each** ingredient,
+and only items in the bag are used, never equipped gear.
+
+**Portable equipment** (key items): **Knapping Kit** (stone blades and heads; **Sib starts with one**),
+**Fletching Kit** (arrows and bows; **Pada's**), **Backstrap Loom** (weaving; the weaver), **Needle &
+Thread** (charms, clothing, nets and floats), **Cooking Pot** (boiling: syrups, teas, dyes, bone glue; the
+herbalist), **Quern** (grinding flour, pigments, bonemeal and herb powders), **Crucible & Mold** (melting
+your own ingots; the smith).
+
+**Wood** comes from trees: cutting one gives a branch, and rarely a log, once per session (when overworld
+harvesting exists). Each weapon type takes one or two woods, and the wood passes on its trait:
+
+| Weapon | Woods | Why |
+|---|---|---|
+| Spears | **Ash** (light: AGI +2) or **Pine** (resin: 10% less Fire damage); Heather for the plain Wooden Spear | A shaft must be long, straight and a little springy |
+| Clubs, maces | **Ebony** (hard, heavy) or **Mahogany** (never splits) | A club *is* its wood |
+| Axes, adzes, hammers | **Juniper** haft (durable) | The head does the work; the haft takes the shock |
+| Paddle-swords | **Ebony** or **Mahogany** | The body must hold teeth or stone set along its edge |
+| Staves | **Heather**, **Sacred Rain Tree** (glyphs come easier; never cut, only fallen or given), **Sandalwood** (Calm) | Three tiers for the casters |
+| Bows | **Yew** or **Juniper** | The classic longbow wood, and the small dry-slope bow |
+| Greatsword | **Dragonheart** only | Unique |
+
+Laurel, Wax Myrtle (burns well), Honey Palm and Driftwood are firewood and building wood.
+
+**Weapons**
+- **Knives:** blade + **Sinew** + **Leather**. Stone blades need the Knapping Kit.
+- **Spears:** carve a wooden spear (Ash, Pine or Heather), then + **Sinew** + a stone head. Wooden spears can
+  be fire-hardened instead. Harpoons: Wooden Spear + Sinew + Bone or Shark Tooth.
+- **Axes, adzes, hammers:** carve a Juniper Club, then + **Glue** + a stone head.
+- **Clubs and maces:** carve an Ebony or Mahogany Club, then + **Glue** + coral studs, or clay (or
+  potsherds) for a ceramic mace head at an earth oven. A Bare Club can be re-studded.
+- **Paddle-swords:** carve an Ebony or Mahogany Paddle from a log, then + **Glue** + shark teeth, obsidian,
+  jasper or chalcedony edging. On mahogany, worn-off edging leaves the plain Mahogany Paddle.
+- **Staves:** carved from a branch; glyph staves are finished by a **tattooist**.
+- **Swords** aren't crafted, except the **Dragonheart Greatsword**: a dragonheart branch, carved and
+  fire-hardened.
+- Sinew lashes the light weapons (knives, spears); glue sets the heavy ones (axes, maces, clubs, hammers,
+  paddle-swords).
+- Stone heads are not separate items: the stone goes straight into the weapon recipe.
+
+**Metal.** You never forge weapons yourself.
+- Copper Ore, Lead Ore and scrap **melt into ingots**: at the smith for a fee, or yourself with a
+  **Crucible & Mold** (peat or coal on the fire). The island's silver is all in its lead (galena), so
+  **lead sometimes also gives a Silver Ingot** (10%). Scrap copper-silver gives a copper and a silver ingot.
+  There is no silver ore and no tin: players should never wonder why they can't make bronze.
+- The **smith** makes copper weapons from ingots, and **straightens** bent copper, for a fee.
+- The **electroplater** plates a copper weapon with a Silver Ingot into copper-silver, for a fee.
+- Bronze, black bronze, grown coral and the mythic trophy weapons are never crafted.
+
+**Other recipes so far:** Glue (pine pitch, or bonemeal in the Cooking Pot), Sinew Binding, Leather (tanner;
+smoke-tanning at a campfire later), Grilled Meat, Berry Syrup (Cooking Pot), Lead Shot (Crucible & Mold).
+**Remains** feed back in: Bonemeal makes pottery, glue and paint; pottery takes raw clay **or** Potsherds;
+Scrap Wood is fuel.
+
+**Test room:** a row of stations (campfire, earth oven, smith, tanner, weaver, tattooist, herbalist,
+electroplater), and the chest gives every recipe, kit, wood, fuel and material.
 
 ### Party switching
 - **Switch** battle command: lists reserve members (everyone beyond the four battle slots).
@@ -909,9 +993,16 @@ slings; Pada and Parl bows; Dama, Falmi and Theenmy javelins; Dama nets.
 | Copper | Bent, then breaks into **Scrap Copper** (kept) | 2%, then 3% |
 | Copper-silver | Bent, then breaks into **Scrap Copper-Silver** (kept) | 1%, then 2% |
 | Dragonheart wood | Cracked, then breaks | 1%, then 2% |
-| Coral studs | Bare Club (raw wood) | 6% |
+| Coral studs | Bare Club (raw wood); the studs leave **Bonemeal** | 6% |
 | Ceramic | Shatters (breaks; that swing hits ×1.5) | 10% |
-| Raw wood (ebony, heather, rain-tree) | Splits and breaks | 2% |
+| Raw wood (ebony, heather, rain-tree, juniper, ash, pine) | Splits and breaks | 2% |
+| Mahogany-bodied edging and heads | Fall off, leaving the plain Mahogany Paddle or Club | as the edging |
+
+**Nothing that wears breaks into nothing** (`<Breaks Into: a, b>`): stone leaves **Stone Caltrops**; shell,
+teeth, tusk and bone leave **Bonemeal**; ceramic leaves **Potsherds**; copper leaves **Scrap**; and anything
+with a haft or shaft also leaves **Scrap Wood**. Repairs follow how a weapon was made: **Sinew Binding** for
+sinew-lashed weapons (knives, spears, harpoons), **Glue** for glued ones (axes, hammers, clubs, maces,
+paddle-swords), and only a **smith** straightens bent copper, for a fee.
 | Fire-hardened wood, bronze, black bronze | never wear | — |
 
 These are placeholder examples; real wear rates need playtesting.

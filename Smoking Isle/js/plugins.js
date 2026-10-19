@@ -26,5 +26,6 @@ var $plugins =
 {"name":"SI_Layout","status":true,"description":"Smoking Isle: readability layout for battle and equipment screens.","parameters":{"Rest Threshold":"85"}},
 {"name":"SI_Outfits","status":true,"description":"Smoking Isle: armor sets with bonuses, and charm effects (caves, first hits, ranged, criticals, crumbling wards, whispers...).","parameters":{"Set Evasion Cap":"0.15"}},
 {"name":"SI_Meals","status":true,"description":"Smoking Isle: food raises stats for good, one meal per rest, a few times per food.","parameters":{"Default Cap":"3"}},
+{"name":"SI_Crafting","status":true,"description":"Smoking Isle: crafting at campfires, earth ovens and NPC crafters, with fuel, recipes and portable equipment.","parameters":{}},
 {"name":"SI_Screen","status":true,"description":"Smoking Isle: widescreen fixes, FFX-style battle layout, word wrap for dialogue and the battle log, and a Battle Text speed option.","parameters":{"Battle Text Speeds":"72,48,24"}}
 ];

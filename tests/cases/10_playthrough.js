@@ -40,6 +40,13 @@ module.exports = {
         if (!s.busy) break;
         await h.page.keyboard.press('Enter'); await h.page.waitForTimeout(100);
       }
+      // A crafting station opens its own screen: leave it again.
+      if (/^\d+:Craft:/.test(ev)) await h.page.waitForFunction(() => SceneManager._scene instanceof Scene_SICraft && SceneManager._sceneStarted);
+      if (await h.eval(() => window.Scene_SICraft && SceneManager._scene instanceof Scene_SICraft)) {
+        await h.page.waitForTimeout(300);
+        await h.eval(() => SceneManager.pop());
+        await h.page.waitForFunction(() => SceneManager._scene instanceof Scene_Map && SceneManager._sceneStarted);
+      }
       const inBattle = await h.eval(() => SceneManager._scene instanceof Scene_Battle);
       if (inBattle) {
         await h.page.waitForFunction(() => SceneManager._sceneStarted);
