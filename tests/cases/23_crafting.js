@@ -11,7 +11,8 @@ module.exports = {
             P.allItems().slice().forEach(i => P.loseItem(i, 999));
             $gameSystem._siCraft = null;
             // a campfire must be lit before fuel goes in
-            give('Laurel Branch', 3);
+            give('Laurel Branch', 3); give('Heather Branch');
+            out.unlitCarve = C.problem(C.recipes.find(x => x.name === 'Wooden Spear'), 'campfire');
             out.unlitFuel = C.addFuel(IT('Laurel Branch'), 'campfire');
             out.noKit = C.light();
             give('Fire-Starting Kit'); out.lit = C.light() && P.numItems(IT('Fire-Starting Kit')) === 0;
@@ -53,6 +54,7 @@ module.exports = {
             out.either = C.recipes.find(x => x.name === 'Ceramic Mace').ins.map(a => a.length).join(',');
             return out;
         });
+        t.eq(r.unlitCarve, 'Light the fire first.', 'nothing is made at an unlit campfire, not even carving');
         t.eq(r.unlitFuel, 0, 'fuel can\'t go on an unlit campfire');
         t.eq(r.noKit, false, 'lighting needs a Fire-Starting Kit');
         t.ok(r.lit, 'the Fire-Starting Kit lights it and is used up');
@@ -101,5 +103,27 @@ module.exports = {
         t.eq(r.studs, 'Bare Club/2', 'coral studs come off as Bonemeal');
         t.eq(r.neverNothing, '', 'nothing that wears breaks into nothing');
         t.eq(r.kits, 'true/true', 'Sib brings the Knapping Kit and Pada the Fletching Kit');
+    },
+
+    'resting point and the tired warning': async (h, t) => {
+        await h.newGame();
+        const r = await h.eval(() => {
+            const out = {}, ce = $dataCommonEvents[3];
+            out.rest = ce.name + ': ' + ce.list.find(c => c.code === 102).parameters[0].join('/');
+            out.restHeals = ce.list.some(c => c.code === 314);
+            out.inTestRoom = $gameMap.events().some(e => e.event().name === 'Resting Point');
+            $gameSystem._siTiredWarned = false; $gameParty.members()[0].setTp(80);
+            BattleManager.endBattle(0);
+            return out;
+        });
+        await h.page.waitForTimeout(500);
+        const msg = await h.eval(() => ({ text: $gameMessage._texts.join(' '), warned: $gameSystem._siTiredWarned }));
+        await h.pumpMessages();
+        const again = await h.eval(() => { $gameParty.members()[0].setTp(90); BattleManager.endBattle(0); return !!$gameTemp._siTiredPending; });
+        t.eq(r.rest, 'Resting Point: Sleep/Craft (earth oven)/Save/Leave', 'the Resting Point common event offers sleep, crafting and saving');
+        t.ok(r.restHeals, 'sleeping is a full recovery (which also clears Fatigue and hunger)');
+        t.ok(r.inTestRoom, 'the test room has a Resting Point');
+        t.ok(/getting tired/.test(msg.text) && msg.warned, 'leaving a battle tired brings up the warning: ' + msg.text);
+        t.eq(again, false, 'the warning only comes once');
     }
 };

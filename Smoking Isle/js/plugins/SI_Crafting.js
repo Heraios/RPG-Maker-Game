@@ -21,8 +21,9 @@
  *                                            weaver, tattooist, herbalist,
  *                                            electroplater
  *
- * Campfires need lighting (a Fire-Starting Kit, used up) and fuel. Ovens are
- * always lit but still need fuel, and get more from it. NPC crafters need no
+ * Campfires need lighting (a Fire-Starting Kit, used up) before anything can
+ * be made there: making camp is the pause. Ovens are always lit. Both need
+ * fuel for recipes that use the fire, and ovens get more from it. NPC crafters need no
  * fuel; they charge cowries on top of the materials.
  *
  * Fuel adds charges to the fire for this session. A recipe that needs the
@@ -221,6 +222,7 @@ SmokingIsle.Crafting = SmokingIsle.Crafting || {};
 
     // Why it can't be made right now, or '' if it can.
     $.problem = function(recipe, station) {
+        if (station === 'campfire' && !$.isLit(station)) return 'Light the fire first.';
         var missing = recipe.ins.filter(function(alts, i) { return !$.pick(recipe)[i]; }).map(function(alts) {
             return alts.map(function(ref) { return $.object(ref).name; }).join(' or ');
         });

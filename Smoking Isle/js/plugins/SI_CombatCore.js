@@ -30,6 +30,16 @@
  * @desc Whether taking damage adds Fatigue (MV's default TP behaviour).
  * @default false
  *
+ * @param Tired Warning At
+ * @type number
+ * @desc The first time anyone ends a battle at or above this much Fatigue,
+ * the game says it's time to rest (once per game). 0 = never.
+ * @default 75
+ *
+ * @param Tired Warning
+ * @desc The message.
+ * @default You're getting tired. Find a resting point to sleep, or turn back.
+ *
  * @param Recover All Clears Fatigue
  * @type boolean
  * @desc Whether "Recover All" (inns, events) also resets Fatigue to 0.
@@ -122,6 +132,8 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
     $.wearyRecovery = Number(params['Weary Recovery'] || 50);
     $.fatigueFromDamage = params['Fatigue From Damage'] === 'true';
     $.recoverAllClearsFatigue = params['Recover All Clears Fatigue'] !== 'false';
+    $.tiredAt = Number(params['Tired Warning At'] || 75);
+    $.tiredText = String(params['Tired Warning'] || "You're getting tired. Find a resting point to sleep, or turn back.");
     $.hideMovesInBattle = params['Hide Unusable Moves In Battle'] !== 'false';
 
     //-------------------------------------------------------------------------
@@ -394,6 +406,25 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
         this.drawText(TextManager.tpA, x, y, 44);
         this.changeTextColor(this.tpColor(actor));
         this.drawText(Math.floor(actor.tp), x + width - 64, y, 64, 'right');
+    };
+
+    // The first time anyone leaves a battle tired, say it's time to rest (once per game).
+    var _BattleManager_endBattle = BattleManager.endBattle;
+    BattleManager.endBattle = function(result) {
+        _BattleManager_endBattle.call(this, result);
+        if ($.tiredAt > 0 && !$gameSystem._siTiredWarned && $gameParty.members().some(function(a) { return a.tp >= $.tiredAt; })) {
+            $gameTemp._siTiredPending = true;
+        }
+    };
+
+    var _Scene_Map_update = Scene_Map.prototype.update;
+    Scene_Map.prototype.update = function() {
+        _Scene_Map_update.call(this);
+        if ($gameTemp._siTiredPending && !$gameMessage.isBusy() && !$gameMap.isEventRunning() && !SceneManager.isSceneChanging()) {
+            $gameTemp._siTiredPending = false;
+            $gameSystem._siTiredWarned = true;
+            $gameMessage.add($.tiredText);
+        }
     };
 
     var _Game_BattlerBase_recoverAll = Game_BattlerBase.prototype.recoverAll;

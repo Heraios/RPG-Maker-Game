@@ -33,6 +33,10 @@ module.exports = {
     const events = await h.eval(() => $gameMap.events().map(e => e.eventId() + ':' + e.event().name));
     for (const ev of events) {
       const id = Number(ev.split(':')[0]);
+      if (await h.eval(() => window.Scene_SICraft && SceneManager._scene instanceof Scene_SICraft)) {   // a late craft screen
+        await h.eval(() => SceneManager.pop());
+        await h.page.waitForFunction(() => SceneManager._scene instanceof Scene_Map && SceneManager._sceneStarted);
+      }
       await h.eval(id => $gameMap.event(id).start(), id);
       for (let i = 0; i < 80; i++) {
         const s = await h.eval(() => ({ battle: SceneManager._scene instanceof Scene_Battle, busy: $gameMessage.isBusy() || $gameMap.isEventRunning(), choice: $gameMessage.isChoice() }));
@@ -41,7 +45,11 @@ module.exports = {
         await h.page.keyboard.press('Enter'); await h.page.waitForTimeout(100);
       }
       // A crafting station opens its own screen: leave it again.
-      if (/^\d+:Craft:/.test(ev)) await h.page.waitForFunction(() => SceneManager._scene instanceof Scene_SICraft && SceneManager._sceneStarted);
+      // (it may open late, if an earlier test battle is still running)
+      for (let i = 0; /^\d+:Craft:/.test(ev) && i < 150; i++) {
+        if (await h.eval(() => SceneManager._scene instanceof Scene_SICraft && SceneManager._sceneStarted)) break;
+        await h.page.waitForTimeout(200);
+      }
       if (await h.eval(() => window.Scene_SICraft && SceneManager._scene instanceof Scene_SICraft)) {
         await h.page.waitForTimeout(300);
         await h.eval(() => SceneManager.pop());

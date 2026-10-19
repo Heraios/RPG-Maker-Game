@@ -836,8 +836,9 @@ and remains are listed under Crafting.
   their village, they usually move away or die.
 - Crafting yourself costs **materials only**. Party members don't matter.
 
-**Fuel** adds charges to the fire for this session. A recipe that needs the fire uses 1 charge; carving,
-knapping, lashing and sewing don't. **Melting metal** also needs peat or coal to have gone in this session.
+**Fuel** adds charges to the fire for this session. **Nothing is made at a campfire until it's lit**
+(making camp is the pause; the firelight is for working by), but only recipes that need heat use a
+charge: carving, knapping, lashing and sewing don't. **Melting metal** also needs peat or coal to have gone in this session.
 **Leaving the area** ends the session and unused charges are lost (the station warns you; a map note
 `<Area: name>` lets a village's buildings share one area).
 
@@ -919,8 +920,19 @@ electroplater), and the chest gives every recipe, kit, wood, fuel and material.
   switching rules.
 
 ### Resting
-**Camp sites** fully restore Fatigue: logical places like Yoon's family house, bothy-style
-survival shelters in the mountains, and hunters' camps in the various biomes.
+**The loop:** explore, harvest and fight until Fatigue gets high, then turn back or find a **resting
+point** to craft, heal and sleep.
+
+**Resting points** fully restore HP, MP and Fatigue (and everyone can eat a meal again): logical places
+like Yoon's family house, bothy-style survival shelters in the mountains, villages, and hunters' camps in
+the various biomes. Each uses the **Resting Point** common event (Common Event 3): **Sleep** (full
+recovery), **Craft** at its earth oven, **Save**, or **Leave**. Copy an event that calls it anywhere.
+
+**Campfires are not resting points.** They're pit stops for crafting along the way: light one, feed it
+fuel, make what you need, and move on with your Fatigue as it was.
+
+**The tired warning:** the first time anyone leaves a battle at 75 Fatigue or more, the game says it's
+time to rest (once per game; `SI_CombatCore` parameters *Tired Warning At* and *Tired Warning*).
 
 **Resting skills** are physical (not spells, with a few exceptions) and live in the **Rest**
 menu, so effects that block Physical skills (Weary, Mired) don't block resting.
