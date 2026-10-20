@@ -42,7 +42,7 @@ module.exports = {
             return { main, tactics, types, physical, itemOpen, backToTactics, rest, restBack, yoonTypes };
         });
         t.eq(r.main.join('/'), 'Fight/Talk/Tactics', 'main menu');
-        t.eq(r.tactics.join('/'), 'Resting/Weapon Swap/Item/Escape', 'Tactics submenu (no reserve members, so no Switch)');
+        t.eq(r.tactics.join('/'), 'Resting/Weapon Swap/Bag/Flee', 'Tactics submenu (no reserve members, so no Switch)');
         t.eq(r.types.join('/'), 'Physical/Magical', 'Fight: only the types this character has skills in');
         t.eq(r.physical.slice(0, 2).join('/'), 'Punch/Guard', 'Physical starts with Punch and Guard: ' + r.physical);
         t.ok(r.rest.includes('Catch Breath'), 'Resting (under Tactics) lists the resting skills: ' + r.rest);

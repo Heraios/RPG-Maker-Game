@@ -63,8 +63,14 @@
  *   <Guard Vs: spirit 30>    30% less damage from enemies of that kind
  *   <Drag Back>              once a battle, the first fallen ally is pulled
  *                            back up at 1 HP (Patience's Medicine Pack)
- *   <Quiets Whisper: Coral Eye Fragment>
- *                            worn together, that item's whisper stays silent
+ *   <Quiets Whisper: Coral Eye Fragment, Grown-Coral Helm>
+ *                            worn together, those items' whispers stay silent
+ *   <Call Protector>         the first enemy attack on the wearer each battle
+ *                            is taken by the toughest adult in the party
+ *                            (Gourd Whistle)
+ *   <Ailment Ward>           the first ailment (Elemental, Ailment or Mental
+ *                            state) each battle is shrugged off
+ *                            (Grandmother's Knot-Cord)
  *
  * A set's "all" bonus needs one piece in every slot the set covers, so a set
  * can have two pieces for the same slot (Tapa Wrap, Ochre-Stamped Wrap).
@@ -129,7 +135,9 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         t.guardVs = gv ? { kind: gv[1].toLowerCase(), rate: Number(gv[2]) / 100 } : null;
         t.dragBack = /<Drag Back>/i.test(note);
         var q = /<Quiets Whisper:\s*([^>]+)>/i.exec(note);
-        t.quiets = q ? q[1].trim() : '';
+        t.quiets = q ? q[1].split(',').map(function(n) { return n.trim(); }) : null;
+        t.callProtector = /<Call Protector>/i.test(note);
+        t.ailmentWard = /<Ailment Ward>/i.test(note);
         var setRe = /<Set:\s*([^>(]+?)\s*(?:\(([^)]+)\))?\s*>/gi, sm;
         t.sets = [];
         while ((sm = setRe.exec(note))) t.sets.push({ name: sm[1].trim(), part: sm[2] ? sm[2].trim().toLowerCase() : 'slot ' + obj.etypeId });
@@ -366,6 +374,8 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         this._siFirstHitDone = false;
         this._siFirstPhysicalDone = false;
         this._siDragBackUsed = false;
+        this._siCalledProtector = false;
+        this._siAilmentWarded = false;
         if (this.isActor() && this.gainCharge && this.pile && this.pile()) {
             var charge = $.sum(this, 'startCharge');
             if (charge > 0) this.gainCharge(charge);
@@ -391,7 +401,7 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
     Game_Battler.prototype.onTurnEnd = function() {
         _Game_Battler_onTurnEnd.call(this);
         if (!this.isActor() || !this.isAlive() || !$gameParty.inBattle()) return;
-        var quiet = $.objects(this, 'quiets').map(function(obj) { return obj.siOutfit.quiets; });
+        var quiet = [].concat.apply([], $.objects(this, 'quiets').map(function(obj) { return obj.siOutfit.quiets; }));
         $.objects(this, 'whisper').forEach(function(obj) {
             if (quiet.indexOf(obj.name) >= 0) return;
             var w = obj.siOutfit.whisper;
@@ -422,10 +432,45 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         this._escapeRatio += $gameParty.battleMembers().reduce(function(sum, a) { return sum + $.sum(a, 'escape'); }, 0);
     };
 
+    // <Call Protector>: the first enemy attack on the wearer each battle goes
+    // to the toughest adult in the party instead.
+    var _BattleManager_applySubstitute = BattleManager.applySubstitute;
+    BattleManager.applySubstitute = function(target) {
+        var action = this._action;
+        if (target.isActor() && !target._siCalledProtector && $.objects(target, 'callProtector').length > 0 &&
+                action && action.subject().isEnemy() && action.isForOne() && action.isDamage()) {
+            var adults = $gameParty.battleMembers().filter(function(a) {
+                return a !== target && a.isAlive() && a.canMove() && a.isChild && !a.isChild() && !(a.isPseudoMember && a.isPseudoMember());
+            }).sort(function(a, b) { return b.hp - a.hp; });
+            target._siCalledProtector = true;
+            if (adults.length) {
+                this._logWindow.displaySubstitute(adults[0], target);
+                return adults[0];
+            }
+        }
+        return _BattleManager_applySubstitute.call(this, target);
+    };
+
+    // Elemental (71-110), Ailment (111-150) and Mental (151-190) states.
+    $.isAilment = function(stateId) {
+        return stateId >= 71 && stateId <= 190 && !!$dataStates[stateId] && !!$dataStates[stateId].name;
+    };
+
     // A prayer strip takes one mental ailment for its wearer, then crumbles.
+    // A knot-cord shrugs off the first ailment each battle.
     var _Game_Battler_addState = Game_Battler.prototype.addState;
     Game_Battler.prototype.addState = function(stateId) {
         var A = SmokingIsle.Ailments;
+        if (this.isActor() && $gameParty.inBattle() && !this._siAilmentWarded && $.isAilment(stateId) &&
+                this.isStateAddable(stateId) && !this.isStateAffected(stateId)) {
+            var ward = $.objects(this, 'ailmentWard')[0];
+            if (ward) {
+                this._siAilmentWarded = true;
+                this._siWearMessages = (this._siWearMessages || []).concat(
+                    ['%1\'s %2 wards off %3!'.format(this.name(), ward.name, $dataStates[stateId].name)]);
+                return;
+            }
+        }
         if (this.isActor() && A && A.isMental(stateId) && this.isStateAddable(stateId) && !this.isStateAffected(stateId)) {
             var slotId = this.equips().findIndex(function(e) { return e && e.siOutfit && e.siOutfit.crumblingWard; });
             if (slotId >= 0) {

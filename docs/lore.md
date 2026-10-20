@@ -485,6 +485,9 @@ Destroyer** (revealed later).
 - **Conducting Edge is an Islander technique.**
 - **Cattle:** domesticated cattle came with the All-Seafarers; the island has rare wild,
   aurochs-like cattle.
+- **Horses:** the island has none, and Islanders have **never seen one** until the invasion (Act 4),
+  when the All-Seafarers bring **horses and chariots**. Chariots need open, flat ground (grassland,
+  the Zonfahare ridge, Afarohare's terraces) and are useless in forest, tubes, marsh or mountains.
 
 ### Weapon materials (decided)
 | Material | Made into | Notes |

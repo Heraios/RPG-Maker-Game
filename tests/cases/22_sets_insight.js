@@ -44,7 +44,7 @@ module.exports = {
         t.ok(r.officer.includes("Officer's Kit (all)"), "signet, compass and a codex: the full Officer's Kit");
         t.between(r.partyAgi, 1.03, 1.07, "the Officer's Kit raises everyone's AGI");
         t.eq(r.lizard, 'Guardian Lizard (1),Guardian Lizard (all)', 'the Guardian Lizard set');
-        t.eq(r.terms, 'Spirit/Wits', 'MDF and LUK are shown as Spirit and Wits');
+        t.eq(r.terms, 'Resolve/Wits', 'MDF and LUK are shown as Resolve and Wits');
     },
 
     'aiming, Flaying Strike and the cleared default skills': async (h, t) => {

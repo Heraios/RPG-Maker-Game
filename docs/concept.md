@@ -635,6 +635,19 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Shore Dog (Patience) | Booties (Seal-Skin), Bell (Shell) | +10% evasion while Wet | Sea creatures start friendlier |
 | Cave Dog (Patience) | Collar (Glow-Bead), Booties (Hide) | +10% evasion in caves | Cave creatures start friendlier |
 | All-Seafarer Bronze | Head, Cuirass, Greaves (+ shield) | +DEF | Marines treat you as one of theirs (Ask, Plead), but you count as `<Metal>` |
+| Sailor's Kit (Seafarer crew) | Head, Shoulders (Tarred Cloak: resists Wet), Body (Linen Tunic), Feet | Resists Disoriented | +10% evasion while Wet; escape +10% |
+| Linen Armor (Seafarer marines) | Head (Quilted Cap), Cuirass, Greaves | 10% less Pierce damage | 20% less Pierce damage, but +10% Fire damage. Not metal, and light enough for children |
+| Court Dress (Seafarer nobles) | Head (Gilt Diadem), Shoulders (Orchil-Purple Mantle), Legs (Officer's Kilt), Feet | Ask and Plead +15% on soldiers | Resolve +10%; soldiers start friendlier |
+| Charioteer's Gear (Seafarer elite) | Head (Horsehair-Crested Helm, metal), Cuirass (Cowhide), Hands (Driving Gloves) | Ranged +10% | Speed +10%; the first attack on you each battle likelier misses |
+| Palm-Fibre | Head (Pufferfish Helm: 10% spikes), Cuirass, Greaves | 10% less Cut damage | 20% less Cut damage, but +15% Fire damage |
+| Sharkskin | Cuirass, Arms | Melee attackers take 10% back (1 piece) | Immune to Bleed; +10% evasion while Wet |
+| Deerskin | Cuirass, Arms, Greaves | Stalk +15% | You ambush enemies more often; deer start friendlier |
+| Slat Armor (wood) | Head (Carved Wooden Helm: Threaten +15%), Cuirass (Laurel, Pine or Mahogany), Arms, Greaves | 10% less Cut and Pierce, +10% Fire | 20% less Cut and Pierce, but +15% Crush and Fire. The Pine cuirass cancels the Fire weakness, the Mahogany one the Crush weakness. Every cuirass costs 1 Fatigue a turn |
+| Crew (First Sailor, child-sized) | Head, Body, Legs, Neck (Numbered Collar) | Fatigue builds 10% slower | First Sailor beings and the Children of the Caves take you for Crew and start friendlier |
+| Royal Regalia (First Sailor, child-sized) | Head (Queen's Feather Diadem), Shoulders (Mantle of Petitions), Body (Royal Tapa Robe), Feet | Max Mana +15% | First Sailor spells +15%; First Sailor beings start friendlier. **Tou starts in the diadem and robe**; the mantle and sandals are found in her palace |
+| Navigator's Raiment (First Sailor, adult-sized) | Head, Shoulders (Star-Chart Mantle), Body, Neck (Crescent Pectoral, also First Sailor Regalia) | +1 Insight | Spells cost 10% less Mana |
+| Black Bronze (First Sailor, adult-sized) | Head, Cuirass, Arms, Greaves | 10% less magic damage | 25% less magic damage. Shiny and `<Metal>`; heavy (Fatigue) |
+| Grown Coral (First Sailor; fits anyone) | Head, Cuirass (heals 2% Health a turn), Greaves | Water spells +10%; resists Wet | 15% less Cut damage; attackers take 15% back. **Every piece whispers Despair (3% a turn)**; the Scoria Pupil quiets it |
 
 Good outfits: Feather + Tapa (the priest), Goat-Skin + Pine Pitch (volcanic desert), Goat-Skin + Boar
 Hide (the hunter), Seal Leather + Tortoise Shell (coastal tank), Mouflon Wool + Boar Hide (alpine),
@@ -651,11 +664,26 @@ into armor types by where it is worn:
 | Large Shield | Bronze and tortoise-shell shields, dragon-tree wood shields | ✔ | ✔ | ✘ | ✘ |
 | Small Shield | Shield, bucklers | ✔ | ✔ | ✔ | ✔ |
 | Clothing, light leather, wool, feathers | Every other set | ✔ | ✔ | ✔ | ✔ |
+| **Child-Sized** | Crew clothing, Royal Regalia, the children's charms | ✘ | ✔ | ✔ | ✔ |
+| **Adult-Sized** | Navigator's Raiment, Black Bronze | ✔ | ✘ | ✘ | ✘ |
 
 - **Falmi** can use every shield and wears bronze helms and greaves, so they can get Bronze's
   2-piece bonus.
 - **Yoon's** demon/homunculus body is stronger than a child's: heavy helms and greaves and
   **two-handed weapons**, but no large shields.
+- **Children's charms** (Child-Sized): **Milk-Tooth Necklace** (Neck; Wits +3, spirits start
+  friendlier), **Gourd Whistle** (the first enemy attack on the child each battle is taken by the
+  toughest adult in the party; `<Call Protector>`) and **Grandmother's Knot-Cord** (shrugs off the
+  first ailment each battle; `<Ailment Ward>`).
+- **Seafarer charms:** **Horsehair Plume** (Brave at battle start) and **Bronze Horse-Bit** (Soothe +25%
+  on animals). Horses are new to the island: Islanders have never seen one before the invasion, and
+  chariots arrive with it (Act 4). **Cattle goods:** Cowhide, Horsehair, Ox Horn (materials); Salt Beef,
+  Cow's Milk, Seafarer Cheese (meals).
+- **Where things turn up:** the Sailor's Kit in Act 2 (Mansehare warehouses, Parl's hideout); Crew
+  clothing in Act 2 (the Children of the Caves' village and hoards, Lasa's people); Palm-Fibre,
+  Sharkskin, Deerskin and Slat Armor in Acts 1–2; Linen, Charioteer's Gear and the cattle goods with the
+  invasion (Act 4); Court Dress with Theenmy and Iras; Navigator's Raiment, Black Bronze and Grown Coral
+  in the ruins (late). Slat Armor will be a carving recipe once crafting can make armor.
 
 **Charms** (by biome): shark-tooth necklace, bone fishhook pendant, cowrie anklet,
 coral pendant (water spells +10%) on the beach; reed charm-bundle, hag-crane feather, leech jar in the
