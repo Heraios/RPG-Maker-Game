@@ -72,11 +72,11 @@ SmokingIsle.Layout = SmokingIsle.Layout || {};
         }
         var f = skill.siFatigue !== undefined ? skill.siFatigue : skill.tpGain;
         if (!f) return null;
-        return { text: (f > 0 ? '+' : '') + f + ' FT', rest: f < 0 };
+        return { text: (f > 0 ? '+' : '') + f + ' ' + TextManager.tpA, rest: f < 0 };
     };
 
     Window_SkillList.prototype.costWidth = function() {
-        return this.textWidth('x5  000 MP  -00~00 FT');
+        return this.textWidth('x5  000 ' + TextManager.mpA + '  -00~00 ' + TextManager.tpA);
     };
 
     Window_SkillList.prototype.drawSkillCost = function(skill, x, y, width) {
@@ -87,7 +87,7 @@ SmokingIsle.Layout = SmokingIsle.Layout || {};
         var ch = SmokingIsle.Voltaic ? SmokingIsle.Voltaic.costText(this._actor, skill) : null;
         if (ch) parts.push({ text: ch, color: this.textColor(6) });
         var mp = this._actor ? this._actor.skillMpCost(skill) : skill.mpCost;
-        if (mp > 0) parts.push({ text: mp + ' MP', color: this.mpCostColor() });
+        if (mp > 0) parts.push({ text: mp + ' ' + TextManager.mpA, color: this.mpCostColor() });
         var f = $.fatigueText(skill);
         if (f) parts.push({ text: f.text, color: f.rest ? this.textColor(3) : this.tpCostColor() });
         var right = x + width;
