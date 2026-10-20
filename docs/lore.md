@@ -49,6 +49,11 @@ gameplay location**:
 | The Star Child | Graveyards | (with the dead) |
 | The Bird | Fast travel points, telegraph stations | **Fast travel** |
 
+**Meat is a gift from the gods to those sworn to them.** Each Islander eats only the meat of their own
+god's domain: those sworn to the **Red Bowl** eat land animals (Yoon's family), to **Sooty Bird** birds
+(its priests, Sib), and to the **Star Mother** sea creatures (Dama's spearwives). Plants, eggs and milk
+are not meat and are open to all.
+
 **The Lady of the Sun's chaining:** Islanders believe she was **dangerous**, so they see Juda's
 chaining of her as protection.
 

@@ -41,7 +41,7 @@ module.exports = {
             out.dayTroops = $gameMap.encounterList().length;
             const dial = IT('Sundial');
             out.dialItem = dial.itypeId + '/' + dial.effects.map(e => e.code + ':' + $dataCommonEvents[e.dataId].name).join();
-            out.restSleeps = $dataCommonEvents[3].list.some(c => c.code === 355 && /Time\.sleep/.test(c.parameters[0]));
+            out.restSleeps = $dataCommonEvents[3].list.some(c => c.code === 355 && /Idols\.rest/.test(c.parameters[0]));
             out.lamplight = /<Light>/.test($dataStates[SmokingIsle.Ailments.stateByName('Lamplight')].note);
             return out;
         });
@@ -60,7 +60,7 @@ module.exports = {
         t.ok(/no sun in here/.test(r.sundialIndoors), 'indoors the sundial is useless');
         t.eq(r.dayTroops, 0, 'by day the map\'s own encounters stay');
         t.eq(r.dialItem, '2/44:Sundial', 'the Sundial is a key item that runs the Sundial common event');
-        t.ok(r.restSleeps, 'the Resting Point sleeps until dawn');
+        t.ok(r.restSleeps, 'resting at a Star Mother idol sleeps until dawn');
         t.ok(r.lamplight, 'Lamplight counts as a light');
     },
 

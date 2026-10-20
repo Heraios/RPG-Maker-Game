@@ -105,13 +105,13 @@ module.exports = {
         t.eq(r.kits, 'true/true', 'Sib brings the Knapping Kit and Pada the Fletching Kit');
     },
 
-    'resting point and the tired warning': async (h, t) => {
+    'Star Mother idol and the tired warning': async (h, t) => {
         await h.newGame();
         const r = await h.eval(() => {
             const out = {}, ce = $dataCommonEvents[3];
             out.rest = ce.name + ': ' + ce.list.find(c => c.code === 102).parameters[0].join('/');
-            out.restHeals = ce.list.some(c => c.code === 314);
-            out.inTestRoom = $gameMap.events().some(e => e.event().name === 'Resting Point');
+            out.restHeals = ce.list.some(c => c.code === 355 && /Idols\.rest/.test(c.parameters[0])) && !ce.list.some(c => c.code === 314);
+            out.inTestRoom = ['Star Mother Idol', 'Red Bowl Idol', 'Sooty Bird Idol'].every(n => $gameMap.events().some(e => e.event().name === n));
             $gameSystem._siTiredWarned = false; $gameParty.members()[0].setTp(80);
             BattleManager.endBattle(0);
             return out;
@@ -120,9 +120,9 @@ module.exports = {
         const msg = await h.eval(() => ({ text: $gameMessage._texts.join(' '), warned: $gameSystem._siTiredWarned }));
         await h.pumpMessages();
         const again = await h.eval(() => { $gameParty.members()[0].setTp(90); BattleManager.endBattle(0); return !!$gameTemp._siTiredPending; });
-        t.eq(r.rest, 'Resting Point: Sleep/Craft (earth oven)/Save/Leave', 'the Resting Point common event offers sleep, crafting and saving');
-        t.ok(r.restHeals, 'sleeping is a full recovery (which also clears Fatigue and hunger)');
-        t.ok(r.inTestRoom, 'the test room has a Resting Point');
+        t.eq(r.rest, 'Star Mother Idol: Rest until dawn/Share a meal/Leave', 'the Star Mother idol offers rest and a shared meal');
+        t.ok(r.restHeals, 'resting is the idol\'s own rest, not a full recovery');
+        t.ok(r.inTestRoom, 'the test room has the three idols');
         t.ok(/getting tired/.test(msg.text) && msg.warned, 'leaving a battle tired brings up the warning: ' + msg.text);
         t.eq(again, false, 'the warning only comes once');
     }

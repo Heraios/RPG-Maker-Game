@@ -825,8 +825,8 @@ and crater lakes), both waiting on later systems.
 ### Meals (how stats grow)
 Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP, ATK, DEF, MAT and AGI grow**
 (`SI_Meals.js`). A meal is eaten outside battle: a small heal plus a permanent gain.
-- **One meal per rest:** a character who has eaten is full until the next rest (Recover All, e.g. the
-  campfire).
+- **Meals are eaten together at a Star Mother idol** (see Resting): one meal per rest, and the shared pot
+  heals everyone.
 - **Each food counts 3 times per character** (Default Cap); after that it only heals. The Sooty Bird Egg
   counts once.
 - The item screen's help box shows who has eaten it (e.g. "Yoon 2/3 (full)").
@@ -1046,18 +1046,32 @@ electroplater), and the chest gives every recipe, kit, wood, fuel and material.
 
 ### Resting
 **The loop:** explore, harvest and fight until Fatigue gets high, then turn back or find a **resting
-point** to craft, heal and sleep.
+area** to craft, eat and sleep.
 
-**Resting points** fully restore HP, MP and Fatigue (and everyone can eat a meal again): logical places
-like Yoon's family house, bothy-style survival shelters in the mountains, villages, and hunters' camps in
-the various biomes. Each uses the **Resting Point** common event (Common Event 3): **Sleep** (full
-recovery), **Craft** at its earth oven, **Save**, or **Leave**. Copy an event that calls it anywhere.
+**Resting areas** (`SI_Idols.js`) have **some** of four things, each its own event:
+| Thing | Common event | Does |
+|---|---|---|
+| **Red Bowl Idol** | 6 | **Save.** The only place to save: the menu has no Save command. |
+| **Sooty Bird Idol** | 7 | **Fast travel.** Touching one remembers it (event note `<Sooty Bird: Zonfahare>`); from any Sooty Bird idol you can fly to any other you've touched, landing on the tile below it. Flying takes a period of the day. **Not at night.** |
+| **Star Mother Idol** | 3 | **Rest until dawn** or **share a meal.** |
+| **Campfire / Earth Oven** | (crafting stations) | **Crafting.** |
 
-**Campfires are not resting points.** They're pit stops for crafting along the way: light one, feed it
-fuel, make what you need, and move on with your Fatigue as it was.
+Logical places: Yoon's family house, bothy-style shelters in the mountains, villages, hunters' camps.
 
-**The tired warning:** the first time anyone leaves a battle at 75 Fatigue or more, the game says it's
-time to rest (once per game; `SI_CombatCore` parameters *Tired Warning At* and *Tired Warning*).
+**Resting** (Star Mother) sleeps until the next dawn: it restores **Fatigue and Mana** and clears lingering
+ailments, but **not Health**. Anyone knocked out wakes with 1 Health. Everyone is hungry again.
+
+**Health comes back by eating.** At a Star Mother idol you **share a meal**: pick one food for each party
+member (Patience too); taboo foods can't be picked for someone who won't eat them. **Everything goes in one
+pot**: the Health (and Mana) of all the food heals **every** party member, even those who didn't eat (Pada,
+Juda); a Full Health food fills everyone. Each eater still gets their own food's lasting stat gain. One meal
+per rest. **Meals can't be eaten from the menu.**
+
+**Campfires are not resting areas** unless there's a Star Mother idol beside them. They're pit stops for
+crafting along the way.
+
+**The tired warning:** the first time anyone leaves a battle at 75 Fatigue or more, the game tells you to
+find a Star Mother idol (once per rest; `SI_CombatCore` parameters *Tired Warning At* and *Tired Warning*).
 
 **Resting skills** are physical (not spells, with a few exceptions) and live in the **Rest**
 menu, so effects that block Physical skills (Weary, Mired) don't block resting.

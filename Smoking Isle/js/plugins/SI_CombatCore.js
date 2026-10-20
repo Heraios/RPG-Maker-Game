@@ -38,7 +38,7 @@
  *
  * @param Tired Warning
  * @desc The message.
- * @default You're getting tired. Find a resting point to sleep, or turn back.
+ * @default You're getting tired. Find a Star Mother idol to rest, or turn back.
  *
  * @param Recover All Clears Fatigue
  * @type boolean
