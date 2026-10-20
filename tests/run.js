@@ -36,8 +36,15 @@ const GAME = path.join(ROOT, 'Smoking Isle');
 function prepareCopy() {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'smoking-isle-test-'));
     fs.cpSync(GAME, dir, { recursive: true });
-    // Battle Test mode loads Test_*.json, which only the editor creates.
+    // The tests expect a fixed setup, whatever the editor's Battle Test and starting party are set to
+    // while playtesting: Battle Test fights troop 13 (the Boar-Man), and New Game starts with actors 1-4.
     const data = path.join(dir, 'data');
+    const sysFile = path.join(data, 'System.json');
+    const system = JSON.parse(fs.readFileSync(sysFile, 'utf8'));
+    system.testTroopId = 13;
+    system.partyMembers = [1, 2, 3, 4];
+    fs.writeFileSync(sysFile, JSON.stringify(system));
+    // Battle Test mode loads Test_*.json, which only the editor creates.
     for (const f of fs.readdirSync(data)) {
         if (f.endsWith('.json') && !f.startsWith('Test_') && !/^Map\d+\.json$/.test(f)) {
             fs.copyFileSync(path.join(data, f), path.join(data, 'Test_' + f));

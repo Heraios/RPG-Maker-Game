@@ -3,3 +3,6 @@
 
 # Test tooling
 tests/node_modules/
+
+# RPG Maker writes these during Battle Test
+Smoking Isle/data/Test_*.json

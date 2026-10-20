@@ -57,6 +57,8 @@
  *   <Recipe Fee: 60>               cowries (NPC crafters)
  *   <Recipe Known>                 known without carrying the recipe
  *                                  (carving, and every NPC recipe)
+ *   <Recipe Unlit>                 can be made before a campfire is lit
+ *                                  (the Fire-Starting Kit itself)
  * Only items in the bag are used, never equipped gear.
  *
  * Actor note:
@@ -120,7 +122,8 @@ SmokingIsle.Crafting = SmokingIsle.Crafting || {};
             heat: /<Recipe (Heat|Smelt)>/i.test(note),
             smelt: /<Recipe Smelt>/i.test(note),
             fee: Number(tag('Recipe Fee') || 0),
-            known: /<Recipe Known>/i.test(note)
+            known: /<Recipe Known>/i.test(note),
+            unlit: /<Recipe Unlit>/i.test(note)
         };
     };
 
@@ -233,7 +236,7 @@ SmokingIsle.Crafting = SmokingIsle.Crafting || {};
 
     // Why it can't be made right now, or '' if it can.
     $.problem = function(recipe, station) {
-        if (station === 'campfire' && !$.isLit(station)) return 'Light the fire first.';
+        if (station === 'campfire' && !$.isLit(station) && !recipe.unlit) return 'Light the fire first.';
         var missing = recipe.ins.filter(function(alts, i) { return !$.pick(recipe)[i]; }).map(function(alts) {
             return alts.map(function(ref) { return $.object(ref).name; }).join(' or ');
         });

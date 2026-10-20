@@ -983,6 +983,27 @@ Raiment, Black Bronze, Grown Coral, Black Hound Regalia.
 | **Found** (gathered, dropped or bought; several possible) | Cave-Glow Stone, Hot-Spring Sinter, Snow Quartz, Pumice Stone, Lodestone, Raven/Eagle/Vulture Feathers, Blind Crab Shell, Ibex Horn Charm, Fire Opal, Volcano Tear, Sulfur Lump, Sacred Leaf Charm (fallen leaves at Tiltapu), Numbered Collar, Leech Jar (herbalist), Tattooist's Ink Pouch, Rubber-Coated Gloves, Cowrie Anklet (money on a string: bought), Tin Bead, Bronze Horse-Bit, Opal Earring |
 | **Unique** | Crescent Pectoral, Coral Eye Fragment, Scoria Pupil, Sailor's Compass, Bronze Signet, Family Seal, Milk-Tooth Necklace, Grandmother's Knot-Cord, Hag-Crane Feather, Lizard-Scale Charm, Master's Horn Amulet, Phonolite Bell, Barley-Doll Idol, Cave-Cricket Cage |
 
+**Consumables (built: 49 recipes).**
+- **Fire-Starting Kit:** carved from a branch (Heather, Laurel or Pine), Sinew and tinder (Palm Fronds, Marsh
+  Reed or Goat Wool). Always known, and it can be made **before the fire is lit** (`<Recipe Unlit>`), so
+  running out in the wild never strands you.
+- **Meals** (cooked ones raise every growth stat): Toasted Barley (always known; needs the **Trachyte Quern**),
+  Barley Bread, Lentil Stew and Palm Honey (Cooking Pot), Smoked Eel (over juniper), and at an **earth oven**
+  (village work): Dried Fish, Goat Cheese, Seafarer Cheese, Islander Wine, Palm Wine, Roast Chicken (from an
+  Offering Hen). Found only: fruit, eggs, milk, shellfish, Fern-Root Flour, Dried Figs, Octopus, Turtle Stew,
+  Salt Beef and the once-only treasures.
+- **Remedies:** teas, drops and draughts are brewed in the Cooking Pot; poultices and wraps bind a herb in a
+  Bandage; Laurel Oil boils down laurel; Yellowroot Paint is ground in the quern. Found raw: Dragon's Blood,
+  Moon Sorrel, Ti Root, Milo Bark, Spurge Milk, Pennyroyal, Ephedra, Kava.
+- **Battle items:** pottery at an oven (Lye Flask from wood ash, Pitch Firepot, Smoke Pot, Heated Scoria);
+  paints and Mint Snuff ground in the quern with bonemeal; Torch and Stone Caltrops always known; Chlorine Jar
+  (electroplater, from brine) and Purifying Salt (priest).
+- **Supplies:** Bandages (two from a Tapa or Linen Cloth), Burnt Feather, Myrtle Wax and Candles, Brine Jar,
+  Battery Discs (electroplater).
+- **New raw ingredients:** herbs (Bitterwood, Cliff Mint, Hill Thyme, Ironwort, Burnwort, Ti Leaves,
+  Yellowroot, Wart Fern) and food (Barley, Lentils, Raw Fish, Raw Eel, Palm Sap). Like most materials they
+  have no source yet beyond the test-room chest: gathering comes next.
+
 **Other recipes so far:** Glue (pine pitch, or bonemeal in the Cooking Pot), Sinew Binding, Leather (tanner;
 smoke-tanning at a campfire later), Grilled Meat, Berry Syrup (Cooking Pot), Lead Shot (Crucible & Mold).
 **Remains** feed back in: Bonemeal makes pottery, glue and paint; pottery takes raw clay **or** Potsherds;
