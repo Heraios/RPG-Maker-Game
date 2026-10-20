@@ -848,8 +848,22 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
   | Patience | grapes, figs, fruit, wine, salt beef, raw shellfish and most plant food | Dog-safe food only: meat, fish, eggs, milk, cheese, bread and toasted barley |
   | Children | alcohol (wine, palm wine, grog) | "The adults won't let a child drink that." |
 
-  Food tags: land, sea, bird (meat), egg, dairy, shelled, crop, domestic, cooked, salted, alcohol, dog-unsafe.
-  Patience is a pseudo member and can't be fed from the menu yet.
+  Food tags: land, sea, bird (meat), egg, dairy, shelled, crop, domestic, cooked, salted, alcohol, dog-unsafe,
+  fae, cave-fae, forest-fae.
+- **Wild foods and garden crops** (from the Canary Islands and Rapa Nui): **Wild Honey** (smoked out of a
+  **Bee Rock** with a Torch, which burns down; Tou offers it), **Pine Nuts**, **Cosco Seed Flour** (ice-plant
+  seeds toasted with the quern, the poor coast's gofio), **Faya** and **Juniper Berries** (rare extras when
+  cutting wax myrtle and juniper), **Bean Stew** (Broad Beans in the Cooking Pot), **Baked Sweet Potato** and
+  **Baked Taro** (village garden crops, dug with the Digging Stick and baked in an earth oven), and **Cave
+  Mushrooms** (only Lasa can gather them).
+- **Fae food** (`<Fae: cave>` Lasa, `<Fae: forest>` Falmi; nobody else can live on it): **Bellflower Nectar**,
+  **Fog Drip** (combed from laurel leaves, **only at dawn**) and **Fairy Butter** (a jelly fungus on dead
+  laurel) for both; **Goblin's Gold** (glowing cave moss) and **Cave Pearls** for Lasa; **Leaf Mould** and
+  **Beard Lichen** for Falmi.
+- **How far food can grow each character** (every food they may eat, up to its cap; Health / Mana / Might /
+  Endurance / Spirit / Speed): Dama 88/32/10/20/13/16; Yoon 83/23/16/16/7/13; Sib 83/23/13/16/7/13; Falmi
+  79/32/10/14/10/13; Patience 76/9/10/11/4/4; Lasa 74/41/7/13/7/13; Parl and Theenmy 69/23/18/15/12/15; Tou
+  60/14/6/9/6/12. Food never raises Resolve or Wits (Insight does).
 - **The Ghost can't eat:** "You try to eat it, but it slips through your barely-corporeal hands."
   (`<Refuses Meals Narrated: ...>`, shown as narration.)
 

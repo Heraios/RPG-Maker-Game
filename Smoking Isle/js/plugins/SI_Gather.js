@@ -51,6 +51,8 @@
  *
  * - Each spot gives once a day, then waits for the next dawn.
  * - At night, gathering needs a light, except for night-only plants.
+ * - "dawn" spots (Fog Laurel) only give at dawn. A Bee Rock needs a Torch,
+ *   which burns down smoking out the bees.
  *
  * Script calls (the Gather common event):
  *   SmokingIsle.Gather.ask(this)      who gathers?
@@ -82,9 +84,9 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Heather':       { kind: 'wood', tool: 'axe', gives: 'Heather Branch' },
         'Ash':           { kind: 'wood', tool: 'axe', gives: 'Ash Branch' },
         'Pine':          { kind: 'wood', tool: 'axe', gives: 'Pine Branch', extra: ['Pine Log', 15], heavy: true },
-        'Juniper':       { kind: 'wood', tool: 'axe', gives: 'Juniper Branch' },
+        'Juniper':       { kind: 'wood', tool: 'axe', gives: 'Juniper Branch', extra: ['Juniper Berries', 40] },
         'Yew':           { kind: 'wood', tool: 'axe', gives: 'Yew Branch' },
-        'Wax Myrtle':    { kind: 'wood', tool: 'axe', gives: 'Wax Myrtle Branch' },
+        'Wax Myrtle':    { kind: 'wood', tool: 'axe', gives: 'Wax Myrtle Branch', extra: ['Faya Berries', 40] },
         'Ebony':         { kind: 'wood', tool: 'metal axe', who: 'adult', gives: 'Ebony Branch', extra: ['Ebony Log', 10] },
         'Mahogany':      { kind: 'wood', tool: 'metal axe', who: 'adult', gives: 'Scrap Wood', extra: ['Mahogany Log', 30] },
         'Driftwood':     { kind: 'wood', gives: 'Scrap Wood', extra: ['Scrap Wood', 50], light: true },
@@ -119,6 +121,21 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Syrup Berries': { kind: 'food', gives: 'Syrup Berries', light: true },
         'Strawberry Tree': { kind: 'food', gives: 'Strawberry-Tree Fruit', light: true },
         'Bracken':       { kind: 'food', tool: 'stick', gives: 'Fern-Root Flour', light: true },
+        'Bee Rock':      { kind: 'food', tool: 'torch', gives: 'Wild Honey' },
+        'Pine Cones':    { kind: 'food', gives: 'Pine Nuts', light: true },
+        'Cosco Patch':   { kind: 'food', gives: 'Cosco Seeds', light: true },
+        'Bean Field':    { kind: 'food', gives: 'Broad Beans', light: true },
+        'Sweet Potato Patch': { kind: 'food', tool: 'stick', gives: 'Sweet Potato', light: true },
+        'Taro Patch':    { kind: 'food', tool: 'stick', gives: 'Taro', light: true },
+        'Cave Mushrooms': { kind: 'food', who: 'cave', gives: 'Cave Mushrooms', light: true },
+        // Fae food (only Lasa and Falmi can eat it)
+        'Bellflower Bush': { kind: 'food', gives: 'Bellflower Nectar', light: true },
+        'Fog Laurel':    { kind: 'water', gives: 'Fog Drip', dawn: true },
+        'Dead Laurel':   { kind: 'food', gives: 'Fairy Butter', light: true },
+        'Goblin\'s Gold': { kind: 'food', who: 'cave', gives: 'Goblin\'s Gold', light: true },
+        'Cave Pool':     { kind: 'food', who: 'cave', gives: 'Cave Pearls' },
+        'Leaf Mould':    { kind: 'dig', gives: 'Leaf Mould', light: true },
+        'Beard Lichen':  { kind: 'food', gives: 'Beard Lichen', light: true },
         // Stone: knapped loose with the Knapping Kit, or picked up
         'Obsidian':      { kind: 'stone', tool: 'kit', gives: 'Obsidian Shard' },
         'Chalcedony':    { kind: 'stone', tool: 'kit', gives: 'Chalcedony' },
@@ -196,7 +213,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     // The equip slot of the tool the job needs (-1: none; null: no tool needed).
     $.toolSlot = function(actor, entry) {
         var tool = entry.tool;
-        if (!tool || tool === 'kit' || tool === 'stick') return null;
+        if (!tool || tool === 'kit' || tool === 'stick' || tool === 'torch') return null;
         var equips = actor.equips();
         for (var i = 0; i < equips.length; i++) {
             var w = equips[i];
@@ -276,9 +293,11 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         if (!entry) return 'Nothing to gather here.';
         if ($.isSpent(mapId, eventId)) return 'Nothing more here today.';
         if (entry.night && !T.isNight()) return 'You can\'t find it now. It only shows itself at night.';
+        if (entry.dawn && T.period() !== T.DAWN) return 'There\'s nothing here now. It only comes at dawn.';
         if (!entry.night && T.isNight() && !T.hasLight()) return 'It\'s too dark to see. You need a light.';
         if (entry.tool === 'kit' && !$gameParty.hasItem($.find('Knapping Kit'))) return 'You need a Knapping Kit.';
         if (entry.tool === 'stick' && !$gameParty.hasItem($.find('Digging Stick'))) return 'You need a Digging Stick.';
+        if (entry.tool === 'torch' && !$gameParty.hasItem($.find('Torch'))) return 'You need a Torch to smoke out the bees.';
         return '';
     };
 
@@ -305,6 +324,10 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         else text = actor.name() + ' ' + $.VERBS[entry.kind] + ' ' + got.map(function(n, i) { return (i ? 'and ' : '') + $.article(n) + n; }).join(' ') + '.';
         var slot = $.toolSlot(actor, entry);
         var worn = slot !== null && slot >= 0 && actor.rollWear ? actor.rollWear(slot) : null;
+        if (entry.tool === 'torch') {
+            $gameParty.loseItem($.find('Torch'), 1);
+            worn = 'The Torch burns down, smoking out the bees.';
+        }
         if ((entry.tool === 'stick' || (entry.extraTool === 'stick' && got.indexOf(entry.extra[0]) >= 0)) && Math.random() * 100 < $.stickSnap) {
             $gameParty.loseItem($.find('Digging Stick'), 1);
             $gameParty.gainItem($.find('Scrap Wood'), 1);
@@ -314,7 +337,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     };
 
     $.article = function(name) {
-        if (/^(Scrap|Peat|Clay|White Clay|Red Ochre|Sea Salt|Pine Pitch|Fresh|Well|Dragon's|Shellfish|Grapes|Lentils|Barley|Marsh Reed|Palm Fronds|Palm Sap|Mulberry|Spurge|Ti Leaves|Moon|Orchil|Brown|Fern|Syrup|Ephedra|Milo|Bitterwood|Cliff Mint|Hill Thyme|Ironwort|Burnwort|Yellowroot|Wart Fern|Raw|Seabird Eggs|Copper Ore|Lead Ore)/.test(name)) return 'some ';
+        if (/^(Scrap|Peat|Clay|White Clay|Red Ochre|Sea Salt|Pine Pitch|Fresh|Well|Dragon's|Shellfish|Grapes|Lentils|Barley|Marsh Reed|Palm Fronds|Palm Sap|Mulberry|Spurge|Ti Leaves|Moon|Orchil|Brown|Fern|Syrup|Ephedra|Milo|Bitterwood|Cliff Mint|Hill Thyme|Ironwort|Burnwort|Yellowroot|Wart Fern|Raw|Seabird Eggs|Copper Ore|Lead Ore|Wild Honey|Pine Nuts|Cosco|Broad|Faya|Juniper Berries|Cave Mushrooms|Bellflower Nectar|Fog|Fairy|Goblin|Cave Pearls|Leaf Mould|Beard Lichen|Taro)/.test(name)) return 'some ';
         return /^[AEIOU]/i.test(name) ? 'an ' : 'a ';
     };
 
