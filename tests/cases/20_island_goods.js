@@ -83,6 +83,6 @@ module.exports = {
         t.ok(r.tgr > 1, 'Opal Earring draws enemy attacks');
         t.ok(r.slippery, 'Eelskin Wraps: immune to Entangled');
         t.ok(r.shellfish, 'Limpets are now Shellfish');
-        t.eq(r.keys, 15, '15 key items');
+        t.eq(r.keys, 16, '16 key items (with the Sundial)');
     }
 };

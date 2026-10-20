@@ -27,5 +27,7 @@ var $plugins =
 {"name":"SI_Outfits","status":true,"description":"Smoking Isle: armor sets with bonuses, and charm effects (caves, first hits, ranged, criticals, crumbling wards, whispers...).","parameters":{"Set Evasion Cap":"0.15"}},
 {"name":"SI_Meals","status":true,"description":"Smoking Isle: food raises stats for good, one meal per rest, a few times per food.","parameters":{"Default Cap":"3"}},
 {"name":"SI_Crafting","status":true,"description":"Smoking Isle: crafting at campfires, earth ovens and NPC crafters, with fuel, recipes and portable equipment.","parameters":{}},
+{"name":"SI_Time","status":true,"description":"Smoking Isle: day and night. Four periods that pass by walking and sleeping, with screen tints, night encounters, light sources and a sundial.","parameters":{"Steps Per Period":"400","Battle Steps":"40","Period Variable":"2","Day Variable":"3","Night Switch":"7","Tints":"30,-5,-30,0; 0,0,0,0; 40,-15,-45,0; -90,-70,-10,60; -45,-35,-15,30","Night Mood":"spirit 10, animal -10"}},
+{"name":"SI_Gather","status":true,"description":"Smoking Isle: gathering spots for plants, wood, stone, ore, fish and water. Each spot gives once a day; some plants only at night.","parameters":{"Fatigue":"wood 2, herb 1, food 1, stone 2, ore 3, dig 1, shore 1, fish 1, water 0"}},
 {"name":"SI_Screen","status":true,"description":"Smoking Isle: widescreen fixes, FFX-style battle layout, word wrap for dialogue and the battle log, and a Battle Text speed option.","parameters":{"Battle Text Speeds":"72,48,24"}}
 ];

@@ -1061,6 +1061,46 @@ be brought below about 60–70 without camping**.
 - **Heavy bronze armor** adds Fatigue every turn (Bronze Helm +1, Bronze Cuirass +2).
   **Theenmy's Armor Training** (a passive skill) cancels this for him.
 
+### Day and night
+`SI_Time.js`. The day has four periods: **Dawn, Day, Dusk, Night**. The game starts by Day on day 1.
+- **Time passes by walking** outdoors: 400 steps a period, and a battle counts as 40 steps. **Indoors and in
+  caves** (`<Indoors>`, `<Cave>`) time stands still. Night turns to the Dawn of the next day.
+- **Sleeping** at a resting point always wakes you at the next dawn (a new day).
+- **Tints** outdoors: golden dawn, plain day, orange dusk, dark-blue night. `<No Time Tint>` opts a map out.
+- **Darkness and light:** night is darker unless the party carries a light: a **Torch** (from the menu: 300
+  steps), a **Myrtle Candle** (150 steps) or **Lamplight** (Shearwater Oil). At night, **gathering needs a
+  light**, except night-only plants.
+- **Night encounters:** map note `<Night Troops: 14, 15>` replaces the encounter list at night (ghosts,
+  owls, Black Hounds, Sleep Demons).
+- **Talk at night:** spirits start 10 friendlier, animals 10 warier.
+- **For events:** variable 2 holds the period (0 dawn, 1 day, 2 dusk, 3 night), variable 3 the day, and
+  switch 7 is ON at night, so event pages can use them as conditions (the river ghost, closed shops).
+  Story events can jump the time: `SmokingIsle.Time.setPeriod(3)`.
+- **The Sundial** (key item) tells the period and the day outdoors; it has no shadow at night and no sun
+  indoors. Who gives it is still to decide.
+
+### Gathering
+`SI_Gather.js`. A gathering spot is a map event with `<Gather: Laurel>` in its note and one command, **Call
+Common Event: Gather**. Copy and paste it for more of the same species. A second page with **Self Switch A**
+as its condition can show a stump or a picked plant.
+- **Once a day:** a spot gives once, then regrows at the next dawn (or after sleeping).
+- **Tools:** stone and ore need the **Knapping Kit**'s hammerstone; fishing needs **Fishing Gear** or a net.
+- **Fatigue:** each gather tires the battle party a little (wood 2, stone 2, ore 3, herbs, food, digging,
+  shore and fishing 1, water 0).
+- **Falmi** (plants) doubles the chance of a plant's rare extra.
+- **Night-only:** Moon Sorrel. The **Rain Tree** is never cut: its spot only rarely has a fallen branch.
+- **Species:** woods (Laurel, Heather, Ash, Pine, Pine Resin, Juniper, Ebony, Mahogany, Yew, Dragon Tree,
+  Sandalwood, Wax Myrtle, Honey Palm, Mulberry, Driftwood, Rain Tree); herbs (Bitterwood, Cliff Mint, Hill
+  Thyme, Ironwort, Burnwort, Ti Plant, Yellowroot, Wart Fern, Moon Sorrel, Pennyroyal, Ephedra, Milo,
+  Spurge, Orchil, Reed Bed, Gourd Vine); food (Barley, Lentils, Grapevine, Syrup Berries, Strawberry Tree,
+  Bracken); stone (Obsidian, Chalcedony, Jasper, Basalt, Andesite, Scoria, Pumice, Olivine, Trachyte Cliff,
+  Snowline Quartz, Hot Spring, Sulfur Vent); ore (Copper Vein, Lead Vein, Lodestone, Coal Seam); digging
+  (Clay Pit, White Clay, Ochre, Salt Pan, Peat Bog); shore and water (Shore Rocks, Tide Pool, Seabird Cliff,
+  Fishing Spot, Eel Pool, Spring, Sacred Well). The table is at the top of `SI_Gather.js`.
+- **Animal parts** come from enemies, not spots.
+- **Test room:** five sample spots along the bottom row (Laurel, Moon Sorrel, Obsidian, Clay Pit, Fishing
+  Spot); the chest gives a Sundial.
+
 ### Ranged weapons
 Ranged weapons go in a separate **Ranged** equipment slot and can't be swapped mid-fight.
 

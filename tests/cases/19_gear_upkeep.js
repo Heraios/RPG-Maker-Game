@@ -31,7 +31,7 @@ module.exports = {
         t.ok(!r.copperByHand, 'bent copper is only straightened by a smith');
         t.ok(r.insulated, 'Rubber-Coated Gloves insulate the wearer');
         t.ok(r.paint, 'Orchil War Paint raises ATK');
-        t.eq(r.keys, 15, '15 key items (7 body ingredients, 6 clues, quern and boat)');
+        t.eq(r.keys, 16, '16 key items (7 body ingredients, 6 clues, quern, boat and sundial)');
         t.eq(r.bigShield, 'true,true,false', 'large Pine Shield: adults and Falmi, not Sib');
         t.ok(r.buckler, 'anyone can use the Hide Buckler');
         t.ok(r.zez, "Heaven's Horn can set targets Smoldering");
