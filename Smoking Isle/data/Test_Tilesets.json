@@ -1,0 +1,13 @@
+[
+null,
+{"id":1,"flags":[16],"mode":1,"name":"Exterior","note":"","tilesetNames":["Ext-A1","Ext-A2","Ext-A3","Ext-A3","Ext-A4","Ext-B","Ext-C","Int-B","Int-C"]},
+{"id":2,"flags":[16],"mode":1,"name":"Interior","note":"","tilesetNames":["Int-A1","Int-A2","Ext-A3","Int-A4","Int-A5","Int-B","Int-C","Ext-B","Ext-C"]},
+{"id":3,"flags":[16],"mode":1,"name":"Overworld","note":"","tilesetNames":["Overworld-A1","Overworld-A2","","","","Overworld-B","","",""]},
+{"id":4,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["Tl_Outside_A1","Tl_Outside_A2","Tl_Outside_A3","Tl_Outside_A4","Tl_Outside_A5","Tl_Outside_B","Tl_Outside_C","Tl_Dungeon_B","Tl_Dungeon_C"]},
+{"id":5,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":6,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":7,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":8,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":9,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":10,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]}
+]
