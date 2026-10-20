@@ -863,7 +863,12 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
 - **How far food can grow each character** (every food they may eat, up to its cap; Health / Mana / Might /
   Endurance / Spirit / Speed): Dama 88/32/10/20/13/16; Yoon 83/23/16/16/7/13; Sib 83/23/13/16/7/13; Falmi
   79/32/10/14/10/13; Patience 76/9/10/11/4/4; Lasa 74/41/7/13/7/13; Parl and Theenmy 69/23/18/15/12/15; Tou
-  60/14/6/9/6/12. Food never raises Resolve or Wits (Insight does).
+  67/21/13/16/13/19 (with the remains below). Food never raises Resolve or Wits (Insight does), except Tou's
+  remains.
+- **Tou lays remains to rest** as her "meal" at a Star Mother idol (`<Lays Remains To Rest>`; tag `remains`;
+  nobody else can): **Ancestral Remains** ("Soot-charred bones of a royal ancestor"; 2 in the game; all eight
+  stats +2 each) and **Crew Remains** ("Bleached bones left in the sun. Disturbingly small."; 3 in the game;
+  all eight stats +1 each). They heal nobody. Where they're found is still to place.
 - **The Ghost can't eat:** "You try to eat it, but it slips through your barely-corporeal hands."
   (`<Refuses Meals Narrated: ...>`, shown as narration.)
 

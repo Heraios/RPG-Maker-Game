@@ -34,6 +34,17 @@ module.exports = {
             out.baked = (C.craft(C.recipes.find(x => x.name === 'Baked Sweet Potato'), 'oven') || []).join();
             out.flourKnown = C.recipes.find(x => x.name === 'Cosco Seed Flour').known;
             out.wording = IT('Grilled Meat').description.indexOf('Star Mother') >= 0;
+            // Tou lays remains to rest: all stats up; nobody else can
+            out.remainsWho = who('Ancestral Remains') + '/' + who('Crew Remains');
+            out.remainsLine = A(2).tabooRefusalText(IT('Crew Remains'));
+            P.addActor(9); const tou = A(9), I = SmokingIsle.Idols;
+            P.allMembers().forEach(a => { a._siFed = false; });
+            P.gainItem(IT('Ancestral Remains'), 1);
+            const before = [0, 1, 2, 3, 4, 5, 6, 7].map(p => tou.paramBase(p) + tou._paramPlus[p]);
+            const plan = {}; plan[9] = IT('Ancestral Remains');
+            out.rite = I.shareMeal(plan);
+            out.riteGain = [0, 1, 2, 3, 4, 5, 6, 7].map((p, k) => tou.paramBase(p) + tou._paramPlus[p] - before[k]).join(',');
+            out.caps = IT('Ancestral Remains').siMealCap + '/' + IT('Crew Remains').siMealCap;
             return out;
         });
         t.eq(r.nectar, 'Lasa,Falmi', 'fae food: only Lasa and Falmi');
@@ -42,8 +53,8 @@ module.exports = {
         t.eq(r.honey, 'Yoon,Sib,Lasa,Dama,Parl,Tou,Falmi,Thenmy,Patience', 'wild honey: everyone who eats (Tou offers it)');
         t.eq(r.sweetPotato, 'Yoon,Sib,Dama,Parl,Tou,Thenmy,Patience', 'baked sweet potato: not the fae (cooked; a domestic crop)');
         t.ok(/Nobody but the fae/.test(r.faeLine) && /another kind of fae\. Lasa can't/.test(r.faeLine), 'the fae food lines: ' + r.faeLine);
-        t.eq(r.growth, 'Yoon 83/23/16/16/7/13 | Lasa 74/41/7/13/7/13 | Tou 60/14/6/9/6/12 | Falmi 79/32/10/14/10/13',
-            'growth (Health/Mana/Might/Endurance/Spirit/Speed): the fae and Tou catch up');
+        t.eq(r.growth, 'Yoon 83/23/16/16/7/13 | Lasa 74/41/7/13/7/13 | Tou 67/21/13/16/13/19 | Falmi 79/32/10/14/10/13',
+            'growth (Health/Mana/Might/Endurance/Spirit/Speed): the fae catch up; Tou with the remains');
         t.ok(/only comes at dawn/.test(r.fogDay), 'fog drip only at dawn');
         t.eq(r.fogDawn, 'Yoon fills a gourd with some Fog Drip.', 'at dawn, fog combed from the leaves');
         t.eq(r.noTorch, 'You need a Torch to smoke out the bees.', 'bees need smoking out');
@@ -52,5 +63,10 @@ module.exports = {
         t.eq(r.baked, 'Baked Sweet Potato', 'sweet potato baked in the earth oven');
         t.ok(r.flourKnown, 'anyone can toast cosco seeds');
         t.ok(r.wording, 'meals now say they are shared at a Star Mother idol');
+        t.eq(r.remainsWho, 'Tou/Tou', 'only Tou lays remains to rest');
+        t.eq(r.remainsLine, 'Only Tou can lay them to rest.', 'others are told so');
+        t.eq(r.rite, 'Tou lays a royal ancestor to rest.', 'the rite, at the Star Mother idol');
+        t.eq(r.riteGain, '2,2,2,2,2,2,2,2', 'ancestral remains: all eight stats +2');
+        t.eq(r.caps, '2/3', 'two ancestors and three Crew children count');
     }
 };

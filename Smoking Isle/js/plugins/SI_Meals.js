@@ -46,6 +46,8 @@
  *   Seafarers and turtle-shell and seashell gear).
  * Children (actor note <Child>, or anyone who can wear Child-Sized gear) are
  * never given alcohol: "The adults won't let a child drink that."
+ * Remains (tag remains) can only be laid to rest by actors with note
+ * <Lays Remains To Rest> (Tou), as her "meal" at a Star Mother idol.
  * Fae food (tag fae) can only be eaten by actors with note <Fae>; cave-fae
  * food only by those with <Fae: cave>, forest-fae food by <Fae: forest>.
  *
@@ -124,6 +126,9 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
         var tags = (item && item.siTabooTags) || [];
         if (tags.length === 0) return null;
         if (tags.indexOf('alcohol') >= 0 && $.isChild(this)) return { text: 'The adults won\'t let a child drink that.', narrated: true };
+        if (tags.indexOf('remains') >= 0 && !/<Lays Remains To Rest>/i.test(this.actor().note || '')) {
+            return { text: 'Only Tou can lay them to rest.', narrated: true };
+        }
         var fae = /<Fae(?::\s*(\w+))?>/i.exec(this.actor().note || '');
         if (tags.indexOf('fae') >= 0 && !fae) return { text: 'Nobody but the fae can live on that.', narrated: true };
         if (fae && ((tags.indexOf('cave-fae') >= 0 && fae[1] !== 'cave') || (tags.indexOf('forest-fae') >= 0 && fae[1] !== 'forest'))) {

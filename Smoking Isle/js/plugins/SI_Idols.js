@@ -33,7 +33,8 @@
  * lets you pick one food for each party member (Patience too). Taboo foods
  * can't be picked for someone who won't eat them. Everyone's food goes in
  * one pot: the Health (and Mana) of all of it heals every party member; a
- * "Full Health" food fills everyone. Each eater still gets their own food's
+ * "Full Health" food fills everyone. Tou's "meal" can be laying remains to
+ * rest (item note <Rite Text: %1 lays ...>). Each eater still gets their own food's
  * lasting stat gain (up to its cap). One meal per rest. Meals can't be eaten
  * from the menu.
  */
@@ -155,7 +156,7 @@ SmokingIsle.Idols = SmokingIsle.Idols || {};
     // plan: { actorId: item }. Returns a summary line, or null if nothing was eaten.
     $.shareMeal = function(plan) {
         if ($.hasEaten()) return null;
-        var members = $gameParty.allMembers(), pot = { hp: 0, mp: 0, full: false }, eaters = [];
+        var members = $gameParty.allMembers(), pot = { hp: 0, mp: 0, full: false }, eaters = [], rites = [];
         members.forEach(function(a) {
             var item = plan[a.actorId()];
             if (!item || $.mealProblem(a, item) || $gameParty.numItems(item) < 1) return;
@@ -170,6 +171,8 @@ SmokingIsle.Idols = SmokingIsle.Idols || {};
             a._siMeals = a._siMeals || {};
             a._siMeals[item.id] = a.mealsEaten(item) + 1;
             eaters.push(a.name());
+            var rite = /<Rite Text:\s*([^>]+)>/i.exec(item.note || '');
+            if (rite) rites.push(rite[1].replace(/%1/g, a.name()));
         });
         if (eaters.length === 0) return null;
         members.forEach(function(a) {
@@ -178,8 +181,9 @@ SmokingIsle.Idols = SmokingIsle.Idols || {};
             a.gainHp(pot.full ? a.mhp : pot.hp);
             if (pot.mp > 0) a.gainMp(pot.mp);
         });
-        return 'Everyone shares the meal: ' + (pot.full ? 'full Health' : '+' + pot.hp + ' Health') +
-               (pot.mp > 0 ? ', +' + pot.mp + ' Mana' : '') + ' each.';
+        var shared = pot.hp > 0 || pot.mp > 0 || pot.full ? 'Everyone shares the meal: ' + (pot.full ? 'full Health' : '+' + pot.hp + ' Health') +
+               (pot.mp > 0 ? ', +' + pot.mp + ' Mana' : '') + ' each.' : '';
+        return rites.concat(shared ? [shared] : []).join(' ');
     };
 
     $.openMeal = function() {
