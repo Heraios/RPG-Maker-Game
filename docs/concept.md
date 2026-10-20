@@ -160,6 +160,8 @@ She finds Yoon as a ghost and immediately decides to help.
 - **Core role:** early damage crutch, debuffer and minor magic damage dealer. Helps Sib and Yoon
   collect parts for Yoon's new body.
 - With Yoon from the start, teaching them language. Fights once Sib joins.
+- **A permanent party member** once Sib joins (no longer leaves when Juda arrives). The only one who can
+  gather cave plants.
 
 ### Pada — The Hunter / The Father
 Yoon's father, a mighty hunter respected by the Islanders.
@@ -1077,21 +1079,35 @@ be brought below about 60–70 without camping**.
   switch 7 is ON at night, so event pages can use them as conditions (the river ghost, closed shops).
   Story events can jump the time: `SmokingIsle.Time.setPeriod(3)`.
 - **The Sundial** (key item) tells the period and the day outdoors; it has no shadow at night and no sun
-  indoors. Who gives it is still to decide.
+  indoors. A quest reward (like the Trachyte Quern).
 
 ### Gathering
 `SI_Gather.js`. A gathering spot is a map event with `<Gather: Laurel>` in its note and one command, **Call
 Common Event: Gather**. Copy and paste it for more of the same species. A second page with **Self Switch A**
 as its condition can show a stump or a picked plant.
 - **Once a day:** a spot gives once, then regrows at the next dawn (or after sleeping).
-- **Tools:** stone and ore need the **Knapping Kit**'s hammerstone; fishing needs **Fishing Gear** or a net.
-- **Fatigue:** each gather tires the battle party a little (wood 2, stone 2, ore 3, herbs, food, digging,
-  shore and fishing 1, water 0).
+- **You pick who gathers.** Only party members who can do the job are offered; if nobody can, a message
+  says what's needed ("This needs an adult with a metal axe equipped.").
+  - **Adults only:** hard woods (Ebony, Mahogany) and mining. Only adults bring down **logs** and other
+    heavy extras: a child with an axe gets the branch.
+  - **Sacred plants** (Kava, Sandalwood, the Rain Tree's fallen branches, the Sacred Well): only **Yoon,
+    Sib, Juda or Falmi** (actor note `<Gathers: sacred>`).
+  - **Fishing:** **Dama or Parl** (`<Gathers: fish>`). **Cave plants** (Wart Fern): only **Lasa**
+    (`<Gathers: cave>`).
+  - **Children tire half as much** on light work: low plants, fruit, the shore, salt.
+- **Tools, equipped by the gatherer:** plants need a **knife**; trees an **axe** (hard woods a **metal axe**);
+  ore a **pick**; fishing a **harpoon**. Knapping loose stone needs the **Knapping Kit** carried. Digging,
+  water and the shore's loose finds need nothing.
+- **Picks:** the **Copper Pick** (smith: Copper Ingot, 60 CW) and **Bronze Pick** (Seafarer, never wears) are
+  one-handed axes that pierce and crush. Copper wears into a **Bent Copper Pick** (the smith straightens
+  it), which breaks into Scrap Copper and Scrap Wood.
+- **Fatigue and wear:** each gather tires the gatherer (wood 3, ore 4, herbs, food, stone, digging, shore
+  and fishing 2, water 0) and rolls wear on the tool used, like a swing in battle.
 - **Falmi** (plants) doubles the chance of a plant's rare extra.
 - **Night-only:** Moon Sorrel. The **Rain Tree** is never cut: its spot only rarely has a fallen branch.
 - **Species:** woods (Laurel, Heather, Ash, Pine, Pine Resin, Juniper, Ebony, Mahogany, Yew, Dragon Tree,
   Sandalwood, Wax Myrtle, Honey Palm, Mulberry, Driftwood, Rain Tree); herbs (Bitterwood, Cliff Mint, Hill
-  Thyme, Ironwort, Burnwort, Ti Plant, Yellowroot, Wart Fern, Moon Sorrel, Pennyroyal, Ephedra, Milo,
+  Thyme, Ironwort, Burnwort, Ti Plant, Yellowroot, Wart Fern, Moon Sorrel, Kava, Pennyroyal, Ephedra, Milo,
   Spurge, Orchil, Reed Bed, Gourd Vine); food (Barley, Lentils, Grapevine, Syrup Berries, Strawberry Tree,
   Bracken); stone (Obsidian, Chalcedony, Jasper, Basalt, Andesite, Scoria, Pumice, Olivine, Trachyte Cliff,
   Snowline Quartz, Hot Spring, Sulfur Vent); ore (Copper Vein, Lead Vein, Lodestone, Coal Seam); digging
@@ -1099,7 +1115,7 @@ as its condition can show a stump or a picked plant.
   Fishing Spot, Eel Pool, Spring, Sacred Well). The table is at the top of `SI_Gather.js`.
 - **Animal parts** come from enemies, not spots.
 - **Test room:** five sample spots along the bottom row (Laurel, Moon Sorrel, Obsidian, Clay Pit, Fishing
-  Spot); the chest gives a Sundial.
+  Spot); the chest gives a Sundial, the picks and a Fishing Harpoon.
 
 ### Ranged weapons
 Ranged weapons go in a separate **Ranged** equipment slot and can't be swapped mid-fight.

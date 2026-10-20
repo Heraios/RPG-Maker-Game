@@ -64,63 +64,127 @@ module.exports = {
         t.ok(r.lamplight, 'Lamplight counts as a light');
     },
 
-    'gathering spots': async (h, t) => {
+    'gathering: who gathers, with what tool, fatigue and wear': async (h, t) => {
         await h.newGame();
         const r = await h.eval(() => {
             const G = SmokingIsle.Gather, T = SmokingIsle.Time, out = {}, P = $gameParty, map = $gameMap.mapId();
+            const A = id => $gameActors.actor(id), W = n => $dataWeapons.find(w => w && w.name === n);
             const ev = n => $gameMap.events().find(e => e.event().name === 'Gather: ' + n).eventId();
             const IT = n => G.find(n), have = n => P.numItems(IT(n));
-            out.unknown = Object.keys(G.TABLE).filter(k => !IT(G.TABLE[k].gives) || (G.TABLE[k].extra && !IT(G.TABLE[k].extra[0])) ||
-                (G.TABLE[k].tool || []).some(n => !IT(n))).join(', ');
+            const arm = (a, n) => { const w = W(n); P.gainItem(w, 1); a.forceChangeEquip(a.slotOfType(1), w); };
+            out.unknown = Object.keys(G.TABLE).filter(k => !IT(G.TABLE[k].gives) || (G.TABLE[k].extra && !IT(G.TABLE[k].extra[0]))).join(', ');
+            [5, 6, 7, 8, 10].forEach(id => P.addActor(id));
+            const yoon = A(2), sib = A(3), lasa = A(4), pada = A(5), juda = A(6), dama = A(7), parl = A(8), falmi = A(10);
             P.allItems().slice().forEach(i => P.loseItem(i, 999));
-            P.members().forEach(a => a.setTp(0));
+            P.allMembers().forEach(a => { a.setTp(0); a.equips().forEach((e, s) => { if (DataManager.isWeapon(e)) a.forceChangeEquip(s, null); }); });
+            const able = sp => G.gatherers().filter(a => G.canGather(a, G.TABLE[sp])).map(a => a.name()).join(',');
             const real = Math.random; Math.random = () => 0;
-            const laurel = G.gather(map, ev('Laurel'), 'Laurel');
-            out.laurel = laurel.text + '/' + have('Laurel Branch') + have('Laurel Log') + '/' + $gameSelfSwitches.value([map, ev('Laurel'), 'A']);
-            out.tired = P.battleMembers().filter(a => !a.hasNoFatigue()).every(a => a.tp > 0);
-            out.again = G.gather(map, ev('Laurel'), 'Laurel').text;
-            out.sorrelDay = G.gather(map, ev('Moon Sorrel'), 'Moon Sorrel').text;
-            out.noKit = G.gather(map, ev('Obsidian'), 'Obsidian').text;
-            out.noNet = G.gather(map, ev('Fishing Spot'), 'Fishing Spot').text;
-            // night: plants need a light, except night-only ones
+            // nobody has an axe: the message says what's needed
+            out.noAxe = able('Laurel') + '|' + G.gather(map, ev('Laurel'), 'Laurel', pada).text;
+            // a child with an axe cuts a branch, but only an adult brings down a log
+            arm(falmi, 'Basalt Axe');
+            out.childCut = G.gather(map, ev('Laurel'), 'Laurel', falmi).text + '/' + have('Laurel Log');
+            T.sleep(); arm(pada, 'Basalt Axe');
+            out.adultCut = G.gather(map, ev('Laurel'), 'Laurel', pada).text;
+            out.tired = pada.tp + '/' + falmi.tp;
+            // hard woods: an adult with a metal axe
+            out.ebony = able('Ebony'); arm(parl, 'Copper Axe'); out.ebonyMetal = able('Ebony');
+            // plants: a knife; children tire less on light work
+            arm(yoon, 'Obsidian Knife'); arm(juda, 'Obsidian Knife');
+            out.knife = able('Bitterwood');
+            const y0 = yoon.tp, j0 = juda.tp;
+            G.gather(map, ev('Clay Pit'), 'Bitterwood', yoon); T.sleep(); G.gather(map, ev('Clay Pit'), 'Bitterwood', juda);
+            out.light = (yoon.tp - y0) + '/' + (juda.tp - j0);
+            // sacred plants, cave plants, fishing
+            out.sacred = able('Kava');
+            out.cave = able('Wart Fern');
+            out.fishNoHarpoon = able('Fishing Spot');
+            arm(dama, 'Fishing Harpoon'); out.fish = able('Fishing Spot');
+            // ore: an adult with a pick; picks wear into bent picks, then scrap
+            out.oreNone = able('Copper Vein');
+            arm(pada, 'Copper Pick'); out.ore = able('Copper Vein');
+            T.sleep(); const mined = G.gather(map, ev('Obsidian'), 'Copper Vein', pada);
+            out.mined = mined.text + '/' + have('Copper Ore');
+            out.worn = mined.worn + '/' + pada.equips()[pada.slotOfType(1)].name;
+            T.sleep(); const broke = G.gather(map, ev('Obsidian'), 'Copper Vein', pada);
+            out.broke = pada.equips()[pada.slotOfType(1)] === null && have('Scrap Copper') === 1;
+            out.pickAxe = W('Copper Pick').wtypeId === 6 && /One-Handed/.test(W('Copper Pick').note) && W('Bronze Pick').note.indexOf('Degrades') < 0;
+            // the knapping kit is carried, not equipped
+            T.sleep(); out.kit = G.gather(map, ev('Obsidian'), 'Obsidian', yoon).text;
+            Math.random = real;
+            out.recipes = ['Copper Pick', 'Straighten a Bent Copper Pick'].every(n => SmokingIsle.Crafting.recipes.some(x => x.name === n && x.at === 'smith'));
+            return out;
+        });
+        t.eq(r.unknown, '', 'every species gives real items');
+        t.eq(r.noAxe, '|This needs someone with an axe equipped.', 'no axe: nobody can cut, and the message says why');
+        t.eq(r.childCut, 'Falmi cuts a Laurel Branch./0', 'a child cuts a branch, but no log');
+        t.eq(r.adultCut, 'Pada cuts a Laurel Branch and a Laurel Log.', 'an adult can bring down a log');
+        t.eq(r.tired, '3/3', 'cutting wood tires the gatherer');
+        t.eq(r.ebony, '', 'a stone axe can\'t cut ebony');
+        t.eq(r.ebonyMetal, 'Parl', 'an adult with a metal axe can');
+        t.eq(r.knife, 'Yoon,Juda', 'plants need a knife');
+        t.eq(r.light, '1/2', 'children tire half as much picking low plants');
+        t.eq(r.sacred, 'Yoon,Juda', 'sacred plants: only Yoon, Sib, Juda or Falmi (with a knife)');
+        t.eq(r.cave, 'Lasa', 'cave plants: only Lasa');
+        t.eq(r.fishNoHarpoon, '', 'fishing needs a harpoon equipped');
+        t.eq(r.fish, 'Dama', 'Dama (or Parl) with a harpoon fishes');
+        t.eq(r.oreNone, '', 'ore needs a pick');
+        t.eq(r.ore, 'Pada', 'an adult with a pick mines');
+        t.eq(r.mined, 'Pada breaks off some Copper Ore./1', 'mining copper ore');
+        t.ok(/Bent Copper Pick/.test(r.worn), 'mining wears the pick: ' + r.worn);
+        t.ok(r.broke, 'a bent pick breaks into scrap copper');
+        t.ok(r.pickAxe, 'picks are one-handed axes; the bronze one never wears');
+        t.eq(r.kit, 'You need a Knapping Kit.', 'knapping stone needs the Knapping Kit carried');
+        t.ok(r.recipes, 'the smith makes and straightens copper picks');
+    },
+
+    'gathering spots: once a day, night, light': async (h, t) => {
+        await h.newGame();
+        const r = await h.eval(() => {
+            const G = SmokingIsle.Gather, T = SmokingIsle.Time, out = {}, map = $gameMap.mapId();
+            const ev = n => $gameMap.events().find(e => e.event().name === 'Gather: ' + n).eventId();
+            const yoon = $gameActors.actor(2), knife = $dataWeapons.find(w => w && w.name === 'Obsidian Knife');
+            $gameParty.gainItem(knife, 1); yoon.forceChangeEquip(yoon.slotOfType(1), knife);
+            const real = Math.random; Math.random = () => 0.5;
+            const clay = G.gather(map, ev('Clay Pit'), 'Clay Pit', yoon);
+            out.clay = clay.text + '/' + $gameSelfSwitches.value([map, ev('Clay Pit'), 'A']);
+            out.again = G.gather(map, ev('Clay Pit'), 'Clay Pit', yoon).text;
+            out.sorrelDay = G.gather(map, ev('Moon Sorrel'), 'Moon Sorrel', yoon).text;
             T.setPeriod(3);
-            out.sorrelNight = G.gather(map, ev('Moon Sorrel'), 'Moon Sorrel').text + '/' + have('Moon Sorrel');
-            out.dark = G.gather(map, ev('Clay Pit'), 'Clay Pit').text;
-            T.lightFor(100);
-            P.gainItem(IT('Knapping Kit'), 1);
-            out.obsidian = G.gather(map, ev('Obsidian'), 'Obsidian').text;
-            // a new day: everything regrows and Self Switch A goes off
-            T.sleep();
-            out.regrown = !$gameSelfSwitches.value([map, ev('Laurel'), 'A']) + '/' + G.gather(map, ev('Laurel'), 'Laurel').text;
-            Math.random = () => 0.99;
-            out.rainTree = G.gather(map, ev('Clay Pit'), 'Rain Tree').text;
+            out.sorrelNight = G.gather(map, ev('Moon Sorrel'), 'Moon Sorrel', yoon).text;
+            out.dark = G.gather(map, ev('Laurel'), 'Bitterwood', yoon).text;
+            T.lightFor(100); out.lit = G.gather(map, ev('Laurel'), 'Bitterwood', yoon).ok;
+            T.sleep(); out.regrown = !$gameSelfSwitches.value([map, ev('Clay Pit'), 'A']) + '/' + G.gather(map, ev('Clay Pit'), 'Clay Pit', yoon).ok;
+            Math.random = () => 0.99; out.rainTree = G.gather(map, ev('Laurel'), 'Rain Tree', yoon).text;
             Math.random = real;
             return out;
         });
-        t.eq(r.unknown, '', 'every species gives real items and needs real tools');
-        t.eq(r.laurel, 'You cut a Laurel Branch and a Laurel Log./11/true', 'a laurel gives a branch (and rarely a log); the spot is spent');
-        t.ok(r.tired, 'gathering tires the party a little');
+        t.eq(r.clay, 'Yoon digs up some Clay./true', 'digging clay; the spot is spent');
         t.eq(r.again, 'Nothing more here today.', 'once a day');
         t.ok(/only shows itself at night/.test(r.sorrelDay), 'moon sorrel only by night');
-        t.eq(r.noKit, 'You need a Knapping Kit.', 'stone needs the Knapping Kit');
-        t.eq(r.noNet, 'You need a Fishing Gear or Palm-Fibre Net.', 'fishing needs gear or a net');
-        t.eq(r.sorrelNight, 'You pick some Moon Sorrel./1', 'at night, moon sorrel can be picked without a light');
+        t.eq(r.sorrelNight, 'Yoon picks some Moon Sorrel.', 'at night, without a light');
         t.eq(r.dark, 'It\'s too dark to see. You need a light.', 'other spots need a light at night');
-        t.eq(r.obsidian, 'You chip off an Obsidian Shard.', 'with a light and the kit, obsidian');
-        t.eq(r.regrown, 'true/You cut a Laurel Branch and a Laurel Log.', 'a new day: the spot regrows');
+        t.ok(r.lit, 'with a light, gathering works at night');
+        t.eq(r.regrown, 'true/true', 'a new day: the spot regrows');
         t.eq(r.rainTree, 'Nothing has fallen today.', 'the rain tree is never cut: only fallen branches, rarely');
     },
 
-    'a gathering spot from the map, through the common event': async (h, t) => {
+    'a gathering spot from the map: choose who gathers': async (h, t) => {
         await h.newGame();
         await h.eval(() => { $gameParty.loseItem($dataItems.find(i => i && i.name === 'Clay'), 999); Math.random = () => 0.5;
             $gameMap.events().find(e => e.event().name === 'Gather: Clay Pit').start(); });
-        await h.page.waitForTimeout(300);
+        await h.page.waitForTimeout(400);
+        const ask = await h.eval(() => ({ text: $gameMessage._texts.join(' '), choices: $gameMessage.choices().join('/') }));
+        await h.page.waitForTimeout(400);
+        await h.page.keyboard.press('Enter');   // the first choice
+        await h.page.waitForTimeout(400);
         const text = await h.eval(() => $gameMessage._texts.join(' '));
         await h.pumpMessages();
         const r = await h.eval(() => ({ clay: $gameParty.numItems($dataItems.find(i => i && i.name === 'Clay')),
             page: $gameMap.events().find(e => e.event().name === 'Gather: Clay Pit')._pageIndex }));
-        t.eq(text, 'You dig up some Clay.', 'the common event shows what you found');
+        t.eq(ask.text, 'Who will dig?', 'the spot asks who will gather');
+        t.ok(/^Yoon\/.*Never mind$/.test(ask.choices), 'the party is offered, plus Never mind: ' + ask.choices);
+        t.eq(text, 'Yoon digs up some Clay.', 'the chosen one gathers');
         t.eq(r.clay, 1, 'and you have it');
         t.eq(r.page, 1, 'the spot switches to its spent page');
     }

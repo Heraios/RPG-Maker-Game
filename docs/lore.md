@@ -285,7 +285,7 @@ child-sacrifice industry**. They have a hidden village in the lava tubes and are
 their origins. Digging, they eventually discover Queen Tou in her buried palace and "serve" her.
 
 *In the game:* friendly NPCs. **Lasa** guides Yoon out of the caves in the prologue (Act 1), helps
-gather body ingredients as a temporary party member in Act 2, leaves when Juda joins, and later
+gather body ingredients in Act 2 and stays as a **permanent party member** from then on, and
 plays a key role in the Tou questline.
 
 ### Queen Tou
