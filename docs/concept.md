@@ -325,6 +325,71 @@ ruler, now trapped in a child-sized wooden doll with jointed limbs.
   behave. Can only be permanently killed if her moai's coral eyes are destroyed, which is a story
   threat rather than a gameplay mechanic.
 
+### Party dynamics (draft: correct freely)
+
+**Personalities**
+- **Yoon:** shaped by the player, but curious and watchful at the core: relearning everything, language
+  included, with a quiet fear of *what* they are. The listener of the group; others confide in them.
+- **Sib:** devoted, anxious and bookish; a rule-follower who breaks the biggest rule (necromancy) out of
+  love. Fragile body, stubborn spirit. After Juda, a child made the village's priest far too early.
+- **Lasa:** impulsively kind (decided to help a ghost on sight), playful, a little light-fingered like the
+  Children of the Caves, fascinated by humans. Politeness covers being an outsider. Darker arc: learning
+  what the Children of the Caves really are.
+- **Pada:** gruff, practical, protective; a grieving father who shows love by doing (and by giving his
+  food to the children). Accepting a ghost child at face value is the biggest-hearted thing in the game.
+- **Juda:** warm, wise, patient: the mentor everyone trusts. The mask.
+- **Dama:** duty first: investigator, sworn spearwife, a leader who never asked to lead. Blunt, fair, slow
+  to forgive, fiercely loyal once won.
+- **Parl:** charming survivor, cynical and funny, writes everything down. Homesick and guiltier than he
+  lets on. A pearl thief whose religion forbids anything from a shell.
+- **Theenmy:** honourable, scholarly, earnest; privileged and slowly seeing what his empire is. Shields
+  children on instinct; uncomfortable being the strongest person in the room.
+- **Falmi:** four hundred years in the growing but newly born: earnest, energetic, literal-minded, with
+  plant logic. Takes being heir very seriously. Hopelessly flustered around Tou.
+- **Tou:** formal, polite, lonely. Centuries of role-playing a ruler made her genuinely good at it, and
+  painfully sheltered about everything real. The most gracious person in the party, carrying the worst
+  truth.
+- **Patience:** a good dog.
+
+**Most friction**
+1. **Dama and Theenmy:** the island's defender and the prince who invaded it, and they may marry. Enemies
+   to grudging allies to more.
+2. **Dama and Parl,** especially if his secret was kept (Option 2A): she hunted him, he lied to her.
+3. **Tou and Lasa** (hidden): the Children of the Caves descend from the Crew children Tou's court
+   sacrificed, with death warrants she signed unknowing. Lasa's people now cheerfully serve her. The truth
+   is the most painful scene in the party: guilt, and maybe forgiveness.
+4. **Tou and Sib** (hidden): Sib's necromancy comes from Juda's notes on First Sailor homunculus-making,
+   Tou's civilization's crime, used to rebuild Yoon.
+5. **Falmi and the Seafarers:** the forest's heir, and the Princess who burns forests.
+6. **Mealtimes (comedy):** Yoon eats only land meat, Sib only birds, Dama only fish; three gods' worth of
+   bickering at every Star Mother dinner. Parl refuses the shellfish; the children keep being turned away
+   from the wine.
+
+**Get along best**
+- **Yoon and Sib:** the heart of the game.
+- **Yoon and Lasa:** Yoon's first friend after death, who taught them to speak.
+- **Falmi and Tou:** a crush, and everything in common: ancient and young at once, bodies that aren't
+  flesh, raised as heirs by powerful elders.
+- **Parl and Lasa:** two thieves with an eye for shiny things; Parl as the party's rogue uncle.
+- **Theenmy and Sib:** scholar and priest: scripts, magic, Sib learning Seafarer writing.
+- **Dama and Falmi:** a warrior mentoring the child tank.
+
+**The royals** (Theenmy, Tou, Falmi; Dama as chieftess by consent)
+- **Shaped by elders:** Tou a puppet of the Navigator Lords, Falmi grown four centuries to be heir,
+  Theenmy a king's son in his sister's shadow. Dama was never raised to rule: divine kings versus rule
+  by consent.
+- **Not knowing what your realm does:** Tou's decrees killed children she thought she fostered; Theenmy
+  is learning what tribute and conquest mean. The only two who understand that horror.
+- **Tou as a primary source** for Theenmy's First Sailor scholarship: thrilling for him, awkward for her.
+- **Protocol comedy:** Tou's ancient etiquette, Theenmy's courtliness, Falmi asking what manners are.
+- **Real advice:** centuries of "solving" invented crises make Tou a surprisingly good adviser on
+  governing the island after the war.
+- **Lineage and death:** Tou can't die while her moai stands; Falmi has lived four hundred years;
+  Theenmy is mortal and heir to a dying king. Tou laying her ancestors to rest opens these talks.
+- **The island's future:** Tou's ancient claim, Theenmy's by conquest (or marriage), Dama's by the
+  people. Who rules after the war?
+- **Matchmaking:** Theenmy and Dama, Falmi and Tou; the royals teasing each other.
+
 ---
 
 ## Systems to Build
