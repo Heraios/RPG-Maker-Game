@@ -936,7 +936,7 @@ Laurel, Wax Myrtle (burns well), Honey Palm and Driftwood are firewood and build
 - The **electroplater** plates a copper weapon with a Silver Ingot into copper-silver, for a fee.
 - Bronze, black bronze, grown coral and the mythic trophy weapons are never crafted.
 
-**Armor crafting (built: 125 recipes).** Islander-made sets are crafted and come in as many copies as you
+**Armor crafting (built: 131 recipes).** Islander-made sets are crafted and come in as many copies as you
 make; foreign, ancient, sacred and trophy gear is found and stays rare. Recipes can take several of one
 ingredient (`<Recipe In: item 179 x2>`: a Tapa Wrap takes two Tapa Cloth). Woven things have two
 recipes: the **weaver** (known, for a fee) or your own **Backstrap Loom** (needs the recipe item). Carving
@@ -944,13 +944,14 @@ and knapping (Slat Armor, wooden shields, bone, shell, gourd and stone trinkets)
 fletching, oven work and the "copy the enemy" recipes (Linen, Firebrand) need the recipe item. The
 **priest** is an NPC crafter too (Bark-Paper Prayer Strips). Materials added for it: Mulberry Bark, Tapa
 Cloth, Shark Skin, Deer Hide, Linen Cloth, Wool Felt, Seabird Feather (no enemy drops Shark Skin or Deer Hide
-yet). Mouflon Wool stays found-only for now. Patience's collars, booties, bells and packs have recipes too
+yet). Patience's collars, booties, bells and packs have recipes too
 (the Glow-Bead, Coral-Eyed and Bronze War-Dog collars are found).
 
 | Set | How | Where |
 |---|---|---|
 | Tapa | Mulberry Bark (new material) beaten into **Tapa Cloth**, then sewn | Earth oven (the cloth); Needle & Thread |
 | Reed and Palm | Woven | Weaver, or the Backstrap Loom |
+| Mouflon Wool | Woven (the Goat-Skin Moccasins are its shared feet piece) | Weaver, or the Backstrap Loom |
 | Palm-Fibre | Woven (the **Pufferfish Helm is found**) | Weaver, or the Backstrap Loom |
 | Goat-Skin | Sewn | Needle & Thread |
 | Seal Leather, Boar Hide, Sharkskin, Deerskin | Tanned | Tanner |

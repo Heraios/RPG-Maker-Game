@@ -13,7 +13,7 @@ module.exports = {
                 x.outs.some(ref => !C.object(ref) || !C.object(ref).name) || (x.tool && !$dataItems[x.tool].name)).map(x => x.name).join(', ');
             // every set you can make has a recipe for each piece
             const craftable = ['Tapa', 'Reed and Palm', 'Goat-Skin', 'Seal Leather', 'Boar Hide', 'Pine Pitch', 'Slat Armor', 'Sharkskin', 'Deerskin',
-                               'Linen Armor', 'Tortoise Shell', 'Firebrand Gear'];
+                               'Linen Armor', 'Tortoise Shell', 'Firebrand Gear', 'Mouflon Wool'];
             const made = new Set(C.recipes.map(x => C.object(x.outs[0])));
             out.missing = $dataArmors.filter(a => a && a.siOutfit && a.siOutfit.sets.some(s => craftable.includes(s.name)) && !made.has(a)).map(a => a.name).join(', ');
             out.palmFound = !made.has(AR('Pufferfish Helm')) && made.has(AR('Palm-Fibre Cuirass'));
