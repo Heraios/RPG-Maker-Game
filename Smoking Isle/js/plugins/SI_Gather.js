@@ -39,7 +39,9 @@
  *         axe     any axe (trees); "metal axe" for hard woods
  *         pick    a weapon with <Pick> (ore: Copper or Bronze Pick)
  *         harpoon a weapon with <Harpoon> (fishing)
- *   The Knapping Kit is carried, not equipped (knapping stone).
+ *   Carried, not equipped: the Knapping Kit (knapping stone) and a
+ *   Digging Stick (roots, clay, ochre, peat; it sometimes snaps into
+ *   Scrap Wood). Soft herbs, fruit and crops are picked by hand.
  * A child counts as anyone who can wear Child-Sized gear.
  *
  * Gathering tires the gatherer (Fatigue parameter; children pay half on
@@ -71,7 +73,8 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         if (m) $.fatigue[m[1].toLowerCase()] = Number(m[2]);
     });
 
-    // who: any (default), adult, sacred, fish, cave.  tool: knife, axe, metal axe, pick, harpoon, kit.
+    // who: any (default), adult, sacred, fish, cave.  tool: knife, axe, metal axe, pick, harpoon (equipped);
+    // kit, stick (carried).  extraTool: the extra needs this carried tool too.
     // light: children pay half Fatigue.  heavy: the extra only comes when an adult gathers.
     $.TABLE = {
         // Woods: a branch, and from an adult rarely a log
@@ -92,30 +95,30 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Sandalwood':    { kind: 'wood', tool: 'knife', who: 'sacred', gives: 'Sandalwood Branch', chance: 50 },
         'Rain Tree':     { kind: 'herb', who: 'sacred', gives: 'Rain-Tree Branch', chance: 10, fallen: true },   // never cut: only what has fallen
         // Herbs: low plants, a knife; children do it best
-        'Bitterwood':    { kind: 'herb', tool: 'knife', gives: 'Bitterwood', light: true },
-        'Cliff Mint':    { kind: 'herb', tool: 'knife', gives: 'Cliff Mint', light: true },
-        'Hill Thyme':    { kind: 'herb', tool: 'knife', gives: 'Hill Thyme', light: true },
-        'Ironwort':      { kind: 'herb', tool: 'knife', gives: 'Ironwort', light: true },
-        'Burnwort':      { kind: 'herb', tool: 'knife', gives: 'Burnwort', light: true },
-        'Ti Plant':      { kind: 'herb', tool: 'knife', gives: 'Ti Leaves', extra: ['Ti Root', 25], light: true },
-        'Yellowroot':    { kind: 'herb', tool: 'knife', gives: 'Yellowroot', light: true },
+        'Bitterwood':    { kind: 'herb', gives: 'Bitterwood', light: true },
+        'Cliff Mint':    { kind: 'herb', gives: 'Cliff Mint', light: true },
+        'Hill Thyme':    { kind: 'herb', gives: 'Hill Thyme', light: true },
+        'Ironwort':      { kind: 'herb', gives: 'Ironwort', light: true },
+        'Burnwort':      { kind: 'herb', gives: 'Burnwort', light: true },
+        'Ti Plant':      { kind: 'herb', gives: 'Ti Leaves', extra: ['Ti Root', 25], extraTool: 'stick', light: true },
+        'Yellowroot':    { kind: 'herb', tool: 'stick', gives: 'Yellowroot', light: true },
         'Wart Fern':     { kind: 'herb', who: 'cave', gives: 'Wart Fern', light: true },
-        'Moon Sorrel':   { kind: 'herb', tool: 'knife', gives: 'Moon Sorrel', night: true, light: true },
-        'Kava':          { kind: 'herb', tool: 'knife', who: 'sacred', gives: 'Kava' },
-        'Pennyroyal':    { kind: 'herb', tool: 'knife', gives: 'Pennyroyal Sprig', light: true },
-        'Ephedra':       { kind: 'herb', tool: 'knife', gives: 'Ephedra Twigs', light: true },
+        'Moon Sorrel':   { kind: 'herb', gives: 'Moon Sorrel', night: true, light: true },
+        'Kava':          { kind: 'herb', tool: 'stick', who: 'sacred', gives: 'Kava' },
+        'Pennyroyal':    { kind: 'herb', gives: 'Pennyroyal Sprig', light: true },
+        'Ephedra':       { kind: 'herb', gives: 'Ephedra Twigs', light: true },
         'Milo':          { kind: 'herb', tool: 'knife', gives: 'Milo Bark' },
         'Spurge':        { kind: 'herb', tool: 'knife', gives: 'Spurge Milk', light: true },
-        'Orchil':        { kind: 'herb', tool: 'knife', gives: 'Orchil Lichen', light: true },
+        'Orchil':        { kind: 'herb', gives: 'Orchil Lichen', light: true },
         'Reed Bed':      { kind: 'herb', tool: 'knife', gives: 'Marsh Reed', extra: ['Marsh Reed', 50], light: true },
         'Gourd Vine':    { kind: 'herb', tool: 'knife', gives: 'Gourd', light: true },
         // Food plants
-        'Barley':        { kind: 'food', tool: 'knife', gives: 'Barley', light: true },
-        'Lentils':       { kind: 'food', tool: 'knife', gives: 'Lentils', light: true },
-        'Grapevine':     { kind: 'food', tool: 'knife', gives: 'Grapes', light: true },
-        'Syrup Berries': { kind: 'food', tool: 'knife', gives: 'Syrup Berries', light: true },
-        'Strawberry Tree': { kind: 'food', tool: 'knife', gives: 'Strawberry-Tree Fruit', light: true },
-        'Bracken':       { kind: 'food', tool: 'knife', gives: 'Fern-Root Flour', light: true },
+        'Barley':        { kind: 'food', gives: 'Barley', light: true },
+        'Lentils':       { kind: 'food', gives: 'Lentils', light: true },
+        'Grapevine':     { kind: 'food', gives: 'Grapes', light: true },
+        'Syrup Berries': { kind: 'food', gives: 'Syrup Berries', light: true },
+        'Strawberry Tree': { kind: 'food', gives: 'Strawberry-Tree Fruit', light: true },
+        'Bracken':       { kind: 'food', tool: 'stick', gives: 'Fern-Root Flour', light: true },
         // Stone: knapped loose with the Knapping Kit, or picked up
         'Obsidian':      { kind: 'stone', tool: 'kit', gives: 'Obsidian Shard' },
         'Chalcedony':    { kind: 'stone', tool: 'kit', gives: 'Chalcedony' },
@@ -135,11 +138,11 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Lodestone':     { kind: 'ore', tool: 'pick', who: 'adult', gives: 'Lodestone', chance: 30 },
         'Coal Seam':     { kind: 'ore', tool: 'pick', who: 'adult', gives: 'Brown Coal' },
         // Digging
-        'Clay Pit':      { kind: 'dig', gives: 'Clay', extra: ['White Clay', 10] },
-        'White Clay':    { kind: 'dig', gives: 'White Clay' },
-        'Ochre':         { kind: 'dig', gives: 'Red Ochre' },
+        'Clay Pit':      { kind: 'dig', tool: 'stick', gives: 'Clay', extra: ['White Clay', 10] },
+        'White Clay':    { kind: 'dig', tool: 'stick', gives: 'White Clay' },
+        'Ochre':         { kind: 'dig', tool: 'stick', gives: 'Red Ochre' },
         'Salt Pan':      { kind: 'dig', gives: 'Sea Salt', light: true },
-        'Peat Bog':      { kind: 'dig', gives: 'Peat' },
+        'Peat Bog':      { kind: 'dig', tool: 'stick', gives: 'Peat' },
         // Shore and water
         'Shore Rocks':   { kind: 'shore', tool: 'knife', gives: 'Shellfish', extra: ['Shell', 25], light: true },
         'Tide Pool':     { kind: 'shore', gives: 'Shell', extra: ['Coral', 15], light: true },
@@ -149,6 +152,8 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Spring':        { kind: 'water', gives: 'Fresh Water' },
         'Sacred Well':   { kind: 'water', who: 'sacred', gives: 'Well Water' }
     };
+
+    $.stickSnap = 5;   // % chance a Digging Stick snaps each use
 
     $.VERBS = { wood: 'cuts', herb: 'picks', food: 'gathers', stone: 'chips off', ore: 'breaks off', dig: 'digs up',
                 shore: 'gathers', fish: 'catches', water: 'fills a gourd with' };
@@ -191,7 +196,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     // The equip slot of the tool the job needs (-1: none; null: no tool needed).
     $.toolSlot = function(actor, entry) {
         var tool = entry.tool;
-        if (!tool || tool === 'kit') return null;
+        if (!tool || tool === 'kit' || tool === 'stick') return null;
         var equips = actor.equips();
         for (var i = 0; i < equips.length; i++) {
             var w = equips[i];
@@ -220,6 +225,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     // What the job needs, for the "nobody can" message.
     $.needs = function(entry) {
         var tool = { knife: 'a knife', axe: 'an axe', 'metal axe': 'a metal axe', pick: 'a pick', harpoon: 'a harpoon' }[entry.tool];
+        if (!tool && !entry.who) return 'Nobody can gather this.';
         var who = entry.who || 'any', people;
         if ($.WHO[who]) {
             people = $dataActors.filter(function(a) { return a && new RegExp('<Gathers:[^>]*\\b' + $.WHO[who] + '\\b', 'i').test(a.note); })
@@ -272,6 +278,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         if (entry.night && !T.isNight()) return 'You can\'t find it now. It only shows itself at night.';
         if (!entry.night && T.isNight() && !T.hasLight()) return 'It\'s too dark to see. You need a light.';
         if (entry.tool === 'kit' && !$gameParty.hasItem($.find('Knapping Kit'))) return 'You need a Knapping Kit.';
+        if (entry.tool === 'stick' && !$gameParty.hasItem($.find('Digging Stick'))) return 'You need a Digging Stick.';
         return '';
     };
 
@@ -282,7 +289,8 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         if (!actor || !$.canGather(actor, entry)) return { ok: false, text: $.needs(entry) };
         var adult = !$.isChild(actor), got = [];
         if (Math.random() * 100 < (entry.chance === undefined ? 100 : entry.chance)) got.push(entry.gives);
-        if (entry.extra && (!entry.heavy || adult)) {
+        var extraOk = !entry.extraTool || $gameParty.hasItem($.find('Digging Stick'));
+        if (entry.extra && (!entry.heavy || adult) && extraOk) {
             var expert = /<Talk Specialty:[^>]*\bplant\b/i.test(actor.actor().note) && (entry.kind === 'herb' || entry.kind === 'food');
             if (Math.random() * 100 < entry.extra[1] * (expert ? 2 : 1)) got.push(entry.extra[0]);
         }
@@ -297,6 +305,11 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         else text = actor.name() + ' ' + $.VERBS[entry.kind] + ' ' + got.map(function(n, i) { return (i ? 'and ' : '') + $.article(n) + n; }).join(' ') + '.';
         var slot = $.toolSlot(actor, entry);
         var worn = slot !== null && slot >= 0 && actor.rollWear ? actor.rollWear(slot) : null;
+        if ((entry.tool === 'stick' || (entry.extraTool === 'stick' && got.indexOf(entry.extra[0]) >= 0)) && Math.random() * 100 < $.stickSnap) {
+            $gameParty.loseItem($.find('Digging Stick'), 1);
+            $gameParty.gainItem($.find('Scrap Wood'), 1);
+            worn = 'The Digging Stick snaps (Scrap Wood left over).';
+        }
         return { ok: true, got: got, text: text, worn: worn };
     };
 

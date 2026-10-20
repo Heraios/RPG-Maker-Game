@@ -1095,9 +1095,13 @@ as its condition can show a stump or a picked plant.
   - **Fishing:** **Dama or Parl** (`<Gathers: fish>`). **Cave plants** (Wart Fern): only **Lasa**
     (`<Gathers: cave>`).
   - **Children tire half as much** on light work: low plants, fruit, the shore, salt.
-- **Tools, equipped by the gatherer:** plants need a **knife**; trees an **axe** (hard woods a **metal axe**);
-  ore a **pick**; fishing a **harpoon**. Knapping loose stone needs the **Knapping Kit** carried. Digging,
-  water and the shore's loose finds need nothing.
+- **Tools, equipped by the gatherer:** cut plants need a **knife** (spurge, resin, bark, palm, reeds,
+  gourds, sandalwood, limpets); trees an **axe** (hard woods a **metal axe**); ore a **pick**; fishing a
+  **harpoon**. **By hand:** soft herbs, fruit, lentils, barley and orchil lichen. **Carried:** the **Knapping
+  Kit** for loose stone, and a **Digging Stick** for roots (Yellowroot, Kava, Bracken, the Ti Root extra)
+  and digging (clay, white clay, ochre, peat). Anyone can carve a Digging Stick from a branch at a
+  campfire; it snaps into Scrap Wood now and then (5%). Water, salt and the shore's loose finds need
+  nothing.
 - **Picks:** the **Copper Pick** (smith: Copper Ingot, 60 CW) and **Bronze Pick** (Seafarer, never wears) are
   one-handed axes that pierce and crush. Copper wears into a **Bent Copper Pick** (the smith straightens
   it), which breaks into Scrap Copper and Scrap Wood.

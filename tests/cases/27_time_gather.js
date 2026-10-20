@@ -91,12 +91,13 @@ module.exports = {
             out.ebony = able('Ebony'); arm(parl, 'Copper Axe'); out.ebonyMetal = able('Ebony');
             // plants: a knife; children tire less on light work
             arm(yoon, 'Obsidian Knife'); arm(juda, 'Obsidian Knife');
-            out.knife = able('Bitterwood');
+            out.knife = able('Spurge'); out.hand = able('Bitterwood').split(',').length >= 7;
             const y0 = yoon.tp, j0 = juda.tp;
             G.gather(map, ev('Clay Pit'), 'Bitterwood', yoon); T.sleep(); G.gather(map, ev('Clay Pit'), 'Bitterwood', juda);
             out.light = (yoon.tp - y0) + '/' + (juda.tp - j0);
             // sacred plants, cave plants, fishing
-            out.sacred = able('Kava');
+            out.sacredNoStick = G.gather(map, ev('Moon Sorrel'), 'Kava', yoon).text;
+            P.gainItem(IT('Digging Stick'), 1); out.sacred = able('Kava');
             out.cave = able('Wart Fern');
             out.fishNoHarpoon = able('Fishing Spot');
             arm(dama, 'Fishing Harpoon'); out.fish = able('Fishing Spot');
@@ -111,7 +112,11 @@ module.exports = {
             out.pickAxe = W('Copper Pick').wtypeId === 6 && /One-Handed/.test(W('Copper Pick').note) && W('Bronze Pick').note.indexOf('Degrades') < 0;
             // the knapping kit is carried, not equipped
             T.sleep(); out.kit = G.gather(map, ev('Obsidian'), 'Obsidian', yoon).text;
+            Math.random = () => 0; T.sleep();
+            const dug = G.gather(map, ev('Clay Pit'), 'Clay Pit', yoon);
+            out.snap = dug.worn + '/' + have('Digging Stick') + '/' + have('Scrap Wood');
             Math.random = real;
+            out.stickRecipe = SmokingIsle.Crafting.recipes.some(x => x.name === 'Digging Stick' && x.known);
             out.recipes = ['Copper Pick', 'Straighten a Bent Copper Pick'].every(n => SmokingIsle.Crafting.recipes.some(x => x.name === n && x.at === 'smith'));
             return out;
         });
@@ -122,9 +127,11 @@ module.exports = {
         t.eq(r.tired, '3/3', 'cutting wood tires the gatherer');
         t.eq(r.ebony, '', 'a stone axe can\'t cut ebony');
         t.eq(r.ebonyMetal, 'Parl', 'an adult with a metal axe can');
-        t.eq(r.knife, 'Yoon,Juda', 'plants need a knife');
+        t.eq(r.knife, 'Yoon,Juda', 'spurge and bark need a knife');
+        t.ok(r.hand, 'soft herbs are picked by hand: anyone can');
         t.eq(r.light, '1/2', 'children tire half as much picking low plants');
-        t.eq(r.sacred, 'Yoon,Juda', 'sacred plants: only Yoon, Sib, Juda or Falmi (with a knife)');
+        t.eq(r.sacredNoStick, 'You need a Digging Stick.', 'kava is a root: it needs a digging stick');
+        t.eq(r.sacred, 'Yoon,Sib,Juda,Falmi', 'sacred plants: only Yoon, Sib, Juda or Falmi');
         t.eq(r.cave, 'Lasa', 'cave plants: only Lasa');
         t.eq(r.fishNoHarpoon, '', 'fishing needs a harpoon equipped');
         t.eq(r.fish, 'Dama', 'Dama (or Parl) with a harpoon fishes');
@@ -136,6 +143,8 @@ module.exports = {
         t.ok(r.pickAxe, 'picks are one-handed axes; the bronze one never wears');
         t.eq(r.kit, 'You need a Knapping Kit.', 'knapping stone needs the Knapping Kit carried');
         t.ok(r.recipes, 'the smith makes and straightens copper picks');
+        t.eq(r.snap, 'The Digging Stick snaps (Scrap Wood left over)./0/2', 'a digging stick sometimes snaps into scrap wood (one more Scrap Wood)');
+        t.ok(r.stickRecipe, 'anyone can carve a digging stick');
     },
 
     'gathering spots: once a day, night, light': async (h, t) => {
@@ -144,7 +153,7 @@ module.exports = {
             const G = SmokingIsle.Gather, T = SmokingIsle.Time, out = {}, map = $gameMap.mapId();
             const ev = n => $gameMap.events().find(e => e.event().name === 'Gather: ' + n).eventId();
             const yoon = $gameActors.actor(2), knife = $dataWeapons.find(w => w && w.name === 'Obsidian Knife');
-            $gameParty.gainItem(knife, 1); yoon.forceChangeEquip(yoon.slotOfType(1), knife);
+            $gameParty.gainItem(knife, 1); yoon.forceChangeEquip(yoon.slotOfType(1), knife); $gameParty.gainItem(G.find('Digging Stick'), 1);
             const real = Math.random; Math.random = () => 0.5;
             const clay = G.gather(map, ev('Clay Pit'), 'Clay Pit', yoon);
             out.clay = clay.text + '/' + $gameSelfSwitches.value([map, ev('Clay Pit'), 'A']);
@@ -172,6 +181,7 @@ module.exports = {
     'a gathering spot from the map: choose who gathers': async (h, t) => {
         await h.newGame();
         await h.eval(() => { $gameParty.loseItem($dataItems.find(i => i && i.name === 'Clay'), 999); Math.random = () => 0.5;
+            $gameParty.gainItem($dataItems.find(i => i && i.name === 'Digging Stick'), 1);
             $gameMap.events().find(e => e.event().name === 'Gather: Clay Pit').start(); });
         await h.page.waitForTimeout(400);
         const ask = await h.eval(() => ({ text: $gameMessage._texts.join(' '), choices: $gameMessage.choices().join('/') }));
