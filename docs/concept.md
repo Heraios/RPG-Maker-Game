@@ -831,8 +831,25 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
   counts once.
 - The item screen's help box shows who has eaten it (e.g. "Yoon 2/3 (full)").
 - **Pada and Juda won't eat** ("I'm not hungry. Give it to the children." / "The children need it more than
-  I do."), and **Lasa can't eat human food** ("Thank you, but I can't eat human food."). Food goes to the
-  ones who stay, and it's a quiet hint that they are guests in the party. (`<Refuses Meals: line>`)
+  I do."). Food goes to the ones who stay, and it's a quiet hint that they are guests in the party.
+  (`<Refuses Meals: line>`)
+- **Food taboos** (`<Taboos: tags>` on the actor, `<Taboo Tags: tags>` on the food; built in `SI_Meals.js`).
+  Each character refuses foods with certain tags, in the menu and in battle, and says why:
+
+  | Who | Won't eat | Why |
+  |---|---|---|
+  | Yoon | sea and bird meat | Yoon's family is sworn to the **Red Bowl**: only land animals |
+  | Sib | land and sea meat | A priest of **Sooty Bird**: only what flies |
+  | Dama | land and bird meat | Spearwives are sworn to the **Star Mother**: only ocean meat (other animal products are fine) |
+  | Lasa | anything cooked or salted | "Thank you, but I can't eat human food." Fae food: fruit, honey, milk, eggs, raw shellfish |
+  | Tou | all meat and fish, eggs, dairy | The royal blood taboo: Tou "eats" by offering plant foods to the royal ancestors |
+  | Falmi | domestic crops and domestic animals' meat, eggs and milk | Only what grows wild (grilled game counts as wild) |
+  | Parl, Theenmy | anything shelled: eggs, shellfish, turtle | The Seafarers' religious taboo. Octopus is fine. They also **won't wear turtle shell or seashells** (tortoise-shell gear, the Sea-Turtle Buckler, the Turtle-Shell Comb, the Shell Wind-Chime, the Blind Crab Shell, the Cowrie Anklet) |
+  | Patience | grapes, figs, fruit, wine, salt beef, raw shellfish and most plant food | Dog-safe food only: meat, fish, eggs, milk, cheese, bread and toasted barley |
+  | Children | alcohol (wine, palm wine, grog) | "The adults won't let a child drink that." |
+
+  Food tags: land, sea, bird (meat), egg, dairy, shelled, crop, domestic, cooked, salted, alcohol, dog-unsafe.
+  Patience is a pseudo member and can't be fed from the menu yet.
 - **The Ghost can't eat:** "You try to eat it, but it slips through your barely-corporeal hands."
   (`<Refuses Meals Narrated: ...>`, shown as narration.)
 

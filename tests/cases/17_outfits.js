@@ -95,9 +95,9 @@ module.exports = {
             const put = (a, n, k = 0) => { const x = AR(n); const slots = a.equipSlots().map((e, i) => e === x.etypeId ? i : -1).filter(i => i >= 0); a.forceChangeEquip(slots[k], x); };
             const fixed = f => { const rnd = Math.random; Math.random = () => 0.5; try { return f(); } finally { Math.random = rnd; } };
             const e = $gameTroop.members()[0], th = A(11), yoon = A(2), pada = A(5);
-            // Tortoise Shell: first physical hit halved
-            th.clearEquipments(); put(th, 'Tortoise-Shell Cuirass'); put(th, 'Tortoise-Shell Shield'); th.onBattleStart();
-            const hit = () => fixed(() => { th.setHp(th.mhp); th.clearResult(); const x = new Game_Action(e); x.setAttack(); x.apply(th); return th.mhp - th.hp; });
+            // Tortoise Shell: first physical hit halved (Juda: Seafarers won't wear shell)
+            const juda = A(6); juda.clearEquipments(); put(juda, 'Tortoise-Shell Cuirass'); put(juda, 'Tortoise-Shell Shield'); juda.onBattleStart();
+            const hit = () => fixed(() => { juda.setHp(juda.mhp); juda.clearResult(); const x = new Game_Action(e); x.setAttack(); x.apply(juda); return juda.mhp - juda.hp; });
             const first = hit(), second = hit(); out.guard = first / second;
             // Tapa: the first attack is likelier to miss
             ['Tapa Cape', 'Tapa Leg Wraps'].forEach(n => put(yoon, n)); yoon.onBattleStart();

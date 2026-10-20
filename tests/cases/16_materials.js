@@ -6,7 +6,7 @@ module.exports = {
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id), IT = n => $dataItems.find(i => i && i.name === n), ST = n => $dataStates.find(s => s && s.name === n).id, out = {};
             const drink = who => { const x = new Game_Action(A(3)); x.setItem(IT('All-Seafarer Grog').id); who.clearResult(); x.apply(who); };
-            const yoon = A(2); yoon.recoverAll(); yoon.setHp(1); const hit0 = yoon.hit;
+            const yoon = A(5); yoon.recoverAll(); yoon.setHp(1); const hit0 = yoon.hit;   // Pada: children are never given grog
             drink(yoon); out.healed = yoon.hp - 1; out.tipsy = yoon.isStateAffected(ST('Tipsy')); out.hitLoss = +(hit0 - yoon.hit).toFixed(2);
             yoon.clearResult(); yoon.addState(ST('Panicked')); out.brave = !yoon.isStateAffected(ST('Panicked'));
             drink(yoon); out.second = (yoon.isStateAffected(ST('Disoriented')) ? 'Disoriented' : '') + (yoon.isStateAffected(ST('Tipsy')) ? '+Tipsy' : '');

@@ -31,6 +31,22 @@
  *   <Refuses Meals Narrated: You try to eat it, but...>
  *                   the same, shown as narration (no name or quotes)
  *
+ * ============================================================================
+ * Taboos
+ * ============================================================================
+ * Item or gear note:   <Taboo Tags: sea, shelled, cooked>
+ *   what the food (or drink, or piece of gear) is. Food tags in use:
+ *   land, sea, bird (meat), egg, dairy, shelled, crop, domestic, cooked,
+ *   salted, alcohol, dog-unsafe.
+ * Actor note:          <Taboos: land, sea>
+ *                      <Taboo Line: Sooty Bird's priests eat only what flies.>
+ *                      (<Taboo Line Narrated: ...> for narration)
+ *   the character won't eat or drink anything with one of those tags (in
+ *   the menu or in battle), and won't equip gear with one of them (the
+ *   Seafarers and turtle-shell and seashell gear).
+ * Children (actor note <Child>, or anyone who can wear Child-Sized gear) are
+ * never given alcohol: "The adults won't let a child drink that."
+ *
  * Resting (Recover All, e.g. the campfire) makes everyone hungry again.
  * Script: SmokingIsle.Meals.rest()     the same without healing
  *
@@ -54,6 +70,13 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
     DataManager.isDatabaseLoaded = function() {
         if (!_DataManager_isDatabaseLoaded.call(this)) return false;
         if (!$._loaded) {
+            [$dataItems, $dataWeapons, $dataArmors].forEach(function(list) {
+                list.forEach(function(obj) {
+                    if (!obj) return;
+                    var t = /<Taboo Tags:\s*([^>]+)>/i.exec(obj.note || '');
+                    obj.siTabooTags = t ? t[1].split(',').map(function(x) { return x.trim().toLowerCase(); }) : [];
+                });
+            });
             $dataItems.forEach(function(item) {
                 if (!item) return;
                 item.siMeal = /<Meal>/i.test(item.note || '');
@@ -84,6 +107,44 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
         return this.name() + ': "' + line + '"';
     };
 
+    // Taboos: the tags this character won't eat, drink or wear.
+    Game_Actor.prototype.taboos = function() {
+        var m = /<Taboos:\s*([^>]+)>/i.exec(this.actor().note || '');
+        return m ? m[1].split(',').map(function(x) { return x.trim().toLowerCase(); }) : [];
+    };
+
+    $.isChild = function(actor) {
+        return (actor.isChild && actor.isChild()) || actor.isEquipAtypeOk(17);
+    };
+
+    // Why this character won't take this item (a line to show), or null.
+    Game_Actor.prototype.tabooRefusal = function(item) {
+        var tags = (item && item.siTabooTags) || [];
+        if (tags.length === 0) return null;
+        if (tags.indexOf('alcohol') >= 0 && $.isChild(this)) return { text: 'The adults won\'t let a child drink that.', narrated: true };
+        var taboos = this.taboos();
+        if (!tags.some(function(t) { return taboos.indexOf(t) >= 0; })) return null;
+        var note = this.actor().note || '';
+        var m = /<Taboo Line( Narrated)?:\s*([^>]*)>/i.exec(note);
+        return m ? { text: m[2].trim(), narrated: !!m[1] } : { text: 'I won\'t eat that.', narrated: false };
+    };
+
+    Game_Actor.prototype.tabooRefusalText = function(item) {
+        var r = this.tabooRefusal(item);
+        if (!r) return null;
+        return r.narrated ? r.text.replace(/%1/g, this.name()) : this.name() + ': "' + r.text + '"';
+    };
+
+    // Taboo gear can't be equipped (the Seafarers and shells).
+    var _Game_Actor_canEquip = Game_Actor.prototype.canEquip;
+    Game_Actor.prototype.canEquip = function(item) {
+        if (item && !DataManager.isItem(item) && (item.siTabooTags || []).length) {
+            var taboos = this.taboos();
+            if (item.siTabooTags.some(function(t) { return taboos.indexOf(t) >= 0; })) return false;
+        }
+        return _Game_Actor_canEquip.call(this, item);
+    };
+
     Game_Actor.prototype.isFed = function() {
         return !!this._siFed;
     };
@@ -102,6 +163,7 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
     var _Game_Action_testApply = Game_Action.prototype.testApply;
     Game_Action.prototype.testApply = function(target) {
         if ($.isMeal(this.item()) && target.isActor() && (target.isFed() || target.mealRefusal() !== null)) return false;
+        if (this.isItem() && target.isActor() && target.tabooRefusal(this.item())) return false;
         return _Game_Action_testApply.call(this, target);
     };
 
@@ -129,7 +191,7 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
         if (!$.isMeal(item)) return '';
         return $gameParty.members().map(function(a) {
             var n = Math.min(a.mealsEaten(item), item.siMealCap);
-            if (a.mealRefusal() !== null) return a.name() + ' (won\'t eat)';
+            if (a.mealRefusal() !== null || a.tabooRefusal(item)) return a.name() + ' (won\'t eat)';
             return a.name() + ' ' + n + '/' + item.siMealCap + (a.isFed() ? ' (full)' : '');
         }).join(' · ');
     };
@@ -139,10 +201,12 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
     Scene_ItemBase.prototype.onActorOk = function() {
         var item = this.item();
         var actor = $gameParty.members()[this._actorWindow.index()];
-        if ($.isMeal(item) && actor && !this._actorWindow.cursorAll() && actor.mealRefusal() !== null) {
+        var refusal = actor && !this._actorWindow.cursorAll() && DataManager.isItem(item) &&
+            (($.isMeal(item) && actor.mealRefusal() !== null) ? actor.mealRefusalText() : actor.tabooRefusalText(item));
+        if (refusal) {
             SoundManager.playBuzzer();
             this.onActorCancel();   // back to the item list, so the help box shows
-            var text = actor.mealRefusalText(), help = this._helpWindow;
+            var text = refusal, help = this._helpWindow;
             if (help.setFittedLines) help.setFittedLines(help.wrapLines(text)); else help.setText(text);
             return;
         }
