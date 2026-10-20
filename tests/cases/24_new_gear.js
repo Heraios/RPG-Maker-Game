@@ -98,6 +98,10 @@ module.exports = {
             // cattle goods
             out.goods = ['Cowhide', 'Horsehair', 'Ox Horn', 'Salt Beef', 'Cow\'s Milk', 'Seafarer Cheese'].every(n => !!IT(n));
             out.meal = /<Meal>/.test(IT('Salt Beef').note);
+            // where a charm is the raw thing, the charm is the loot: no duplicate materials
+            out.noDupes = ['Sulfur', 'Olivine', 'Guardian Lizard Scale', 'Black Hound Pelt'].every(n => !IT(n)) &&
+                ['Sulfur Lump', 'Volcano Tear', 'Lizard-Scale Charm', 'Black Hound Pelt'].every(n => !!AR(n));
+            out.newMaterials = !!IT('Marsh Reed') && !!IT('Eel Skin');
             return out;
         });
         t.eq(r.first, 'Pada', 'Gourd Whistle: the first enemy attack on the child is taken by an adult');
@@ -110,5 +114,7 @@ module.exports = {
         t.ok(r.brave, 'Horsehair Plume: Brave at battle start');
         t.ok(r.goods, 'cowhide, horsehair, ox horn, salt beef, milk and cheese exist');
         t.ok(r.meal, 'Salt Beef is a meal');
+        t.ok(r.noDupes, 'Sulfur, Olivine, the lizard scale and the hound pelt exist only as gear');
+        t.ok(r.newMaterials, 'Marsh Reed and Eel Skin exist');
     }
 };

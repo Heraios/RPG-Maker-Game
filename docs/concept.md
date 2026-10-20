@@ -607,7 +607,10 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 - Bonuses from different sets **stack** (a clothing set under an armor set is the normal outfit).
 - **Evasion from sets is capped** (about +15% in total).
 - **Talk bonuses stack too**: wearing two groups' gear (e.g. Boar Hide and Bronze) keeps both.
-- The **Feather** set is priest-only (Sib, Juda, Yoon).
+- The **Feather** set is priest-only (Sib, Juda, Yoon). It is **never crafted**: it's a small quest. You
+  bring many feathers of each kind to a **grove priest** at a ritual site, who consecrates and makes it.
+  Only the two grove priests may do it, so the game has **three sets**: Juda's own (he starts in it; it
+  burns to ash with him in Act 3), one for **Sib** and one for **Yoon**.
 - **Parts:** a set is made of parts, one per slot unless a piece names its own part. Pieces for the same
   part are substitutes, and several charms of one set still count once (the First Sailor Regalia names
   the eye and the pupil as separate parts). One piece can belong to two sets (Goat-Skin Moccasins).
@@ -845,10 +848,13 @@ Talk: the Cave children and forest child-fae like **Dried Figs**; seals and crab
 **Grilled Meat**; Boar-Men **Islander Wine**. Raw Meat is cooked into Grilled Meat at a campfire (see Crafting).
 
 **Materials** drop from enemies now and are kept for crafting: Sinew, Bone, Antler, Goat Wool, Mouflon Wool,
-Seal Skin, Tortoise Scute, Obsidian Shard, Lead and Copper Ore, Sulfur, Pine Pitch, Orchil Lichen,
-Clay, Coral, Pearl, Olivine, Red Ochre, Sea Salt, Red Scoria, White Clay, Palm Fronds, Gourd, and trophies
-(Green Horse Bough, Guardian Lizard Scale, Black Hound Pelt, Hag-Crane Feather). Wood, fuel, stones, ingots
-and remains are listed under Crafting.
+Seal Skin, Tortoise Scute, Obsidian Shard, Lead and Copper Ore, Pine Pitch, Orchil Lichen, Clay, Coral,
+Pearl, Red Ochre, Sea Salt, Red Scoria, White Clay, Palm Fronds, Gourd, Marsh Reed, Eel Skin, Cowhide,
+Horsehair, Ox Horn, and trophies (Green Horse Bough, Hag-Crane Feather). Wood, fuel, stones, ingots and
+remains are listed under Crafting.
+**No duplicates:** where a charm *is* the raw thing, the charm is the loot and the ingredient. The **Sulfur
+Lump**, **Volcano Tear** (olivine), **Lizard-Scale Charm** and **Black Hound Pelt** (cloak) drop as gear; the
+old Sulfur, Olivine, Guardian Lizard Scale and Black Hound Pelt materials are gone.
 
 ### Crafting
 `SI_Crafting.js`. Crafting happens at **places**: you interact with a station.
@@ -927,6 +933,44 @@ Laurel, Wax Myrtle (burns well), Honey Palm and Driftwood are firewood and build
 - The **smith** makes copper weapons from ingots, and **straightens** bent copper, for a fee.
 - The **electroplater** plates a copper weapon with a Silver Ingot into copper-silver, for a fee.
 - Bronze, black bronze, grown coral and the mythic trophy weapons are never crafted.
+
+**Armor crafting (planned; recipes can't make armor yet).** Islander-made sets are crafted and come in as
+many copies as you make; foreign, ancient, sacred and trophy gear is found and stays rare.
+
+| Set | How | Where |
+|---|---|---|
+| Tapa | Mulberry Bark (new material) beaten into **Tapa Cloth**, then sewn | Earth oven (the cloth); Needle & Thread |
+| Reed and Palm | Woven | Weaver, or the Backstrap Loom |
+| Palm-Fibre | Woven (the **Pufferfish Helm is found**) | Weaver, or the Backstrap Loom |
+| Goat-Skin | Sewn | Needle & Thread |
+| Seal Leather, Boar Hide, Sharkskin, Deerskin | Tanned | Tanner |
+| Pine Pitch | Leather hardened with pitch; the Pine Shield is carved | Earth oven; campfire (carving) |
+| Slat Armor, wooden shields | Carved and laced | Campfire |
+| Tortoise Shell | Scutes laced with sinew | Campfire |
+| Linen Armor (Act 4) | Looted Linen Cloth layered and woven: Islanders copy the marines | Weaver, or the Backstrap Loom |
+| Cowhide Cuirass (Act 4) | Tanned | Tanner |
+| Firebrand Gear (Act 5) | Wool felt woven, then daubed with clay: Islanders copy the Princess's troops | Weaver or loom; earth oven |
+| Feather | **Not crafted**: consecrated by a grove priest (see Armor sets) | Ritual sites |
+
+Found only: Sailor's Kit and Crew clothing (several copies), Lava-Tube Gear (a few, from the Children of the
+Caves), Court Dress, the Charioteer's helm and gloves, Bronze, Guardian Lizard, Royal Regalia, Navigator's
+Raiment, Black Bronze, Grown Coral, Black Hound Regalia.
+
+**Charms and accessories.**
+
+| | Charms |
+|---|---|
+| **Carving / knapping** (campfire) | Bone Fishhook Pendant, Boar Tusk Pendant, Coral Pendant, Obsidian Amulet (Knapping Kit), Tortoise-Shell Amulet, Sandalwood Beads, Bone Ring, Obsidian Ring and Jasper Ring (Knapping Kit), Antler Toggle, Yew Bead Bracelet, Turtle-Shell Comb, Basalt Whetstone (Knapping Kit), Gourd Rattle, Gourd Whistle, Reed Flute |
+| **Needle & Thread** | Shark-Tooth Necklace, Shell Wind-Chime, Hide Gloves, Sinew Wraps, Net Floats, Juniper Smudge Bundle, Salt Pouch, Horsehair Plume (Act 4) |
+| **Weaving** (loom or weaver) | Palm-Leaf Fan, Reed Charm-Bundle, Reed Mat |
+| **Fletching Kit** | Waxed Bowstring, Reed Arrows, Seabird-Fletched Arrows |
+| **Earth oven** | Ceramic Bead Necklace, Clay Idol |
+| **Smith** | Copper Bracelet, Lead Sinker (or Crucible & Mold) |
+| **Electroplater** | Silver Ring, Silver-Plated Idol, Peridot Ring (Volcano Tear + Silver), Pearl Earring (Pearl + Silver) |
+| **Tanner** | Eelskin Wraps (Eel Skin), Driving Gloves (Cowhide, Act 4) |
+| **Priest** | Bark-Paper Prayer Strip (Tapa Cloth + Red Ochre): it crumbles after one use, so it's restocked |
+| **Found** (gathered, dropped or bought; several possible) | Cave-Glow Stone, Hot-Spring Sinter, Snow Quartz, Pumice Stone, Lodestone, Raven/Eagle/Vulture Feathers, Blind Crab Shell, Ibex Horn Charm, Fire Opal, Volcano Tear, Sulfur Lump, Sacred Leaf Charm (fallen leaves at Tiltapu), Numbered Collar, Leech Jar (herbalist), Tattooist's Ink Pouch, Rubber-Coated Gloves, Cowrie Anklet (money on a string: bought), Tin Bead, Bronze Horse-Bit, Opal Earring |
+| **Unique** | Crescent Pectoral, Coral Eye Fragment, Scoria Pupil, Sailor's Compass, Bronze Signet, Family Seal, Milk-Tooth Necklace, Grandmother's Knot-Cord, Hag-Crane Feather, Lizard-Scale Charm, Master's Horn Amulet, Phonolite Bell, Barley-Doll Idol, Cave-Cricket Cage |
 
 **Other recipes so far:** Glue (pine pitch, or bonemeal in the Cooking Pot), Sinew Binding, Leather (tanner;
 smoke-tanning at a campfire later), Grilled Meat, Berry Syrup (Cooking Pot), Lead Shot (Crucible & Mold).
