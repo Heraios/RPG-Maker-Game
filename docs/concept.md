@@ -983,7 +983,7 @@ Raiment, Black Bronze, Grown Coral, Black Hound Regalia.
 | **Found** (gathered, dropped or bought; several possible) | Cave-Glow Stone, Hot-Spring Sinter, Snow Quartz, Pumice Stone, Lodestone, Raven/Eagle/Vulture Feathers, Blind Crab Shell, Ibex Horn Charm, Fire Opal, Volcano Tear, Sulfur Lump, Sacred Leaf Charm (fallen leaves at Tiltapu), Numbered Collar, Leech Jar (herbalist), Tattooist's Ink Pouch, Rubber-Coated Gloves, Cowrie Anklet (money on a string: bought), Tin Bead, Bronze Horse-Bit, Opal Earring |
 | **Unique** | Crescent Pectoral, Coral Eye Fragment, Scoria Pupil, Sailor's Compass, Bronze Signet, Family Seal, Milk-Tooth Necklace, Grandmother's Knot-Cord, Hag-Crane Feather, Lizard-Scale Charm, Master's Horn Amulet, Phonolite Bell, Barley-Doll Idol, Cave-Cricket Cage |
 
-**Consumables (built: 49 recipes).**
+**Consumables (built: 59 recipes).**
 - **Fire-Starting Kit:** carved from a branch (Heather, Laurel or Pine), Sinew and tinder (Palm Fronds, Marsh
   Reed or Goat Wool). Always known, and it can be made **before the fire is lit** (`<Recipe Unlit>`), so
   running out in the wild never strands you.
@@ -998,7 +998,9 @@ Raiment, Black Bronze, Grown Coral, Black Hound Regalia.
 - **Battle items:** pottery at an oven (Lye Flask from wood ash, Pitch Firepot, Smoke Pot, Heated Scoria);
   paints and Mint Snuff ground in the quern with bonemeal; Torch and Stone Caltrops always known; Chlorine Jar
   (electroplater, from brine) and Purifying Salt (priest).
-- **Supplies:** Bandages (two from a Tapa or Linen Cloth), Burnt Feather, Myrtle Wax and Candles, Brine Jar,
+- **Supplies:** Bandages (always known: Tapa Cloth makes 2 and Linen Cloth 3 with the Needle & Thread; raw
+  Mulberry Bark makes 1 in the field; a spare Tapa, Crew or Linen garment tears into 2, never one being worn),
+  Burnt Feather, Myrtle Wax and Candles, Brine Jar,
   Battery Discs (electroplater).
 - **New raw ingredients:** herbs (Bitterwood, Cliff Mint, Hill Thyme, Ironwort, Burnwort, Ti Leaves,
   Yellowroot, Wart Fern) and food (Barley, Lentils, Raw Fish, Raw Eel, Palm Sap). Like most materials they

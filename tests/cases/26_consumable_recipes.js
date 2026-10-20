@@ -35,6 +35,17 @@ module.exports = {
             // two bandages from a strip of tapa
             give('Recipe: Bandage'); give('Tapa Cloth'); give('Needle & Thread');
             C.craft(R('Bandage'), 'campfire'); out.bandages = have('Bandage');
+            // linen makes three; raw bark makes one; a spare garment (never a worn one) tears into two
+            const byName = n => C.recipes.find(x => x.name === n);
+            P.loseItem(IT('Bandage'), 99); give('Linen Cloth'); C.craft(byName('Bandages from Linen'), 'campfire'); out.linen = have('Bandage');
+            P.loseItem(IT('Bandage'), 99); give('Mulberry Bark'); C.craft(byName('Bark Bandage'), 'campfire'); out.bark = have('Bandage');
+            P.loseItem(IT('Bandage'), 99);
+            const yoon = $gameActors.actor(2), wrap = $dataArmors.find(a => a && a.name === 'Tapa Wrap'), tear = byName('Tear Up a Tapa Wrap');
+            P.loseItem(wrap, 99, true); yoon.forceChangeEquip(yoon.slotOfType(4), wrap);
+            out.wornSafe = C.problem(tear, 'campfire');
+            P.gainItem(wrap, 1); C.craft(tear, 'campfire'); out.torn = have('Bandage') + '/' + P.numItems(wrap) + '/' + (yoon.equips().includes(wrap));
+            out.allKnown = ['Bandage', 'Bandages from Linen', 'Bark Bandage', 'Tear Up a Tapa Wrap'].every(n => byName(n).known);
+            P.loseItem(IT('Bandage'), 99); give('Bandage', 2);
             // a poultice wraps a herb in a bandage
             give('Recipe: Burnwort Poultice'); give('Burnwort');
             out.poultice = (C.craft(R('Burnwort Poultice'), 'campfire') || []).join() + '/' + have('Bandage');
@@ -67,6 +78,11 @@ module.exports = {
         t.ok(!r.fishAtCamp, 'drying fish is village work, not campfire work');
         t.eq(r.fish, 'Dried Fish', 'fish and salt at an earth oven make Dried Fish');
         t.eq(r.bandages, 2, 'a Tapa Cloth makes two bandages');
+        t.eq(r.linen, 3, 'a Linen Cloth makes three bandages');
+        t.eq(r.bark, 1, 'raw Mulberry Bark makes one, in the field');
+        t.eq(r.wornSafe, 'Needs Tapa Wrap.', 'a worn garment is never torn up');
+        t.eq(r.torn, '2/0/true', 'a spare Tapa Wrap tears into two bandages; the worn one stays on');
+        t.ok(r.allKnown, 'everyone knows how to make bandages');
         t.eq(r.poultice, 'Burnwort Poultice/1', 'a poultice uses up a herb and a bandage');
         t.eq(r.lye, 'Lye Flask', 'wood ash and a pot make a Lye Flask');
         t.eq(r.paint, 'Orchil War Paint', 'orchil lichen and bonemeal, ground in the quern, make war paint');
