@@ -168,6 +168,9 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
                     obj.siMentalShorten = $.num(obj.note, 'Mental Shorten');
                 });
             });
+            $dataStates.forEach(function(s) {
+                if (s) s.siBattleStartState = $.stateTag(s.note, 'Battle Start State');   // set bonuses
+            });
             $._notesParsed = true;
         }
         return true;
@@ -229,13 +232,14 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
         if (added && added.siCuresMental && this.isStateAffected(stateId)) this.cureMentalAilments();
     };
 
-    // Equipment that starts every battle with a state (Resin).
+    // Equipment, or a set bonus, that starts every battle with a state (Resin;
+    // the Firebrand Gear's soaked felt).
     var _Game_Battler_onBattleStart = Game_Battler.prototype.onBattleStart;
     Game_Battler.prototype.onBattleStart = function() {
         _Game_Battler_onBattleStart.call(this);
         if (!this.isActor()) return;
-        this.equips().forEach(function(item) {
-            if (item && item.siBattleStartState) this.addState(item.siBattleStartState);
+        this.traitObjects().forEach(function(obj) {
+            if (obj && obj.siBattleStartState && !this.isStateAffected(obj.siBattleStartState)) this.addState(obj.siBattleStartState);
         }, this);
         this.clearResult();
     };

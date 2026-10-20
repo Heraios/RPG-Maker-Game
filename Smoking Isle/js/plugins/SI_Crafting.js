@@ -19,7 +19,7 @@
  *                                            recipe, plus its own
  *   SmokingIsle.Crafting.open('smith')       NPC crafters: smith, tanner,
  *                                            weaver, tattooist, herbalist,
- *                                            electroplater
+ *                                            electroplater, priest
  *
  * Campfires need lighting (a Fire-Starting Kit, used up) before anything can
  * be made there: making camp is the pause. Ovens are always lit. Both need
@@ -44,8 +44,10 @@
  * oven recipe while it carries the recipe item; NPC crafters know all of
  * theirs. Item note:
  *   <Recipe At: campfire>          campfire, oven, smith, tanner, weaver,
- *                                  tattooist, herbalist or electroplater
+ *                                  tattooist, herbalist, electroplater or
+ *                                  priest
  *   <Recipe In: item 136, weapon 110, item 129>   one of each, used up
+ *   <Recipe In: item 402 x2, item 129>   two of the first
  *   <Recipe In: weapon 172, item 11, item 144 / item 169>   "/" = either
  *   <Recipe Out: weapon 93>        what it makes (several: comma list)
  *   <Recipe Bonus: item 172 10>    10% chance of this as well
@@ -73,7 +75,7 @@ SmokingIsle.Crafting = SmokingIsle.Crafting || {};
 
     $.STATIONS = {
         campfire: 'Campfire', oven: 'Earth Oven', smith: 'Smith', tanner: 'Tanner', weaver: 'Weaver',
-        tattooist: 'Tattooist', herbalist: 'Herbalist', electroplater: 'Electroplater'
+        tattooist: 'Tattooist', herbalist: 'Herbalist', electroplater: 'Electroplater', priest: 'Priest'
     };
     $.FIRE_STATIONS = ['campfire', 'oven'];
     $.OVEN_BONUS = { scrap: 0, wood: 1, peat: 1, coal: 2 };
@@ -83,13 +85,18 @@ SmokingIsle.Crafting = SmokingIsle.Crafting || {};
     //-------------------------------------------------------------------------
 
     // "item 136, weapon 110 / item 9" -> [[{kind, id}], [{...}, {...}]]
+    // "item 402 x2" counts as that ingredient twice.
     $.parseRefs = function(text) {
-        return String(text || '').split(',').map(function(part) {
-            return part.split('/').map(function(alt) {
+        var list = [];
+        String(text || '').split(',').forEach(function(part) {
+            var times = /x\s*(\d+)\s*$/i.exec(part);
+            var alts = part.replace(/x\s*\d+\s*$/i, '').split('/').map(function(alt) {
                 var m = /(item|weapon|armor)\s*(\d+)/i.exec(alt);
                 return m ? { kind: m[1].toLowerCase(), id: Number(m[2]) } : null;
             }).filter(Boolean);
-        }).filter(function(alts) { return alts.length > 0; });
+            for (var i = 0; i < (times ? Number(times[1]) : 1) && alts.length > 0; i++) list.push(alts);
+        });
+        return list;
     };
 
     $.object = function(ref) {
@@ -213,10 +220,14 @@ SmokingIsle.Crafting = SmokingIsle.Crafting || {};
         return $gameParty.numItems($.object(ref));
     };
 
-    // For each ingredient, the first alternative the party has (null if none).
+    // For each ingredient, the first alternative the party still has once the
+    // earlier ingredients are set aside (null if none).
     $.pick = function(recipe) {
+        var used = {};
         return recipe.ins.map(function(alts) {
-            return alts.filter(function(ref) { return $.count(ref) > 0; })[0] || null;
+            var ref = alts.filter(function(r) { return $.count(r) > (used[r.kind + r.id] || 0); })[0] || null;
+            if (ref) used[ref.kind + ref.id] = (used[ref.kind + ref.id] || 0) + 1;
+            return ref;
         });
     };
 
@@ -226,7 +237,13 @@ SmokingIsle.Crafting = SmokingIsle.Crafting || {};
         var missing = recipe.ins.filter(function(alts, i) { return !$.pick(recipe)[i]; }).map(function(alts) {
             return alts.map(function(ref) { return $.object(ref).name; }).join(' or ');
         });
-        if (missing.length) return 'Needs ' + missing.join(', ') + '.';
+        if (missing.length) {
+            var counts = {};
+            missing.forEach(function(name) { counts[name] = (counts[name] || 0) + 1; });
+            return 'Needs ' + Object.keys(counts).map(function(name) {
+                return counts[name] > 1 ? name + ' x' + counts[name] : name;
+            }).join(', ') + '.';
+        }
         if (recipe.tool && !$gameParty.hasItem($dataItems[recipe.tool])) return 'Needs a ' + $dataItems[recipe.tool].name + '.';
         if ($.isFireStation(station) && recipe.heat) {
             if (!$.isLit(station)) return 'The fire isn\'t lit.';

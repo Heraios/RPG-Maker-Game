@@ -651,6 +651,8 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Navigator's Raiment (First Sailor, adult-sized) | Head, Shoulders (Star-Chart Mantle), Body, Neck (Crescent Pectoral, also First Sailor Regalia) | +1 Insight | Spells cost 10% less Mana |
 | Black Bronze (First Sailor, adult-sized) | Head, Cuirass, Arms, Greaves | 10% less magic damage | 25% less magic damage. Shiny and `<Metal>`; heavy (Fatigue) |
 | Grown Coral (First Sailor; fits anyone) | Head, Cuirass (heals 2% Health a turn), Greaves | Water spells +10%; resists Wet | 15% less Cut damage; attackers take 15% back. **Every piece whispers Despair (3% a turn)**; the Scoria Pupil quiets it |
+| Firebrand Gear (the Princess's forest-burners, Act 5; fits anyone) | Head (Wet-Felt Hood), Cuirass (Clay-Daubed Coat), Hands (Mitts), Legs, Feet | 25% less Fire damage | Immune to Smoldering and Enflamed; fire spells +15%; **but you start every battle Wet** (weak to electricity and cold) |
+| Black Hound Regalia (the Destroyer's gift, Act 6; fits anyone) | Head (Hound-Skull Helm), Shoulders (Black Hound Pelt), Cuirass (Scoria-Plate), Legs (Ember-Vein), Feet (Ash-Walker Boots: immune to Mired) | Might +10%; immune to Smoldering | 20% less damage from the Destroyer's servants, who start friendlier; spirits and priests start unfriendly. **Every piece whispers** (Panicked or Enraged), and nothing quiets it |
 
 Good outfits: Feather + Tapa (the priest), Goat-Skin + Pine Pitch (volcanic desert), Goat-Skin + Boar
 Hide (the hunter), Seal Leather + Tortoise Shell (coastal tank), Mouflon Wool + Boar Hide (alpine),
@@ -934,8 +936,16 @@ Laurel, Wax Myrtle (burns well), Honey Palm and Driftwood are firewood and build
 - The **electroplater** plates a copper weapon with a Silver Ingot into copper-silver, for a fee.
 - Bronze, black bronze, grown coral and the mythic trophy weapons are never crafted.
 
-**Armor crafting (planned; recipes can't make armor yet).** Islander-made sets are crafted and come in as
-many copies as you make; foreign, ancient, sacred and trophy gear is found and stays rare.
+**Armor crafting (built: 125 recipes).** Islander-made sets are crafted and come in as many copies as you
+make; foreign, ancient, sacred and trophy gear is found and stays rare. Recipes can take several of one
+ingredient (`<Recipe In: item 179 x2>`: a Tapa Wrap takes two Tapa Cloth). Woven things have two
+recipes: the **weaver** (known, for a fee) or your own **Backstrap Loom** (needs the recipe item). Carving
+and knapping (Slat Armor, wooden shields, bone, shell, gourd and stone trinkets) are always known; sewing,
+fletching, oven work and the "copy the enemy" recipes (Linen, Firebrand) need the recipe item. The
+**priest** is an NPC crafter too (Bark-Paper Prayer Strips). Materials added for it: Mulberry Bark, Tapa
+Cloth, Shark Skin, Deer Hide, Linen Cloth, Wool Felt, Seabird Feather (no enemy drops Shark Skin or Deer Hide
+yet). Mouflon Wool stays found-only for now. Patience's collars, booties, bells and packs have recipes too
+(the Glow-Bead, Coral-Eyed and Bronze War-Dog collars are found).
 
 | Set | How | Where |
 |---|---|---|
@@ -949,7 +959,7 @@ many copies as you make; foreign, ancient, sacred and trophy gear is found and s
 | Tortoise Shell | Scutes laced with sinew | Campfire |
 | Linen Armor (Act 4) | Looted Linen Cloth layered and woven: Islanders copy the marines | Weaver, or the Backstrap Loom |
 | Cowhide Cuirass (Act 4) | Tanned | Tanner |
-| Firebrand Gear (Act 5) | Wool felt woven, then daubed with clay: Islanders copy the Princess's troops | Weaver or loom; earth oven |
+| Firebrand Gear (Act 5) | **Wool Felt** woven from goat or mouflon wool, then daubed with clay (uses the fire): Islanders copy the Princess's troops | Weaver or loom; earth oven |
 | Feather | **Not crafted**: consecrated by a grove priest (see Armor sets) | Ritual sites |
 
 Found only: Sailor's Kit and Crew clothing (several copies), Lava-Tube Gear (a few, from the Children of the
