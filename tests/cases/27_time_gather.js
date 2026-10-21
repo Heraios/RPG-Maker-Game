@@ -161,8 +161,10 @@ module.exports = {
             out.sorrelDay = G.gather(map, ev('Moon Sorrel'), 'Moon Sorrel', yoon).text;
             T.setPeriod(3);
             out.sorrelNight = G.gather(map, ev('Moon Sorrel'), 'Moon Sorrel', yoon).text;
+            const note = $dataMap.note; $dataMap.note = '';   // outdoors
             out.dark = G.gather(map, ev('Laurel'), 'Bitterwood', yoon).text;
             T.lightFor(100); out.lit = G.gather(map, ev('Laurel'), 'Bitterwood', yoon).ok;
+            $dataMap.note = note;
             T.sleep(); out.regrown = !$gameSelfSwitches.value([map, ev('Clay Pit'), 'A']) + '/' + G.gather(map, ev('Clay Pit'), 'Clay Pit', yoon).ok;
             Math.random = () => 0.99; out.rainTree = G.gather(map, ev('Laurel'), 'Rain Tree', yoon).text;
             Math.random = real;

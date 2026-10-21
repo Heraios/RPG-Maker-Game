@@ -32,6 +32,21 @@
  * Night; and Night with a light.
  * @default 30,-5,-30,0; 0,0,0,0; 40,-15,-45,0; -90,-70,-10,60; -45,-35,-15,30
  *
+ * @param Dark Tints
+ * @desc Screen tone in darkness (map note <Dark>, or <Dark At Night> at
+ * night): without a light; and with one.
+ * @default -150,-150,-130,110; -60,-60,-75,40
+ *
+ * @param Dark Hit Penalty
+ * @desc Hit lost by the party fighting in darkness without a light (15 = 15%).
+ * Enemies there are used to the dark.
+ * @default 15
+ *
+ * @param Sight Switch
+ * @desc Switch that is ON while the party can see (not in darkness without a
+ * light), for events only found by lamplight.
+ * @default 8
+ *
  * @param Night Mood
  * @desc How Talk moods start at night, by kind of enemy.
  * @default spirit 10, animal -10
@@ -66,7 +81,18 @@
  *                                    300 steps (Torch, Myrtle Candle)
  *   State note: <Light>              a party member with it carries a light
  *                                    (Lamplight)
- * At night, gathering needs a light, except for night-only plants.
+ * At night outdoors, and anywhere dark, gathering needs a light, except for
+ * night-only plants. A light burns down as you walk outdoors or in the dark.
+ *
+ * ============================================================================
+ * Darkness
+ * ============================================================================
+ * Map note:  <Dark>            always dark (caves, abandoned buildings)
+ *            <Dark At Night>   dark at night (forests)
+ * Darkness is much darker than night unless the party carries a light.
+ * Without one, the party loses hit in battle (Dark Hit Penalty), gathering
+ * finds nothing, and the Sight Switch is OFF (events with it as a page
+ * condition only appear by lamplight).
  *
  * ============================================================================
  * Night encounters and moods
@@ -102,6 +128,10 @@ SmokingIsle.Time = SmokingIsle.Time || {};
     $.tints = String(params['Tints'] || '0,0,0,0;0,0,0,0;0,0,0,0;0,0,0,0;0,0,0,0').split(';').map(function(t) {
         return t.split(',').map(Number);
     });
+    var dark = String(params['Dark Tints'] || '-150,-150,-130,110;-60,-60,-75,40').split(';').map(function(t) { return t.split(',').map(Number); });
+    $.darkTone = dark[0]; $.darkLitTone = dark[1] || dark[0];
+    $.darkHitPenalty = Number(params['Dark Hit Penalty'] || 0) / 100;
+    $.sightSwitch = Number(params['Sight Switch'] || 0);
     $.nightMood = {};
     String(params['Night Mood'] || '').split(',').forEach(function(part) {
         var m = /([\w-]+)\s+([+-]?\d+)/.exec(part);
@@ -132,6 +162,22 @@ SmokingIsle.Time = SmokingIsle.Time || {};
         if ($.periodVariable) $gameVariables.setValue($.periodVariable, $.period());
         if ($.dayVariable) $gameVariables.setValue($.dayVariable, $.day());
         if ($.nightSwitch) $gameSwitches.setValue($.nightSwitch, $.isNight());
+        if ($.sightSwitch && $dataMap) $gameSwitches.setValue($.sightSwitch, $.canSee());
+    };
+
+    // Darkness: <Dark> always, <Dark At Night> at night.
+    $.isDark = function() {
+        var note = $.mapNote();
+        return /<Dark>/i.test(note) || (/<Dark At Night>/i.test(note) && $.isNight());
+    };
+
+    // Somewhere a light is needed: darkness, or outdoors at night.
+    $.needsLight = function() {
+        return $.isDark() || ($.isNight() && $.isOutdoors());
+    };
+
+    $.canSee = function() {
+        return !$.needsLight() || $.hasLight();
     };
 
     // Listeners for a new day (gathering spots regrow).
@@ -188,6 +234,7 @@ SmokingIsle.Time = SmokingIsle.Time || {};
     };
 
     $.tone = function() {
+        if ($.isDark()) return $.hasLight() ? $.darkLitTone : $.darkTone;
         if (!$.isOutdoors() || /<No Time Tint>/i.test($.mapNote())) return [0, 0, 0, 0];
         if ($.isNight() && $.hasLight()) return $.tints[4] || $.tints[3];
         return $.tints[$.period()];
@@ -195,6 +242,7 @@ SmokingIsle.Time = SmokingIsle.Time || {};
 
     $.refreshTint = function(duration) {
         if (!$gameScreen || !$dataMap || $gameParty.inBattle()) return;
+        if ($.sightSwitch) $gameSwitches.setValue($.sightSwitch, $.canSee());
         $gameScreen.startTint($.tone(), duration || 0);
     };
 
@@ -213,19 +261,26 @@ SmokingIsle.Time = SmokingIsle.Time || {};
     var _Game_Party_increaseSteps = Game_Party.prototype.increaseSteps;
     Game_Party.prototype.increaseSteps = function() {
         _Game_Party_increaseSteps.call(this);
-        if (!$.isOutdoors()) return;
         var s = $.state();
-        if (s.light > 0) {
+        if (s.light > 0 && ($.isOutdoors() || $.isDark())) {
             s.light -= 1;
             if (s.light === 0) $.refreshTint(60);
         }
-        $.addSteps(1);
+        if ($.isOutdoors()) $.addSteps(1);
     };
 
     var _BattleManager_endBattle = BattleManager.endBattle;
     BattleManager.endBattle = function(result) {
         _BattleManager_endBattle.call(this, result);
         if ($.isOutdoors()) $.addSteps($.battleSteps);
+    };
+
+    // Fighting in darkness without a light: the party's hit drops.
+    var _Game_Actor_xparam = Game_Actor.prototype.xparam;
+    Game_Actor.prototype.xparam = function(xparamId) {
+        var value = _Game_Actor_xparam.call(this, xparamId);
+        if (xparamId === 0 && $dataMap && $gameParty.inBattle() && !$.canSee()) value -= $.darkHitPenalty;
+        return value;
     };
 
     // <Field Light: N> items work from the menu.

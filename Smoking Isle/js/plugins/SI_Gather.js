@@ -294,7 +294,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         if ($.isSpent(mapId, eventId)) return 'Nothing more here today.';
         if (entry.night && !T.isNight()) return 'You can\'t find it now. It only shows itself at night.';
         if (entry.dawn && T.period() !== T.DAWN) return 'There\'s nothing here now. It only comes at dawn.';
-        if (!entry.night && T.isNight() && !T.hasLight()) return 'It\'s too dark to see. You need a light.';
+        if (!entry.night && !T.canSee()) return 'It\'s too dark to see. You need a light.';
         if (entry.tool === 'kit' && !$gameParty.hasItem($.find('Knapping Kit'))) return 'You need a Knapping Kit.';
         if (entry.tool === 'stick' && !$gameParty.hasItem($.find('Digging Stick'))) return 'You need a Digging Stick.';
         if (entry.tool === 'torch' && !$gameParty.hasItem($.find('Torch'))) return 'You need a Torch to smoke out the bees.';

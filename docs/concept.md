@@ -1196,6 +1196,44 @@ be brought below about 60–70 without camping**.
 - **The Sundial** (key item) tells the period and the day outdoors; it has no shadow at night and no sun
   indoors. A quest reward (like the Trachyte Quern).
 
+### Darkness
+Map notes (`SI_Time.js`): **`<Dark>`** for places that are always dark (caves, abandoned buildings) and
+**`<Dark At Night>`** for places dark only at night (forests).
+- Darkness is much darker than night unless the party carries a **light** (Torch, Myrtle Candle, Lamplight).
+  A light burns down as you walk outdoors **or in the dark**, even underground where time stands still.
+- **Without a light:** the party fights at **−15% hit** (enemies there are used to the dark), and nothing
+  can be gathered.
+- **Switch 8 "Can see"** is ON whenever the party can see. Use it as an event page condition for things
+  only found by lamplight (hidden passages, glyphs, a ghost's footprints).
+
+### Crawlways
+`SI_Crawl.js`. A crawlway is an event with `<Crawlway: map, x, y>` (optionally a facing) in its note, calling
+**Common Event 8: Crawlway**. **Only the children fit** (Yoon, Sib, Lasa, Tou, Falmi), plus Patience. With
+adults in the party you choose: squeeze through with just the children, or stay together. The adults
+**wait on the map they were on** and rejoin as soon as the party is back on it. Point crawlways at a
+different map (a crawlway within one map would regroup at once). Story events can call
+`SmokingIsle.Crawl.regroup()`.
+
+### Lava-tube dungeons (design notes)
+Real lava tubes (Cueva del Viento on Tenerife, Cueva de los Verdes and Jameos del Agua on Lanzarote, Ana Kai
+Tangata on Rapa Nui) are long, winding tunnels left when a lava river drained under its own crust.
+- **A spine with branches,** not a maze of rooms: one long route downhill toward the sea, side tubes for
+  treasure and gathering. Overworld entrances (collapses, *jameos*) line up along the tube's path.
+- **Skylights:** sunlit collapses as landmarks, resting areas (a Star Mother idol) and Rapa Nui-style
+  **gardens** (sweet potato, taro, ti, bellflowers). Dark at night.
+- **Darkness:** deep sections are `<Dark>`; Goblin's Gold and the Cave-Glow Stone glimmer as landmarks.
+- **Stacked tubes and lava falls:** one-way drops to a lower level, and later a route back up as a shortcut.
+- **Crawlways** only the children fit through; **Lasa flies** across broken benches; **Dama's** underwater
+  breathing opens flooded sumps and the sea tunnel; adults clear rubble.
+- **Hazards:** bad air near vents (Fatigue), steam, sharp rubbly floors, lavacicles.
+- **Life:** blind crabs, cave rats, crickets, bats near entrances; the Children of the Caves' pranks and
+  hoards; First Sailor ghosts deeper; the Destroyer's tubes deepest. Wart Fern, Cave Mushrooms, Goblin's
+  Gold, Cave Pearls, Hot-Spring Sinter near vents.
+- **Story places:** the Children of the Caves' village under a skylight garden; burial tubes (Islander
+  mummies, First Sailor tombs, Tou's remains); a tube running through Tou's buried palace.
+- **Variety along a long tube:** colour changes (black, rust-red, gold), skylights, lava falls, root curtains,
+  pools. Tiles: recoloured cave tiles with raised wall benches.
+
 ### Gathering
 `SI_Gather.js`. A gathering spot is a map event with `<Gather: Laurel>` in its note and one command, **Call
 Common Event: Gather**. Copy and paste it for more of the same species. A second page with **Self Switch A**
