@@ -692,6 +692,13 @@ impact crater**: the Red Bowl myth is literally true.
 ### The All-Seafarers
 - **Homeland:** the jagged, marginal coasts on the crater rim, which is where they get **tin** (and
   so bronze, which the Islanders lack).
+- **Inspirations:** a mixture of the **Minoans** (Crete), the **Nuragic** tower-builders of Sardinia,
+  **ancient Egypt** and the **Mycenaean Greeks**.
+- **Religion:** they especially venerate the **bull-men**, the husbands of various minor goddesses, for
+  their strength (which is why the Bull of Water's lie works on them).
+- **The King of All the Sea:** a seafaring Alexander the Great crossed with a young JRPG hero, seen 80
+  years later as an old man. As a young hero he **built the empire himself, out of the grateful peoples he
+  saved**. He is **over 100, yet still strong and hale**.
 - **Ideology:** the King of All the Sea believes the gods sent him a vision that he is destined to
   conquer "All the Sea", which is the entire world as far as anyone knows.
 - **The royal family:** the King has literally dozens of sons and daughters by a comically large
