@@ -556,7 +556,8 @@ Two large mines, **one copper** and **one silver/lead**, both intersect the lava
 spans the whole island.
 
 ### Technology: electricity without bronze
-Despite having no bronze, the Islanders have **electricity, telegraphs and printing**.
+Despite having no bronze, the Islanders have **electricity, telegraphs and printing**. Islanders call electricity
+**"jarred lightning"**.
 
 - **Batteries:** stacks of alternating copper and lead discs soaked in acidic water from volcanic hot
   springs and fumaroles, each stack in a ceramic jar, several jars wired together. **Battery
