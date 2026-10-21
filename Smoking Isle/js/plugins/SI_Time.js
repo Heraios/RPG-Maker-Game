@@ -94,6 +94,10 @@
  * finds nothing, and the Sight Switch is OFF (events with it as a page
  * condition only appear by lamplight).
  *
+ * Skill note: <Dark Bonus>   in the dark or outdoors at night, the skill's
+ *                            states land 25% more often and last a turn
+ *                            longer (Keva, the blinding spells).
+ *
  * ============================================================================
  * Night encounters and moods
  * ============================================================================
@@ -281,6 +285,20 @@ SmokingIsle.Time = SmokingIsle.Time || {};
         var value = _Game_Actor_xparam.call(this, xparamId);
         if (xparamId === 0 && $dataMap && $gameParty.inBattle() && !$.canSee()) value -= $.darkHitPenalty;
         return value;
+    };
+
+    // <Dark Bonus> skills: states land more often and last longer where it's dark.
+    $.darkBonus = function(item) {
+        return !!item && /<Dark Bonus>/i.test(item.note || '') && !!$dataMap && $.needsLight();
+    };
+
+    var _Game_Action_itemEffectAddState = Game_Action.prototype.itemEffectAddState;
+    Game_Action.prototype.itemEffectAddState = function(target, effect) {
+        if (!$.darkBonus(this.item()) || effect.dataId === 0) return _Game_Action_itemEffectAddState.call(this, target, effect);
+        var e = { code: effect.code, dataId: effect.dataId, value1: Math.min(1, effect.value1 * 1.25), value2: effect.value2 };
+        var had = target.isStateAffected(e.dataId);
+        _Game_Action_itemEffectAddState.call(this, target, e);
+        if (!had && target.isStateAffected(e.dataId)) target._stateTurns[e.dataId] += 1;
     };
 
     // <Field Light: N> items work from the menu.

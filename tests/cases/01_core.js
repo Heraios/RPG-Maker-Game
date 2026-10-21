@@ -22,7 +22,7 @@ module.exports = {
         t.ok(r.khopesh.includes('Heavy Chop') && !r.khopesh.includes('Quick Jab'), 'crescent sword cannot jab: ' + r.khopesh);
         t.eq(r.conductNoPile, false, 'Conducting Blade without a Voltaic Pile');
         t.eq(r.conductPile, true, 'Conducting Blade with a Voltaic Pile and a copper knife');
-        t.ok(r.islanderOnly, 'only Islanders can use a Voltaic Pile (Pada yes, Theenmy no)');
+        t.ok(r.islanderOnly, 'only Islanders can use a Voltaic Pile (Pada yes, Thenmy no)');
     },
 
     'punch ignores weapon ATK and armor never blocks all damage': async (h, t) => {

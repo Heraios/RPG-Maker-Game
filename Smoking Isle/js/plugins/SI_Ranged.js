@@ -57,6 +57,8 @@
  *   a.rangedDamage(b, 1.2, 0.5)   the same, counting only half of b.def
  *                           (Aimed Shot).
  *
+ * State note:   <No Ranged>    no ranged skills while it lasts (Blinded).
+ *
  * Ammo resets at the start of every battle. The skill list shows how many
  * uses are left instead of a cost.
  *
@@ -241,6 +243,8 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
     var _Game_BattlerBase_meetsSkillConditions = Game_BattlerBase.prototype.meetsSkillConditions;
     Game_BattlerBase.prototype.meetsSkillConditions = function(skill) {
         if (!_Game_BattlerBase_meetsSkillConditions.call(this, skill)) return false;
+        // <No Ranged> states (Blinded): no ranged skills.
+        if ($.isRanged(skill) && this.states().some(function(st) { return /<No Ranged>/i.test(st.note || ''); })) return false;
         if ($.isRanged(skill) && this.isActor()) return this.rangedSourceSlot(skill) >= 0;
         return true;
     };

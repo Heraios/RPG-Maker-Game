@@ -107,7 +107,7 @@ module.exports = {
         });
         t.eq(r.piles, 'Voltaic Pile,Voltaic Pile,Voltaic Pile,Voltaic Pile,Voltaic Pile', 'every Islander starts with a pile in the Battery slot');
         t.ok(r.noBattery, 'non-Islanders have no Battery slot');
-        t.ok(r.theenmy, 'Theenmy: all six spells and the Cultural move from a codex');
+        t.ok(r.theenmy, 'Thenmy: all six spells and the Cultural move from a codex');
         t.ok(r.parl, 'Parl: the three weaker spells and the move');
         t.ok(r.yoon, 'Yoon reads Islander only: just the move');
         t.ok(r.sib, 'Sib learns Seafarer script later: the weaker spells then');

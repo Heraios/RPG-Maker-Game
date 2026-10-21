@@ -35,12 +35,12 @@ module.exports = {
         });
         t.eq(r.sibTattoos, 4, 'Sib has 4 tattoo slots (arms)');
         t.eq(r.sibCodex, 1, 'Sib reads, so has a codex slot');
-        t.eq(r.thTattoos, 0, 'Theenmy has no tattoo slots');
-        t.eq(r.thCodex, 1, 'Theenmy has a codex slot');
+        t.eq(r.thTattoos, 0, 'Thenmy has no tattoo slots');
+        t.eq(r.thCodex, 1, 'Thenmy has a codex slot');
         t.eq(r.touSlots, 1, 'Tou (innate caster) has no tattoos, but reads: a codex slot');
         t.ok(r.sibSpells.includes('Mahu') && r.sibSpells.includes('Ahi'), "Sib's starting tattoos grant Mahu and Ahi: " + r.sibSpells);
         t.eq(r.sibLearnedAhi, false, 'Sib knows Ahi from the tattoo, not by learning it');
-        t.ok(r.thSpells.includes('Mahu') && r.thSpells.includes('Ara'), "Theenmy's Codex of Mending grants its spells: " + r.thSpells);
+        t.ok(r.thSpells.includes('Mahu') && r.thSpells.includes('Ara'), "Thenmy's Codex of Mending grants its spells: " + r.thSpells);
         t.eq(r.yoonSpells.length, 0, "human Yoon's new body starts with no glyphs");
         t.eq(r.ghostSpells.length, 0, 'the Ghost has no regular spells');
         t.ok(r.occupiedLocked, 'an occupied tattoo slot cannot be changed');

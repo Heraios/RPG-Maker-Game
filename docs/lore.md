@@ -73,7 +73,7 @@ service or sealing them away, and founding the Kingdom of All the Sea.
 rainy, fertile side of the rim, and **the Red Lady** of the endless, trackless jagged highlands
 beyond. She became **the King's wife (wives)**: she split herself permanently into two beings and
 **became mortal**, so their very many children (twins, triplets and more, from both bodies) are
-**unusually powerful humans**. Theenmy and the Princess are among them. It was **a love match**, and
+**unusually powerful humans**. Thenmy and the Princess are among them. It was **a love match**, and
 also her escape from her divine family's drama. The Dark Lady and the Red Lady are **alive and live in
 the capital**.
 
@@ -93,7 +93,7 @@ came down.
 4. **The village priest:** he simulates aging with magic, and the Islanders think he is a very hale
    man in his late sixties. (His "orphan" backstory belongs to this identity.)
 
-**Neither the King nor Theenmy knows** that the island's priest is the King's old companion. **The
+**Neither the King nor Thenmy knows** that the island's priest is the King's old companion. **The
 previous priest, who chose Juda as apprentice, was Juda's first murder on the island.**
 
 ### The Red Bowl
@@ -436,7 +436,7 @@ Iceland's assembly and lawspeaker.
 **Tama, the Island Chief.** Likable, gregarious and smart, but a bit spineless. He goes to **Juda** for
 advice on many things, and he's the main advocate of **paying the All-Seafarers' tribute** and keeping the
 peace with them. The island has paid tribute for **about 30 years, on Juda's advice** (part of Juda's
-collaboration). When the invasion comes, **Theenmy keeps Tama around as a puppet** chief; the Islanders
+collaboration). When the invasion comes, **Thenmy keeps Tama around as a puppet** chief; the Islanders
 follow whoever actually provides and protects, which is how **Dama becomes Chieftess by default**.
 
 **Why it matters in the story:** the All-Seafarers expect a king to deal with or behead; the Islanders
@@ -716,16 +716,16 @@ impact crater**: the Red Bowl myth is literally true.
   - **Iras**, the tributary official, **married to an Islander woman**.
   - **Warhus**, the dock-master at Mansehare.
 
-### Theenmy's plan
-Theenmy fully believes in his father's destiny and loves him, but also happens to be a decent man.
+### Thenmy's plan
+Thenmy fully believes in his father's destiny and loves him, but also happens to be a decent man.
 His plan for tighter control over the island: make **Juda a puppet ruler** and **marry Juda to one of
 his sisters**, who would be the real ruler. Relatively peaceful, few casualties, a smooth
 integration; the "primitive" islanders would be "civilized" while keeping a voice.
 
 **The demon ritual was Juda's own idea**, to get rid of those who would oppose the plan (like
-Pada). Theenmy knew nothing of it and would have balked immediately.
+Pada). Thenmy knew nothing of it and would have balked immediately.
 
-**The sister:** whatever happens with Theenmy, the sister who was to marry Juda grows frustrated
+**The sister:** whatever happens with Thenmy, the sister who was to marry Juda grows frustrated
 with the whole situation and **seizes control of the invasion force in a coup**, choosing to
 subjugate the island through straightforward brutality (the Princess of Act 5).
 
@@ -902,7 +902,7 @@ Sun and the Destroyer lean Fire.
 | Local spirits | Ghosts, Guardian Lizards, Sleep Demons, Daughters of the Wells | Spirit (Sib's Rite, Yoon's ghost kinship) |
 | First Sailor remnants | Stonemen, ancient ghosts, Hags, Birdmen, Crew-beasts, Kavakava figures | **Tou** (Stonemen surrender, ghosts report, Hags conflicted); Yoon (Hags dote on Yoon) |
 | Servants of the Destroyer | Black Hounds, Hunched | Hounds: **cannot talk**. Hunched: **Talk to free them** |
-| All-Seafarers | Soldiers, officers; the Princess's troops | Sapient (Parl, Theenmy; spare children vs. not) |
+| All-Seafarers | Soldiers, officers; the Princess's troops | Sapient (Parl, Thenmy; spare children vs. not) |
 | Sea | Giant Clams | None |
 | Great powers | Ladies, their husbands, the Bulls | Story bosses and negotiations |
 
@@ -1002,7 +1002,7 @@ Sun and the Destroyer lean Fire.
 | The **copper ball** | Dumped in the marsh (or carried off by Children of the Caves, who hoard shiny things?) | Matches the staff; together they are **Juda's** staff |
 | **Juda's new staff** | Juda himself | Why did he replace it? |
 | **Juda's homunculus notes** | Read by Sib | Why does the priest study forbidden First Sailor child-homunculus production? |
-| **Collaboration letters** with the All-Seafarers | Juda's papers; **Parl** can read them | Juda's secret deal with Theenmy |
+| **Collaboration letters** with the All-Seafarers | Juda's papers; **Parl** can read them | Juda's secret deal with Thenmy |
 | **The Bull of Heaven** bellowing at Juda's door | The village, on full moon nights (if he can be freed early) | A divine accusation |
 | **The dream hunter's vision** | The village dream hunter | Pada's death foretold |
 | **Juda's whereabouts** the day Yoon vanished | Witnesses, telegraph logs | Gaps in his story |
@@ -1022,15 +1022,15 @@ turns the more evidence was found, the villagers with her are better armed, and 
 - **Ladder the goat** climbs ladders, so maybe he can climb anything: a comic overworld helper?
 
 ### From the pantheon (extrapolations to confirm)
-- **The royal family has divine blood.** Theenmy and the Princess are grandchildren of a Lady, and
-  so great-grandchildren of Star Mother. Theenmy's paladin magic is his heritage. The empire calls
+- **The royal family has divine blood.** Thenmy and the Princess are grandchildren of a Lady, and
+  so great-grandchildren of Star Mother. Thenmy's paladin magic is his heritage. The empire calls
   the Ladies' family thieves and criminals while being ruled by their descendants.
 - **The King's founding adventure is a dark mirror of the player's party.** The heroes of an
   earlier JRPG became the empire, and their "righting wrongs" meant chaining and conscripting gods.
   Juda was one of those heroes, and chaining the Lady of the Sun was the same program applied to
   the island.
 - **Juda's history with the empire is 65 years old**: the beloved "old wizard" of the founding
-  legend. Theenmy would have grown up on stories of him.
+  legend. Thenmy would have grown up on stories of him.
 - **Juda's pattern is fake deaths and new identities.** That suggests clues: the teenage mystic's
   arrival 50 years ago, the convenient death of the previous priest who chose him, and records that
   don't add up.

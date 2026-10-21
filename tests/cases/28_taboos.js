@@ -36,7 +36,7 @@ module.exports = {
         t.eq(r.childWine, 'The adults won\'t let a child drink that. / The adults won\'t let a child drink that.', 'children are never given alcohol');
         t.ok(r.adultWine, 'adults may drink');
         t.eq(r.battleGrog, 'false/true', 'not in battle either');
-        t.eq(r.shell, '-- -- -- -- --', 'Parl and Theenmy won\'t wear turtle shell or seashells');
+        t.eq(r.shell, '-- -- -- -- --', 'Parl and Thenmy won\'t wear turtle shell or seashells');
         t.ok(r.islanderShell, 'Islanders will');
         t.ok(r.refuseAll, 'Pada, Juda and the ghost still eat nothing; Lasa now eats');
     }

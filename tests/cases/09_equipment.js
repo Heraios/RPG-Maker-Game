@@ -40,12 +40,12 @@ module.exports = {
         });
         t.eq(r.sibNames, 'Head,Neck,Shoulders,Body,Cuirass,Arms,Left Hand,Right Hand,Legs,Greaves,Feet,Melee,Ranged,Offhand,' +
             'Charm 1,Charm 2,Charm 3,Battery,Codex,Lower L Arm,Lower R Arm,Upper L Arm,Upper R Arm', 'Sib\'s slot list');
-        t.eq(r.thNames, 'Charm 3,Codex', 'Theenmy ends with a codex slot and no tattoos');
+        t.eq(r.thNames, 'Charm 3,Codex', 'Thenmy ends with a codex slot and no tattoos');
         t.eq(r.sibRing, 'Silver Ring', 'the ring starts in the Left Hand');
         t.eq(r.sibTattoos, 2, 'Sib starts with two tattoos');
         t.eq(r.judaTattoos, 5, 'Juda starts with five tattoos');
         t.eq(r.thCuirass, 'Bronze Cuirass', 'bronze cuirass sits in the Cuirass slot');
-        t.eq(r.thCodex, 'Codex of Mending', "Theenmy's codex");
+        t.eq(r.thCodex, 'Codex of Mending', "Thenmy's codex");
         t.eq(r.knifeOffhand, 'Obsidian Knife', 'a knife fits the off hand');
         t.eq(r.spearRejected, 'Obsidian Knife', 'a spear does not');
         t.eq(r.knifeKept, 'Obsidian Knife', 'refreshing keeps the off-hand knife');
@@ -60,7 +60,7 @@ module.exports = {
         t.eq(r.gloves, 'Hide Gloves/Silver Ring', '"Change Equipment" fills the empty hand');
     },
 
-    'who can use swords and staves; Yoon learns swords from Theenmy': async (h, t) => {
+    'who can use swords and staves; Yoon learns swords from Thenmy': async (h, t) => {
         await h.battle();
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id), W = n => $dataWeapons.find(w => w && w.name === n);
@@ -69,8 +69,8 @@ module.exports = {
             $gameSwitches.setValue(4, true); out.trained = A(2).canEquip(W('Bronze Leaf Sword')); $gameSwitches.setValue(4, false);
             return out;
         });
-        t.eq(r.swords, 'Parl,Falmi,Thenmy', 'swords: Parl, Falmi and Theenmy');
+        t.eq(r.swords, 'Parl,Falmi,Thenmy', 'swords: Parl, Falmi and Thenmy');
         t.eq(r.staves, 'Yoon,Sib,Juda,Tou', 'staves: Yoon, Sib, Juda and Tou only');
-        t.ok(r.trained, 'Yoon can use swords once switch 4 (Theenmy quest) is on');
+        t.ok(r.trained, 'Yoon can use swords once switch 4 (Thenmy quest) is on');
     }
 };

@@ -58,14 +58,14 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 - The All-Seafarers invade.
 - Yoon teams up with Dama, and possibly Parl, to rally the island's forces against them.
 - The Familiar and Last Queen questlines unlock (and can be done any time after this point).
-- At the end of the act, the party discovers that Theenmy, the invading Prince, isn't evil, and
+- At the end of the act, the party discovers that Thenmy, the invading Prince, isn't evil, and
   can choose to **surrender to him, fight him, or negotiate with him**.
 
 ### Act 5 — The Princess
-- A second All-Seafarer force arrives under Theenmy's sister, who is far worse.
-- Theenmy joins the party.
+- A second All-Seafarer force arrives under Thenmy's sister, who is far worse.
+- Thenmy joins the party.
 - Her army wreaks havoc: freeing the blue bull, trying to burn down the forests, and more.
-- A boss fight built up as the final battle. She surrenders, and either lets Theenmy govern
+- A boss fight built up as the final battle. She surrenders, and either lets Thenmy govern
   (possibly marrying Dama) or leaves with him to keep the capital under control when the King
   of All Seas dies.
 - **Twist:** Juda reappears, horribly scarred but alive. He kills the Princess and absorbs her
@@ -105,7 +105,7 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 | 8 | Parl | Utility fighter and intelligence | Optional (pearl thief outcome) | — |
 | 9 | Tou | Burst caster, First Sailor key | Optional (buried palace) | — |
 | 10 | Falmi | Child tank | Optional (Lady of the Woods) | — |
-| 11 | Theenmy | Premier tank and damage | End of Act 4 (three paths) | — |
+| 11 | Thenmy | Premier tank and damage | End of Act 4 (three paths) | — |
 | 12 | Patience | Pseudo party member | With Sib | — |
 
 ### Yoon — The Protagonist
@@ -118,7 +118,7 @@ there. The player chooses Yoon's gender and appearance.
 readings. In dialogue the player can have Yoon (and the people around them) lean either way, or stay
 agnostic; the game respects whichever stance the player takes and never confirms it.
 
-- **Weapons (Human form):** knives, staffs/spears, slings. Swords if Theenmy's sidequest is
+- **Weapons (Human form):** knives, staffs/spears, slings. Swords if Thenmy's sidequest is
   completed. Bows if all of Pada's sidequests are completed before his death.
 - **Ghost form:** very low HP. Dodges nearly all physical attacks and takes almost no damage from
   those that connect. Extremely vulnerable to magic. Cannot deal damage directly. Has all-enemy
@@ -272,7 +272,7 @@ him down is an important Act 2 quest.
   - **Option 2B (ratted out):** sides with the invaders and becomes an enemy. Never recruitable.
   - **Option 3 (pearls stolen, he dies):** never recruitable.
 
-### Theenmy — The Prince
+### Thenmy — The Prince
 The Prince of the invaders, who always ends up siding with the party.
 
 - **Weapons:** every melee type except staffs, including swords and javelins. His personal sword is a unique, irreplaceable masterwork bronze
@@ -344,7 +344,7 @@ ruler, now trapped in a child-sized wooden doll with jointed limbs.
   to forgive, fiercely loyal once won.
 - **Parl:** charming survivor, cynical and funny, writes everything down. Homesick and guiltier than he
   lets on. A pearl thief whose religion forbids anything from a shell.
-- **Theenmy:** honourable, scholarly, earnest; privileged and slowly seeing what his empire is. Shields
+- **Thenmy:** honourable, scholarly, earnest; privileged and slowly seeing what his empire is. Shields
   children on instinct; uncomfortable being the strongest person in the room.
 - **Falmi:** four hundred years in the growing but newly born: earnest, energetic, literal-minded, with
   plant logic. Takes being heir very seriously. Hopelessly flustered around Tou.
@@ -354,7 +354,7 @@ ruler, now trapped in a child-sized wooden doll with jointed limbs.
 - **Patience:** a good dog.
 
 **Most friction**
-1. **Dama and Theenmy:** the island's defender and the prince who invaded it, and they may marry. Enemies
+1. **Dama and Thenmy:** the island's defender and the prince who invaded it, and they may marry. Enemies
    to grudging allies to more.
 2. **Dama and Parl,** especially if his secret was kept (Option 2A): she hunted him, he lied to her.
 3. **Tou and Lasa** (hidden): the Children of the Caves descend from the Crew children Tou's court
@@ -373,24 +373,65 @@ ruler, now trapped in a child-sized wooden doll with jointed limbs.
 - **Falmi and Tou:** a crush, and everything in common: ancient and young at once, bodies that aren't
   flesh, raised as heirs by powerful elders.
 - **Parl and Lasa:** two thieves with an eye for shiny things; Parl as the party's rogue uncle.
-- **Theenmy and Sib:** scholar and priest: scripts, magic, Sib learning Seafarer writing.
+- **Thenmy and Sib:** scholar and priest: scripts, magic, Sib learning Seafarer writing.
 - **Dama and Falmi:** a warrior mentoring the child tank.
 
-**The royals** (Theenmy, Tou, Falmi; Dama as chieftess by consent)
+**The royals** (Thenmy, Tou, Falmi; Dama as chieftess by consent)
 - **Shaped by elders:** Tou a puppet of the Navigator Lords, Falmi grown four centuries to be heir,
-  Theenmy a king's son in his sister's shadow. Dama was never raised to rule: divine kings versus rule
+  Thenmy a king's son in his sister's shadow. Dama was never raised to rule: divine kings versus rule
   by consent.
-- **Not knowing what your realm does:** Tou's decrees killed children she thought she fostered; Theenmy
+- **Not knowing what your realm does:** Tou's decrees killed children she thought she fostered; Thenmy
   is learning what tribute and conquest mean. The only two who understand that horror.
-- **Tou as a primary source** for Theenmy's First Sailor scholarship: thrilling for him, awkward for her.
-- **Protocol comedy:** Tou's ancient etiquette, Theenmy's courtliness, Falmi asking what manners are.
+- **Tou as a primary source** for Thenmy's First Sailor scholarship: thrilling for him, awkward for her.
+- **Protocol comedy:** Tou's ancient etiquette, Thenmy's courtliness, Falmi asking what manners are.
 - **Real advice:** centuries of "solving" invented crises make Tou a surprisingly good adviser on
   governing the island after the war.
 - **Lineage and death:** Tou can't die while her moai stands; Falmi has lived four hundred years;
-  Theenmy is mortal and heir to a dying king. Tou laying her ancestors to rest opens these talks.
-- **The island's future:** Tou's ancient claim, Theenmy's by conquest (or marriage), Dama's by the
+  Thenmy is mortal and heir to a dying king. Tou laying her ancestors to rest opens these talks.
+- **The island's future:** Tou's ancient claim, Thenmy's by conquest (or marriage), Dama's by the
   people. Who rules after the war?
-- **Matchmaking:** Theenmy and Dama, Falmi and Tou; the royals teasing each other.
+- **Matchmaking:** Thenmy and Dama, Falmi and Tou; the royals teasing each other.
+
+**Thenmy among the rebels** (a bronze prince working with "barbarians", most of them children, who in
+most versions beat him)
+
+How he takes it depends on how he was recruited:
+- **Talked down:** he lost a debate, not a duel. Pride bruised but intact; he treats Yoon as a negotiator
+  and the party as a strange embassy. The most open-minded version, curious from day one.
+- **Defeated and spared:** a life spared is a debt (Mycenaean-style honour). He joins almost formally
+  bound: stiff, proud, calling them by title ("Lady Chieftess", "Priest Sib"). The richest arc, from
+  humiliation to respect to real loyalty.
+- **The party surrendered to him:** in his mind he won, and sees himself as their guardian. The risk is
+  condescension; his arc is learning they're allies, not wards. The first time a child saves his life
+  should land hard.
+
+In every version:
+- **"Barbarians" with telegraphs.** Raised on the empire's prejudices (tattoos as slave marks), he finds
+  batteries, telegraph lines and electric surgery made without bronze. Fascination and embarrassment: he
+  takes notes, Sib teaches him Islander script in return for Seafarer writing, and Parl dryly points out
+  that *his* notes said the same years ago.
+- **Children who fight.** His deepest instinct is that adults shield children, so letting them fight feels
+  shameful. He keeps stepping in front (the premier adult protector). The kids resent the coddling, Falmi
+  most of all as the child tank; their rivalry over who stands at the front is comedy, and growth when he
+  finally trusts a child to hold the line.
+- **Protocol:** he bows to Tou, a queen older than his empire, and means it. Dama leads by consent, which
+  baffles a prince raised on divine kingship; now he's the one who doesn't give orders.
+- **Being slow:** a bronze glacier with the lowest Speed in the game, surrounded by fast children. A running
+  gag.
+- **Meals:** no shellfish, beef as sacred food, and three Islander gods' worth of meat taboos at every Star
+  Mother dinner. Shared meals are where he stops being a guest.
+
+The two hardest beats:
+1. **Learning what Juda did.** Juda killed Yoon partly to clear the way for Thenmy's own plan (the puppet
+   chief, his sister's marriage). He never knew and would have refused, but his plan is part of why a
+   child is dead, and that child stands next to him. It plays very differently depending on whether Yoon
+   forgives him.
+2. **Fighting his sister.** Still loyal to his father, he frames the war as saving his father's empire from
+   what it's becoming, until he has to ask whether it was ever what he thought.
+
+Where he ends up: treating the party as equals and friends. That feeds his endings (governing the island,
+perhaps marrying Dama, or holding the capital when the old King dies): the first of his family to rule by
+consent rather than destiny.
 
 ---
 
@@ -402,20 +443,20 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | System | Needed for | Likely approach |
 |--------|------------|-----------------|
 | Ghost / Human form | Yoon | Two actors (already set up as actors 1 and 2) swapped in and out of the party, with skills and stats on separate classes |
-| Adult protection | Pada, Juda, Dama, Theenmy | Plugin: a conditional "substitute" that only covers children below an HP threshold |
+| Adult protection | Pada, Juda, Dama, Thenmy | Plugin: a conditional "substitute" that only covers children below an HP threshold |
 | Pseudo party member | Patience | Plugin: an extra ally outside the four slots who acts on her own and gives passives (like Boney or King) |
 | Revive after two turns | Tou | State plus plugin: a knockout that auto-revives after 2 turns with TP reset |
 | HP regeneration | Falmi | Built-in: HP regeneration trait on the class |
-| Weapon swap and attack | Theenmy | Plugin: an in-battle equipment swap that doesn't use up the turn |
+| Weapon swap and attack | Thenmy | Plugin: an in-battle equipment swap that doesn't use up the turn |
 | Equipment durability | Bronze is unbreakable | Plugin: durability on non-bronze gear (this is a big system; to be decided) |
 | Pre-combat encounters | Sib, Pada, Juda, Tou | Events or plugin: checks on enemy type and party members before battle (talk your way out, ambush, surrender) |
-| Relationships and sidequests | Yoon's skill learning, Pada's bow, Theenmy's swords | Variables per character; skills and weapon types unlocked by sidequest switches |
+| Relationships and sidequests | Yoon's skill learning, Pada's bow, Thenmy's swords | Variables per character; skills and weapon types unlocked by sidequest switches |
 | Missable content | Pada's sidequests | Switches that lock when Pada dies |
-| Languages and literacy | Islander, All-Seafarer, First Sailor | Party checks on inscription and document events (Sib, Parl, Falmi, Tou, Theenmy) |
+| Languages and literacy | Islander, All-Seafarer, First Sailor | Party checks on inscription and document events (Sib, Parl, Falmi, Tou, Thenmy) |
 | Clue and evidence tracking | Murder mystery | A custom journal menu, or repurposing the ItemBook plugin |
 | Player-chosen gender and appearance | Yoon | Choice at game start that sets the sprite and portrait, plus pronoun substitution in dialogue |
 | Underwater exploration | Dama | Map events and region checks gated on her spell |
-| Faction choices | Pearl thief, Theenmy | Variables that branch recruitment and relationships |
+| Faction choices | Pearl thief, Thenmy | Variables that branch recruitment and relationships |
 
 ## Combat System
 
@@ -427,7 +468,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Weapon skills | Equipped weapons unlock physical skills through **moves** (see below) |
 | Fatigue | Replaces TP. Builds with most actions, **carries over between battles**, and causes **Weary** at 100 |
 | Durability | **Condition tiers**: worn weapons turn into weaker items, and bronze never degrades |
-| Weapon swapping | Mid-battle; costs the turn (Theenmy swaps for free) |
+| Weapon swapping | Mid-battle; costs the turn (Thenmy swaps for free) |
 | Party swapping | Mid-battle, in the style of FFX: free, but adds a little Fatigue |
 | Talking | Hybrid: a mood meter plus optional written lines and scripted moments (see Talk below) |
 | Leveling | **Insight**: gained only from talking, and it never raises damage or teaches skills (see below) |
@@ -519,8 +560,8 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
   self-shock when Wet), Jasper Ring (Rite +15%), Pearl Earring (charm).
 - **Ranged:** Horn Bow (strongest Islander bow), Copper-Tipped Javelin, Bronze Javelins (Seafarer, 2 throws). Bows: **Juniper Bow** (small, the old Short
   Bow) and **Yew Longbow** (alpine, hits harder).
-- Who can use paddle-swords: Yoon, Pada, Dama, Falmi and Theenmy. Swords: Theenmy, Falmi, Parl, and Yoon
-  after Theenmy's sidequest (switch 4). Staffs: Yoon, Sib, Juda and Tou only.
+- Who can use paddle-swords: Yoon, Pada, Dama, Falmi and Thenmy. Swords: Thenmy, Falmi, Parl, and Yoon
+  after Thenmy's sidequest (switch 4). Staffs: Yoon, Sib, Juda and Tou only.
 
 **For testing, everyone knows every skill their weapons allow.** When each is learned (early,
 mid-game, late) is still to be decided.
@@ -757,7 +798,7 @@ into armor types by where it is worn:
 - **Where things turn up:** the Sailor's Kit in Act 2 (Mansehare warehouses, Parl's hideout); Crew
   clothing in Act 2 (the Children of the Caves' village and hoards, Lasa's people); Palm-Fibre,
   Sharkskin, Deerskin and Slat Armor in Acts 1–2; Linen, Charioteer's Gear and the cattle goods with the
-  invasion (Act 4); Court Dress with Theenmy and Iras; Navigator's Raiment, Black Bronze and Grown Coral
+  invasion (Act 4); Court Dress with Thenmy and Iras; Navigator's Raiment, Black Bronze and Grown Coral
   in the ruins (late). Slat Armor will be a carving recipe once crafting can make armor.
 
 **Charms** (by biome): shark-tooth necklace, bone fishhook pendant, cowrie anklet,
@@ -891,7 +932,7 @@ rarer recipes from the **Stream Maidens**; ritual ones kept by **priests**.
 **All-Seafarer Grog** replaced the old Potion: sailors' rum and water. Heals **30 HP** but leaves the
 drinker **Tipsy** for 3 turns (hit −10%, but **liquid courage**: immune to Despair and Panicked). A second
 drink while Tipsy turns it into **Disoriented**. It's foreign: the Islanders don't make it. It comes
-from Marines (a 1-in-3 drop), Parl, Theenmy or trade, and **All-Seafarer Marines like being offered it**.
+from Marines (a 1-in-3 drop), Parl, Thenmy or trade, and **All-Seafarer Marines like being offered it**.
 Islander remedies cure cleanly; the outsiders' medicine has a cost.
 
 **Supplies:** Well Water (+15 MP), **Kava** (+40 MP, Fatigue +10), **Sacred Dew** (+80 MP), **Pennyroyal Sprig**
@@ -950,7 +991,7 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
   | Lasa | anything cooked or salted | "Thank you, but I can't eat human food." Fae food: fruit, honey, milk, eggs, raw shellfish |
   | Tou | all meat and fish, eggs, dairy | The royal blood taboo: Tou "eats" by offering plant foods to the royal ancestors |
   | Falmi | domestic crops and domestic animals' meat, eggs and milk | Only what grows wild (grilled game counts as wild) |
-  | Parl, Theenmy | anything shelled: eggs, shellfish, turtle | The Seafarers' religious taboo. Octopus is fine. They also **won't wear turtle shell or seashells** (tortoise-shell gear, the Sea-Turtle Buckler, the Turtle-Shell Comb, the Shell Wind-Chime, the Blind Crab Shell, the Cowrie Anklet) |
+  | Parl, Thenmy | anything shelled: eggs, shellfish, turtle | The Seafarers' religious taboo. Octopus is fine. They also **won't wear turtle shell or seashells** (tortoise-shell gear, the Sea-Turtle Buckler, the Turtle-Shell Comb, the Shell Wind-Chime, the Blind Crab Shell, the Cowrie Anklet) |
   | Patience | grapes, figs, fruit, wine, salt beef, raw shellfish and most plant food | Dog-safe food only: meat, fish, eggs, milk, cheese, bread and toasted barley |
   | Children | alcohol (wine, palm wine, grog) | "The adults won't let a child drink that." |
 
@@ -968,7 +1009,7 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
   **Beard Lichen** for Falmi.
 - **How far food can grow each character** (every food they may eat, up to its cap; Health / Mana / Might /
   Endurance / Spirit / Speed): Dama 88/32/10/20/13/16; Yoon 83/23/16/16/7/13; Sib 83/23/13/16/7/13; Falmi
-  79/32/10/14/10/13; Patience 76/9/10/11/4/4; Lasa 74/41/7/13/7/13; Parl and Theenmy 69/23/18/15/12/15; Tou
+  79/32/10/14/10/13; Patience 76/9/10/11/4/4; Lasa 74/41/7/13/7/13; Parl and Thenmy 69/23/18/15/12/15; Tou
   67/21/13/16/13/19 (with the remains below). Food never raises Resolve or Wits (Insight does), except Tou's
   remains.
 - **Tou lays remains to rest** as her "meal" at a Star Mother idol (`<Lays Remains To Rest>`; tag `remains`;
@@ -1217,7 +1258,7 @@ be brought below about 60–70 without camping**.
 - **Sib's** physical skills and Punch cost **30% more** Fatigue (minor health complications);
   spells and other actions cost the normal amount.
 - **Heavy bronze armor** adds Fatigue every turn (Bronze Helm +1, Bronze Cuirass +2).
-  **Theenmy's Armor Training** (a passive skill) cancels this for him.
+  **Thenmy's Armor Training** (a passive skill) cancels this for him.
 
 ### Day and night
 `SI_Time.js`. The day has four periods: **Dawn, Day, Dusk, Night**. The game starts by Day on day 1.
@@ -1337,12 +1378,12 @@ Ranged weapons go in a separate **Ranged** equipment slot and can't be swapped m
   **Net Floats** (nets also soak: Wet). The **Palm-Fibre Net** gives two net casts a battle.
 
 Who can use which ranged weapons follows the character notes: Yoon, Sib, Juda, Parl and Tou use
-slings; Pada and Parl bows; Dama, Falmi and Theenmy javelins; Dama nets.
+slings; Pada and Parl bows; Dama, Falmi and Thenmy javelins; Dama nets.
 
 ### Weapon swapping and wear
 - **Swap** battle command: lists carried weapons the character can equip. Swapping uses the turn
   (the "Swap Weapon" action; give it a `<Turn Cost>` to make it quicker or slower).
-- `<Free Swap>` (Theenmy, set on his actor): swap once per turn without using it, then act.
+- `<Free Swap>` (Thenmy, set on his actor): swap once per turn without using it, then act.
 - **Wear tiers:** `<Degrades To: id>` and `<Wear Chance: %>` on weapons and armor. A worn item
   turns into the next tier, and `<Degrades To: 0>` means it breaks.
 - **What's left when it breaks depends on the material:**
@@ -1423,7 +1464,7 @@ relationships, inscriptions and the story.
 | Juda | Priestly and religious encounters |
 | Dama | Islanders, militia, sea creatures |
 | Parl | All-Seafarer common soldiers, deserters, smugglers |
-| Theenmy | All-Seafarer officers and nobility |
+| Thenmy | All-Seafarer officers and nobility |
 | Tou | First Sailor beings: Stonemen, Hags, Owls of Ill Omen, ancient ghosts |
 | Falmi | Plants, forest fae, the Lady of the Woods' court |
 | Lasa | Children of the Caves, fae |
@@ -1449,7 +1490,7 @@ decided):
 |------|------------|
 | Highest | Yoon, Tou, Sib, Juda |
 | High | Falmi, Lasa |
-| Medium | Theenmy (paladin magic), Dama (water magic) |
+| Medium | Thenmy (paladin magic), Dama (water magic) |
 | Low | Pada, Parl |
 | Fixed at 1 | Patience |
 
@@ -1469,7 +1510,7 @@ decided):
 | 30 | Yoon (Ghost and Human) |
 | 15 | Sib, Juda, Tou |
 | 12 | Lasa, Falmi |
-| 8 | Dama, Theenmy |
+| 8 | Dama, Thenmy |
 | 5 | Pada, Parl |
 | 1 | Patience |
 
@@ -1485,7 +1526,7 @@ Insight.
 - **Avoiding grinding:** the first conversation with a new species, spirit or person gives full
   EXP, and repeats give little. Harder conversations give more.
 - **Ghost and Human Yoon** (actors 1 and 2) share one Insight value.
-- **Late joiners** (Dama, Theenmy, Falmi, Tou) need a sensible starting Insight. To be decided.
+- **Late joiners** (Dama, Thenmy, Falmi, Tou) need a sensible starting Insight. To be decided.
 
 ### Talk
 **Model:** a hybrid. A **mood meter** runs the mechanics, and enemies can carry short written
@@ -1501,7 +1542,7 @@ lines plus optional scripted moments (a common event with choices) for important
 | Offer | Everyone | Give an item (food, offerings); enemies like or hate specific items |
 | Ask | Everyone | Seek information once the enemy is calm enough |
 | Rite | Sib, Juda, Tou, Falmi | Spirits respond to rites, often only the right one |
-| Threaten | Adults (Pada, Juda, Dama, Parl, Theenmy) | Some beings respect force, others panic or rage |
+| Threaten | Adults (Pada, Juda, Dama, Parl, Thenmy) | Some beings respect force, others panic or rage |
 | Plead | Children (Yoon, Sib, Lasa, Tou, Falmi) | The inverse of Threaten: a child's plea is hard to ignore |
 | Stalk | Pada, Parl, Falmi | Animals only: works toward **Hunted** instead of calm |
 
@@ -1543,7 +1584,7 @@ lines plus optional scripted moments (a common event with choices) for important
   switches, Abort Battle). Enemy skills can require a mood (`<Talk Min Mood: 35>`).
   - **Offer Passage** (spirits, once Wary): leave peacefully, which ends the battle, or stay.
   - **Demand Surrender** (soldiers): surrender, which turns on the "Surrendered" switch and ends
-    the battle, or refuse. This could also be the "surrender to Theenmy" recruitment path.
+    the battle, or refuse. This could also be the "surrender to Thenmy" recruitment path.
 - **Instant success:** some enemies yield at once to a specific speaker (`<Talk Instant: 9>`).
   **Stonemen surrender immediately when Tou talks to them.**
 
@@ -1604,7 +1645,7 @@ never protected. Starting chances, to be refined:
 | Pada | **100%** (always) | 80% | — | — |
 | Juda | 90% | 75% | — | — |
 | Dama | 60% | 60% | 50% | 50% |
-| Theenmy | 70% | 70% | 70% | 70% |
+| Thenmy | 70% | 70% | 70% | 70% |
 
 **Who shares the party with whom:**
 
@@ -1613,14 +1654,14 @@ never protected. Starting chances, to be refined:
 | Pada | Act 2 to the mountain (Act 3) | Yoon, Sib (and Lasa in Act 2, not protected) |
 | Juda | Act 3 (guest) | Yoon, Sib |
 | Dama | End of Act 3 onward | Yoon, Sib, Falmi, Tou |
-| Theenmy | End of Act 4 onward | Yoon, Sib, Falmi, Tou |
+| Thenmy | End of Act 4 onward | Yoon, Sib, Falmi, Tou |
 
 **Lasa leaves when Juda joins.** The Act 3 party is **Yoon, Sib, Pada, Juda and Patience**. Falmi
 and Tou unlock in Act 4, after Pada and Juda are gone.
 
 **Children** (`<Child>`): Yoon (both forms), Sib, Falmi, Tou. Not Lasa.
 
-**Sparing children:** Theenmy's soldiers (`<Spares Children>`) don't use harmful actions on
+**Sparing children:** Thenmy's soldiers (`<Spares Children>`) don't use harmful actions on
 children **unless they're Enraged**. With only children standing, they fall back on talk
 (e.g. demanding surrender) or waiting. The Princess's soldiers have no such rule.
 
@@ -1638,6 +1679,9 @@ Spell names combine **Rapa Nui** roots with **Guanche** tier and target modifier
 | Keri | Earth |
 | Mahu | Healing |
 | Ara | Revival |
+| Raau | Cures bodily ailments (*ra'au*, "plant, medicine") |
+| Kami | Cures mental ailments |
+| Keva | Blinding |
 
 | Modifier | Meaning |
 |----------|---------|
@@ -1667,6 +1711,25 @@ Spell names combine **Rapa Nui** roots with **Guanche** tier and target modifier
 | Ara | Revive one ally with 10–100% HP (learned first) | 10 |
 | Araben | Revive one ally with 75% HP (learned later) | 18 |
 | Mahu-Ara | Heal all allies 20% max HP + 3× MAT, and revive the fallen with 10–100% HP | 40 |
+
+**Cures and blinding** (each a tattoo glyph; Lasa knows Keva innately: Keva at level 1, Kevagun at 4,
+Kevaben at 6):
+
+| Spell | Effect | MP |
+|-------|--------|----|
+| Raau | One ally: cures Venom, Bleed, Dazzled, Blinded, Tipsy, Entangled | 5 |
+| Raauben | One ally: all of those, plus Salting, Stunned and Dragged Below | 9 |
+| Raaugun | All allies: as Raau | 12 |
+| Kami | One ally: cures Confused, Hypnotized, Sleep, Despair, Panicked, Enraged | 5 |
+| Kamiben | One ally: as Kami, then **Clear-Minded** (immune to all of them) for 2 turns | 10 |
+| Kamigun | All allies: as Kami | 12 |
+| Keva | One enemy: Dazzled (Hit −50% until the end of its next turn), 90% | 4 |
+| Kevaben | One enemy: **Blinded** (Hit −50% for 3 turns, no ranged attacks), 80% | 9 |
+| Kevagun | All enemies: Dazzled, 60% each | 10 |
+
+None of them touch the elemental states (Wet, Smoldering, Mired and the rest): those are countered through
+the elemental cycle. The remedies stay cheaper and more specific. **Keva in the dark** (`<Dark Bonus>`: a
+`<Dark>` map, or outdoors at night) lands 25% more often and lasts a turn longer.
 
 **Healing items** are different: no Fatigue or MP, small **fixed** amounts, and they often apply
 healing *states* or remove ailments and debuffs (e.g. Bandages: about 20 HP and removes Bleed).
@@ -1705,12 +1768,12 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
   tattoos. Once removal is allowed, a removed or replaced tattoo is **destroyed**, not returned to the bag.
 - **Literacy** is tracked per character (`<Reads: ...>`): Yoon (Islander), Sib (Islander; All-Seafarer
   script later, switch "Sib reads Seafarer script"), Parl (All-Seafarer), Tou (First Sailor; All-Seafarer
-  later, switch "Tou reads Seafarer script"), Falmi (Islander, First Sailor), Juda (all three), Theenmy
+  later, switch "Tou reads Seafarer script"), Falmi (Islander, First Sailor), Juda (all three), Thenmy
   (All-Seafarer, and **Codex Mastery**). Lasa, Pada and Dama can't read, so they have no codex slot.
 - **Codices** teach in three tiers:
   - **Anyone who reads** gets the codex's **Cultural move**.
   - **Readers of All-Seafarer script** (Parl, Juda, later Sib and Tou) also get its **three weaker spells**.
-  - **Theenmy** (Codex Mastery) gets **all six** spells.
+  - **Thenmy** (Codex Mastery) gets **all six** spells.
 
   | Codex | Cultural move | Weaker spells | Mastery adds | Bonus |
   |---|---|---|---|---|
@@ -1718,7 +1781,7 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
   | Codex of Mending | **Field Dressing** (stops Bleed, starts Mending) | Mahu, Mahuben, Ara | Mahugun, Araben, Mahu-Ara | MDF +2 |
   | Sailor's Codex | **Read the Wind** (party AGI up, 3 turns) | Rari, Hagu, Keri | Rariben, Haguben, Keriben | AGI +2 |
 - **Starting glyphs:** Sib has Mahu and Ahi; Juda has Mahu, Mahuben, Ara, Ahiben, Rariben; Dama has
-  Rari; Theenmy carries the Codex of Mending. Human Yoon's new body starts blank.
+  Rari; Thenmy carries the Codex of Mending. Human Yoon's new body starts blank.
 - The test room's **Tattooist** gives every glyph and codex and toggles the removal switch.
 
 ### Damage types
@@ -1804,7 +1867,7 @@ below is a starting point for playtesting.
 | Parl | 65 | 10 | 9 | 6 | 4 | 5 | 38 | 12 | |
 | Tou | 42 | 18 | 4 | 7 | 16 | 10 | 24 | 10 | Cut ×1.75, Burn ×2, Pierce/Crush ×0.5 |
 | Falmi | 48 | 12 | 9 | 6 | 5 | 6 | 40 | 12 | 20% evasion, 5% HP regen per turn |
-| Theenmy | 150 | 25 | 16 | 16 | 9 | 9 | 18 | 10 | |
+| Thenmy | 150 | 25 | 16 | 16 | 9 | 9 | 18 | 10 | |
 | Patience | 30 | 0 | 6 | 3 | 1 | 4 | 40 | 15 | AI-controlled, no Fatigue |
 
 **Damage formulas** use a ratio instead of subtraction, so armor reduces damage by a percentage and
@@ -1830,7 +1893,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 - Yoon's Quick Jab with an Obsidian Knife does about 8–9.
 - Pada's Heavy Chop does about 32 to an Orc (45 HP).
 - Children go down in about 3–4 Orc hits, and Sib in about 2 Minotaur hits. Pada takes about 11
-  Minotaur hits and Theenmy about 17.
+  Minotaur hits and Thenmy about 17.
 - Armor rescaled: Shield DEF 3, Hat 1, Cloth 2, Ring MDF 2. Potion (now All-Seafarer Grog) heals 30 and Magic Water
   restores 15.
 
@@ -1913,7 +1976,7 @@ starting position back to **MAP001 (8, 6)** (Database → System), then delete t
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.
 - Classes: Ghost, Returned Child, Junior Priest, Child of The Caves, Hunter, Priest, Fisher,
   All-Seafarer Thief, First Builder Queen, Forest Familiar (Falmi), All-Seafarer Prince
-  (Theenmy), Hound (Patience), assigned to actors 1–12.
+  (Thenmy), Hound (Patience), assigned to actors 1–12.
 - Each class's equippable weapon types follow the character design above (the Ghost cannot
   equip weapons).
 - Weapon types: Dagger, Sword, Spear, Staff, Club, Axe, Bow, Sling, Javelin, Net, Fist, Claw.
@@ -1941,8 +2004,6 @@ entry later means updating those references too (the reorganization used a scrip
 - **Act numbering:** the cast notes put Sib's recruitment in "early Act 1" and Juda/Dama in
   Act 2, while the story outline has Act 1 ending at contact with Sib and the mountain in Act 3.
   This document follows the story outline.
-- **Name spelling:** the Prince appears as Theenmy, Theenemy and Thenmy (the database uses
-  Thenmy). Which one is final?
 - **The Princess:** her name, and whether she is ever playable.
 - **Durability:** is equipment durability a real system for everyone, or is "bronze is
   unbreakable" flavour only?

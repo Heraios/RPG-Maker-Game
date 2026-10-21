@@ -44,7 +44,7 @@
  *   <Reads: islander, first-sailor>   the scripts this character can read.
  *                       Anyone who reads at all gets a codex slot.
  *   <Reads If Switch 5: seafarer>     reads that script once the switch is ON
- *   <Codex Mastery>     gets a codex's full spell list (Theenmy)
+ *   <Codex Mastery>     gets a codex's full spell list (Thenmy)
  * Codex note:
  *   <Codex Move: 22>             a Cultural move for anyone who can read
  *   <Codex Spells: 242, 243, 245>    the weaker spells, for readers of the
