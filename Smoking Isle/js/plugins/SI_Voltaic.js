@@ -38,8 +38,9 @@
  *
  * Other armor (charms):
  *   <Extra Charge: 1>    (armor/state) a worn pile holds 1 more (Lodestone)
- *   <Electric Boost: 15> (armor/state) electric techniques deal 15% more
- *                        (the Telegrapher's Kit)
+ *   <Electric Boost: 15> (armor/state) electric techniques are 15% stronger:
+ *                        damage, healing and revives (the Telegrapher's Kit,
+ *                        Golden Wire)
  *   <Metal>              (armor/state) the wearer counts as metal too
  *   <Insulated>          (armor) a Wet wearer doesn't shock themself
  *
@@ -50,6 +51,9 @@
  *                        a Sodden target is stunned, and a Wet user shocks
  *                        themself
  *   <Metal Bonus: 175>   175% damage against <Metal> enemies
+ *   <Kills Sodden>       a Sodden target it hits is knocked out (Lightning Bolt)
+ *   <Ranged Strike>      can't be dodged, like a ranged attack, but needs no
+ *                        ammo (Lightning Bolt)
  *
  * Item note:
  *   <Recharge: 2>        restores 2 charge to the target (acid jar)
@@ -186,20 +190,33 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
         return $.wetStates.some(function(id) { return battler.isStateAffected(id); });
     };
 
+    // <Electric Boost: N> from gear and states, for any electric technique (one that spends charge).
+    $.electricBoost = function(subject, item) {
+        if (!subject || !subject.isActor() || !DataManager.isSkill(item) || !(item.siElectric || item.siChargeCost)) return 0;
+        return subject.armors().concat(subject.states()).reduce(function(sum, o) {
+            var m = /<Electric Boost:\s*(\d+)>/i.exec(o.note || '');
+            return sum + (m ? Number(m[1]) : 0);
+        }, 0);
+    };
+
+    // Healing and revives from electric techniques are boosted too (Galvanic Jolt).
+    var _Game_Action_itemEffectRecoverHp = Game_Action.prototype.itemEffectRecoverHp;
+    Game_Action.prototype.itemEffectRecoverHp = function(target, effect) {
+        var boost = $.electricBoost(this.subject(), this.item());
+        if (!boost) return _Game_Action_itemEffectRecoverHp.call(this, target, effect);
+        var e = { code: effect.code, dataId: effect.dataId, value1: effect.value1 * (1 + boost / 100), value2: effect.value2 * (1 + boost / 100) };
+        _Game_Action_itemEffectRecoverHp.call(this, target, e);
+    };
+
     var _Game_Action_makeDamageValue = Game_Action.prototype.makeDamageValue;
     Game_Action.prototype.makeDamageValue = function(target, critical) {
         var value = _Game_Action_makeDamageValue.call(this, target, critical);
         var item = this.item();
-        if (!DataManager.isSkill(item) || value <= 0) return value;
-        if (item.siElectric && $.isWet(target)) value = Math.round(value * 1.5);
-        var subject = this.subject();
-        if (item.siElectric && subject.isActor()) {
-            var boost = subject.armors().concat(subject.states()).reduce(function(sum, o) {
-                var m = /<Electric Boost:\s*(\d+)>/i.exec(o.note || '');
-                return sum + (m ? Number(m[1]) : 0);
-            }, 0);
-            if (boost) value = Math.round(value * (1 + boost / 100));
-        }
+        if (!DataManager.isSkill(item) || value === 0) return value;
+        if (value > 0 && item.siElectric && $.isWet(target)) value = Math.round(value * 1.5);
+        var boost = $.electricBoost(this.subject(), item);
+        if (boost) value = Math.round(value * (1 + boost / 100));
+        if (value < 0) return value;
         if (item.siMetalBonus !== 1 && $.isMetal(target)) value = Math.round(value * item.siMetalBonus);
         return value;
     };
@@ -214,8 +231,9 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
             target.result().success = true;
         }
         if (DataManager.isSkill(item) && item.siElectric && target.result().isHit() &&
-                target.isAlive() && target.isStateAffected($.soddenState) && $.stunState > 0) {
-            target.addState($.stunState);
+                target.isAlive() && target.isStateAffected($.soddenState)) {
+            if (/<Kills Sodden>/i.test(item.note || '')) target.addState(target.deathStateId());
+            else if ($.stunState > 0) target.addState($.stunState);
         }
     };
 

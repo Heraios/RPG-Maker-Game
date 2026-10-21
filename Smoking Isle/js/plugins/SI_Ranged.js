@@ -335,7 +335,7 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
 
     var _Game_Action_itemEva = Game_Action.prototype.itemEva;
     Game_Action.prototype.itemEva = function(target) {
-        if ($.isRanged(this.item())) return 0;
+        if ($.isRanged(this.item()) || /<Ranged Strike>/i.test((this.item() && this.item().note) || '')) return 0;
         var eva = _Game_Action_itemEva.call(this, target);
         if (this.isPhysical() && $.isFlying(target)) eva = Math.max(eva, $.flyingEvasion);
         return eva;

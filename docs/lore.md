@@ -510,6 +510,8 @@ Destroyer** (revealed later).
 | **Copper**, **copper-silver** | Knives, spears, axes, maces | The Islanders' metals. Copper-silver is a little more durable and adds a little magic damage |
 | **Tin-bronze** | Knives, spears, axes, maces, **swords** | All-Seafarer; tin comes from the crater rim |
 | **"Black bronze"** (copper, silver, gold) | Late-game legendary weapons | First Sailor work |
+| **Gold** | Plating on copper weapons; the Golden Disk Pile; Golden Wire | A trace in the copper ore (1 melt in 50) and in Seafarer axe money. Plated edges carry a little magic |
+| **Sacred metal** (tumbaga: copper, silver, gold) | Rings, pectorals, earrings, bracelets | The Islanders' attempt to recreate black bronze. They never matched it: it won't turn magic aside, but spirits like it and it carries current well, so priests and telegraphers both wear it |
 | **Coral** | Studs on clubs (rasping, festering cuts; the **Coral-Studded Club** draws on water magic); inlays as glyph foci. **First Sailor "grown" coral**, magic-hardened, for rare, unsettling blades from the ruins | Natural coral is too brittle for an edge; it's the same material as the soul-holding moai eyes |
 | **Ceramic** (fired clay) | Cheap mace heads | Brittle: hits hard and shatters. Fired earth, so it lends itself to earth magic. Any village with a kiln can make it |
 | **Obsidian** and fire | — | Volcanic glass carries the mountain's fire: every obsidian weapon strengthens fire magic |

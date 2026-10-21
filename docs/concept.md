@@ -699,7 +699,7 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Tortoise Shell | Cuirass, Offhand (Tortoise-Shell Shield or Sea-Turtle Buckler) | +DEF (1 piece) | The first physical hit each battle is halved |
 | Lava-Tube Gear | Head, Body, Charm (Cave-Glow Stone) | +evasion in caves (2 pieces) | The Children of the Caves can't steal from you; prank fights start friendlier |
 | Guardian Lizard (trophy) | Cuirass (Guardian Lizard Scale), Charm (Lizard-Scale Charm) | 10% less Fire damage (1 piece) | Immune to Smoldering and Enflamed |
-| Telegrapher's Kit | Hands (Rubber-Coated Gloves), Charm (Lodestone, Hot-Spring Sinter or Copper Bracelet), Battery (Voltaic Pile) | +1 max charge | Electric techniques +15% |
+| Telegrapher's Kit | Hands (Rubber-Coated Gloves or Sacred Metal Ring), Charm (Lodestone, Hot-Spring Sinter, Copper Bracelet, Golden Wire, or any Sacred Metal charm or the Pectoral), Battery (any pile) | +1 max charge | Electric techniques +15% |
 | Fisher's Gear | Neck (Bone Fishhook Pendant or Shark-Tooth Necklace), Charm (Net Floats), Ranged (Fishing Gear or Palm-Fibre Net) | +1 net cast | Sea creatures start friendlier; +10% evasion while Wet |
 | Ritualist's Things | Neck (Sandalwood Beads), Hands (Jasper Ring), Charm (Gourd Rattle or Silver-Plated Idol) | Rite +15% | Spirits start friendlier; Spirit +10% |
 | Officer's Kit | Hands (Bronze Signet), Charm (Sailor's Compass), Codex (any) | Ask +15% on soldiers | Escape +15%; the whole party AGI +5% |
@@ -718,6 +718,7 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Crew (First Sailor, child-sized) | Head, Body, Legs, Neck (Numbered Collar) | Fatigue builds 10% slower | First Sailor beings and the Children of the Caves take you for Crew and start friendlier |
 | Royal Regalia (First Sailor, child-sized) | Head (Queen's Feather Diadem), Shoulders (Mantle of Petitions), Body (Royal Tapa Robe), Feet | Max Mana +15% | First Sailor spells +15%; First Sailor beings start friendlier. **Tou starts in the diadem and robe**; the mantle and sandals are found in her palace |
 | Navigator's Raiment (First Sailor, adult-sized) | Head, Shoulders (Star-Chart Mantle), Body, Neck (Crescent Pectoral, also First Sailor Regalia) | +1 Insight | Spells cost 10% less Mana |
+| Sacred Metal (tumbaga; fits anyone) | Hands (Ring: Rite +15%), Cuirass (Pectoral: spirits start friendlier), Charm (Earrings: Spirit, Wits), Charm (Bracelet: electric +10%) | Rite +15% | Resolve +10%; spirits start friendlier still. Shiny; every piece also counts for the Telegrapher's Kit |
 | Black Bronze (First Sailor, adult-sized) | Head, Cuirass, Arms, Greaves | 10% less magic damage | 25% less magic damage. Shiny and `<Metal>`; heavy (Fatigue) |
 | Grown Coral (First Sailor; fits anyone) | Head, Cuirass (heals 2% Health a turn), Greaves | Water spells +10%; resists Wet | 15% less Cut damage; attackers take 15% back. **Every piece whispers Despair (3% a turn)**; the Scoria Pupil quiets it |
 | Firebrand Gear (the Princess's forest-burners, Act 5; fits anyone) | Head (Wet-Felt Hood), Cuirass (Clay-Daubed Coat), Hands (Mitts), Legs, Feet | 25% less Fire damage | Immune to Smoldering and Enflamed; fire spells +15%; **but you start every battle Wet** (weak to electricity and cold) |
@@ -833,10 +834,25 @@ Islander technology, and the bronze-armed All-Seafarers don't have it.
 | Electric Cautery | Anyone | 1 | Stops Bleed and Venom on an ally, at 5% of their max HP |
 | Fire Wire | Anyone | 1 | Light Burn and **Smoldering**: fire in the elemental cycle without magic |
 | Galvanic Jolt | Anyone | All (2+) | Revives a fallen ally at 10% HP |
+| Lightning Bolt | Anyone, with the Golden Disk Pile | All | Heavy electric Burn; can't be dodged; knocks out a Sodden enemy |
 | Live Wire | Anyone | 1 | Electric Burn; ×1.75 against metal-wearing enemies |
 | Quickening Current | Sib, Juda | 1 | Cures Sleep, Hypnotized and Confused |
 | Chlorine Cloud | Juda; **Sib learns it from Juda's notes** | 2 | All enemies: light Burn, Venom (60%), Panicked (30%) |
 | Shock Net | Dama | 1 + a net | Entangles, with electric Burn |
+
+**Gold (decided).** Real copper deposits often carry a little gold, so it comes from the same mine:
+- **Melting Copper Ore** (smith or crucible) gives a **Gold Ingot** 2% of the time. Seafarer **marines** drop
+  **Golden Axe Money** (1 in 20); it's also a rare find, and a smith melts it into an ingot. Both sell high
+  (1,200 and 800).
+- **Golden Disk Pile** (electroplater: Copper-Silver Pile + Gold Ingot): **6 charge**, and it alone looses
+  **Lightning Bolt**: all charge, power 24 (×1.35 shock), ×1.75 against metal, can't be dodged (it counts as
+  a ranged strike), and **knocks out a Sodden enemy outright**. Islanders learn it; they need the pile to use it.
+- **Golden Wire** (smith; a charm): electric techniques **+25%**, revives and healing included.
+- **Gold-plated** Knife, Axe, Mace and Spear (electroplater): copper weapons with **Magic Edge 20** that wear
+  half as often; bent, the plating cracks off and they're bent copper again.
+- **Sacred Metal** (tumbaga: copper, silver and gold, at a smith): Ring, Pectoral, Earrings and Bracelet.
+  The Islanders' attempt to recreate First Sailor black bronze; it doesn't stop magic as black bronze does,
+  but spirits like it. Its own set, and every piece counts for the Telegrapher's Kit.
 
 **Field uses (to build with the overworld):** battery lamps (light in the lava tubes, spending charge);
 **electric fences** set before an invader patrol arrives (they take damage when the battle starts);
@@ -1360,6 +1376,7 @@ with a haft or shaft also leaves **Scrap Wood**. Repairs follow how a weapon was
 sinew-lashed weapons (knives, spears, harpoons), **Glue** for glued ones (axes, hammers, clubs, maces,
 paddle-swords), and only a **smith** straightens bent copper, for a fee.
 | Fire-hardened wood, bronze, black bronze | never wear | — |
+| Gold-plated copper | half as often as copper | the plating cracks off: bent copper |
 
 These are placeholder examples; real wear rates need playtesting.
 
