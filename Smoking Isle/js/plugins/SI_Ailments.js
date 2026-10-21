@@ -241,6 +241,13 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
         this.traitObjects().forEach(function(obj) {
             if (obj && obj.siBattleStartState && !this.isStateAffected(obj.siBattleStartState)) this.addState(obj.siBattleStartState);
         }, this);
+        // <Party Battle Start State: Brave>: anyone in the battle party wearing it gives it to everyone (the war drum).
+        $gameParty.battleMembers().forEach(function(member) {
+            member.equips().forEach(function(obj) {
+                var id = obj && $.stateTag(obj.note, 'Party Battle Start State');
+                if (id && !this.isStateAffected(id)) this.addState(id);
+            }, this);
+        }, this);
         this.clearResult();
     };
 

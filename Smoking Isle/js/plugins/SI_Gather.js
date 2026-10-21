@@ -48,6 +48,8 @@
  * light work) and can wear the tool used, like a swing in battle. Logs and
  * other heavy extras only come when an adult does the cutting. A gatherer
  * who knows plants (Falmi) doubles a plant's rare extra.
+ * Gear with <Forager> anywhere in the party (Patience's Forager's Pack)
+ * doubles every rare extra.
  *
  * - Each spot gives once a day, then waits for the next dawn.
  * - At night, gathering needs a light, except for night-only plants.
@@ -311,7 +313,8 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         var extraOk = !entry.extraTool || $gameParty.hasItem($.find('Digging Stick'));
         if (entry.extra && (!entry.heavy || adult) && extraOk) {
             var expert = /<Talk Specialty:[^>]*\bplant\b/i.test(actor.actor().note) && (entry.kind === 'herb' || entry.kind === 'food');
-            if (Math.random() * 100 < entry.extra[1] * (expert ? 2 : 1)) got.push(entry.extra[0]);
+            var forager = $gameParty.allMembers().some(function(m) { return m.equips().some(function(e) { return e && /<Forager>/i.test(e.note); }); });
+            if (Math.random() * 100 < entry.extra[1] * (expert ? 2 : 1) * (forager ? 2 : 1)) got.push(entry.extra[0]);
         }
         $.spent()[$.key(mapId, eventId)] = SmokingIsle.Time.day();
         $gameSelfSwitches.setValue([mapId, eventId, 'A'], true);

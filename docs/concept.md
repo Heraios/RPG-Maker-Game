@@ -206,11 +206,13 @@ Pada and Yoon's dog, a pointer-type breed.
       30% back; resists Dragged Below; for the Black Hounds), Salt-Pouch (30% less damage from spirits),
       Bronze War-Dog.
     - **Pack:** Javelin Pack (the whole party gets +1 javelin throw), Medicine Pack (once a battle, she
-      drags the first fallen ally back up at 1 HP).
+      drags the first fallen ally back up at 1 HP), **Lamp Pack** (the party has a light in the dark),
+      **Forager's Pack** (gathering's rare extras twice as likely), **Stone Pack** (+2 sling stones for everyone).
     - **Booties:** Hide (Burdened, Mired), Seal-Skin (Wet, Sodden), Wool (Chilled), Pitch-Hide
-      (Smoldering, Enflamed).
+      (Smoldering, Enflamed), **Sharkskin** (immune to Bleed), **Deerskin** (Speed +3), **Felt** (25% less Fire).
     - **Bell:** Copper (no ambushes, but Stalk works 25% worse), Silver (spirits start friendlier),
-      Shell (sea creatures start friendlier).
+      Shell (sea creatures start friendlier), **Clay** (she starts Calm), **Ringing-Stone** (phonolite: every enemy
+      starts Disoriented). **Collar:** also the **Silver-Studded Collar** (30% less damage from demons).
   - **Has her own turns** in the Turn Order, based on her speed.
   - **Can be knocked out**, and is revived the same way as everyone else.
   - **Insight is capped at 1.** Her specialty (dogs and animals) works **passively**: with
@@ -787,6 +789,29 @@ Shark-Tooth → Coral-Eyed. Rings: silver, bone, obsidian; gloves: hide, sinew w
   (resting outdoors sheds 1 more Fatigue).
 - **Weapons:** Mahogany Club and Mahogany Paddle (red mahogany never splits, so they never wear), and the
   priests' **Sandalwood Staff** (MAT +5, starts each battle Calm).
+
+### More gear (third batch)
+- **Slings:** Goat-Hair (5 shots, power 10), Braided Sinew (7 shots, power 8), Priest's (Spirit +3), Lead-Weighted
+  (4 shots, power 12; Lead Shot adds +2 more, `<Lead Shot Bonus: 2>`).
+- **Bows:** Ash Flatbow (power 14, Speed +2), Living Bow (from a Green Horse Bough: power 14, heals 3% Health a
+  turn), and a second **Horn Bow** recipe from Seafarer **Ox Horn**.
+- **Bronze Crossbow** (Act 4, Seafarer): 2 bolts, power 24, never wears, counts as metal. A new **Crossbow** armor
+  type usable by bow users **and the children** (Yoon, Sib, Lasa, Tou, Falmi, Pada, Parl).
+- **Nets:** Lead-Weighted Net (2 casts; Burdened), Sinew Net (3 casts; Held).
+- **Copper-Silver Pile** (electroplater: a Voltaic Pile + Silver Ingot): 5 charge, Shock Power 16.
+- **Chalcedony Adze:** a one-handed stone axe tougher than andesite.
+- **Silver Ritual Knife and Spear** (smith, 2 Silver Ingots): soft and sacred: Rite +50%, **30% more damage to
+  spirits and demons** (`<Damage Vs: spirit 30, demon 30>`), bend easily; the smith straightens them.
+- **Palm-Log Drum** (carved charm): the whole party starts each battle **Brave** (`<Party Battle Start State>`);
+  Threaten +15%. Strong: watch it in playtesting.
+- **Centipede Venom** (Venom Sac + Pine Pitch): attacks may envenom 60% for the battle.
+- **Living Bough Staff** is now carved from a Green Horse Bough. A **Sandalwood Casket** breaks down into two
+  Sandalwood Branches. The **Hag-Crane Feather** material is gone (the charm is the loot).
+- **Late arms:** Linen Armguards (Linen Armor), Gilt Armlets (Court Dress), Star-Chart Armbands (Navigator's
+  Raiment), Grown-Coral Vambraces (Grown Coral), Hound-Fang Bracers (Black Hound Regalia), and the crafted
+  Painted Dragon-Tree Bracers (start in Resin). Those sets each need one more piece for their full bonus.
+- **Small shields** (children can carry them): Sharkskin (spikes), Ebony, Bronze (metal), Grown-Coral (Grown
+  Coral set) and Hound-Skull (Black Hound Regalia) bucklers.
 
 ### Voltaic techniques (Islander electricity)
 `SI_Voltaic.js`. The **Voltaic Pile** (in its own **Battery** slot; every Islander starts with one) lets **Islanders** (Yoon, Sib, Pada, Dama, Juda) use

@@ -284,6 +284,8 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         if (!item) return 0;
         var bonus = this.stateRangedBonus(item, 'Ranged Power Bonus', this._siRangedMove || null);
         var power = (item.siPowerByMove ? item.siPowerByMove[this._siRangedMove] || 0 : item.siRangedPower || 0) + bonus;
+        var lead = /<Lead Shot Bonus:\s*(\d+)>/i.exec(item.note || '');   // a weighted sling makes the most of lead shot
+        if (lead && this.states().some(function(st) { return st.name === 'Lead Shot'; })) power += Number(lead[1]);
         return Math.max(Math.round(power * this.wetBowRate(item)), 0);
     };
 

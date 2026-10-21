@@ -60,8 +60,8 @@ module.exports = {
         t.eq(r.sharkOne, 0.1, 'Sharkskin (1): attackers take 10% back');
         t.ok(r.sharkBleed, 'Sharkskin (all): immune to Bleed');
         t.ok(r.deer, 'Deerskin (all): you ambush enemies more often');
-        t.eq(r.navSize, 4, 'Navigator\'s Raiment counts the Crescent Pectoral as its fourth part');
-        t.eq(r.sets, '4,3,4,3,3,2,3,4,4,4,4,4,3', 'every new set has the right number of parts');
+        t.eq(r.navSize, 5, 'Navigator\'s Raiment counts the Crescent Pectoral (and the Star-Chart Armbands)');
+        t.eq(r.sets, '4,4,5,3,3,2,3,4,4,4,5,4,5', 'every new set has the right number of parts (with the late arms and bucklers)');
     },
 
     'the children\'s charms, the coral whisper, and cattle goods': async (h, t) => {

@@ -79,8 +79,8 @@
  * At night the tint is lighter while the party has a light:
  *   Item note:  <Field Light: 300>   used from the menu, lights the way for
  *                                    300 steps (Torch, Myrtle Candle)
- *   State note: <Light>              a party member with it carries a light
- *                                    (Lamplight)
+ *   State or gear note: <Light>      a party member with it carries a light
+ *                                    (Lamplight; Patience's Lamp Pack)
  * At night outdoors, and anywhere dark, gathering needs a light, except for
  * night-only plants. A light burns down as you walk outdoors or in the dark.
  *
@@ -228,8 +228,8 @@ SmokingIsle.Time = SmokingIsle.Time || {};
 
     $.hasLight = function() {
         if ($.state().light > 0) return true;
-        return $gameParty.members().some(function(actor) {
-            return actor.states().some(function(st) { return /<Light>/i.test(st.note || ''); });
+        return $gameParty.allMembers().some(function(actor) {
+            return actor.states().concat(actor.equips()).some(function(obj) { return obj && /<Light>/i.test(obj.note || ''); });
         });
     };
 

@@ -81,8 +81,8 @@ module.exports = {
             yoon.removeState(ST('Wet')); yoon.onBattleStart(); out.wet = yoon.isStateAffected(ST('Wet'));
             out.smolder = yoon.isStateResist(ST('Smoldering')) && yoon.isStateResist(ST('Enflamed'));
             yoon.removeState(ST('Wet'));
-            const pada = A(5);
-            wear(pada, ['Hound-Skull Helm', 'Black Hound Pelt', 'Scoria-Plate Cuirass', 'Ember-Vein Leggings', 'Ash-Walker Boots']);
+            const pada = A(5); pada.forceChangeEquip(pada.slotOfType(1), null);   // a two-handed axe would block the buckler
+            wear(pada, ['Hound-Skull Helm', 'Black Hound Pelt', 'Scoria-Plate Cuirass', 'Ember-Vein Leggings', 'Ash-Walker Boots', 'Hound-Fang Bracers', 'Hound-Skull Buckler']);
             out.hound = SmokingIsle.Outfits.sets['Black Hound Regalia'] + '/' + pada.isStateResist(ST('Mired'));
             const real = Math.random; Math.random = () => 0; pada.removeState(ST('Panicked')); pada.removeState(ST('Enraged'));
             pada.onTurnEnd(); out.whispers = pada.isStateAffected(ST('Panicked')) || pada.isStateAffected(ST('Enraged'));
@@ -94,7 +94,7 @@ module.exports = {
         t.eq(r.fire2, 75, 'Firebrand (2): 25% less Fire damage');
         t.ok(r.wet, 'Firebrand (all): you start every battle Wet');
         t.ok(r.smolder, 'Firebrand (all): immune to Smoldering and Enflamed');
-        t.eq(r.hound, '5/true', 'Black Hound Regalia: five parts with the pelt; Ash-Walker Boots stop Mired');
+        t.eq(r.hound, '7/true', 'Black Hound Regalia: seven parts (pelt, bracers and buckler too); Ash-Walker Boots stop Mired');
         t.ok(r.whispers, 'the Black Hound Regalia whispers');
         t.ok(r.guard, 'Black Hound Regalia (all): less damage from the Destroyer\'s servants');
     }

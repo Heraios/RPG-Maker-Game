@@ -61,6 +61,9 @@
  *   <Spikes: 30>             an enemy that lands a physical hit on the wearer
  *                            takes 30% of that damage back (Spiked Collar)
  *   <Guard Vs: spirit 30>    30% less damage from enemies of that kind
+ *   <Damage Vs: spirit 30, demon 30>
+ *                            the wearer's attacks deal 30% more to enemies of
+ *                            those kinds (silver ritual weapons)
  *   <Drag Back>              once a battle, the first fallen ally is pulled
  *                            back up at 1 HP (Patience's Medicine Pack)
  *   <Quiets Whisper: Coral Eye Fragment, Grown-Coral Helm>
@@ -407,6 +410,25 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
             var w = obj.siOutfit.whisper;
             if (w.state && Math.random() < w.chance) this.addState(w.state);
         }, this);
+    };
+
+    // <Damage Vs: spirit 30>: more damage to enemies of those kinds.
+    var _Game_Action_makeDamageValue_vs = Game_Action.prototype.makeDamageValue;
+    Game_Action.prototype.makeDamageValue = function(target, critical) {
+        var value = _Game_Action_makeDamageValue_vs.call(this, target, critical);
+        var subject = this.subject();
+        if (subject.isActor() && target.isEnemy() && target.talkData && value > 0) {
+            var kinds = target.talkData().kinds || [], bonus = 0;
+            subject.equips().forEach(function(e) {
+                var m = e && /<Damage Vs:\s*([^>]+)>/i.exec(e.note || '');
+                if (m) m[1].split(',').forEach(function(part) {
+                    var p = /([\w-]+)\s+(\d+)/.exec(part);
+                    if (p && kinds.indexOf(p[1].toLowerCase()) >= 0) bonus = Math.max(bonus, Number(p[2]));
+                });
+            });
+            if (bonus) value = Math.round(value * (1 + bonus / 100));
+        }
+        return value;
     };
 
     // <Drag Back>: after an action, the wearer pulls the first fallen ally back up (once a battle).
