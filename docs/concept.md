@@ -236,8 +236,9 @@ The village priest, deeply respected by the Islanders, very knowledgeable and wi
   becomes an antagonist. The party loses his combat power exactly when they need it most.
 
 ### Dama — The Chieftess
-Leads Mansehare's spearfishers and the **spearwives**, sworn fisherwomen who act as the island's investigators and law officers (lore.md, "Spearwives"). Investigates Yoon's death and discovers that Juda
-did it. Becomes Chieftess by default over the course of the war.
+Leads Mansehare's spearfishers and the **spearwives**, sworn fisherwomen who act as the island's investigators and law officers (lore.md, "Spearwives"). Her first case is Parl and the stolen pearls; once that's
+closed she's put on Yoon's murder, and discovers that Juda did it. Yoon coming back changes nothing for
+her: a child was lured into a tomb and butchered, and "this is unacceptable to The Mother and to decency". Becomes Chieftess by default over the course of the war.
 
 - **Weapons:** knives, spears, paddle-swords, nets, javelins. Her **Fishing Gear** (ranged) holds one net cast
   and two javelin throws a battle; any harpoon adds one more throw.

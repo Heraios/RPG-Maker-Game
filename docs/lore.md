@@ -459,9 +459,20 @@ have a consensus web held together by kin, giving and wire, so a puppet chief do
 - **Mansehare** is their heart (spearfishing and pearl diving). **Dama** is a sworn spearwife and leads
   them, and the town's spearfishers. In short, a Copper Age fisherwoman cop.
 
-**In the story:** Chief Tama and the Seafarer official Iras send Dama and a few spearwives after **Parl**
-(theft of the tribute pearls). Dama is also the one who **investigates Yoon's death** and finds that
-Juda did it: a spearwife fishing out the worst injustice of all, a murdered child.
+**In the story:** Dama has two cases, one after the other.
+1. **Parl** (Act 2): Chief Tama and the Seafarer official Iras send Dama and a few spearwives after the
+   tribute pearl thief.
+2. **Yoon's murder:** once the Parl case is closed, she's put on it. Yoon is back in a body by then
+   (end of Act 2), but to Dama that changes nothing. Her case is built while the party is away on the
+   mountain (Act 3), and it's what brings her storming up it with Pada and the villagers. The more evidence
+   the player has turned up, the sooner she gets there.
+
+In her words:
+
+> "Yoon was killed by someone. The skeleton was hit in the back of the head, and the body defleshed. That
+> she/he/they are miraculously returned to us doesn't change that. A child has lost every memory of
+> theirs. That's horrific. And a child was lured by one of our own into a *tomb* and butchered there like
+> an animal. This is unacceptable to The Mother and to decency."
 
 ### Priests
 Priests heal, hold funerals, **mummify the dead**, talk to ghosts and spirits, and read omens. They
