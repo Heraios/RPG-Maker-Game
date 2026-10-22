@@ -459,8 +459,11 @@ have a consensus web held together by kin, giving and wire, so a puppet chief do
 - **Raising a posse:** a spearwife on a case can call on ordinary islanders to come with her and help
   run down or bring in a suspect. That's how Dama arrives on the mountain at the head of Pada and a mob of
   villagers.
-- **Mansehare** is their heart (spearfishing and pearl diving). **Dama** is a sworn spearwife and leads
-  them, and the town's spearfishers. In short, a Copper Age fisherwoman cop.
+- **Numbers and stations:** only **about 40** at any time. Their headquarters is the **Star Mother's temple
+  in Mansehare**, the harbor town (spearfishing and pearl diving), and each of the other large towns
+  (Zonfahare, Afarohare, Namethare, Celhare) has a **spearwife station**.
+- **Dama** is a sworn spearwife and leads them, and Mansehare's spearfishers. In short, a Copper Age
+  fisherwoman cop.
 
 **In the story:** Dama has two cases, one after the other.
 1. **Parl** (Act 2): Chief Tama and the Seafarer official Iras send Dama and a few spearwives after the
