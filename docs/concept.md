@@ -1682,6 +1682,8 @@ Spell names combine **Rapa Nui** roots with **Guanche** tier and target modifier
 | Raau | Cures bodily ailments (*ra'au*, "plant, medicine") |
 | Kami | Cures mental ailments |
 | Keva | Blinding |
+| Gau | Bite (drain) |
+| Viri | Coil (the Daughters of the Wells) |
 
 | Modifier | Meaning |
 |----------|---------|
@@ -1730,6 +1732,27 @@ Kevaben at 6):
 None of them touch the elemental states (Wet, Smoldering, Mired and the rest): those are countered through
 the elemental cycle. The remedies stay cheaper and more specific. **Keva in the dark** (`<Dark Bonus>`: a
 `<Dark>` map, or outdoors at night) lands 25% more often and lasts a turn longer.
+
+**God glyphs.** Each god, Lady and husband has a glyph, earned through **shrine quests** (Sib, a priest
+of Sooty Bird, starts with Hiri). They go in any tattoo slot and have no tiers, except the Daughters' Viri.
+
+| Glyph | God | Effect | MP |
+|-------|-----|--------|----|
+| Hiri ("to rise in coils of smoke; to hover") | Sooty Bird | One ally, 3 turns: 20% less Cut and magic damage, and **Flying** (75% evasion against melee) | 8 |
+| Gita ("to tie securely") | Star Mother | One ally, 3 turns, **Anchored**: immune to ailments; the first blow that would knock them out leaves 1 Health (and ends it) | 10 |
+| Emu ("to sink") | Red Bowl | All enemies: Water damage (×1.5); any already **Sodden** are **Dragged Below** by the caster | 16 |
+| Iri ("to go up") | Star Child | One ally, for the battle, **Ascending**: if knocked out, they rise again at 25% Health (once) | 12 |
+| Ihi ("to tear to pieces") | The Destroyer | One enemy: heavy Fire and Crush damage (×3.5) and **Cracked**. Costs 6 Fatigue | 20 |
+| Garo ("to disappear, become lost") | Shepherd of the Deer | Party, 2 turns: Evasion +50%, and escape always works | 8 |
+| Gogoro ("to snore") | Master of Deception | All enemies: Sleep, 60% each | 9 |
+| Iku ("to choose the best") | Bull of Heaven | One ally: the next damaging attack is a critical with the best damage roll | 6 |
+| Puhi ("to fish at night with bait") | Bull of Heaven | One enemy: Hypnotized (attacks its own allies), 70% | 10 |
+| Viri / Viriben / Virisin ("to coil") | The Daughters of the Wells, one tier each | One enemy: Water damage (×0.8 / 1.4 / 2.0) and Dragged Below (40 / 60 / 80%) | 6 / 12 / 20 |
+
+To come: a glyph for each Lady (Woods, Wind, Sun) and the Bull of Water.
+
+**Gau** ("to bite"), an ordinary glyph: drains Health from one enemy (×1.0; Gauben ×1.8; Gaugun all enemies ×0.8).
+MP 5 / 10 / 12.
 
 **Healing items** are different: no Fatigue or MP, small **fixed** amounts, and they often apply
 healing *states* or remove ailments and debuffs (e.g. Bandages: about 20 HP and removes Bleed).

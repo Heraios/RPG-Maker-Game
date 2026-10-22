@@ -65,7 +65,7 @@
  * ============================================================================
  * Flying
  * ============================================================================
- * Actor / enemy note:   <Flying>
+ * Actor / enemy / state note:   <Flying>   (a state: Hiri)
  * Melee physical attacks against a flyer face at least the Flying Evasion.
  * Ranged and magical attacks are unaffected.
  *
@@ -334,7 +334,7 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
 
     $.isFlying = function(battler) {
         var note = battler.isActor() ? battler.actor().note : battler.enemy().note;
-        return /<Flying>/i.test(note);
+        return /<Flying>/i.test(note) || battler.states().some(function(st) { return /<Flying>/i.test(st.note || ''); });
     };
 
     var _Game_Action_itemEva = Game_Action.prototype.itemEva;

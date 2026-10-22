@@ -47,12 +47,21 @@
  *   <Stacks Into: Disoriented>
  *                       getting this state again while already affected
  *                       turns it into the named state instead (Tipsy)
+ *   <Endure>            a blow that would knock the battler out leaves 1
+ *                       Health instead; the state then ends (Gita)
+ *   <Rise Again: 25>    when knocked out, rises again at 25% Health; the
+ *                       state then ends (Iri)
+ *   <Best Roll>         damage variance always rolls its best (Iku)
+ *   <Sure Escape>       while anyone in the party has it, escape always
+ *                       works (Garo)
  * Mental ailments are the "Mental States" set on SI_Insight.
  *
  * ============================================================================
  * Skill notes
  * ============================================================================
  *   <Crit Bonus: 25>             +25% critical chance (Vital Strike)
+ *   <Sinks Sodden>               a target already Sodden when hit is
+ *                                Dragged Below by the caster (Emu)
  *   <Cleave>                     also hits an enemy next to the target
  *   <Requires All Moves: a, b>   needs every listed move (Conducting Edge:
  *                                metal, voltaic)
@@ -544,6 +553,65 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
             target.states().forEach(function(state) {
                 if ($.stateTags(state).curedByWater) target.removeState(state.id);
             });
+        }
+    };
+
+    //-------------------------------------------------------------------------
+    // Endure, Rise Again, Best Roll, Sure Escape, Sinks Sodden (god glyphs)
+    //-------------------------------------------------------------------------
+
+    $.stateWith = function(battler, re) {
+        return battler.states().filter(function(s) { return re.test(s.note || ''); })[0] || null;
+    };
+
+    var _Game_Action_executeHpDamage_endure = Game_Action.prototype.executeHpDamage;
+    Game_Action.prototype.executeHpDamage = function(target, value) {
+        var endure = value >= target.hp && target.hp > 1 ? $.stateWith(target, /<Endure>/i) : null;
+        if (endure) value = target.hp - 1;
+        _Game_Action_executeHpDamage_endure.call(this, target, value);
+        if (endure) target.removeState(endure.id);
+    };
+
+    var _Game_Battler_addState_rise = Game_Battler.prototype.addState;
+    Game_Battler.prototype.addState = function(stateId) {
+        var rise = stateId === this.deathStateId() && this.isAlive() ? $.stateWith(this, /<Rise Again:\s*\d+>/i) : null;
+        _Game_Battler_addState_rise.call(this, stateId);
+        if (rise && this.isDead()) {
+            var pct = Number(/<Rise Again:\s*(\d+)>/i.exec(rise.note)[1]);
+            this.removeState(stateId);
+            this.setHp(Math.max(1, Math.floor(this.mhp * pct / 100)));
+            this.removeState(rise.id);
+        }
+    };
+
+    var _Game_Action_applyVariance = Game_Action.prototype.applyVariance;
+    Game_Action.prototype.applyVariance = function(damage, variance) {
+        if ($.stateWith(this.subject(), /<Best Roll>/i)) {
+            var amp = Math.floor(Math.max(Math.abs(damage) * variance / 100, 0));
+            return damage >= 0 ? damage + amp : damage - amp;
+        }
+        return _Game_Action_applyVariance.call(this, damage, variance);
+    };
+
+    var _BattleManager_processEscape = BattleManager.processEscape;
+    BattleManager.processEscape = function() {
+        if ($gameParty.battleMembers().some(function(a) { return $.stateWith(a, /<Sure Escape>/i); })) this._escapeRatio = 1;
+        return _BattleManager_processEscape.call(this);
+    };
+
+    var _Game_Action_apply_sink = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        var item = this.item();
+        var sodden = $.stateByName('Sodden'), below = $.stateByName('Dragged Below');
+        var sinks = item && /<Sinks Sodden>/i.test(item.note || '') && target.isStateAffected(sodden);
+        _Game_Action_apply_sink.call(this, target);
+        if (sinks && target.result().isHit() && target.isAlive()) {
+            target.addState(below);
+            if (target.isStateAffected(below)) {
+                target.result().pushAddedState(below);
+                target._siInflicter = target._siInflicter || {};
+                target._siInflicter[below] = this.subject();
+            }
         }
     };
 

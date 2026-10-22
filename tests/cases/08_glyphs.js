@@ -19,7 +19,7 @@ module.exports = {
             };
             const slot = i => sib.equipSlots().indexOf(7) + i;
             out.occupiedLocked = !sib.isEquipChangeOk(slot(0));
-            out.emptyOpen = sib.isEquipChangeOk(slot(2));
+            out.emptyOpen = sib.isEquipChangeOk(slot(3));
             $gameParty.gainItem(AR('Glyph: Hagu'), 1);
             sib.changeEquip(slot(2), AR('Glyph: Hagu'));
             out.newGlyph = sib.skills().some(s => s.name === 'Hagu');

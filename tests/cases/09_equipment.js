@@ -42,7 +42,7 @@ module.exports = {
             'Charm 1,Charm 2,Charm 3,Battery,Codex,Lower L Arm,Lower R Arm,Upper L Arm,Upper R Arm', 'Sib\'s slot list');
         t.eq(r.thNames, 'Charm 3,Codex', 'Thenmy ends with a codex slot and no tattoos');
         t.eq(r.sibRing, 'Silver Ring', 'the ring starts in the Left Hand');
-        t.eq(r.sibTattoos, 2, 'Sib starts with two tattoos');
+        t.eq(r.sibTattoos, 3, 'Sib starts with three tattoos (Ahi, Mahu and Sooty Bird\'s Hiri)');
         t.eq(r.judaTattoos, 5, 'Juda starts with five tattoos');
         t.eq(r.thCuirass, 'Bronze Cuirass', 'bronze cuirass sits in the Cuirass slot');
         t.eq(r.thCodex, 'Codex of Mending', "Thenmy's codex");
