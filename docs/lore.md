@@ -426,9 +426,11 @@ Iceland's assembly and lawspeaker.
 - **The odd bureaucracy:**
   - **The Printed Custom:** after each Assembly the year's decisions and customs are printed and sent to
     every town. A **Keeper of Custom** (lawspeaker) remembers, recites and rules on custom.
-  - **Telegraph keepers** staff every relay and **log every message** (mystery evidence).
-  - **Rotating duties** (*keu*, "communal enterprise"): households take turns at line repair, bothy
-    upkeep, battery tending and water rights.
+  - **Telegraph keepers** (of the Lightning Clan) staff every station and **log every message** (mystery
+    evidence).
+  - **Rotating duties** (*keu*, "communal enterprise"): households take turns at bothy
+    upkeep and water rights. (Lines and batteries are not a rotating duty: they belong to the Lightning
+    Clan.)
   - **Priests as registrars:** births, deaths, mummifications, omens, the **register of the dead**. This
     gives Juda quiet power over what the village believes about deaths and missing children.
   - **Tally houses:** cowrie accounts, the orchil trade, and the **tribute ledger**.
@@ -599,6 +601,19 @@ spans the whole island.
 Despite having no bronze, the Islanders have **electricity, telegraphs and printing**. Islanders call electricity
 **"jarred lightning"**.
 
+**Jarring lightning is a craft, not magic:** a physical skill like smithing or carving. Nobody prays a
+battery into working; you build it right.
+
+**The Lightning Clan.** One large clan, a kinship network spread across the whole island, builds and tends
+the batteries and runs the telegraph. Compare the Tuareg *inadan*, a hereditary artisan class: the craft
+passes down the family, the clan marries largely among itself, and its people are needed everywhere yet
+stand a little apart from ordinary kin lines.
+- **Every town, village and ritual site has a telegraph station that is also a battery plant**, staffed by
+  the clan: telegraph keepers, battery tenders and line menders.
+- **The battery factory** is at **Tacandakeu**, the village nearest the volcano crater, beside the hot
+  springs and fumaroles that give the acid.
+- Their logs of every message (see Government) make them quiet keepers of the island's secrets.
+
 - **Batteries:** stacks of alternating copper and lead discs soaked in acidic water from volcanic hot
   springs and fumaroles, each stack in a ceramic jar, several jars wired together. **Battery
   tenders** maintain them, replacing spent discs and refreshing the acid.
@@ -627,7 +642,7 @@ Despite having no bronze, the Islanders have **electricity, telegraphs and print
 A few thousand Islanders in all. Wet-side lands feed the island, the dry side and the lava tubes are
 mined, and the main town sits where the two meet. **Naming:** towns are a Guanche word + Rapa Nui
 *hare* ("household"); small villages a Guanche word + Rapa Nui *keu* ("communal enterprise"); ritual
-sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegraph relay.**
+sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegraph station, which is also a battery plant** (the Lightning Clan).
 
 **Towns** (*-hare*, each with its own priest):
 | Town | Meaning | Where | Population | What happens there |
@@ -646,7 +661,7 @@ sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegrap
 | **Chafakeu** | Alpine meadows | Seasonal shepherds (summer pastures); the Shepherd of the Deer's territory |
 | **Tabonakeu** | The stone quarry, edge of the volcanic desert | Stonecutters: basalt, andesite, phonolite |
 | **Corajakeu** | Dry-side sea cliffs | Orchil (dye lichen) gatherers on ropes; the great export |
-| **Tacandakeu** | The hot springs and fumaroles near the crater | Battery tenders collecting acid |
+| **Tacandakeu** | The hot springs and fumaroles near the crater | **The island's battery factory** (the Lightning Clan): acid from the springs, discs and jars made here |
 
 **Ritual sites** (*-tapu*, with resident priests):
 | Site | What it is |
@@ -658,7 +673,8 @@ sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegrap
 
 **Networks:**
 - **Telegraph:** lines along the main tracks link Zonfahare to every town, village and ritual site,
-  each with a relay. Stations sit at **Bird idols** (fast travel). In Act 4 the lines are strategic:
+  each with a station (telegraph and battery plant, run by the Lightning Clan). Stations sit at **Bird
+  idols** (fast travel). In Act 4 the lines are strategic:
   defend them, cut the invaders', warn the villages.
 - **Bothies:** simple stone rest shelters about a day's walk apart along the trails, each with a **Star
   Mother idol** (heal and rest: a campfire rest, so everyone can eat a meal again). Some double as
