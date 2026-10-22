@@ -456,6 +456,9 @@ have a consensus web held together by kin, giving and wire, so a puppet chief do
   in investigation and in custom law. They track down thieves and killers, gather evidence, and bring the
   case before the kin lines, the Assembly or a Keeper to be judged. Compensation and exile still settle
   it; the spearwives see that it *gets* settled.
+- **Raising a posse:** a spearwife on a case can call on ordinary islanders to come with her and help
+  run down or bring in a suspect. That's how Dama arrives on the mountain at the head of Pada and a mob of
+  villagers.
 - **Mansehare** is their heart (spearfishing and pearl diving). **Dama** is a sworn spearwife and leads
   them, and the town's spearfishers. In short, a Copper Age fisherwoman cop.
 
