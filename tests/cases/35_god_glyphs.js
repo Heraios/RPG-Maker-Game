@@ -1,4 +1,5 @@
-// The god glyphs (Hiri, Gita, Emu, Iri, Ihi; the husbands' Garo, Gogoro, Iku, Puhi; the Daughters' Viri)
+// The god glyphs (Hiri, Gita, Emu, Iri, Ihi; the Ladies' Geha, Huhuti, Guhu, Huira; the husbands' Garo,
+// Gogoro, Iku, Puhi; the Daughters' Viri)
 // and Gau. Sib starts with Sooty Bird's Hiri.
 
 module.exports = {
@@ -54,6 +55,16 @@ module.exports = {
             out.iku = strike.itemCri(boar) + '/' + (strike.applyVariance(100, 20) === 120);
             // Gau drains
             boar.recoverAll(); yoon.setHp(1); cast(yoon, 'Gau', boar); out.gau = yoon.hp > 1;
+            // the Ladies: Geha, Huhuti, Guhu, Huira; Puhi is the Bull of Water's
+            out.puhiGod = /Bull of Water/.test(AR('Glyph: Puhi').description);
+            pada.recoverAll(); pada.setHp(10); pada.setTp(50); cast(yoon, 'Geha', pada); pada.regenerateAll();
+            out.geha = (pada.hp > 10) + '/' + (pada.tp < 50);
+            Math.random = () => 0.1;
+            cast(yoon, 'Huhuti', boar); out.huhuti = boar.isStateAffected(ST('Entangled')); boar.removeState(ST('Entangled'));
+            cast(yoon, 'Guhu', sib); const shot = new Game_Action(boar); shot.setSkill(SK('Sling Stone').id);
+            out.guhu = shot.itemHit(sib) + '/' + (hit.itemHit(sib) > 0);
+            const huira = new Game_Action(yoon); huira.setSkill(SK('Huira').id); yoon.useItem(SK('Huira')); boar.clearResult(); huira.apply(boar);
+            out.huira = boar.isStateAffected(ST('Dazzled')) + '/' + sib.isStateAffected(ST('Brave')) + '/' + sib.isStateAffected(ST('Sunlit'));
             Math.random = rnd;
             return out;
         });
@@ -71,5 +82,10 @@ module.exports = {
         t.ok(r.viri, 'Virisin drags an enemy below');
         t.eq(r.iku, '1/true', 'Iku: a sure critical with the best roll');
         t.ok(r.gau, 'Gau drains Health');
+        t.ok(r.puhiGod, 'Puhi is the Bull of Water\'s glyph');
+        t.eq(r.geha, 'true/true', 'Geha: the party heals and sheds Fatigue each turn');
+        t.ok(r.huhuti, 'Huhuti: roots entangle the enemies');
+        t.eq(r.guhu, '0/true', 'Guhu: ranged attacks can\'t hit the party; melee still can');
+        t.eq(r.huira, 'true/true/true', 'Huira: enemies Dazzled, the party Brave and lit');
     }
 };

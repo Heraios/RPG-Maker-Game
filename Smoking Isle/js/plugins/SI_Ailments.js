@@ -62,6 +62,8 @@
  *   <Crit Bonus: 25>             +25% critical chance (Vital Strike)
  *   <Sinks Sodden>               a target already Sodden when hit is
  *                                Dragged Below by the caster (Emu)
+ *   <Party Adds: Brave, Sunlit>  using it also gives the user's whole side
+ *                                these states (Huira)
  *   <Cleave>                     also hits an enemy next to the target
  *   <Requires All Moves: a, b>   needs every listed move (Conducting Edge:
  *                                metal, voltaic)
@@ -278,6 +280,12 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
             this.friendsUnit().aliveMembers().forEach(function(m) { m.removeState(item.siPartyCure); });
         }
         (item.siUserCure || []).forEach(function(id) { this.removeState(id); }, this);
+        // <Party Adds: Brave, Sunlit>: the user's whole side gains these states (Huira).
+        var adds = /<Party Adds:\s*([^>]+)>/i.exec(item.note || '');
+        if (adds) {
+            var ids = adds[1].split(',').map($.stateByName).filter(Boolean);
+            this.friendsUnit().aliveMembers().forEach(function(m) { ids.forEach(function(id) { m.addState(id); }); });
+        }
     };
 
     // <No Flee> (Held): can't flee or run off.

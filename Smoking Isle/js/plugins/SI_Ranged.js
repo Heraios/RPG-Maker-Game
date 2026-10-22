@@ -58,6 +58,7 @@
  *                           (Aimed Shot).
  *
  * State note:   <No Ranged>    no ranged skills while it lasts (Blinded).
+ * State note:   <Turns Ranged> ranged attacks can't hit the battler (Guhu).
  *
  * Ammo resets at the start of every battle. The skill list shows how many
  * uses are left instead of a cost.
@@ -335,6 +336,15 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
     $.isFlying = function(battler) {
         var note = battler.isActor() ? battler.actor().note : battler.enemy().note;
         return /<Flying>/i.test(note) || battler.states().some(function(st) { return /<Flying>/i.test(st.note || ''); });
+    };
+
+    // <Turns Ranged> states (Guhu): ranged attacks can't hit the battler.
+    var _Game_Action_itemHit_windward = Game_Action.prototype.itemHit;
+    Game_Action.prototype.itemHit = function(target) {
+        var item = this.item();
+        if (($.isRanged(item) || /<Ranged Strike>/i.test((item && item.note) || '')) &&
+            target.states().some(function(st) { return /<Turns Ranged>/i.test(st.note || ''); })) return 0;
+        return _Game_Action_itemHit_windward.call(this, target);
     };
 
     var _Game_Action_itemEva = Game_Action.prototype.itemEva;

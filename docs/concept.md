@@ -1743,13 +1743,16 @@ of Sooty Bird, starts with Hiri). They go in any tattoo slot and have no tiers, 
 | Emu ("to sink") | Red Bowl | All enemies: Water damage (×1.5); any already **Sodden** are **Dragged Below** by the caster | 16 |
 | Iri ("to go up") | Star Child | One ally, for the battle, **Ascending**: if knocked out, they rise again at 25% Health (once) | 12 |
 | Ihi ("to tear to pieces") | The Destroyer | One enemy: heavy Fire and Crush damage (×3.5) and **Cracked**. Costs 6 Fatigue | 20 |
+| Geha ("to be satiated") | Lady of the Woods (rainforest aspect: gregarious) | Party, 3 turns, **Sated**: heals 8% Health and sheds 5 Fatigue each turn | 12 |
+| Huhuti ("to uproot") | Lady of the Woods (alpine aspect: cold) | All enemies: roots burst up, Entangled 60% each | 12 |
+| Guhu ("to refuse, reject") | Lady of the Wind | Party, 2 turns, **Windward**: ranged attacks can't hit | 10 |
+| Huira ("to shine, glitter") | Lady of the Sun | All enemies Dazzled; the party is Brave and **Sunlit** (a light: no darkness penalty) for 4 turns | 14 |
 | Garo ("to disappear, become lost") | Shepherd of the Deer | Party, 2 turns: Evasion +50%, and escape always works | 8 |
 | Gogoro ("to snore") | Master of Deception | All enemies: Sleep, 60% each | 9 |
 | Iku ("to choose the best") | Bull of Heaven | One ally: the next damaging attack is a critical with the best damage roll | 6 |
-| Puhi ("to fish at night with bait") | Bull of Heaven | One enemy: Hypnotized (attacks its own allies), 70% | 10 |
+| Puhi ("to fish at night with bait") | Bull of Water | One enemy: Hypnotized (attacks its own allies), 70% | 10 |
 | Viri / Viriben / Virisin ("to coil") | The Daughters of the Wells, one tier each | One enemy: Water damage (×0.8 / 1.4 / 2.0) and Dragged Below (40 / 60 / 80%) | 6 / 12 / 20 |
 
-To come: a glyph for each Lady (Woods, Wind, Sun) and the Bull of Water.
 
 **Gau** ("to bite"), an ordinary glyph: drains Health from one enemy (×1.0; Gauben ×1.8; Gaugun all enemies ×0.8).
 MP 5 / 10 / 12.
