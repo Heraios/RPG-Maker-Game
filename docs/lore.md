@@ -442,6 +442,27 @@ follow whoever actually provides and protects, which is how **Dama becomes Chief
 **Why it matters in the story:** the All-Seafarers expect a king to deal with or behead; the Islanders
 have a consensus web held together by kin, giving and wire, so a puppet chief doesn't buy obedience.
 
+### Spearwives
+**Almost law officers:** a sworn title, the closest thing the island has to police.
+
+- **Why the Star Mother cares:** a crime left unanswered offends her, because of what was done to her
+  child (the Star Child, killed by White Bird) and her stolen star (taken by the Destroyer). **Murder and
+  theft** offend her most.
+- **Only women spear fish:** the Star Mother allows it only to women, whose cycles are like hers (the
+  tides). Fishing with spear and net is women's work, and women's sacred right.
+- **"Marrying the spear":** a spearwife is a fisherwoman who has sworn to the spear and turns her fishing
+  skills, **harpoon and net**, to fighting. They're sworn to the Star Mother, so they eat only sea meat.
+- **"Fishing out injustice":** the **Keepers of Custom** (lawspeakers) give them quick, informal training
+  in investigation and in custom law. They track down thieves and killers, gather evidence, and bring the
+  case before the kin lines, the Assembly or a Keeper to be judged. Compensation and exile still settle
+  it; the spearwives see that it *gets* settled.
+- **Mansehare** is their heart (spearfishing and pearl diving). **Dama** is a sworn spearwife and leads
+  them, and the town's spearfishers. In short, a Copper Age fisherwoman cop.
+
+**In the story:** Chief Tama and the Seafarer official Iras send Dama and a few spearwives after **Parl**
+(theft of the tribute pearls). Dama is also the one who **investigates Yoon's death** and finds that
+Juda did it: a spearwife fishing out the worst injustice of all, a murdered child.
+
 ### Priests
 Priests heal, hold funerals, **mummify the dead**, talk to ghosts and spirits, and read omens. They
 are chosen from the children Islander culture already counts as **priests or potential priests**:
@@ -735,7 +756,7 @@ homeland**, and also a **literate spy**: his job was to write down and record th
 before the invasion. He stole some of the **tribute pearls**, meaning to hide them on the ship and fence
 them back in the capital. He was found out and deserted into the highlands. **Chief Tama** and the
 Seafarer tributary official **Iras** tasked **Dama** and a few of her **spearwives** (Mansehare's
-informal militia) with finding out how he stole the pearls and tracking him down.
+sworn investigators: see "Spearwives") with finding out how he stole the pearls and tracking him down.
 
 ---
 

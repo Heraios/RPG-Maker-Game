@@ -236,7 +236,7 @@ The village priest, deeply respected by the Islanders, very knowledgeable and wi
   becomes an antagonist. The party loses his combat power exactly when they need it most.
 
 ### Dama — The Chieftess
-Leads Mansehare's spearfishers and its informal militia, the **spearwives**. Investigates Yoon's death and discovers that Juda
+Leads Mansehare's spearfishers and the **spearwives**, sworn fisherwomen who act as the island's investigators and law officers (lore.md, "Spearwives"). Investigates Yoon's death and discovers that Juda
 did it. Becomes Chieftess by default over the course of the war.
 
 - **Weapons:** knives, spears, paddle-swords, nets, javelins. Her **Fishing Gear** (ranged) holds one net cast
@@ -255,7 +255,7 @@ did it. Becomes Chieftess by default over the course of the war.
 A crewman on the All-Seafarer tribute collector's ship and a literate spy, recording the Islanders
 before the invasion. He stole some of the tribute pearls to fence back home, was found out, and
 deserted into the highlands. Chief Tama and the Seafarer tributary official Iras put Dama and her
-spearwives (Mansehare's informal militia) on the case. A pearl is the fifth ingredient for Yoon's body, so hunting
+spearwives (Mansehare's sworn investigators) on the case. A pearl is the fifth ingredient for Yoon's body, so hunting
 him down is an important Act 2 quest.
 
 - **Weapons:** knives, swords, spears, axes, slings or bows. A scrappy survivalist kit from months
