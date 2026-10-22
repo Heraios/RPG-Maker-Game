@@ -202,6 +202,30 @@ A narrow passage only children (and Patience) fit through.
 
 Several tags can go in the same Note box, one per line.
 
+## Enemies on the map
+
+Most fights are **visible enemies**: an event the player bumps into.
+
+1. Make an event with the enemy's map graphic. **Priority:** *Same as characters*; **Trigger:** *Event
+   Touch* (it starts the fight when it reaches you) or *Action Button*. For a wandering enemy, set
+   **Autonomous Movement** to *Approach* or *Random*.
+2. **Contents:** tab 2 → **Battle Processing...** → **Direct designation**, and pick the troop
+   (e.g. `Ibex*3`). Tick **Can Escape** for ordinary fights; leave it off
+   for bosses.
+3. **If Win** / **If Escape**: under *If Win*, add **Control Self Switch → A = ON**, and make a second
+   event page with Self Switch A as its condition and no graphic, so the enemy stays gone.
+
+Random encounters (caves and dark places only) go in **Map Properties → Encounters**: add the troops
+there. At night, a map's `<Night Troops: ...>` note replaces that list.
+
+**Troops** (Database → Troops) are the groups you fight. Some have **battle events** at the bottom of the
+Troops tab that change a fight as it goes: the false crane turning into a Marsh Hag (*Enemy Transform*),
+vultures arriving on turn 2 (*Enemy Appear*: the vultures are ticked **Appear Halfway** in the troop), the
+Shepherd's stags and the Bull's hounds arriving at half Health. Copy a troop to make a variant.
+
+Bosses whose defeat matters to the story (the Great Boar's flesh, the Daughter freed, Parl's fate) need
+the story to continue in the event's commands **after** Battle Processing.
+
 ## Switches and variables you can use in event conditions
 
 | Number | Name | Meaning |

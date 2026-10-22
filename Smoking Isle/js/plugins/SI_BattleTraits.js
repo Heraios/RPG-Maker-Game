@@ -33,6 +33,8 @@
  * Sparing children
  * ============================================================================
  * Actor note:   <Child>             counts as a child for these rules.
+ * Enemy note:   <Targets Weakest>   single-target attacks go for whoever has
+ *                                   the lowest share of Health left (vultures)
  * Enemy note:   <Spares Children>   won't use harmful actions on children
  *                                   unless it is Enraged (SI_Talk). With only
  *                                   children left, it uses non-harmful
@@ -163,6 +165,20 @@ SmokingIsle.BattleTraits = SmokingIsle.BattleTraits || {};
         }
         if (this.isForOne()) return [$.pickByTgr(pool)];
         return pool;
+    };
+
+    // <Targets Weakest> (enemy note): single-target attacks go for the party member with the
+    // lowest share of Health left (vultures).
+    var _Game_Action_targetsForOpponents_weakest = Game_Action.prototype.targetsForOpponents;
+    Game_Action.prototype.targetsForOpponents = function() {
+        var targets = _Game_Action_targetsForOpponents_weakest.call(this);
+        var subject = this.subject();
+        if (!subject.isEnemy() || !this.isForOne() || this.isForRandom() || targets.length !== 1 ||
+            !/<Targets Weakest>/i.test(subject.enemy().note)) return targets;
+        var below = SmokingIsle.Ailments ? SmokingIsle.Ailments.stateByName('Dragged Below') : 0;
+        var pool = subject.sparesChildren() && $.isHarmful(this.item()) ? $.spareablePool(this.opponentsUnit()) : this.opponentsUnit().aliveMembers();
+        pool = pool.filter(function(m) { return !m.isStateAffected(below); });
+        return pool.length ? [pool.reduce(function(a, b) { return b.hpRate() < a.hpRate() ? b : a; })] : targets;
     };
 
     //-------------------------------------------------------------------------

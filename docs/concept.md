@@ -1960,6 +1960,78 @@ has joined. Fatigue: about 8–20 per fight. Gear wears at a third of the earlie
 knife lasts roughly ten fights before chipping). Talking costs far less Fatigue than fighting, but
 some enemies are better fought: gentle words fail on centipedes, and only Pada can threaten.
 
+### Act 2 and Act 3 enemies (second batch)
+Placeholder art. Enemies 14–49, troops 15–49, enemy skills 404–471. Bosses shrug off Sleep, Entangled,
+Dragged Below, Hypnotized, Salting, Stunned and Confused.
+
+**Act 2**
+
+| Enemy | HP | ATK | DEF | MAT | AGI | Actions | Damage taken | Notes |
+|---|---|---|---|---|---|---|---|---|
+| Raven | 26 | 8 | 2 | 2 | 52 | Peck, Ill Omen | Earth ×0.5, Fire ×1.5 | Flying; Talk: animal |
+| Ibex | 60 | 12 | 6 | 0 | 46 | Cliff Charge, Strike | — | Talk: animal |
+| Mouflon Ram | 85 | 13 | 9 | 0 | 32 | Ram, Strike | Crush ×0.8 | Talk: animal |
+| Red Deer Stag | 90 | 14 | 6 | 0 | 40 | Antler Rake, Bellow | — | Talk: animal |
+| Golden Eagle | 50 | 13 | 4 | 0 | 56 | Talon Dive, Strike | — | Flying; Talk: animal |
+| Bat | 16 | 6 | 1 | 0 | 58 | Bat Bite, Screech | — | Flying; Talk: animal |
+| Giant Cave Cricket | 24 | 8 | 5 | 0 | 44 | Leap Kick, Deafening Chirr | Crush ×1.25 | Talk: animal |
+| Restless Bones | 70 | 14 | 9 | 0 | 30 | Grave Blade, Strike | Crush ×1.5, Cut ×0.75, Pierce ×0.5, Fire ×1.25 | Talk: spirit |
+| Bone Chanter | 45 | 6 | 5 | 14 | 34 | Grave Chill, Dirge, Raise Bones | Crush ×1.5, Cut ×0.75, Pierce ×0.5, Fire ×1.25 | Talk: spirit |
+| Moray Eel | 40 | 12 | 4 | 0 | 44 | Moray Bite | Water ×0.5 | Talk: animal |
+| Octopus | 55 | 10 | 4 | 8 | 40 | Grapple, Ink Cloud | Water ×0.5 | Talk: animal |
+| Giant Clam | 120 | 16 | 28 | 0 | 10 | Clamp | Crush ×0.75, Cut ×0.5, Pierce ×1.25, Fire ×1.5 | no Talk |
+| Daughter of the Wells | 700 | 19 | 10 | 18 | 38 | Coil, Drag Below, Well Water, Viri | Water ×0.25, Fire ×1.25, Earth ×0.75 | Talk: spirit |
+| Great Boar | 900 | 24 | 12 | 0 | 36 | Great Gore, Tusk Sweep, Stampede, Wallow | Cut ×0.75 | Talk: animal |
+| Shepherd of the Deer | 800 | 20 | 10 | 16 | 48 | Crook Strike, Lead Astray, Garo | Earth ×0.5, Fire ×1.5 | Talk: spirit |
+| Lady of the Woods | 900 | 20 | 12 | 20 | 40 | Tusked Fury, Rainforest Deluge, Falling Boughs, Temper, Geha | Earth ×0.5, Fire ×1.5, Water ×0.5 | Talk: spirit |
+| Parl | 520 | 18 | 10 | 6 | 50 | Quick Cut, Throw Sand, Dirty Trick | — | Talk: sapient |
+
+**Act 3** (also the salt marsh, if Act 2 goes there)
+
+| Enemy | HP | ATK | DEF | MAT | AGI | Actions | Damage taken | Notes |
+|---|---|---|---|---|---|---|---|---|
+| Giant Lizard | 110 | 16 | 10 | 0 | 30 | Tail Lash, Bite, Bask | Fire ×0.75, Water ×1.25 | Talk: animal |
+| Giant Tortoise | 200 | 15 | 30 | 0 | 12 | Snapping Bite, Withdraw | Crush ×1.5, Cut ×0.5, Pierce ×0.75 | Talk: animal |
+| Egyptian Vulture | 55 | 13 | 4 | 0 | 50 | Rending Beak | — | Flying; targets the weakest; Talk: animal |
+| Guardian Lizard | 140 | 16 | 12 | 14 | 40 | Spring Spit, Bite, Scale Guard | Fire ×0.5, Water ×0.5 | Talk: spirit; Tou: instant |
+| Leech | 20 | 6 | 2 | 0 | 20 | Latch | Fire ×1.5 | no Talk |
+| Marsh Eel | 45 | 12 | 4 | 0 | 42 | Eel Bite | Water ×0.5 | Talk: animal |
+| Crane | 40 | 11 | 3 | 0 | 48 | Spear Beak | — | Flying; Talk: animal |
+| Crane (false: a Hag) | 40 | 11 | 3 | 10 | 48 | Spear Beak | — | Flying; Talk: spirit |
+| Marsh Hag | 160 | 12 | 8 | 18 | 40 | Draining Kiss, Hag's Curse, Marsh Wind | Air ×0.5, Fire ×1.5 | Talk: spirit |
+| Stoneman | 150 | 17 | 22 | 0 | 18 | Stone Fist | Cut ×0.5, Pierce ×0.75, Crush ×1.25, Water ×1.25, Earth ×0.5 | Talk: sapient; Tou: instant |
+| Stoneman Priest | 120 | 10 | 16 | 16 | 22 | Salt Glyph, Mend Stone, Stone Fist | Cut ×0.5, Pierce ×0.75, Crush ×1.25, Water ×1.25, Earth ×0.5 | Talk: sapient; Tou: instant |
+| Stoneman Shaman | 600 | 17 | 20 | 16 | 24 | Stone Fist, Salt Storm, Earthshaker, Mend Stone | Cut ×0.5, Pierce ×0.75, Crush ×1.25, Water ×1.25, Earth ×0.5 | Talk: sapient; Tou: instant |
+| Guardian of the Crater Lake | 800 | 19 | 14 | 18 | 40 | Spring Torrent, Steam Burst, Tail Sweep, Scale Guard | Fire ×0.25, Water ×0.5 | Talk: spirit; Tou: instant |
+| Black Hound | 120 | 18 | 9 | 0 | 52 | Hound Bite, Drag Below | Fire ×0.5, Water ×1.5 | no Talk |
+| Black Hound Alpha | 260 | 22 | 12 | 0 | 54 | Rending Bite, Drag Down, Howl of the Pit | Fire ×0.5, Water ×1.5 | no Talk |
+| Hunched | 100 | 15 | 8 | 0 | 26 | Corpse Claw, Grave Breath | Fire ×1.5 | Talk: spirit |
+| Hunched Defiler | 180 | 12 | 10 | 20 | 30 | Defile, Pyre Breath, Corpse Claw | Fire ×1.25 | Talk: spirit |
+| The Bull of the Caves | 950 | 21 | 15 | 15 | 38 | Gore, Fire Breath, Cave Stampede | Fire ×0, Water ×1.5 | no Talk |
+| Juda | 550 | 13 | 12 | 13 | 34 | Ritual Knife, Pyre, Ahigun, Chlorine Cloud, Mahu | Fire ×0.5 | no Talk |
+
+**Troop events** (in the Troops tab, editable):
+- **Cranes (one false):** on turn 2 the third crane transforms into a **Marsh Hag** (Enemy Transform).
+- **Desert: Lizards and Vultures:** the two vultures are hidden and arrive on turn 2 (Enemy Appear).
+- **Shepherd of the Deer:** two stags crash in when he drops to half Health.
+- **The Bull of the Caves:** two Black Hounds come when he drops to half Health.
+- **Stoneman Shaman:** comes with one Stoneman.
+
+**Talk highlights:** the Great Boar is slow to calm (Stalk it); the Lady of the Woods wants food (sweet
+potatoes, wine) and plain manners, and hates threats; the Shepherd wants a new song (Rite); Parl can be
+talked down; the Daughter of the Wells is a rescue (Rite, Plead; Falmi's answer is strongest); Hags dote
+on Yoon; the Hunched are freed by a rite; Stonemen and Guardian Lizards yield to Tou. Black Hounds, the
+Bull of the Caves and Juda won't listen.
+
+**Simulated balance** (`node tests/run.js --sim act2_3`, 20 battles each; the simulated party only attacks,
+never heals or uses items, so real fights are easier). Regular Act 2 and Act 3 troops cost **5–30% HP**.
+Bosses: Daughter of the Wells 20%, Shepherd 36%, Parl 12%, Great Boar 61% (85% wins), Lady of the Woods
+57%; Act 3: Guardian of the Crater Lake about 75% wins, Stoneman Shaman and Juda about half, and the
+optional Bull of the Caves is the hardest (about 40%). Talking down a boss takes 6–20 turns.
+
+**Placement notes:** the story events after each boss (the Daughter freed, the Great Boar's flesh, the
+Lady's leave, Parl's fate, Dama's arrival against Juda) still need writing as events.
+
 ### Implementation status
 | Piece | Status |
 |-------|--------|

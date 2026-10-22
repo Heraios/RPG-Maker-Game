@@ -111,6 +111,8 @@
  *   <Talk Likes: 1, 5>          item ids it loves being offered (x2).
  *   <Talk Hates: 3>             item ids it hates being offered (-30).
  *   <Talk Rite: ash>            the rite it wants; other rites anger it.
+ *                               (<Talk Rite: 25>, a number, is a mood change
+ *                               like the other approaches.)
  *   <Talk Info: text>           what Ask reveals once it is Calm.
  *   <Talk Switch: 12>           switch turned ON when it gives its info.
  *   <Talk Outcome: ...>         what happens when it is Pacified, comma
@@ -345,11 +347,12 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         t.overrides = {};
         ['soothe', 'offer', 'ask', 'rite', 'threaten', 'plead', 'stalk', 'hit'].forEach(function(a) {
             var v = $.tag(note, 'Talk ' + a);
-            if (v !== null) t.overrides[a] = Number(v);
+            if (v !== null && /^\s*-?\d+\s*$/.test(v)) t.overrides[a] = Number(v);
         });
         t.likes = $.list($.tag(note, 'Talk Likes')).map(Number);
         t.hates = $.list($.tag(note, 'Talk Hates')).map(Number);
-        t.rite = ($.tag(note, 'Talk Rite') || '').toLowerCase() || null;
+        var rite = ($.tag(note, 'Talk Rite') || '').trim().toLowerCase();
+        t.rite = rite && !/^-?\d+$/.test(rite) ? rite : null;   // a number is a mood change, a word the rite it wants
         t.info = $.tag(note, 'Talk Info');
         t.switchId = Number($.tag(note, 'Talk Switch') || 0);
         t.outcomes = ($.tag(note, 'Talk Outcome') || 'pacify').split(',').map(function(s) {
