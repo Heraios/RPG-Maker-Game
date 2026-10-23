@@ -146,6 +146,20 @@ one real hazard.
 
 ---
 
+## The opening
+
+- **Map 5 "Prologue"** is black on purpose: its one event shows Thenmy's narration, fades out, plays three
+  drips and moves the player to map 6. It also makes the party **the Ghost alone**. Add pictures (the sea,
+  the fleet, the smoking peak) with *Show Picture* where the comment in the event says.
+- **Map 6 "Lava Tube: Waking"** has a **placeholder** grey floor: repaint it as the lava tube. The `TODO`
+  event under the Ghost is Yoon's remains; give it a skeleton graphic.
+- **To make the real game start there:** in the editor, right-click a tile on the Prologue map →
+  **Set Starting Position → Player**. While you're still testing other things, leave the start in the
+  Test Room and use its **Play the Opening** door instead. (That door turns your test party into the
+  Ghost alone.)
+
+---
+
 ## Gathering spots
 
 A gathering spot is a tree, plant, rock, pool and so on that the party can harvest once a day. When

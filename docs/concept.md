@@ -12,6 +12,11 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 ## Story Outline
 
 ### Prologue / Act 1 — The Ghost
+- **Opening:** a cold open narrated by **Thenmy** (the player isn't told who), over black or slow
+  pictures: *"My father once said that at the center of the world, there is an island that birthed The
+  Sun..."* through *"I am told there will be very little blood."* Fade out; drip, drip, drip. Then the
+  player is simply controlling a ghost in a cave, with no explanatory text. (Maps 5 "Prologue" and 6
+  "Lava Tube: Waking".)
 - You "wake up" as a spirit over a skeletal corpse, with no memories and no language.
 - You move around as a spirit, learning language with Lasa's help and piecing together that
   you "are" the spirit of a missing (actually dead) child the village is mourning.
