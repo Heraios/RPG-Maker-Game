@@ -146,6 +146,23 @@ priesthood, and at **8** went to live with Juda. They still talk to and love the
 tender**. As a child of the clan, Sib keeps the right to learn the Lightning Clan's techniques, which is
 why a priest jars lightning too.
 
+**Body (writer's background):** Sib's intersex condition is **45,X/46,XY mosaicism** (mixed gonadal
+dysgenesis): some cells XY, some a single X. That's why the village knew at birth (ambiguous genitals) and
+offered them to the priesthood. It explains their look and their frailty:
+- **Androgynous, leaning feminine:** weak, late or partial puberty keeps a soft, in-between look.
+- **Short and slight.**
+- **A bit frail:** Turner-like heart differences (a bicuspid aortic valve or a narrowed aorta) mean low
+  stamina and getting winded easily: the lowest Health in the party, and tiring fast. Kidney differences
+  and catching minor illnesses fit too. Mind and spirit are unaffected.
+In the game nobody names it: the islanders see a child the gods marked as a priest.
+
+**The crush:** Sib has a **big** crush on Yoon, whatever gender the player chooses.
+- The village sees nothing wrong with it.
+- **Sib keeps it secret from Yoon**, sure that Yoon wouldn't want feelings from someone like them.
+- **The player can't shut it down cruelly.** The worst Yoon can say is that they only see Sib as a best
+  friend. Returned or not, it stays kids' puppy love: never beyond holding hands, and at most a childhood
+  betrothal promise in certain endings.
+
 - **Weapons:** knives, staffs and slings, plus the priests' Jasper Knife and Jasper Spear. A narrow
   selection: a child trained for spiritual work, not combat.
 - **Quirks:** lowest HP in the party, permanently. Largest and most sustainable MP pool. Widest

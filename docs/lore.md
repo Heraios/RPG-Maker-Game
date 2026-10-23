@@ -822,6 +822,10 @@ a **massive puppy-love crush** on Yoon, whatever gender the player chooses. Whet
 up to the player, and they're kids: it never goes beyond **holding hands**, and at most a **childhood
 betrothal promise** in certain endings.
 
+- **Sib keeps the crush secret from Yoon**, believing Yoon wouldn't want feelings from someone like them.
+  The village sees nothing wrong with it.
+- **Yoon can't reject Sib cruelly.** The worst the player can choose is "I only see you as my best friend."
+
 - Sib's parents, **Uira** and **Poko**, run Zonfahare's telegraph station (she the operator, he the
   battery tender). Sib lived with them until 8, then with Juda as his ward and apprentice.
 - Sib **never suspected Juda** before Act 3.
