@@ -22,6 +22,21 @@ before pushing your own.
 
 ---
 
+## Troubleshooting: crashes on a Mac
+
+RPG Maker MV 1.6.1 ships with a very old NW.js (the small browser that runs the game). Current macOS no
+longer supports it: playtests crash to the desktop, go to a black screen, or show "nwjs quit
+unexpectedly". The game's own code isn't the cause.
+
+**The fix:** replace the NW.js inside your RPG Maker MV install with a current version from nwjs.io.
+After a reinstall, or on a new computer, it has to be done again. It also makes the game noticeably faster.
+
+**"Required value 'name' is missing or invalid":** newer NW.js versions refuse a game whose
+`Smoking Isle/package.json` has an empty name. Ours is set to `"name": "smoking-isle"`. If RPG Maker ever
+blanks it again, open the file in TextEdit and put the name back (keep the quotes and the comma).
+
+---
+
 ## What's safe to change in the editor
 
 **Best done in the editor:** painting maps; placing events and choosing their graphics, movement and
