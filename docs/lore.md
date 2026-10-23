@@ -482,6 +482,9 @@ In her words:
 > theirs. That's horrific. And a child was lured by one of our own into a *tomb* and butchered there like
 > an animal. This is unacceptable to The Mother and to decency."
 
+In the game the second sentence is written "That \YP[they] \YV[are|is] miraculously returned to us...", so
+it reads "That she is", "That he is" or "That they are", whichever Yoon the player chose.
+
 ### Priests
 Priests heal, hold funerals, **mummify the dead**, talk to ghosts and spirits, and read omens. They
 are chosen from the children Islander culture already counts as **priests or potential priests**:

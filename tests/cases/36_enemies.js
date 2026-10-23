@@ -8,7 +8,7 @@ module.exports = {
             const EN = n => $dataEnemies.find(e => e && e.name === n), out = {};
             const names = ['Raven', 'Ibex', 'Mouflon Ram', 'Red Deer Stag', 'Golden Eagle', 'Bat', 'Giant Cave Cricket', 'Restless Bones', 'Bone Chanter',
                 'Moray Eel', 'Octopus', 'Giant Clam', 'Daughter of the Wells', 'Great Boar', 'Shepherd of the Deer', 'Lady of the Woods', 'Parl',
-                'Giant Lizard', 'Giant Tortoise', 'Egyptian Vulture', 'Guardian Lizard', 'Leech', 'Marsh Eel', 'Crane', 'Marsh Hag', 'Stoneman',
+                'Giant Lizard', 'Giant Tortoise', 'Vulture', 'Guardian Lizard', 'Leech', 'Marsh Eel', 'Crane', 'Marsh Hag', 'Stoneman',
                 'Stoneman Priest', 'Stoneman Shaman', 'Guardian of the Crater Lake', 'Black Hound', 'Black Hound Alpha', 'Hunched', 'Hunched Defiler',
                 'The Bull of the Caves', 'Juda'];
             out.missing = names.filter(n => !EN(n)).join(', ');
@@ -23,7 +23,7 @@ module.exports = {
             // the vulture goes for the weakest
             const yoon = $gameActors.actor(2), sib = $gameActors.actor(3), pada = $gameActors.actor(5);
             $gameParty.battleMembers().forEach(a => a.recoverAll()); sib.setHp(3);
-            const vulture = $gameTroop.members()[0], was = vulture.enemyId(); vulture.transform(EN('Egyptian Vulture').id);
+            const vulture = $gameTroop.members()[0], was = vulture.enemyId(); vulture.transform(EN('Vulture').id);
             const rend = new Game_Action(vulture); rend.setSkill($dataSkills.find(s => s && s.name === 'Rending Beak').id);
             out.weakest = [0, 1, 2, 3, 4].map(() => rend.makeTargets()[0].name()).every(n => n === 'Sib');
             vulture.transform(was); sib.recoverAll();

@@ -52,16 +52,58 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    | 1 | Surrendered (enemy talk) | | 1 | Hoard recovered (test) |
    | 2 | Tattoo removal (late game) | | 2 | Time: period |
    | 3 | Parl joined the village | | 3 | Time: day |
-   | 4 | Yoon trained in swords (Thenmy) | | | |
+   | 4 | Yoon trained in swords (Thenmy) | | 4 | Yoon's gender (1 boy, 2 girl, 3 third) |
    | 5 | Sib reads Seafarer script | | | |
    | 6 | Tou reads Seafarer script | | | |
    | 7 | Night | | | |
    | 8 | Can see | | | |
 
-6. **Common events 3–8** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway).
-   Their wording can change, but don't move or delete them.
+6. **Common events 3–10** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
+   Choose Yoon, Yoon's Room: Keepsakes).
+   Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
+   effects) are also used by number.
 7. **Plugin Manager order.** Changing a plugin's settings is fine; moving plugins up or down isn't.
 8. **Troop 13 and the Test Room (map 4)** are used by the automated tests. Copy them instead of editing.
+
+---
+
+## Writing dialogue: names and Yoon's pronouns
+
+**Names.** The player names every party member, so don't type names into dialogue. Use **`\N[n]`**, the
+character's actor number: `\N[2]` Yoon, `\N[3]` Sib, `\N[4]` Lasa, `\N[5]` Pada, `\N[6]` Juda,
+`\N[7]` Dama, `\N[8]` Parl, `\N[9]` Tou, `\N[10]` Falmi, `\N[11]` Thenmy, `\N[12]` Patience.
+
+**Yoon's pronouns.** Write the *they* form inside a code and the game swaps in the right word:
+
+| Write | Boy | Girl | Third gender |
+|-------|-----|------|--------------|
+| `\YP[they]` | he | she | they |
+| `\YP[them]` | him | her | them |
+| `\YP[their]` | his | her | their |
+| `\YP[theirs]` | his | hers | theirs |
+| `\YP[themself]` | himself | herself | themself |
+| `\YP[they're]` | he's | she's | they're |
+| `\YP[They]` (capital) | He | She | They |
+
+- **Verbs** that change with the pronoun: `\YV[are|is]`, `\YV[were|was]`, `\YV[have|has]`,
+  `\YV[go|goes]` (the *they* form first).
+- **Any other words:** `\YG[boy|girl|third]`, e.g. `\YG[son|daughter|child]`, `\YG[lad|lass|little one]`.
+
+Example: `\N[7]: That \YP[they] \YV[are|is] back doesn't change what was done to \YP[them].`
+
+**Sib is always they/them**: just write it. Everyone else's pronouns don't change.
+
+**Branching on Yoon's gender:** in an event, use a **Conditional Branch** on variable 4 (1 boy, 2 girl,
+3 third gender), or a Script condition `SmokingIsle.Yoon.isBoy()` / `isGirl()` / `isThird()`.
+
+**The start of the game:** call common event **9 "Choose Yoon"** in the opening event. It asks boy, girl
+or third gender and then Yoon's name. **Yoon's room:** an event there calls common event **10 "Yoon's
+Room: Keepsakes"** (each gender finds different things), then turns its own Self Switch A on so it only
+happens once. In the Test Room, **Yoon's Mirror** runs Choose Yoon again.
+
+**Naming newcomers** happens by itself: the first time an event's *Change Party Member* adds someone,
+the name screen opens. It never happens in battle, or on maps with `<No Name Entry>` in their note (the
+Test Room).
 
 ---
 

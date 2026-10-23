@@ -1036,6 +1036,7 @@ SmokingIsle.Talk = SmokingIsle.Talk || {};
         this.contents.clear();
         var width = this.contentsWidth() - this.textPadding() * 2;
         this._siFitLines.forEach(function(line, i) {
+            line = this.convertEscapeCharacters(line).replace(/\x1b[A-Z]*(\[[^\]]*\])?/gi, '');   // \N[n] names, pronoun codes
             var size = this.standardFontSize();
             this.contents.fontSize = size;
             while (size > 18 && this.textWidth(line) > width) this.contents.fontSize = --size;

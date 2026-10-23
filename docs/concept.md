@@ -115,6 +115,21 @@ out who they were, learn language, recover their body and recover their memories
 there. The player chooses Yoon's gender and appearance: boy, girl, or the island's priestly **third
 gender**, which the game and the village translate with **they/them** (as for Sib; see lore.md, "Priests").
 
+**What Yoon's gender changes** (`SI_Yoon.js`; mostly flavor, a few small effects):
+
+| | Boy | Girl | Third gender |
+|---|---|---|---|
+| Pronouns | he / him / his | she / her / her | they / them / their |
+| How people address Yoon | son, lad | daughter, lass | child, little priest |
+| Expected job as a kid | Hunter, like Pada | Herbalist, like Mada | Priest |
+| Closer to | Pada | Mada | Both |
+| Small effect | **Stalk +20**; animals start a little friendlier | **Remedies Yoon uses heal 20% more** | **Rite +20**; spirits start a little friendlier |
+| In Yoon's room (with a body) | The goat-hair sling Pada made, a tusk from the first hunt | A jar of leeches Mada kept alive, herbs Yoon dried | Sandalwood beads from the priests, the gourd rattle Sib traded for |
+
+Dialogue writes these with text codes (`\YP[they]`, `\YV[are|is]`, `\YG[son|daughter|child]`; see the
+editor guide). **Naming:** the player names Yoon at the start and every other party member the first time
+they join (`SI_Naming.js`).
+
 **Ghost or demon is genuinely ambiguous, and the game never answers it.** The evidence supports both
 readings. In dialogue the player can have Yoon (and the people around them) lean either way, or stay
 agnostic; the game respects whichever stance the player takes and never confirms it.
@@ -479,7 +494,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Missable content | Pada's sidequests | Switches that lock when Pada dies |
 | Languages and literacy | Islander, All-Seafarer, First Sailor | Party checks on inscription and document events (Sib, Parl, Falmi, Tou, Thenmy) |
 | Clue and evidence tracking | Murder mystery | A custom journal menu, or repurposing the ItemBook plugin |
-| Player-chosen gender and appearance | Yoon | Choice at game start (boy, girl or third gender) that sets the sprite and portrait, plus pronoun substitution in dialogue (he / she / they). Not built yet |
+| Player-chosen gender and appearance | Yoon | Choice at game start (boy, girl or third gender) that sets the sprite and portrait, plus pronoun substitution in dialogue (he / she / they). Built: `SI_Yoon.js` (looks still to be drawn) |
 | Underwater exploration | Dama | Map events and region checks gated on her spell |
 | Faction choices | Pearl thief, Thenmy | Variables that branch recruitment and relationships |
 
@@ -2017,7 +2032,7 @@ Dragged Below, Hypnotized, Salting, Stunned and Confused.
 |---|---|---|---|---|---|---|---|---|
 | Giant Lizard | 110 | 16 | 10 | 0 | 30 | Tail Lash, Bite, Bask | Fire ×0.75, Water ×1.25 | Talk: animal |
 | Giant Tortoise | 200 | 15 | 30 | 0 | 12 | Snapping Bite, Withdraw | Crush ×1.5, Cut ×0.5, Pierce ×0.75 | Talk: animal |
-| Egyptian Vulture | 55 | 13 | 4 | 0 | 50 | Rending Beak | — | Flying; targets the weakest; Talk: animal |
+| Vulture | 55 | 13 | 4 | 0 | 50 | Rending Beak | — | Flying; targets the weakest; Talk: animal |
 | Guardian Lizard | 140 | 16 | 12 | 14 | 40 | Spring Spit, Bite, Scale Guard | Fire ×0.5, Water ×0.5 | Talk: spirit; Tou: instant |
 | Leech | 20 | 6 | 2 | 0 | 20 | Latch | Fire ×1.5 | no Talk |
 | Marsh Eel | 45 | 12 | 4 | 0 | 42 | Eel Bite | Water ×0.5 | Talk: animal |

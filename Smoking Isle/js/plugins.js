@@ -31,5 +31,7 @@ var $plugins =
 {"name":"SI_Gather","status":true,"description":"Smoking Isle: gathering spots for plants, wood, stone, ore, fish and water. You pick who gathers; the job needs the right person and the right tool equipped. Each spot gives once a day.","parameters":{"Fatigue":"wood 3, herb 2, food 2, stone 2, ore 4, dig 2, shore 2, fish 2, water 0"}},
 {"name":"SI_Idols","status":true,"description":"Smoking Isle: the idols of resting areas. Red Bowl saves, Sooty Bird flies you to other idols, Star Mother lets you rest and share a meal.","parameters":{}},
 {"name":"SI_Crawl","status":true,"description":"Smoking Isle: crawlways only the children fit through. The adults wait behind and rejoin when you come back to them.","parameters":{}},
+{"name":"SI_Yoon","status":true,"description":"Smoking Isle: Yoon's gender (boy, girl or the priestly third gender), pronoun text codes, and its flavor and small effects.","parameters":{"Gender Variable":"4","Yoon Actors":"1, 2","Passive States":"210, 211, 212","Boy Look":"","Girl Look":"","Third Look":""}},
+{"name":"SI_Naming","status":true,"description":"Smoking Isle: the player names each party member when they first join (Final Fantasy style).","parameters":{"Name On Join":"3, 4, 5, 6, 7, 8, 9, 10, 11, 12","Shared Names":"1, 2","Max Length":"8"}},
 {"name":"SI_Screen","status":true,"description":"Smoking Isle: widescreen fixes, FFX-style battle layout, word wrap for dialogue and the battle log, and a Battle Text speed option.","parameters":{"Battle Text Speeds":"72,48,24"}}
 ];
