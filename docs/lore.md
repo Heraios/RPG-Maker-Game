@@ -489,6 +489,13 @@ are chosen from the children Islander culture already counts as **priests or pot
 have metaphorically **"died and come back"** (mostly children revived after drowning). **Juda's (false)
 backstory is that he was an orphan.**
 
+**The third gender and neutral pronouns.** The island has a third gender tied to the priesthood, a
+shaman-like role grounded in the genderless Red Bowl and Star Child. The game translates it with **neutral
+pronouns** (they/them): the village, the narration and the dialogue all use them for **Sib**, and for
+**Yoon** if the player chooses that option. It's a respected place in island life, not an oddity. Not every
+priest holds it, though: priests also come from twins, orphans and the "died and came back", and Juda is
+"he".
+
 ### Death
 The dead are mummified and laid in **stone-cut tombs in the lava tubes**. A ghost is not alarming
 in itself: ghost Yoon is *concerning* because Yoon was a child who went missing about a month before

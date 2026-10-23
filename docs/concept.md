@@ -112,7 +112,8 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 The ghost of a murdered child who has lost all memories from before death. Or possibly a demon
 summoned by Juda through the child's murder, who believes it is the child. Their quest to find
 out who they were, learn language, recover their body and recover their memories spirals from
-there. The player chooses Yoon's gender and appearance.
+there. The player chooses Yoon's gender and appearance: boy, girl, or the island's priestly **third
+gender**, which the game and the village translate with **they/them** (as for Sib; see lore.md, "Priests").
 
 **Ghost or demon is genuinely ambiguous, and the game never answers it.** The evidence supports both
 readings. In dialogue the player can have Yoon (and the people around them) lean either way, or stay
@@ -478,7 +479,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Missable content | Pada's sidequests | Switches that lock when Pada dies |
 | Languages and literacy | Islander, All-Seafarer, First Sailor | Party checks on inscription and document events (Sib, Parl, Falmi, Tou, Thenmy) |
 | Clue and evidence tracking | Murder mystery | A custom journal menu, or repurposing the ItemBook plugin |
-| Player-chosen gender and appearance | Yoon | Choice at game start that sets the sprite and portrait, plus pronoun substitution in dialogue |
+| Player-chosen gender and appearance | Yoon | Choice at game start (boy, girl or third gender) that sets the sprite and portrait, plus pronoun substitution in dialogue (he / she / they). Not built yet |
 | Underwater exploration | Dama | Map events and region checks gated on her spell |
 | Faction choices | Pearl thief, Thenmy | Variables that branch recruitment and relationships |
 
