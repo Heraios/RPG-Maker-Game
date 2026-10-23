@@ -1,9 +1,9 @@
 {
-    "name": "",
+    "name": "smoking-isle",
     "main": "index.html",
     "js-flags": "--expose-gc",
     "window": {
-        "title": "",
+        "title": "Smoking Isle",
         "toolbar": false,
         "width": 1280,
         "height": 720,
