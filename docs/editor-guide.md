@@ -22,6 +22,73 @@ before pushing your own.
 
 ---
 
+## What's safe to change in the editor
+
+**Best done in the editor:** painting maps; placing events and choosing their graphics, movement and
+triggers; writing dialogue, choices and cutscenes; anything you judge by eye (enemy positions in troops,
+animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop rates, encounters).
+
+**Safe:**
+- Changing any number, description, icon or picture on an existing database entry.
+- Making new entries by **copying** an existing one (its note tags come along).
+- New maps, events, dialogue, troops and common events.
+- Editing note tags, as long as you copy the exact spelling from a working example.
+
+**Can break the plugins or tests (ask first):**
+1. **Renaming** items, states and equipment. Some plugins find things **by name** (gathering gives
+   "Laurel Branch"; states such as "Sodden", "Dragged Below" and "Brave" are looked up by name). A rename
+   breaks them quietly. Say what you want renamed and the code gets updated with it.
+2. **Deleting, moving or reusing an entry's slot.** Notes point at things **by ID number**
+   (`<Recipe In: item 136>`, `<Start Equips: armor 322>`, `<Talk Likes: 42>`), so a reused slot makes
+   them point at the wrong thing.
+3. **Lowering "Change Maximum"** on any database list: everything above the new maximum is lost.
+4. **The numbered lists in Database → Types** (elements, skill types, weapon types, armor types,
+   equipment types). The plugins use their numbers. Adding new ones at the end is fine; reordering or
+   renaming isn't.
+5. **Reserved switches and variables.** Don't reuse these for anything else:
+
+   | Switch | Used for | | Variable | Used for |
+   |--------|----------|-|----------|----------|
+   | 1 | Surrendered (enemy talk) | | 1 | Hoard recovered (test) |
+   | 2 | Tattoo removal (late game) | | 2 | Time: period |
+   | 3 | Parl joined the village | | 3 | Time: day |
+   | 4 | Yoon trained in swords (Thenmy) | | | |
+   | 5 | Sib reads Seafarer script | | | |
+   | 6 | Tou reads Seafarer script | | | |
+   | 7 | Night | | | |
+   | 8 | Can see | | | |
+
+6. **Common events 3–8** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway).
+   Their wording can change, but don't move or delete them.
+7. **Plugin Manager order.** Changing a plugin's settings is fine; moving plugins up or down isn't.
+8. **Troop 13 and the Test Room (map 4)** are used by the automated tests. Copy them instead of editing.
+
+---
+
+## Leaving work for Claude: TODO events
+
+You can mark a spot on a map and ask Claude to fill it in.
+
+1. Make an event where it belongs and give it the graphic you want.
+2. **Name** it `TODO`.
+3. In its **Note** box (or a Comment command in its contents), say what you want, e.g.
+   *"Sooty Bird idol for Mansehare"* or *"Uira at her telegraph key: greets Sib warmly, mentions the log
+   book. Once the murder case starts, offers to check the logs."*
+4. Mention anything that can't be guessed: which switch or story point it depends on, who should be in
+   the party, what it should give.
+
+Claude keeps the event's position and picture and replaces its contents (and may add pages).
+
+**The handover**, because the editor and Claude can't work on the same map at once:
+1. Save in RPG Maker, **close it**, and push your changes.
+2. Tell Claude which maps have TODOs. Claude pulls, fills them in, tests what it can, and pushes.
+3. Pull **before** opening RPG Maker again.
+
+If RPG Maker is open while a map is being changed, its next save overwrites those changes. That's the
+one real hazard.
+
+---
+
 ## Gathering spots
 
 A gathering spot is a tree, plant, rock, pool and so on that the party can harvest once a day. When
