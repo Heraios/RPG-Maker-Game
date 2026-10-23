@@ -613,6 +613,10 @@ stand a little apart from ordinary kin lines.
 - **The battery factory** is at **Tacandakeu**, the village nearest the volcano crater, beside the hot
   springs and fumaroles that give the acid.
 - Their logs of every message (see Government) make them quiet keepers of the island's secrets.
+- **Sib is Lightning Clan by birth.** Being intersex, they were offered to the priesthood and went to live
+  with Juda at 8, but they still love and visit their parents, **Uira** (Zonfahare's telegraph operator)
+  and **Poko** (its battery tender), and they keep the clan right to learn its techniques. A priest who
+  knows the craft: a bridge between the clan's work and the priests'.
 
 - **Batteries:** stacks of alternating copper and lead discs soaked in acidic water from volcanic hot
   springs and fumaroles, each stack in a ceramic jar, several jars wired together. **Battery
@@ -818,6 +822,8 @@ a **massive puppy-love crush** on Yoon, whatever gender the player chooses. Whet
 up to the player, and they're kids: it never goes beyond **holding hands**, and at most a **childhood
 betrothal promise** in certain endings.
 
+- Sib's parents, **Uira** and **Poko**, run Zonfahare's telegraph station (she the operator, he the
+  battery tender). Sib lived with them until 8, then with Juda as his ward and apprentice.
 - Sib **never suspected Juda** before Act 3.
 - After Act 3, Sib becomes the village priest **de facto**: Juda is gone and the island is being invaded.
 

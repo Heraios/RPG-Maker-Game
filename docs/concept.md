@@ -140,6 +140,12 @@ puppy-love crush on Yoon (returned or not, as the player chooses; kids, so never
 in certain endings, a childhood betrothal promise). Juda's apprentice; never suspects him. After Act 3,
 the village priest de facto, since Juda is gone and the island is being invaded.
 
+**Family:** born into the **Lightning Clan**. Because they're intersex, they were offered to the
+priesthood, and at **8** went to live with Juda. They still talk to and love their parents: **Uira**
+(their mother), the **telegraph operator** in Zonfahare, and **Poko** (their father), its **battery
+tender**. As a child of the clan, Sib keeps the right to learn the Lightning Clan's techniques, which is
+why a priest jars lightning too.
+
 - **Weapons:** knives, staffs and slings, plus the priests' Jasper Knife and Jasper Spear. A narrow
   selection: a child trained for spiritual work, not combat.
 - **Quirks:** lowest HP in the party, permanently. Largest and most sustainable MP pool. Widest
