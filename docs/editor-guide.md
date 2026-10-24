@@ -188,6 +188,10 @@ night-only plants, fatigue, tool wear and the daily reset.
 
 ### Things to know
 
+- **Thenmy is a city boy:** he's only offered for strength jobs (wood, ore, stone, water). A story scene
+  can teach him more with a **Script** command: `SmokingIsle.Gather.teach(11, 'fish')` (or `herb`,
+  `food`, `dig`, `shore`; several at once like `'herb, food'`).
+
 - **One harvest a day per spot.** Place several spots if you want more of something in an area.
 - **Night:** gathering needs a light (a Torch, Myrtle Candle, Patience's Lamp Pack...), except for
   night-only plants (Moon Sorrel). In `<Dark>` maps it always needs a light.

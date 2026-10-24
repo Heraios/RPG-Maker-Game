@@ -44,6 +44,15 @@
  *   Scrap Wood). Soft herbs, fruit and crops are picked by hand.
  * A child counts as anyone who can wear Child-Sized gear.
  *
+ * Actor note:  <Gathers Only: wood, ore, stone, water>
+ *   the only kinds of job this actor knows how to do (Thenmy, a city boy:
+ *   strength jobs, not knowledge ones). Kinds: wood, herb, food, stone, ore,
+ *   dig, shore, fish, water.
+ * Teaching (story events, script call):
+ *   SmokingIsle.Gather.teach(11, 'fish')   Thenmy can now fish (the kind of
+ *                                          job, and the fishing skill)
+ *   SmokingIsle.Gather.teach(11, 'herb, food')   several at once
+ *
  * Gathering tires the gatherer (Fatigue parameter; children pay half on
  * light work) and can wear the tool used, like a swing in battle. Logs and
  * other heavy extras only come when an adult does the cutting. A gatherer
@@ -202,10 +211,35 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
 
     $.gathers = function(actor, what) {
         var m = /<Gathers:\s*([^>]+)>/i.exec(actor.actor().note || '');
-        return !!m && m[1].split(',').map(function(s) { return s.trim().toLowerCase(); }).indexOf(what) >= 0;
+        var own = m ? m[1].split(',').map(function(s) { return s.trim().toLowerCase(); }) : [];
+        return own.indexOf(what) >= 0 || $.taught(actor).indexOf(what) >= 0;
+    };
+
+    // What an actor has been taught in the story: SmokingIsle.Gather.teach(11, 'fish').
+    $.taught = function(actor) {
+        var all = ($gameSystem && $gameSystem._siGatherTaught) || {};
+        return all[actor.actorId()] || [];
+    };
+
+    $.teach = function(actorId, what) {
+        $gameSystem._siGatherTaught = $gameSystem._siGatherTaught || {};
+        var list = $gameSystem._siGatherTaught[actorId] = $gameSystem._siGatherTaught[actorId] || [];
+        String(what).split(',').map(function(w) { return w.trim().toLowerCase(); }).forEach(function(w) {
+            if (w && list.indexOf(w) < 0) list.push(w);
+        });
+    };
+
+    // <Gathers Only: wood, ore, stone, water>: the only kinds of job this actor knows how to do
+    // (Thenmy, a city boy), plus anything taught since.
+    $.kindAllowed = function(actor, entry) {
+        var m = /<Gathers Only:\s*([^>]+)>/i.exec(actor.actor().note || '');
+        if (!m) return true;
+        var kinds = m[1].split(',').map(function(s) { return s.trim().toLowerCase(); }).concat($.taught(actor));
+        return kinds.indexOf(entry.kind) >= 0;
     };
 
     $.whoCan = function(actor, entry) {
+        if (!$.kindAllowed(actor, entry)) return false;
         var who = entry.who || 'any';
         if (who === 'adult') return !$.isChild(actor);
         if ($.WHO[who]) return $.gathers(actor, $.WHO[who]);
@@ -248,7 +282,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         var who = entry.who || 'any', people;
         if ($.WHO[who]) {
             people = $dataActors.filter(function(a) { return a && new RegExp('<Gathers:[^>]*\\b' + $.WHO[who] + '\\b', 'i').test(a.note); })
-                .map(function(a) { return a.name; });
+                .map(function(a) { return $gameActors.actor(a.id).name(); });
             people = people.length > 1 ? people.slice(0, -1).join(', ') + ' or ' + people[people.length - 1] : people[0];
         }
         if (who === 'adult') return 'This needs an adult' + (tool ? ' with ' + tool + ' equipped.' : '.');

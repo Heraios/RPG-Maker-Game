@@ -478,6 +478,12 @@ In every version:
   Islanders, or even Parl (months alone in the highlands), he has **no wilderness skills at all**: he can't
   track, forage, fish, light a fire from scratch or tell a safe plant from a poisonous one. The children
   have to teach him. Comedy, and a quiet reversal of who the "primitive" ones are.
+  - **In play:** he can only do **strength jobs** when gathering (felling trees, mining, stone, water), not
+    knowledge ones (herbs, crops, digging roots, the shore, fishing). Actor note `<Gathers Only: ...>`.
+  - **Teaching moments** unlock more, one scene each (script call `SmokingIsle.Gather.teach(11, 'fish')`):
+    **Dama** teaches him to fish; **Sib or Falmi** which plants are safe (`herb`, `food`); **Yoon** digging
+    roots with a stick (`dig`); **Lasa** or **Dama** the shore (`shore`). Each is a small scene of the
+    children (and Dama) teaching the prince.
 - **Meals:** no shellfish, beef as sacred food, and three Islander gods' worth of meat taboos at every Star
   Mother dinner. Shared meals are where he stops being a guest.
 
