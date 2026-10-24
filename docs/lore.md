@@ -247,7 +247,8 @@ Small fairies: boys with porcine faces, girls with hooves; parents often too bus
 Capable of impish malevolence (frightening children, pranks, following and mocking people lost in
 the woods), but harmless: they feel bad and lead you out if you start to cry. They can **dissolve
 into a pool of water** when frightened or captured. They ride nearly invisible **Green Horses**
-made of leaves and boughs.
+made of leaves and boughs. They are the **Children of the Woods** of Islander belief: half the island's
+children are said to have one as their guardian (the other half, a Child of the Caves).
 
 *In the game:* ambient NPCs, minor hazards and comic relief that make the forest a living
 community. **A warning system: if child-fae start mocking you, you've crossed a boundary.**
@@ -280,8 +281,8 @@ major favor. **The showcase for animal Talk**: tracking, reading signs, choosing
 
 Attracted to shiny objects, which they hide in secret deposits. Experts in underground passages.
 Mostly harmless pranksters: pulling clothes off people, stealing quilts, harassing domestic animals,
-especially sheep. Normally visible only to children and the innocent. **By islander tradition each
-newborn is assigned one as a guardian angel.** They appear in the dead of night to people in
+especially sheep. Normally visible only to children and the innocent. **Islanders believe every child has a guardian: a Child of the Caves or a Child of the Woods** (the
+forest child-fae), assigned at birth like a guardian angel. They appear in the dead of night to people in
 desperate need after all human aid has failed, and lead them to hidden treasure with no
 conditions, promises or repayment.
 
@@ -422,6 +423,11 @@ abandoned. They know the moai and ruins were built by people.
 An informal, fairly democratic chiefdom (a "big man" society) with an unusual amount of customary
 bureaucracy for that level. **One main town** (Zonfahare), larger satellite towns with their own
 priests, and small resource villages. See "Settlements and networks" below.
+
+**Guardians.** Islanders believe every child is given a guardian at birth: a **Child of the Caves** or a
+**Child of the Woods**. Children talk to theirs; adults, who can no longer see them, leave small shiny
+offerings in the tubes or a bowl of milk at the forest edge, and blame them for lost quilts and loose
+sheep. When a child dies, people say their guardian grieves too.
 
 ### Government
 A nebulous middle ground between a big-man society and a "democratic" chiefdom: customary and
