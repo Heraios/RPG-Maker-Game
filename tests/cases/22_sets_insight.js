@@ -10,13 +10,13 @@ module.exports = {
             // Copper-Silver Circlet stands in for the Feather Crown
             const juda = A(6); juda.clearEquipments(); put(juda, 'Copper-Silver Circlet'); put(juda, 'Feather Cape'); out.feather = sets(juda);
             // Goat-Skin Moccasins finish Mouflon Wool and count for Goat-Skin too
-            const pada = A(5); pada.clearEquipments(); ['Wool Cap', 'Wool Mantle', 'Wool Leggings', 'Goat-Skin Moccasins', 'Goat-Skin Tunic'].forEach(n => put(pada, n));
+            const pada = A(5); pada.clearEquipments(); ['Wool Cap', 'Wool Mantle', 'Wool Leggings', 'Goat-Skin Moccasins', 'Goat-Skin Tunic', 'Hide Gloves'].forEach(n => put(pada, n));
             out.wool = sets(pada);
             // Telegrapher's Kit: three charms are one part; gloves + charm + pile is the full kit
             const sib = A(3); sib.clearEquipments(); put(sib, 'Lodestone', 0); put(sib, 'Hot-Spring Sinter', 1); put(sib, 'Copper Bracelet', 2);
             out.charmsOnly = sets(sib);
             put(sib, 'Rubber-Coated Gloves'); put(sib, 'Voltaic Pile'); out.kit = sets(sib); sib._siCharge = undefined; out.charge = sib.maxCharge();
-            // electric techniques +15% with the full kit
+            // electric techniques +25% with the full kit
             const e = $gameTroop.members()[0], rnd = Math.random; Math.random = () => 0.5;
             const dmg = () => { const x = new Game_Action(sib); x.setSkill(S('Live Wire').id); return x.makeDamageValue(e, false); };
             const full = dmg(); sib.forceChangeEquip(sib.slotOfType(13), null); sib.refresh(); const part = dmg(); Math.random = rnd;
@@ -34,15 +34,15 @@ module.exports = {
             return out;
         });
         t.eq(r.feather, 'Feather (1),Feather (all)', 'the Circlet stands in for the Feather Crown');
-        t.ok(r.wool.includes('Mouflon Wool (all)') && r.wool.includes('Goat-Skin (2)'), 'Goat-Skin Moccasins count for both sets: ' + r.wool);
+        t.ok(r.wool.includes('Mouflon Wool (all)') && r.wool.includes('Goat-Skin (3)'), 'Goat-Skin Moccasins count for both sets: ' + r.wool);
         t.eq(r.charmsOnly, '', "three Telegrapher's charms are one part, not the full kit");
         t.eq(r.kit, "Telegrapher's Kit (2),Telegrapher's Kit (all)", "gloves, a charm and the pile: the full Telegrapher's Kit");
         t.eq(r.charge, 5, 'pile 3 + Lodestone 1 + kit 1 = 5 charge');
-        t.between(r.electric, 1.13, 1.17, 'the full kit: electric techniques +15%');
+        t.between(r.electric, 1.23, 1.27, 'the full kit: electric techniques +25%');
         t.eq(r.regalia2, 'First Sailor Regalia (2)', 'pectoral and eye: the small Regalia bonus');
         t.ok(r.regalia.includes('First Sailor Regalia (all)'), 'with the pupil too: the full Regalia');
         t.ok(r.officer.includes("Officer's Kit (all)"), "signet, compass and a codex: the full Officer's Kit");
-        t.between(r.partyAgi, 1.03, 1.07, "the Officer's Kit raises everyone's AGI");
+        t.between(r.partyAgi, 1.06, 1.10, "the Officer's Kit raises everyone's AGI (+8%)");
         t.eq(r.lizard, 'Guardian Lizard (1),Guardian Lizard (all)', 'the Guardian Lizard set');
         t.eq(r.terms, 'Resolve/Wits', 'MDF and LUK are shown as Resolve and Wits');
     },

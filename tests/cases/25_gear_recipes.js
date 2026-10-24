@@ -76,7 +76,7 @@ module.exports = {
             const wear = (a, names) => names.forEach(n => { const it = AR(n); a.forceChangeEquip(a.slotOfType(it.etypeId), it); });
             const yoon = A(2);
             out.kids = ['Wet-Felt Hood', 'Clay-Daubed Coat', 'Scoria-Plate Cuirass', 'Hound-Skull Helm'].every(n => yoon.canEquip(AR(n)));
-            wear(yoon, ['Wet-Felt Hood', 'Clay-Daubed Coat']); out.fire2 = Math.round(yoon.elementRate(10) * 100);
+            wear(yoon, ['Wet-Felt Hood', 'Clay-Daubed Coat', 'Felt Leggings']); out.fire2 = Math.round(yoon.elementRate(10) * 100);
             wear(yoon, ['Firebrand\'s Mitts', 'Felt Leggings', 'Felt Boots']);
             yoon.removeState(ST('Wet')); yoon.onBattleStart(); out.wet = yoon.isStateAffected(ST('Wet'));
             out.smolder = yoon.isStateResist(ST('Smoldering')) && yoon.isStateResist(ST('Enflamed'));
@@ -91,7 +91,7 @@ module.exports = {
             return out;
         });
         t.ok(r.kids, 'both late sets fit children too');
-        t.eq(r.fire2, 75, 'Firebrand (2): 25% less Fire damage');
+        t.eq(r.fire2, 75, 'Firebrand (3): 25% less Fire damage');
         t.ok(r.wet, 'Firebrand (all): you start every battle Wet');
         t.ok(r.smolder, 'Firebrand (all): immune to Smoldering and Enflamed');
         t.eq(r.hound, '7/true', 'Black Hound Regalia: seven parts (pelt, bracers and buckler too); Ash-Walker Boots stop Mired');

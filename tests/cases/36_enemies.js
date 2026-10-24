@@ -48,7 +48,7 @@ module.exports = {
             return out;
         });
         t.eq(r.missing, '', 'every enemy on the list exists');
-        t.eq(r.count, 49 - 13, '36 new enemies');
+        t.eq(r.count, 49 - 13 + 1, '36 new enemies, plus Juda\'s half-risen form');
         t.eq(r.badActions, '', 'every enemy action is a real skill');
         t.eq(r.badDrops, '', 'every drop is a real item');
         t.eq(r.badTroops, '', 'every troop member is a real enemy');

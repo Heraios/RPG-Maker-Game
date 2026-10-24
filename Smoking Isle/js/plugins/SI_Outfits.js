@@ -8,8 +8,13 @@
  * @author Smoking Isle
  *
  * @param Set Evasion Cap
- * @desc Most evasion all set bonuses together can give (0.15 = 15%).
- * @default 0.15
+ * @desc Most evasion all set bonuses together can give (0.25 = 25%).
+ * @default 0.25
+ *
+ * @param Partial Max Short
+ * @desc A set's partial bonus only counts when you're at most this many
+ * parts short of the full set.
+ * @default 2
  *
  * @help
  * Place last, after every other SI_ plugin (including SI_Layout).
@@ -32,6 +37,8 @@
  * has no icon). State note:
  *   <Set Bonus: Tapa 2>     active with 2 or more Tapa parts worn
  *   <Set Bonus: Tapa all>   active with every Tapa part worn
+ * A partial bonus also needs you to be at most "Partial Max Short" parts
+ * (default 2) from the full set: a 5-part set's "2" bonus needs 3 parts.
  *   <Set Text: +5% evasion> shown in the equip screen's help box
  * Evasion from all set bonuses together is capped (Set Evasion Cap).
  *
@@ -99,7 +106,7 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
     'use strict';
 
     var params = PluginManager.parameters('SI_Outfits');
-    $.evasionCap = Number(params['Set Evasion Cap'] || 0.15);
+    $.evasionCap = Number(params['Set Evasion Cap'] || 0.25);
 
     //-------------------------------------------------------------------------
     // Note tags
@@ -151,6 +158,8 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         t.setText = text ? text[1].trim() : '';
         obj.siOutfit = t;
     };
+
+    $.partialMaxShort = Number(PluginManager.parameters('SI_Outfits')['Partial Max Short'] || 2);
 
     var _DataManager_isDatabaseLoaded = DataManager.isDatabaseLoaded;
     DataManager.isDatabaseLoaded = function() {
@@ -230,7 +239,9 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         var counts = this.setPieceCounts();
         this._siSetStates = $.bonusStates.filter(function(s) {
             var b = s.siOutfit.setBonus, have = counts[b.set] || 0;
-            return have > 0 && have >= (b.need === 'all' ? $.sets[b.set] : b.need);
+            // A partial bonus only counts when you're at most Partial Max Short parts from the full set.
+            var need = b.need === 'all' ? $.sets[b.set] : Math.max(b.need, $.sets[b.set] - $.partialMaxShort);
+            return have > 0 && have >= need;
         }).map(function(s) { return s.id; });
     };
 

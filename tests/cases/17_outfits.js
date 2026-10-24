@@ -29,16 +29,18 @@ module.exports = {
             wear(yoon, 'Tapa Cape', 'Tapa Leg Wraps'); out.full = sets(yoon); out.evaGain = +(yoon.eva - eva0).toFixed(3);
             out.line = O.setLine(yoon, AR('Tapa Cape'));
             const cap = O.evasionCap; O.evasionCap = 0.07; out.capped = +(yoon.eva - eva0).toFixed(3); O.evasionCap = cap;
-            const pada = A(5); const hp0 = pada.mhp; wear(pada, 'Goat-Skin Tunic', 'Goat-Skin Leggings'); out.goat = pada.mhp / hp0;
+            const pada = A(5); wear(pada, 'Goat-Skin Tunic', 'Goat-Skin Leggings'); out.goat2 = pada.paramRate(0);
+            wear(pada, 'Goat-Skin Cloak'); out.goat = pada.paramRate(0);   // the set bonus alone, not the cloak's own Health
             const juda = A(6); juda.clearEquipments(); wear(juda, 'Feather Crown'); out.featherOne = sets(juda);
             return out;
         });
         t.eq(r.start, 'Tapa (2)', 'Yoon starts in two Tapa pieces: the small bonus');
         t.eq(r.full, 'Tapa (2),Tapa (all)', 'the whole set adds the full bonus');
-        t.eq(r.evaGain, 0.05, 'the full Tapa set adds another 5% evasion');
+        t.eq(r.evaGain, 0.1, 'the full Tapa set adds another 10% evasion');
         t.ok(/^Tapa set 4\/4/.test(r.line) && /✓all|✓4:/.test(r.line), 'the help box shows set progress: ' + r.line);
         t.eq(r.capped, 0.02, 'evasion from sets is capped (cap lowered to 7% for the test: 5% + 2%)');
-        t.between(r.goat, 1.08, 1.12, 'two Goat-Skin pieces: +10% max HP');
+        t.eq(r.goat2, 1, 'two Goat-Skin pieces: nothing yet (a 5-part set needs 3 for its partial bonus)');
+        t.between(r.goat, 1.08, 1.12, 'three Goat-Skin pieces: +10% max HP');
         t.eq(r.featherOne, 'Feather (1)', 'a two-piece set gives its small bonus with one piece');
     },
 
@@ -121,8 +123,8 @@ module.exports = {
             out.bell = AR('Phonolite Bell').siOutfit.enemyStartState === ST('Disoriented');
             return out;
         });
-        t.between(r.guard, 0.45, 0.55, 'Tortoise Shell: the first physical hit is halved (x' + r.guard.toFixed(2) + ')');
-        t.eq(r.firstEva, 0.25, 'full Tapa: +25% evasion against the first attack');
+        t.between(r.guard, 0.2, 0.32, 'Tortoise Shell: the first physical hit deals 75% less (x' + r.guard.toFixed(2) + ')');
+        t.eq(r.firstEva, 0.4, 'full Tapa: +40% evasion against the first attack');
         t.between(r.ranged, 1.07, 1.13, 'Yew Bead Bracelet: ranged +10% (x' + r.ranged.toFixed(2) + ')');
         t.eq(r.crit, 0.15, 'Vulture Feather: +15% critical on the wounded');
         t.eq(r.cave, 0.1, 'Cave-Glow Stone: +10% hit in caves');

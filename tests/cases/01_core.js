@@ -77,6 +77,8 @@ module.exports = {
             const falmi = A(10), tou = A(9), th = A(11);
             [10, 9, 11].forEach(id => $gameParty.addActor(id));
             th.forceChangeEquip(th.slotOfType(11), $dataArmors.find(a => a && a.name === 'Bronze Cuirass'));
+            th.forceChangeEquip(th.slotOfType(3), $dataArmors.find(a => a && a.name === 'Bronze Helm'));   // he starts in silvered bronze
+            th.forceChangeEquip(th.slotOfType(12), null);
             th.forceChangeEquip(th.slotOfType(15), null); th.forceChangeEquip(th.slotOfType(2), null);   // helm + cuirass only
             const turn = a => { a.setTp(50); a.onTurnEnd(); return a.tp; };
             const out = { falmiOut: turn(falmi), touOut: turn(tou), thTrained: turn(th) };

@@ -52,10 +52,10 @@ module.exports = {
         t.ok(r.kidsCharms, 'the children\'s charms are for children only');
         t.eq(r.touWears, 'Queen\'s Feather Diadem,Royal Tapa Robe', 'Tou starts in the diadem and robe');
         t.ok(r.royalMp, 'Royal Regalia (2): max MP +15%');
-        t.eq(r.slat, '80,80,115,116', 'Slat Armor: 20% less Cut and Pierce, +15% Crush and Fire');
+        t.eq(r.slat, '70,70,115,116', 'Slat Armor: 30% less Cut and Pierce, +15% Crush and Fire');
         t.eq(r.pine, 100, 'the pine cuirass cancels the Fire weakness');
         t.eq(r.mahogany, 100, 'the mahogany cuirass cancels the Crush weakness');
-        t.eq(r.blackBronze, '75/true', 'Black Bronze: 25% less magic damage, but metal');
+        t.eq(r.blackBronze, '65/true', 'Black Bronze: 35% less magic damage, but metal');
         t.ok(r.sailor, 'Sailor\'s Kit (2): resists Disoriented');
         t.eq(r.sharkOne, 0.1, 'Sharkskin (1): attackers take 10% back');
         t.ok(r.sharkBleed, 'Sharkskin (all): immune to Bleed');

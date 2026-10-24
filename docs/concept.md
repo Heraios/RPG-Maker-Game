@@ -822,6 +822,90 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Firebrand Gear (the Princess's forest-burners, Act 5; fits anyone) | Head (Wet-Felt Hood), Cuirass (Clay-Daubed Coat), Hands (Mitts), Legs, Feet | 25% less Fire damage | Immune to Smoldering and Enflamed; fire spells +15%; **but you start every battle Wet** (weak to electricity and cold) |
 | Black Hound Regalia (the Destroyer's gift, Act 6; fits anyone) | Head (Hound-Skull Helm), Shoulders (Black Hound Pelt), Cuirass (Scoria-Plate), Legs (Ember-Vein), Feet (Ash-Walker Boots: immune to Mired) | Might +10%; immune to Smoldering | 20% less damage from the Destroyer's servants, who start friendlier; spirits and priests start unfriendly. **Every piece whispers** (Panicked or Enraged), and nothing quiets it |
 
+**Set bonus rules (current; this list wins over the table above where they differ):**
+- A **partial bonus** only counts when you're **at most 2 parts short** of the full set (`SI_Outfits` setting
+  *Partial Max Short*). Sets of 2–4 parts are unchanged; 5-part sets need 3 parts; Black Hound Regalia
+  (7 parts) needs 5. This stops a patchwork of 2-piece bonuses from beating real sets.
+- **Full-set bonuses are stronger**, about half again (the numbers below are totals with the partial bonus).
+- Set evasion is capped at **25%** in all (was 15%), so the Wet build's stacking still pays off.
+- Checked against the synergies (Wet build, fireproof, spirit talker, Act 4 diplomat, electrician, First
+  Sailor royalty, cave expedition, hunter, war on the Destroyer): all still work.
+
+| Bonus | Effect |
+|---|---|
+| Tapa (2) | +5% evasion |
+| Tapa (all) | +15% evasion; the first attack on you each battle is much likelier to miss |
+| Goat-Skin (3) | +10% max Health |
+| Goat-Skin (all) | Endurance +10%; resting outdoors sheds 2 more Fatigue |
+| Boar Hide (2) | Endurance +10% |
+| Boar Hide (all) | Endurance +20% in all; boars start friendlier; Threaten +25% on them |
+| Seal Leather (2) | resists Wet |
+| Seal Leather (all) | immune to Wet and Sodden; 30% less Water damage |
+| Reed and Palm (3) | Speed +10% |
+| Reed and Palm (all) | +15% evasion while Wet |
+| Mouflon Wool (2) | resists Chilled |
+| Mouflon Wool (all) | immune to Chilled; Fatigue builds 15% slower |
+| Feather (1) | Spirit +10% |
+| Feather (all) | Rite +35%; +1 Insight |
+| Pine Pitch (2) | 10% less Fire damage |
+| Pine Pitch (all) | 20% less Fire damage in all; immune to Smoldering |
+| Tortoise Shell (1) | Endurance +10% |
+| Tortoise Shell (all) | the first physical hit on you each battle deals 75% less |
+| Lava-Tube (2) | +10% evasion in caves |
+| Lava-Tube (all) | +20% evasion in caves in all; the Children of the Caves can't steal from you and start friendlier |
+| Bronze (2) | Endurance +10% |
+| Bronze (all) | Endurance +20% in all; Ask and Plead +25% on soldiers, but you count as metal |
+| Guardian Lizard (1) | 10% less Fire damage |
+| Guardian Lizard (all) | 25% less Fire damage in all; immune to Smoldering and Enflamed |
+| Telegrapher's Kit (2) | +1 max charge |
+| Telegrapher's Kit (all) | electric techniques +25% |
+| Fisher's Gear (2) | +1 net cast |
+| Fisher's Gear (all) | sea creatures start friendlier; +15% evasion while Wet |
+| Ritualist's Things (2) | Rite +15% |
+| Ritualist's Things (all) | spirits start friendlier; Resolve +15%; Rite +25% in all |
+| Officer's Kit (2) | Ask +15% on soldiers |
+| Officer's Kit (all) | escape +20%; the whole party Speed +8% |
+| First Sailor Regalia (2) | Resolve +10% |
+| First Sailor Regalia (all) | Stonemen and First Sailor ghosts start friendlier; First Sailor spells +25% |
+| Shore Dog (1) | +10% evasion while Wet |
+| Shore Dog (all) | sea creatures start friendlier; +20% evasion while Wet in all |
+| Cave Dog (1) | +10% evasion in caves |
+| Cave Dog (all) | cave creatures start friendlier; +20% evasion in caves in all |
+| Sailor's Kit (2) | resists Disoriented |
+| Sailor's Kit (all) | +15% evasion while Wet; escape +15% |
+| Linen Armor (2) | 10% less Pierce damage |
+| Linen Armor (all) | 30% less Pierce damage, but +10% Fire damage |
+| Court Dress (3) | Ask and Plead +15% on soldiers |
+| Court Dress (all) | Resolve +15%; soldiers start friendlier |
+| Charioteer's Gear (2) | ranged attacks +10% |
+| Charioteer's Gear (all) | Speed +15%; the first attack on you each battle likelier misses |
+| Palm-Fibre (2) | 10% less Cut damage |
+| Palm-Fibre (all) | 30% less Cut damage, but +15% Fire damage |
+| Sharkskin (1) | melee attackers take 10% back |
+| Sharkskin (all) | immune to Bleed; +15% evasion while Wet |
+| Deerskin (2) | Stalk +15% |
+| Deerskin (all) | Stalk +30% in all; you ambush enemies more often; deer start friendlier |
+| Slat Armor (2) | 10% less Cut and Pierce damage, +10% Fire damage |
+| Slat Armor (all) | 30% less Cut and Pierce damage, but +15% Crush and Fire damage |
+| Crew (2) | Fatigue builds 10% slower |
+| Crew (all) | Fatigue builds 20% slower in all; First Sailor beings and the Children of the Caves take you for Crew: they start friendlier |
+| Royal Regalia (2) | max Mana +15% |
+| Royal Regalia (all) | First Sailor spells +25%; First Sailor beings start friendlier |
+| Navigator's Raiment (3) | +1 Insight |
+| Navigator's Raiment (all) | spells cost 20% less Mana |
+| Black Bronze (2) | 10% less magic damage |
+| Black Bronze (all) | 35% less magic damage |
+| Grown Coral (3) | water spells +10%; resists Wet |
+| Grown Coral (all) | 20% less Cut damage; attackers take 20% back |
+| Firebrand Gear (3) | 25% less Fire damage |
+| Firebrand Gear (all) | immune to Smoldering and Enflamed; fire spells +25%; but you start every battle Wet |
+| Black Hound Regalia (5) | Might +10%; immune to Smoldering |
+| Black Hound Regalia (all) | 30% less damage from the Destroyer's servants, who start friendlier; spirits and priests start unfriendly |
+| Sacred Metal (2) | Rite +15% |
+| Sacred Metal (all) | Resolve +15%; spirits start friendlier |
+| Silvered Bronze (2) | Endurance +10%; 15% less damage from spirits |
+| Silvered Bronze (all) | Resolve +15%; 30% less damage from demons; Seafarer soldiers know their prince and start friendlier |
+
 Good outfits: Feather + Tapa (the priest), Goat-Skin + Pine Pitch (volcanic desert), Goat-Skin + Boar
 Hide (the hunter), Seal Leather + Tortoise Shell (coastal tank), Mouflon Wool + Boar Hide (alpine),
 Lava-Tube + Pine Pitch (the tubes), Goat-Skin + Bronze (a Marine's padded under-tunic). Seal + Reed
