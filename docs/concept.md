@@ -803,7 +803,7 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | First Sailor Regalia | Neck (Crescent Pectoral), the Coral Eye Fragment **and** the Scoria Pupil | Spirit +10% | Stonemen and First Sailor ghosts start friendlier; First Sailor spells +15% |
 | Shore Dog (Patience) | Booties (Seal-Skin), Bell (Shell) | +10% evasion while Wet | Sea creatures start friendlier |
 | Cave Dog (Patience) | Collar (Glow-Bead), Booties (Hide) | +10% evasion in caves | Cave creatures start friendlier |
-| All-Seafarer Bronze | Head, Cuirass, Greaves (+ shield) | +DEF | Marines treat you as one of theirs (Ask, Plead), but you count as `<Metal>` |
+| All-Seafarer Bronze | Head (Bronze Helm or the Horsehair-Crested Helm), Cuirass, Greaves (+ shield) | +DEF | Marines treat you as one of theirs (Ask, Plead), but you count as `<Metal>` |
 | Sailor's Kit (Seafarer crew) | Head, Shoulders (Tarred Cloak: resists Wet), Body (Linen Tunic), Feet | Resists Disoriented | +10% evasion while Wet; escape +10% |
 | Linen Armor (Seafarer marines) | Head (Quilted Cap), Cuirass, Greaves | 10% less Pierce damage | 20% less Pierce damage, but +10% Fire damage. Not metal, and light enough for children |
 | Court Dress (Seafarer nobles) | Head (Gilt Diadem), Shoulders (Orchil-Purple Mantle), Legs (Officer's Kilt), Feet | Ask and Plead +15% on soldiers | Resolve +10%; soldiers start friendlier |
