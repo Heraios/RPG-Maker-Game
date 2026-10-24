@@ -87,7 +87,12 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 - The game shifts into a more traditional JRPG structure.
 - The party crosses the whole island to find a way into the Destroyer's lair.
 - They fight the Destroyer's armies, then Juda, then the Destroyer as the true final boss.
-- **Endgame Juda is a four-stage boss.**
+- **Endgame Juda is a four-stage boss**, peeling off his four identities from newest to oldest:
+  1. **The village priest**, with Islander spells (Sib's moment).
+  2. **The wandering young mystic** who murdered the priest who took him in.
+  3. **The old wizard of the King's party**: Thenmy learns, mid-fight, who his father's companion was.
+  4. **The Navigator Lord**, his true form, soul in coral eyes: fully what the Act 3 form only hinted at
+     (Tou's moment).
 
 ### Juda's Layers (for reference while writing)
 1. The respected, wise village priest and Sib's master.
