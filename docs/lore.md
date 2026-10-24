@@ -304,8 +304,10 @@ and the Hunched in the tubes), and for the first time in living memory Children 
 **dying**. Every one lost is gone for good. That gives Lasa's people real stakes from Act 4 on, and a reason
 for her to fight beyond helping Yoon.
 
-*In the game:* friendly NPCs. **Lasa** helps Yoon purely out of kindness: she takes them for a lost ghost
-in need, which is exactly the kind of person the Children of the Caves appear to. She guides Yoon out of the
+*In the game:* friendly NPCs. **Lasa was Yoon's guardian**, and wasn't there when Yoon was killed in the
+tubes. Not recognising the ghost, she helps them purely out of kindness: she takes them for a lost ghost in
+need, which is exactly the kind of person the Children of the Caves appear to. Realising who they are comes
+later, with guilt. She guides Yoon out of the
 caves in the prologue (Act 1), helps
 gather body ingredients in Act 2 and stays as a **permanent party member** from then on, and
 plays a key role in the Tou questline.

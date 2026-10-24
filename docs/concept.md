@@ -213,8 +213,10 @@ Children of the Caves do for those in desperate need when all other help has fai
 
 **A guardian.** Islanders believe every child is given a guardian at birth, a Child of the Caves or a Child
 of the Woods, and to the Children of the Caves that's real: each of them watches over an Islander child.
-Lasa is one of those guardians. Looking after a lost child is what she's *for*, which is why helping a lost
-ghost comes to her so naturally.
+Lasa is one of those guardians, and **she was Yoon's**. Yoon was killed while playing in the lava tubes, her
+home, and she wasn't there to stop it. When she finds the ghost she **doesn't recognise them** and helps
+purely because they seem lost. Learning later that the lost ghost she adopted was her own child is one of
+her biggest moments: guilt she has to live with, and a reason she never leaves Yoon's side.
 
 - **Weapons:** knives only (small hands).
 - **Quirks:** flies, so she dodges most melee attacks. Decent ATK, lowish HP, high MP and a small
