@@ -72,6 +72,7 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    | 6 | Tou reads Seafarer script | | | |
    | 7 | Night | | | |
    | 8 | Can see | | | |
+   | 9 | Juda half-risen (Act 3) | | | |
 
 6. **Common events 3–10** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
    Choose Yoon, Yoon's Room: Keepsakes).

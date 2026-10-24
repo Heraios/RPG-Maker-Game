@@ -56,6 +56,11 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 - Juda kills Pada as a sacrifice, trying to banish Yoon. He believes Yoon is the demon he tried
   to summon through the murder, not the child's ghost. He never says so, leaving the player to
   believe he was only covering up the murder.
+- **Juda is optionally beatable.** Bring him to 0 Health and he doesn't die: his skin splits and he rises
+  in a **partial Navigator Lord form** (coral eyes), which the party can't fairly beat at this point. It
+  beats them down without knocking anyone out, and after three turns the fire roars up and the battle
+  breaks off. Switch 9 ("Juda half-risen") records that the player saw it, for later dialogue: a
+  foreshadowing of the Act 5 reveal for players who earned it.
 - Juda burns to ash in a fire he sets in the alpine forest.
 - Dama joins. Pada is permanently gone, and so are any of his unfinished sidequests.
 
@@ -82,6 +87,7 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 - The game shifts into a more traditional JRPG structure.
 - The party crosses the whole island to find a way into the Destroyer's lair.
 - They fight the Destroyer's armies, then Juda, then the Destroyer as the true final boss.
+- **Endgame Juda is a four-stage boss.**
 
 ### Juda's Layers (for reference while writing)
 1. The respected, wise village priest and Sib's master.
