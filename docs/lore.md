@@ -921,8 +921,6 @@ Iberia, Iceland). The strangeness is saved for spirits and First Sailor creation
 
 **Mythic and chimeric beings** follow the island's own patterns: chimeras of goat, pig, bull, snake
 and owl; animals the Ladies turned into peoples; and **the First Sailors' "various creations"**.
-- **The sacred rain pig** (after the Guanche Aranfaybo): holy to the Lady's porcine aspect. Talk-only;
-  killing it brings drought.
 - **Birdmen** (after Rapa Nui's tangata manu; **confirmed**): bird-headed First Sailor creations that
   still race each spring for the first sooty tern egg on a sea-stack islet. Tied to Sooty Bird and the
   eggshell glyphs; Tou knows the ceremony.
@@ -971,6 +969,8 @@ Sun and the Destroyer lean Fire.
   **Herensuge**, the cave or well serpent, for **the Daughters of the Wells**; and **Akerbeltz**, the black
   he-goat who protects herds, for the goat side of **the Shepherd of the Deer** and **the Master of
   Deception**.
+- **The Guanche Aranfaybo**, the sacred pig invoked for rain, inspires **the Lady of the Woods' porcine
+  aspect** (a sacred rain pig, not a separate creature).
 - **The Dream Hunters** match Corsica's mazzeri.
 - **Spell language:** spell roots are Rapa Nui and modifiers Guanche. Perhaps the **roots are the old
   First Sailor sacred tongue** and the **modifiers are living Islander speech**: magic as ancient
