@@ -217,6 +217,11 @@ Lasa is one of those guardians, and **she was Yoon's**. Yoon was killed while pl
 home, and she wasn't there to stop it. When she finds the ghost she **doesn't recognise them** and helps
 purely because they seem lost. Learning later that the lost ghost she adopted was her own child is one of
 her biggest moments: guilt she has to live with, and a reason she never leaves Yoon's side.
+- **Why she wasn't there:** both. She was off after something shiny when Yoon was taken, and by the time
+  she noticed, Yoon had vanished behind Juda's ward: his tomb is sealed with First Sailor glyphs that blind
+  the Children of the Caves (First Sailor creations themselves). She searched and couldn't see through it.
+- **When she realises:** when Yoon gets a body (end of Act 2). The new body takes after the family's
+  blood, and when she sees the face she watched over for ten years, it clicks.
 
 - **Weapons:** knives only (small hands).
 - **Quirks:** flies, so she dodges most melee attacks. Decent ATK, lowish HP, high MP and a small

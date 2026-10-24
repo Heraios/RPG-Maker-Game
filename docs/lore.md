@@ -873,6 +873,8 @@ betrothal promise** in certain endings.
    Yoon's skull.
 3. He took the body to **an isolated tomb only he knew about**, **defleshed** Yoon, and **burned the
    flesh in the tomb over a grave** as an offering to summon a demon.
+   The tomb is **warded with First Sailor glyphs** that blind the Children of the Caves, which is why Lasa,
+   Yoon's guardian, couldn't find them (she had been off after something shiny when Yoon was taken).
 4. He felt regret at killing a child he had known for about ten years, which **"ruined" the ritual**.
    **Why regret ruined it: grief takes the offering back.** A sacrifice works only if the killer gives the
    victim up wholly to the god. On the island belief is magic, and mourning is what binds the dead to the
