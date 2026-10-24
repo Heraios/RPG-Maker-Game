@@ -186,6 +186,12 @@ offered them to the priesthood. It explains their look and their frailty:
 - **A bit frail:** Turner-like heart differences (a bicuspid aortic valve or a narrowed aorta) mean low
   stamina and getting winded easily: the lowest Health in the party, and tiring fast. Kidney differences
   and catching minor illnesses fit too. Mind and spirit are unaffected.
+- **Ears:** a childhood of ear infections left them a little deaf on one side, so Sib tilts their head
+  to listen. Fitting for a priest who "hears" spirits.
+- **Words over spaces:** strong with words (reads every inscription, memorises rites, argues fluently),
+  weaker with spatial puzzles: the one who gets lost in the lava tubes.
+- **A quiet fear that they "look weird":** short, soft, in-between, with small odd details they notice in
+  themselves. It feeds their certainty that Yoon couldn't want feelings from "someone like them".
 In the game nobody names it: the islanders see a child the gods marked as a priest.
 
 **The crush:** Sib has a **big** crush on Yoon, whatever gender the player chooses.
