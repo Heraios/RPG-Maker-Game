@@ -612,7 +612,7 @@ Destroyer** (revealed later).
 | **Dyes** | Orchil (lore: the red lichen dye, a major export), dragon's blood | Cloth, tattoos?, trade |
 | **Animal** | Hide, raw meat, boar tusk, shell, owl feather (in game); bone, antler, horn (goat, aurochs), sinew, shark teeth, tortoiseshell, pearls and cowries (lore), seal oil, fish glue, hide glue | Leather armor, knives (tusk, shell, shark teeth), bowstrings and lashing (sinew), handles, lamp fuel (seal oil), glue, trade |
 | **Medicinal plants** | Dragon tree (resin), bitterwood (wormwood), cliff mint, hill thyme, pennyroyal, ironwort, burnwort, laurel, moon sorrel, blister spurge, ti, yellowroot (turmeric), milo, wart fern, burrbark (hauhau) | Remedies (see concept.md, "Herbal remedies"): Mada's trade, the Stream Maidens' lore, the priests' ritual uses (smudge, body paint, dragon's blood for mummification) |
-| **Mythic trophies** | Green Horse boughs (light, living wood), Guardian Lizard scales, Black Hound pelt (demonic), Hag-crane feathers, Zezengorri's horn | Each makes one or a few special items |
+| **Mythic trophies** | Green Horse boughs (light, living wood), Guardian Lizard scales, Black Hound pelt (demonic), Hag-crane feathers, the Bull of the Caves' horn | Each makes one or a few special items |
 
 **Swords:** only bronze makes true swords. Islander "swords" are paddle-swords (shark-tooth or
 obsidian-edged wood) and the fire-hardened dragonheart two-handers.
@@ -921,12 +921,8 @@ Iberia, Iceland). The strangeness is saved for spirits and First Sailor creation
 
 **Mythic and chimeric beings** follow the island's own patterns: chimeras of goat, pig, bull, snake
 and owl; animals the Ladies turned into peoples; and **the First Sailors' "various creations"**.
-- **Akerbeltz, the black he-goat:** a spirit that protects herds and keeps sickness off livestock.
 - **The sacred rain pig** (after the Guanche Aranfaybo): holy to the Lady's porcine aspect. Talk-only;
   killing it brings drought.
-- **Zezengorri, the red bull:** breathes fire and guards cave treasure in the Destroyer's tubes; the
-  bull family next to the Bulls of Water and Heaven.
-- **Herensuge, the serpent:** a cave or well serpent, or what the Daughters of the Wells are taken for.
 - **Birdmen** (after Rapa Nui's tangata manu; **confirmed**): bird-headed First Sailor creations that
   still race each spring for the first sooty tern egg on a sea-stack islet. Tied to Sooty Bird and the
   eggshell glyphs; Tou knows the ceremony.
@@ -970,6 +966,11 @@ Sun and the Destroyer lean Fire.
 - **Basque and wider Iberian folklore** seem to shape the local spirits: the Shepherd of the Deer
   echoes Basajaun, the Stream Maidens the lamiak, the sleep demon Inguma, and the Lady of the Woods,
   living in two places at once, echoes Mari moving between her mountain homes.
+  Three more Basque figures are inspirations for existing beings, not beings in their own right:
+  **Zezengorri**, the fire-breathing red bull guarding cave treasure, for **the Bull of the Caves**;
+  **Herensuge**, the cave or well serpent, for **the Daughters of the Wells**; and **Akerbeltz**, the black
+  he-goat who protects herds, for the goat side of **the Shepherd of the Deer** and **the Master of
+  Deception**.
 - **The Dream Hunters** match Corsica's mazzeri.
 - **Spell language:** spell roots are Rapa Nui and modifiers Guanche. Perhaps the **roots are the old
   First Sailor sacred tongue** and the **modifiers are living Islander speech**: magic as ancient
