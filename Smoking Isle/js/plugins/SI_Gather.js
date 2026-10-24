@@ -11,7 +11,7 @@
  * @param Fatigue
  * @desc Fatigue the gatherer gains, by kind of job. Children pay half on
  * light work (low plants, fruit, shore).
- * @default wood 3, herb 2, food 2, stone 2, ore 4, dig 2, shore 2, fish 2, water 0
+ * @default wood 3, herb 2, food 2, stone 2, ore 4, dig 2, shore 2, fish 2, water 0, hunt 4
  *
  * @help
  * Place after SI_Time and SI_Gear.
@@ -47,7 +47,7 @@
  * Actor note:  <Gathers Only: wood, ore, stone, water>
  *   the only kinds of job this actor knows how to do (Thenmy, a city boy:
  *   strength jobs, not knowledge ones). Kinds: wood, herb, food, stone, ore,
- *   dig, shore, fish, water.
+ *   dig, shore, fish, water, hunt.
  * Teaching (story events, script call):
  *   SmokingIsle.Gather.teach(11, 'fish')   Thenmy can now fish (the kind of
  *                                          job, and the fishing skill)
@@ -165,6 +165,8 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Lead Vein':     { kind: 'ore', tool: 'pick', who: 'adult', gives: 'Lead Ore' },
         'Lodestone':     { kind: 'ore', tool: 'pick', who: 'adult', gives: 'Lodestone', chance: 30 },
         'Coal Seam':     { kind: 'ore', tool: 'pick', who: 'adult', gives: 'Brown Coal' },
+        // Hunting: deer are tracked and taken, not fought
+        'Deer Trail':    { kind: 'hunt', tool: 'knife', gives: 'Deer Hide', extra: ['Antler', 30] },
         // Digging
         'Clay Pit':      { kind: 'dig', tool: 'stick', gives: 'Clay', extra: ['White Clay', 10] },
         'White Clay':    { kind: 'dig', tool: 'stick', gives: 'White Clay' },
@@ -174,6 +176,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         // Shore and water
         'Shore Rocks':   { kind: 'shore', tool: 'knife', gives: 'Shellfish', extra: ['Shell', 25], light: true },
         'Tide Pool':     { kind: 'shore', gives: 'Shell', extra: ['Coral', 15], light: true },
+        'Giant Clam':    { kind: 'shore', tool: 'knife', who: 'adult', gives: 'Shellfish', extra: ['Pearl', 25] },   // prised open: sometimes a pearl
         'Seabird Cliff': { kind: 'shore', gives: 'Seabird Feather', extra: ['Seabird Eggs', 25], light: true },
         'Fishing Spot':  { kind: 'fish', tool: 'harpoon', who: 'fish', gives: 'Raw Fish' },
         'Eel Pool':      { kind: 'fish', tool: 'harpoon', who: 'fish', gives: 'Raw Eel' },

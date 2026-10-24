@@ -6,8 +6,8 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const EN = n => $dataEnemies.find(e => e && e.name === n), out = {};
-            const names = ['Raven', 'Ibex', 'Mouflon Ram', 'Red Deer Stag', 'Golden Eagle', 'Bat', 'Giant Cave Cricket', 'Restless Bones', 'Bone Chanter',
-                'Moray Eel', 'Octopus', 'Giant Clam', 'Daughter of the Wells', 'Great Boar', 'Shepherd of the Deer', 'Lady of the Woods', 'Parl',
+            const names = ['Raven', 'Mouflon Ram', 'Golden Eagle', 'Bat', 'Giant Cave Cricket', 'Restless Bones', 'Bone Chanter',
+                'Moray Eel', 'Octopus', 'Daughter of the Wells', 'Great Boar', 'Shepherd of the Deer', 'Lady of the Woods', 'Parl',
                 'Giant Lizard', 'Giant Tortoise', 'Vulture', 'Guardian Lizard', 'Leech', 'Marsh Eel', 'Crane', 'Marsh Hag', 'Stoneman',
                 'Stoneman Priest', 'Stoneman Shaman', 'Guardian of the Crater Lake', 'Black Hound', 'Black Hound Alpha', 'Hunched', 'Hunched Defiler',
                 'The Bull of the Caves', 'Juda'];
@@ -48,11 +48,11 @@ module.exports = {
             return out;
         });
         t.eq(r.missing, '', 'every enemy on the list exists');
-        t.eq(r.count, 49 - 13 + 1, '36 new enemies, plus Juda\'s half-risen form');
+        t.eq(r.count, 49 - 13 + 1 - 3, '34 new enemies (the Ibex, Red Deer Stag and Giant Clam were cut), plus Juda\'s half-risen form');
         t.eq(r.badActions, '', 'every enemy action is a real skill');
         t.eq(r.badDrops, '', 'every drop is a real item');
         t.eq(r.badTroops, '', 'every troop member is a real enemy');
-        t.eq(r.troops, 35, '35 new troops');
+        t.eq(r.troops, 33, '33 new troops');
         const fs = require('fs'), path = require('path'), dir = path.join(__dirname, '..', '..', 'Smoking Isle', 'img', 'enemies');
         t.eq(r.battlers.filter(([, b]) => !fs.existsSync(path.join(dir, b + '.png'))).map(([n]) => n).join(', '), '', 'every enemy has a picture');
         t.ok(r.weakest, 'the vulture goes for the weakest');

@@ -274,6 +274,7 @@ night-only plants, fatigue, tool wear and the daily reset.
 | `<Gather: Lead Vein>` | Lead Ore | — | Pick (equipped) | Adults only | — |
 | `<Gather: Lodestone>` | Lodestone | — | Pick (equipped) | Adults only | 30% chance |
 | `<Gather: Coal Seam>` | Brown Coal | — | Pick (equipped) | Adults only | — |
+| `<Gather: Deer Trail>` | Deer Hide | Antler (30%) | Knife (equipped) | Anyone (not Thenmy) | hunting: deer are taken, not fought |
 | `<Gather: Clay Pit>` | Clay | White Clay (10%) | Digging Stick (carried) | Anyone | — |
 | `<Gather: White Clay>` | White Clay | — | Digging Stick (carried) | Anyone | — |
 | `<Gather: Ochre>` | Red Ochre | — | Digging Stick (carried) | Anyone | — |
@@ -281,6 +282,7 @@ night-only plants, fatigue, tool wear and the daily reset.
 | `<Gather: Peat Bog>` | Peat | — | Digging Stick (carried) | Anyone | — |
 | `<Gather: Shore Rocks>` | Shellfish | Shell (25%) | Knife (equipped) | Anyone | light work (children tire less) |
 | `<Gather: Tide Pool>` | Shell | Coral (15%) | By hand | Anyone | light work (children tire less) |
+| `<Gather: Giant Clam>` | Shellfish | Pearl (25%) | Knife (equipped) | Adults only | — |
 | `<Gather: Seabird Cliff>` | Seabird Feather | Seabird Eggs (25%) | By hand | Anyone | light work (children tire less) |
 | `<Gather: Fishing Spot>` | Raw Fish | — | Harpoon (equipped) | Fishers (Dama, Parl) | — |
 | `<Gather: Eel Pool>` | Raw Eel | — | Harpoon (equipped) | Fishers (Dama, Parl) | — |
@@ -353,7 +355,7 @@ Most fights are **visible enemies**: an event the player bumps into.
    Touch* (it starts the fight when it reaches you) or *Action Button*. For a wandering enemy, set
    **Autonomous Movement** to *Approach* or *Random*.
 2. **Contents:** tab 2 → **Battle Processing...** → **Direct designation**, and pick the troop
-   (e.g. `Ibex*3`). Tick **Can Escape** for ordinary fights; leave it off
+   (e.g. `Mouflon*3`). Tick **Can Escape** for ordinary fights; leave it off
    for bosses.
 3. **If Win** / **If Escape**: under *If Win*, add **Control Self Switch → A = ON**, and make a second
    event page with Self Switch A as its condition and no graphic, so the enemy stays gone.

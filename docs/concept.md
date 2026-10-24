@@ -1336,7 +1336,7 @@ Raiment, Black Bronze, Grown Coral, Black Hound Regalia.
 | **Electroplater** | Silver Ring, Silver-Plated Idol, Peridot Ring (Volcano Tear + Silver), Pearl Earring (Pearl + Silver) |
 | **Tanner** | Eelskin Wraps (Eel Skin), Driving Gloves (Cowhide, Act 4) |
 | **Priest** | Bark-Paper Prayer Strip (Tapa Cloth + Red Ochre): it crumbles after one use, so it's restocked |
-| **Found** (gathered, dropped or bought; several possible) | Cave-Glow Stone, Hot-Spring Sinter, Snow Quartz, Pumice Stone, Lodestone, Raven/Eagle/Vulture Feathers, Blind Crab Shell, Ibex Horn Charm, Fire Opal, Volcano Tear, Sulfur Lump, Sacred Leaf Charm (fallen leaves at Tiltapu), Numbered Collar, Leech Jar (herbalist), Tattooist's Ink Pouch, Rubber-Coated Gloves, Cowrie Anklet (money on a string: bought), Tin Bead, Bronze Horse-Bit, Opal Earring |
+| **Found** (gathered, dropped or bought; several possible) | Cave-Glow Stone, Hot-Spring Sinter, Snow Quartz, Pumice Stone, Lodestone, Raven/Eagle/Vulture Feathers, Blind Crab Shell, Ram Horn Charm, Fire Opal, Volcano Tear, Sulfur Lump, Sacred Leaf Charm (fallen leaves at Tiltapu), Numbered Collar, Leech Jar (herbalist), Tattooist's Ink Pouch, Rubber-Coated Gloves, Cowrie Anklet (money on a string: bought), Tin Bead, Bronze Horse-Bit, Opal Earring |
 | **Unique** | Crescent Pectoral, Coral Eye Fragment, Scoria Pupil, Sailor's Compass, Bronze Signet, Family Seal, Milk-Tooth Necklace, Grandmother's Knot-Cord, Hag-Crane Feather, Lizard-Scale Charm, Master's Horn Amulet, Phonolite Bell, Barley-Doll Idol, Cave-Cricket Cage |
 
 **Consumables (built: 59 recipes).**
@@ -2105,7 +2105,7 @@ Hoard** chest, which gives back everything stolen.
 | Red Rock Crab | 24 | 9 | 14 | 28 | Pinch | Shell: Cut ×0.5, Pierce ×0.75, **Crush ×1.5**. A threat may scatter it | Shell (1/2), Raw Meat (1/3) |
 | Giant Cave Rat | 18 | 6 | 2 | 40 | Gnaw | Packs. A threat may scatter it | Hide (1/4) |
 | Monk Seal | 100 | 10 | 6 | 24 | Body Slam | Starts Wary. Crush ×0.75, Water ×0.5. Likes fish | Raw Meat, Hide (1/2) |
-| Feral Goat | 45 | 9 | 4 | 40 | Headbutt | Bolts below 30% HP. Likes bread (and wants more) | Raw Meat (1/2), Hide (1/3) |
+| Feral Sheep | 45 | 9 | 4 | 40 | Headbutt | Bolts below 30% HP. Likes bread (and wants more) | Raw Meat (1/2), Hide (1/3) |
 | Cave Girl | 33 | 5 | 3 | 42 | Blinding Light (Dazzled), Pilfer | Prankster. Lasa: instant | — |
 | Cave Boy | 39 | 6 | 4 | 38 | Pantsing, Pilfer | Prankster. Lasa: instant | — |
 | Forest Imp | 27 | 5 | 3 | 48 | Trip (Disoriented), Mock (Panicked) | Prankster. Threaten: flees. Plead +40. Falmi: instant | — |
@@ -2119,7 +2119,7 @@ Prank skills (Pilfer, Pantsing, Blinding Light, Mock) stop once the prankster is
 talking gives Insight and outcomes, and never wears gear.
 
 **Troops are about the party's size** (3–6): Wild Boars ×3; a laurel forest mix (2 boars, 2
-centipedes); Centipedes ×4; Crabs ×5; Cave Rats ×6; seals and crabs (2 + 2); Goats ×4; Children of
+centipedes); Centipedes ×4; Crabs ×5; Cave Rats ×6; seals and crabs (2 + 2); Feral Sheep ×4; Children of
 the Caves ×4; Imps and Green Horses (2 + 2); Boar-Men ×3; Owls ×3; Forest Patrol (2 Boar-Men, 1 Owl).
 
 **Simulated balance** (`node tests/run.js --sim`: 40 battles each, a party that always picks its best
@@ -2140,9 +2140,7 @@ Dragged Below, Hypnotized, Salting, Stunned and Confused.
 | Enemy | HP | ATK | DEF | MAT | AGI | Actions | Damage taken | Notes |
 |---|---|---|---|---|---|---|---|---|
 | Raven | 26 | 8 | 2 | 2 | 52 | Peck, Ill Omen | Earth ×0.5, Fire ×1.5 | Flying; Talk: animal |
-| Ibex | 60 | 12 | 6 | 0 | 46 | Cliff Charge, Strike | — | Talk: animal |
 | Mouflon Ram | 85 | 13 | 9 | 0 | 32 | Ram, Strike | Crush ×0.8 | Talk: animal |
-| Red Deer Stag | 90 | 14 | 6 | 0 | 40 | Antler Rake, Bellow | — | Talk: animal |
 | Golden Eagle | 50 | 13 | 4 | 0 | 56 | Talon Dive, Strike | — | Flying; Talk: animal |
 | Bat | 16 | 6 | 1 | 0 | 58 | Bat Bite, Screech | — | Flying; Talk: animal |
 | Giant Cave Cricket | 24 | 8 | 5 | 0 | 44 | Leap Kick, Deafening Chirr | Crush ×1.25 | Talk: animal |
@@ -2150,7 +2148,6 @@ Dragged Below, Hypnotized, Salting, Stunned and Confused.
 | Bone Chanter | 45 | 6 | 5 | 14 | 34 | Grave Chill, Dirge, Raise Bones | Crush ×1.5, Cut ×0.75, Pierce ×0.5, Fire ×1.25 | Talk: spirit |
 | Moray Eel | 40 | 12 | 4 | 0 | 44 | Moray Bite | Water ×0.5 | Talk: animal |
 | Octopus | 55 | 10 | 4 | 8 | 40 | Grapple, Ink Cloud | Water ×0.5 | Talk: animal |
-| Giant Clam | 120 | 16 | 28 | 0 | 10 | Clamp | Crush ×0.75, Cut ×0.5, Pierce ×1.25, Fire ×1.5 | no Talk |
 | Daughter of the Wells | 700 | 19 | 10 | 18 | 38 | Coil, Drag Below, Well Water, Viri | Water ×0.25, Fire ×1.25, Earth ×0.75 | Talk: spirit |
 | Great Boar | 900 | 24 | 12 | 0 | 36 | Great Gore, Tusk Sweep, Stampede, Wallow | Cut ×0.75 | Talk: animal |
 | Shepherd of the Deer | 800 | 20 | 10 | 16 | 48 | Crook Strike, Lead Astray, Garo | Earth ×0.5, Fire ×1.5 | Talk: spirit |
@@ -2184,7 +2181,8 @@ Dragged Below, Hypnotized, Salting, Stunned and Confused.
 **Troop events** (in the Troops tab, editable):
 - **Cranes (one false):** on turn 2 the third crane transforms into a **Marsh Hag** (Enemy Transform).
 - **Desert: Lizards and Vultures:** the two vultures are hidden and arrive on turn 2 (Enemy Appear).
-- **Shepherd of the Deer:** two stags crash in when he drops to half Health.
+- **Shepherd of the Deer:** calls his herd in two waves: a Golden Eagle and a Mouflon Ram at 70% Health,
+  two more at 35%.
 - **The Bull of the Caves:** two Black Hounds come when he drops to half Health.
 - **Stoneman Shaman:** comes with one Stoneman.
 
@@ -2199,6 +2197,12 @@ never heals or uses items, so real fights are easier). Regular Act 2 and Act 3 t
 Bosses: Daughter of the Wells 20%, Shepherd 36%, Parl 12%, Great Boar 61% (85% wins), Lady of the Woods
 57%; Act 3: Guardian of the Crater Lake about 75% wins, Stoneman Shaman and Juda about half, and the
 optional Bull of the Caves is the hardest (about 40%). Talking down a boss takes 6–20 turns.
+
+**Cut for lack of art:** no deer, goat or giant clam battlers exist, so the **Ibex**, **Red Deer Stag** and
+**Giant Clam** are no longer enemies. Goats became **Feral Sheep** (the white sheep; the Mouflon Ram is the
+same sprite with a hue shift), the Ibex Horn Charm became the **Ram Horn Charm** (a Mouflon drop), deer are
+**hunted** at Deer Trail gathering spots (Deer Hide, sometimes Antler), and Giant Clams are **prised open**
+at gathering spots by an adult with a knife (Shellfish, sometimes a Pearl).
 
 **Placement notes:** the story events after each boss (the Daughter freed, the Great Boar's flesh, the
 Lady's leave, Parl's fate, Dama's arrival against Juda) still need writing as events.

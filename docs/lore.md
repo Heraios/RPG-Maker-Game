@@ -915,7 +915,7 @@ Iberia, Iceland). The strangeness is saved for spirits and First Sailor creation
 | Laurel rainforest | **Wild boar** (the Lady's favorite), **giant centipedes** (venomous), laurel pigeons, **ravens** (omen birds) |
 | Salt marsh | Cranes and herons (any crane may be a Hag), eels, leeches |
 | Highlands and volcanic desert | **Giant lizards** (over a metre; the Guardian Lizards are their spirit kin), **giant tortoises**, **Egyptian vultures** (they join fights late and pick on the weakest), **feral goats** |
-| Alpine forest | Ibex, red deer and mouflon (the Shepherd's flock), golden eagles. **No wolves**: that empty niche is where the Black Hounds fit |
+| Alpine forest | Red deer and mouflon (the Shepherd's flock: hunted, not fought), golden eagles. **No wolves**: that empty niche is where the Black Hounds fit |
 | Lava tubes | Blind white cave crabs (harmless), **giant cave rats**, bats, cave crickets |
 | Rare | **Aurochs**, wild cattle |
 
