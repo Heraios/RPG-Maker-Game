@@ -207,7 +207,9 @@ In the game nobody names it: the islanders see a child the gods marked as a prie
 
 ### Lasa — The Child of the Caves
 A girl of the Children of the Caves, a fae-like race that only appears normally to children.
-She finds Yoon as a ghost and immediately decides to help.
+She finds Yoon as a ghost and immediately decides to help, **out of the goodness of her heart**: she
+thinks Yoon is just a lost ghost who needs showing the way. No bargain, no hidden motive. It's what the
+Children of the Caves do for those in desperate need when all other help has failed.
 
 - **Weapons:** knives only (small hands).
 - **Quirks:** flies, so she dodges most melee attacks. Decent ATK, lowish HP, high MP and a small
