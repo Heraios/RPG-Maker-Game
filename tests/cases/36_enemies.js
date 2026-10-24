@@ -48,11 +48,11 @@ module.exports = {
             return out;
         });
         t.eq(r.missing, '', 'every enemy on the list exists');
-        t.eq(r.count, 49 - 13 + 1 - 3, '34 new enemies (the Ibex, Red Deer Stag and Giant Clam were cut), plus Juda\'s half-risen form');
+        t.eq(r.count, 49 - 13 + 1 - 3 + 3, '34 new enemies (the Ibex, Red Deer Stag and Giant Clam were cut), plus Juda\'s half-risen form and the Lady\'s alpine aspect and two true forms');
         t.eq(r.badActions, '', 'every enemy action is a real skill');
         t.eq(r.badDrops, '', 'every drop is a real item');
         t.eq(r.badTroops, '', 'every troop member is a real enemy');
-        t.eq(r.troops, 33, '33 new troops');
+        t.eq(r.troops, 34, '34 new troops (with the Lady\'s alpine aspect)');
         const fs = require('fs'), path = require('path'), dir = path.join(__dirname, '..', '..', 'Smoking Isle', 'img', 'enemies');
         t.eq(r.battlers.filter(([, b]) => !fs.existsSync(path.join(dir, b + '.png'))).map(([n]) => n).join(', '), '', 'every enemy has a picture');
         t.ok(r.weakest, 'the vulture goes for the weakest');
