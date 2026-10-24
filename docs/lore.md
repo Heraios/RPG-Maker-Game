@@ -850,7 +850,7 @@ herbalist live where they can reach every kind of game and plant, a little apart
 
 **Yoon's expected path (flavour only):** a boy would be expected to follow Pada as a hunter, a girl
 Mada as an herbalist, and a third-gender or nonbinary child would be expected to become a priest. Yoon's
-gender and appearance are the player's choice; this only colours dialogue.
+gender is the player's choice (their looks don't change with it); this only colours dialogue.
 
 ### Yoon and Sib
 Best friends since basically birth. They liked to play in **the lava tubes near the village**. Sib has
@@ -861,6 +861,11 @@ betrothal promise** in certain endings.
 - **Sib keeps the crush secret from Yoon**, believing Yoon wouldn't want feelings from someone like them.
   The village sees nothing wrong with it.
 - **Yoon can't reject Sib cruelly.** The worst the player can choose is "I only see you as my best friend."
+- **Scene idea: "looking weird".** Sib has a quiet fear that they look strange (short, soft, in-between).
+  Yoon is the one person who doesn't know their own face either: a ghost with none, then a body made from
+  other people's blood. When Sib frets about it, Yoon can say something like "at least you know what your
+  face is", or simply be the first to look at Sib and just see Sib. Works whatever the player chooses for
+  the romance.
 
 - Sib's parents, **Uira** and **Poko**, run Zonfahare's telegraph station (she the operator, he the
   battery tender). Sib lived with them until 8, then with Juda as his ward and apprentice.
