@@ -44,7 +44,7 @@ module.exports = {
         t.eq(r.sibRing, 'Silver Ring', 'the ring starts in the Left Hand');
         t.eq(r.sibTattoos, 3, 'Sib starts with three tattoos (Ahi, Mahu and Sooty Bird\'s Hiri)');
         t.eq(r.judaTattoos, 5, 'Juda starts with five tattoos');
-        t.eq(r.thCuirass, 'Bronze Cuirass', 'bronze cuirass sits in the Cuirass slot');
+        t.eq(r.thCuirass, 'Silvered Bronze Cuirass', 'Thenmy\'s silvered bronze cuirass sits in the Cuirass slot');
         t.eq(r.thCodex, 'Codex of Mending', "Thenmy's codex");
         t.eq(r.knifeOffhand, 'Obsidian Knife', 'a knife fits the off hand');
         t.eq(r.spearRejected, 'Obsidian Knife', 'a spear does not');
