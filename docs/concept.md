@@ -323,7 +323,7 @@ The Prince of the invaders, who always ends up siding with the party.
 - **Weapons:** every melee type except staffs, including swords and javelins. His personal sword is a unique, irreplaceable masterwork bronze
   leaf sword. **Can swap melee weapons once per turn and still make a basic attack.**
 - **Quirks:** highest HP and DEF in the game, very high ATK, lowest AGI (a bronze-armored
-  glacier). Powerful paladin-style magic. **All his gear is bronze and therefore unbreakable.**
+  glacier). Powerful paladin-style magic. **All his gear is bronze and therefore unbreakable**; his armour is **silver-plated**, as befits a prince, so it gleams white-silver rather than bronze.
   Has adult protection, the hint that he isn't so bad: the colonizer prince instinctively shields
   island children. His soldiers hesitate to attack children; his sister's soldiers do not.
 - **Core role:** the best damage dealer and tank. Recruiting him transforms the party overnight,
