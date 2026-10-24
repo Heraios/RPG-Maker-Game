@@ -2198,6 +2198,17 @@ Bosses: Daughter of the Wells 20%, Shepherd 36%, Parl 12%, Great Boar 61% (85% w
 57%; Act 3: Guardian of the Crater Lake about 75% wins, Stoneman Shaman and Juda about half, and the
 optional Bull of the Caves is the hardest (about 40%). Talking down a boss takes 6–20 turns.
 
+**The Lady of the Woods: two aspects, two true forms.** Both fights start as her current battle, with
+opposite talk rules, and at half Health she shifts (troop event; her mood carries over):
+- **Lowland** (rainforest): gregarious and temperamental. Food, plain manners and pleading work; threats
+  are a disaster. Shifts into **the Sacred Rain Pig** (after the Guanche Aranfaybo): wordless and holy,
+  reached only by a rain rite (Rite) or food; its Sacred Rain soaks the party (Wet), Mud Charge mires.
+- **Alpine** (high pines): polite but cold. Courtesy works (Ask, Rite); **gifts insult her**; tears don't
+  move her; threats are unforgivable. Shifts into **the Stern Centaur**, a judge with a spear: only formal
+  questions and rites reach her; Spear of the Pines, Hoofbeat, Frost of the Heights, and her glyph Huhuti.
+- Simulated: both about 95% wins for the Act 2 party fighting (about 60% Health lost); talking her down
+  takes 6–8 turns.
+
 **Cut for lack of art:** no deer, goat or giant clam battlers exist, so the **Ibex**, **Red Deer Stag** and
 **Giant Clam** are no longer enemies. Goats became **Feral Sheep** (the white sheep; the Mouflon Ram is the
 same sprite with a hue shift), the Ibex Horn Charm became the **Ram Horn Charm** (a Mouflon drop), deer are
