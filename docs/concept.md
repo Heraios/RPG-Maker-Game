@@ -474,6 +474,10 @@ In every version:
   baffles a prince raised on divine kingship; now he's the one who doesn't give orders.
 - **Being slow:** a bronze glacier with the lowest Speed in the game, surrounded by fast children. A running
   gag.
+- **A city boy:** he grew up in the Seafarer capital, a *huge* city by Bronze Age standards. Next to the
+  Islanders, or even Parl (months alone in the highlands), he has **no wilderness skills at all**: he can't
+  track, forage, fish, light a fire from scratch or tell a safe plant from a poisonous one. The children
+  have to teach him. Comedy, and a quiet reversal of who the "primitive" ones are.
 - **Meals:** no shellfish, beef as sacred food, and three Islander gods' worth of meat taboos at every Star
   Mother dinner. Shared meals are where he stops being a guest.
 
