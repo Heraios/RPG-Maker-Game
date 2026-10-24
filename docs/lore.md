@@ -815,6 +815,8 @@ sworn investigators: see "Spearwives") with finding out how he stole the pearls 
 - **Pada:** Yoon's father, considered **the best hunter on the island**.
 - **The twins:** Yoon's younger twin siblings, a boy and a girl. As twins they can see ghosts: they
   see Yoon, they're the ones who tell Pada that Yoon is a ghost, and they give their blood for the body.
+- **Hair:** Mada has **blue** hair and Pada **light brown**. Each twin has the opposite-gender parent's
+  colour: the boy Mada's blue, the girl Pada's brown. Yoon's blue hair comes from Mada.
 - **Ladder:** the family goat, named because he climbs ladders. Somehow.
 - **Patience:** the family dog.
 
