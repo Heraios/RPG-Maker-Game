@@ -289,6 +289,20 @@ conditions, promises or repayment.
 child-sacrifice industry**. They have a hidden village in the lava tubes and are mostly unaware of
 their origins. Digging, they eventually discover Queen Tou in her buried palace and "serve" her.
 
+**They really are children, and never grow up.** Made by magic and never meant to live past 9 or 10, the
+discarded Crew simply stayed children: ancient in years, children in body and mind. Their minds stay young
+because they **forget**: that's why they're mostly unaware of their origins, with only odd flashes of old
+knowledge (a tunnel song older than the Islanders, an archaic word). They are the First Sailors' made
+children, the thing the Navigator Lords threw away: the same story as Yoon's new body, Tou's doll and
+Falmi's four centuries, told as a whole people.
+
+**A fixed population.** They can't grow up or have children, so there are only ever as many as there are,
+and there will never be more. They're ageless and **almost never die**, so it hasn't mattered for
+thousands of years. **The invasion changes that:** the war stirs up the Destroyer's forces (Black Hounds
+and the Hunched in the tubes), and for the first time in living memory Children of the Caves start
+**dying**. Every one lost is gone for good. That gives Lasa's people real stakes from Act 4 on, and a reason
+for her to fight beyond helping Yoon.
+
 *In the game:* friendly NPCs. **Lasa** guides Yoon out of the caves in the prologue (Act 1), helps
 gather body ingredients in Act 2 and stays as a **permanent party member** from then on, and
 plays a key role in the Tou questline.
@@ -1141,6 +1155,9 @@ turns the more evidence was found, the villagers with her are better armed, and 
 ---
 
 ## 6. Open questions
+- **What adults see of the Children of the Caves:** a suggestion to confirm. Adults who glimpse one see an
+  uncanny little fae figure (the winged woman in red, the chubby man in a broad hat); children see another
+  child.
 - ~~What is the "demon" Juda tried to summon?~~ Answered: Yoon themself (see "The murder").
 - **Do the four elements map onto the four great domains** (section 4)?
 - **What are the Navigator-Lord remnants?**
