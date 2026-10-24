@@ -850,6 +850,17 @@ betrothal promise** in certain endings.
 3. He took the body to **an isolated tomb only he knew about**, **defleshed** Yoon, and **burned the
    flesh in the tomb over a grave** as an offering to summon a demon.
 4. He felt regret at killing a child he had known for about ten years, which **"ruined" the ritual**.
+   **Why regret ruined it: grief takes the offering back.** A sacrifice works only if the killer gives the
+   victim up wholly to the god. On the island belief is magic, and mourning is what binds the dead to the
+   living. When Juda wept over Yoon he was mourning them, and for a moment the ritual became a funeral. So
+   the offering was half given and half kept:
+   - **The given half** reached the Destroyer: the part of Yoon's soul that held their memories, and in
+     exchange the mark of the bargain, the **??? glyph** (the Destroyer's name) and Yoon's ghost powers.
+   - **The kept half** stayed as Yoon's ghost, held to the island by Juda's grief and then the village's.
+   This is why Yoon has no memories, why Juda can't tell whether Yoon is a demon or a ghost, why the Act 3
+   memory ritual fails (those memories belong to a god now), and why his one moment of humanity is the thing
+   that saved Yoon. **The "demon" he meant to summon was Yoon**: a trusting child's soul, made a servant of
+   the Destroyer. The ending can ask which side of Yoon wins.
 5. He left with his **broken staff**: he **dumped the copper ball in the marsh** and **buried the
    staff in the woods**. (Patience later digs up the staff, and the player unknowingly uses it as a
    weapon.)
@@ -1130,7 +1141,7 @@ turns the more evidence was found, the villagers with her are better armed, and 
 ---
 
 ## 6. Open questions
-- **What is the "demon"** Juda tried to summon: a servant of the Destroyer, or something else?
+- ~~What is the "demon" Juda tried to summon?~~ Answered: Yoon themself (see "The murder").
 - **Do the four elements map onto the four great domains** (section 4)?
 - **What are the Navigator-Lord remnants?**
 - **The island's geography:** the settlements are placed (see "Settlements and networks"); the exact map
