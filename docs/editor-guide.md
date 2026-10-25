@@ -125,6 +125,9 @@ reactions can go.
 Common event **13 "Scene: Keftiu"** is the first night at camp after Thenmy joins: call it from that camp
 event. Parl's lines sit inside *Conditional Branch: Parl is in the party*, with an *Else* version where
 Thenmy confesses the spy reports himself, a pattern to copy for any optional party member.
+Common event **14 "Scene: Jogging Yoon's Memory"** is the morning after the body ritual (Sib, Pada and Lasa
+try to jog Yoon's memory). Lines that differ by Yoon's gender sit in *Conditional Branch: Variable 4*
+(1 boy, 2 girl, *Else* third), the pattern to copy when a whole line changes, not just a pronoun.
 
 **Naming newcomers** happens by itself: the first time an event's *Change Party Member* adds someone,
 the name screen opens. It never happens in battle, or on maps with `<No Name Entry>` in their note (the
