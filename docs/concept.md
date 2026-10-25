@@ -444,6 +444,135 @@ ruler, now trapped in a child-sized wooden doll with jointed limbs.
   behave. Can only be permanently killed if her moai's coral eyes are destroyed, which is a story
   threat rather than a gameplay mechanic.
 
+### Voices (writing guide)
+How each party member talks, with sample lines. In real dialogue write `\N[n]` for names and the `\YP[...]`
+codes for Yoon's pronouns (see the editor guide).
+
+**Yoon:** curious, watchful, sweet, then suddenly uncanny. Short, literal sentences (still relearning
+words); asks what others wouldn't; says the scary thing in the same tone as the nice thing.
+- *"What's a 'tomorrow'? ...Oh. I want one."*
+- (to a goat) *"You're warm. Everything alive is warm. I keep forgetting."*
+- (after a battle) *"It stopped moving. Did it go where I went?"*
+- (to Sib, sincerely) *"You're the first word I remembered."*
+
+**Sib:** halting when nervous ("Um.", trailing off); fluent and precise about rites and inscriptions.
+Tilts their head to listen on the good side.
+- *"Um. Okay. So. The scroll says 'a bone of the body', and it doesn't say whose, so technically—no. No,
+  that's bad. Forget I said that."*
+- (reading, suddenly confident) *"It's a warning. 'The deep belongs to the Builders.' Third line's damaged.
+  Probably something about dying horribly."*
+- (lost) *"I'm sure it's left. ...Is it left? Lasa, which way is left?"*
+- (flustered) *"You can't just—say things like that! I'm a priest! ...I'm a little priest!"*
+
+**Lasa:** fast and excitable, repeats herself when emotional; treats humans like adorable, fragile pets.
+- *"Ooh! Shiny! Mine! ...Ours. Mostly mine."*
+- (teaching Ghost Yoon) *"Say 'rock'! Rock! No—that's 'Sib'. Sib's not a rock. Well. A little."*
+- *"You humans break so easily. It's sweet. Don't do it, though."*
+- (after the realisation) *"I'm supposed to be the one watching. I'm always supposed to be watching."*
+
+**Pada:** clipped and plain, hunting metaphors; never says "I love you", but it's in everything.
+- *"Eat. You're growing. ...You're doing something, anyway."*
+- (tracking) *"Boar. Big one. Came through at dawn. Stay behind me."*
+- (to Sib) *"You kept my child company when I couldn't. That's a debt, priest."*
+- (to Yoon, quietly) *"Doesn't matter what you are. You came home."*
+
+**Juda** (before the betrayal): gentle, measured, teacherly; answers questions with questions. Everything
+reads differently on a replay.
+- *"A body is only a vessel, Sib. What matters is what we pour into it."*
+- (to Yoon) *"You're a remarkable child. I've rarely met anyone so... complete."*
+- *"Rest. The mountain will still be there. It's very patient. So am I."*
+
+**Dama:** short orders, dry humour, fishing words for everything.
+- *"I don't care if you're a ghost, a demon or a talking squid. Someone killed a child. That's my business."*
+- (to Parl) *"Run again and I'll net you like a mullet."*
+- (battle start) *"Spread out. Make them pick a target."*
+- (to Thenmy) *"Your soldiers bow to you. Mine argue. Mine are better."*
+
+**Parl:** wry and self-mocking, with asides and footnotes; notices exits and price tags.
+- *"In my defence, the pearls were just lying there. In a locked chest. On a guarded ship. Lying there."*
+- (scribbling) *"Note: islanders have telegraphs. Note: empire very much does not. Note: nobody back home
+  will believe this either."*
+- (refusing shellfish) *"My god takes shells very seriously. I've stolen pearls and I'll still burn for an
+  oyster."*
+- (to Lasa) *"You take the shiny ones, I'll take the heavy ones. Partners."*
+
+**Thenmy:** formal and courtly, long sentences, uses titles (as in his prologue narration).
+- *"Priest Sib, I would be honoured if you'd correct my reading of this glyph. Again."*
+- (stepping in front of a child) *"Behind me. That is not a request, it is a—fine. Beside me."*
+- (foraging) *"This one is red, therefore poisonous. ...It's a berry you eat every morning? I see."*
+- *"My father taught me that kings are chosen by the gods. Your people chose Dama by talking. I find I
+  prefer the talking."*
+
+**Falmi:** loud and enthusiastic; misunderstands idioms; describes feelings like weather or growth.
+- *"I'll hit it! Can I hit it? I'm hitting it!"*
+- *"Why do you all sleep at night? I just stand in the sun and I'm fine."*
+- (hit hard) *"Ow! That's fine. It'll grow back. Everything grows back."*
+- (to Tou) *"Your Majesty you look very—nice—wooden—I mean GOOD. Good wood. I'm going to go fight
+  something."*
+
+**Tou:** courtly and antique; issues decrees out of habit; slips between child and queen.
+- *"We decree that this cave shall be less damp. ...Ah. It doesn't work outside the court, does it."*
+- (to the Stonemen) *"Stand down. Your queen is here."*
+- *"I fostered so many children. They always went home after a year or two. ...They did go home. Didn't
+  they?"*
+- (to Falmi, kindly) *"You may approach the throne, Sir Falmi. The throne is a rock today, but the
+  principle stands."*
+
+**Patience:** no voice; actions written as text, often the most emotional "line" in a scene.
+- *Patience sniffs Ghost Yoon's hand that isn't there, and wags anyway.*
+- *Patience growls at Juda. Nobody notices.*
+
+**Sample scene: Sib and Yoon at a bothy** (Act 2, after the body; the Yoon lines in brackets are a player
+choice: sweet / funny / uncanny)
+
+> **Sib:** You're not asleep.
+>
+> **Yoon:** I don't know how yet. I keep waiting to fall out of myself.
+>
+> **Sib:** That's... um. That's not what sleep is. Sleep is more like... you go somewhere, and then you come back.
+>
+> **Yoon:** I did that once. It took a long time.
+>
+> **Sib:** ...Yeah.
+>
+> *Sib pokes the fire.*
+>
+> **Sib:** Can I ask you something? Do you remember anything? From before? Even a little?
+>
+> **Yoon:** I remember your voice. Before I knew it was a voice. It was the only warm thing in the dark.
+>
+> *Sib goes very quiet.*
+>
+> **Sib:** That's—okay. That's a lot. That's fine. I'm fine.
+>
+> **Yoon:** Your face is red.
+>
+> **Sib:** It's the fire! Fires are red! It's a very red fire.
+>
+> **Yoon:** [Sweet] Then I like this fire.
+>
+> **Yoon:** [Funny] Should I put it out? I can sit on it.
+>
+> **Yoon:** [Uncanny] The inside of people is red too. I've seen.
+>
+> *(Sweet)* **Sib:** ...Me too. I mean—it's a good fire. Good night!
+>
+> *(Funny)* **Sib:** Don't sit on the fire! You only just got a body!
+>
+> *(Uncanny)* **Sib:** ...Okay, that's the most you thing you've said all week. Go to sleep.
+>
+> **Yoon:** Sib?
+>
+> **Sib:** Mm?
+>
+> **Yoon:** Thank you for bringing me back.
+>
+> **Sib:** ...You'd have done it for me.
+>
+> **Yoon:** I'd have done worse things than that.
+>
+> **Sib:** ...Good night, Yoon.
+
 ### Party dynamics (draft: correct freely)
 
 **Personalities**
