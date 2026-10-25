@@ -1407,6 +1407,9 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
 - **Each food counts 3 times per character** (Default Cap); after that it only heals. The Sooty Bird Egg
   counts once.
 - The item screen's help box shows who has eaten it (e.g. "Yoon 2/3 (full)").
+- **Auto-pick** on the meal screen fills everyone without a pick: the food that still grows them most (the
+  pickiest eaters choose first, so scarce foods go where they're needed), and once nothing grows anyone, only
+  enough extra food to heal the party. Your own picks are kept; change any before eating.
 - **Pada and Juda won't eat** ("I'm not hungry. Give it to the children." / "The children need it more than
   I do."). Food goes to the ones who stay, and it's a quiet hint that they are guests in the party.
   (`<Refuses Meals: line>`)

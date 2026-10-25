@@ -37,6 +37,12 @@
  * rest (item note <Rite Text: %1 lays ...>). Each eater still gets their own food's
  * lasting stat gain (up to its cap). One meal per rest. Meals can't be eaten
  * from the menu.
+ *
+ * Auto-pick (on the meal screen, and SmokingIsle.Idols.autoPlan(plan)) fills
+ * everyone without a pick: the food that still grows them most (the pickiest
+ * eaters choose first, so scarce foods go where they're needed), and once
+ * nothing grows anyone, only enough extra food to heal the party. Picks you
+ * made yourself are kept.
  */
 
 var Imported = Imported || {};
@@ -186,6 +192,44 @@ SmokingIsle.Idols = SmokingIsle.Idols || {};
         return rites.concat(shared ? [shared] : []).join(' ');
     };
 
+    // How much a food still grows this actor (0 once it's past its cap).
+    $.growthValue = function(actor, item) {
+        if (actor.mealsEaten(item) >= item.siMealCap) return 0;
+        return item.effects.reduce(function(sum, e) {
+            return e.code === Game_Action.EFFECT_GROW ? sum + e.value1 * (e.dataId <= 1 ? 0.2 : 1) : sum;
+        }, 0);
+    };
+
+    // Fills the plan ({ actorId: item }) for everyone without a pick. Returns the plan.
+    $.autoPlan = function(plan) {
+        var foods = $gameParty.items().filter(function(i) { return Meals.isMeal(i); });
+        var left = function(item) {
+            var used = Object.keys(plan).filter(function(id) { return plan[id] === item; }).length;
+            return $gameParty.numItems(item) - used;
+        };
+        var eaters = $gameParty.allMembers().filter(function(a) { return a.mealRefusal() === null && !plan[a.actorId()]; });
+        var options = function(a) { return foods.filter(function(i) { return left(i) > 0 && !$.mealProblem(a, i); }); };
+        eaters.sort(function(a, b) { return options(a).length - options(b).length; });
+        var waiting = [];
+        eaters.forEach(function(a) {
+            var best = null, bestV = 0;
+            options(a).forEach(function(i) { var v = $.growthValue(a, i); if (v > bestV) { bestV = v; best = i; } });
+            if (best) plan[a.actorId()] = best; else waiting.push(a);
+        });
+        // Nobody grows from what's left: add food only while the pot can't yet heal the party.
+        var need = Math.max.apply(null, $gameParty.allMembers().map(function(a) { return a.isDead() ? 0 : a.mhp - a.hp; }).concat([0]));
+        var pot = 0, full = false;
+        Object.keys(plan).forEach(function(id) { var v = $.potValue(plan[id]); pot += v.hp; full = full || v.full; });
+        waiting.forEach(function(a) {
+            if (full || pot >= need) return;
+            var pick = options(a).sort(function(x, y) { return $.potValue(y).hp - $.potValue(x).hp; })[0];
+            if (!pick) return;
+            plan[a.actorId()] = pick;
+            var v = $.potValue(pick); pot += v.hp; full = full || v.full;
+        });
+        return plan;
+    };
+
     $.openMeal = function() {
         if ($.hasEaten()) { $gameMessage.add('You\'ve already eaten. Rest first.'); return; }
         SceneManager.push(Scene_SIMeal);
@@ -213,17 +257,17 @@ SmokingIsle.Idols = SmokingIsle.Idols || {};
         this.select(0);
     };
     Window_SIMealMembers.prototype.members = function() { return $gameParty.allMembers(); };
-    Window_SIMealMembers.prototype.maxItems = function() { return this.members().length + 2; };
+    Window_SIMealMembers.prototype.maxItems = function() { return this.members().length + 3; };
     Window_SIMealMembers.prototype.actor = function() { return this.members()[this.index()] || null; };
     Window_SIMealMembers.prototype.command = function() {
         var i = this.index() - this.members().length;
-        return i === 0 ? 'eat' : i === 1 ? 'leave' : null;
+        return i === 0 ? 'auto' : i === 1 ? 'eat' : i === 2 ? 'leave' : null;
     };
     Window_SIMealMembers.prototype.drawItem = function(index) {
         var rect = this.itemRectForText(index), members = this.members();
         this.resetTextColor();
         if (index >= members.length) {
-            this.drawText(index === members.length ? 'Eat together' : 'Leave', rect.x, rect.y, rect.width);
+            this.drawText(['Auto-pick', 'Eat together', 'Leave'][index - members.length], rect.x, rect.y, rect.width);
             return;
         }
         var a = members[index], item = this._plan[a.actorId()];
@@ -305,6 +349,13 @@ SmokingIsle.Idols = SmokingIsle.Idols || {};
     Scene_SIMeal.prototype.onMemberOk = function() {
         var cmd = this._memberWindow.command();
         if (cmd === 'leave') { this.popScene(); return; }
+        if (cmd === 'auto') {
+            $.autoPlan(this._plan);
+            this._memberWindow.refresh();
+            this._helpWindow.setText('Picked what still makes each of you stronger, and enough to heal. Change any pick, then Eat together.');
+            this._memberWindow.activate();
+            return;
+        }
         if (cmd === 'eat') {
             var text = $.shareMeal(this._plan);
             if (text) { $gameMessage.add(text); this.popScene(); return; }
