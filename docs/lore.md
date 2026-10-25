@@ -677,6 +677,8 @@ stand a little apart from ordinary kin lines.
 | Dried lava tubes | An island-wide network linking the mines, tombs, the Children's village and the Destroyer's depths |
 
 ### Settlements and networks (draft map)
+Overview map: `docs/island-map.png` (made from `docs/island-map.svg`). It is a draft.
+
 A few thousand Islanders in all. Wet-side lands feed the island, the dry side and the lava tubes are
 mined, and the main town sits where the two meet. **Naming:** towns are a Guanche word + Rapa Nui
 *hare* ("household"); small villages a Guanche word + Rapa Nui *keu* ("communal enterprise"); ritual
@@ -825,7 +827,7 @@ subjugate the island through straightforward brutality (the Princess of Act 5).
 A crewman on the All-Seafarer **tribute collector's** ship, from **a big city in the All-Seafarer
 homeland**, and also a **literate spy**: his job was to write down and record things about the Islanders
 before the invasion. He stole some of the **tribute pearls**, meaning to hide them on the ship and fence
-them back in the capital. He was found out and deserted into the highlands. **Chief Tama** and the
+them back in the capital. He was found out and deserted into the **salt marsh**, where he hides. **Chief Tama** and the
 Seafarer tributary official **Iras** tasked **Dama** and a few of her **spearwives** (Mansehare's
 sworn investigators: see "Spearwives") with finding out how he stole the pearls and tracking him down.
 
@@ -1181,8 +1183,9 @@ turns the more evidence was found, the villagers with her are better armed, and 
 - ~~What is the "demon" Juda tried to summon?~~ Answered: Yoon themself (see "The murder").
 - **Do the four elements map onto the four great domains** (section 4)?
 - **What are the Navigator-Lord remnants?**
-- **The island's geography:** the settlements are placed (see "Settlements and networks"); the exact map
-  layout (which coast faces which way, where the volcano sits) is still open.
+- **The island's geography:** draft in `docs/island-map.png`. The volcano is in the middle; trade winds
+  come from the north-east, so the north is wet forest and the south and south-west are dry. The town and
+  the salt marsh are on the east side. Still open to change.
 - ~~Parl's past~~ **Decided:** both. A tribute collector's crewman *and* a literate spy (see Parl).
 - **Names:** the King of All the Sea, the Princess.
 

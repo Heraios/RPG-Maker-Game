@@ -371,7 +371,7 @@ her: a child was lured into a tomb and butchered, and "this is unacceptable to T
 ### Parl — The Pearl Thief
 A crewman on the All-Seafarer tribute collector's ship and a literate spy, recording the Islanders
 before the invasion. He stole some of the tribute pearls to fence back home, was found out, and
-deserted into the highlands. Chief Tama and the Seafarer tributary official Iras put Dama and her
+deserted into the salt marsh, where he hides. Chief Tama and the Seafarer tributary official Iras put Dama and her
 spearwives (Mansehare's sworn investigators) on the case. A pearl is the fifth ingredient for Yoon's body, so hunting
 him down is an important Act 2 quest.
 
