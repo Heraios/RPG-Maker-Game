@@ -1133,7 +1133,7 @@ into armor types by where it is worn:
 | **Child-Sized** | Crew clothing, Royal Regalia, the children's charms | ✘ | ✔ | ✔ | ✔ |
 | **Adult-Sized** | Navigator's Raiment, Black Bronze | ✔ | ✘ | ✘ | ✘ |
 
-- **Falmi** can use every shield and wears bronze helms and greaves, so they can get Bronze's
+- **Falmi** can use every shield and wears bronze helms and greaves, so he can get Bronze's
   2-piece bonus.
 - **Yoon's** demon/homunculus body is stronger than a child's: heavy helms and greaves and
   **two-handed weapons**, but no large shields.
