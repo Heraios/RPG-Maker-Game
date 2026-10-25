@@ -170,6 +170,11 @@ family's animals with Mada; as third gender, augury with the priests (reading om
 Yoon says something ghoulish, the people who knew them can't tell whether it's the demon or just *Yoon*.
 That's both the joke and the horror.
 
+**It's also why Yoon wears a pelt** (the orange fur at the shoulder in their art): the same pelt whatever the
+gender, worn for that old hobby. As a boy, a hide he skinned and cured himself from one of Pada's kills; as a
+girl, the pelt of an animal she nursed and couldn't save, and wouldn't let go of; as third gender, an
+augur's mantle from the priests, for reading omens. Their new body is dressed in it when they get it back.
+
 - **Weapons (Human form):** knives, staffs/spears, slings. Swords if Thenmy's sidequest is
   completed. Bows if all of Pada's sidequests are completed before his death.
 - **Ghost form:** very low HP. Dodges nearly all physical attacks and takes almost no damage from
