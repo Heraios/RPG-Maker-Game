@@ -38,6 +38,10 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
   5. **A pearl from the sea**, set into the bracelet → anchors the soul.
   6. **A living bellflower**, kept magically alive → the heart.
   7. **A framework of dragon-tree wood** → the skeleton.
+- **A bone from Yoon's own skeleton** also goes into the body. Yoon, Sib and Lasa take it from the remains
+  in the lava tube where the ghost woke, and that's when the player **learns for sure it was foul play**:
+  the bones were prepared like a sacrifice, and the skull was smashed from behind (common event 12,
+  "Scene: The Bone").
 - **Pada joins after the snow (ingredient 3).** He's suspicious of why Sib, who is normally *not*
   an outdoorsy child, keeps traipsing around, and he's worried about the children since Yoon's
   "disappearance". Then Yoon's younger **twins**, who as twins can see ghosts, tell him Yoon is a

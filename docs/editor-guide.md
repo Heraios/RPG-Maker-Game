@@ -118,7 +118,8 @@ Room: Keepsakes"** (each gender finds different things), then turns its own Self
 happens once. In the Test Room, **Yoon's Mirror** runs Choose Yoon again.
 
 **Scenes as common events:** common event **11 "Scene: Yoon's New Body"** is the body-ritual scene, ready
-to call from wherever the ritual happens. It's written with the pronoun codes, so it already reads right
+to call from wherever the ritual happens. Common event **12 "Scene: The Bone"** is the moment Yoon, Sib and
+Lasa take a bone from the remains and realise it was murder: call it from the remains event on map 6. It's written with the pronoun codes, so it already reads right
 for every Yoon, and it's an example to copy for other scenes. Each answer has a `TODO` comment where
 reactions can go.
 

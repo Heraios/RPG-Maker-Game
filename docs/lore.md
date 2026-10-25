@@ -1114,8 +1114,8 @@ Sun and the Destroyer lean Fire.
 
 | Clue | Where | What it points to |
 |------|-------|-------------------|
-| The **crushed skull** (a round, heavy blow) | Yoon's skeleton, in the tomb | A ball-headed weapon |
-| **Cut marks** on the bones | Yoon's skeleton | Someone practiced at preparing bodies: a priest |
+| The **crushed skull** (a round, heavy blow, from behind) | Yoon's skeleton, in the tomb (**found in common event 12**, when Yoon and Sib take a bone for the homunculus) | A ball-headed weapon; and that it was murder, not a fall |
+| **Cut marks** on the bones | Yoon's skeleton (Sib: *"This looks like when priests prepare an animal for sacrifice. But on a person!?"*) | Someone practiced at preparing bodies: a priest |
 | **Burned offering** over a grave | The secret tomb | A ritual, not a simple killing |
 | The **tomb itself**, missing from the tomb records | Priestly records (bureaucracy, printing) | Someone who knows tombs nobody else does |
 | The **staff shaft** | Buried in the woods; Patience digs it up | A broken ceremonial staff |
