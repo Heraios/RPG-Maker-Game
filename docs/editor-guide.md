@@ -122,6 +122,9 @@ to call from wherever the ritual happens. Common event **12 "Scene: The Bone"** 
 Lasa take a bone from the remains and realise it was murder: call it from the remains event on map 6. It's written with the pronoun codes, so it already reads right
 for every Yoon, and it's an example to copy for other scenes. Each answer has a `TODO` comment where
 reactions can go.
+Common event **13 "Scene: Keftiu"** is the first night at camp after Thenmy joins: call it from that camp
+event. Parl's lines sit inside *Conditional Branch: Parl is in the party*, with an *Else* version where
+Thenmy confesses the spy reports himself, a pattern to copy for any optional party member.
 
 **Naming newcomers** happens by itself: the first time an event's *Change Party Member* adds someone,
 the name screen opens. It never happens in battle, or on maps with `<No Name Entry>` in their note (the
