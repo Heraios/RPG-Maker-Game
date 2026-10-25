@@ -979,7 +979,7 @@ impact crater**: the Red Bowl myth is literally true.
   but drink **no milk** (the goddesses' gift to mothers and children: a man drinking it is a baby, or a thief
   from a goddess); **grown women drink the milk** but eat **no red meat** (the bull is a goddess's husband).
   Children are exempt until they come of age, so half-Seafarer Aday has the dairy rule still to come. Seafarer
-  Cheese goes in the tribute rations "for the women and children"; Parl eats it anyway. (There is no third
+  Cheese goes in the tribute rations "for the women and children"; Parl swears he has never touched it. (There is no third
   gender among the Seafarers: it's an island role.)
 - **The King of All the Sea:** a seafaring Alexander the Great crossed with a young JRPG hero, seen 80
   years later as an old man. As a young hero he **built the empire himself, out of the grateful peoples he
