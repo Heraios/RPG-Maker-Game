@@ -723,7 +723,7 @@ sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegrap
 
 ### People of the island (draft cast)
 Names are placeholders: swap freely. Villages have no priest of their own: a lay **shrine-tender** keeps
-the idols, and **Brother Tibiabin** (below) comes round. Notes marked *(draft)* haven't been reviewed yet.
+the idols, and **Brother Tibiabin** (below) comes round.
 
 **Kathrout (she)**, a Seafarer scholar, is writing a respectful and mostly accurate **ethnography of the
 island** (an early anthropologist). Helping her is a **sidequest chain, and it is how the in-game
@@ -760,10 +760,13 @@ She lives in **Mansehare**, next door to Iras.
   of Water is freed**. Carries a flame for **Dama**.
 - **Vaiere (she)**, the weaver: the Backstrap Loom, cloth gear. Shy and mute. Carries a flame for **Hotu**.
 - **Warhus (he)**, the Seafarer dock-master: imported oddities at a markup. **Iras's annoying cousin.**
-- **Telegraph:** **Rapu (he)**, overworked; he handles the tribute fleet's messages and has read
-  everything Iras sends. *(draft)*
-- **Dama**, the spearwives' headquarters, and **Iras** and his Islander wife **Gara** *(draft: torn
-  between both sides in Act 4)*.
+- **Telegraph:** **Rapu (he)**, a nervous rule-follower. He handles the tribute fleet's messages and has
+  read everything Iras sends; he's dying to tell someone, but clan rules forbid it. Late in the murder
+  case he finally cracks and talks.
+- **Dama** and the spearwives' headquarters; **Kathrout**, next door to Iras.
+- **Iras** and his Islander wife **Gara (she)**: warm, blunt and practical, the one who really runs the
+  household. She mothers Thenmy the moment he arrives, to his great embarrassment. In Act 4 she's torn
+  between her husband's people and her own.
 
 **Afarohare**
 - **Priest:** **Tenesor (he)**, an orphan raised by priests: jolly, blesses every harvest and every goat.
@@ -772,8 +775,10 @@ She lives in **Mansehare**, next door to Iras.
   Tenesor are so happy together.
 - **Ancor (he)**, the tanner: leather armor, hide work. Lives on the edge of town because of what his
   work is (the smell). In a relationship with **Nauzet**.
-- **Yeray (he)**, the vintner: keeps trying to sell wine to children. *(draft)*
-- **Atteya (she)** runs the farmhouse inn: full rest for cowries. *(draft)*
+- **Yeray (he)**, the vintner: a pompous wine snob who lectures people who just want a drink about
+  their grapes' soil. Keeps offering wine to the kids, out of obliviousness rather than malice.
+- **Atteya (she)** runs the farmhouse inn (full rest for cowries): a fussy mother hen who tucks guests in
+  and frets that Pada is too thin. Keeps the town's gossip in her head and trades it only for gossip.
 - **Telegraph:** **Nauzet (he)**, bored; plays a board game by wire with Celhare's keeper **Tiare**.
   Sidequest: carry moves, and give **Ancor** advice to pass on to Nauzet.
 - **Old Yballa (she)**, the goat matriarch and **the oldest woman on the island**. Ladder came from her herd.
@@ -801,32 +806,86 @@ She lives in **Mansehare**, next door to Iras.
 - **Lady Guayarmina (she)**, head of the mine-owning family: vain. Thinks she should have been Island
   Chief, and that she should marry Thenmy and become a queen.
 
-#### Villages *(draft)*
-| Village | Merchant | Telegraph | Notable |
-|---|---|---|---|
-| **Aguerekeu** | **Ure (he)**: salt, eels, leeches. **Riro (he)**: the reed-boat ferry | **Ana (she)**: hears a voice on the wire at night, from the marsh | **Old Guacimara (she)**: leaves offerings for the Hags, knows their rules |
-| **Idekeu** | **Tuu (he)**, pitch-burner: pitch, charcoal, glue, torches | **Ayoze (he)**: line-mender, climbs pines like a squirrel | **Hupa (she)**: the strongest logger; arm-wrestles Pada and Thenmy |
-| **Chafakeu** | **Nui (she)**: wool, cheese (summer only) | **Yeh (they)**: stays all winter, lonely and chatty | **Bentor (he)**: Ico's nephew, a shepherd boy who saw the Shepherd of the Deer and wasn't believed |
-| **Tabonakeu** | **Guize (he)**, knapper: stone heads, the Knapping Kit | **Fayna (she)**: stern, the last keeper before the desert | **Iballa (she)**, quarry master: warns you off the Stonemen |
-| **Corajakeu** | **Tahi (she)**, dye-maker: orchil, dyeing, tattoo ink | **Koro (he)**: his station hangs half over the cliff | **Old Taoro (he)**: the oldest rope-climber, all scars and stories |
-| **Tacandakeu** | **Masequera (she)**: the best batteries, electric recipes | The clan workshop; Sib's cousins tease them | **Grandmother Tegueste (she)**, Sib's grandmother and the clan matriarch: proud, and a little hurt, that Sib became a priest. Runs the hot-spring bath (full heal) |
+#### Villages
 
-#### Ritual sites *(draft)*
-| Site | Priest | Trade and notable |
-|---|---|---|
-| **Tiltapu** | **Guayasen (they)**, Keeper of the Rain Tree | Sacred Dew; may have seen a Child of the Woods |
-| **Jarcotapu** | **Itahisa (she)**, head mummifier | Trades dragon's blood. Holds the **mummy of the previous Zonfahare priest** (Juda's first murder); Itahisa thinks something was wrong with the body: a clue site |
-| **Amentapu** | **Hira (he)**, the tern-watcher | Studies the Birdmen. The reigning **egg-race champion** (after Orongo's birdman contest), a cocky teen, challenges Falmi |
-| **Banotapu** | **Tamaragua (she)**, tends the sapling | Takes offerings for Rain-Tree Branches |
+**Aguerekeu**
+- **Ure (he)**, salt, eels and leeches: cheerfully morbid; loves his leeches and names his favourites.
+  Gets on famously with Yoon.
+- **Riro (he)**, the reed-boat ferryman: almost silent, and charges in odd things instead of cowries ("a
+  feather, a song"). He's seen Parl, and won't say so until you pay the right price.
+- **Telegraph:** **Ana (she)**: jumpy and sleep-deprived; nobody believes her about the voice on the wire
+  at night. She's right: it's **Parl tapping the line** to spy.
+- **Old Guacimara (she)**: serene and almost friendly with the Hags; talks about them like difficult
+  neighbours, which is more unsettling than fear. Knows their rules.
 
-#### Wanderers *(draft)*
-- **Brother Tibiabin (they)**, the travelling priest: cheerful gossip on a donkey, on a fixed rotation of
-  villages by day. Heals, sells remedies, carries rumours and sidequest hooks.
-- **The spearwife patrol:** **Chona (she)**, the veteran leader; **Ayara (she)**, an eager rookie who idolises
-  Dama; **Big Nisa (she)**, quiet and huge. They move along the roads by act and post bounties on
-  dangerous animals; temporary allies in some fights; in Act 4 a squad you can save or lose.
-- **Orahan (he) and Guetona (she)**, an old couple who stock the bothies: they bicker constantly and leave
-  each other notes in the bothies. Met at random bothies; sell fuel, Fire-Starting Kits and trail food.
+**Idekeu**
+- **Tuu (he)**, the pitch-burner (pitch, charcoal, glue, torches): sooty, coughing and endlessly
+  optimistic. "Lungs are just a suggestion."
+- **Telegraph:** **Ayoze (he)**, a line-mender and show-off daredevil who climbs anything; races Falmi up a
+  tree.
+- **Hupa (she)**, the strongest logger: loud and competitive; arm-wrestles Pada and Thenmy, and flirts with
+  Pada, who is oblivious. The kids are horrified.
+
+**Chafakeu**
+- **Nui (she)**, wool and cheese (summer only): brisk and stingy, but slips the children extra cheese when
+  no one is looking.
+- **Telegraph:** **Yeh (they)**: stays all winter, starved for company. Talks too fast, asks a hundred
+  questions, won't let you leave, and sends long rambling messages to every station all winter.
+- **Bentor (he)**, Ico's nephew: a dreamy 12-year-old shepherd who saw the Shepherd of the Deer and wasn't
+  believed. Idolises Sib as "a real priest" and wants proof he isn't lying.
+
+**Tabonakeu**
+- **Guize (he)**, the knapper (stone heads, the Knapping Kit): a gentle perfectionist who treats stone
+  like it has feelings. Quietly delighted that Sib knaps, and critiques their technique kindly.
+- **Telegraph:** **Fayna (she)**: stern and duty-bound, a former spearwife, the last keeper before the
+  desert. Logs every Stoneman sighting.
+- **Cathaysa (she)**, the quarry master: no-nonsense; warns you off the Stonemen, and respects them
+  ("they were here first").
+
+**Corajakeu**
+- **Tahi (she)**, the dye-maker (orchil, dyeing, tattoo ink): artistic, vain about her colours, hands
+  stained red-purple for good. Tells everyone what colour suits them.
+- **Telegraph:** **Koro (he)**: terrified of heights, posted to a station hanging half over the cliff. Too
+  embarrassed to ask for a transfer.
+- **Old Taoro (he)**, the oldest rope-climber: a tall-tale teller. Half his stories are lies; the one
+  about the sea cave behind the cliffs is true.
+
+**Tacandakeu**
+- **Masequera (she)**, the best batteries and electric recipes: a fast-talking, competitive saleswoman
+  who brags about her "latest model".
+- **Telegraph:** the clan workshop. Sib's cousins **Ibaute (he)** and **Chaxiraxi (she)** are a rowdy,
+  teasing pair, jealous that Sib became a priest, but they'd defend Sib from anyone.
+- **Grandmother Tegueste (she)**, Sib's grandmother and the clan matriarch: formidable and dry-witted;
+  proud of Sib, and a little hurt that they left the craft. Runs the hot-spring bath (full heal), and
+  tests the party with clan riddles before letting them in.
+
+#### Ritual sites
+- **Tiltapu:** **Guayasen (they)**, Keeper of the Rain Tree: dreamy and slow-spoken, half in the trees.
+  Talks to the Rain Tree, and it seems to answer; believes a Child of the Woods has visited. Gives Sacred Dew.
+- **Jarcotapu:** **Itahisa (she)**, the head mummifier: clinical and unflappable, with a morbid sense of
+  humour. Trades dragon's blood. Holds the **mummy of the previous Zonfahare priest** (Juda's first
+  murder); her doubts about the body are professional pride ("I don't make mistakes; someone else did").
+  A clue site.
+- **Amentapu:** **Hira (he)**, the tern-watcher: an obsessive bird-watcher with detailed notes on the
+  Birdmen; shares them with **Kathrout** and loves the attention. **Tanausú (he)**, the reigning **egg-race
+  champion** (after Orongo's birdman contest), is a cocky, loud teen who challenges Falmi, and is secretly
+  scared of the water: beat him and his nerves show.
+- **Banotapu:** **Tamaragua (she)** tends the sapling: gentle and fiercely protective. Quietly judges
+  anyone who takes branches without leaving an offering.
+
+#### Wanderers
+- **Brother Tibiabin (they)**, the travelling priest: a cheerful gossip on a donkey, on a fixed rotation
+  of villages by day. Means well and can't keep a secret: useful, and a danger to the investigation. Kind
+  to Yoon from the start, even unsettled. Heals, sells remedies, carries rumours and sidequest hooks.
+- **The spearwife patrol:** they move along the roads by act and post bounties on dangerous animals;
+  temporary allies in some fights; in Act 4 a squad you can save or lose.
+  - **Chona (she)**, the leader: dry, tired and sardonic; has seen everything, tolerates the kids.
+  - **Ayara (she)**, the rookie: overeager, copies Dama's every phrase, badly.
+  - **Big Nisa (she)**: gentle, quiet and huge; loves small animals and feeds Patience.
+- **Orahan (he) and Guetona (she)** stock the bothies: married forty years and bickering the whole time
+  (he's forgetful, she nags). Their notes to each other in the bothies are a love story told in
+  complaints; if either dies in Act 4, the other's notes stop. Met at random bothies; sell fuel,
+  Fire-Starting Kits and trail food.
 
 ---
 
