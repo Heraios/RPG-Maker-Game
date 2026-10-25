@@ -222,7 +222,7 @@ offered them to the priesthood. It explains their look and their frailty:
 - **Androgynous, leaning feminine:** weak, late or partial puberty keeps a soft, in-between look.
 - **Short and slight.**
 - **A bit frail:** Turner-like heart differences (a bicuspid aortic valve or a narrowed aorta) mean low
-  stamina and getting winded easily: the lowest Health in the party, and tiring fast. Kidney differences
+  stamina and getting winded easily: among the lowest Health in the party, and tiring fast. Kidney differences
   and catching minor illnesses fit too. Mind and spirit are unaffected.
 - **Ears:** a childhood of ear infections left them a little deaf on one side, so Sib tilts their head
   to listen. Fitting for a priest who "hears" spirits.
@@ -241,7 +241,8 @@ In the game nobody names it: the islanders see a child the gods marked as a prie
 
 - **Weapons:** knives, staffs and slings, plus the priests' Jasper Knife and Jasper Spear. A narrow
   selection: a child trained for spiritual work, not combat.
-- **Quirks:** lowest HP in the party, permanently. Largest and most sustainable MP pool. Widest
+- **Quirks:** among the lowest HP in the party, and in practice the most fragile: Lasa and Tou have similar
+  Health but dodge by flying or come back after two turns; Sib has neither, and tires fastest. Largest and most sustainable MP pool. Widest
   spell list, which keeps growing as Sib learns magic without a teacher. Advantages in spirit and
   monster pre-combat encounters through ritual knowledge and relationships with forest spirits.
   Gets physically tired quickly.
