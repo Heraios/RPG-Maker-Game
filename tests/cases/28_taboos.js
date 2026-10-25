@@ -9,6 +9,8 @@ module.exports = {
             const menu = ['Barley Bread', 'Grilled Meat', 'Roast Chicken', 'Dried Fish', 'Shellfish', 'Hen\'s Egg', 'Goat Milk', 'Grapes', 'Strawberry-Tree Fruit', 'Islander Wine'];
             const diet = id => menu.filter(n => eats(id, n)).join(', ');
             out.yoon = diet(2); out.sib = diet(3); out.lasa = diet(4); out.dama = diet(7); out.parl = diet(8);
+            out.thenmy = diet(11); out.kath = diet(14);
+            out.seafarerLines = [A(8).tabooRefusalText(IT('Goat Milk')), A(8).tabooRefusalText(IT('Shellfish')), A(14).tabooRefusalText(IT('Grilled Meat'))].join(' | ');
             out.tou = diet(9); out.falmi = diet(10); out.patience = diet(12);
             out.lines = [2, 3, 4, 9].map(id => A(id).tabooRefusalText(IT('Dried Fish')) || '-').join(' | ');
             out.childWine = A(2).tabooRefusalText(IT('Islander Wine')) + ' / ' + A(4).tabooRefusalText(IT('Palm Wine'));
@@ -28,7 +30,10 @@ module.exports = {
         t.eq(r.sib, 'Barley Bread, Roast Chicken, Hen\'s Egg, Goat Milk, Grapes, Strawberry-Tree Fruit', 'Sib (Sooty Bird): only bird meat');
         t.eq(r.lasa, 'Shellfish, Hen\'s Egg, Goat Milk, Grapes, Strawberry-Tree Fruit', 'Lasa: nothing cooked or salted');
         t.eq(r.dama, 'Barley Bread, Dried Fish, Shellfish, Hen\'s Egg, Goat Milk, Grapes, Strawberry-Tree Fruit, Islander Wine', 'Dama (Star Mother): only sea meat');
-        t.eq(r.parl, 'Barley Bread, Grilled Meat, Roast Chicken, Dried Fish, Goat Milk, Grapes, Strawberry-Tree Fruit, Islander Wine', 'Parl (Seafarer): nothing shelled');
+        t.eq(r.parl, 'Barley Bread, Grilled Meat, Roast Chicken, Dried Fish, Grapes, Strawberry-Tree Fruit, Islander Wine', 'Parl (Seafarer man): nothing shelled, no milk');
+        t.eq(r.thenmy, r.parl, 'Thenmy eats like Parl');
+        t.eq(r.kath, 'Barley Bread, Roast Chicken, Dried Fish, Goat Milk, Grapes, Strawberry-Tree Fruit', 'Kathrout (Seafarer woman): no shells, no red meat, no wine');
+        t.eq(r.seafarerLines, 'Parl: "Milk? I\'m a grown man. Milk\'s for mothers and babies." | Parl: "Something out of a shell? Never. The gods would sink my ship." | Kathrout: "Red meat is the bull\'s flesh. It is not for a woman to eat."', 'each taboo has its own reason');
         t.eq(r.tou, 'Barley Bread, Grapes, Strawberry-Tree Fruit', 'Tou: only what grows; no wine for a child');
         t.eq(r.falmi, 'Grilled Meat, Dried Fish, Shellfish, Strawberry-Tree Fruit', 'Falmi: only wild food');
         t.eq(r.patience, 'Barley Bread, Grilled Meat, Roast Chicken, Dried Fish, Hen\'s Egg, Goat Milk', 'Patience: dog-safe food');

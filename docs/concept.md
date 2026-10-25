@@ -509,7 +509,8 @@ sidequest chain fills the compendium (see lore.md, "People of the island").
   Her accuracy against spirits may quietly improve. Open: whether she has a husband (Routledge's was the one
   who had her committed).
 - **Taboos and customs:**
-  - **Seafarer:** nothing in a shell, and no shell jewellery or armor.
+  - **Seafarer:** nothing in a shell, and no shell jewellery or armor; and, as a grown woman, **no red meat**
+    (the bull's flesh is for men; see lore.md, "The All-Seafarers").
   - **No alcohol:** *"A clear head is the only instrument I own."* (Routledge was raised a Quaker.) The one
     adult who turns down Yeray's wine.
   - Otherwise **eats what she's given** out of courtesy, asking first whose god she might offend.
@@ -1425,8 +1426,8 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
   | Tou | all meat and fish, eggs, dairy | The royal blood taboo: Tou "eats" by offering plant foods to the royal ancestors |
   | Falmi | domestic crops and domestic animals' meat, eggs and milk | Only what grows wild (grilled game counts as wild) |
   | Aday | land and sea meat, anything shelled | Mother's clan sworn to **Sooty Bird** (only what flies), father's side Seafarer (no shells): bird meat, never eggs |
-  | Kathrout | anything shelled, alcohol | Seafarer, and a scholar's clear head. Won't equip grave goods either |
-  | Parl, Thenmy | anything shelled: eggs, shellfish, turtle | The Seafarers' religious taboo. Octopus is fine. They also **won't wear turtle shell or seashells** (tortoise-shell gear, the Sea-Turtle Buckler, the Turtle-Shell Comb, the Shell Wind-Chime, the Blind Crab Shell, the Cowrie Anklet) |
+  | Kathrout | anything shelled, land meat, alcohol | Seafarer woman (no shells, no red meat), and a scholar's clear head. Won't equip grave goods either |
+  | Parl, Thenmy | anything shelled (eggs, shellfish, turtle), and dairy | The Seafarers' religious taboo, and as grown men no milk or cheese. Octopus is fine. They also **won't wear turtle shell or seashells** (tortoise-shell gear, the Sea-Turtle Buckler, the Turtle-Shell Comb, the Shell Wind-Chime, the Blind Crab Shell, the Cowrie Anklet) |
   | Patience | grapes, figs, fruit, wine, salt beef, raw shellfish and most plant food | Dog-safe food only: meat, fish, eggs, milk, cheese, bread and toasted barley |
   | Children | alcohol (wine, palm wine, grog) | "The adults won't let a child drink that." |
 
@@ -1444,7 +1445,7 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
   **Beard Lichen** for Falmi.
 - **How far food can grow each character** (every food they may eat, up to its cap; Health / Mana / Might /
   Endurance / Spirit / Speed): Dama 88/32/10/20/13/16; Yoon 83/23/16/16/7/13; Sib 83/23/13/16/7/13; Falmi
-  79/32/10/14/10/13; Patience 76/9/10/11/4/4; Lasa 74/41/7/13/7/13; Parl and Thenmy 69/23/18/15/12/15; Tou
+  79/32/10/14/10/13; Patience 76/9/10/11/4/4; Lasa 74/41/7/13/7/13; Parl and Thenmy 60/14/15/12/12/15 (no dairy); Aday 69/23/12/12/6/12; Kathrout 69/23/12/15/9/15 (no red meat); Tou
   67/21/13/16/13/19 (with the remains below). Food never raises Resolve or Wits (Insight does), except Tou's
   remains.
 - **Tou lays remains to rest** as her "meal" at a Star Mother idol (`<Lays Remains To Rest>`; tag `remains`;

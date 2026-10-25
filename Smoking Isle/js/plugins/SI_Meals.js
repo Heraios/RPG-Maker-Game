@@ -41,6 +41,8 @@
  * Actor note:          <Taboos: land, sea>
  *                      <Taboo Line: Sooty Bird's priests eat only what flies.>
  *                      (<Taboo Line Narrated: ...> for narration)
+ *                      <Taboo Line dairy: A grown man takes no milk.>
+ *                      (a line for one tag; the plain Taboo Line covers the rest)
  *   the character won't eat or drink anything with one of those tags (in
  *   the menu or in battle), and won't equip gear with one of them (the
  *   Seafarers and turtle-shell and seashell gear).
@@ -136,8 +138,13 @@ SmokingIsle.Meals = SmokingIsle.Meals || {};
             return { text: 'That\'s food for another kind of fae. %1 can\'t live on it.', narrated: true };
         }
         var taboos = this.taboos();
-        if (!tags.some(function(t) { return taboos.indexOf(t) >= 0; })) return null;
+        var broken = tags.filter(function(t) { return taboos.indexOf(t) >= 0; });
+        if (!broken.length) return null;
         var note = this.actor().note || '';
+        for (var i = 0; i < broken.length; i++) {
+            var own = new RegExp('<Taboo Line ' + broken[i] + '( Narrated)?:\\s*([^>]*)>', 'i').exec(note);
+            if (own) return { text: own[2].trim(), narrated: !!own[1] };
+        }
         var m = /<Taboo Line( Narrated)?:\s*([^>]*)>/i.exec(note);
         return m ? { text: m[2].trim(), narrated: !!m[1] } : { text: 'I won\'t eat that.', narrated: false };
     };
