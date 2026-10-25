@@ -77,9 +77,21 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
 6. **Common events 3–10** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
    Choose Yoon, Yoon's Room: Keepsakes).
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
-   effects) are also used by number.
+   effects) and 213 (Ready to Toss, Aday's Toss) are also used by number.
 7. **Plugin Manager order.** Changing a plugin's settings is fine; moving plugins up or down isn't.
 8. **Troop 13 and the Test Room (map 4)** are used by the automated tests. Copy them instead of editing.
+
+**Aday and Kathrout** (actors 13 and 14) use a few note tags of their own (`SI_Specialists.js`):
+- Glyph tattoos marked `<Sacred>` (the gods' own glyphs) can't be copied by Kathrout; she learns every
+  other glyph the party has. A First Sailor inscription can teach her a spell with the script call
+  `SmokingIsle.Specialists.study(14, skillId)`.
+- Gear with `<Taboo Tags: grave>` (the Crew clothes, the coral eye and pupil, the Crescent Pectoral) is grave
+  goods: Kathrout won't wear it. Tag any new tomb find the same way.
+- Aday's class note `<Item Power: 50>` and `<Item Saver: 25>` set how much better his items work and how
+  often he saves one; change the numbers freely.
+- Their portraits are placeholders from the faces folder (People15 for Aday, Actor3 for Kathrout): swap
+  them in the Actors tab.
+- In the Test Room, the **Recruiter** can add them.
 
 ---
 

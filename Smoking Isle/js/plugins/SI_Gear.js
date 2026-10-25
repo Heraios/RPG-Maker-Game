@@ -132,7 +132,7 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
             // Worn tier -> the weapon it wore down from.
             $.baseOf = {};
             $dataWeapons.forEach(function(w) {
-                if (w && w.siDegradesTo > 0) $.baseOf[w.siDegradesTo] = w.id;
+                if (w && w.siDegradesTo > 0 && !$.baseOf[w.siDegradesTo]) $.baseOf[w.siDegradesTo] = w.id;
             });
             $._notesParsed = true;
         }
@@ -155,6 +155,14 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
         }).filter(function(i) { return i >= 0; });
     };
 
+    // What the worn weapon in this slot is mended back into: the weapon it actually wore down from
+    // (a Gold-Plated Knife and a Copper Knife both bend into a Bent Copper Knife), else the first one.
+    Game_Actor.prototype.repairTarget = function(slotId) {
+        var worn = this.equips()[slotId], from = this._siWornFrom && this._siWornFrom[slotId];
+        if (from && $dataWeapons[from] && $dataWeapons[from].siDegradesTo === worn.id) return $dataWeapons[from];
+        return $dataWeapons[$.baseOf[worn.id]];
+    };
+
     var _Game_Action_testApply = Game_Action.prototype.testApply;
     Game_Action.prototype.testApply = function(target) {
         var item = this.item();
@@ -171,7 +179,7 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
         if (!DataManager.isItem(item) || !item.siRepair || !target.isActor()) return;
         var messages = [];
         target.repairableSlots(item.siRepair).forEach(function(slotId) {
-            var worn = target.equips()[slotId], fixed = $dataWeapons[$.baseOf[worn.id]];
+            var worn = target.equips()[slotId], fixed = target.repairTarget(slotId);
             target._equips[slotId].setObject(fixed);
             messages.push('%1\'s %2 is mended into a %3!'.format(target.name(), worn.name, fixed.name));
         });
@@ -203,6 +211,8 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
         var list = DataManager.isWeapon(item) ? $dataWeapons : $dataArmors;
         var next = item.siDegradesTo > 0 ? list[item.siDegradesTo] : null;
         this._equips[slotId].setObject(next);
+        this._siWornFrom = this._siWornFrom || {};
+        this._siWornFrom[slotId] = next ? item.id : 0;
         this.refresh();
         if (next) {
             var shed = item.siSheds > 0 ? $dataItems[item.siSheds] : null;

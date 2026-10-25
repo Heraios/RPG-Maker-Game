@@ -199,6 +199,7 @@ SmokingIsle.Equipment = SmokingIsle.Equipment || {};
     Game_Actor.prototype.changeEquip = function(slotId, item) {
         if (!this.slotAccepts(slotId, item)) return;
         if (this.tradeItemWithParty(item, this.equips()[slotId])) {
+            if (this._siWornFrom) delete this._siWornFrom[slotId];   // SI_Gear: forget what it wore down from
             this._equips[slotId].setObject(item);
             this.refresh();
         }

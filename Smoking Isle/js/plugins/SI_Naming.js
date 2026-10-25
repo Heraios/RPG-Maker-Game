@@ -9,7 +9,7 @@
  *
  * @param Name On Join
  * @desc Actor ids the player names the first time they join the party.
- * @default 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+ * @default 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
  *
  * @param Shared Names
  * @desc Actor ids that are one person and share a name (Ghost and Human
@@ -42,7 +42,7 @@ SmokingIsle.Naming = SmokingIsle.Naming || {};
 
     var params = PluginManager.parameters('SI_Naming');
     var list = function(s) { return String(s || '').split(',').map(function(x) { return Number(x.trim()); }).filter(Boolean); };
-    $.onJoin = list(params['Name On Join'] || '3, 4, 5, 6, 7, 8, 9, 10, 11, 12');
+    $.onJoin = list(params['Name On Join'] || '3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14');
     $.shared = list(params['Shared Names'] || '1, 2');
     $.maxLength = Number(params['Max Length'] || 8);
 
