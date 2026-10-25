@@ -28,29 +28,31 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
   apprentice of the village priest Juda, to perform a forbidden ritual that builds Yoon a new
   body from materials found all over the island.
 - Patience joins alongside Sib.
-- **The body's ingredients**, gathered in this order:
-  1. **Flesh of a Great Boar** of the forest → the flesh (the Act 2 climactic boss).
-  2. **A little blood from as many of the dead child's kin as possible** → the blood. The **twins**
-     (who can see Yoon) give theirs; **Mada** keeps some of her own for ritual potions; **Pada** gives
-     his when he confronts the party and joins (so this ingredient is only complete after the snow).
-  3. **Snow**, trapped in an urn and kept magically frozen until the right moment → the brain.
-  4. **A bit of pure silver**, worked into a bracelet.
-  5. **A pearl from the sea**, set into the bracelet → anchors the soul.
-  6. **A living bellflower**, kept magically alive → the heart.
-  7. **A framework of dragon-tree wood** → the skeleton.
-- **A bone from Yoon's own skeleton** also goes into the body. Yoon, Sib and Lasa take it from the remains
-  in the lava tube where the ghost woke, and that's when the player **learns for sure it was foul play**:
-  the bones were prepared like a sacrifice, and the skull was smashed from behind (common event 12,
-  "Scene: The Bone").
-- **Pada joins after the snow (ingredient 3).** He's suspicious of why Sib, who is normally *not*
-  an outdoorsy child, keeps traipsing around, and he's worried about the children since Yoon's
-  "disappearance". Then Yoon's younger **twins**, who as twins can see ghosts, tell him Yoon is a
-  ghost. He confronts Sib, and Sib and Lasa spill the beans: Yoon is dead, a ghost, and they're attempting a
-  forbidden ritual to restore the body. Pada agrees to help.
-- **Parl's quest comes at the pearl (ingredient 5).** The party hears that one of the Seafarers has
-  stolen some of the tribute pearls (Dama and her spearwives are investigating for Chief Tama and the
-  Seafarer official Iras), and hunts him down. How they deal with him decides
-  whether he's dead, an enemy, or an ally in Act 4, and Dama's attitude later on.
+- **Where the act goes:** lava tube → town → fields → marsh → lowland forest → highlands up to the snow line.
+- **The body's ingredients, in the order they're gathered:**
+  1. **A bone from Yoon's own skeleton**: the first quest, right after the Ghost and Lasa run into Sib and
+     Sib realises who the Ghost is. Yoon, Sib and Lasa take it from the remains in the lava tube where the
+     ghost woke, and that's when the player **learns for sure it was foul play**: the bones were prepared
+     like a sacrifice, and the skull was smashed from behind (common event 12, "Scene: The Bone").
+  2. Around the **town**, the **fields** near it and the **marsh**, in any order:
+     - **A bit of pure silver**, worked into a bracelet.
+     - **A pearl from the sea**, set into the bracelet → anchors the soul. **Tracking down Parl is the first
+       big quest and boss.** The party hears that one of the Seafarers has stolen some of the tribute pearls
+       (Dama and her spearwives are investigating for Chief Tama and the Seafarer official Iras). How they
+       deal with him decides whether he's dead, an enemy, or an ally in Act 4, and Dama's attitude later on.
+     - **Blood from Yoon's kin** → the blood. The **twins** (who can see Yoon) give theirs; **Mada** keeps
+       some of her own for ritual potions; **Pada** can add his once he joins.
+  3. **Pada joins.** The twins have told him Yoon is a ghost; he's been worried about the children since
+     Yoon's "disappearance", and suspicious of why Sib, normally *not* an outdoorsy child, keeps traipsing
+     around. He comes and finds Lasa, Sib and the Ghost; they tell him everything (Yoon is dead, a ghost, and
+     they're attempting a forbidden ritual), and he agrees to help find the rest of the ingredients **and to
+     deal with the Lady of the Woods** for permission to hunt the Great Boar and harvest a dragon tree.
+  4. In the **lowland forest**, with the Lady's leave:
+     - **Flesh of the Great Boar** → the flesh (the act's climactic boss).
+     - **A framework of dragon-tree wood** → the skeleton.
+     - **A living bellflower**, kept magically alive → the heart.
+  5. Up through the **highlands to the snow line**: **snow**, trapped in an urn and kept magically frozen
+     until the right moment → the brain.
 
 ### Act 3 — The Mountain
 - Now in a physical body, Yoon sets out with Juda to gather materials for a ritual to restore
@@ -119,7 +121,7 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 | 1/2 | Yoon (Ghost / Human form) | Protagonist; support generalist | Start | Never |
 | 3 | Sib | Healer and magic damage | Contact with Sib | Never |
 | 4 | Lasa | Early damage crutch and debuffer | With Sib (with Yoon from the start outside combat) | — |
-| 5 | Pada | Tank, physical damage, protector | Act 2, after the snow; the twins see Yoon's ghost | Dies on the mountain |
+| 5 | Pada | Tank, physical damage, protector | Act 2, after the Parl quest; the twins tell him Yoon is a ghost | Dies on the mountain |
 | 6 | Juda | Temporary powerhouse guest | Memory ritual trek | Betrays on the mountain |
 | 7 | Dama | Adult anchor, tank, battlefield control | During or after the mountain | Never |
 | 8 | Parl | Utility fighter and intelligence | Optional (pearl thief outcome) | — |
@@ -287,7 +289,7 @@ Yoon's father, a mighty hunter respected by the Islanders.
   a blow for a child party member whose HP drops below a threshold.
 - **Core role:** tank, physical damage dealer and party protector. His presence makes everything
   feel safe, and his absence makes everything feel dangerous.
-- Joins in Act 2 after the snow (the third body ingredient): worried about the children and
+- Joins in Act 2 after the Parl quest, once the twins have told him Yoon is a ghost: worried about the children and
   suspicious of Sib's sudden trips, he hears from Yoon's twins (who can see ghosts) that Yoon is a
   ghost, gets the rest from Sib and Lasa, and agrees to help. Dies on
   the mountain. Any of his sidequests left unfinished are permanently missed.
