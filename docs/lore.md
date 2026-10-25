@@ -728,7 +728,7 @@ the idols, and **Brother Tibiabin** (below) comes round. Notes marked *(draft)* 
 **Kathrout (she)**, a Seafarer scholar, is writing a respectful and mostly accurate **ethnography of the
 island** (an early anthropologist). Helping her is a **sidequest chain, and it is how the in-game
 compendium fills in** (enemies, items, places, customs). Her informants include **Arminda** and **Atteneri**.
-Where she lives is open.
+She lives in **Mansehare**, next door to Iras.
 
 **Collaborators in Act 4:** Acaymo, Old Yballa, Chimboyo and Atteneri (and Guayarmina is easily bought).
 
@@ -794,7 +794,8 @@ Where she lives is open.
   as the true custodian of island culture, and is annoyed at Sib for becoming high priest as a child.
   **Collaborates with the invaders.**
 - **Beneharo (he)**, the electroplater: half Seafarer. Upgrades and maintains Thenmy's silvered set.
-- **Mahina (she)**, the jeweller: rings, earrings. Beneharo's wife.
+- **Mahina (she)**, the jeweller: rings, earrings. Beneharo's wife, and **Lightning Clan** (so their
+  children are half clan, which is why Tiare can keep the station).
 - **Tahod (he)**, the silver and lead trader: their son.
 - **Telegraph:** **Tiare (she)**: their daughter, and Nauzet's board-game opponent (she's winning).
 - **Lady Guayarmina (she)**, head of the mine-owning family: vain. Thinks she should have been Island
