@@ -2397,6 +2397,76 @@ at gathering spots by an adult with a knife (Shellfish, sometimes a Pearl).
 **Placement notes:** the story events after each boss (the Daughter freed, the Great Boar's flesh, the
 Lady's leave, Parl's fate, Dama's arrival against Juda) still need writing as events.
 
+### Animal enemies (third batch)
+Enemies 54–75, skills 485–514, troops 51–74, from the art on hand. Built and checked by test 45; balance in
+`node tests/run.js --sim animals`.
+
+| Where | Enemies |
+|---|---|
+| Coast (Acts 1–2) | Shearwater (night), Gannet, Shore Crab, Spider Crab, Jellyfish |
+| Under the sea (Act 4+, Dama's underwater breathing) | Killer Fish, Swordfish, Shark |
+| Laurel forest (Act 2) | Laurel Pigeon, Wild Bees, Barn Owl |
+| Salt marsh (Act 2) | Marsh Frog, Water Snake, Heron |
+| Highlands and desert (Act 3) | Aurochs Calf, Aurochs, Rock Lizard, Desert Scorpion, Hawk |
+| Later (Act 4+) | Ridden Aurochs (a demon-ridden carcass used as a battering ram) |
+| Lava tubes (Acts 1–3) | Cave Spider |
+| Alpine meadows (Act 2) | Snow-line Hare |
+
+| Enemy | HP | ATK | DEF | MAT | AGI | Actions | Damage taken | Notes |
+|---|---|---|---|---|---|---|---|---|
+| Shearwater | 22 | 7 | 2 | 4 | 50 | Peck, Crying Chorus | Water ×0.5, Air ×1.25 | Flying; Talk: animal |
+| Gannet | 45 | 11 | 3 | 0 | 54 | Plunge Dive, Peck | Water ×0.5, Air ×1.25 | Flying; Talk: animal |
+| Shore Crab | 34 | 10 | 12 | 0 | 30 | Pinch | Crush ×1.5, Cut ×0.5, Pierce ×0.75, Water ×0.5 | Talk: animal |
+| Spider Crab | 90 | 13 | 16 | 0 | 26 | Long Claw, Pinch, Scuttle Call | Crush ×1.5, Cut ×0.5, Pierce ×0.75, Water ×0.5 | Talk: animal |
+| Jellyfish | 30 | 8 | 1 | 0 | 20 | Sting | Cut ×1.25, Crush ×0.5, Water ×0.25, Burn ×1.5 | stings attackers (Venom); no Talk |
+| Killer Fish | 60 | 14 | 6 | 0 | 50 | Frenzy Bite | Water ×0.25, Air ×1.5 | Talk: animal |
+| Swordfish | 200 | 20 | 8 | 0 | 64 | Bill Thrust, Slashing Rush | Water ×0.25, Air ×1.5 | Talk: animal |
+| Shark | 380 | 22 | 12 | 0 | 52 | Shark Bite, Bite, Blood Frenzy | Water ×0.25, Air ×1.5 | Talk: animal |
+| Laurel Pigeon | 18 | 4 | 2 | 0 | 48 | Flutter, Peck, Escape | — | Flying; Talk: animal; may bolt |
+| Wild Bees | 40 | 9 | 2 | 0 | 62 | Swarm Stings, Angry Buzz | Fire ×2, Burn ×2, Cut ×0.5, Crush ×0.5, Pierce ×0.25, Air ×1.5 | no Talk |
+| Barn Owl | 42 | 12 | 3 | 4 | 50 | Silent Swoop, Barn Screech | — | Flying; Talk: animal |
+| Marsh Frog | 60 | 11 | 6 | 0 | 40 | Leaping Slam, Croak, Bite | Water ×0.5, Fire ×1.25, Earth ×0.75 | Talk: animal |
+| Water Snake | 38 | 11 | 3 | 0 | 52 | Venom Bite | Water ×0.5 | Talk: animal; flees a threat |
+| Heron | 42 | 12 | 3 | 0 | 48 | Spear Beak | — | Flying; Talk: animal |
+| Aurochs Calf | 80 | 6 | 6 | 0 | 30 | Bleat | — | Talk: animal |
+| Aurochs | 460 | 27 | 14 | 0 | 34 | Aurochs Charge, Trample, Paw the Ground | Cut ×0.9 | Talk: animal |
+| Ridden Aurochs | 700 | 26 | 16 | 0 | 30 | Battering Ram, Dead Horns, Grave Breath | Fire ×1.5, Cut ×0.9 | Talk: spirit |
+| Rock Lizard | 55 | 13 | 8 | 0 | 46 | Bite, Tail Lash, Bask | Fire ×0.75, Water ×1.25 | Talk: animal |
+| Desert Scorpion | 60 | 14 | 14 | 0 | 40 | Stinger, Pincers | Crush ×1.25, Cut ×0.75, Fire ×0.75 | Talk: animal |
+| Hawk | 44 | 14 | 3 | 0 | 60 | Talon Dive, Peck | — | Flying; Talk: animal |
+| Cave Spider | 36 | 10 | 4 | 0 | 44 | Web Shot, Spider Bite | Fire ×1.5, Burn ×1.5 | Talk: animal |
+| Snow-line Hare | 40 | 11 | 3 | 0 | 80 | Hind Kick, Escape | — | Talk: animal; flees a threat; may bolt |
+
+**How they play:**
+- **Shearwaters** are night encounters (put their troop in a coast map's `<Night Troops>`); Crying Chorus
+  can Panic the whole party. Their tells hint at the Master of Deception's crying-child trick.
+- **Gannets** dive-bomb (Plunge Dive); **Hawks** use the Golden Eagle's Talon Dive.
+- **Jellyfish** sting whoever hits them with a weapon: enemy note `<Stings: Venom 30>` (`SI_BattleTraits`).
+  Slings, spells and talking avoid it.
+- **The Spider Crab** leads the shore crabs: at 70% Health two more scuttle in (troop event).
+- **Wild Bees** guard Bee Rocks. They can't be talked to; a lit **Torch** (Torchlight on anyone) scatters
+  them at the start of a turn (troop event), and fire hurts them double. Put the troop on the Bee Rock.
+- **The Laurel Pigeon** is the gentle fight that teaches Talk: starts friendly, Soothe and seeds work
+  fast, and it may fly off after turn 2.
+- **Water Snakes** and **Snow-line Hares** flee a threat (`<Talk Flees: threaten>`); hares may also bolt.
+- **The Heron** is the Crane's twin (the same sprite, recoloured) and genuinely a heron.
+- **The Aurochs Calf** is harmless and friendly, but the moment it's hurt the herd bull charges in
+  (troop event). The **Aurochs** drops Cowhide and Ox Horn.
+- **The Ridden Aurochs** works like the Hunched: shrugs off Venom and Bleed, weak to fire, and a rite
+  frees the carcass.
+
+**Art used:** 45x3 (shearwater), 47x3 (gannet; the heron is 47x3 at hue 200), crab1 and crab2, jellyfish1,
+En3_018Killerfish_C14_S1 (killer fish), 22x3 (swordfish), Shark, 46x3 (pigeon), Bees A, 24x3 (barn owl),
+En3_044GiantFrog_C27_S2 (the green giant frog; the Werefrog is a spear-carrying frog-man), 16x3 (water
+snake), 48x3 and 49x3 (calf and bull; the Ridden Aurochs is 49x3 at hue 280), lizard4, scorpeon A, eagle4,
+spider4 and Werehare A. Swap any picture in the Enemies tab.
+
+**Simulated balance** (attacking only, 20 battles each): coast, forest, marsh, alpine and tube troops cost
+the Act 2 party **1–16%** Health; for the Act 1 children (Ghost Yoon, Sib, Lasa) the Gannets cost about 40%
+and the Spider Crab with its crabs about half. Act 3 highland troops cost 12–26% (the Aurochs is the big
+one). Under the sea the Act 4 party loses 21–48%: the sea is meant to be dangerous, a Shark with Killer
+Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a mini-boss.
+
 ### Implementation status
 | Piece | Status |
 |-------|--------|

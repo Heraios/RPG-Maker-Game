@@ -35,6 +35,9 @@
  * Actor note:   <Child>             counts as a child for these rules.
  * Enemy note:   <Targets Weakest>   single-target attacks go for whoever has
  *                                   the lowest share of Health left (vultures)
+ * Enemy note:   <Stings: Venom 30>  hitting it with a physical attack may give
+ *                                   the attacker that state (30%; their
+ *                                   resistance applies) (jellyfish)
  * Enemy note:   <Spares Children>   won't use harmful actions on children
  *                                   unless it is Enraged (SI_Talk). With only
  *                                   children left, it uses non-harmful
@@ -179,6 +182,19 @@ SmokingIsle.BattleTraits = SmokingIsle.BattleTraits || {};
         var pool = subject.sparesChildren() && $.isHarmful(this.item()) ? $.spareablePool(this.opponentsUnit()) : this.opponentsUnit().aliveMembers();
         pool = pool.filter(function(m) { return !m.isStateAffected(below); });
         return pool.length ? [pool.reduce(function(a, b) { return b.hpRate() < a.hpRate() ? b : a; })] : targets;
+    };
+
+    // <Stings: Venom 30> (enemy note): a physical hit on it may give the attacker that state (jellyfish).
+    var _Game_Action_apply_stings = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        _Game_Action_apply_stings.call(this, target);
+        var subject = this.subject();
+        var m = target.isEnemy() && /<Stings:\s*(.+?)\s+(\d+)>/i.exec(target.enemy().note);
+        if (!m || !this.isPhysical() || !target.result().isHit() || !subject.isActor() || !subject.isAlive()) return;
+        var stateId = SmokingIsle.Ailments ? SmokingIsle.Ailments.stateByName(m[1]) : 0;
+        if (!stateId || subject.isStateAffected(stateId) || Math.random() >= Number(m[2]) / 100 * subject.stateRate(stateId) || subject.isStateResist(stateId)) return;
+        subject.addState(stateId);
+        target._siCommandMessages = (target._siCommandMessages || []).concat(['%1 is stung! (%2)'.format(subject.name(), $dataStates[stateId].name)]);
     };
 
     //-------------------------------------------------------------------------

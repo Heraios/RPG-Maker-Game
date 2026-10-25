@@ -380,6 +380,11 @@ Troops tab that change a fight as it goes: the false crane turning into a Marsh 
 vultures arriving on turn 2 (*Enemy Appear*: the vultures are ticked **Appear Halfway** in the troop), the
 Shepherd's stags and the Bull's hounds arriving at half Health. Copy a troop to make a variant.
 
+The animal troops (51–74) work the same way: the Spider Crab calls two more crabs at 70% Health, hurting the
+Aurochs Calf brings the bull, and the **Wild Bees** troop checks each turn for a lit Torch and scatters the
+swarm (put that troop on a Bee Rock event). **Shearwaters** only come at night: list their troop in the
+coast map's `<Night Troops>` note.
+
 Bosses whose defeat matters to the story (the Great Boar's flesh, the Daughter freed, Parl's fate) need
 the story to continue in the event's commands **after** Battle Processing.
 

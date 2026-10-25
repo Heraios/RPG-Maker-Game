@@ -13,12 +13,12 @@ module.exports = {
                 'The Bull of the Caves', 'Juda'];
             out.missing = names.filter(n => !EN(n)).join(', ');
             // every action is a real skill; every drop is a real thing; every troop member is a real enemy
-            const news = $dataEnemies.filter(e => e && e.id >= 14 && e.name);
+            const news = $dataEnemies.filter(e => e && e.id >= 14 && e.id <= 53 && e.name);
             out.count = news.length;
             out.badActions = news.filter(e => e.actions.some(a => !$dataSkills[a.skillId] || !$dataSkills[a.skillId].name)).map(e => e.name).join(', ');
             out.badDrops = news.filter(e => e.dropItems.some(d => d.kind && !([null, $dataItems, $dataWeapons, $dataArmors][d.kind][d.dataId] || {}).name)).map(e => e.name).join(', ');
             out.badTroops = $dataTroops.filter(tr => tr && tr.name && tr.members.some(m => !$dataEnemies[m.enemyId] || !$dataEnemies[m.enemyId].name)).map(tr => tr.name).join(', ');
-            out.troops = $dataTroops.filter(tr => tr && tr.id >= 15 && tr.name).length;
+            out.troops = $dataTroops.filter(tr => tr && tr.id >= 15 && tr.id <= 50 && tr.name).length;
             out.battlers = news.map(e => [e.name, e.battlerName]);
             // the vulture goes for the weakest
             const yoon = $gameActors.actor(2), sib = $gameActors.actor(3), pada = $gameActors.actor(5);
