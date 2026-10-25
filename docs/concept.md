@@ -150,6 +150,19 @@ they join (`SI_Naming.js`).
 readings. In dialogue the player can have Yoon (and the people around them) lean either way, or stay
 agnostic; the game respects whichever stance the player takes and never confirms it.
 
+**Personality: cute, in a feral, uncanny way.** Yoon reads as a sweet, curious child, until they don't: the
+"may actually be a demon puppeting a child homunculus" reading is always one line away. **Some dialogue
+options are scary or way out there**, and the player can pick them. Examples of the register:
+- Ghost Yoon, learning words: *"Sib. Sib. Sib. Is that what you taste like?"*
+- To a frightened villager: *"You can't see me. That's all right. I can see you very well."*
+- Looking at their new body for the first time: *"It fits. I wonder whose it was."*
+- To the Great Boar: *"Hold still. I want to be you for a little while."*
+- To Juda, any time before the truth comes out: *"You smell like the dark where I woke up."*
+- Comforting Sib: *"If anyone hurts you I'll put them under the mountain. ...Is that not what friends say?"*
+These sit beside ordinary, sweet and funny options, never instead of them. Other characters react: Sib laughs
+nervously, Lasa takes it as ghost talk, Pada goes quiet, the twins giggle, Juda watches very carefully.
+They feed the ghost-or-demon ambiguity without ever settling it.
+
 - **Weapons (Human form):** knives, staffs/spears, slings. Swords if Thenmy's sidequest is
   completed. Bows if all of Pada's sidequests are completed before his death.
 - **Ghost form:** very low HP. Dodges nearly all physical attacks and takes almost no damage from
