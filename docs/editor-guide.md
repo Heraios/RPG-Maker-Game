@@ -117,6 +117,11 @@ or third gender and then Yoon's name. **Yoon's room:** an event there calls comm
 Room: Keepsakes"** (each gender finds different things), then turns its own Self Switch A on so it only
 happens once. In the Test Room, **Yoon's Mirror** runs Choose Yoon again.
 
+**Scenes as common events:** common event **11 "Scene: Yoon's New Body"** is the body-ritual scene, ready
+to call from wherever the ritual happens. It's written with the pronoun codes, so it already reads right
+for every Yoon, and it's an example to copy for other scenes. Each answer has a `TODO` comment where
+reactions can go.
+
 **Naming newcomers** happens by itself: the first time an event's *Change Party Member* adds someone,
 the name screen opens. It never happens in battle, or on maps with `<No Name Entry>` in their note (the
 Test Room).

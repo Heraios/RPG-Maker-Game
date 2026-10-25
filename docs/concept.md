@@ -175,6 +175,11 @@ gender, worn for that old hobby. As a boy, a hide he skinned and cured himself f
 girl, the pelt of an animal she nursed and couldn't save, and wouldn't let go of; as third gender, an
 augur's mantle from the priests, for reading omens. Their new body is dressed in it when they get it back.
 
+**The new body** is **lankier** than Yoon was, with **red eyes** (the ritual scrolls said it could do that).
+The scene where Yoon wakes in it is common event 11, "Scene: Yoon's New Body": Sib, Lasa and Pada react,
+and Yoon answers *"Being in a body itches."*, *"I smell like blood and pork."* or *"This is nice. I feel
+warm. Being a ghost was cold."*
+
 - **Weapons (Human form):** knives, staffs/spears, slings. Swords if Thenmy's sidequest is
   completed. Bows if all of Pada's sidequests are completed before his death.
 - **Ghost form:** very low HP. Dodges nearly all physical attacks and takes almost no damage from
