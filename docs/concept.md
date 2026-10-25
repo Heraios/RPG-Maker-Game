@@ -526,28 +526,51 @@ reads differently on a replay.
 choice: sweet / funny / uncanny)
 
 > **Sib:** You're not asleep.
+>
 > **Yoon:** I don't know how yet. I keep waiting to fall out of myself.
+>
 > **Sib:** That's... um. That's not what sleep is. Sleep is more like... you go somewhere, and then you come back.
+>
 > **Yoon:** I did that once. It took a long time.
+>
 > **Sib:** ...Yeah.
+>
 > *Sib pokes the fire.*
+>
 > **Sib:** Can I ask you something? Do you remember anything? From before? Even a little?
+>
 > **Yoon:** I remember your voice. Before I knew it was a voice. It was the only warm thing in the dark.
+>
 > *Sib goes very quiet.*
+>
 > **Sib:** That's—okay. That's a lot. That's fine. I'm fine.
+>
 > **Yoon:** Your face is red.
+>
 > **Sib:** It's the fire! Fires are red! It's a very red fire.
+>
 > **Yoon:** [Sweet] Then I like this fire.
+>
 > **Yoon:** [Funny] Should I put it out? I can sit on it.
+>
 > **Yoon:** [Uncanny] The inside of people is red too. I've seen.
+>
 > *(Sweet)* **Sib:** ...Me too. I mean—it's a good fire. Good night!
+>
 > *(Funny)* **Sib:** Don't sit on the fire! You only just got a body!
+>
 > *(Uncanny)* **Sib:** ...Okay, that's the most you thing you've said all week. Go to sleep.
+>
 > **Yoon:** Sib?
+>
 > **Sib:** Mm?
+>
 > **Yoon:** Thank you for bringing me back.
+>
 > **Sib:** ...You'd have done it for me.
+>
 > **Yoon:** I'd have done worse things than that.
+>
 > **Sib:** ...Good night, Yoon.
 
 ### Party dynamics (draft: correct freely)
