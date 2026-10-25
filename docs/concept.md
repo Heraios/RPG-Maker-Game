@@ -588,6 +588,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Relationships and sidequests | Yoon's skill learning, Pada's bow, Thenmy's swords | Variables per character; skills and weapon types unlocked by sidequest switches |
 | Missable content | Pada's sidequests | Switches that lock when Pada dies |
 | Languages and literacy | Islander, All-Seafarer, First Sailor | Party checks on inscription and document events (Sib, Parl, Falmi, Tou, Thenmy) |
+| Compendium | Kathrout the scholar's sidequest chain (see lore.md, "People of the island") | Entries on enemies, items, places and customs unlock as you help her; ItemBook/EnemyBook-style menu |
 | Clue and evidence tracking | Murder mystery | A custom journal menu, or repurposing the ItemBook plugin |
 | Player-chosen gender | Yoon | Choice (boy, girl or third gender) that sets pronoun substitution in dialogue (he / she / they), how people address Yoon and small flavor effects. **Yoon looks the same whatever the choice.** Built: `SI_Yoon.js`; its per-gender Look settings stay empty |
 | Underwater exploration | Dama | Map events and region checks gated on her spell |

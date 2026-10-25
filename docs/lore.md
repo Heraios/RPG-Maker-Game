@@ -721,6 +721,112 @@ sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegrap
   telegraph relay huts.
 - **Save points:** Red Bowl idols in the towns and villages.
 
+### People of the island (draft cast)
+Names are placeholders: swap freely. Villages have no priest of their own: a lay **shrine-tender** keeps
+the idols, and **Brother Tibiabin** (below) comes round. Notes marked *(draft)* haven't been reviewed yet.
+
+**Kathrout (she)**, a Seafarer scholar, is writing a respectful and mostly accurate **ethnography of the
+island** (an early anthropologist). Helping her is a **sidequest chain, and it is how the in-game
+compendium fills in** (enemies, items, places, customs). Her informants include **Arminda** and **Atteneri**.
+Where she lives is open.
+
+**Collaborators in Act 4:** Acaymo, Old Yballa, Chimboyo and Atteneri (and Guayarmina is easily bought).
+
+#### Towns
+
+**Zonfahare**
+- **Priest:** Juda (he), with Sib as apprentice.
+- **Tazo (she)**, the market-wife: general goods; sharp-tongued, gives Yoon's family a little credit.
+- **Acaymo (he)**, the Celhare silver trader: a bit rude, overcharges. The Act 2 silver source.
+  **Collaborates with the invaders.**
+- **Tegue (he)**, the repair smith: a former Namethare miner who lost a hand in a collapse. He **repairs
+  weapons but can't make them** any more. Very self-deprecating.
+- **Arminda (she)**, the tattooist: glyph tattoos, finishes glyph staves. Mada's oldest friend, and an
+  **informant for Kathrout**.
+- **Mada (she)**, the herbalist: remedies, the Cooking Pot. **Her house is a free rest point.**
+- **Telegraph:** **Uira (she)** and **Poko (he)**, Sib's parents. Both are very proud of Sib, but worry
+  that Yoon is a bad influence and a little creepy (they thought so even before Yoon died). Uira logs
+  every message: a quiet source of clues.
+- **Chief Tama (he)**: likable, spineless.
+- **Old Tinerfe (they)**, the Keeper of Custom: ditzy but **deadly serious about the law** (the Judge
+  from *Ace Attorney* crossed with Captain Teague from *Pirates of the Caribbean*). Rules on what counts
+  as evidence in Yoon's case.
+
+**Mansehare**
+- **Priest:** **Tamonante (she)**, of the Star Mother's temple, and a twin. She and her twin brother
+  **Tamon** (an ordinary fisherman, who can't see ghosts) **argue constantly**.
+- **Ico (she)**, the pearl and cowrie trader: a careless haggler (good prices).
+- **Hotu (he)**, the boat-wright: nets, floats, rope. Superstitious about the sea; **helps when the Bull
+  of Water is freed**. Carries a flame for **Dama**.
+- **Vaiere (she)**, the weaver: the Backstrap Loom, cloth gear. Shy and mute. Carries a flame for **Hotu**.
+- **Warhus (he)**, the Seafarer dock-master: imported oddities at a markup. **Iras's annoying cousin.**
+- **Telegraph:** **Rapu (he)**, overworked; he handles the tribute fleet's messages and has read
+  everything Iras sends. *(draft)*
+- **Dama**, the spearwives' headquarters, and **Iras** and his Islander wife **Gara** *(draft: torn
+  between both sides in Act 4)*.
+
+**Afarohare**
+- **Priest:** **Tenesor (he)**, an orphan raised by priests: jolly, blesses every harvest and every goat.
+  Married to **Dacil**.
+- **Dacil (she)**, the miller: the Quern, gofio, flour. Very dour and gloomy. Nobody knows why she and
+  Tenesor are so happy together.
+- **Ancor (he)**, the tanner: leather armor, hide work. Lives on the edge of town because of what his
+  work is (the smell). In a relationship with **Nauzet**.
+- **Yeray (he)**, the vintner: keeps trying to sell wine to children. *(draft)*
+- **Atteya (she)** runs the farmhouse inn: full rest for cowries. *(draft)*
+- **Telegraph:** **Nauzet (he)**, bored; plays a board game by wire with Celhare's keeper **Tiare**.
+  Sidequest: carry moves, and give **Ancor** advice to pass on to Nauzet.
+- **Old Yballa (she)**, the goat matriarch and **the oldest woman on the island**. Ladder came from her herd.
+  She remembers Juda as "a strapping young man". **Collaborates with the invaders.**
+
+**Namethare**
+- **Priest:** **Echedey (they)**, a tomb priest who talks to the dead. Fascinated by Yoon being a revived
+  ghost: very nerdy about it.
+- **Tinguaro (he)**, the master smith: the island's best (copper weapons, crucible work, Golden Wire,
+  Sacred Metal). Very, very skilled and proud of it, and disdains bronze as foreign foolishness.
+- **Ruyman (he)**, the ore trader: knows everything about the mines and tunnels. Secretly leaves toys for
+  the Children of the Caves to find.
+- **Telegraph:** **Moko (she)**, foreman of the battery works: perpetually busy, forgets names constantly.
+- **Chimboyo (he)**, the mine boss: short, with a huge beard. **Collaborates with the invaders.**
+
+**Celhare**
+- **Priest:** **Atteneri (she)**: blesses silver ritual gear. One of **Kathrout's informants**. Sees herself
+  as the true custodian of island culture, and is annoyed at Sib for becoming high priest as a child.
+  **Collaborates with the invaders.**
+- **Beneharo (he)**, the electroplater: half Seafarer. Upgrades and maintains Thenmy's silvered set.
+- **Mahina (she)**, the jeweller: rings, earrings. Beneharo's wife.
+- **Tahod (he)**, the silver and lead trader: their son.
+- **Telegraph:** **Tiare (she)**: their daughter, and Nauzet's board-game opponent (she's winning).
+- **Lady Guayarmina (she)**, head of the mine-owning family: vain. Thinks she should have been Island
+  Chief, and that she should marry Thenmy and become a queen.
+
+#### Villages *(draft)*
+| Village | Merchant | Telegraph | Notable |
+|---|---|---|---|
+| **Aguerekeu** | **Ure (he)**: salt, eels, leeches. **Riro (he)**: the reed-boat ferry | **Ana (she)**: hears a voice on the wire at night, from the marsh | **Old Guacimara (she)**: leaves offerings for the Hags, knows their rules |
+| **Idekeu** | **Tuu (he)**, pitch-burner: pitch, charcoal, glue, torches | **Ayoze (he)**: line-mender, climbs pines like a squirrel | **Hupa (she)**: the strongest logger; arm-wrestles Pada and Thenmy |
+| **Chafakeu** | **Nui (she)**: wool, cheese (summer only) | **Yeh (they)**: stays all winter, lonely and chatty | **Bentor (he)**: Ico's nephew, a shepherd boy who saw the Shepherd of the Deer and wasn't believed |
+| **Tabonakeu** | **Guize (he)**, knapper: stone heads, the Knapping Kit | **Fayna (she)**: stern, the last keeper before the desert | **Iballa (she)**, quarry master: warns you off the Stonemen |
+| **Corajakeu** | **Tahi (she)**, dye-maker: orchil, dyeing, tattoo ink | **Koro (he)**: his station hangs half over the cliff | **Old Taoro (he)**: the oldest rope-climber, all scars and stories |
+| **Tacandakeu** | **Masequera (she)**: the best batteries, electric recipes | The clan workshop; Sib's cousins tease them | **Grandmother Tegueste (she)**, Sib's grandmother and the clan matriarch: proud, and a little hurt, that Sib became a priest. Runs the hot-spring bath (full heal) |
+
+#### Ritual sites *(draft)*
+| Site | Priest | Trade and notable |
+|---|---|---|
+| **Tiltapu** | **Guayasen (they)**, Keeper of the Rain Tree | Sacred Dew; may have seen a Child of the Woods |
+| **Jarcotapu** | **Itahisa (she)**, head mummifier | Trades dragon's blood. Holds the **mummy of the previous Zonfahare priest** (Juda's first murder); Itahisa thinks something was wrong with the body: a clue site |
+| **Amentapu** | **Hira (he)**, the tern-watcher | Studies the Birdmen. The reigning **egg-race champion** (after Orongo's birdman contest), a cocky teen, challenges Falmi |
+| **Banotapu** | **Tamaragua (she)**, tends the sapling | Takes offerings for Rain-Tree Branches |
+
+#### Wanderers *(draft)*
+- **Brother Tibiabin (they)**, the travelling priest: cheerful gossip on a donkey, on a fixed rotation of
+  villages by day. Heals, sells remedies, carries rumours and sidequest hooks.
+- **The spearwife patrol:** **Chona (she)**, the veteran leader; **Ayara (she)**, an eager rookie who idolises
+  Dama; **Big Nisa (she)**, quiet and huge. They move along the roads by act and post bounties on
+  dangerous animals; temporary allies in some fights; in Act 4 a squad you can save or lose.
+- **Orahan (he) and Guetona (she)**, an old couple who stock the bothies: they bicker constantly and leave
+  each other notes in the bothies. Met at random bothies; sell fuel, Fire-Starting Kits and trail food.
+
 ---
 
 ## 3b. The First Sailors
@@ -807,7 +913,8 @@ impact crater**: the Red Bowl myth is literally true.
 - **The Seafarer presence before the invasion** is small:
   - A **little garrison in Zonfahare**.
   - A few **ships docked at Mansehare**, with **warehouses** and dock infrastructure.
-  - **Iras**, the tributary official, **married to an Islander woman**.
+  - **Iras**, the tributary official, **married to an Islander woman**. A good, honest man: as a young
+    courtier in the capital he was a **mentor to Thenmy** in the prince's youth.
   - **Warhus**, the dock-master at Mansehare.
 
 ### Thenmy's plan
