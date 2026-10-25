@@ -879,7 +879,8 @@ betrothal promise** in certain endings.
 3. He took the body to **an isolated tomb only he knew about**, **defleshed** Yoon, and **burned the
    flesh in the tomb over a grave** as an offering to summon a demon.
    The tomb is **warded with First Sailor glyphs** that blind the Children of the Caves, which is why Lasa,
-   Yoon's guardian, couldn't find them (she had been off after something shiny when Yoon was taken).
+   Yoon's guardian, couldn't find them (she had been off after something shiny when Yoon was taken). To her
+   it felt like "a slippery magic wall". It vanished when the ritual failed, and she found the ghost.
 4. He felt regret at killing a child he had known for about ten years, which **"ruined" the ritual**.
    **Why regret ruined it: grief takes the offering back.** A sacrifice works only if the killer gives the
    victim up wholly to the god. On the island belief is magic, and mourning is what binds the dead to the
@@ -1173,7 +1174,8 @@ turns the more evidence was found, the villagers with her are better armed, and 
 ---
 
 ## 6. Open questions
-- **What adults see of the Children of the Caves:** a suggestion to confirm. Adults who glimpse one see an
+- **What adults see of the Children of the Caves:** a suggestion to confirm. (Pada does see and hear Lasa,
+  and calls her "spirit".) Adults who glimpse one see an
   uncanny little fae figure (the winged woman in red, the chubby man in a broad hat); children see another
   child.
 - ~~What is the "demon" Juda tried to summon?~~ Answered: Yoon themself (see "The murder").

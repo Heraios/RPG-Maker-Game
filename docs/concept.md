@@ -258,6 +258,11 @@ her biggest moments: guilt she has to live with, and a reason she never leaves Y
   the Children of the Caves (First Sailor creations themselves). She searched and couldn't see through it.
 - **When she realises:** when Yoon gets a body (end of Act 2). The new body takes after the family's
   blood, and when she sees the face she watched over for ten years, it clicks.
+  (In common event 11: *"Y-you! You're. You're my kid. Oh no. Oh no oh no."*)
+- **What guardians know:** a face, not a name. Lasa never knew Yoon's name. Before the murder she **felt
+  something weird around Yoon** (Juda, though she couldn't tell); then a **"slippery magic wall"** (his
+  ward) hid Yoon from her; then **the wall went away** and she found a ghost she didn't connect with her
+  child.
 
 - **Weapons:** knives only (small hands).
 - **Quirks:** flies, so she dodges most melee attacks. Decent ATK, lowish HP, high MP and a small
