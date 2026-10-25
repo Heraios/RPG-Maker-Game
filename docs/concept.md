@@ -139,6 +139,7 @@ gender**, which the game and the village translate with **they/them** (as for Si
 | How people address Yoon | son, lad | daughter, lass | child, little priest |
 | Expected job as a kid | Hunter, like Pada | Herbalist, like Mada | Priest |
 | Closer to | Pada | Mada | Both |
+| Morbid childhood hobby (why the eeriness isn't new) | Butchering the game from Pada's hunts | Vet work on the family's animals with Mada | Augury: reading omens and entrails with the priests |
 | Small effect | **Stalk +20**; animals start a little friendlier | **Remedies Yoon uses heal 20% more** | **Rite +20**; spirits start a little friendlier |
 | In Yoon's room (with a body) | The goat-hair sling Pada made, a tusk from the first hunt | A jar of leeches Mada kept alive, herbs Yoon dried | Sandalwood beads from the priests, the gourd rattle Sib traded for |
 
@@ -162,6 +163,12 @@ options are scary or way out there**, and the player can pick them. Examples of 
 These sit beside ordinary, sweet and funny options, never instead of them. Other characters react: Sib laughs
 nervously, Lasa takes it as ghost talk, Pada goes quiet, the twins giggle, Juda watches very carefully.
 They feed the ghost-or-demon ambiguity without ever settling it.
+
+**And it's not that big a leap from before.** Living Yoon was already a bit off-putting: a child happily
+elbow-deep in something. As a boy, butchering the game from Pada's hunts; as a girl, doing vet work on the
+family's animals with Mada; as third gender, augury with the priests (reading omens and entrails). So when
+Yoon says something ghoulish, the people who knew them can't tell whether it's the demon or just *Yoon*.
+That's both the joke and the horror.
 
 - **Weapons (Human form):** knives, staffs/spears, slings. Swords if Thenmy's sidequest is
   completed. Bows if all of Pada's sidequests are completed before his death.
@@ -464,6 +471,14 @@ ruler, now trapped in a child-sized wooden doll with jointed limbs.
 - **Parl and Lasa:** two thieves with an eye for shiny things; Parl as the party's rogue uncle.
 - **Thenmy and Sib:** scholar and priest: scripts, magic, Sib learning Seafarer writing.
 - **Dama and Falmi:** a warrior mentoring the child tank.
+
+**The kids' dynamic** (the comedy core):
+- **Yoon:** the weird gremlin kid.
+- **Sib:** the weird kid's nerdy best friend.
+- **Lasa:** the bubbly, genki girl.
+- **Tou:** the preppy rich girl (an ancient queen).
+- **Falmi:** the jocky, high-energy kid.
+A school-trip friend group, with a ghost, a fae, a doll queen and a forest prince in it.
 
 **The royals** (Thenmy, Tou, Falmi; Dama as chieftess by consent)
 - **Shaped by elders:** Tou a puppet of the Navigator Lords, Falmi grown four centuries to be heir,
