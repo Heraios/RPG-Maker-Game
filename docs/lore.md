@@ -955,6 +955,17 @@ impact crater**: the Red Bowl myth is literally true.
 ### The All-Seafarers
 - **Homeland:** the jagged, marginal coasts on the crater rim, which is where they get **tin** (and
   so bronze, which the Islanders lack).
+- **The capital, Keftiu** (an ancient Egyptian name for Crete): about **60,000 people**, as big as the
+  largest real Bronze Age cities (Thebes in Egypt, Ur) and the greatest city anyone in the world knows.
+  That is about **fifteen times the whole island**; Zonfahare would be one neighbourhood. A palace city in
+  the Minoan and Mycenaean style (painted halls, light-wells, bull-leaping courts, storerooms, scribes
+  tallying every jar of oil) around a huge harbour. **It can't feed itself:** grain fleets and tribute
+  must flow in constantly, another quiet reason for the invasion. Thenmy grew up here, which is why he
+  has no wilderness skills. The Dark Lady and the Red Lady live here.
+  > **Sib:** How many people live in Keftiu!?
+  >
+  > **Thenmy:** The scribes say 47,042 citizens live in the city. Of course that doesn't count children,
+  > or foreigners, or resident travelers from elsewhere in the Empire, or—
 - **Inspirations:** a mixture of the **Minoans** (Crete), the **Nuragic** tower-builders of Sardinia,
   **ancient Egypt** and the **Mycenaean Greeks**.
 - **Religion:** they especially venerate the **bull-men**, the husbands of various minor goddesses, for
