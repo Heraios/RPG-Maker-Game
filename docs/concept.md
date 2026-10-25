@@ -129,6 +129,8 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 | 10 | Falmi | Child tank | Optional (Lady of the Woods) | — |
 | 11 | Thenmy | Premier tank and damage | End of Act 4 (three paths) | — |
 | 12 | Patience | Pseudo party member | With Sib | — |
+| 13 | Aday | Mechanist: items, gadgets, repairs | Required: Act 4, to build the drill for the deep tubes | — |
+| 14 | Kathrout | Pure mage (learned from books) | Optional: Act 4, after she finds her book in an officer's tent | If she's sent home to Keftiu |
 
 ### Yoon — The Protagonist
 The ghost of a murdered child who has lost all memories from before death. Or possibly a demon
@@ -444,6 +446,80 @@ ruler, now trapped in a child-sized wooden doll with jointed limbs.
   behave. Can only be permanently killed if her moai's coral eyes are destroyed, which is a story
   threat rather than a gameplay mechanic.
 
+### Aday — The Mechanist
+The youngest child of **Beneharo** (the half-Seafarer electroplater of Celhare) and **Mahina** (Lightning
+Clan), about 10: younger brother of Tahod and Tiare. Raised between the plating vats and the telegraph keys,
+he takes everything apart, and he's the only kid on the island with bronze tools (scrounged from his
+father's shop). In the invasion his family is distrusted by both sides, which is half of why he runs off
+with the party: to prove whose side he's on.
+
+- **Why he's required:** the party needs **a drill to dig deeper into the lava tubes**, and only Aday can
+  design it.
+- **The drill breaks the island's oldest *tapu*.** The deep tubes below the old tombs are **the
+  Destroyer's**, and nobody digs there. **Atteneri** uses it against Sib ("a child priest letting a
+  half-foreign child bore into the Destroyer's house"), some Islanders blame Aday's Seafarer blood, and Sib,
+  as high priest, has to rule on it. Permission could be a scene: a rite at Jarcotapu, Itahisa's grudging
+  blessing, an offering to the Star Mother.
+- **Combat role: the item expert.** Remedies, meals and battle items work about 50% better in his hands;
+  **Toss** throws one item over the whole party (the party's second source of healing); **Tinker** restores
+  Voltaic charges mid-battle; gadgets (better Chlorine Jars, Pitch Firepots, Smoke Pots, Caltrops) with a
+  chance not to use one up. Low Health and attack; nearly useless with an empty bag.
+- **Outside battle:** repairs worn gear at camp and does simple metalwork without a smith: a walking
+  crafting station. Turns scrap into something.
+- **Taboos and customs:**
+  - **The family-oath clash:** his mother's clan is sworn to **Sooty Bird** (only meat that flies), his
+    father's side is Seafarer (**nothing in a shell**). So: bird meat, never eggs. *"Mum says birds. Grandpa
+    says no shells. An egg is a bird AND a shell, so... no. I've thought about this a lot."*
+  - **Never cut a line.** The clan's deepest rule: a telegraph wire is never cut, not even the enemy's. In
+    Act 4 he refuses to cut the invaders' lines and finds another way (tap them, reroute them, feed them
+    false messages).
+  - **Clan secrets stay in the clan.** He won't tell outsiders how batteries are made (Kathrout asks
+    constantly). Sib, clan by birth, is the only one he talks shop with.
+  - **Nothing is scrap.** He throws nothing away.
+  - From his father: he wears bronze, skips shell on days he's thinking of his grandfather, and bows to
+    Thenmy without being told (then is embarrassed).
+
+### Kathrout — The Scholar
+A wealthy, independent Seafarer scholar from Keftiu, writing the first proper account of the Islanders.
+Her name distorts **Katherine Routledge**, who led the 1914–15 expedition to Rapa Nui, recorded the birdman
+cult and the islanders' oral history, credited her informants by name, and was caught between the islanders
+and the company that ran the island during the 1914 uprising. Lives in Mansehare, next door to Iras. Her
+sidequest chain fills the compendium (see lore.md, "People of the island").
+
+- **Personality:** brisk and fearless; terrible at small talk, wonderful at listening; morally serious about
+  understanding people; pedantic, and honest about her own mistakes. Her blind spot is the empire: she thinks
+  a good book will make the Seafarers treat the island better, and doesn't yet see that a good book is also
+  a very good map.
+- **Her book becomes the invasion's map.** In Act 4 she finds it in an officer's tent, every telegraph
+  station underlined, and has to choose: burn it, hide it, or give it to Dama. (She mirrors Parl, the other
+  Seafarer who wrote everything down: "Welcome to the club.")
+- **Combat role: pure mage.** She learned magic from books (anyone literate can use a Codex, and she's the
+  most literate person on the island): she learns spells from First Sailor inscriptions and Glyph Tablet
+  Shards, including glyphs others need quests for. Highest magic attack in the game, a big MP pool, frail for
+  an adult. Tou keeps the First Sailor burst; Kathrout is the steady caster.
+- **She can't see ghosts or spirits** (she's an adult): against spirits her spells go astray unless someone
+  points the target out. (Lasa, oddly, she can see.)
+- **Proposed arc, the illness** (after Routledge's last years, handled with care): guilt over the book and
+  the war wear her down, and she starts hearing voices: her informants, the crying from the shearwater coast.
+  The game never says whether it's spirits or illness (as with Yoon), and never makes it a monster or cures
+  it with magic; she stays sharp and keeps writing. The Seafarers would ship her home to an asylum; the
+  Islanders, whose priesthood takes in people who perceive what others can't, would look after her. The
+  party can keep her on the island (she finishes the book at Namethare with Echedey, or at the Star Mother's
+  temple) or fail to, and she's sent home (and leaves the party; her last letter comes in the epilogue).
+  Her accuracy against spirits may quietly improve. Open: whether she has a husband (Routledge's was the one
+  who had her committed).
+- **Taboos and customs:**
+  - **Seafarer:** nothing in a shell, and no shell jewellery or armor.
+  - **No alcohol:** *"A clear head is the only instrument I own."* (Routledge was raised a Quaker.) The one
+    adult who turns down Yeray's wine.
+  - Otherwise **eats what she's given** out of courtesy, asking first whose god she might offend.
+  - **The collector's lesson:** she first wants to ship a First Sailor moai to Keftiu "where scholars can
+    study it". Then she meets Tou, and learns the coral eyes she wanted are a person. After that she **never
+    takes from a grave or a shrine** (in play: she won't equip grave goods), credits every informant, and
+    honours "withheld at the priest's request" entries.
+  - Salutes bull-men statues out of habit and treats beef as holy, like Thenmy. Won't sit while Thenmy
+    stands, then remembers she disapproves of kings, and sits down very deliberately.
+
 ### Voices (writing guide)
 How each party member talks, with sample lines. In real dialogue write `\N[n]` for names and the `\YP[...]`
 codes for Yoon's pronouns (see the editor guide).
@@ -598,6 +674,10 @@ choice: sweet / funny / uncanny)
   painfully sheltered about everything real. The most gracious person in the party, carrying the worst
   truth.
 - **Patience:** a good dog.
+- **Aday:** a tinkering, proud, rule-bound clan kid with a Seafarer grandfather: half of everything, and
+  determined to prove it makes him more, not less.
+- **Kathrout:** brisk, fearless, earnest; listens better than she talks. Learns the difference between
+  studying a people and taking from them.
 
 **Most friction**
 1. **Dama and Thenmy:** the island's defender and the prince who invaded it, and they may marry. Enemies
@@ -1341,6 +1421,8 @@ Levels (Insight) only raise Spirit (MDF) and Wits (LUK), so **food is how HP, MP
   | Lasa | anything cooked or salted | "Thank you, but I can't eat human food." Fae food: fruit, honey, milk, eggs, raw shellfish |
   | Tou | all meat and fish, eggs, dairy | The royal blood taboo: Tou "eats" by offering plant foods to the royal ancestors |
   | Falmi | domestic crops and domestic animals' meat, eggs and milk | Only what grows wild (grilled game counts as wild) |
+  | Aday | land and sea meat, anything shelled | Mother's clan sworn to **Sooty Bird** (only what flies), father's side Seafarer (no shells): bird meat, never eggs |
+  | Kathrout | anything shelled, alcohol | Seafarer, and a scholar's clear head. Won't equip grave goods either |
   | Parl, Thenmy | anything shelled: eggs, shellfish, turtle | The Seafarers' religious taboo. Octopus is fine. They also **won't wear turtle shell or seashells** (tortoise-shell gear, the Sea-Turtle Buckler, the Turtle-Shell Comb, the Shell Wind-Chime, the Blind Crab Shell, the Cowrie Anklet) |
   | Patience | grapes, figs, fruit, wine, salt beef, raw shellfish and most plant food | Dog-safe food only: meat, fish, eggs, milk, cheese, bread and toasted barley |
   | Children | alcohol (wine, palm wine, grog) | "The adults won't let a child drink that." |

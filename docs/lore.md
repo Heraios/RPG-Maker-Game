@@ -641,7 +641,8 @@ battery into working; you build it right.
 **The Lightning Clan.** One large clan, a kinship network spread across the whole island, builds and tends
 the batteries and runs the telegraph. Compare the Tuareg *inadan*, a hereditary artisan class: the craft
 passes down the family, the clan marries largely among itself, and its people are needed everywhere yet
-stand a little apart from ordinary kin lines.
+stand a little apart from ordinary kin lines. **The clan is sworn to Sooty Bird** (only meat that flies),
+which is why its stations stand at the Bird idols.
 - **Every town, village and ritual site has a telegraph station that is also a battery plant**, staffed by
   the clan: telegraph keepers, battery tenders and line menders.
 - **The battery factory** is at **Tacandakeu**, the village nearest the volcano crater, beside the hot
@@ -728,7 +729,8 @@ the idols, and **Brother Tibiabin** (below) comes round.
 **Kathrout (she)**, a Seafarer scholar, is writing a respectful and mostly accurate **ethnography of the
 island** (an early anthropologist). Helping her is a **sidequest chain, and it is how the in-game
 compendium fills in** (enemies, items, places, customs). Her informants include **Arminda** and **Atteneri**.
-She lives in **Mansehare**, next door to Iras.
+She lives in **Mansehare**, next door to Iras. She's also an optional **party member** (a pure mage, from Act
+4); see concept.md, "Kathrout — The Scholar".
 
 **Collaborators in Act 4:** Acaymo, Old Yballa, Chimboyo and Atteneri (and Guayarmina is easily bought).
 
@@ -803,6 +805,8 @@ She lives in **Mansehare**, next door to Iras.
   children are half clan, which is why Tiare can keep the station).
 - **Tahod (he)**, the silver and lead trader: their son.
 - **Telegraph:** **Tiare (she)**: their daughter, and Nauzet's board-game opponent (she's winning).
+- **Aday (he)**: their youngest, about 10, a tinkerer. A **required party member** in Act 4: he designs the
+  drill that digs into the deep tubes (see concept.md, "Aday — The Mechanist").
 - **Lady Guayarmina (she)**, head of the mine-owning family: vain. Thinks she should have been Island
   Chief, and that she should marry Thenmy and become a queen.
 
