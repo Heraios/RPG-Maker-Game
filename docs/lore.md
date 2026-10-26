@@ -982,6 +982,23 @@ tattoos). **Tou** (a First Sailor), and **Falmi** and **Lasa** (innately magical
 **Ghost Yoon** uses only the unique ghost abilities; Yoon learns regular magic and weapon skills
 after gaining a body.
 
+**What a glyph is.** Every glyph is one of three things, or a combination of them:
+1. **A god's True Name, or an aspect of a god.** The god glyphs (Hiri for Sooty Bird, Gita for the Star
+   Mother, Emu for the Red Bowl, Ihi for the Destroyer...). An *aspect* is a part of a god: Geha and Huhuti
+   are the Lady of the Woods' two aspects, and Viri (in three tiers) is her Daughters of the Wells. Reading
+   one is speaking a piece of a god's name, which is why they are earned at **shrines**, guarded by priests,
+   gifted rather than taught, and why a scholar like Kathrout can't simply copy them.
+2. **A primal force or element.** The generic spells: Ahi (fire), Rari (water), Hagu (air), Keri (earth),
+   and the other forces: Mahu (healing), Ara (life returning), Raau (plant-medicine), Kami (the mind), Keva
+   (blinding dark), Gau (the bite, hunger). Anyone who can read them can use them.
+3. **Combinations.** Mahu-Ara (healing and revival together), and Yoon's compound Touches
+   (Burning-Chilling and the rest). A god combined with a force is the strongest and most dangerous kind:
+   Yoon's **Infernal** skills are the **Destroyer's name** (the ??? glyph on Yoon's face) bound to fire and
+   the other forces.
+
+Tiers (-ben, -sin) and targeting (-gun, -hari) are grammar on top of any glyph. The Destroyer's
+"distortion of the system", which the First Sailors used, works by binding his name into other glyphs.
+
 ### Demons
 **Demons are servants and creations of the Destroyer**, as the People of the Forest are of the
 Ladies, but greater, because the Destroyer is a far more powerful god of an **earlier generation**.
