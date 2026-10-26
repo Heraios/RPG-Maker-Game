@@ -26,8 +26,10 @@
  *  |  HT / MN / FT on each card                           | strip  |
  *  +--------------------------------------------------------------+
  *
- * - Battle windows have plain dark green backs; the battle background shows
- *   only inside the battlefield's frame.
+ * - Battle windows have plain dark green backs and a single rounded orange
+ *   border, with small gaps between them; the battle background shows only
+ *   inside the battlefield's frame. Sizes and colours follow the mock-up
+ *   ($.FONT and $.COLORS at the top of the plugin).
  * - Lists open in the column under a title, skills without icons, and
  *   the help sits under a divider at the column's foot.
  * - The card of whoever is acting lifts and gets a gold frame (a friend being
@@ -51,81 +53,113 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
 (function($) {
     'use strict';
 
-    $.STRIP_HEIGHT = 60;
-    $.COLUMN_WIDTH = 400;
-    $.BAR_HEIGHT = 84;
-    $.CARD_HEIGHT = 176;
-    $.LIFT = 20;
-    $.ALLY_WIDTH = 248;
-    $.GAP = 8;
+    // Measurements from the mock-up (1280 x 720).
+    $.MARGIN = 8;          // round the screen's edge, and between windows
+    $.STRIP_HEIGHT = 48;
+    $.VIEW_HEIGHT = 370;
+    $.COLUMN_WIDTH = 356;
+    $.BAR_HEIGHT = 58;
+    $.CARD_HEIGHT = 168;
+    $.CARD_MAX_WIDTH = 290;
+    $.LIFT = 24;
+    $.ALLY_WIDTH = 242;
     $.INSET = 6;           // lists and commands sit inside the column's frame
-    $.TITLE_HEIGHT = 36;
-    $.HELP_HEIGHT = 72;
+    $.TITLE_HEIGHT = 40;
+    $.HELP_HEIGHT = 84;
     $.COLORS = {
-        back: '#1f2a14', screen: '#111111', label: '#8fd3ff', prompt: '#ffd76b', place: '#9be36b',
-        cost: '#bbbbbb', divider: '#d98c1f'
+        back: '#1f2a14', screen: '#111111', frame: '#d98c1f', outline: '#3b2a0c', active: '#ffd76b',
+        target: '#8fd3ff', label: '#8fd3ff', prompt: '#ffd76b', place: '#9be36b', cost: '#bbbbbb',
+        divider: '#d98c1f', faceBorder: '#777777', faceBack: '#4a5a3a'
     };
-    // Frame tints for a card: gold for whoever is acting, blue for a friend being picked.
-    $.SKIN_TONES = { active: [30, 75, 60], target: [-100, 40, 200] };
+    // Font sizes (the game's pixel font draws smaller than the mock-up's).
+    $.FONT = { strip: 22, info: 24, command: 32, bar: 26, name: 32, stat: 20, allyTitle: 18, allyName: 20,
+        allyHp: 18, list: 24, title: 28, help: 20 };
     // Troop positions in the database are laid out for the old 816 x 624 screen.
     $.BASE_WIDTH = 816;
     $.BASE_HEIGHT = 624;
 
     $.rects = function() {
-        var W = Graphics.boxWidth, H = Graphics.boxHeight;
-        var cardsY = H - $.CARD_HEIGHT - $.LIFT;
-        var barY = cardsY - $.BAR_HEIGHT;
-        var viewH = barY - $.STRIP_HEIGHT;
+        var W = Graphics.boxWidth, H = Graphics.boxHeight, M = $.MARGIN;
+        var viewY = 6 + $.STRIP_HEIGHT + M, barY = viewY + $.VIEW_HEIGHT + M;
+        var cardsY = barY + $.BAR_HEIGHT + M;
         return {
-            strip: { x: 0, y: 0, width: W, height: $.STRIP_HEIGHT },
-            view: { x: 0, y: $.STRIP_HEIGHT, width: W - $.COLUMN_WIDTH, height: viewH },
-            column: { x: W - $.COLUMN_WIDTH, y: $.STRIP_HEIGHT, width: $.COLUMN_WIDTH, height: viewH },
-            bar: { x: 0, y: barY, width: W, height: $.BAR_HEIGHT },
-            cards: { x: 0, y: cardsY, width: W, height: H - cardsY }
+            strip: { x: M, y: 6, width: W - M * 2, height: $.STRIP_HEIGHT },
+            view: { x: M, y: viewY, width: W - M * 3 - $.COLUMN_WIDTH, height: $.VIEW_HEIGHT },
+            column: { x: W - M - $.COLUMN_WIDTH, y: viewY, width: $.COLUMN_WIDTH, height: $.VIEW_HEIGHT },
+            bar: { x: M, y: barY, width: W - M * 2, height: $.BAR_HEIGHT },
+            cards: { x: M, y: cardsY, width: W - M * 2, height: H - cardsY }
         };
     };
 
-    // Battle windows get a plain dark green back instead of the windowskin's.
+    // A rounded rectangle path on a bitmap's canvas.
+    $.roundRect = function(ctx, x, y, w, h, r) {
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.arcTo(x + w, y, x + w, y + h, r);
+        ctx.arcTo(x + w, y + h, x, y + h, r);
+        ctx.arcTo(x, y + h, x, y, r);
+        ctx.arcTo(x, y, x + w, y, r);
+        ctx.closePath();
+    };
+
+    // Battle windows get a plain dark green back, and a single rounded orange
+    // border with a dark outline, instead of the windowskin's.
     var _Window_refreshBack = Window.prototype._refreshBack;
     Window.prototype._refreshBack = function() {
         if (!this._siSolid) return _Window_refreshBack.call(this);
-        // Frameless ones fill their whole rect, so panels side by side leave no seam.
-        var m = this._siFrameless ? 0 : this._margin, w = this._width - m * 2, h = this._height - m * 2;
-        var bitmap = new Bitmap(w, h);
+        var w = this._width, h = this._height, bitmap = new Bitmap(Math.max(w, 1), Math.max(h, 1));
         this._windowBackSprite.bitmap = bitmap;
         this._windowBackSprite.setFrame(0, 0, w, h);
-        this._windowBackSprite.move(m, m);
-        if (w > 0 && h > 0) {
+        this._windowBackSprite.move(0, 0);
+        if (w <= 0 || h <= 0) return;
+        if (this._siFrameless) {
+            // Panels inside the column fill their whole rect, so side by side they leave no seam.
             bitmap.fillAll($.COLORS.back);
-            var tone = this._colorTone;
-            bitmap.adjustTone(tone[0], tone[1], tone[2]);
+        } else {
+            var ctx = bitmap._context;
+            $.roundRect(ctx, 2, 2, w - 4, h - 4, 7);
+            ctx.fillStyle = $.COLORS.back;
+            ctx.fill();
+            bitmap._setDirty();
         }
+        var tone = this._colorTone;
+        bitmap.adjustTone(tone[0], tone[1], tone[2]);
     };
 
+    var _Window_refreshFrame = Window.prototype._refreshFrame;
+    Window.prototype._refreshFrame = function() {
+        if (!this._siFrame) return _Window_refreshFrame.call(this);
+        var w = this._width, h = this._height, bitmap = new Bitmap(Math.max(w, 1), Math.max(h, 1));
+        this._windowFrameSprite.bitmap = bitmap;
+        this._windowFrameSprite.setFrame(0, 0, w, h);
+        if (w <= 8 || h <= 8) return;
+        var ctx = bitmap._context;
+        $.roundRect(ctx, 1, 1, w - 2, h - 2, 9);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = $.COLORS.outline;
+        ctx.stroke();
+        $.roundRect(ctx, 4, 4, w - 8, h - 8, 6);
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = this._siFrameColor || $.COLORS.frame;
+        ctx.stroke();
+        bitmap._setDirty();
+    };
+
+    // frameless: no border of its own (it sits inside the column's).
     $.makeSolid = function(win, frameless) {
         win._siSolid = true;
         win._siFrameless = !!frameless;
+        win._siFrame = !frameless;
         win.backOpacity = 255;
         win._refreshBack();
+        win._refreshFrame();
         if (frameless) win._windowFrameSprite.visible = false;
     };
 
-    // The windowskin with its frame tinted ('' for the plain one).
-    $._skins = {};
-    $.skin = function(kind) {
-        var base = ImageManager.loadSystem('Window');
-        if (!kind || !base.isReady()) return base;
-        if (!$._skins[kind]) {
-            // Only the frame (96..192 x 0..96); text colours and the cursor stay as they are.
-            var bitmap = new Bitmap(base.width, base.height), frame = new Bitmap(96, 96), tone = $.SKIN_TONES[kind];
-            bitmap.blt(base, 0, 0, base.width, base.height, 0, 0);
-            frame.blt(base, 96, 0, 96, 96, 0, 0);
-            frame.adjustTone(tone[0], tone[1], tone[2]);
-            bitmap.clearRect(96, 0, 96, 96);
-            bitmap.blt(frame, 0, 0, 96, 96, 96, 0);
-            $._skins[kind] = bitmap;
-        }
-        return $._skins[kind];
+    $.setFrameColor = function(win, color) {
+        if (win._siFrameColor === color) return;
+        win._siFrameColor = color;
+        win._refreshFrame();
     };
 
     // Give one window its own padding, font size and line height.
@@ -152,7 +186,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     };
 
     $.drawBar = function(win, x, y, width, rate, c1, c2, target) {
-        var c = win.contents, h = 8;
+        var c = win.contents, h = 6;
         c.fillRect(x, y, width, h, win.gaugeBackColor());
         var low = Math.min(rate, target === undefined ? rate : target);
         c.gradientFillRect(x, y, Math.floor(width * low), h, c1, c2);
@@ -175,13 +209,20 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         return '';
     };
 
+    // A portrait in a grey-bordered box (an empty box until there's art).
     $.drawFace = function(win, actor, x, y, size) {
-        var bitmap = ImageManager.loadFace(actor.faceName());
+        var c = win.contents, bitmap = actor.faceName() ? ImageManager.loadFace(actor.faceName()) : null;
         var pw = Window_Base._faceWidth, ph = Window_Base._faceHeight, i = actor.faceIndex();
-        if (!bitmap.isReady()) return;
-        if (actor.isDead()) win.contents.paintOpacity = 110;
-        win.contents.blt(bitmap, i % 4 * pw, Math.floor(i / 4) * ph, pw, ph, x, y, size, size);
-        win.contents.paintOpacity = 255;
+        c.fillRect(x, y, size, size, $.COLORS.faceBorder);
+        c.fillRect(x + 2, y + 2, size - 4, size - 4, $.COLORS.faceBack);
+        if (!bitmap || !bitmap.isReady()) return;
+        if (actor.isDead()) c.paintOpacity = 110;
+        c.blt(bitmap, i % 4 * pw, Math.floor(i / 4) * ph, pw, ph, x + 2, y + 2, size - 4, size - 4);
+        c.paintOpacity = 255;
+    };
+
+    $.faceReady = function(actor) {
+        return !actor.faceName() || ImageManager.loadFace(actor.faceName()).isReady();
     };
 
     //-------------------------------------------------------------------------
@@ -267,7 +308,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         this.visible = !!actor;
         $.clearFinishedPopups(this);
         if (!actor) return;
-        $.updatePopups(this, actor, this.width / 2, 92);
+        $.updatePopups(this, actor, this.width / 2, 88);
         var mark = $.highlight(actor);
         this._lift = (this._lift + (mark ? 4 : -4)).clamp(0, $.LIFT);
         if (this._lastHp !== null && actor.hp < this._lastHp) this._shake = 12;
@@ -275,13 +316,12 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         var dx = this._shake > 0 ? Math.round(Math.sin(this._shake-- * 1.7) * 4) : 0;
         this.x = this._baseX + dx;
         this.y = this._baseY - this._lift;
-        var skin = $.skin(mark);
-        if (this.windowskin !== skin) this.windowskin = skin;
+        $.setFrameColor(this, mark === 'active' ? $.COLORS.active : mark === 'target' ? $.COLORS.target : null);
         if (actor.isDead()) this.setTone(-40, -40, -40);
         else this.setTone(0, 0, 0);
         var sig = [actor.actorId(), actor.hp, $.target(actor), actor.mhp, actor.mp, actor.mmp, actor.tp,
             actor.states().map(function(s) { return s.id; }).join(), this.width,
-            ImageManager.loadFace(actor.faceName()).isReady()].join('|');
+            $.faceReady(actor)].join('|');
         if (sig !== this._signature) {
             this._signature = sig;
             this.refresh();
@@ -292,24 +332,25 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         var actor = this.actor(), c = this.contents;
         c.clear();
         if (!actor) return;
-        var w = this.contentsWidth(), face = 72;
+        var w = this.contentsWidth(), face = 72, F = $.FONT;
         $.drawFace(this, actor, 0, 0, face);
         this.resetFontSettings();
-        c.fontSize = 24;
+        c.fontSize = F.name;
         this.changeTextColor(this.hpColor(actor));
-        this.drawText(actor.name(), face + 10, 0, w - face - 10);
-        this.drawActorIcons(actor, face + 10, 38, w - face - 10);
-        c.fontSize = 15;
-        var y = 76;
+        var icons = actor.allIcons().length > 0;
+        c.drawText(actor.name(), face + 12, icons ? 2 : 18, w - face - 12, 36);
+        if (icons) this.drawActorIcons(actor, face + 12, 38, w - face - 12);
+        c.fontSize = F.stat;
+        var y = 78;
         this.drawStat(TextManager.hpA, actor.hp + '/' + actor.mhp, 0, y, w, this.hpColor(actor));
         $.drawBar(this, 0, y + 24, w, actor.hpRate(), this.hpGaugeColor1(), this.hpGaugeColor2(),
             actor.mhp > 0 ? $.target(actor) / actor.mhp : 0);
-        var half = Math.floor((w - 12) / 2);
-        y += 38;
+        var half = Math.floor((w - 14) / 2);
+        y += 34;
         this.drawStat(TextManager.mpA, actor.mp, 0, y, half, this.mpColor(actor));
         $.drawBar(this, 0, y + 24, half, actor.mpRate(), this.mpGaugeColor1(), this.mpGaugeColor2());
-        this.drawStat(TextManager.tpA, actor.tp, half + 12, y, half, this.tpColor(actor));
-        $.drawBar(this, half + 12, y + 24, half, actor.tpRate(), this.tpGaugeColor1(), this.tpGaugeColor2());
+        this.drawStat(TextManager.tpA, actor.tp, half + 14, y, half, this.tpColor(actor));
+        $.drawBar(this, half + 14, y + 24, half, actor.tpRate(), this.tpGaugeColor1(), this.tpGaugeColor2());
         this.resetFontSettings();
     };
 
@@ -317,7 +358,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     Window_SICard.prototype.drawStat = function(label, value, x, y, width, color) {
         var text = label + ' ' + value;
         this.changeTextColor(color === this.normalColor() ? $.COLORS.label : color);
-        this.contents.drawText(text, x, y, width, 24);
+        this.contents.drawText(text, x, y, width, 22);
         this.resetTextColor();
     };
 
@@ -354,11 +395,11 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         this.visible = members.length > 0;
         $.clearFinishedPopups(this);
         members.forEach(function(actor, i) {
-            $.updatePopups(this, actor, this.width / 2 + 20, this.padding + 22 + i * 44 + 40);
+            $.updatePopups(this, actor, this.width / 2 + 24, this.padding + 26 + i * 52 + 44);
         }, this);
         var sig = members.map(function(a) {
             return [a.actorId(), a.hp, $.target(a), a.mhp, $.highlight(a), a.states().map(function(s) { return s.id; }).join(),
-                ImageManager.loadFace(a.faceName()).isReady()].join(',');
+                $.faceReady(a)].join(',');
         }).join('|');
         if (sig !== this._signature) {
             this._signature = sig;
@@ -367,27 +408,27 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     };
 
     Window_SIAllies.prototype.refresh = function() {
-        var c = this.contents, w = this.contentsWidth();
+        var c = this.contents, w = this.contentsWidth(), F = $.FONT;
         c.clear();
         this.resetFontSettings();
-        c.fontSize = 14;
+        c.fontSize = F.allyTitle;
         this.changeTextColor($.COLORS.place);
-        c.drawText('Allies', 0, 0, w, 20);
+        c.drawText('Allies', 0, 0, w, 24);
         this.members().forEach(function(actor, i) {
-            var y = 22 + i * 44, mark = $.highlight(actor);
+            var y = 26 + i * 52, mark = $.highlight(actor);
             if (mark) {
                 c.paintOpacity = 72;
-                c.fillRect(0, y, w, 42, mark === 'target' ? this.textColor(4) : this.textColor(6));
+                c.fillRect(0, y, w, 48, mark === 'target' ? $.COLORS.target : $.COLORS.active);
                 c.paintOpacity = 255;
             }
-            $.drawFace(this, actor, 0, y + 3, 36);
-            c.fontSize = 16;
+            $.drawFace(this, actor, 0, y + 4, 40);
+            c.fontSize = F.allyName;
             this.changeTextColor(this.hpColor(actor));
-            c.drawText(actor.name(), 44, y, w - 44, 22);
-            c.fontSize = 13;
+            c.drawText(actor.name(), 48, y + 2, w - 48, 24);
+            c.fontSize = F.allyHp;
             this.changeTextColor($.COLORS.label);
-            c.drawText(actor.hp + '/' + actor.mhp, 44, y, w - 44, 22, 'right');
-            $.drawBar(this, 44, y + 28, w - 44, actor.hpRate(), this.hpGaugeColor1(), this.hpGaugeColor2(),
+            c.drawText(actor.hp + '/' + actor.mhp, 48, y + 2, w - 48, 24, 'right');
+            $.drawBar(this, 48, y + 32, w - 48, actor.hpRate(), this.hpGaugeColor1(), this.hpGaugeColor2(),
                 actor.mhp > 0 ? $.target(actor) / actor.mhp : 0);
         }, this);
         this.resetFontSettings();
@@ -411,12 +452,27 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         return actor.name() + '\'s move?';
     };
 
-    // The battle log becomes the bar: a framed window showing its two newest
-    // lines, or the prompt when there's nothing to say.
-    $.LOG_LINES = 2;
+    // The enemies still standing: "Boar-Man × 1!" or "Gannet × 2, Shore Crab × 1!"
+    $.enemyCount = function() {
+        var counts = [], names = [];
+        $gameTroop.aliveMembers().forEach(function(enemy) {
+            var name = enemy.originalName(), i = names.indexOf(name);
+            if (i < 0) {
+                names.push(name);
+                counts.push(1);
+            } else {
+                counts[i]++;
+            }
+        });
+        return names.length ? names.map(function(n, i) { return n + ' \u00d7 ' + counts[i]; }).join(', ') + '!' : '';
+    };
+
+    // The battle log becomes the bar: a framed window showing its newest line,
+    // or (while choosing) the enemies still up and the prompt.
+    $.LOG_LINES = 1;
 
     $.styleLog = function(log, rect) {
-        $.restyle(log, 12, 22, 30);
+        $.restyle(log, 12, $.FONT.bar, $.BAR_HEIGHT - 24);
         $.place(log, rect);
         log.opacity = 255;
         log._siPrompt = '';
@@ -427,14 +483,20 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
             this.drawBackground();
             this.contents.clear();
             if (!this._lines.length && this._siPrompt) {
+                var count = $.enemyCount(), x = 8, lh = this.lineHeight();
+                if (count) {
+                    this.resetTextColor();
+                    this.contents.drawText(count, x, 0, this.contentsWidth() - x, lh);
+                    x += this.textWidth(count) + 36;
+                }
                 this.changeTextColor($.COLORS.prompt);
-                this.contents.drawText(this._siPrompt, 4, 0, this.contentsWidth() - 8, this.lineHeight());
+                this.contents.drawText(this._siPrompt, x, 0, this.contentsWidth() - x - 8, lh);
                 this.resetTextColor();
                 return;
             }
             var start = Math.max(0, this._lines.length - $.LOG_LINES);
             for (var i = start; i < this._lines.length; i++) {
-                this.drawTextEx(this._lines[i], 4, (i - start) * this.lineHeight(), this.contentsWidth() - 8);
+                this.drawTextEx(this._lines[i], 8, (i - start) * this.lineHeight(), this.contentsWidth() - 16);
             }
         };
         var update = log.update;
@@ -462,19 +524,19 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
 
     Window_SIBattleInfo.prototype.initialize = function(x, y) {
         var lines = this.lines();
-        Window_Base.prototype.initialize.call(this, x, y, 260, 20 + Math.max(lines.length, 1) * 28);
+        Window_Base.prototype.initialize.call(this, x, y, 230, 32 + Math.max(lines.length, 1) * 30);
         $.makeSolid(this);
-        this.backOpacity = 220;
+        this.backOpacity = 217;
         this.visible = lines.length > 0;
-        this.contents.fontSize = 18;
+        this.contents.fontSize = $.FONT.info;
         lines.forEach(function(line, i) {
             this.changeTextColor(i === 0 ? this.normalColor() : $.COLORS.place);
-            this.contents.drawText(line, 0, i * 28, this.contentsWidth(), 28);
+            this.contents.drawText(line, 4, i * 30, this.contentsWidth() - 4, 30);
         }, this);
     };
 
     Window_SIBattleInfo.prototype.standardPadding = function() {
-        return 10;
+        return 16;
     };
 
     Window_SIBattleInfo.prototype.lines = function() {
@@ -520,7 +582,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         if (show !== this._divider) {
             this._divider = show;
             this.contents.clear();
-            if (show) this.contents.fillRect(8, this._dividerY, this.contentsWidth() - 16, 2, $.COLORS.divider);
+            if (show) this.contents.fillRect(10, this._dividerY, this.contentsWidth() - 20, 2, $.COLORS.divider);
         }
     };
 
@@ -561,7 +623,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         if (text !== this._text) {
             this._text = text;
             this.contents.clear();
-            this.contents.fontSize = 22;
+            this.contents.fontSize = $.FONT.title;
             this.changeTextColor($.COLORS.label);
             this.contents.drawText(text || '', 8, 0, this.contentsWidth() - 8, this.contentsHeight());
             this.resetFontSettings();
@@ -579,11 +641,19 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
             rect.width -= this.textPadding();
             this.changePaintOpacity(this.isEnabled(skill));
             this.resetTextColor();
-            this.drawText(skill.name, rect.x + 8, rect.y, Math.floor(rect.width * 0.62));
+            this.drawText(skill.name, rect.x + 8, rect.y, rect.width - 8 - this.costTextWidth(skill));
             this.drawSkillCost(skill, rect.x, rect.y, rect.width);
             this.changePaintOpacity(1);
         };
         win.tpCostColor = function() { return $.COLORS.cost; };
+        // How wide drawSkillCost's text will be (measured by drawing it nowhere).
+        win.costTextWidth = function(skill) {
+            var left = Infinity, drawText = this.drawText;
+            this.drawText = function(text, x) { left = Math.min(left, x); };
+            this.drawSkillCost(skill, 0, 0, 1000);
+            this.drawText = drawText;
+            return left === Infinity ? 0 : 1000 - left + 12;
+        };
         win.refresh();
     };
 
@@ -596,7 +666,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         _Spriteset_Battle_createBattleField.call(this);
         var v = $.rects().view, mask = new PIXI.Graphics();
         mask.beginFill(0xffffff);
-        mask.drawRect(v.x + 4, v.y + 4, v.width - 8, v.height - 8);
+        mask.drawRoundedRect(v.x + 6, v.y + 6, v.width - 12, v.height - 12, 4);
         mask.endFill();
         this._baseSprite.addChild(mask);
         this._battleField.mask = mask;
@@ -672,6 +742,8 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         var r = $.rects(), col = r.column;
         // The frame round the battlefield, under everything.
         var frame = new Window_Base(r.view.x, r.view.y, r.view.width, r.view.height);
+        frame._siFrame = true;
+        frame._refreshFrame();
         frame.backOpacity = 0;
         this._windowLayer.addChildAt(frame, 0);
         this._hudInfoWindow = new Window_SIBattleInfo(r.view.x + 12, r.view.y + 12);
@@ -679,7 +751,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         // Turn order across the top.
         var order = this._turnOrderWindow;
         if (order) {
-            $.restyle(order, 12, 20);
+            $.restyle(order, 8, $.FONT.strip, $.STRIP_HEIGHT - 16);
             $.place(order, r.strip);
             order._signature = '';
         }
@@ -691,12 +763,12 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         this._windowLayer.addChildAt(this._hudColumnWindow, 2);
         this._hudTitleWindow = new Window_SIColumnTitle(inner.x, inner.y, inner.width);
         var help = this._helpWindow;
-        $.restyle(help, 10, 18, 26);
+        $.restyle(help, 10, $.FONT.help, 30);
         $.place(help, { x: inner.x, y: helpY, width: inner.width, height: $.HELP_HEIGHT });
         var commandRect = { x: inner.x, y: inner.y, width: inner.width, height: helpY - 6 - inner.y };
         [this._partyCommandWindow, this._actorCommandWindow, this._skillTypeWindow, this._tacticsWindow].forEach(function(win) {
             if (!win) return;
-            $.restyle(win, 12, 26, 46);
+            $.restyle(win, 12, $.FONT.command, 46);
             win.windowWidth = function() { return commandRect.width; };
             win.numVisibleRows = function() { return Math.floor((commandRect.height - this.standardPadding() * 2) / this.lineHeight()); };
             $.place(win, commandRect);
@@ -704,7 +776,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         var listRect = { x: inner.x, y: listY, width: inner.width, height: helpY - 6 - listY };
         [this._skillWindow, this._itemWindow, this._swapWindow, this._reserveWindow, this._enemyWindow, this._actorWindow].forEach(function(win) {
             if (!win) return;
-            $.restyle(win, 8, 20, 32);
+            $.restyle(win, 8, $.FONT.list, 34);
             $.place(win, listRect);
         });
         $.styleSkillList(this._skillWindow);
@@ -740,9 +812,9 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
             this._hudCards.push(card);
             $.addUnderMessages(this, card);
         }
-        var allyY = Graphics.boxHeight - $.CARD_HEIGHT;
-        this._pseudoStatusWindow = new Window_SIAllies(Graphics.boxWidth - $.ALLY_WIDTH - $.GAP / 2, allyY,
-            $.ALLY_WIDTH, $.CARD_HEIGHT);
+        var cardsTop = r.cards.y;
+        this._pseudoStatusWindow = new Window_SIAllies(r.cards.x + r.cards.width - $.ALLY_WIDTH, cardsTop,
+            $.ALLY_WIDTH, Graphics.boxHeight - $.MARGIN - cardsTop);
         $.addUnderMessages(this, this._pseudoStatusWindow);
         this.layoutCards();
         // Plain green backs; inside the column, no frames of their own.
@@ -760,11 +832,12 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         var key = members + '|' + allies;
         if (key === this._hudCardKey) return;
         this._hudCardKey = key;
-        var area = Graphics.boxWidth - (allies ? $.ALLY_WIDTH + $.GAP : 0);
-        var n = Math.max(members, 1), gap = $.GAP;
-        var width = Math.min(320, Math.floor((area - gap * (n + 1)) / n));
-        var start = Math.floor((area - (n * width + (n - 1) * gap)) / 2);
-        var y = Graphics.boxHeight - $.CARD_HEIGHT;
+        var r = $.rects().cards, gap = $.MARGIN;
+        var area = r.width - (allies ? $.ALLY_WIDTH + gap : 0);
+        var n = Math.max(members, 1);
+        var width = Math.min($.CARD_MAX_WIDTH, Math.floor((area - gap * (n - 1)) / n));
+        var start = r.x + Math.floor((area - (n * width + (n - 1) * gap)) / 2);
+        var y = r.y + $.LIFT;
         this._hudCards.forEach(function(card, i) {
             card.setBase(start + i * (width + gap), y, width);
         });

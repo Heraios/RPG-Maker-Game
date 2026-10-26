@@ -1027,7 +1027,8 @@ Weapon skills above.
   - the turn order runs as a strip across the top (AI allies in green, enemies in red);
   - the battlefield sits in a frame, with a small box in its corner for the day, time and place.
     Enemies keep their troop layout, scaled into the frame. The battle background shows only inside
-    it; windows have plain dark green backs;
+    it; windows have plain dark green backs and a single rounded orange border, with small gaps between
+    them (as in the mock-up);
   - commands sit in a column to the right of the battlefield. Skill, item, swap, switch and target
     lists open in the same panel under a title ("Physical", a little larger than the description text); skills are listed without icons,
     costs in grey, and the description appears below a divider at the foot of the panel;
