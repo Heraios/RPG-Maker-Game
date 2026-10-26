@@ -38,7 +38,8 @@
  *   number (or Miss) over it, as over enemies; the ally strip shows them too.
  *   With SI_RollingHealth, Health still to roll away shows as a red stretch
  *   of the bar (and healing still to come, green).
- * - The ally strip (AI allies such as Patience) only appears while one is
+ * - The ally strip (AI allies such as Patience; up to four, compact rows for
+ *   the fourth) only appears while one is
  *   in the battle; the cards spread out when it isn't there.
  * - The box in the battlefield's corner shows the day, time and place.
  * - State icons over enemies are copied out of the iconset one at a time
@@ -391,7 +392,16 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     };
 
     Window_SIAllies.prototype.members = function() {
-        return $gameParty.pseudoBattleMembers().slice(0, 3);
+        return $gameParty.pseudoBattleMembers().slice(0, 4);
+    };
+
+    // Up to three allies get roomy rows; a fourth (Patience and a squad of
+    // three) squeezes them into compact ones.
+    Window_SIAllies.prototype.rowLayout = function() {
+        var F = $.FONT;
+        return this.members().length > 3 ?
+            { top: 22, height: 40, face: 34, name: F.allyName - 2, hp: F.allyHp - 2, bar: 30 } :
+            { top: 26, height: 52, face: 40, name: F.allyName, hp: F.allyHp, bar: 32 };
     };
 
     Window_SIAllies.prototype.update = function() {
@@ -399,8 +409,9 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         var members = this.members();
         this.visible = members.length > 0;
         $.clearFinishedPopups(this);
+        var row = this.rowLayout();
         members.forEach(function(actor, i) {
-            $.updatePopups(this, actor, this.width / 2 + 24, this.padding + 26 + i * 52 + 58);
+            $.updatePopups(this, actor, this.width / 2 + 24, this.padding + row.top + i * row.height + row.height + 6);
         }, this);
         var sig = members.map(function(a) {
             return [a.actorId(), a.hp, $.target(a), a.mhp, $.highlight(a), a.states().map(function(s) { return s.id; }).join(),
@@ -419,21 +430,22 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         c.fontSize = F.allyTitle;
         this.changeTextColor($.COLORS.place);
         c.drawText('Allies', 0, 0, w, 24);
+        var row = this.rowLayout(), x = row.face + 8;
         this.members().forEach(function(actor, i) {
-            var y = 26 + i * 52, mark = $.highlight(actor);
+            var y = row.top + i * row.height, mark = $.highlight(actor);
             if (mark) {
                 c.paintOpacity = 72;
-                c.fillRect(0, y, w, 48, mark === 'target' ? $.COLORS.target : $.COLORS.active);
+                c.fillRect(0, y, w, row.height - 4, mark === 'target' ? $.COLORS.target : $.COLORS.active);
                 c.paintOpacity = 255;
             }
-            $.drawFace(this, actor, 0, y + 4, 40);
-            c.fontSize = F.allyName;
+            $.drawFace(this, actor, 0, y + 2, row.face);
+            c.fontSize = row.name;
             this.changeTextColor(this.hpColor(actor));
-            c.drawText(actor.name(), 48, y + 2, w - 48, 24);
-            c.fontSize = F.allyHp;
+            c.drawText(actor.name(), x, y + 2, w - x, 24);
+            c.fontSize = row.hp;
             this.changeTextColor($.COLORS.label);
-            c.drawText(actor.hp + '/' + actor.mhp, 48, y + 2, w - 48, 24, 'right');
-            $.drawBar(this, 48, y + 32, w - 48, actor.hpRate(), this.hpGaugeColor1(), this.hpGaugeColor2(),
+            c.drawText(actor.hp + '/' + actor.mhp, x, y + 2, w - x, 24, 'right');
+            $.drawBar(this, x, y + row.bar, w - x, actor.hpRate(), this.hpGaugeColor1(), this.hpGaugeColor2(),
                 actor.mhp > 0 ? $.target(actor) / actor.mhp : 0);
         }, this);
         this.resetFontSettings();

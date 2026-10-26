@@ -28,6 +28,11 @@ module.exports = {
             s.update();
             out.alliesShown = s._pseudoStatusWindow.visible;
             out.narrower = s._hudCards[0].width < before;
+            // Patience plus a squad of three: four compact rows that still fit.
+            [7, 8, 11].forEach(id => { $dataActors[id].note += '<Pseudo Member>'; $gameParty.addActor(id); });
+            const strip = s._pseudoStatusWindow, row = strip.rowLayout();
+            out.fourFit = strip.members().length === 4 && row.top + 4 * row.height <= strip.contentsHeight();
+            [7, 8, 11].forEach(id => { $gameParty.removeActor(id); $dataActors[id].note = $dataActors[id].note.replace('<Pseudo Member>', ''); });
             return out;
         });
         t.eq(r.cards, 4, 'four party cards');
@@ -39,6 +44,7 @@ module.exports = {
         t.eq(r.alliesHidden, true, 'no ally strip without allies');
         t.eq(r.popup, true, 'damage number on the card');
         t.eq(r.alliesShown && r.narrower, true, 'ally strip appears and the cards make room');
+        t.eq(r.fourFit, true, 'four allies fit in the strip');
     },
 
     'rolling health': async (h, t) => {
