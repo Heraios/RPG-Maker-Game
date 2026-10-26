@@ -30,6 +30,7 @@
  *   border, with small gaps between them; the battle background shows only
  *   inside the battlefield's frame. Sizes and colours follow the mock-up
  *   ($.FONT and $.COLORS at the top of the plugin).
+ * - A pointer (img/system/Cursor1, $.ARROW) marks the chosen command or line.
  * - Lists open in the column under a title, skills without icons, and
  *   the help sits under a divider at the column's foot.
  * - The card of whoever is acting lifts and gets a gold frame (a friend being
@@ -74,6 +75,10 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     // Font sizes (the game's pixel font draws smaller than the mock-up's).
     $.FONT = { strip: 22, info: 24, command: 32, bar: 26, name: 32, stat: 20, allyTitle: 18, allyName: 20,
         allyHp: 18, list: 24, title: 28, help: 20 };
+    // The pointer beside the chosen command or list line: any image in img/system
+    // (Cursor1-4 are 24 x 24 arrows; CursorTall1-4 are 24 x 48).
+    $.ARROW = 'Cursor1';
+    $.ARROW_INDENT = 34;
     // Troop positions in the database are laid out for the old 816 x 624 screen.
     $.BASE_WIDTH = 816;
     $.BASE_HEIGHT = 624;
@@ -641,7 +646,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
             rect.width -= this.textPadding();
             this.changePaintOpacity(this.isEnabled(skill));
             this.resetTextColor();
-            this.drawText(skill.name, rect.x + 8, rect.y, rect.width - 8 - this.costTextWidth(skill));
+            this.drawText(skill.name, rect.x, rect.y, rect.width - this.costTextWidth(skill));
             this.drawSkillCost(skill, rect.x, rect.y, rect.width);
             this.changePaintOpacity(1);
         };
@@ -655,6 +660,43 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
             return left === Infinity ? 0 : 1000 - left + 12;
         };
         win.refresh();
+    };
+
+    // The pointer: the window's text moves right to leave room for it, and the
+    // highlight box stretches back over it.
+    $.addArrow = function(win) {
+        var indent = $.ARROW_INDENT;
+        win.contentsWidth = function() {
+            return this.width - this.standardPadding() * 2 - indent;
+        };
+        var itemWidth = win.itemWidth;
+        win.itemWidth = function() {
+            return itemWidth.call(this) - indent;
+        };
+        var refreshContents = win._refreshContents;
+        win._refreshContents = function() {
+            refreshContents.call(this);
+            this._windowContentsSprite.x += indent;
+        };
+        var setCursorRect = win.setCursorRect;
+        win.setCursorRect = function(x, y, width, height) {
+            setCursorRect.call(this, x, y, width ? width + indent : 0, height);
+        };
+        var arrow = new Sprite(ImageManager.loadSystem($.ARROW));
+        arrow.anchor.y = 0.5;
+        win._siArrow = arrow;
+        win.addChild(arrow);
+        var update = win.update;
+        win.update = function() {
+            update.call(this);
+            var r = this._cursorRect;
+            arrow.visible = this.isOpen() && this.active && r.height > 0;
+            arrow.x = this.padding + 5;
+            arrow.y = this.padding + r.y + r.height / 2;
+        };
+        win.createContents();
+        win._refreshAllParts();
+        if (win.refresh) win.refresh();
     };
 
     //-------------------------------------------------------------------------
@@ -817,6 +859,10 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
             $.ALLY_WIDTH, Graphics.boxHeight - $.MARGIN - cardsTop);
         $.addUnderMessages(this, this._pseudoStatusWindow);
         this.layoutCards();
+        [this._partyCommandWindow, this._actorCommandWindow, this._skillTypeWindow, this._tacticsWindow, this._skillWindow,
+            this._itemWindow, this._swapWindow, this._reserveWindow, this._enemyWindow, this._actorWindow].forEach(function(win) {
+            if (win) $.addArrow(win);
+        });
         // Plain green backs; inside the column, no frames of their own.
         var inColumn = [this._hudTitleWindow, this._helpWindow, this._partyCommandWindow, this._actorCommandWindow,
             this._skillTypeWindow, this._tacticsWindow, this._skillWindow, this._itemWindow, this._swapWindow,

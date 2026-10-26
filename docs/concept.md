@@ -1032,6 +1032,8 @@ Weapon skills above.
   - commands sit in a column to the right of the battlefield. Skill, item, swap, switch and target
     lists open in the same panel under a title ("Physical", a little larger than the description text); skills are listed without icons,
     costs in grey, and the description appears below a divider at the foot of the panel;
+    a pointer (`img/system/Cursor1`; any of Cursor1–4 or CursorTall1–4 can be swapped in at the top of
+    the plugin) marks the chosen command or line;
   - a bar under the battlefield carries the battle text (two lines at a time), or asks what to do
     ("Sib's move?", "Hook Down: which enemy?");
   - each party member has a card along the bottom, with portrait, Health, Mana and Fatigue. The card of
