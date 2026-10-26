@@ -222,6 +222,12 @@ water maidens of the woodland rivers.
 permission to hunt the Great Boar. They introduce the player to **First Sailor binding magic**
 before the chains Juda used on the Bull of Heaven.
 
+### The People of the Forest: one people
+**Boar-Men and Stream Maidens are the same people**, shaped by gender (as the Cave Boys and Cave Girls are):
+the men take the boar shape, the women the goat-legged maiden shape. **The Forest Imps (the child-fae) are
+their children, grown from herbs.** Falmi was grown the same way, but **by the Lady of the Woods herself**,
+which is what makes him her heir.
+
 ### Boar-Men (People of the Forest, male)
 Swine-men, sometimes bipedal, sometimes on all fours; skilled warriors with rudimentary spears or
 clubs. Originally ordinary boars ensorcelled by the Lady. One matches five men in strength. Two
@@ -242,7 +248,8 @@ alpine forest.
 *In the game:* friendly NPCs offering information (plants, water safety, animal movements) and
 sidequest hooks. Sources of botanical and ecological knowledge.
 
-### Forest Child-Fae (People of the Forest, children)
+### Forest Child-Fae (People of the Forest, children; the Forest Imps)
+Grown from herbs by the Boar-Men and Stream Maidens (see above).
 Small fairies: boys with porcine faces, girls with hooves; parents often too busy to raise them.
 Capable of impish malevolence (frightening children, pranks, following and mocking people lost in
 the woods), but harmless: they feel bad and lead you out if you start to cry. They can **dissolve
