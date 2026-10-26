@@ -250,6 +250,7 @@ night-only plants, fatigue, tool wear and the daily reset.
 | `<Gather: Dragon Tree>` | Dragon's Blood | Dragonheart Branch (15%) | Knife (equipped) | Anyone | log needs an adult |
 | `<Gather: Honey Palm>` | Palm Fronds | Palm Sap (25%) | Knife (equipped) | Anyone | — |
 | `<Gather: Mulberry>` | Mulberry Bark | — | Knife (equipped) | Anyone | — |
+| `<Gather: Rubber Tree>` | Latex | — | Knife (equipped) | Anyone | Latex + Sulfur Lump make Rubber (Lightning Clan electroplater) |
 | `<Gather: Sandalwood>` | Sandalwood Branch | — | Knife (equipped) | Sacred gatherers (Yoon, Sib, Juda, Falmi) | 50% chance |
 | `<Gather: Rain Tree>` | Rain-Tree Branch | — | By hand | Sacred gatherers (Yoon, Sib, Juda, Falmi) | 10% chance; only fallen wood |
 | `<Gather: Bitterwood>` | Bitterwood | — | By hand | Anyone | light work (children tire less) |

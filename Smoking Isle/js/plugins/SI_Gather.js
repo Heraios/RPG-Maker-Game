@@ -105,6 +105,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Dragon Tree':   { kind: 'herb', tool: 'knife', gives: 'Dragon\'s Blood', extra: ['Dragonheart Branch', 15], heavy: true },
         'Honey Palm':    { kind: 'herb', tool: 'knife', gives: 'Palm Fronds', extra: ['Palm Sap', 25] },
         'Mulberry':      { kind: 'herb', tool: 'knife', gives: 'Mulberry Bark' },
+        'Rubber Tree':   { kind: 'herb', tool: 'knife', gives: 'Latex' },
         'Sandalwood':    { kind: 'wood', tool: 'knife', who: 'sacred', gives: 'Sandalwood Branch', chance: 50 },
         'Rain Tree':     { kind: 'herb', who: 'sacred', gives: 'Rain-Tree Branch', chance: 10, fallen: true },   // never cut: only what has fallen
         // Herbs: low plants, a knife; children do it best
@@ -377,7 +378,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     };
 
     $.article = function(name) {
-        if (/^(Scrap|Peat|Clay|White Clay|Red Ochre|Sea Salt|Pine Pitch|Fresh|Well|Dragon's|Shellfish|Grapes|Lentils|Barley|Marsh Reed|Palm Fronds|Palm Sap|Mulberry|Spurge|Ti Leaves|Moon|Orchil|Brown|Fern|Syrup|Ephedra|Milo|Bitterwood|Cliff Mint|Hill Thyme|Ironwort|Burnwort|Yellowroot|Wart Fern|Raw|Seabird Eggs|Copper Ore|Lead Ore|Wild Honey|Pine Nuts|Cosco|Broad|Faya|Juniper Berries|Cave Mushrooms|Bellflower Nectar|Fog|Fairy|Goblin|Cave Pearls|Leaf Mould|Beard Lichen|Taro)/.test(name)) return 'some ';
+        if (/^(Scrap|Peat|Clay|White Clay|Red Ochre|Sea Salt|Pine Pitch|Fresh|Well|Dragon's|Shellfish|Grapes|Lentils|Barley|Marsh Reed|Palm Fronds|Palm Sap|Mulberry|Spurge|Ti Leaves|Moon|Orchil|Brown|Fern|Syrup|Ephedra|Milo|Bitterwood|Cliff Mint|Hill Thyme|Ironwort|Burnwort|Yellowroot|Wart Fern|Raw|Seabird Eggs|Copper Ore|Lead Ore|Wild Honey|Pine Nuts|Cosco|Broad|Faya|Juniper Berries|Cave Mushrooms|Bellflower Nectar|Fog|Fairy|Goblin|Cave Pearls|Leaf Mould|Beard Lichen|Taro|Latex)/.test(name)) return 'some ';
         return /^[AEIOU]/i.test(name) ? 'an ' : 'a ';
     };
 

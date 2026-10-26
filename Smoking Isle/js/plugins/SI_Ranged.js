@@ -44,6 +44,8 @@
  * lose 30% of their power unless something worn is <Waterproof Bow>.
  *
  * Skill note:
+ *   <Volley Max: 6>         (equipment) a volley from it fires 6 shots at
+ *                           most (the Slingshot)
  *   <Ammo Volley>           (ranged) spends ALL remaining ammo from the
  *                           item, hitting a random enemy once per shot
  *                           (Stone Rain). Use a "1 random enemy" scope.
@@ -259,7 +261,7 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
                 this._siAmmoUsed = this._siAmmoUsed || {};
                 var move = $.ammoMove(this.equips()[slot], item);
                 this._siRangedMove = move;
-                var spend = item.siVolley ? this.ammoLeft(slot, item) : 1;
+                var spend = item.siVolley ? this.volleyShots(slot, item) : 1;
                 this._siAmmoUsed[move ? slot + ':' + move : slot] = this.ammoUsed(slot, move) + spend;
             }
         }
@@ -321,6 +323,13 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         return _Game_Action_evalDamageFormula.call(this, target);
     };
 
+    // A volley fires every shot left, up to the item's <Volley Max>.
+    Game_Actor.prototype.volleyShots = function(slot, item) {
+        var left = this.ammoLeft(slot, item), equip = this.equips()[slot];
+        var m = equip && /<Volley Max:\s*(\d+)>/i.exec(equip.note || '');
+        return m ? Math.min(left, Number(m[1])) : left;
+    };
+
     // Volley: one random hit per shot left (counted before the ammo is spent).
     var _Game_Action_numTargets = Game_Action.prototype.numTargets;
     Game_Action.prototype.numTargets = function() {
@@ -328,7 +337,7 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
         var subject = this.subject();
         if (item && item.siVolley && subject.isActor()) {
             var slot = subject.rangedSourceSlot(item);
-            return slot >= 0 ? subject.ammoLeft(slot, item) : 1;
+            return slot >= 0 ? subject.volleyShots(slot, item) : 1;
         }
         return _Game_Action_numTargets.call(this);
     };

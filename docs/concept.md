@@ -1144,6 +1144,7 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Lava-Tube Gear | Head, Body, Charm (Cave-Glow Stone) | +evasion in caves (2 pieces) | The Children of the Caves can't steal from you; prank fights start friendlier |
 | Guardian Lizard (trophy) | Cuirass (Guardian Lizard Scale), Charm (Lizard-Scale Charm) | 10% less Fire damage (1 piece) | Immune to Smoldering and Enflamed |
 | Telegrapher's Kit | Hands (Rubber-Coated Gloves or Sacred Metal Ring), Charm (Lodestone, Hot-Spring Sinter, Copper Bracelet, Golden Wire, or any Sacred Metal charm or the Pectoral), Battery (any pile) | +1 max charge | Electric techniques +15% |
+| Battery Tender's Gear (rubber; Lightning Clan) | Head (Rubber Hood: smoked-obsidian eyepieces, resists Dazzled and Steam), Body (Rubber Apron: 10% less Crush), Hands (Rubber-Coated Gloves, also Telegrapher's Kit), Feet (Rubber-Soled Sandals: +10% evasion while Wet) | Resists Wet | Half damage from electricity and chemicals (lye, chlorine, acid, spurge; `<Chemical>`); never shocks itself; but +15% Fire damage and Fatigue builds 10% faster |
 | Fisher's Gear | Neck (Bone Fishhook Pendant or Shark-Tooth Necklace), Charm (Net Floats), Ranged (Fishing Gear or Palm-Fibre Net) | +1 net cast | Sea creatures start friendlier; +10% evasion while Wet |
 | Ritualist's Things | Neck (Sandalwood Beads), Hands (Jasper Ring), Charm (Gourd Rattle or Silver-Plated Idol) | Rite +15% | Spirits start friendlier; Spirit +10% |
 | Officer's Kit | Hands (Bronze Signet), Charm (Sailor's Compass), Codex (any) | Ask +15% on soldiers | Escape +15%; the whole party AGI +5% |
@@ -1320,9 +1321,19 @@ Shark-Tooth → Coral-Eyed. Rings: silver, bone, obsidian; gloves: hide, sinew w
 - **Weapons:** Mahogany Club and Mahogany Paddle (red mahogany never splits, so they never wear), and the
   priests' **Sandalwood Staff** (MAT +5, starts each battle Calm).
 
+### Rubber
+**Latex** is tapped from a **Rubber Tree** (gathering spot, knife). The Lightning Clan's workshop (the
+**electroplater**) cures 2 Latex with a **Sulfur Lump** into 2 **Rubber**, and makes the **Battery Tender's
+Gear** from it: Rubber Hood (Rubber + 2 Obsidian Shards), Rubber Apron (2 Rubber + Leather), Rubber-Coated
+Gloves (Hide Gloves + Rubber) and Rubber-Soled Sandals (Rubber + Leather). The **Slingshot** is a campfire
+recipe (Rubber, Leather and an Ash, Laurel, Heather, Juniper or Yew branch). All are known from the start;
+Rubber is the gate.
+
 ### More gear (third batch)
 - **Slings:** Goat-Hair (5 shots, power 10), Braided Sinew (7 shots, power 8), Priest's (Spirit +3), Lead-Weighted
   (4 shots, power 12; Lead Shot adds +2 more, `<Lead Shot Bonus: 2>`).
+  **Slingshot** (a forked branch, a rubber band and a leather pouch; campfire): a weak sling with lots of shots,
+  15 shots at power 4, and a Stone Rain from it fires 6 at most (`<Volley Max: 6>`).
 - **Bows:** Ash Flatbow (power 14, Speed +2), Living Bow (from a Green Horse Bough: power 14, heals 3% Health a
   turn), and a second **Horn Bow** recipe from Seafarer **Ox Horn**.
 - **Bronze Crossbow** (Act 4, Seafarer): 2 bolts, power 24, never wears, counts as metal. A new **Crossbow** armor
