@@ -230,7 +230,7 @@ which is what makes him her heir.
 
 ### Boar-Men (People of the Forest, male)
 Swine-men, sometimes bipedal, sometimes on all fours; skilled warriors with rudimentary spears or
-clubs. Originally ordinary boars ensorcelled by the Lady. One matches five men in strength. Two
+clubs. Originally ordinary pigs, uplifted by the Lady's magic; since then the people grow their children from herbs. One matches five men in strength. Two
 tribes: temperate lowland and alpine highland.
 
 Blunt, not bright, but **negotiable**: they respond to directness and honesty, and **flattery,
