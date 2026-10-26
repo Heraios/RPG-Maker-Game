@@ -45,7 +45,7 @@
  * In battle they:
  * - act on their own turns (they appear in the Turn Order),
  * - can be targeted by enemies, and by healing and revival,
- * - are shown in a small window of their own above the party status,
+ * - are shown in the Allies strip beside the party cards (SI_BattleHud),
  * - don't count toward defeat: the battle is lost when every regular
  *   member is down.
  */
@@ -346,54 +346,6 @@ SmokingIsle.PseudoMember = SmokingIsle.PseudoMember || {};
 
     Window_BattleActor.prototype.maxItems = function() {
         return $gameParty.battleMembers().length;
-    };
-
-    function Window_PseudoStatus() {
-        this.initialize.apply(this, arguments);
-    }
-
-    Window_PseudoStatus.prototype = Object.create(Window_Base.prototype);
-    Window_PseudoStatus.prototype.constructor = Window_PseudoStatus;
-
-    Window_PseudoStatus.prototype.initialize = function(x, y, width) {
-        Window_Base.prototype.initialize.call(this, x, y, width, this.fittingHeight(1));
-        this._signature = '';
-        this.opacity = 192;
-    };
-
-    Window_PseudoStatus.prototype.update = function() {
-        Window_Base.prototype.update.call(this);
-        var members = $gameParty.pseudoBattleMembers();
-        var scene = SceneManager._scene;
-        var listOpen = ['_skillWindow', '_itemWindow', '_swapWindow', '_reserveWindow'].some(function(name) {
-            return scene && scene[name] && scene[name].visible;
-        });
-        this.visible = members.length > 0 && !$gameMessage.isBusy() && !listOpen;
-        var actor = members[0];
-        var sig = actor ? [actor.hp, actor.mhp, actor.states().map(function(s) { return s.id; }).join()].join('|') : '';
-        if (sig !== this._signature) {
-            this._signature = sig;
-            this.contents.clear();
-            if (actor) {
-                var w = this.contentsWidth();
-                this.drawActorName(actor, 0, 0, 120);
-                this.drawActorIcons(actor, 124, 0, 64);
-                this.drawActorHp(actor, 192, 0, w - 192);
-            }
-        }
-    };
-
-    $.Window_PseudoStatus = Window_PseudoStatus;
-
-    var _Scene_Battle_createAllWindows = Scene_Battle.prototype.createAllWindows;
-    Scene_Battle.prototype.createAllWindows = function() {
-        _Scene_Battle_createAllWindows.call(this);
-        var width = 360;
-        var win = new Window_PseudoStatus(Graphics.boxWidth - width - (this._turnOrderWindow ? this._turnOrderWindow.width : 0),
-            this._statusWindow.y, width);
-        win.y = this._statusWindow.y - win.height;
-        this._pseudoStatusWindow = win;
-        this.addWindow(win);
     };
 
 })(SmokingIsle.PseudoMember);

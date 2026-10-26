@@ -574,8 +574,9 @@ SmokingIsle.Ailments = SmokingIsle.Ailments || {};
 
     var _Game_Action_executeHpDamage_endure = Game_Action.prototype.executeHpDamage;
     Game_Action.prototype.executeHpDamage = function(target, value) {
-        var endure = value >= target.hp && target.hp > 1 ? $.stateWith(target, /<Endure>/i) : null;
-        if (endure) value = target.hp - 1;
+        var hp = target.hpTarget ? target.hpTarget() : target.hp;
+        var endure = value >= hp && hp > 1 ? $.stateWith(target, /<Endure>/i) : null;
+        if (endure) value = hp - 1;
         _Game_Action_executeHpDamage_endure.call(this, target, value);
         if (endure) target.removeState(endure.id);
     };

@@ -3,7 +3,7 @@
 //=============================================================================
 
 /*:
- * @plugindesc Smoking Isle: widescreen fixes, FFX-style battle layout, word
+ * @plugindesc Smoking Isle: widescreen fixes, turn order strip, word
  * wrap for dialogue and the battle log, and a Battle Text speed option.
  * @author Smoking Isle
  *
@@ -15,13 +15,10 @@
  * Place last. The screen size itself is set in Community_Basic
  * (1280 x 720).
  *
- * - Battle backgrounds and the title image are scaled to fill the screen
- *   (the default art is made for 816 x 624). Enemies keep their troop
- *   layout, centred to the right of the skill lists so they stay visible.
- * - Battle layout: the turn order runs across the top; the battle log sits
- *   under it; party status is bottom-right with the commands bottom-left;
- *   skill, item, swap and switch lists open above the commands, with the
- *   help box above them, leaving the enemies visible.
+ * - The title image is scaled to fill the screen (the default art is made
+ *   for 816 x 624). The battle screen's layout is in SI_BattleHud.
+ * - The turn order is drawn as a strip: Turn: Lasa > Yoon > Boar-Man...
+ *   (AI allies in green, enemies in red).
  * - Dialogue wraps at word boundaries (long lines continue on the next line,
  *   then the next page). Battle log lines wrap too.
  * - Options > Battle Text: Slow / Normal / Fast. Holding OK still speeds the
@@ -40,12 +37,6 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
     var params = PluginManager.parameters('SI_Screen');
     $.speeds = String(params['Battle Text Speeds'] || '72,48,24').split(',').map(Number);
     $.SPEED_NAMES = ['Slow', 'Normal', 'Fast'];
-    // Troop positions in the database are laid out for the old 816 x 624 screen.
-    $.BASE_WIDTH = 816;
-    $.BASE_HEIGHT = 624;
-    $.LIST_WIDTH = 560;   // skill and item lists (bottom-left, above the commands)
-    $.LIST_ROWS = 6;
-    $.COMMAND_WIDTH = 240;  // battle command column (bottom-left)
 
     //-------------------------------------------------------------------------
     // Art made for 816 x 624: scale to cover the screen
@@ -60,37 +51,6 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
         sprite.y = (Graphics.height - bitmap.height * scale) / 2;
     };
 
-    Spriteset_Battle.prototype.createBattleback = function() {
-        this._back1Sprite = new Sprite(this.battleback1Bitmap());
-        this._back2Sprite = new Sprite(this.battleback2Bitmap());
-        this._battleField.addChild(this._back1Sprite);
-        this._battleField.addChild(this._back2Sprite);
-    };
-
-    Spriteset_Battle.prototype.locateBattleback = function() {
-        [this._back1Sprite, this._back2Sprite].forEach(function(sprite) {
-            $.cover(sprite);
-            sprite.x -= this._battleField.x;
-            sprite.y -= this._battleField.y;
-        }, this);
-    };
-
-    Spriteset_Battle.prototype.updateBattleback = function() {
-        if (!this._battlebackLocated && this._back1Sprite.bitmap.isReady() && this._back2Sprite.bitmap.isReady()) {
-            this.locateBattleback();
-            this._battlebackLocated = true;
-        }
-    };
-
-    var _Sprite_Enemy_setBattler = Sprite_Enemy.prototype.setBattler;
-    Sprite_Enemy.prototype.setBattler = function(battler) {
-        _Sprite_Enemy_setBattler.call(this, battler);
-        // Centre the troop to the right of the skill lists, a little closer together.
-        var centre = ($.LIST_WIDTH - 80 + Graphics.boxWidth) / 2;
-        this._homeX = Math.round(centre + (this._homeX - $.BASE_WIDTH / 2) * 0.88);
-        this._homeY += Math.round((Graphics.boxHeight - $.BASE_HEIGHT) * 0.8);
-    };
-
     var _Scene_Title_createBackground = Scene_Title.prototype.createBackground;
     Scene_Title.prototype.createBackground = function() {
         _Scene_Title_createBackground.call(this);
@@ -100,54 +60,8 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
     };
 
     //-------------------------------------------------------------------------
-    // Battle layout (FFX-style)
+    // Turn order strip (laid out by SI_BattleHud)
     //-------------------------------------------------------------------------
-
-
-    var _Scene_Battle_createAllWindows = Scene_Battle.prototype.createAllWindows;
-    Scene_Battle.prototype.createAllWindows = function() {
-        _Scene_Battle_createAllWindows.call(this);
-        this.layoutForWidescreen();
-    };
-
-    Scene_Battle.prototype.layoutForWidescreen = function() {
-        var status = this._statusWindow;
-        // A wider command column, so "Weapon Swap" and "Party Swap" fit.
-        var cmdWidth = $.COMMAND_WIDTH;
-        [this._partyCommandWindow, this._actorCommandWindow, this._skillTypeWindow, this._tacticsWindow].forEach(function(win) {
-            if (!win) return;
-            win._windowWidth = cmdWidth;
-            win.width = cmdWidth;
-            win.createContents();
-            win.refresh();
-        });
-        [status, this._enemyWindow, this._actorWindow].forEach(function(win) {
-            if (!win) return;
-            win.move(cmdWidth, win.y, Graphics.boxWidth - cmdWidth, win.height);
-            win.createContents();
-            win.refresh();
-        });
-        var top = 0;
-        var order = this._turnOrderWindow;
-        if (order) {
-            order.move(0, 0, Graphics.boxWidth, order.fittingHeight(1));
-            order.createContents();
-            order._signature = '';
-            top = order.height;
-        }
-        this._logWindow.y = top;
-        var listHeight = Window_Base.prototype.fittingHeight.call(status, $.LIST_ROWS);
-        var listY = status.y - listHeight;
-        [this._skillWindow, this._itemWindow, this._swapWindow, this._reserveWindow].forEach(function(win) {
-            if (!win) return;
-            win.move(0, listY, $.LIST_WIDTH, listHeight);
-            win.createContents();
-            if (win.refresh) win.refresh();
-        });
-        var help = this._helpWindow;
-        help.move(0, listY - help.height, $.LIST_WIDTH, help.height);
-        help.createContents();
-    };
 
     // The turn order as a strip: Turn: Lasa > Yoon > Sib > Boar-Man > ...
     var TO = SmokingIsle.TurnOrder && SmokingIsle.TurnOrder.Window_TurnOrder;
@@ -190,7 +104,8 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
                     this.contents.fillRect(x, lh - 4, nw, 3, this.textColor(6));
                     this.contents.paintOpacity = 255;
                 }
-                this.changeTextColor(e.battler.isActor() ? this.normalColor() : this.textColor(2));
+                this.changeTextColor(!e.battler.isActor() ? this.textColor(2) :
+                    e.battler.isPseudoMember && e.battler.isPseudoMember() ? this.textColor(3) : this.normalColor());
                 this.drawText(name, x + 8, 0, nw - 16);
                 x += nw;
             }

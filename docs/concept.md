@@ -1021,12 +1021,29 @@ Dragonheart Greatsword), and the ranged moves sling, shoot, throw and net. The f
 Weapon skills above.
 
 ### Screen and battle layout
-- The game runs at **1280 x 720** (Community_Basic). Battle backgrounds and the title image are scaled
-  to fill it until there is widescreen art; enemies keep their troop layout, centred to the right of the
-  skill lists (`SI_Screen.js`).
-- **FFX-style battle screen:** the turn order runs as a strip across the top; the battle log sits under
-  it; commands bottom-left, party status bottom-right; skill, item, swap and switch lists open above the
-  commands with the help box above them, leaving the enemies visible.
+- The game runs at **1280 x 720** (Community_Basic). The title image is scaled to fill it (`SI_Screen.js`).
+- **Battle screen, somewhere between EarthBound and the SNES Shin Megami Tensei games**
+  (`SI_BattleHud.js`, loaded last):
+  - the turn order runs as a strip across the top (AI allies in green, enemies in red);
+  - the battlefield sits in a frame, with a small box in its corner for the day, time and place.
+    Enemies keep their troop layout, scaled into the frame. The battle background shows only inside
+    it; windows have plain dark green backs;
+  - commands sit in a column to the right of the battlefield. Skill, item, swap, switch and target
+    lists open in the same panel under a small title ("Physical"); skills are listed without icons,
+    costs in grey, and the description appears below a divider at the foot of the panel;
+  - a bar under the battlefield carries the battle text (two lines at a time), or asks what to do
+    ("Sib's move?", "Hook Down: which enemy?");
+  - each party member has a card along the bottom, with portrait, Health, Mana and Fatigue. The card of
+    whoever is acting lifts and gets a gold frame, a card shakes when its Health drops, and a friend
+    being picked for a skill gets a blue frame;
+  - AI allies (Patience, later the faction soldiers) get a small strip on the right with portrait,
+    name and Health; the cards make room for it.
+- **Rolling Health** (`SI_RollingHealth.js`), as in EarthBound: damage to the party rolls the Health
+  counter down instead of landing at once. Nobody falls until the counter reaches 0, so a quick heal
+  saves someone who took a mortal blow. A full bar takes 6 seconds to roll away (plugin parameter);
+  healing rolls up twice as fast. The counter keeps rolling while you choose a command, and pauses for
+  messages. Win or run first and the rest of the damage is forgotten. Enemies take damage at once.
+  Health still to roll away shows as a red stretch of the bar. **Options > Rolling Health** turns it off.
 - **Dialogue and the battle log wrap** at word boundaries (dialogue continues on the next page).
 - **Options > Battle Text:** Slow / Normal / Fast (each battle message stays up 72 / 48 / 24 frames;
   RPG Maker's default was 16). Holding OK still speeds it up.
@@ -2613,7 +2630,8 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
 | Armor sets, charms, size rules | Done: `SI_Outfits.js` (after SI_Layout) |
 | Meals (food raises stats) | Done: `SI_Meals.js` |
-| Widescreen, battle layout, word wrap, battle text speed | Done: `SI_Screen.js` (load last) |
+| Widescreen, word wrap, battle text speed | Done: `SI_Screen.js` |
+| Battle screen (EarthBound and SMT), rolling Health | Done: `SI_BattleHud.js` (load last), `SI_RollingHealth.js` |
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
