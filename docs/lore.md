@@ -987,7 +987,8 @@ after gaining a body.
    Mother, Emu for the Red Bowl, Ihi for the Destroyer...). An *aspect* is a part of a god: Geha and Huhuti
    are the Lady of the Woods' two aspects, and Viri (in three tiers) is her Daughters of the Wells. Reading
    one is speaking a piece of a god's name, which is why they are earned at **shrines**, guarded by priests,
-   gifted rather than taught, and why a scholar like Kathrout can't simply copy them.
+   gifted rather than taught. (Seafarers don't wear glyph tattoos at all; a Seafarer scholar like Kathrout
+   works from books, the codices, instead.)
 2. **A primal force or element.** The generic spells: Ahi (fire), Rari (water), Hagu (air), Keri (earth),
    and the other forces: Mahu (healing), Ara (life returning), Raau (plant-medicine), Kami (the mind), Keva
    (blinding dark), Gau (the bite, hunger). Anyone who can read them can use them.

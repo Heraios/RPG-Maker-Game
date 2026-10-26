@@ -495,9 +495,11 @@ sidequest chain fills the compendium (see lore.md, "People of the island").
   station underlined, and has to choose: burn it, hide it, or give it to Dama. (She mirrors Parl, the other
   Seafarer who wrote everything down: "Welcome to the club.")
 - **Combat role: pure mage.** She learned magic from books (anyone literate can use a Codex, and she's the
-  most literate person on the island): she learns spells from First Sailor inscriptions and Glyph Tablet
-  Shards, including glyphs others need quests for. Highest magic attack in the game, a big MP pool, frail for
-  an adult. Tou keeps the First Sailor burst; Kathrout is the steady caster.
+  most literate person on the island). Like the Seafarers generally, she **can't use glyph tattoos at all**;
+  instead, **uniquely, she has two codex slots** (every other reader has one), and with Codex Mastery she
+  gets both codices' full spell lists. A First Sailor inscription can still teach her a spell (a story
+  event). Highest magic attack in the game, a big MP pool, frail for an adult. Tou keeps the First Sailor
+  burst; Kathrout is the steady caster.
 - **She can't see ghosts or spirits** (she's an adult): against spirits her spells go astray unless someone
   points the target out. (Lasa, oddly, she can see.)
 - **Proposed arc, the illness** (after Routledge's last years, handled with care): guilt over the book and

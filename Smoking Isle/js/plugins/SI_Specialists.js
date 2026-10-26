@@ -4,11 +4,12 @@
 
 /*:
  * @plugindesc Smoking Isle: Aday the mechanist (items, Toss, Tinker, Mend
- * Gear) and Kathrout the scholar (studying glyphs, not seeing spirits).
+ * Gear) and Kathrout the scholar (not seeing spirits).
  * @author Smoking Isle
  *
  * @help
  * Place after SI_Gear, SI_Voltaic, SI_Glyphs and SI_Talk.
+ * (Kathrout's two codex slots are SI_Glyphs' <Codex Slots: 2>.)
  *
  * ============================================================================
  * Aday: items and gadgets
@@ -35,10 +36,6 @@
  * Kathrout: a scholar's magic
  * ============================================================================
  * Actor or class note:
- *   <Studies Glyphs>     learns the spell of every glyph tattoo the party has
- *                        (in the bag or on anyone in the party), for good, as
- *                        soon as she is with them. Glyphs with <Sacred> (the
- *                        gods' own) or <Permanent> (Yoon's) aren't copied.
  *   <Unseen Kinds: spirit 50>
  *                        her actions are 50% less likely to land on enemies
  *                        of that kind (she can't see them), unless the
@@ -167,45 +164,11 @@ SmokingIsle.Specialists = SmokingIsle.Specialists || {};
     };
 
     //-------------------------------------------------------------------------
-    // Kathrout: studying glyphs
+    // Kathrout: a spell from an inscription
     //-------------------------------------------------------------------------
-
-    $.isCopyableGlyph = function(item) {
-        return SmokingIsle.Glyphs && SmokingIsle.Glyphs.isTattoo(item) && !/<Sacred>|<Permanent>/i.test(item.note || '');
-    };
-
-    $.glyphsInHand = function() {
-        var list = $gameParty.armors().slice();
-        $gameParty.members().forEach(function(a) { list = list.concat(a.armors()); });
-        return list.filter($.isCopyableGlyph);
-    };
-
-    $.studyAll = function() {
-        if (!$gameParty) return;
-        var scholars = $gameParty.members().filter(function(a) { return !!$.note(a, /<Studies Glyphs>/i); });
-        if (!scholars.length) return;
-        var glyphs = $.glyphsInHand();
-        scholars.forEach(function(a) {
-            glyphs.forEach(function(g) {
-                g.traits.forEach(function(t) { if (t.code === Game_BattlerBase.TRAIT_SKILL_ADD) a.learnSkill(t.dataId); });
-            });
-        });
-    };
 
     $.study = function(actorId, skillId) {
         $gameActors.actor(actorId).learnSkill(skillId);
-    };
-
-    var _Game_Party_gainItem = Game_Party.prototype.gainItem;
-    Game_Party.prototype.gainItem = function(item, amount, includeEquip) {
-        _Game_Party_gainItem.call(this, item, amount, includeEquip);
-        if (amount > 0 && $.isCopyableGlyph(item)) $.studyAll();
-    };
-
-    var _Game_Party_addActor = Game_Party.prototype.addActor;
-    Game_Party.prototype.addActor = function(actorId) {
-        _Game_Party_addActor.call(this, actorId);
-        $.studyAll();
     };
 
     //-------------------------------------------------------------------------

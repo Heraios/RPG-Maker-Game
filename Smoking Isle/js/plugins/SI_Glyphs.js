@@ -37,6 +37,7 @@
  *                       joins the Islander village)
  *   <Face Tattoo>       also a Face slot (priests)
  *   <Codex Slot>        this character has 1 codex slot
+ *   <Codex Slots: 2>    this character has 2 (Kathrout, uniquely)
  * Characters without these have neither (innate casters like Tou, Falmi and
  * Lasa learn spells normally instead).
  *
@@ -172,6 +173,12 @@ SmokingIsle.Glyphs = SmokingIsle.Glyphs || {};
         return !!$.noteValue(this, /<Codex Slot>/i) || this.scriptsRead().length > 0;
     };
 
+    Game_Actor.prototype.codexSlotCount = function() {
+        var m = $.noteValue(this, /<Codex Slots:\s*(\d+)>/i);
+        if (m) return Number(m[1]);
+        return this.hasCodexSlot() ? 1 : 0;
+    };
+
     $.codexIds = function(item, tag) {
         var m = new RegExp('<' + tag + ':\\s*([^>]*)>', 'i').exec(item.note || '');
         return m ? m[1].split(',').map(Number).filter(Boolean) : [];
@@ -208,7 +215,7 @@ SmokingIsle.Glyphs = SmokingIsle.Glyphs || {};
         var slots = _Game_Actor_equipSlots.call(this).filter(function(etype) {
             return etype !== $.tattooType && etype !== $.codexType;
         });
-        if (this.hasCodexSlot()) slots.push($.codexType);
+        for (var c = 0; c < this.codexSlotCount(); c++) slots.push($.codexType);
         for (var i = 0; i < this.tattooSlotCount(); i++) slots.push($.tattooType);
         return slots;
     };
