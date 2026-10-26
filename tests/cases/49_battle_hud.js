@@ -1,4 +1,4 @@
-// The battle screen (SI_BattleHud) and rolling Health (SI_RollingHealth): the layout's windows, the
+// The battle screen (SI_BattleHud: layout, damage numbers on the cards) and rolling Health (SI_RollingHealth): the layout's windows, the
 // ally strip, the counter rolling down and up, a quick heal saving someone, falling at 0, the rest
 // forgotten when the battle ends, and Rolling Health off.
 
@@ -12,12 +12,17 @@ module.exports = {
             out.cards = s._hudCards.filter(c => c.visible).length;
             out.statusHidden = !s._statusWindow.visible;
             out.logInBar = s._logWindow.y === rects.bar.y && s._logWindow.width === rects.bar.width;
-            out.commandInColumn = s._actorCommandWindow.x === rects.column.x;
-            out.listInColumn = s._skillWindow.x === rects.column.x && s._enemyWindow.x === rects.column.x;
+            out.commandInColumn = s._actorCommandWindow.x >= rects.column.x;
+            out.listInColumn = s._skillWindow.x >= rects.column.x && s._enemyWindow.x >= rects.column.x;
             out.prompt = s._logWindow._siPrompt;
             out.lifted = s._hudCards.filter(c => c.visible && c.y < c._baseY).map(c => c.actor().name());
             out.active = BattleManager.actor().name();
             out.alliesHidden = !s._pseudoStatusWindow.visible;
+            // A hit puts its number on the card.
+            const card = s._hudCards.find(c => c.visible), who = card.actor();
+            who.clearResult(); who.gainHp(-3); who.startDamagePopup();
+            card.update();
+            out.popup = card._siDamageSprites.length === 1 && card._siDamageSprites[0].children.length === 1;
             const before = s._hudCards[0].width;
             $gameParty.addActor(12);
             s.update();
@@ -32,6 +37,7 @@ module.exports = {
         t.eq(r.prompt, r.active + '\'s move?', 'bar asks for the move');
         t.eq(r.lifted.join(), r.active, 'acting card lifts');
         t.eq(r.alliesHidden, true, 'no ally strip without allies');
+        t.eq(r.popup, true, 'damage number on the card');
         t.eq(r.alliesShown && r.narrower, true, 'ally strip appears and the cards make room');
     },
 

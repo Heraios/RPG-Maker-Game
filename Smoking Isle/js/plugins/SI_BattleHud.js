@@ -28,12 +28,13 @@
  *
  * - Battle windows have plain dark green backs; the battle background shows
  *   only inside the battlefield's frame.
- * - Lists open in the column under a small title, skills without icons, and
+ * - Lists open in the column under a title, skills without icons, and
  *   the help sits under a divider at the column's foot.
  * - The card of whoever is acting lifts and gets a gold frame (a friend being
- *   picked for a skill, a blue one); a card shakes when its
- *   Health drops. With SI_RollingHealth, Health still to roll away shows
- *   as a red stretch of the bar (and healing still to come, green).
+ *   picked for a skill, a blue one). A hit shakes the card and pops its
+ *   number (or Miss) over it, as over enemies; the ally strip shows them too.
+ *   With SI_RollingHealth, Health still to roll away shows as a red stretch
+ *   of the bar (and healing still to come, green).
  * - The ally strip (AI allies such as Patience) only appears while one is
  *   in the battle; the cards spread out when it isn't there.
  * - The box in the battlefield's corner shows the day, time and place.
@@ -58,7 +59,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     $.ALLY_WIDTH = 248;
     $.GAP = 8;
     $.INSET = 6;           // lists and commands sit inside the column's frame
-    $.TITLE_HEIGHT = 30;
+    $.TITLE_HEIGHT = 36;
     $.HELP_HEIGHT = 72;
     $.COLORS = {
         back: '#1f2a14', screen: '#111111', label: '#8fd3ff', prompt: '#ffd76b', place: '#9be36b',
@@ -184,6 +185,42 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     };
 
     //-------------------------------------------------------------------------
+    // Damage numbers on the cards
+    //-------------------------------------------------------------------------
+
+    // The party has no sprites on the battlefield, so each popup's result is kept
+    // for the card (or ally strip) to show.
+    var _Game_Battler_startDamagePopup = Game_Battler.prototype.startDamagePopup;
+    Game_Battler.prototype.startDamagePopup = function() {
+        _Game_Battler_startDamagePopup.call(this);
+        if (!this.isActor() || !$gameParty.inBattle()) return;
+        var result = JsonEx.makeDeepCopy(this.result()), alive = this.isAlive();
+        this._siPopups = this._siPopups || [];
+        this._siPopups.push({ result: function() { return result; }, isAlive: function() { return alive; } });
+    };
+
+    // Shows any waiting numbers for actor at (x, y) in win, and clears finished ones.
+    $.updatePopups = function(win, actor, x, y) {
+        (actor._siPopups || []).forEach(function(target) {
+            var sprite = new Sprite_Damage();
+            sprite.x = x;
+            sprite.y = y;
+            sprite.setup(target);
+            win._siDamageSprites.push(sprite);
+            win.addChild(sprite);
+        });
+        actor._siPopups = [];
+    };
+
+    $.clearFinishedPopups = function(win) {
+        win._siDamageSprites = (win._siDamageSprites || []).filter(function(sprite) {
+            if (sprite.isPlaying()) return true;
+            win.removeChild(sprite);
+            return false;
+        });
+    };
+
+    //-------------------------------------------------------------------------
     // Party cards
     //-------------------------------------------------------------------------
 
@@ -203,6 +240,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         this._lastHp = null;
         this._baseX = 0;
         this._baseY = 0;
+        this._siDamageSprites = [];
     };
 
     Window_SICard.prototype.standardPadding = function() {
@@ -227,7 +265,9 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         Window_Base.prototype.update.call(this);
         var actor = this.actor();
         this.visible = !!actor;
+        $.clearFinishedPopups(this);
         if (!actor) return;
+        $.updatePopups(this, actor, this.width / 2, 92);
         var mark = $.highlight(actor);
         this._lift = (this._lift + (mark ? 4 : -4)).clamp(0, $.LIFT);
         if (this._lastHp !== null && actor.hp < this._lastHp) this._shake = 12;
@@ -297,6 +337,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     Window_SIAllies.prototype.initialize = function(x, y, width, height) {
         Window_Base.prototype.initialize.call(this, x, y, width, height);
         this._signature = '';
+        this._siDamageSprites = [];
     };
 
     Window_SIAllies.prototype.standardPadding = function() {
@@ -311,6 +352,10 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         Window_Base.prototype.update.call(this);
         var members = this.members();
         this.visible = members.length > 0;
+        $.clearFinishedPopups(this);
+        members.forEach(function(actor, i) {
+            $.updatePopups(this, actor, this.width / 2 + 20, this.padding + 22 + i * 44 + 40);
+        }, this);
         var sig = members.map(function(a) {
             return [a.actorId(), a.hp, $.target(a), a.mhp, $.highlight(a), a.states().map(function(s) { return s.id; }).join(),
                 ImageManager.loadFace(a.faceName()).isReady()].join(',');
@@ -516,7 +561,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         if (text !== this._text) {
             this._text = text;
             this.contents.clear();
-            this.contents.fontSize = 16;
+            this.contents.fontSize = 22;
             this.changeTextColor($.COLORS.label);
             this.contents.drawText(text || '', 8, 0, this.contentsWidth() - 8, this.contentsHeight());
             this.resetFontSettings();

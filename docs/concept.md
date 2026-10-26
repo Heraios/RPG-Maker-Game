@@ -1029,12 +1029,13 @@ Weapon skills above.
     Enemies keep their troop layout, scaled into the frame. The battle background shows only inside
     it; windows have plain dark green backs;
   - commands sit in a column to the right of the battlefield. Skill, item, swap, switch and target
-    lists open in the same panel under a small title ("Physical"); skills are listed without icons,
+    lists open in the same panel under a title ("Physical", a little larger than the description text); skills are listed without icons,
     costs in grey, and the description appears below a divider at the foot of the panel;
   - a bar under the battlefield carries the battle text (two lines at a time), or asks what to do
     ("Sib's move?", "Hook Down: which enemy?");
   - each party member has a card along the bottom, with portrait, Health, Mana and Fatigue. The card of
-    whoever is acting lifts and gets a gold frame, a card shakes when its Health drops, and a friend
+    whoever is acting lifts and gets a gold frame, a card shakes and shows the damage number (or Miss)
+    when it's hit, and a friend
     being picked for a skill gets a blue frame;
   - AI allies (Patience, later the faction soldiers) get a small strip on the right with portrait,
     name and Health; the cards make room for it.
