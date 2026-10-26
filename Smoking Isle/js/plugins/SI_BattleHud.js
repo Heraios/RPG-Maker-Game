@@ -30,7 +30,7 @@
  *   border, with small gaps between them; the battle background shows only
  *   inside the battlefield's frame. Sizes and colours follow the mock-up
  *   ($.FONT and $.COLORS at the top of the plugin).
- * - A pointer (img/system/Cursor1, $.ARROW) marks the chosen command or line.
+ * - A pointer (img/system/Cursor2, $.ARROW) marks the chosen command or line.
  * - Lists open in the column under a title, skills without icons, and
  *   the help sits under a divider at the column's foot.
  * - The card of whoever is acting lifts and gets a gold frame (a friend being
@@ -77,7 +77,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         allyHp: 18, list: 24, title: 28, help: 20 };
     // The pointer beside the chosen command or list line: any image in img/system
     // (Cursor1-4 are 24 x 24 arrows; CursorTall1-4 are 24 x 48).
-    $.ARROW = 'Cursor1';
+    $.ARROW = 'Cursor2';
     $.ARROW_INDENT = 34;
     // Troop positions in the database are laid out for the old 816 x 624 screen.
     $.BASE_WIDTH = 816;
@@ -313,7 +313,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         this.visible = !!actor;
         $.clearFinishedPopups(this);
         if (!actor) return;
-        $.updatePopups(this, actor, this.width / 2, 88);
+        $.updatePopups(this, actor, this.width / 2 + 20, 124);
         var mark = $.highlight(actor);
         this._lift = (this._lift + (mark ? 4 : -4)).clamp(0, $.LIFT);
         if (this._lastHp !== null && actor.hp < this._lastHp) this._shake = 12;
@@ -400,7 +400,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         this.visible = members.length > 0;
         $.clearFinishedPopups(this);
         members.forEach(function(actor, i) {
-            $.updatePopups(this, actor, this.width / 2 + 24, this.padding + 26 + i * 52 + 44);
+            $.updatePopups(this, actor, this.width / 2 + 24, this.padding + 26 + i * 52 + 58);
         }, this);
         var sig = members.map(function(a) {
             return [a.actorId(), a.hp, $.target(a), a.mhp, $.highlight(a), a.states().map(function(s) { return s.id; }).join(),
