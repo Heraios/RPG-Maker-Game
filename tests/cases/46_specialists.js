@@ -59,7 +59,7 @@ module.exports = {
             bones.addState(ST('Pointed Out')); out.pointed = (hit(bones) / hit(raven)).toFixed(2);
             return out;
         });
-        t.eq(r.who, 'Aday/Mechanist/Kathrout/Scholar/Fa_People15/Fa_Actor3', 'the two new party members');
+        t.eq(r.who, 'Aday/Mechanist/Kathrout/Scholar/Fa_Actor3/Fa_Actor3', 'the two new party members');
         t.ok(r.child, 'Aday is a child, Kathrout an adult');
         t.ok(r.naming, 'both are named when they join');
         t.eq(r.start, 'Bronze Knife/Heather Staff/true', 'Aday starts with his bronze knife; Kathrout with a staff and the Codex of Embers');
