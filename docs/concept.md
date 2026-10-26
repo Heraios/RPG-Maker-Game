@@ -849,6 +849,33 @@ all of them). Fatigue: very low 1, low 2, medium 3, medium-high 4, high 5, very 
 | Electric | Any **metal blade** (knife, axe, sword) | **Conducting Blade** (medium, electric Burn ×1.1; needs a **Voltaic Pile**). An Islander technique: see Voltaic techniques |
 | Ranged | Bow, Sling | **Aimed Shot** (medium, Pierce, ignores half the target's DEF) · **Covering Fire** (low, light Pierce/Crush, AGI down) · **Stone Rain** (high, sling only: spends all stones, one random hit each) |
 
+**Weapon arts** (the second batch; `SI_WeaponArts.js`). Stances last until the holder's next turn.
+
+| Weapons (move) | Skill | What it does |
+|---|---|---|
+| Spear, staff (sweep) | **Hook Down** (low) | Pierce ×0.5; a flyer is **Brought Down** (can't fly, 2 turns), so melee can reach it |
+| Spear, ritual spear (brace) | **Brace** (low, quick) | Stance: the next melee attack that lands on you is answered at once (Pierce ×1.2) |
+| Club, mace, hammer (club) | **Shatter** (high) | Crush ×2.0; +50% on shelled and stone enemies |
+| Club, mace, hammer (club) | **Ringing Blow** (medium) | Crush ×1.2, Endurance down 3 turns; +50% on metal-armoured and shelled enemies |
+| Two-handed hammer, greatsword (pound) | **Ground Pound** (high) | Crush ×0.6 to all enemies, Mired 30%; doesn't touch flyers |
+| Knife, either hand (knife) | **Throw Knife** (low) | Unarmed Might + the knife's, Pierce ×1.2, reaches flyers. The knife is gone until the battle ends (off hand first); two knives, two throws |
+| Off-hand knife (offhand) | **Off-Hand Flurry** (very low) | Pierce/Cut ×0.6 and **no turn spent**: act again at once (anything but another Flurry) |
+| Any shield | **Shield Bash** (medium) | Crush ×0.6, Stunned 40% |
+| Large shield | **Cover** (medium) | Stand in front of one ally until your next turn: single attacks on them come to you |
+| Paddle-sword (paddle) | **Shark's Tail** (medium-high) | Two cuts ×0.7, each Bleed 25%. An Islander technique |
+| Paddle-sword (paddle) | **Splash** (low) | Wet 70% on all enemies, no damage: sets up the electric techniques |
+| Staff (ward) | **Ward Off** (low, quick) | Stance: the next melee attack on you is turned aside; the attacker may be Disoriented (50%) |
+| Ritual knife (offering) | **Blood Offering** (medium) | Cut ×0.8; half the damage comes back as Mana |
+| Ritual spear (consecrate) | **Consecrate** (medium) | Pierce ×1.0, ×1.75 against spirits and the dead |
+| Sword (sword) | **Riposte** (low, quick) | Stance: the next melee attack that lands on you is answered at once (Cut ×1.2) |
+| Axe (hook) | **Hook Shield** (medium) | Removes Guard and defence buffs, Endurance down 2 turns; Cut ×0.6 |
+| Net (net) | **Haul In** (medium) | Only on an Entangled enemy: Crush ×1.4, Held; a netted flyer is Brought Down |
+| Javelin (throw) | **Pinning Throw** (medium) | Pierce, Held; a flyer may be Brought Down (60%) |
+| Bow (shoot) | **Pitch Arrow** (medium) | Pierce and Burn, Smoldering 40%; uses a **Pine Pitch** |
+
+"Melee" means physical and not ranged (`<Ranged>` or `<Ranged Strike>`): stances ignore arrows, stones and
+thrown things.
+
 **The weapon roster, by material** (lore: "Weapon materials"). ATK in brackets; every non-bronze
 weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thirds ATK.
 
@@ -910,8 +937,31 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
 - Who can use paddle-swords: Yoon, Pada, Dama, Falmi and Thenmy. Swords: Thenmy, Falmi, Parl, and Yoon
   after Thenmy's sidequest (switch 4). Staffs: Yoon, Sib, Juda and Tou only.
 
-**For testing, everyone knows every skill their weapons allow.** When each is learned (early,
-mid-game, late) is still to be decided.
+**Starting kits.** Each character starts with only what fits their life; the rest is taught (teachers,
+sidequests, the story). Everyone also knows the basic attack of every ranged weapon they can use.
+
+| Character | Starts with |
+|---|---|
+| Ghost Yoon | none (no weapons) |
+| Human Yoon | Quick Jab, Sling Stone (a new body: the rest comes from relationships) |
+| Sib | Quick Jab, Trip, Sling Stone |
+| Lasa | Quick Jab, Quick Slash, Raking Cut, Vital Strike |
+| Pada | Quick Jab, Measured Thrust, Vital Strike, Quick Slash, Raking Cut, Flaying Strike, Heavy Chop, Loose Arrow, Aimed Shot, Covering Fire, Hurl Javelin, Sling Stone |
+| Juda | Quick Jab, Vital Strike, Overhead Smash, Skull Crack, Wide Sweep, Sling Stone |
+| Dama | Quick Jab, Measured Thrust, Wide Sweep, Trip, Heavy Chop, Cast Net, Hurl Javelin, Brace |
+| Parl | Quick Jab, Quick Slash, Vital Strike, Flaying Strike, Aimed Shot, Covering Fire, Throw Knife, Loose Arrow, Sling Stone (and Finishing Blow) |
+| Tou | Overhead Smash, Trip, Sling Stone |
+| Falmi | Quick Slash, Heavy Chop, Overhead Smash, Measured Thrust, Shield Bash, Hurl Javelin, Sling Stone |
+| Thenmy | Measured Thrust, Quick Slash, Heavy Chop, Rending Blow, Overhead Smash, Pommel Strike, Shield Bash, Cover, Hurl Javelin (and Armor Training) |
+| Aday | Quick Jab, Overhead Smash, Sling Stone, Covering Fire |
+| Kathrout | Quick Jab |
+
+**Teachers** (to write as events): Pada (hunting and shooting), Dama and the spearwife patrol (spear, net,
+Brace, Haul In, Pinning Throw), Hupa the logger (Cleave), Thenmy (swords, Riposte), Tinguaro the smith
+(Shatter, Ringing Blow), Chona (Cover), Hotu (Splash), Islander elders (Shark's Tail), Tuu (Pitch Arrow),
+the travelling priest (Ward Off), Itahisa (Blood Offering), Jarcotapu (Consecrate), the Tabonakeu quarry
+(Ground Pound), a beaten marine (Hook Shield). Story events teach with *Change Skills*. The Test Room's
+**Weapon Master** teaches everyone everything (and the automated tests start that way).
 
 ### Yoon's skills
 The Ghost's versions hit all enemies or all allies; human Yoon's versions hit one target.
@@ -961,29 +1011,14 @@ enemies: Salt Glyph, Drag Below, Hypnotic Gaze, Nightmare. RPG Maker's default R
 (it duplicated Enraged); Immortal is kept for scripted fights.
 
 ### Weapon moves
-Weapons carry **moves** (`jab`, `chop`, `bash`...). A physical skill requires a move, so a
-character must both *know* the skill and have a weapon that *allows* it. The weapon type
-(Dagger, Spear, Sword...) only decides who can equip it.
-
-| Weapon | Type | Moves |
-|--------|------|-------|
-| Obsidian Knife | Dagger | jab |
-| Obsidian Spear | Spear | jab |
-| Bronze Crescent Sword | Sword | chop (a sword that **can't** Quick Jab) |
-| Basalt Axe | Axe | chop |
-| Ebony Club | Club | bash |
-| Heather Staff | Staff | bash |
-
-| Skill | Move | Fatigue | Damage |
-|-------|------|---------|--------|
-| Punch | none (always available) | +5 | Crush, ignores weapon ATK |
-| Quick Jab | jab | +8 | Pierce, light |
-| Heavy Chop | chop | +20 | Cut, heavy |
-| Bash | bash | +12 | Crush, medium |
-| Catch Breath | (Rest skill) | −35 | none |
-
-These are placeholder examples to show how the system works; the real weapon and skill list is
-still to be designed.
+Weapons carry **moves** (`<Moves: jab, thrust, sweep>`). A physical skill requires a move
+(`<Requires Move: ...>`), so a character must both *know* the skill and have a weapon that *allows* it. The
+weapon type (Dagger, Spear, Sword...) only decides who can equip it. Moves in use: jab, thrust, vital, slash,
+chop, bludgeon, sweep, sword, metal, plus one per weapon family for its own arts: knife (daggers), brace
+(spears, ritual spears), ward (staves), club (clubs, maces, hammers), hook (axes), paddle (paddle-swords),
+offering (ritual knives), consecrate (ritual spears), pound (the two-handed basalt hammer and the
+Dragonheart Greatsword), and the ranged moves sling, shoot, throw and net. The full skill list is under
+Weapon skills above.
 
 ### Screen and battle layout
 - The game runs at **1280 x 720** (Community_Basic). Battle backgrounds and the title image are scaled

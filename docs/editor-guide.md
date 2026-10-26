@@ -77,7 +77,8 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
 6. **Common events 3–10** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
    Choose Yoon, Yoon's Room: Keepsakes).
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
-   effects) and 213 (Ready to Toss, Aday's Toss) are also used by number.
+   effects), 213 (Ready to Toss, Aday's Toss) and 214–219 (the weapon-art stances: Braced, En Garde,
+   Warding, Covered, Following Up, Brought Down) are also used by number.
 7. **Plugin Manager order.** Changing a plugin's settings is fine; moving plugins up or down isn't.
 8. **Troop 13 and the Test Room (map 4)** are used by the automated tests. Copy them instead of editing.
 
@@ -92,6 +93,12 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
 - Their portraits are placeholders from the faces folder (People15 for Aday, Actor3 for Kathrout): swap
   them in the Actors tab.
 - In the Test Room, the **Recruiter** can add them.
+
+**Weapon skills** each need a move from the equipped weapon (`<Requires Move: ...>` on the skill, `<Moves: ...>`
+on the weapon). Characters start with a small kit (the class's Learnings); teach more in an event with
+**Change Skills**. The Test Room's **Weapon Master** teaches everyone every weapon skill. A new weapon of an
+existing type should copy its family's moves (for example `knife` on daggers, `ward` on staves), or its
+family's own skills won't work with it.
 
 ---
 

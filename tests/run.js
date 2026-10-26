@@ -89,6 +89,11 @@ function makeHelpers(page, base) {
             await page.goto(base + '/index.html?btest');
             await page.waitForFunction(() => window.SceneManager && SceneManager._scene instanceof Scene_Battle &&
                 SceneManager._sceneStarted, null, { timeout: 30000 });
+            await h.teachWeapons();
+        },
+        // Tests run with every weapon skill known (as after the Test Room's Weapon Master).
+        async teachWeapons() {
+            await page.evaluate(() => SmokingIsle.WeaponArts && SmokingIsle.WeaponArts.teachAll());
         },
         // Start a New Game (the test room) and finish its setup event.
         async newGame() {
@@ -99,6 +104,7 @@ function makeHelpers(page, base) {
             await page.waitForFunction(() => SceneManager._scene instanceof Scene_Map && SceneManager._sceneStarted);
             await page.waitForTimeout(300);
             await h.pumpMessages();
+            await h.teachWeapons();
         },
         // Press OK until messages and running events finish.
         async pumpMessages(max = 60) {

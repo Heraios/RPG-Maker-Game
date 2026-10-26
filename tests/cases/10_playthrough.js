@@ -73,6 +73,8 @@ module.exports = {
           if (await h.eval(() => $gameMessage.isBusy())) await h.page.keyboard.press('Enter');
           await h.page.waitForTimeout(60);
         }
+        // Random picks (stances, Splash...) can make a fight run long: end it rather than overlap the next event.
+        if (await h.eval(() => SceneManager._scene instanceof Scene_Battle && BattleManager._phase !== 'battleEnd')) await h.eval(() => BattleManager.abort());
         await h.page.waitForTimeout(1500);
         for (let i = 0; i < 30 && await h.eval(() => $gameMessage.isBusy() || $gameMap.isEventRunning()); i++) { await h.page.keyboard.press('Enter'); await h.page.waitForTimeout(100); }
       }
