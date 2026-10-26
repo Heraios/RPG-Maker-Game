@@ -1,25 +1,27 @@
-# Icon index (the combined Iconset.png)
+# Icon index (Iconset.png)
 
-All icon sets are stacked in one file, `img/system/Iconset.png`, 16 icons per row. Each set's blank rows were dropped.
-The original icons come first and are unchanged, so every existing item, skill and state keeps its icon.
+`img/system/Iconset.png` is built from the sets in `img/system/RPG_Maker`, stacked in the order below, 16 icons per row,
+with each set's blank rows dropped. Icon 0 is left empty (RPG Maker treats it as "no icon").
 In the editor, pick icons from the icon picker as usual; this table says where each set starts.
 
-| Set | Icon numbers | Rows |
-|---|---|---|
-| Original icons | 0–1071 | 67 |
-| Weapon | 1072–1695 | 39 |
-| Armour | 1696–2239 | 34 |
-| Clothing | 2240–3055 | 51 |
-| Tool | 3056–3791 | 46 |
-| Blacksmith | 3792–3871 | 5 |
-| Craft | 3872–4975 | 69 |
-| Potion | 4976–5167 | 12 |
-| Food_Drink | 5168–6159 | 62 |
-| Fish | 6160–6271 | 7 |
-| Crops | 6272–6591 | 20 |
-| Farming | 6592–6735 | 9 |
-| Flower | 6736–6815 | 5 |
-| Trees | 6816–6895 | 5 |
-| Instrument | 6896–6943 | 3 |
-| Interiors | 6944–7519 | 36 |
-| Ext | 7520–8127 | 38 |
+| Set | Icon numbers |
+|---|---|
+| Weapon | 16–639 |
+| Armour | 640–1183 |
+| Clothing | 1184–1999 |
+| Tool | 2000–2735 |
+| Blacksmith | 2736–2815 |
+| Craft | 2816–3919 |
+| Potion | 3920–4111 |
+| Food & Drink | 4112–5103 |
+| Fish | 5104–5215 |
+| Crops | 5216–5535 |
+| Farming | 5536–5679 |
+| Flower | 5680–5759 |
+| Trees | 5760–5839 |
+| Instrument | 5840–5887 |
+| Interiors | 5888–6463 |
+| Ext | 6464–7071 |
+
+To add a set later, put it in `img/system/RPG_Maker` and ask for the Iconset to be rebuilt with it added at the end,
+so the icons already in use keep their numbers.
