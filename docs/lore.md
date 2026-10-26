@@ -898,6 +898,38 @@ She lives in **Mansehare**, next door to Iras. She's also an optional **party me
   complaints; if either dies in Act 4, the other's notes stop. Met at random bothies; sell fuel,
   Fire-Starting Kits and trail food.
 
+
+### The other peoples and their homes
+The Seafarers counted the Islanders, a few thousand people. They didn't count the **People of the Forest**,
+the **Children of the Caves** (whom adults can't even see), the **Stonemen**, the **Hags** or the **Owls**, so
+the island is far more populous, and far better defended, than Parl's reports said. Each people has its own
+**polity**, and the four ally commanders are their royals: **Dama** (the Islanders, by consent), **Tou** (the
+Buried Court), **Falmi** (the Forest's heir) and **Thenmy** (the Seafarers, and later his defectors).
+These homes trade in **favours and barter, not cowries**: the Forest wants honesty and offerings, the Court
+wants shiny things and courtesy to its queen. Who can see what matters: at the Court, children do the talking.
+
+**The Forest** (the Lady of the Woods' realm; a living people with a future):
+- **The Lady's Table:** her feasting hall in the laurel forest. Her quests, the forest agreements, allies.
+- **The Children's Garden:** the herb beds where the people grow their children, imps half-sprouted in the
+  soil. The obvious target for the Princess's fires in Act 5.
+- **The Maiden's Spring:** the Stream Maidens' home. Herb lore, rare remedy recipes, a spirit-talking healer.
+- **The Boar's Wallow:** the Boar-Men's warrior camp. Plain talk, contests of strength, hide and bone crafts.
+(The Shepherd of the Deer's high meadows, near Chafakeu, belong to the Forest too.)
+
+**The Buried Court** (Tou's realm; a frozen people, the past still holding court):
+- **The Palace:** Tou's buried palace in the volcanic desert, and her throne room.
+- **The Warrens:** the Children of the Caves' tunnel town in the lava-tube country, and the **Cave Hoard**,
+  where stolen things can be bought back with shiny things.
+- **The Quarry:** where the Stonemen stand unfinished, waiting for orders (after Rapa Nui's Rano Raraku).
+
+**Others:**
+- **The Hag Roost:** crane-nest huts in the deep salt marsh, past Aguerekeu.
+- **The Owl Towers:** the First Sailor ruins in the laurel forest where the Owls of Ill Omen perch; a disputed
+  loyalty between the Lady and Tou.
+- **The Birdmen's sea stack:** off Amentapu; Islander priests of Sooty Bird, not another people.
+- **The Destroyer's deep tubes:** the hostile one, where Aday's drill leads.
+
+All are on the overview map (`docs/island-map.png`, green diamonds).
 ---
 
 ## 3b. The First Sailors
@@ -1120,9 +1152,9 @@ Iberia, Iceland). The strangeness is saved for spirits and First Sailor creation
 
 **Mythic and chimeric beings** follow the island's own patterns: chimeras of goat, pig, bull, snake
 and owl; animals the Ladies turned into peoples; and **the First Sailors' "various creations"**.
-- **Birdmen** (after Rapa Nui's tangata manu; **confirmed**): bird-headed First Sailor creations that
-  still race each spring for the first sooty tern egg on a sea-stack islet. Tied to Sooty Bird and the
-  eggshell glyphs; Tou knows the ceremony.
+- **Birdmen** (after Rapa Nui's tangata manu): **Islander priests of Sooty Bird** who live on the sea stack
+  off Amentapu, wear tern feathers and eat tern eggs. Tied to the spring race for the first sooty tern egg
+  and to the eggshell glyphs. (Not a First Sailor creation.)
 - **Kavakava figures:** rib-thin carved ancestor figures guarding First Sailor tombs. Weak to fire and
   Crush.
 - **Crew-beasts** (**confirmed**): guard and work animals bred by the First Sailors (coral-eyed dogs,
@@ -1218,7 +1250,7 @@ Sun and the Destroyer lean Fire.
 | Pranksters | Children of the Caves, forest child-fae (Green Horses) | Lasa / Falmi talk them down; Threaten scares fae off |
 | Forest people | Boar-men, Owls of Ill Omen | Sapient/spirit; **directness works, cleverness backfires** (boar-men); Tou may stop the owls |
 | Local spirits | Ghosts, Guardian Lizards, Sleep Demons, Daughters of the Wells | Spirit (Sib's Rite, Yoon's ghost kinship) |
-| First Sailor remnants | Stonemen, ancient ghosts, Hags, Birdmen, Crew-beasts, Kavakava figures | **Tou** (Stonemen surrender, ghosts report, Hags conflicted); Yoon (Hags dote on Yoon) |
+| First Sailor remnants | Stonemen, ancient ghosts, Hags, Crew-beasts, Kavakava figures | **Tou** (Stonemen surrender, ghosts report, Hags conflicted); Yoon (Hags dote on Yoon) |
 | Servants of the Destroyer | Black Hounds, Hunched | Hounds: **cannot talk**. Hunched: **Talk to free them** |
 | All-Seafarers | Soldiers, officers; the Princess's troops | Sapient (Parl, Thenmy; spare children vs. not) |
 | Sea | Giant Clams | None |
