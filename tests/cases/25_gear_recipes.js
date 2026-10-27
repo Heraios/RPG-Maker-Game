@@ -15,7 +15,7 @@ module.exports = {
             const craftable = ['Tapa', 'Reed and Palm', 'Goat-Skin', 'Seal Leather', 'Boar Hide', 'Pine Pitch', 'Slat Armor', 'Sharkskin', 'Deerskin',
                                'Linen Armor', 'Tortoise Shell', 'Firebrand Gear', 'Mouflon Wool'];
             const made = new Set(C.recipes.map(x => C.object(x.outs[0])));
-            out.missing = $dataArmors.filter(a => a && a.siOutfit && a.siOutfit.sets.some(s => craftable.includes(s.name)) && !made.has(a)).map(a => a.name).join(', ');
+            out.missing = $dataArmors.filter(a => a && a.siOutfit && a.siOutfit.sets.some(s => craftable.includes(s.name)) && !made.has(a) && !$dataArmors.some(b => b && b.siDegradesTo === a.id)).map(a => a.name).join(', ');
             out.palmFound = !made.has(AR('Pufferfish Helm')) && made.has(AR('Palm-Fibre Cuirass'));
             out.featherNot = !made.has(AR('Feather Crown')) && !made.has(AR('Feather Cape'));
             out.count = C.recipes.filter(x => DataManager.isArmor(C.object(x.outs[0]))).length;
