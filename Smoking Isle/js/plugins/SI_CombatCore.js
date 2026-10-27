@@ -115,6 +115,7 @@
  *   <Fatigue Per Turn: 2>       (armor/weapon/state) adds 2 Fatigue per turn
  *                               in battle (heavy bronze), unless the wearer
  *                               knows a skill with <Armor Training>.
+ *                               A negative number sheds Fatigue (Meditating).
  */
 
 var Imported = Imported || {};
@@ -164,7 +165,7 @@ SmokingIsle.Combat = SmokingIsle.Combat || {};
         var pfr = /<Physical Fatigue Rate:\s*(\d+)>/i.exec(obj.note);
         var outdoor = /<Outdoor Rest:\s*(\d+)>/i.exec(obj.note);
         var indoor = /<Indoor Rest:\s*(\d+)>/i.exec(obj.note);
-        var perTurn = /<Fatigue Per Turn:\s*(\d+)>/i.exec(obj.note);
+        var perTurn = /<Fatigue Per Turn:\s*(-?\d+)>/i.exec(obj.note);
         obj.siPhysicalFatigueRate = pfr ? Number(pfr[1]) / 100 : null;
         obj.siOutdoorRest = outdoor ? Number(outdoor[1]) : 0;
         obj.siIndoorRest = indoor ? Number(indoor[1]) : 0;

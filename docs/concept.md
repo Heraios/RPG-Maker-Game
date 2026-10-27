@@ -462,7 +462,7 @@ with the party: to prove whose side he's on.
   as high priest, has to rule on it. Permission could be a scene: a rite at Jarcotapu, Itahisa's grudging
   blessing, an offering to the Star Mother.
 - **Combat role: the item expert.** Remedies, meals and battle items work about 50% better in his hands;
-  **Toss** throws one item over the whole party (the party's second source of healing); **Tinker** restores
+  **Toss** throws one item over the whole party (the party's second source of healing); **Recharge** restores
   Voltaic charges mid-battle; gadgets (better Chlorine Jars, Pitch Firepots, Smoke Pots, Caltrops) with a
   chance not to use one up. Low Health and attack; nearly useless with an empty bag.
 - **Outside battle:** repairs worn gear at camp and does simple metalwork without a smith: a walking
@@ -1067,7 +1067,7 @@ Fight
 └─ Innate     magical beings' own powers: Yoon's ghost skills (also Lasa, Falmi, Tou later)
 Talk          Soothe, Offer, Ask, Rite, Threaten, Plead, Stalk, Heel, Girl!
 Tactics
-├─ Resting      Catch Breath, Heavy Panting, Hunter's Repose, Become Ethereal
+├─ Resting      Catch Breath, Heavy Panting, and each character's own (Hunter's Repose, Meditate...)
 ├─ Weapon Swap
 ├─ Party Swap   (only with reserve members)
 ├─ Item
@@ -1756,10 +1756,24 @@ menu, so effects that block Physical skills (Weary, Mired) don't block resting.
 | Catch Breath | Everyone | Only above 85 Fatigue; not while Weary | −15 to −20 |
 | Heavy Panting | Everyone | Only above 85 Fatigue; works while Weary | −5 |
 | Hunter's Repose | Pada | Only above 75; not while Weary; grants **Steady Aim** (+25% critical chance on his next ranged attack) | −20 to −25 |
+| Meditate | Sib | Only above 75. For 3 turns: 20% Mana back each turn, but no Magical skills | −10 a turn |
+| Land / Fly | Lasa | Any time. Landed: no flying, Endurance −25%; lasts until she uses Fly | −5 a turn |
+| Diver's Breath | Dama | **Only while Weary**; ends Weary | −15 |
+| Slouch / Stop Slouching | Parl | Only above 60. Until he stops: only Guard or Stop Slouching, no items | −15 a turn |
+| Oil Joints | Tou | Any time, three times a battle. Each use: Speed +5% and Fire damage +10% (stacking to +15% / +30%) | −15, −10, −5 |
+| Photosynthesize | Falmi | Only below half Health. Full Health, but he skips the next shared meal (until the next rest) | −25 |
+| Tinker | Aday | Only above 70. Restores 1 charge to his pile; his next turn comes a little later | −15 |
+| Take Notes | Kathrout | Only above 70. Her next spell costs half the Mana | −20 |
+| Parade Rest | Thenmy | Only above 70. Guards until his next turn | −20 |
+| Become Ethereal | Human Yoon | See Yoon's abilities | −35 |
 
 Weary lifts as soon as Fatigue drops below 100, so letting a character reach 100 costs a turn of
-Heavy Panting before Catch Breath. Since nothing works below 85 (75 for Pada), **Fatigue can't
-be brought below about 60–70 without camping**.
+Heavy Panting (or Dama's Diver's Breath) before Catch Breath. With the shared moves alone, Fatigue
+can't be brought below about 60–70 without camping; the characters' own moves bend that rule, each at a
+price (Lasa grounded, Parl doing nothing, Tou burning easier, Falmi missing a meal). The rules live in
+`SI_Resting.js` (`<Only While Weary>`, `<Health Below>`, `<Usable With State>`, `<Uses Per Battle>`,
+`<Fatigue By Use>`, `<State By Use>`, `<Skips Meal>`, `<Only Skills>`, `<Until Spell>`). Aday's old
+charge-giving skill is now called **Recharge**.
 
 **Physical conditioning:**
 - **Falmi** sheds 1 Fatigue per turn in battle **outdoors**; **Tou** the same **indoors and in
@@ -2643,7 +2657,7 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 | Elemental and healing spell families | Done: data plus `SI_Magic.js` (random hits, heal-and-revive) |
 | Damage types and magic sources | Done: `SI_DamageTypes.js` |
 | Elemental state cycle | Done: `SI_ElementalStates.js` |
-| Resting skills and conditioning | Done: `SI_CombatCore.js` |
+| Resting skills and conditioning | Done: `SI_CombatCore.js`; each character's own resting move: `SI_Resting.js` |
 | Ranged weapons, ammo, flying | Done: `SI_Ranged.js` |
 | Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |

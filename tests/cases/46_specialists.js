@@ -1,5 +1,5 @@
 // Aday the mechanist and Kathrout the scholar: who they are, what they won't eat or wear, Aday's item
-// power, item saving, Toss, Tinker and Mend Gear; Kathrout's two codex slots (and no tattoos) and the spirits she can't see.
+// power, item saving, Toss, Recharge and Mend Gear; Kathrout's two codex slots (and no tattoos) and the spirits she can't see.
 
 module.exports = {
     'Aday and Kathrout': async (h, t) => {
@@ -35,8 +35,8 @@ module.exports = {
             const use = new Game_Action(aday); use.setItemObject($dataItems.find(i => i && i.scope === 7 && i.occasion !== 3) || bread); use.setTarget(0);
             out.toss = use.makeTargets().length + '/' + aday.isStateAffected(ST('Ready to Toss'));
             const use2 = new Game_Action(aday); use2.setItemObject(use.item()); use2.setTarget(0); out.noToss = use2.makeTargets().length;
-            // Tinker: +1 charge for anyone with a pile
-            sib.gainCharge(-99); const before = sib.charge(), tink = new Game_Action(aday); tink.setSkill(SK('Tinker').id);
+            // Recharge: +1 charge for anyone with a pile
+            sib.gainCharge(-99); const before = sib.charge(), tink = new Game_Action(aday); tink.setSkill(SK('Recharge').id);
             sib.clearResult(); tink.apply(sib); out.tinker = sib.charge() - before;
             // Mend Gear: a bent copper knife is straightened, no smith needed
             const slot = sib.equipSlots().indexOf(1); sib._equips[slot].setObject(WE('Bent Copper Knife'));
@@ -73,7 +73,7 @@ module.exports = {
         t.ok(r.used, 'otherwise it is used up');
         t.eq(r.toss, '4/false', 'Toss: the next item reaches all four, and the readiness ends');
         t.eq(r.noToss, 1, 'the item after that is back to one person');
-        t.eq(r.tinker, 1, 'Tinker restores a charge');
+        t.eq(r.tinker, 1, 'Recharge restores a charge');
         t.ok(r.mendable, 'Mend Gear can fix a bent copper knife');
         t.eq(r.mended, 'Copper Knife', 'and does');
         t.eq(r.bentGold + ' -> ' + r.gold, 'Bent Copper Knife -> Gold-Plated Knife', 'a mended weapon goes back to what it wore down from');

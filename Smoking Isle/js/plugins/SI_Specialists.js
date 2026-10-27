@@ -3,7 +3,7 @@
 //=============================================================================
 
 /*:
- * @plugindesc Smoking Isle: Aday the mechanist (items, Toss, Tinker, Mend
+ * @plugindesc Smoking Isle: Aday the mechanist (items, Toss, Recharge, Mend
  * Gear) and Kathrout the scholar (not seeing spirits).
  * @author Smoking Isle
  *
@@ -26,7 +26,8 @@
  *                        skill that gives this state (set its <Turn Cost>).
  *
  * Skill notes:
- *   <Recharge: 1>        restores 1 Voltaic charge to the target (Tinker)
+ *   <Recharge: 1>        restores 1 Voltaic charge to the target (Recharge; and
+ *                        his resting move Tinker, on himself)
  *   <Mends: sinew, glue, smith>
  *                        repairs the target's equipped worn weapons of those
  *                        kinds, like Sinew Binding and Glue (and a smith for
@@ -116,7 +117,7 @@ SmokingIsle.Specialists = SmokingIsle.Specialists || {};
     };
 
     //-------------------------------------------------------------------------
-    // Tinker (<Recharge> on a skill) and Mend Gear (<Mends>)
+    // Recharge (<Recharge> on a skill) and Mend Gear (<Mends>)
     //-------------------------------------------------------------------------
 
     $.skillTag = function(item, tag) {
@@ -139,7 +140,8 @@ SmokingIsle.Specialists = SmokingIsle.Specialists || {};
     Game_Action.prototype.testApply = function(target) {
         var item = this.item();
         if ($.mendKinds(item).length) return $.mendSlots(target, item).length > 0;
-        if ($.skillTag(item, 'Recharge')) return target.isActor() && !!target.pile && !!target.pile() && target.charge() < target.maxCharge();
+        // Aday's resting Tinker still rests him when the pile is full (or missing).
+        if ($.skillTag(item, 'Recharge') && item.stypeId !== 3) return target.isActor() && !!target.pile && !!target.pile() && target.charge() < target.maxCharge();
         return _Game_Action_testApply.call(this, target);
     };
 
