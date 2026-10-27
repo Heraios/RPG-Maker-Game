@@ -11,21 +11,21 @@ module.exports = {
             const talk = (a, skillId, e, offer) => fixed(() => { const x = new Game_Action(a); x.setSkill(skillId); if (offer) x._siOfferItemId = offer; e.clearResult(); x.apply(e); return e._siTalkMessages.join(' / '); });
             const out = {};
             const boar = fresh(1); const start = boar.talkMood();          // Wild Boar
-            talk(yoon, 162, boar); out.soothed = boar.talkMood() > start;
-            $gameParty.gainItem($dataItems[42], 3);
-            const before = boar.talkMood(), bread = $gameParty.numItems($dataItems[42]);
-            talk(yoon, 163, boar, 42); out.offerGain = boar.talkMood() - before; out.breadSpent = bread - $gameParty.numItems($dataItems[42]);
+            talk(yoon, 281, boar); out.soothed = boar.talkMood() > start;
+            $gameParty.gainItem($dataItems[73], 3);
+            const before = boar.talkMood(), bread = $gameParty.numItems($dataItems[73]);
+            talk(yoon, 282, boar, 73); out.offerGain = boar.talkMood() - before; out.breadSpent = bread - $gameParty.numItems($dataItems[73]);
             yoon.changeLevel(3, false);
             const bm = fresh(11); const expBefore = yoon.currentExp();      // Boar-Man: plain pleading works
-            for (let i = 0; i < 12 && bm.isAppeared(); i++) talk(yoon, 167, bm);
+            for (let i = 0; i < 12 && bm.isAppeared(); i++) talk(yoon, 286, bm);
             out.pacifiedLeft = !bm.isAppeared(); out.buffed = $gameParty.members()[0]._buffs[3] > 0; out.exp = yoon.currentExp() - expBefore;
-            const bm2 = fresh(11); bm2._siMood = 95; const e2 = yoon.currentExp(); talk(yoon, 167, bm2); out.repeatExp = yoon.currentExp() - e2;
-            const b3 = fresh(1); b3._siMood = 8; talk(pada, 166, b3); out.enraged = b3.isEnraged(); out.enragedRefuses = /too enraged/.test(talk(yoon, 162, b3));
-            const b4 = fresh(1); talk(pada, 168, b4); talk(pada, 168, b4); out.hunted = b4.isHunted() && !b4.canMove();
-            const fb = new Game_Action(pada); fb.setSkill(75); out.finishing = fb.makeDamageValue(b4, false) === b4.hp;
-            const bm3 = fresh(11); bm3._siMood = 75; out.askInfo = /marked trees/.test(talk(yoon, 164, bm3)) && !bm3.isAppeared();
-            const girl = fresh(7); yoon.setHp(10); girl._siMood = 95; talk(sib, 162, girl); out.healed = yoon.hp > 10;
-            $dataEnemies[1].siTalk.instant = [9]; const b5 = fresh(1); talk(A(9), 162, b5); out.instant = !b5.isAppeared(); $dataEnemies[1].siTalk.instant = [];
+            const bm2 = fresh(11); bm2._siMood = 95; const e2 = yoon.currentExp(); talk(yoon, 286, bm2); out.repeatExp = yoon.currentExp() - e2;
+            const b3 = fresh(1); b3._siMood = 8; talk(pada, 285, b3); out.enraged = b3.isEnraged(); out.enragedRefuses = /too enraged/.test(talk(yoon, 281, b3));
+            const b4 = fresh(1); talk(pada, 287, b4); talk(pada, 287, b4); out.hunted = b4.isHunted() && !b4.canMove();
+            const fb = new Game_Action(pada); fb.setSkill(77); out.finishing = fb.makeDamageValue(b4, false) === b4.hp;
+            const bm3 = fresh(11); bm3._siMood = 75; out.askInfo = /marked trees/.test(talk(yoon, 283, bm3)) && !bm3.isAppeared();
+            const girl = fresh(7); yoon.setHp(10); girl._siMood = 95; talk(sib, 281, girl); out.healed = yoon.hp > 10;
+            $dataEnemies[1].siTalk.instant = [9]; const b5 = fresh(1); talk(A(9), 281, b5); out.instant = !b5.isAppeared(); $dataEnemies[1].siTalk.instant = [];
             out.noBattleExp = $gameTroop.expTotal();
             return out;
         });
@@ -52,7 +52,7 @@ module.exports = {
             const valid = e => e.enemy().actions.filter(a => e.isActionValid(a)).map(a => $dataSkills[a.skillId].name);
             bm._siMood = 20; const hostile = valid(bm); bm._siMood = 80; const calm = valid(bm);
             $gameTroop.setup(14); const marine = $gameTroop.members()[0];
-            const targets = () => { const seen = {}; for (let i = 0; i < 300; i++) { const a = new Game_Action(marine); a.setSkill(372); a.makeTargets().forEach(x => seen[x.name()] = 1); } return Object.keys(seen); };
+            const targets = () => { const seen = {}; for (let i = 0; i < 300; i++) { const a = new Game_Action(marine); a.setSkill(656); a.makeTargets().forEach(x => seen[x.name()] = 1); } return Object.keys(seen); };
             const normal = targets();
             [4, 5].forEach(id => { $gameActors.actor(id).addState(1); });
             const onlyKids = valid(marine);
@@ -77,10 +77,10 @@ module.exports = {
             const m = fresh(4); m._siMood = 50; hit(yoon, m); out.afterHit = m.talkMood();
             for (let i = 0; i < 10 && !m.isEnraged(); i++) hit(yoon, m);
             out.enraged = m.isEnraged();
-            out.noPatience = yoon.canUse($dataSkills[169]);
+            out.noPatience = yoon.canUse($dataSkills[288]);
             $gameParty.addActor(12);
-            out.canHeel = [yoon, sib, A(5)].every(a => a.canUse($dataSkills[169])) && !lasa.skills().some(s => s.id === 169);
-            const heel = a => { const x = new Game_Action(a); x.setSkill(169); x.apply(a); };
+            out.canHeel = [yoon, sib, A(5)].every(a => a.canUse($dataSkills[288])) && !lasa.skills().some(s => s.id === 288);
+            const heel = a => { const x = new Game_Action(a); x.setSkill(288); x.apply(a); };
             heel(sib); out.heeled = patience.isStateAffected(6);
             patience.makeActions(); out.guards = patience.action(0).isGuard();
             heel(sib); out.loose = !patience.isStateAffected(6);

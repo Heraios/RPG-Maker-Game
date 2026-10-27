@@ -53,8 +53,9 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
 1. **Renaming** items, states and equipment. Some plugins find things **by name** (gathering gives
    "Laurel Branch"; states such as "Sodden", "Dragged Below" and "Brave" are looked up by name). A rename
    breaks them quietly. Say what you want renamed and the code gets updated with it.
-2. **Deleting, moving or reusing an entry's slot.** Notes point at things **by ID number**
-   (`<Recipe In: item 136>`, `<Start Equips: armor 322>`, `<Talk Likes: 42>`), so a reused slot makes
+2. **Deleting, moving or reusing an entry's slot.** Each category has blank slots after it for new
+   entries (see concept.md, "Database layout"). Notes point at things **by ID number**
+   (`<Recipe In: item 406>`, `<Start Equips: armor 627>`, `<Talk Likes: 73>`), so a reused slot makes
    them point at the wrong thing.
 3. **Lowering "Change Maximum"** on any database list: everything above the new maximum is lost.
 4. **The numbered lists in Database → Types** (elements, skill types, weapon types, armor types,
@@ -79,10 +80,10 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
    effects), 213 (Ready to Toss, Aday's Toss) and 214–219 (the weapon-art stances: Braced, En Garde,
    Warding, Covered, Following Up, Brought Down) are also used by number.
-   The characters' own resting moves are skills 10–20 (Meditate, Land, Fly, Diver's Breath, Slouch, Stop
+   The characters' own resting moves are skills 11–21 (Meditate, Land, Fly, Diver's Breath, Slouch, Stop
    Slouching, Oil Joints, Photosynthesize, Tinker, Take Notes, Parade Rest) with states 7–13 (Meditating,
    Landed, Slouching, Oiled Joints I–III, Notes in Hand). States are found by name, so keep the names;
-   Slouching's note lists skill 15 (Stop Slouching) by number.
+   Slouching's note lists skill 16 (Stop Slouching) by number.
 7. **Plugin Manager order.** Changing a plugin's settings is fine; moving plugins up or down isn't.
 8. **Troop 13 and the Test Room (map 4)** are used by the automated tests. Copy them instead of editing.
 
