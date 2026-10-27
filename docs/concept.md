@@ -1923,8 +1923,6 @@ slings; Pada and Parl bows; Dama, Falmi and Thenmy javelins; Dama nets.
   - Items without the tags (bronze, unique gear) never wear.
   - Repairs are handled by events (smiths, shops).
 
-| Weapon | Wears into | Chance per use |
-|--------|-----------|----------------|
 | Material | Wears into | Chance per use (then the worn tier) |
 |----------|-----------|----------------|
 | Shell | Chipped, then breaks | 6%, then 9% |
@@ -1938,14 +1936,14 @@ slings; Pada and Parl bows; Dama, Falmi and Thenmy javelins; Dama nets.
 | Ceramic | Shatters (breaks; that swing hits ×1.5) | 10% |
 | Raw wood (ebony, heather, rain-tree, juniper, ash, pine) | Splits and breaks | 2% |
 | Mahogany-bodied edging and heads | Fall off, leaving the plain Mahogany Paddle or Club | as the edging |
+| Gold-plated copper | The plating cracks off: bent copper | half as often as copper |
+| Fire-hardened wood, bronze, black bronze | Never wear | — |
 
 **Nothing that wears breaks into nothing** (`<Breaks Into: a, b>`): stone leaves **Stone Caltrops**; shell,
 teeth, tusk and bone leave **Bonemeal**; ceramic leaves **Potsherds**; copper leaves **Scrap**; and anything
 with a haft or shaft also leaves **Scrap Wood**. Repairs follow how a weapon was made: **Sinew Binding** for
 sinew-lashed weapons (knives, spears, harpoons), **Glue** for glued ones (axes, hammers, clubs, maces,
 paddle-swords), and only a **smith** straightens bent copper, for a fee.
-| Fire-hardened wood, bronze, black bronze | never wear | — |
-| Gold-plated copper | half as often as copper | the plating cracks off: bent copper |
 
 These are placeholder examples; real wear rates need playtesting.
 
