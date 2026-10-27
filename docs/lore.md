@@ -485,6 +485,11 @@ have a consensus web held together by kin, giving and wire, so a puppet chief do
   tides). Fishing with spear and net is women's work, and women's sacred right.
 - **"Marrying the spear":** a spearwife is a fisherwoman who has sworn to the spear and turns her fishing
   skills, **harpoon and net**, to fighting. They're sworn to the Star Mother, so they eat only sea meat.
+- **Who may swear:** any woman who can spear a fish, recite the custom law back to the Keepers without a
+  slip, and get **two sworn spearwives to vouch for her**. Nobody chooses a spearwife: she chooses.
+- **Not warriors:** before the invasion they settled thefts and killings, nothing more. The Seafarers'
+  reports were right that the island had no professional warriors; the invasion made the spearwives
+  into them. (Scene: "Marrying the Spear", scenes.md.)
 - **"Fishing out injustice":** the **Keepers of Custom** (lawspeakers) give them quick, informal training
   in investigation and in custom law. They track down thieves and killers, gather evidence, and bring the
   case before the kin lines, the Assembly or a Keeper to be judged. Compensation and exile still settle
@@ -712,6 +717,10 @@ which is why its stations stand at the Bird idols.
   with Juda at 8, but they still love and visit their parents, **Uira** (Zonfahare's telegraph operator)
   and **Poko** (its battery tender), and they keep the clan right to learn its techniques. A priest who
   knows the craft: a bridge between the clan's work and the priests'.
+- **"What anyone can see, anyone can say."** Clan law: what an outsider could see by looking (that a
+  battery is two metals, sour water and a jar; that a wire carries the lightning) may be told. The rest
+  (which metals, how big, how sour, the insulation) stays in the clan. The same rule is why keepers log
+  every message but never repeat one. (Scene: "Jarred Lightning", scenes.md.)
 
 - **Batteries:** stacks of alternating copper and lead discs soaked in acidic water from volcanic hot
   springs and fumaroles, each stack in a ceramic jar, several jars wired together. **Battery
@@ -861,6 +870,12 @@ She lives in **Mansehare**, next door to Iras. She's also an optional **party me
   as the true custodian of island culture, and is annoyed at Sib for becoming high priest as a child.
   **Collaborates with the invaders.**
 - **Beneharo (he)**, the electroplater: half Seafarer. Upgrades and maintains Thenmy's silvered set.
+  - **Dakaros (he)**, Beneharo's father and Aday's grandfather (**name a placeholder**): "Dakaros of the
+    Hammer-Ship", bronzesmith to the King's crew in the founding wars, named in the **Rolls of the Founding**
+    ("who mended the King's shield at the Sealing of the Black Strait and would take no gold for it").
+    Keftiu thinks he died at sea; he settled on the island for "a quiet island and a wife who laughed at
+    him". His bronze tools are Aday's now. The King still reads a list of lost friends at the Founding
+    every year. (Scene: "Grandpa Served Your Papa", scenes.md.)
 - **Mahina (she)**, the jeweller: rings, earrings. Beneharo's wife, and **Lightning Clan** (so their
   children are half clan, which is why Tiare can keep the station).
 - **Tahod (he)**, the silver and lead trader: their son.
