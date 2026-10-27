@@ -1,5 +1,5 @@
 // Aday the mechanist and Kathrout the scholar: who they are, what they won't eat or wear, Aday's item
-// power, item saving, Toss, Tinker and Mend Gear; Kathrout's glyph study and the spirits she can't see.
+// power, item saving, Toss, Recharge and Mend Gear; Kathrout's two codex slots (and no tattoos) and the spirits she can't see.
 
 module.exports = {
     'Aday and Kathrout': async (h, t) => {
@@ -35,8 +35,8 @@ module.exports = {
             const use = new Game_Action(aday); use.setItemObject($dataItems.find(i => i && i.scope === 7 && i.occasion !== 3) || bread); use.setTarget(0);
             out.toss = use.makeTargets().length + '/' + aday.isStateAffected(ST('Ready to Toss'));
             const use2 = new Game_Action(aday); use2.setItemObject(use.item()); use2.setTarget(0); out.noToss = use2.makeTargets().length;
-            // Tinker: +1 charge for anyone with a pile
-            sib.gainCharge(-99); const before = sib.charge(), tink = new Game_Action(aday); tink.setSkill(SK('Tinker').id);
+            // Recharge: +1 charge for anyone with a pile
+            sib.gainCharge(-99); const before = sib.charge(), tink = new Game_Action(aday); tink.setSkill(SK('Recharge').id);
             sib.clearResult(); tink.apply(sib); out.tinker = sib.charge() - before;
             // Mend Gear: a bent copper knife is straightened, no smith needed
             const slot = sib.equipSlots().indexOf(1); sib._equips[slot].setObject(WE('Bent Copper Knife'));
@@ -46,11 +46,12 @@ module.exports = {
             sib.changeEquip(slot, null); $gameParty.gainItem(WE('Gold-Plated Knife'), 1); sib.changeEquip(slot, WE('Gold-Plated Knife'));
             sib.rollWear(slot, true); out.bentGold = sib.weapons()[0] && sib.weapons()[0].name;
             sib.clearResult(); mend.apply(sib); out.gold = sib.weapons()[0] && sib.weapons()[0].name;
-            // Kathrout studies the party's glyphs, but not the gods' own
-            const ahi = AR('Glyph: Ahi'), hiri = AR('Glyph: Hiri');
-            const ahiSkill = ahi.traits.find(x => x.code === 43).dataId, hiriSkill = hiri.traits.find(x => x.code === 43).dataId;
-            $gameParty.gainItem(ahi, 1); $gameParty.gainItem(hiri, 1);
-            out.study = kath.isLearnedSkill(ahiSkill) + '/' + kath.isLearnedSkill(hiriSkill) + '/' + aday.isLearnedSkill(ahiSkill);
+            // Kathrout: two codex slots, uniquely, and no tattoos at all (glyphs in the bag teach her nothing)
+            const ahi = AR('Glyph: Ahi'), ahiSkill = ahi.traits.find(x => x.code === 43).dataId;
+            $gameParty.gainItem(ahi, 1);
+            const codexType = SmokingIsle.Glyphs.codexType, tattooType = SmokingIsle.Glyphs.tattooType;
+            const count = (a, t) => a.equipSlots().filter(e => e === t).length;
+            out.codex = count(kath, codexType) + '/' + count(aday, codexType) + '/' + count(kath, tattooType) + '/' + kath.isLearnedSkill(ahiSkill) + '/' + kath.canEquip(ahi);
             // she can't see spirits unless someone points them out
             const EN = n => new Game_Enemy($dataEnemies.find(e => e && e.name === n).id, 0, 0);
             const bones = EN('Restless Bones'), raven = EN('Raven'), spell = new Game_Action(kath); spell.setSkill(ahiSkill);
@@ -59,7 +60,7 @@ module.exports = {
             bones.addState(ST('Pointed Out')); out.pointed = (hit(bones) / hit(raven)).toFixed(2);
             return out;
         });
-        t.eq(r.who, 'Aday/Mechanist/Kathrout/Scholar/Fa_People15/Fa_Actor3', 'the two new party members');
+        t.eq(r.who, 'Aday/Mechanist/Kathrout/Scholar/Fa_Actor3/Fa_Actor3', 'the two new party members');
         t.ok(r.child, 'Aday is a child, Kathrout an adult');
         t.ok(r.naming, 'both are named when they join');
         t.eq(r.start, 'Bronze Knife/Heather Staff/true', 'Aday starts with his bronze knife; Kathrout with a staff and the Codex of Embers');
@@ -72,11 +73,11 @@ module.exports = {
         t.ok(r.used, 'otherwise it is used up');
         t.eq(r.toss, '4/false', 'Toss: the next item reaches all four, and the readiness ends');
         t.eq(r.noToss, 1, 'the item after that is back to one person');
-        t.eq(r.tinker, 1, 'Tinker restores a charge');
+        t.eq(r.tinker, 1, 'Recharge restores a charge');
         t.ok(r.mendable, 'Mend Gear can fix a bent copper knife');
         t.eq(r.mended, 'Copper Knife', 'and does');
         t.eq(r.bentGold + ' -> ' + r.gold, 'Bent Copper Knife -> Gold-Plated Knife', 'a mended weapon goes back to what it wore down from');
-        t.eq(r.study, 'true/false/false', 'Kathrout copies a glyph the party has, not a god glyph; Aday doesn\'t');
+        t.eq(r.codex, '2/1/0/false/false', 'Kathrout has two codex slots (Aday one) and can\'t use tattoos');
         t.eq(r.unseen, '0.50', 'her spells land half as often on spirits');
         t.eq(r.pointed, '1.00', 'unless the spirit is Pointed Out');
     },

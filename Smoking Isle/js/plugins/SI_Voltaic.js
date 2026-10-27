@@ -42,7 +42,10 @@
  *                        damage, healing and revives (the Telegrapher's Kit,
  *                        Golden Wire)
  *   <Metal>              (armor/state) the wearer counts as metal too
- *   <Insulated>          (armor) a Wet wearer doesn't shock themself
+ *   <Insulated>          (armor/state) a Wet wearer doesn't shock themself
+ *   <Shock Guard: 50>    (armor/state) electric hits on the wearer deal 50% less
+ *   <Chemical Guard: 50> (armor/state) chemical hits (<Chemical>) deal 50% less
+ *                        (the Battery Tender's Gear)
  *
  * Skill note:
  *   <Charge Cost: 1>     charge it spends (needs that much to use)
@@ -57,6 +60,9 @@
  *
  * Item note:
  *   <Recharge: 2>        restores 2 charge to the target (acid jar)
+ *
+ * Skill or item note:
+ *   <Chemical>           lye, chlorine, acid or spurge: <Chemical Guard> cuts it
  *
  * Enemy note:
  *   <Metal>              wears metal (bronze armor): draws the current
@@ -183,7 +189,17 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
     };
 
     $.isInsulated = function(battler) {
-        return battler.isActor() && battler.armors().some(function(a) { return /<Insulated>/i.test(a.note || ''); });
+        return battler.isActor() && battler.armors().concat(battler.states()).some(function(a) { return /<Insulated>/i.test(a.note || ''); });
+    };
+
+    // <Shock Guard: N> / <Chemical Guard: N> on the target's gear and states (they add up, to 100%).
+    $.guard = function(battler, tag) {
+        var re = new RegExp('<' + tag + ':\\s*(\\d+)>', 'i');
+        var sum = battler.traitObjects().reduce(function(total, o) {
+            var m = o && re.exec(o.note || '');
+            return total + (m ? Number(m[1]) : 0);
+        }, 0);
+        return Math.min(sum, 100) / 100;
     };
 
     $.isWet = function(battler) {
@@ -212,7 +228,9 @@ SmokingIsle.Voltaic = SmokingIsle.Voltaic || {};
     Game_Action.prototype.makeDamageValue = function(target, critical) {
         var value = _Game_Action_makeDamageValue.call(this, target, critical);
         var item = this.item();
+        if (value > 0 && item && /<Chemical>/i.test(item.note || '')) value = Math.round(value * (1 - $.guard(target, 'Chemical Guard')));
         if (!DataManager.isSkill(item) || value === 0) return value;
+        if (value > 0 && item.siElectric) value = Math.round(value * (1 - $.guard(target, 'Shock Guard')));
         if (value > 0 && item.siElectric && $.isWet(target)) value = Math.round(value * 1.5);
         var boost = $.electricBoost(this.subject(), item);
         if (boost) value = Math.round(value * (1 + boost / 100));

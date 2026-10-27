@@ -462,7 +462,7 @@ with the party: to prove whose side he's on.
   as high priest, has to rule on it. Permission could be a scene: a rite at Jarcotapu, Itahisa's grudging
   blessing, an offering to the Star Mother.
 - **Combat role: the item expert.** Remedies, meals and battle items work about 50% better in his hands;
-  **Toss** throws one item over the whole party (the party's second source of healing); **Tinker** restores
+  **Toss** throws one item over the whole party (the party's second source of healing); **Recharge** restores
   Voltaic charges mid-battle; gadgets (better Chlorine Jars, Pitch Firepots, Smoke Pots, Caltrops) with a
   chance not to use one up. Low Health and attack; nearly useless with an empty bag.
 - **Outside battle:** repairs worn gear at camp and does simple metalwork without a smith: a walking
@@ -495,9 +495,14 @@ sidequest chain fills the compendium (see lore.md, "People of the island").
   station underlined, and has to choose: burn it, hide it, or give it to Dama. (She mirrors Parl, the other
   Seafarer who wrote everything down: "Welcome to the club.")
 - **Combat role: pure mage.** She learned magic from books (anyone literate can use a Codex, and she's the
-  most literate person on the island): she learns spells from First Sailor inscriptions and Glyph Tablet
-  Shards, including glyphs others need quests for. Highest magic attack in the game, a big MP pool, frail for
-  an adult. Tou keeps the First Sailor burst; Kathrout is the steady caster.
+  most literate person on the island). Like the Seafarers generally, she **can't use glyph tattoos at all**;
+  instead, **uniquely, she has two codex slots** (every other reader has one), and with Codex Mastery she
+  gets both codices' full spell lists. A First Sailor inscription can still teach her a spell (a story
+  event). Highest magic attack in the game, a big MP pool, frail for an adult.
+- **The red mage: breadth over depth.** Even more of a pure mage than Sib, but where the others go deep in
+  a few spells, she covers the widest spread: any two schools at once (fire and healing, say, or the
+  elements and healing), swapped between battles to fit the fight. Tou keeps the First Sailor burst;
+  Kathrout is the one with an answer for everything.
 - **She can't see ghosts or spirits** (she's an adult): against spirits her spells go astray unless someone
   points the target out. (Lasa, oddly, she can see.)
 - **Proposed arc, the illness** (after Routledge's last years, handled with care): guilt over the book and
@@ -1021,12 +1026,33 @@ Dragonheart Greatsword), and the ranged moves sling, shoot, throw and net. The f
 Weapon skills above.
 
 ### Screen and battle layout
-- The game runs at **1280 x 720** (Community_Basic). Battle backgrounds and the title image are scaled
-  to fill it until there is widescreen art; enemies keep their troop layout, centred to the right of the
-  skill lists (`SI_Screen.js`).
-- **FFX-style battle screen:** the turn order runs as a strip across the top; the battle log sits under
-  it; commands bottom-left, party status bottom-right; skill, item, swap and switch lists open above the
-  commands with the help box above them, leaving the enemies visible.
+- The game runs at **1280 x 720** (Community_Basic). The title image is scaled to fill it (`SI_Screen.js`).
+- **Battle screen, somewhere between EarthBound and the SNES Shin Megami Tensei games**
+  (`SI_BattleHud.js`, loaded last):
+  - the turn order runs as a strip across the top (AI allies in green, enemies in red);
+  - the battlefield sits in a frame, with a small box in its corner for the day, time and place.
+    Enemies keep their troop layout, scaled into the frame. The battle background shows only inside
+    it; windows have plain dark green backs and a single rounded orange border, with small gaps between
+    them (as in the mock-up);
+  - commands sit in a column to the right of the battlefield. Skill, item, swap, switch and target
+    lists open in the same panel under a title ("Physical", a little larger than the description text); skills are listed without icons,
+    costs in grey, and the description appears below a divider at the foot of the panel;
+    a pointer (`img/system/Cursor2`; any of Cursor1–4 or CursorTall1–4 can be swapped in at the top of
+    the plugin) marks the chosen command or line;
+  - a bar under the battlefield carries the battle text (two lines at a time), or asks what to do
+    ("Sib's move?", "Hook Down: which enemy?");
+  - each party member has a card along the bottom, with portrait, Health, Mana and Fatigue. The card of
+    whoever is acting lifts and gets a gold frame, a card shakes and shows the damage number (or Miss)
+    when it's hit, and a friend
+    being picked for a skill gets a blue frame;
+  - AI allies (Patience, later the faction soldiers) get a small strip on the right with portrait,
+    name and Health; the cards make room for it.
+- **Rolling Health** (`SI_RollingHealth.js`), as in EarthBound: damage to the party rolls the Health
+  counter down instead of landing at once. Nobody falls until the counter reaches 0, so a quick heal
+  saves someone who took a mortal blow. A full bar takes 6 seconds to roll away (plugin parameter);
+  healing rolls up twice as fast. The counter keeps rolling while you choose a command, and pauses for
+  messages. Win or run first and the rest of the damage is forgotten. Enemies take damage at once.
+  Health still to roll away shows as a red stretch of the bar. **Options > Rolling Health** turns it off.
 - **Dialogue and the battle log wrap** at word boundaries (dialogue continues on the next page).
 - **Options > Battle Text:** Slow / Normal / Fast (each battle message stays up 72 / 48 / 24 frames;
   RPG Maker's default was 16). Holding OK still speeds it up.
@@ -1041,7 +1067,7 @@ Fight
 └─ Innate     magical beings' own powers: Yoon's ghost skills (also Lasa, Falmi, Tou later)
 Talk          Soothe, Offer, Ask, Rite, Threaten, Plead, Stalk, Heel, Girl!
 Tactics
-├─ Resting      Catch Breath, Heavy Panting, Hunter's Repose, Become Ethereal
+├─ Resting      Catch Breath, Heavy Panting, and each character's own (Hunter's Repose, Meditate...)
 ├─ Weapon Swap
 ├─ Party Swap   (only with reserve members)
 ├─ Item
@@ -1123,6 +1149,7 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Lava-Tube Gear | Head, Body, Charm (Cave-Glow Stone) | +evasion in caves (2 pieces) | The Children of the Caves can't steal from you; prank fights start friendlier |
 | Guardian Lizard (trophy) | Cuirass (Guardian Lizard Scale), Charm (Lizard-Scale Charm) | 10% less Fire damage (1 piece) | Immune to Smoldering and Enflamed |
 | Telegrapher's Kit | Hands (Rubber-Coated Gloves or Sacred Metal Ring), Charm (Lodestone, Hot-Spring Sinter, Copper Bracelet, Golden Wire, or any Sacred Metal charm or the Pectoral), Battery (any pile) | +1 max charge | Electric techniques +15% |
+| Battery Tender's Gear (rubber; Lightning Clan) | Head (Rubber Hood: smoked-obsidian eyepieces, resists Dazzled and Steam), Body (Rubber Apron: 10% less Crush), Hands (Rubber-Coated Gloves, also Telegrapher's Kit), Feet (Rubber-Soled Sandals: +10% evasion while Wet) | Resists Wet | Half damage from electricity and chemicals (lye, chlorine, acid, spurge; `<Chemical>`); never shocks itself; but +15% Fire damage and Fatigue builds 10% faster |
 | Fisher's Gear | Neck (Bone Fishhook Pendant or Shark-Tooth Necklace), Charm (Net Floats), Ranged (Fishing Gear or Palm-Fibre Net) | +1 net cast | Sea creatures start friendlier; +10% evasion while Wet |
 | Ritualist's Things | Neck (Sandalwood Beads), Hands (Jasper Ring), Charm (Gourd Rattle or Silver-Plated Idol) | Rite +15% | Spirits start friendlier; Spirit +10% |
 | Officer's Kit | Hands (Bronze Signet), Charm (Sailor's Compass), Codex (any) | Ask +15% on soldiers | Escape +15%; the whole party AGI +5% |
@@ -1299,9 +1326,19 @@ Shark-Tooth → Coral-Eyed. Rings: silver, bone, obsidian; gloves: hide, sinew w
 - **Weapons:** Mahogany Club and Mahogany Paddle (red mahogany never splits, so they never wear), and the
   priests' **Sandalwood Staff** (MAT +5, starts each battle Calm).
 
+### Rubber
+**Latex** is tapped from a **Rubber Tree** (gathering spot, knife). The Lightning Clan's workshop (the
+**electroplater**) cures 2 Latex with a **Sulfur Lump** into 2 **Rubber**, and makes the **Battery Tender's
+Gear** from it: Rubber Hood (Rubber + 2 Obsidian Shards), Rubber Apron (2 Rubber + Leather), Rubber-Coated
+Gloves (Hide Gloves + Rubber) and Rubber-Soled Sandals (Rubber + Leather). The **Slingshot** is a campfire
+recipe (Rubber, Leather and an Ash, Laurel, Heather, Juniper or Yew branch). All are known from the start;
+Rubber is the gate.
+
 ### More gear (third batch)
 - **Slings:** Goat-Hair (5 shots, power 10), Braided Sinew (7 shots, power 8), Priest's (Spirit +3), Lead-Weighted
   (4 shots, power 12; Lead Shot adds +2 more, `<Lead Shot Bonus: 2>`).
+  **Slingshot** (a forked branch, a rubber band and a leather pouch; campfire): a weak sling with lots of shots,
+  15 shots at power 4, and a Stone Rain from it fires 6 at most (`<Volley Max: 6>`).
 - **Bows:** Ash Flatbow (power 14, Speed +2), Living Bow (from a Green Horse Bough: power 14, heals 3% Health a
   turn), and a second **Horn Bow** recipe from Seafarer **Ox Horn**.
 - **Bronze Crossbow** (Act 4, Seafarer): 2 bolts, power 24, never wears, counts as metal. A new **Crossbow** armor
@@ -1719,10 +1756,24 @@ menu, so effects that block Physical skills (Weary, Mired) don't block resting.
 | Catch Breath | Everyone | Only above 85 Fatigue; not while Weary | −15 to −20 |
 | Heavy Panting | Everyone | Only above 85 Fatigue; works while Weary | −5 |
 | Hunter's Repose | Pada | Only above 75; not while Weary; grants **Steady Aim** (+25% critical chance on his next ranged attack) | −20 to −25 |
+| Meditate | Sib | Only above 75. For 3 turns: 20% Mana back each turn, but no Magical skills | −10 a turn |
+| Land / Fly | Lasa | Any time. Landed: no flying, Endurance −25%; lasts until she uses Fly | −5 a turn |
+| Diver's Breath | Dama | **Only while Weary**; ends Weary | −15 |
+| Slouch / Stop Slouching | Parl | Only above 60. Until he stops: only Guard or Stop Slouching, no items | −15 a turn |
+| Oil Joints | Tou | Any time, three times a battle. Each use: Speed +5% and Fire damage +10% (stacking to +15% / +30%) | −15, −10, −5 |
+| Photosynthesize | Falmi | Only below half Health. Full Health, but he skips the next shared meal (until the next rest) | −25 |
+| Tinker | Aday | Only above 70. Restores 1 charge to his pile; his next turn comes a little later | −15 |
+| Take Notes | Kathrout | Only above 70. Her next spell costs half the Mana | −20 |
+| Parade Rest | Thenmy | Only above 70. Guards until his next turn | −20 |
+| Become Ethereal | Human Yoon | See Yoon's abilities | −35 |
 
 Weary lifts as soon as Fatigue drops below 100, so letting a character reach 100 costs a turn of
-Heavy Panting before Catch Breath. Since nothing works below 85 (75 for Pada), **Fatigue can't
-be brought below about 60–70 without camping**.
+Heavy Panting (or Dama's Diver's Breath) before Catch Breath. With the shared moves alone, Fatigue
+can't be brought below about 60–70 without camping; the characters' own moves bend that rule, each at a
+price (Lasa grounded, Parl doing nothing, Tou burning easier, Falmi missing a meal). The rules live in
+`SI_Resting.js` (`<Only While Weary>`, `<Health Below>`, `<Usable With State>`, `<Uses Per Battle>`,
+`<Fatigue By Use>`, `<State By Use>`, `<Skips Meal>`, `<Only Skills>`, `<Until Spell>`). Aday's old
+charge-giving skill is now called **Recharge**.
 
 **Physical conditioning:**
 - **Falmi** sheds 1 Fatigue per turn in battle **outdoors**; **Tou** the same **indoors and in
@@ -2606,14 +2657,15 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 | Elemental and healing spell families | Done: data plus `SI_Magic.js` (random hits, heal-and-revive) |
 | Damage types and magic sources | Done: `SI_DamageTypes.js` |
 | Elemental state cycle | Done: `SI_ElementalStates.js` |
-| Resting skills and conditioning | Done: `SI_CombatCore.js` |
+| Resting skills and conditioning | Done: `SI_CombatCore.js`; each character's own resting move: `SI_Resting.js` |
 | Ranged weapons, ammo, flying | Done: `SI_Ranged.js` |
 | Weapon skill families, Yoon's skills, mental states | Done: data plus `SI_Ailments.js` |
 | Tattoo and codex spell slots | Done: `SI_Glyphs.js` |
 | Menu readability (Punch under Physical, costs, equip layout) | Done: `SI_Layout.js` |
 | Armor sets, charms, size rules | Done: `SI_Outfits.js` (after SI_Layout) |
 | Meals (food raises stats) | Done: `SI_Meals.js` |
-| Widescreen, battle layout, word wrap, battle text speed | Done: `SI_Screen.js` (load last) |
+| Widescreen, word wrap, battle text speed | Done: `SI_Screen.js` |
+| Battle screen (EarthBound and SMT), rolling Health | Done: `SI_BattleHud.js` (load last), `SI_RollingHealth.js` |
 | Body-part equipment slots, off-hand knives, two-handed weapons | Done: `SI_Equipment.js` |
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |

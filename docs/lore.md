@@ -615,7 +615,7 @@ Destroyer** (revealed later).
 | Group | Materials | Used for |
 |-------|-----------|----------|
 | **Fibres and cloth** | Bark cloth (paper mulberry), palm fibre and leaves, hibiscus bast, reeds, wool, goat hair | Clothing (the Bark-Cloth Cloak), rope, fishing line, mats, baskets, thatch, reed boats (marsh, crater lakes) |
-| **Resins and latex** | **Dragon's blood** (the dragon tree's red resin), **pine pitch**, rubber latex (lore), **euphorbia latex** | Dragon's blood: varnish, red dye, medicine, and priests' **mummification**. Pitch: hafting glue (obsidian into wood), torches, waterproofing. Rubber: telegraph insulation. Euphorbia latex: the Guanche stunned fish with it; here, a **poison coating for blades** (adds a Burn part) |
+| **Resins and latex** | **Dragon's blood** (the dragon tree's red resin), **pine pitch**, rubber latex (lore), **euphorbia latex** | Dragon's blood: varnish, red dye, medicine, and priests' **mummification**. Pitch: hafting glue (obsidian into wood), torches, waterproofing. Rubber (latex cured with crater sulfur by the Lightning Clan): telegraph insulation, battery tenders' aprons, hoods and gloves, rubber-soled sandals, and children's slingshots. Euphorbia latex: the Guanche stunned fish with it; here, a **poison coating for blades** (adds a Burn part) |
 | **Dyes** | Orchil (lore: the red lichen dye, a major export), dragon's blood | Cloth, tattoos?, trade |
 | **Animal** | Hide, raw meat, boar tusk, shell, owl feather (in game); bone, antler, horn (goat, aurochs), sinew, shark teeth, tortoiseshell, pearls and cowries (lore), seal oil, fish glue, hide glue | Leather armor, knives (tusk, shell, shark teeth), bowstrings and lashing (sinew), handles, lamp fuel (seal oil), glue, trade |
 | **Medicinal plants** | Dragon tree (resin), bitterwood (wormwood), cliff mint, hill thyme, pennyroyal, ironwort, burnwort, laurel, moon sorrel, blister spurge, ti, yellowroot (turmeric), milo, wart fern, burrbark (hauhau) | Remedies (see concept.md, "Herbal remedies"): Mada's trade, the Stream Maidens' lore, the priests' ritual uses (smudge, body paint, dragon's blood for mummification) |
@@ -981,6 +981,24 @@ tattoos). **Tou** (a First Sailor), and **Falmi** and **Lasa** (innately magical
 
 **Ghost Yoon** uses only the unique ghost abilities; Yoon learns regular magic and weapon skills
 after gaining a body.
+
+**What a glyph is.** Every glyph is one of three things, or a combination of them:
+1. **A god's True Name, or an aspect of a god.** The god glyphs (Hiri for Sooty Bird, Gita for the Star
+   Mother, Emu for the Red Bowl, Ihi for the Destroyer...). An *aspect* is a part of a god: Geha and Huhuti
+   are the Lady of the Woods' two aspects, and Viri (in three tiers) is her Daughters of the Wells. Reading
+   one is speaking a piece of a god's name, which is why they are earned at **shrines**, guarded by priests,
+   gifted rather than taught. (Seafarers don't wear glyph tattoos at all; a Seafarer scholar like Kathrout
+   works from books, the codices, instead.)
+2. **A primal force or element.** The generic spells: Ahi (fire), Rari (water), Hagu (air), Keri (earth),
+   and the other forces: Mahu (healing), Ara (life returning), Raau (plant-medicine), Kami (the mind), Keva
+   (blinding dark), Gau (the bite, hunger). Anyone who can read them can use them.
+3. **Combinations.** Mahu-Ara (healing and revival together), and Yoon's compound Touches
+   (Burning-Chilling and the rest). A god combined with a force is the strongest and most dangerous kind:
+   Yoon's **Infernal** skills are the **Destroyer's name** (the ??? glyph on Yoon's face) bound to fire and
+   the other forces.
+
+Tiers (-ben, -sin) and targeting (-gun, -hari) are grammar on top of any glyph. The Destroyer's
+"distortion of the system", which the First Sailors used, works by binding his name into other glyphs.
 
 ### Demons
 **Demons are servants and creations of the Destroyer**, as the People of the Forest are of the

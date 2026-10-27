@@ -3,12 +3,13 @@
 //=============================================================================
 
 /*:
- * @plugindesc Smoking Isle: Aday the mechanist (items, Toss, Tinker, Mend
- * Gear) and Kathrout the scholar (studying glyphs, not seeing spirits).
+ * @plugindesc Smoking Isle: Aday the mechanist (items, Toss, Recharge, Mend
+ * Gear) and Kathrout the scholar (not seeing spirits).
  * @author Smoking Isle
  *
  * @help
  * Place after SI_Gear, SI_Voltaic, SI_Glyphs and SI_Talk.
+ * (Kathrout's two codex slots are SI_Glyphs' <Codex Slots: 2>.)
  *
  * ============================================================================
  * Aday: items and gadgets
@@ -25,7 +26,8 @@
  *                        skill that gives this state (set its <Turn Cost>).
  *
  * Skill notes:
- *   <Recharge: 1>        restores 1 Voltaic charge to the target (Tinker)
+ *   <Recharge: 1>        restores 1 Voltaic charge to the target (Recharge; and
+ *                        his resting move Tinker, on himself)
  *   <Mends: sinew, glue, smith>
  *                        repairs the target's equipped worn weapons of those
  *                        kinds, like Sinew Binding and Glue (and a smith for
@@ -35,10 +37,6 @@
  * Kathrout: a scholar's magic
  * ============================================================================
  * Actor or class note:
- *   <Studies Glyphs>     learns the spell of every glyph tattoo the party has
- *                        (in the bag or on anyone in the party), for good, as
- *                        soon as she is with them. Glyphs with <Sacred> (the
- *                        gods' own) or <Permanent> (Yoon's) aren't copied.
  *   <Unseen Kinds: spirit 50>
  *                        her actions are 50% less likely to land on enemies
  *                        of that kind (she can't see them), unless the
@@ -119,7 +117,7 @@ SmokingIsle.Specialists = SmokingIsle.Specialists || {};
     };
 
     //-------------------------------------------------------------------------
-    // Tinker (<Recharge> on a skill) and Mend Gear (<Mends>)
+    // Recharge (<Recharge> on a skill) and Mend Gear (<Mends>)
     //-------------------------------------------------------------------------
 
     $.skillTag = function(item, tag) {
@@ -142,7 +140,8 @@ SmokingIsle.Specialists = SmokingIsle.Specialists || {};
     Game_Action.prototype.testApply = function(target) {
         var item = this.item();
         if ($.mendKinds(item).length) return $.mendSlots(target, item).length > 0;
-        if ($.skillTag(item, 'Recharge')) return target.isActor() && !!target.pile && !!target.pile() && target.charge() < target.maxCharge();
+        // Aday's resting Tinker still rests him when the pile is full (or missing).
+        if ($.skillTag(item, 'Recharge') && item.stypeId !== 3) return target.isActor() && !!target.pile && !!target.pile() && target.charge() < target.maxCharge();
         return _Game_Action_testApply.call(this, target);
     };
 
@@ -167,45 +166,11 @@ SmokingIsle.Specialists = SmokingIsle.Specialists || {};
     };
 
     //-------------------------------------------------------------------------
-    // Kathrout: studying glyphs
+    // Kathrout: a spell from an inscription
     //-------------------------------------------------------------------------
-
-    $.isCopyableGlyph = function(item) {
-        return SmokingIsle.Glyphs && SmokingIsle.Glyphs.isTattoo(item) && !/<Sacred>|<Permanent>/i.test(item.note || '');
-    };
-
-    $.glyphsInHand = function() {
-        var list = $gameParty.armors().slice();
-        $gameParty.members().forEach(function(a) { list = list.concat(a.armors()); });
-        return list.filter($.isCopyableGlyph);
-    };
-
-    $.studyAll = function() {
-        if (!$gameParty) return;
-        var scholars = $gameParty.members().filter(function(a) { return !!$.note(a, /<Studies Glyphs>/i); });
-        if (!scholars.length) return;
-        var glyphs = $.glyphsInHand();
-        scholars.forEach(function(a) {
-            glyphs.forEach(function(g) {
-                g.traits.forEach(function(t) { if (t.code === Game_BattlerBase.TRAIT_SKILL_ADD) a.learnSkill(t.dataId); });
-            });
-        });
-    };
 
     $.study = function(actorId, skillId) {
         $gameActors.actor(actorId).learnSkill(skillId);
-    };
-
-    var _Game_Party_gainItem = Game_Party.prototype.gainItem;
-    Game_Party.prototype.gainItem = function(item, amount, includeEquip) {
-        _Game_Party_gainItem.call(this, item, amount, includeEquip);
-        if (amount > 0 && $.isCopyableGlyph(item)) $.studyAll();
-    };
-
-    var _Game_Party_addActor = Game_Party.prototype.addActor;
-    Game_Party.prototype.addActor = function(actorId) {
-        _Game_Party_addActor.call(this, actorId);
-        $.studyAll();
     };
 
     //-------------------------------------------------------------------------

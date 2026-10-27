@@ -79,12 +79,16 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
    effects), 213 (Ready to Toss, Aday's Toss) and 214–219 (the weapon-art stances: Braced, En Garde,
    Warding, Covered, Following Up, Brought Down) are also used by number.
+   The characters' own resting moves are skills 10–20 (Meditate, Land, Fly, Diver's Breath, Slouch, Stop
+   Slouching, Oil Joints, Photosynthesize, Tinker, Take Notes, Parade Rest) with states 7–13 (Meditating,
+   Landed, Slouching, Oiled Joints I–III, Notes in Hand). States are found by name, so keep the names;
+   Slouching's note lists skill 15 (Stop Slouching) by number.
 7. **Plugin Manager order.** Changing a plugin's settings is fine; moving plugins up or down isn't.
 8. **Troop 13 and the Test Room (map 4)** are used by the automated tests. Copy them instead of editing.
 
 **Aday and Kathrout** (actors 13 and 14) use a few note tags of their own (`SI_Specialists.js`):
-- Glyph tattoos marked `<Sacred>` (the gods' own glyphs) can't be copied by Kathrout; she learns every
-  other glyph the party has. A First Sailor inscription can teach her a spell with the script call
+- Kathrout can't use glyph tattoos; her class note `<Codex Slots: 2>` gives her two codex slots (the only
+  character with two). A First Sailor inscription can teach her a spell with the script call
   `SmokingIsle.Specialists.study(14, skillId)`.
 - Gear with `<Taboo Tags: grave>` (the Crew clothes, the coral eye and pupil, the Crescent Pectoral) is grave
   goods: Kathrout won't wear it. Tag any new tomb find the same way.
@@ -250,6 +254,7 @@ night-only plants, fatigue, tool wear and the daily reset.
 | `<Gather: Dragon Tree>` | Dragon's Blood | Dragonheart Branch (15%) | Knife (equipped) | Anyone | log needs an adult |
 | `<Gather: Honey Palm>` | Palm Fronds | Palm Sap (25%) | Knife (equipped) | Anyone | — |
 | `<Gather: Mulberry>` | Mulberry Bark | — | Knife (equipped) | Anyone | — |
+| `<Gather: Rubber Tree>` | Latex | — | Knife (equipped) | Anyone | Latex + Sulfur Lump make Rubber (Lightning Clan electroplater) |
 | `<Gather: Sandalwood>` | Sandalwood Branch | — | Knife (equipped) | Sacred gatherers (Yoon, Sib, Juda, Falmi) | 50% chance |
 | `<Gather: Rain Tree>` | Rain-Tree Branch | — | By hand | Sacred gatherers (Yoon, Sib, Juda, Falmi) | 10% chance; only fallen wood |
 | `<Gather: Bitterwood>` | Bitterwood | — | By hand | Anyone | light work (children tire less) |

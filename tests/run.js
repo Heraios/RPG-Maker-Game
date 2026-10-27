@@ -91,9 +91,13 @@ function makeHelpers(page, base) {
                 SceneManager._sceneStarted, null, { timeout: 30000 });
             await h.teachWeapons();
         },
-        // Tests run with every weapon skill known (as after the Test Room's Weapon Master).
+        // Tests run with every weapon skill known (as after the Test Room's Weapon Master), and with
+        // Rolling Health off so damage lands at once (tests/cases/49_battle_hud.js turns it on).
         async teachWeapons() {
-            await page.evaluate(() => SmokingIsle.WeaponArts && SmokingIsle.WeaponArts.teachAll());
+            await page.evaluate(() => {
+                ConfigManager.rollingHealth = false;
+                if (SmokingIsle.WeaponArts) SmokingIsle.WeaponArts.teachAll();
+            });
         },
         // Start a New Game (the test room) and finish its setup event.
         async newGame() {
