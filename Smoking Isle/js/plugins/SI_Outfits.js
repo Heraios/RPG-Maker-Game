@@ -68,7 +68,7 @@
  *   <Spikes: 30>             an enemy that lands a physical hit on the wearer
  *                            takes 30% of that damage back (Spiked Collar)
  *   <Guard Vs: spirit 30>    30% less damage from enemies of that kind
- *   <Damage Vs: spirit 30, demon 30>
+ *   <Damage Vs: spirit 30, demon 30>   ("metal" also means <Metal> enemies)
  *                            the wearer's attacks deal 30% more to enemies of
  *                            those kinds (silver ritual weapons)
  *   <Drag Back>              once a battle, the first fallen ally is pulled
@@ -429,7 +429,8 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
         var value = _Game_Action_makeDamageValue_vs.call(this, target, critical);
         var subject = this.subject();
         if (subject.isActor() && target.isEnemy() && target.talkData && value > 0) {
-            var kinds = target.talkData().kinds || [], bonus = 0;
+            var kinds = (target.talkData().kinds || []).slice(), bonus = 0;
+            if (/<Metal>/i.test(target.enemy().note || '')) kinds.push('metal');
             subject.equips().forEach(function(e) {
                 var m = e && /<Damage Vs:\s*([^>]+)>/i.exec(e.note || '');
                 if (m) m[1].split(',').forEach(function(part) {

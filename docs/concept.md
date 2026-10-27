@@ -896,7 +896,7 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
 
 - **Local stones:** **Chalcedony Knife** (5; wears at 2%, the dependable knife); **Jasper Knife** (5; magic
   attack +3, Rite +50% while held; a **Ritual Knife** only Yoon, Sib and Juda can use, still fits the off
-  hand); **Andesite Adze** (10; chop, bludgeon) and **Andesite Hammer** (10; bludgeon): light and
+  hand); **Andesite Adze** (10; chop, bludgeon, hook) and **Andesite Hammer** (11; bludgeon, Ground Pound): light and
   **one-handed**, where basalt is heavy and two-handed. **Obsidian is keen:** +5% critical on every
   obsidian weapon.
 - **Stone spears:** **Chalcedony Spear** (9; wears at 2%); **Andesite Spear** (11, AGI −2; a heavy head);
@@ -1311,8 +1311,8 @@ whispering **coral eye fragment** (First Sailor relics). Patience's collars: Wov
 Shark-Tooth → Coral-Eyed. Rings: silver, bone, obsidian; gloves: hide, sinew wraps.
 
 **Island goods** (stone, pigment, salt, sea and forest):
-- **Stone:** Peridot Ring (MDF +3, LUK +2), **Volcano Tear** (olivine: earth spells +10%, resists Burdened
-  and Mired), **Scoria Pupil** (fire spells +10%; worn with the Coral Eye Fragment it stills the eye's
+- **Stone:** Peridot Ring (MDF +3, LUK +2), **Volcano Tear** (olivine: fire spells +10%, resists Smoldering
+  and Enflamed), **Scoria Pupil** (fire spells +10%; worn with the Coral Eye Fragment it stills the eye's
   whisper), **Fire Opal** (spells of the same element as your last one +15%), Opal Earring (LUK +4, but
   enemies go for the wearer more).
 - **Salt Pouch:** mental ailments land half as often, but spirits start 10 less friendly.
