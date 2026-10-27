@@ -906,11 +906,11 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
   weapon is equipped. **Obsidian = fire** (every obsidian weapon), **coral = water**, **ceramic = earth**.
   Air has no material yet.
 - **Coral-Studded Club** (11; 30% Bleed, water spells +10%): the studs break off fast (6%), leaving a
-  **Bare Club** (8, raw wood).
+  plain **Ebony Club** (9, raw wood), which can be studded again.
 - **Ceramic Mace** (13; earth spells +10%): fired clay. Cheap, hits hard, wears fast (10%) and breaks
   outright, but **the swing that breaks it hits 50% harder** and may cause **Bleed** (flying shards,
   50%). Meant to be used up.
-- **Wood and fire-hardening:** raw wood (Ebony Club, Heather Staff, Rain-Tree Staff, Wooden Spear, Bare
+- **Wood and fire-hardening:** raw wood (Ebony Club, Heather Staff, Rain-Tree Staff, Wooden Spear, Juniper
   Club) wears slowly (2%) and splits. **Fire-hardened** versions never wear, and their wielder takes
   **10% less Fire damage**. Fire-hardening is a campfire recipe (see Crafting).
 - **Dragonheart Greatsword:** naturally fire-hardened by its resin (10% less Fire damage, wears at only
@@ -1612,7 +1612,7 @@ Laurel, Wax Myrtle (burns well), Honey Palm and Driftwood are firewood and build
   be fire-hardened instead. Harpoons: Wooden Spear + Sinew + Bone or Shark Tooth.
 - **Axes, adzes, hammers:** carve a Juniper Club, then + **Glue** + a stone head.
 - **Clubs and maces:** carve an Ebony or Mahogany Club, then + **Glue** + coral studs, or clay (or
-  potsherds) for a ceramic mace head at an earth oven. A Bare Club can be re-studded.
+  potsherds) for a ceramic mace head at an earth oven. A club that has lost its studs is a plain club again.
 - **Paddle-swords:** carve an Ebony or Mahogany Paddle from a log, then + **Glue** + shark teeth, obsidian,
   jasper or chalcedony edging. On mahogany, worn-off edging leaves the plain Mahogany Paddle.
 - **Staves:** carved from a branch; glyph staves are finished by a **tattooist**.
@@ -1930,7 +1930,7 @@ slings; Pada and Parl bows; Dama, Falmi and Thenmy javelins; Dama nets.
 | Copper | Bent, then breaks into **Scrap Copper** (kept) | 2%, then 3% |
 | Copper-silver | Bent, then breaks into **Scrap Copper-Silver** (kept) | 1%, then 2% |
 | Dragonheart wood | Cracked, then breaks | 1%, then 2% |
-| Coral studs | Bare Club (raw wood); the studs leave **Bonemeal** | 6% |
+| Coral studs | Ebony Club (raw wood); the studs leave **Bonemeal** | 6% |
 | Ceramic | Shatters (breaks; that swing hits ×1.5) | 10% |
 | Raw wood (ebony, heather, rain-tree, juniper, ash, pine) | Splits and breaks | 2% |
 | Mahogany-bodied edging and heads | Fall off, leaving the plain Mahogany Paddle or Club | as the edging |

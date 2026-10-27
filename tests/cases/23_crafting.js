@@ -100,7 +100,7 @@ module.exports = {
         t.eq(r.paddle, '1/2', 'a broken shark-tooth paddle leaves Bonemeal and Scrap Wood');
         t.eq(r.wood, 3, 'raw wood breaks into Scrap Wood');
         t.eq(r.mahogany, 'Mahogany Paddle/2', 'a mahogany paddle loses its edging (Stone Caltrops) and the mahogany is left');
-        t.eq(r.studs, 'Bare Club/2', 'coral studs come off as Bonemeal');
+        t.eq(r.studs, 'Ebony Club/2', 'coral studs come off as Bonemeal');
         t.eq(r.neverNothing, '', 'nothing that wears breaks into nothing');
         t.eq(r.kits, 'true/true', 'Sib brings the Knapping Kit and Pada the Fletching Kit');
     },

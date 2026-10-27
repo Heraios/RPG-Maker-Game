@@ -49,7 +49,7 @@ module.exports = {
         t.between(r.earth, 1.08, 1.12, 'ceramic: earth spells +10% (x' + r.earth.toFixed(2) + ')');
         t.between(r.fireNotWater, 0.97, 1.03, 'obsidian does nothing for water spells');
         t.between(r.shatter, 1.45, 1.55, 'the shattering swing hits 50% harder (x' + r.shatter.toFixed(2) + ')');
-        t.eq(r.coralWorn, 'Bare Club', 'a Coral-Studded Club wears into a Bare Club');
+        t.eq(r.coralWorn, 'Ebony Club', 'a Coral-Studded Club wears back into an Ebony Club');
         t.ok(r.ceramicBreaks, 'the Ceramic Mace wears fast (10%) and breaks outright');
     },
 
@@ -57,7 +57,7 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id), W = n => $dataWeapons.find(w => w && w.name === n), out = {};
-            out.raw = ['Ebony Club', 'Heather Staff', 'Rain-Tree Staff', 'Wooden Spear', 'Bare Club'].map(n => W(n).siWearChance).join(',');
+            out.raw = ['Ebony Club', 'Heather Staff', 'Rain-Tree Staff', 'Wooden Spear', 'Juniper Club'].map(n => W(n).siWearChance).join(',');
             out.hardened = ['Fire-Hardened Ebony Club', 'Fire-Hardened Heather Staff', 'Fire-Hardened Rain-Tree Staff', 'Fire-Hardened Spear'].every(n => W(n).siDegradesTo < 0);
             const pada = A(5); pada.forceChangeEquip(pada.slotOfType(1), W('Fire-Hardened Spear')); out.fireRate = pada.elementRate(10);
             pada.forceChangeEquip(pada.slotOfType(1), W('Wooden Spear')); out.rawRate = pada.elementRate(10);
