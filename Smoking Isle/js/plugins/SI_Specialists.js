@@ -29,7 +29,7 @@
  *   <Recharge: 1>        restores 1 Voltaic charge to the target (Recharge; and
  *                        his resting move Tinker, on himself)
  *   <Mends: sinew, glue, smith>
- *                        repairs the target's equipped worn weapons of those
+ *                        repairs the target's equipped worn weapons and armor of those
  *                        kinds, like Sinew Binding and Glue (and a smith for
  *                        bent copper), with no item used (Mend Gear)
  *

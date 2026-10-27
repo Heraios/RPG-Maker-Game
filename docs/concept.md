@@ -1919,7 +1919,22 @@ slings; Pada and Parl bows; Dama, Falmi and Thenmy javelins; Dama nets.
   - **Copper** (metal) leaves an unusable broken item in the inventory that can be **repaired or
     sold**: `<Breaks Into: item id>`.
   - Weapons wear when a skill uses one of their moves. Punch never wears weapons.
-  - Armor wears when its wearer takes physical damage.
+  - Armor wears when its wearer takes physical damage: **one** piece that can wear, at random, rolls.
+    **Only real armor wears**, never clothes, jewellery or charms:
+
+    | Armor | Wears into | Chance per hit (then worn) | Breaks into | Repair |
+    |---|---|---|---|---|
+    | Wicker Buckler, Wicker Pavise | Frayed / Battered | 3% / 2%, then 5% / 4% | Marsh Reed, Scrap Wood | Sinew |
+    | Palm-Fibre Cuirass and Greaves | Frayed | 3%, then 5% | Palm Fronds | Sinew |
+    | Pine Shield, Ebony Buckler, Carved Wooden Helm | Split | 2%, then 3% | Scrap Wood | Glue |
+    | Laurel and Pine Slat Cuirass, Slat Bracers, Rod Greaves | Splintered | 2%, then 3% | Scrap Wood | Sinew |
+    | Mahogany Slat Cuirass | Splintered | 1%, then 2% | Scrap Wood | Sinew |
+    | Tortoise-Shell Cuirass and Shield, Sea-Turtle Buckler | Cracked | 1%, then 2% | Bonemeal | Sinew |
+    | Hound-Skull Helm and Buckler | Cracked | 1%, then 2% | Bonemeal | Glue |
+    | Scoria-Plate Cuirass | Cracked | 2%, then 3% | Stone Caltrops | Glue |
+    | Clay-Daubed Coat | The clay cracks off: a **Felt Coat** (Potsherds left over) | 3% | — | Re-daub at an earth oven (Felt Coat + Clay) |
+
+    Worn armor keeps its set membership; Endurance drops by about 40%. Aday's Mend Gear mends armor too.
   - Items without the tags (bronze, unique gear) never wear.
   - Repairs are handled by events (smiths, shops).
 

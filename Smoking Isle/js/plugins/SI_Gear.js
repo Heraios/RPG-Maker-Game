@@ -54,12 +54,12 @@
  *                       and may cause Bleed (50%): flying shards (ceramic).
  *
  * Repair:
- *   <Repair Kind: sinew>   (worn weapon) what repairs it, by how it was made:
+ *   <Repair Kind: sinew>   (worn weapon or armor) what repairs it, by how it was made:
  *                          sinew (lashed: knives, spears, harpoons), glue
  *                          (set in glue: axes, hammers, clubs, maces,
  *                          paddle-swords), or smith (bent copper: only a
  *                          smith straightens it, for a fee)
- *   <Repair: sinew>        (item) restores the target's equipped worn weapons
+ *   <Repair: sinew>        (item) restores the target's equipped worn weapons and armor
  *                          of that kind to the tier they wore down from
  *                          (Sinew Binding: sinew; Glue: glue). Can't be used
  *                          if nothing needs it.
@@ -68,7 +68,10 @@
  *
  * - A weapon is "used" when its owner performs a skill that needs one of the
  *   weapon's moves (<Requires Move>). Punch never wears weapons.
- * - Armor is "used" when its wearer takes physical HP damage.
+ * - Armor is "used" when its wearer takes physical HP damage: one piece that
+ *   can wear, picked at random, rolls. Only real armor wears (shields,
+ *   cuirasses, helms, bracers, greaves of wicker, wood, shell, bone or stone);
+ *   clothes, jewellery and charms have no wear tags.
  * - The worn item replaces the equipped one directly. Repairing is up to
  *   events (shops, smiths...), e.g. with Change Equipment.
  *
@@ -129,10 +132,14 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
                 var r = /<Repair:\s*(\w+)>/i.exec(item.note || '');
                 item.siRepair = r ? r[1].toLowerCase() : null;
             });
-            // Worn tier -> the weapon it wore down from.
+            // Worn tier -> the weapon (or armor) it wore down from.
             $.baseOf = {};
             $dataWeapons.forEach(function(w) {
                 if (w && w.siDegradesTo > 0 && !$.baseOf[w.siDegradesTo]) $.baseOf[w.siDegradesTo] = w.id;
+            });
+            $.armorBaseOf = {};
+            $dataArmors.forEach(function(a) {
+                if (a && a.siDegradesTo > 0 && !$.armorBaseOf[a.siDegradesTo]) $.armorBaseOf[a.siDegradesTo] = a.id;
             });
             $._notesParsed = true;
         }
@@ -148,10 +155,17 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
     };
 
     // Rolls wear for the item in the given equip slot. Returns a log message or null.
-    // Equip slots holding a worn weapon this kind of repair can fix.
+    // The tier a worn item wore down from (weapons and armor are numbered separately).
+    $.baseFor = function(item) {
+        if (DataManager.isWeapon(item)) return $.baseOf[item.id] ? $dataWeapons[$.baseOf[item.id]] : null;
+        if (DataManager.isArmor(item)) return $.armorBaseOf[item.id] ? $dataArmors[$.armorBaseOf[item.id]] : null;
+        return null;
+    };
+
+    // Equip slots holding a worn weapon or armor this kind of repair can fix.
     Game_Actor.prototype.repairableSlots = function(kind) {
         return this.equips().map(function(item, i) {
-            return DataManager.isWeapon(item) && item.siRepairKind === kind && $.baseOf[item.id] ? i : -1;
+            return item && item.siRepairKind === kind && $.baseFor(item) ? i : -1;
         }).filter(function(i) { return i >= 0; });
     };
 
@@ -159,8 +173,9 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
     // (a Gold-Plated Knife and a Copper Knife both bend into a Bent Copper Knife), else the first one.
     Game_Actor.prototype.repairTarget = function(slotId) {
         var worn = this.equips()[slotId], from = this._siWornFrom && this._siWornFrom[slotId];
-        if (from && $dataWeapons[from] && $dataWeapons[from].siDegradesTo === worn.id) return $dataWeapons[from];
-        return $dataWeapons[$.baseOf[worn.id]];
+        var list = DataManager.isWeapon(worn) ? $dataWeapons : $dataArmors;
+        if (from && list[from] && list[from].siDegradesTo === worn.id) return list[from];
+        return $.baseFor(worn);
     };
 
     var _Game_Action_testApply = Game_Action.prototype.testApply;
@@ -302,14 +317,12 @@ SmokingIsle.Gear = SmokingIsle.Gear || {};
         var result = target.result();
         if ($gameParty.inBattle() && target.isActor() && this.isPhysical() &&
                 result.isHit() && result.hpDamage > 0) {
-            var messages = [];
-            target.equips().forEach(function(item, slotId) {
-                if (DataManager.isArmor(item)) {
-                    var message = target.rollWear(slotId);
-                    if (message) messages.push(message);
-                }
-            });
-            target._siWearMessages = (target._siWearMessages || []).concat(messages);
+            // One piece that can wear takes the hit.
+            var slots = target.equips().map(function(item, i) {
+                return DataManager.isArmor(item) && $.canWear(item) ? i : -1;
+            }).filter(function(i) { return i >= 0; });
+            var message = slots.length ? target.rollWear(slots[Math.floor(Math.random() * slots.length)]) : null;
+            if (message) target._siWearMessages = (target._siWearMessages || []).concat([message]);
         }
     };
 
