@@ -28,7 +28,7 @@ module.exports = {
             // Dragon's Blood: revive + resin ward
             fresh(yoon); yoon.addState(1); use("Dragon's Blood", yoon);
             out.revived = yoon.isAlive() && Math.abs(yoon.hp - yoon.mhp * 0.1) <= 1.5 && yoon.isStateAffected(232);
-            const hp1 = yoon.hp; const hit = new Game_Action(e); hit.setSkill(372); yoon.clearResult(); fixed(() => hit.apply(yoon));
+            const hp1 = yoon.hp; const hit = new Game_Action(e); hit.setSkill(656); yoon.clearResult(); fixed(() => hit.apply(yoon));
             out.wardBlocked = yoon.hp === hp1 && !yoon.isStateAffected(232);
             yoon.clearResult(); fixed(() => hit.apply(yoon)); out.secondHits = yoon.hp < hp1;
             // Smudge: party clears Despair/Panicked, Rite +30%

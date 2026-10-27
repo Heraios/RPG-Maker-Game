@@ -22,13 +22,13 @@ module.exports = {
             sib.addState(113); turnEnd(sib); const fw = $dataItems.findIndex(i => i && i.name === 'Fresh Water');
             $gameParty.gainItem($dataItems[fw], 1); use(yoon, fw, sib, true); out.waterCures = !sib.isStateAffected(113);
             // ...and by a water spell on an enemy
-            e.addState(113); yoon.learnSkill(248); yoon.setMp(99); use(yoon, 248, e); out.rariCures = !e.isStateAffected(113);
+            e.addState(113); yoon.learnSkill(416); yoon.setMp(99); use(yoon, 416, e); out.rariCures = !e.isStateAffected(113);
             // Dragged Below: freed by hitting the dragger
-            use(e, 393, yoon); out.dragged = yoon.isStateAffected(114) && !yoon.canMove();
-            const yhp = yoon.hp; const hit = new Game_Action(e); hit.setSkill(372); yoon.clearResult(); hit.apply(yoon); out.outOfReach = yoon.hp === yhp;
+            use(e, 675, yoon); out.dragged = yoon.isStateAffected(114) && !yoon.canMove();
+            const yhp = yoon.hp; const hit = new Game_Action(e); hit.setSkill(656); yoon.clearResult(); hit.apply(yoon); out.outOfReach = yoon.hp === yhp;
             use(pada, 1, e); out.freed = !yoon.isStateAffected(114);
             // ...or lost if nobody does
-            use(e, 393, yoon); for (let i = 0; i < 3; i++) { yoon.clearResult(); turnEnd(yoon); } out.lost = yoon.isDead();
+            use(e, 675, yoon); for (let i = 0; i < 3; i++) { yoon.clearResult(); turnEnd(yoon); } out.lost = yoon.isDead();
             yoon.revive(); yoon.setHp(yoon.mhp);
             // Hypnotized: attacks its own side
             pada.clearResult(); pada.addState(153); const conf = new Game_Action(pada); conf.setConfusion();
@@ -36,7 +36,7 @@ module.exports = {
             pada.removeState(153);
             // Sleep: can't act, a hit wakes it
             sib.clearResult(); sib.addState(154); out.asleep = !sib.canMove();
-            const wake = new Game_Action(e); wake.setSkill(372); sib.clearResult(); fixed(() => wake.apply(sib)); out.woke = !sib.isStateAffected(154);
+            const wake = new Game_Action(e); wake.setSkill(656); sib.clearResult(); fixed(() => wake.apply(sib)); out.woke = !sib.isStateAffected(154);
             out.mentalList = SmokingIsle.Insight ? String(PluginManager.parameters('SI_Insight')['Mental States']) : '';
             return out;
         });

@@ -1103,7 +1103,7 @@ on the body (Islanders: Lower L/R Arm, Upper L/R Arm, and a priest's Face).
 - **Two-handed weapons:** spears, staffs and axes. While one is in Melee, the off hand is locked and its
   item goes back to the bag. Tag a weapon `<One-Handed>` (some axes) or `<Two-Handed>` to override.
 - Starting equipment is matched by type; extra pieces (more tattoos, a second ring) go in the actor note
-  as `<Start Equips: armor 37, armor 39>`.
+  as `<Start Equips: armor 11, armor 93>`.
 - Clothing, neck pieces, rings, shields, charms and collars: see "Armor sets, charms and size rules"
   below. The test room's chest gives one of everything.
 
@@ -1633,7 +1633,7 @@ Laurel, Wax Myrtle (burns well), Honey Palm and Driftwood are firewood and build
 
 **Armor crafting (built: 131 recipes).** Islander-made sets are crafted and come in as many copies as you
 make; foreign, ancient, sacred and trophy gear is found and stays rare. Recipes can take several of one
-ingredient (`<Recipe In: item 179 x2>`: a Tapa Wrap takes two Tapa Cloth). Woven things have two
+ingredient (`<Recipe In: item 483 x2>`: a Tapa Wrap takes two Tapa Cloth). Woven things have two
 recipes: the **weaver** (known, for a fee) or your own **Backstrap Loom** (needs the recipe item). Carving
 and knapping (Slat Armor, wooden shields, bone, shell, gourd and stone trinkets) are always known; sewing,
 fletching, oven work and the "copy the enemy" recipes (Linen, Firebrand) need the recipe item. The
@@ -2485,7 +2485,7 @@ knife lasts roughly ten fights before chipping). Talking costs far less Fatigue 
 some enemies are better fought: gentle words fail on centipedes, and only Pada can threaten.
 
 ### Act 2 and Act 3 enemies (second batch)
-Placeholder art. Enemies 14–49, troops 15–49, enemy skills 404–471. Bosses shrug off Sleep, Entangled,
+Placeholder art. Enemies 14–49, troops 15–49; their skills are in the Enemy Skills category. Bosses shrug off Sleep, Entangled,
 Dragged Below, Hypnotized, Salting, Stunned and Confused.
 
 **Act 2**
@@ -2572,7 +2572,7 @@ at gathering spots by an adult with a knife (Shellfish, sometimes a Pearl).
 Lady's leave, Parl's fate, Dama's arrival against Juda) still need writing as events.
 
 ### Animal enemies (third batch)
-Enemies 54–75, skills 485–514, troops 51–74, from the art on hand. Built and checked by test 45; balance in
+Enemies 54–75 (skills in the Enemy Skills category), troops 51–74, from the art on hand. Built and checked by test 45; balance in
 `node tests/run.js --sim animals`.
 
 | Where | Enemies |
@@ -2692,16 +2692,18 @@ starting position back to **MAP001 (8, 6)** (Database → System), then delete t
 
 ### Database layout
 Every list is grouped into categories. Each category starts with a header entry
-(`------- Name -------`, never used in game) on an ID ending in 1 (except right after the fixed entries), followed by its entries and
-at least 25 blank slots for new things of that kind. Add new entries in the blank slots of their
-category. RPG Maker's fixed entries stay first: Skill 1 (Punch, the Attack command), Skill 2
-(Guard) and State 1 (Knockout). Plugin parameters and tests refer to these IDs, so moving an
-entry later means updating those references too (the reorganization used a script for this).
+(`------- Name -------`, never used in game), followed by its entries and blank slots for new things of
+that kind: **25** after each weapon and armor category, **50** after each item and skill category, and
+**100** after Magic and the Glyphs (tattoos). Add new entries in the blank slots of their category.
+RPG Maker's fixed entries stay first: Skill 1 (Punch, the Attack command), Skill 2 (Guard), skills 4–6
+(Escape, Wait, Swap Weapon: named in plugin settings) and State 1 (Knockout). Notes, events and tests
+refer to entries by ID, so moving an entry means updating those references too (the reorganization used a
+script that checked every reference still pointed at the same thing).
 
-- **Items:** Supplies 1; Food & Drink 41; Herbal Remedies 71; Materials 121; Battle Items 181; Key Items 221
-- **Weapons:** Knives 1; Swords & Paddle-Swords 51; Spears 91; Axes & Adzes 131; Clubs, Hammers & Maces 171; Staves 211
-- **Armors:** Clothing & Armor 1; Neck 61; Hands (Rings & Gloves) 101; Shields 141; Charms 171; Ranged 241; Glyphs (Tattoos) 281; Codices 341; Collars 371
-- **Skills:** Basic 3; Rest 41; Weapon Techniques 71; Ranged 121; Talk 161; Voltaic 201; Magic 241; Yoon (Ghost) 301; Enemy Skills 371; Unused (MV defaults) 421
+- **Items** (1478): Supplies 1; Food & Drink 72; Herbal Remedies 178; Battle Items 256; Animal Materials 328; Stone, Ore & Metal 403; Plant Materials & Cloth 473; Wood & Fuel 536; Relics & Treasure 606; Tools & Kits 662; Key Items 720; Recipes: Campfire 786; Recipes: Earth Oven 1039; Recipes: Smith 1120; Recipes: Tanner 1203; Recipes: Weaver 1274; Recipes: Electroplater 1345; Recipes: Tattooist, Priest & Herbalist 1419
+- **Weapons** (308): Knives 1; Swords 50; Paddle-Swords 82; Spears & Harpoons 122; Axes, Adzes & Picks 181; Clubs, Hammers & Maces 223; Staves 269
+- **Armors** (904): Head 1; Shoulders 52; Body 87; Cuirass 123; Arms 168; Hands (Rings & Gloves) 208; Legs 247; Greaves 281; Feet 316; Neck 351; Shields 389; Charms 428; Batteries 512; Ranged 541; Glyphs (Tattoos) 586; Codices 746; Patience: Collars 775; Patience: Packs 810; Patience: Booties 841; Patience: Bells 874
+- **Skills** (838): Basic 3; Rest 7; Weapon Techniques 73; Ranged 158; Patience 219; Talk 280; Cultural & Voltaic 343; Magic 409; Yoon's Ghost Powers 568; Enemy Skills 655
 - **States:** Core 2; Talk 41; Elemental 71; Ailments 111; Mental 151; Boons 191; Remedies 231; Set Bonuses 271
 - Saves made before the reorganization point at the old IDs: start a New Game.
 

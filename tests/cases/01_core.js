@@ -8,14 +8,14 @@ module.exports = {
             const usable = a => a.skills().filter(s => s.stypeId === 2 && a.canUse(s)).map(s => s.name);
             const yoon = A(2), th = A(11);
             yoon.forceChangeEquip(yoon.slotOfType(1), W(6)); const knife = usable(yoon);
-            yoon.forceChangeEquip(yoon.slotOfType(1), W(212)); const staff = usable(yoon);
-            th.forceChangeEquip(th.slotOfType(1), W(57)); const khopesh = usable(th);
+            yoon.forceChangeEquip(yoon.slotOfType(1), W(270)); const staff = usable(yoon);
+            th.forceChangeEquip(th.slotOfType(1), W(52)); const khopesh = usable(th);
             const pada = A(5), pile = $dataArmors.find(a => a && a.name === 'Voltaic Pile');
             pada.forceChangeEquip(pada.slotOfType(1), $dataWeapons.find(w => w && w.name === 'Copper Knife'));
             pada.forceChangeEquip(pada.slotOfType(20), null);
-            const conductNoPile = pada.canUse(S(202));
+            const conductNoPile = pada.canUse(S(347));
             pada.forceChangeEquip(pada.slotOfType(20), pile);
-            return { knife, staff, khopesh, conductNoPile, conductPile: pada.canUse(S(202)), islanderOnly: pada.canEquip(pile) && !th.canEquip(pile) };
+            return { knife, staff, khopesh, conductNoPile, conductPile: pada.canUse(S(347)), islanderOnly: pada.canEquip(pile) && !th.canEquip(pile) };
         });
         t.ok(r.knife.includes('Quick Jab') && r.knife.includes('Raking Cut') && !r.knife.includes('Overhead Smash'), 'knife moves: ' + r.knife);
         t.ok(r.staff.includes('Wide Sweep') && r.staff.includes('Vital Strike') && !r.staff.includes('Measured Thrust'), 'staff moves: ' + r.staff);
@@ -29,9 +29,9 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const pada = $gameActors.actor(5);
-            pada.forceChangeEquip(pada.slotOfType(1), $dataWeapons[132]);
+            pada.forceChangeEquip(pada.slotOfType(1), $dataWeapons[182]);
             const mino = $gameTroop.members()[0];
-            const a = new Game_Action(mino); a.setSkill(372);
+            const a = new Game_Action(mino); a.setSkill(656);
             const strike = a.makeDamageValue(pada, false);
             return { atk: pada.atk, unarmed: pada.unarmedAtk(), strike };
         });
@@ -44,12 +44,12 @@ module.exports = {
         const r = await h.eval(() => {
             const yoon = $gameActors.actor(2), sib = $gameActors.actor(3), S = id => $dataSkills[id];
             const out = {};
-            yoon.setTp(0); yoon.useItem(S(72)); out.jab = yoon.tp;
-            sib.setTp(0); sib.useItem(S(72)); out.sibJab = sib.tp;
-            yoon.setTp(80); out.catchAt80 = yoon.canUse(S(42));
-            yoon.setTp(100); out.weary = yoon.isWeary(); out.catchWeary = yoon.canUse(S(42)); out.pantWeary = yoon.canUse(S(43)); out.jabWeary = yoon.canUse(S(72));
-            yoon.useItem(S(43)); out.afterPant = yoon.tp; out.wearyAfterPant = yoon.isWeary();
-            yoon.useItem(S(42)); out.afterCatch = yoon.tp;
+            yoon.setTp(0); yoon.useItem(S(74)); out.jab = yoon.tp;
+            sib.setTp(0); sib.useItem(S(74)); out.sibJab = sib.tp;
+            yoon.setTp(80); out.catchAt80 = yoon.canUse(S(8));
+            yoon.setTp(100); out.weary = yoon.isWeary(); out.catchWeary = yoon.canUse(S(8)); out.pantWeary = yoon.canUse(S(9)); out.jabWeary = yoon.canUse(S(74));
+            yoon.useItem(S(9)); out.afterPant = yoon.tp; out.wearyAfterPant = yoon.isWeary();
+            yoon.useItem(S(8)); out.afterCatch = yoon.tp;
             yoon.setTp(40); yoon.onBattleEnd(); out.kept = yoon.tp;
             yoon.recoverAll(); out.recovered = yoon.tp;
             const ghost = $gameActors.actor(1); ghost.setTp(60); out.ghost = ghost.tp;
@@ -82,7 +82,7 @@ module.exports = {
             th.forceChangeEquip(th.slotOfType(15), null); th.forceChangeEquip(th.slotOfType(2), null);   // helm + cuirass only
             const turn = a => { a.setTp(50); a.onTurnEnd(); return a.tp; };
             const out = { falmiOut: turn(falmi), touOut: turn(tou), thTrained: turn(th) };
-            th.forgetSkill(87); out.thUntrained = turn(th);
+            th.forgetSkill(89); out.thUntrained = turn(th);
             $dataMap = { note: '<Indoors>' };
             out.falmiIn = turn(falmi); out.touIn = turn(tou);
             $dataMap = null;

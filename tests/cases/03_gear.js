@@ -12,7 +12,7 @@ module.exports = {
             out.offhandJasper = sib.slotAccepts(sib.slotOfType(2), W('Jasper Knife'));
             // Rite bonus while holding the Jasper Knife
             const fixed = f => { const rnd = Math.random; Math.random = () => 0.5; try { return f(); } finally { Math.random = rnd; } };
-            const rite = () => fixed(() => { const e = new Game_Enemy(12, 0, 0); $gameTroop._enemies.push(e); e._siMood = 10; const x = new Game_Action(sib); x.setSkill(165); e.clearResult(); x.apply(e); return e.talkMood() - 10; });
+            const rite = () => fixed(() => { const e = new Game_Enemy(12, 0, 0); $gameTroop._enemies.push(e); e._siMood = 10; const x = new Game_Action(sib); x.setSkill(284); e.clearResult(); x.apply(e); return e.talkMood() - 10; });
             const plain = rite(); sib.forceChangeEquip(sib.slotOfType(1), W('Jasper Knife')); const jasper = rite(); out.riteRatio = jasper / plain;
             // andesite: one-handed; basalt: two-handed
             const pada = A(5);
@@ -39,12 +39,12 @@ module.exports = {
         const r = await h.eval(() => {
             const W = n => $dataWeapons.find(w => w && w.name === n), yoon = $gameActors.actor(2), pada = $gameActors.actor(5);
             const e = $gameTroop.members()[0];
-            const jab = weapon => { yoon.forceChangeEquip(yoon.slotOfType(1), weapon); let s = 0; for (let i = 0; i < 400; i++) { const a = new Game_Action(yoon); a.setSkill(72); s += a.makeDamageValue(e, false); } return s / 400; };
+            const jab = weapon => { yoon.forceChangeEquip(yoon.slotOfType(1), weapon); let s = 0; for (let i = 0; i < 400; i++) { const a = new Game_Action(yoon); a.setSkill(74); s += a.makeDamageValue(e, false); } return s / 400; };
             const out = { edge: jab(W('Copper-Silver Knife')) / jab(W('Copper Knife')) };
             out.yoonPaddle = yoon.canEquip(W('Obsidian Paddle'));
             out.sibPaddle = $gameActors.actor(3).canEquip(W('Obsidian Paddle'));
             out.bronzeWears = ['Bronze Knife', 'Bronze Spear', 'Bronze Axe', 'Bronze Mace', 'Bronze Crescent Sword', 'Bronze Leaf Sword'].some(n => W(n).siWearChance > 0);
-            out.copperScrap = W('Bent Copper Mace').siBreaksInto.includes(122);
+            out.copperScrap = W('Bent Copper Mace').siBreaksInto.includes(404);
             pada.forceChangeEquip(pada.slotOfType(1), W('Basalt Hammer')); out.mawlLocks = !pada.isEquipChangeOk(pada.slotOfType(2));
             pada.forceChangeEquip(pada.slotOfType(1), W('Copper Axe')); out.hatchetFree = pada.isEquipChangeOk(pada.slotOfType(2));
             return out;
@@ -62,16 +62,16 @@ module.exports = {
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id), W = id => $dataWeapons[id];
             const yoon = A(2), pada = A(5);
-            [6, 7, 13, 133].forEach(id => W(id).siWearChance = 100);
+            [6, 7, 13, 183].forEach(id => W(id).siWearChance = 100);
             yoon.forceChangeEquip(yoon.slotOfType(1), W(6));
             const m1 = yoon.rollWear(yoon.slotOfType(1)), after1 = (yoon.weapons()[0] || {}).name;
             const m2 = yoon.rollWear(yoon.slotOfType(1)), after2 = yoon.weapons()[0] ? yoon.weapons()[0].name : 'none';
             $dataClasses[5].traits.push({ code: 51, dataId: 2, value: 0 });
             pada.forceChangeEquip(pada.slotOfType(1), W(13));
-            const before = $gameParty.numItems($dataItems[122]); $gameParty.loseItem($dataItems[122], 99);
+            const before = $gameParty.numItems($dataItems[404]); $gameParty.loseItem($dataItems[404], 99);
             const m3 = pada.rollWear(pada.slotOfType(1));
-            const remains = $gameParty.numItems($dataItems[122]);
-            pada.forceChangeEquip(pada.slotOfType(1), W(133)); const m4 = pada.rollWear(pada.slotOfType(1));
+            const remains = $gameParty.numItems($dataItems[404]);
+            pada.forceChangeEquip(pada.slotOfType(1), W(183)); const m4 = pada.rollWear(pada.slotOfType(1));
             return { m1, after1, m2, after2, m3, remains, m4 };
         });
         t.eq(r.after1, 'Chipped Obsidian Knife', 'Obsidian Knife wears into the chipped tier');

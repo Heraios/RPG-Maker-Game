@@ -24,7 +24,7 @@ module.exports = {
                     a.initEquips($dataActors[id].equips);
                     a.clearStates(); a.clearBuffs(); a.recoverAll(); a.setTp(0);
                 });
-                $gameParty._items = {}; $gameParty.gainItem($dataItems[42], 3); $gameParty.gainItem($dataItems[43], 3);
+                $gameParty._items = {}; $gameParty.gainItem($dataItems[73], 3); $gameParty.gainItem($dataItems[74], 3);
             };
 
             const avgDamage = (a, skill, target) => { const x = new Game_Action(a); x.setSkill(skill.id); return x.makeDamageValue(target, false); };

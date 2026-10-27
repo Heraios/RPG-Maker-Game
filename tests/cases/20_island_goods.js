@@ -13,9 +13,9 @@ module.exports = {
             yoon.addState(ST('Tipsy')); use(sib, 'White Clay Draught', yoon); out.sober = !yoon.isStateAffected(ST('Tipsy'));
             // Fire Opal: spells of the last element cast are stronger
             sib.forceChangeEquip(slot(sib, 5), AR('Fire Opal'));
-            const ahi = new Game_Action(sib); ahi.setSkill(242);
+            const ahi = new Game_Action(sib); ahi.setSkill(410);
             sib._siLastSpellSource = 0; out.echoOff = ahi.spellBoost();
-            sib._siLastSpellSource = $dataSkills[242].siSource; out.echo = Math.round((ahi.spellBoost() - out.echoOff) * 100);
+            sib._siLastSpellSource = $dataSkills[410].siSource; out.echo = Math.round((ahi.spellBoost() - out.echoOff) * 100);
             // Bows: wet strings lose power; waxed ones don't; arrow add-ons add ammo
             const rs = slot(pada, 6);
             pada.forceChangeEquip(rs, AR('Juniper Bow'));
@@ -30,7 +30,7 @@ module.exports = {
             dama.forceChangeEquip(slot(dama, 6), AR('Palm-Fibre Net'));
             dama.forceChangeEquip(slot(dama, 5), AR('Net Floats'));
             enemy.removeState(ST('Wet')); enemy.setHp(enemy.mhp);
-            const net = new Game_Action(dama); net.setSkill(125);
+            const net = new Game_Action(dama); net.setSkill(162);
             for (let i = 0; i < 10 && !enemy.isStateAffected(ST('Wet')); i++) { enemy.clearResult(); net.apply(enemy); enemy.setHp(enemy.mhp); }
             out.soaked = enemy.isStateAffected(ST('Wet'));
             // Scoria Pupil quiets the Coral Eye's whisper

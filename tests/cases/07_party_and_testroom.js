@@ -8,7 +8,7 @@ module.exports = {
             const A = id => $gameActors.actor(id);
             const yoon = A(2), sib = A(3), lasa = A(4), mino = $gameTroop.members()[0];
             BattleManager._logWindow.displaySubstitute = function() {};
-            const rate = target => { let c = 0; for (let i = 0; i < 400; i++) { const a = new Game_Action(mino); a.setSkill(372); BattleManager._action = a; if (BattleManager.applySubstitute(target) !== target) c++; } return c / 400; };
+            const rate = target => { let c = 0; for (let i = 0; i < 400; i++) { const a = new Game_Action(mino); a.setSkill(656); BattleManager._action = a; if (BattleManager.applySubstitute(target) !== target) c++; } return c / 400; };
             yoon.setHp(yoon.mhp); const full = rate(yoon);
             yoon.setHp(Math.floor(yoon.mhp * 0.3)); const low = rate(yoon);
             sib.setHp(3); const sibLow = rate(sib); lasa.setHp(3); const lasaLow = rate(lasa);

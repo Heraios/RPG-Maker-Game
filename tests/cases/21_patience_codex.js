@@ -42,9 +42,9 @@ module.exports = {
             pat.forceChangeEquip(pat.slotOfType(17), AR('Javelin Pack')); out.pack = dama.ammoLeft(rs, SK('Hurl Javelin')) - t0;
             // Spiked collar bites back; Salt-Pouch collar guards against spirits
             pat.forceChangeEquip(pat.slotOfType(9), AR('Obsidian-Spiked Collar'));
-            const boar = $gameTroop.members()[0]; boar.setHp(boar.mhp); const strike = new Game_Action(boar); strike.setSkill(372);
+            const boar = $gameTroop.members()[0]; boar.setHp(boar.mhp); const strike = new Game_Action(boar); strike.setSkill(656);
             const hp0 = boar.hp; strike.executeHpDamage(pat, 10); out.spikes = hp0 - boar.hp;
-            const owl = new Game_Enemy(12, 0, 0); $gameTroop._enemies.push(owl); const claw = new Game_Action(owl); claw.setSkill(372);
+            const owl = new Game_Enemy(12, 0, 0); $gameTroop._enemies.push(owl); const claw = new Game_Action(owl); claw.setSkill(656);
             const rnd = Math.random; Math.random = () => 0.5;
             pat.forceChangeEquip(pat.slotOfType(9), null); const plain = claw.makeDamageValue(pat, false);
             pat.forceChangeEquip(pat.slotOfType(9), AR('Salt-Pouch Collar')); const salted = claw.makeDamageValue(pat, false);
