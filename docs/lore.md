@@ -516,6 +516,59 @@ In her words:
 In the game the second sentence is written "That \YP[they] \YV[are|is] miraculously returned to us...", so
 it reads "That she is", "That he is" or "That they are", whichever Yoon the player chose.
 
+### Birdmen
+**The spearwives' counterpart:** Islander priests of **Sooty Bird** who live on the **sea stack off
+Amentapu** (after Rapa Nui's tangata manu). Where the spearwives answer *harm*, the Birdmen answer *need*:
+between them they are the island's emergency service, and neither is an army.
+
+| | Spearwives | Birdmen |
+|---|---|---|
+| God | Star Mother (sea) | Sooty Bird (sky) |
+| Who | Women only (the tides are hers) | **Men only** (Sooty Bird, the male creator) |
+| Base | Star Mother temple in Mansehare, town stations | The sea stack, and the Sooty Bird idols |
+| Diet | Only sea meat | Only what flies: **seabirds and their eggs** |
+| Job | Catch whoever did wrong | Reach whoever is in trouble |
+| Numbers | About 40 | **About 40** |
+
+- **What they do:** carry **messages the telegraph can't** (no wire there, or the wire is down), **scout
+  the island for trouble** (wildfires above all, but also landslides, wrecks and strangers), and **help
+  stranded travellers** on the roads and in the wilds.
+- **Flight is real.** Birdmen fly with Sooty Bird's magic (the **Hiri** glyph, "to rise in coils of smoke;
+  to hover"), **for as long as their Mana lasts**. A Birdman who runs dry comes down wherever he is, so
+  routes are planned idol to idol and nobody flies far out to sea.
+- **The initiation: the leap.** A candidate flies from the stack to the shore. Jumping counts as a death and
+  landing as coming back, so the leap is what makes an ordinary man a priest ("died and came back"), able
+  to see ghosts. Belief is magic on the island: believing you will fly is part of flying.
+- **Gear:** **seabird-feather vests** and **carved wooden bird-mask helmets**. On the stack a man is Sooty
+  Bird's, not his family's; the mask hides whose son he was.
+- **Not for life:** a Birdman **comes home when he wants**, marries, takes up his old work, and keeps the
+  title and the right to fly. Many serve a few years as young men; some never leave the stack.
+- **The egg race** (yearly; Tanausú is the reigning champion) is separate from the leap: fly out, take the
+  first sooty tern egg of the spring, and swim it back.
+- **Sooty Bird's household:** the Lightning Clan, Sib's priesthood and the Birdmen all serve Sooty Bird.
+  The wire and the wing are two arms of one god, which is why stations stand at the Bird idols.
+- **The invasion:** the Birdmen are the island's eyes and its fallback post, so the invaders **target
+  them**: shot from the sky, their stack watched, their idols garrisoned. When the Seafarers seize or cut
+  the telegraph in Act 4, the Birdmen become the resistance's message network. In Act 5 they are first to
+  see the Princess's fires.
+
+**Ideas (not yet decided):**
+- **Atonement:** some Birdmen are men who did wrong and chose the stack over exile, a life of rescuing
+  instead of punishment (Sooty Bird's own story; a Juda mirror). The spearwives catch you; the Birdmen may
+  take you in.
+- **Fast travel:** flying between Sooty Bird idols as a Birdman's guidance or carrying, not the party's
+  own magic ("not at night": terns don't fly in the dark).
+- **Rescue, not game over:** losing in the wilds (outside story fights) means a Birdman finds you; you wake
+  at the nearest idol, poorer and later in the day.
+- **A Birdman armor set:** Seabird-Feather Vest, Carved Bird Mask, perhaps a Tern-Feather Cape and a
+  Tern-Bone Whistle; Air spells and evasion against ranged attacks, Flying at battle start with the full set.
+- **Characters:** the head of the order (a "Moon-Watcher", since Sooty Bird lives in the moon); a Birdman
+  once caught by Dama, now working beside her; a "grounded" Birdman who fell short on his leap and keeps
+  the order's records; Hira the tern-watcher, never chosen.
+- **Party:** Sib outranks them as high priest (awkward); Yoon already "died and came back" (*"I've already
+  fallen off something high. Do I get a mask?"*); Lasa flies and they are mildly offended; Kathrout's
+  namesake recorded Rapa Nui's birdman cult; Aday wants to build them better whistles.
+
 ### Priests
 Priests heal, hold funerals, **mummify the dead**, talk to ghosts and spirits, and read omens. They
 are chosen from the children Islander culture already counts as **priests or potential priests**:
@@ -1172,7 +1225,7 @@ Iberia, Iceland). The strangeness is saved for spirits and First Sailor creation
 and owl; animals the Ladies turned into peoples; and **the First Sailors' "various creations"**.
 - **Birdmen** (after Rapa Nui's tangata manu): **Islander priests of Sooty Bird** who live on the sea stack
   off Amentapu, wear tern feathers and eat tern eggs. Tied to the spring race for the first sooty tern egg
-  and to the eggshell glyphs. (Not a First Sailor creation.)
+  and to the eggshell glyphs. (Not a First Sailor creation; see "Birdmen" above.)
 - **Kavakava figures:** rib-thin carved ancestor figures guarding First Sailor tombs. Weak to fire and
   Crush.
 - **Crew-beasts** (**confirmed**): guard and work animals bred by the First Sailors (coral-eyed dogs,
