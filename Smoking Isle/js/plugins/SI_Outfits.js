@@ -22,7 +22,7 @@
  * ============================================================================
  * Armor sets
  * ============================================================================
- * Armor note:   <Set: Tapa>
+ * Armor note:   <Set: Tapa>          (weapons can belong to a set too: the Bull-Horn Staff)
  *               <Set: Goat-Skin>  <Set: Mouflon Wool>   (one piece, two sets)
  *               <Set: First Sailor Regalia (eye)>       (a named part)
  *
@@ -170,7 +170,7 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
             });
             // A set's size is the number of parts its pieces cover.
             var parts = {};
-            $dataArmors.forEach(function(a) {
+            $dataArmors.concat($dataWeapons).forEach(function(a) {
                 if (a) a.siOutfit.sets.forEach(function(s) { (parts[s.name] = parts[s.name] || {})[s.part] = true; });
             });
             $.sets = {};
@@ -226,8 +226,8 @@ SmokingIsle.Outfits = SmokingIsle.Outfits || {};
     // Parts worn per set (substitutes for the same part count once).
     Game_Actor.prototype.setPieceCounts = function() {
         var worn = {};
-        this.armors().forEach(function(a) {
-            (a.siOutfit ? a.siOutfit.sets : []).forEach(function(s) { (worn[s.name] = worn[s.name] || {})[s.part] = true; });
+        this.equips().forEach(function(a) {
+            (a && a.siOutfit ? a.siOutfit.sets : []).forEach(function(s) { (worn[s.name] = worn[s.name] || {})[s.part] = true; });
         });
         var counts = {};
         Object.keys(worn).forEach(function(set) { counts[set] = Object.keys(worn[set]).length; });
