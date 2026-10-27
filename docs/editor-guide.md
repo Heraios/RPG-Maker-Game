@@ -79,10 +79,10 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
    effects), 213 (Ready to Toss, Aday's Toss) and 214–219 (the weapon-art stances: Braced, En Garde,
    Warding, Covered, Following Up, Brought Down) are also used by number.
-   The characters' own resting moves are skills 10–20 (Meditate, Land, Fly, Diver's Breath, Slouch, Stop
+   The characters' own resting moves are skills 45–55 (Meditate, Land, Fly, Diver's Breath, Slouch, Stop
    Slouching, Oil Joints, Photosynthesize, Tinker, Take Notes, Parade Rest) with states 7–13 (Meditating,
    Landed, Slouching, Oiled Joints I–III, Notes in Hand). States are found by name, so keep the names;
-   Slouching's note lists skill 15 (Stop Slouching) by number.
+   Slouching's note lists skill 50 (Stop Slouching) by number.
 7. **Plugin Manager order.** Changing a plugin's settings is fine; moving plugins up or down isn't.
 8. **Troop 13 and the Test Room (map 4)** are used by the automated tests. Copy them instead of editing.
 

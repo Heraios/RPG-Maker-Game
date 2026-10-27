@@ -27,7 +27,7 @@
  *                            (Photosynthesize)
  *
  * State note:
- *   <Only Skills: 2, 15>     while it lasts the battler can only use those
+ *   <Only Skills: 2, 50>     while it lasts the battler can only use those
  *                            skills (Guard and Stop Slouching), and no items
  *   <Until Spell>            removed after the battler's next Magical skill
  *                            (Take Notes' half-price spell)
