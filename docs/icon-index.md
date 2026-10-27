@@ -1,27 +1,19 @@
 # Icon index (Iconset.png)
 
 `img/system/Iconset.png` is built from the sets in `img/system/RPG_Maker`, stacked in the order below, 16 icons per row,
-with each set's blank rows dropped. Icon 0 is left empty (RPG Maker treats it as "no icon").
+with each set's blank rows dropped.
 In the editor, pick icons from the icon picker as usual; this table says where each set starts.
 
-| Set | Icon numbers |
+| Set (file in `img/system/RPG_Maker`) | Icon numbers |
 |---|---|
-| Weapon | 16–639 |
-| Armour | 640–1183 |
-| Clothing | 1184–1999 |
-| Tool | 2000–2735 |
-| Blacksmith | 2736–2815 |
-| Craft | 2816–3919 |
-| Potion | 3920–4111 |
-| Food & Drink | 4112–5103 |
-| Fish | 5104–5215 |
-| Crops | 5216–5535 |
-| Farming | 5536–5679 |
-| Flower | 5680–5759 |
-| Trees | 5760–5839 |
-| Instrument | 5840–5887 |
-| Interiors | 5888–6463 |
-| Ext | 6464–7071 |
+| Icon sheet (32x32) | 16–591 |
+| Spells (32x32) | 592–911 |
+| Colour variations (32x32) | 912–1151 |
+| Fishing set (32x32) | 1152–1279 |
+| Minecraft set (32x32) | 1280–1679 |
+
+Each row of a set keeps its own row here (sets 10 or 11 icons wide are padded to 16 with blanks), so
+icons that belong together still line up. Row 0 is left blank (RPG Maker treats icon 0 as "no icon").
 
 To add a set later, put it in `img/system/RPG_Maker` and ask for the Iconset to be rebuilt with it added at the end,
 so the icons already in use keep their numbers.
