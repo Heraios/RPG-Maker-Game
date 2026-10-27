@@ -120,7 +120,8 @@ SmokingIsle.Layout = SmokingIsle.Layout || {};
             }, this);
             lines.push(line);
         }, this);
-        if (lines.length > 2) lines = [lines[0], lines.slice(1).join(' ')];
+        var max = this._siMaxLines || 2;   // the battle screen's help box holds more
+        if (lines.length > max) lines = lines.slice(0, max - 1).concat([lines.slice(max - 1).join(' ')]);
         return lines;
     };
 

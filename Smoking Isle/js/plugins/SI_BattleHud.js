@@ -31,8 +31,9 @@
  *   inside the battlefield's frame. Sizes and colours follow the mock-up
  *   ($.FONT and $.COLORS at the top of the plugin).
  * - A pointer (img/system/Cursor2, $.ARROW) marks the chosen command or line.
- * - Lists open in the column under a title, skills without icons, and
- *   the help sits under a divider at the column's foot.
+ * - Lists open in the column under a title, skills without icons, four lines
+ *   at a time (they scroll), so the description below a divider has room
+ *   for four or five lines.
  * - The card of whoever is acting lifts and gets a gold frame (a friend being
  *   picked for a skill, a blue one). A hit shakes the card and pops its
  *   number (or Miss) over it, as over enemies; the ally strip shows them too.
@@ -67,7 +68,9 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     $.ALLY_WIDTH = 242;
     $.INSET = 6;           // lists and commands sit inside the column's frame
     $.TITLE_HEIGHT = 40;
-    $.HELP_HEIGHT = 84;
+    $.LIST_ROWS = 4;        // lines a list shows at once (it scrolls); the help gets the rest
+    $.LIST_LINE = 34;
+    $.HELP_LINE = 28;
     $.COLORS = {
         back: '#1f2a14', screen: '#111111', frame: '#d98c1f', outline: '#3b2a0c', active: '#ffd76b',
         target: '#8fd3ff', label: '#8fd3ff', prompt: '#ffd76b', place: '#9be36b', cost: '#bbbbbb',
@@ -121,6 +124,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         if (this._siFrameless) {
             // Panels inside the column fill their whole rect, so side by side they leave no seam.
             bitmap.fillAll($.COLORS.back);
+            if (this._siDivider) bitmap.fillRect(10, 2, w - 20, 2, $.COLORS.divider);   // the help's line above it
         } else {
             var ctx = bitmap._context;
             $.roundRect(ctx, 2, 2, w - 4, h - 4, 7);
@@ -575,7 +579,7 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     // The command column
     //-------------------------------------------------------------------------
 
-    // The panel's frame and back, with the divider above the help when it's up.
+    // The panel's frame and back (the help draws its own dividing line).
     function Window_SIColumn() {
         this.initialize.apply(this, arguments);
     }
@@ -583,24 +587,12 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
     Window_SIColumn.prototype = Object.create(Window_Base.prototype);
     Window_SIColumn.prototype.constructor = Window_SIColumn;
 
-    Window_SIColumn.prototype.initialize = function(rect, dividerY) {
+    Window_SIColumn.prototype.initialize = function(rect) {
         Window_Base.prototype.initialize.call(this, rect.x, rect.y, rect.width, rect.height);
-        this._dividerY = dividerY;
-        this._divider = null;
     };
 
     Window_SIColumn.prototype.standardPadding = function() {
         return $.INSET;
-    };
-
-    Window_SIColumn.prototype.update = function() {
-        Window_Base.prototype.update.call(this);
-        var help = SceneManager._scene._helpWindow, show = !!(help && help.visible);
-        if (show !== this._divider) {
-            this._divider = show;
-            this.contents.clear();
-            if (show) this.contents.fillRect(10, this._dividerY, this.contentsWidth() - 20, 2, $.COLORS.divider);
-        }
     };
 
     $.Window_SIColumn = Window_SIColumn;
@@ -812,14 +804,19 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
         // The command column: one framed panel. Commands, or a list with its title
         // above and the help (description) below a divider, sit inside it.
         var I = $.INSET, inner = { x: col.x + I, y: col.y + I, width: col.width - I * 2, height: col.height - I * 2 };
-        var listY = inner.y + $.TITLE_HEIGHT, helpY = inner.y + inner.height - $.HELP_HEIGHT;
-        this._hudColumnWindow = new Window_SIColumn(col, helpY - inner.y - 4);
+        // A list shows LIST_ROWS lines and scrolls; the description below gets the rest of the panel.
+        var listY = inner.y + $.TITLE_HEIGHT, listH = $.LIST_ROWS * $.LIST_LINE + 16, helpY = listY + listH;
+        var helpH = inner.y + inner.height - helpY;
+        this._hudColumnWindow = new Window_SIColumn(col);
         this._windowLayer.addChildAt(this._hudColumnWindow, 2);
         this._hudTitleWindow = new Window_SIColumnTitle(inner.x, inner.y, inner.width);
         var help = this._helpWindow;
-        $.restyle(help, 10, $.FONT.help, 30);
-        $.place(help, { x: inner.x, y: helpY, width: inner.width, height: $.HELP_HEIGHT });
-        var commandRect = { x: inner.x, y: inner.y, width: inner.width, height: helpY - 6 - inner.y };
+        $.restyle(help, 10, $.FONT.help, $.HELP_LINE);
+        $.place(help, { x: inner.x, y: helpY, width: inner.width, height: helpH });
+        help._siMaxLines = Math.floor((helpH - 20) / $.HELP_LINE);
+        help._siDivider = true;
+        // Commands have no help, so they take the whole panel.
+        var commandRect = inner;
         [this._partyCommandWindow, this._actorCommandWindow, this._skillTypeWindow, this._tacticsWindow].forEach(function(win) {
             if (!win) return;
             $.restyle(win, 12, $.FONT.command, 46);
@@ -827,10 +824,10 @@ SmokingIsle.BattleHud = SmokingIsle.BattleHud || {};
             win.numVisibleRows = function() { return Math.floor((commandRect.height - this.standardPadding() * 2) / this.lineHeight()); };
             $.place(win, commandRect);
         });
-        var listRect = { x: inner.x, y: listY, width: inner.width, height: helpY - 6 - listY };
+        var listRect = { x: inner.x, y: listY, width: inner.width, height: listH };
         [this._skillWindow, this._itemWindow, this._swapWindow, this._reserveWindow, this._enemyWindow, this._actorWindow].forEach(function(win) {
             if (!win) return;
-            $.restyle(win, 8, $.FONT.list, 34);
+            $.restyle(win, 8, $.FONT.list, $.LIST_LINE);
             $.place(win, listRect);
         });
         $.styleSkillList(this._skillWindow);

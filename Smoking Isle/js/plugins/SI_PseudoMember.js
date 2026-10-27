@@ -41,6 +41,8 @@
  *                commander picked (Sic 'Em!). Choices, first that fits:
  *                <Pseudo Order: Alarm Bark if ally Sleep | Howl if enemy spirit | Growl>
  *                If nothing fits, they act on their own.
+ *   Commands cost half a turn (Turn Cost 50) unless the skill names its own
+ *   <Turn Cost>.
  *
  * In battle they:
  * - act on their own turns (they appear in the Turn Order),
@@ -127,6 +129,21 @@ SmokingIsle.PseudoMember = SmokingIsle.PseudoMember || {};
         return $gameParty.pseudoBattleMembers().filter(function(a) {
             return a.isAlive();
         });
+    };
+
+    // Commands to an ally cost half a turn unless the skill says otherwise.
+    var _DataManager_isDatabaseLoaded = DataManager.isDatabaseLoaded;
+    DataManager.isDatabaseLoaded = function() {
+        if (!_DataManager_isDatabaseLoaded.call(this)) return false;
+        if (!$._commandCostsSet) {
+            $dataSkills.forEach(function(skill) {
+                if (skill && ($.commandState(skill) || /<Pseudo Order:/i.test(skill.note || '')) && !/<Turn Cost:/i.test(skill.note || '')) {
+                    skill.siTurnCost = 50;
+                }
+            });
+            $._commandCostsSet = true;
+        }
+        return true;
     };
 
     var _Game_BattlerBase_meetsSkillConditions = Game_BattlerBase.prototype.meetsSkillConditions;

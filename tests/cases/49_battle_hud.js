@@ -22,6 +22,10 @@ module.exports = {
             const card = s._hudCards.find(c => c.visible), who = card.actor();
             who.clearResult(); who.gainHp(-3); who.startDamagePopup();
             card.update();
+            // Lists show four lines at a time; the help below gets four or more
+            out.listRows = s._skillWindow.maxPageRows() === 4 && s._helpWindow._siMaxLines >= 4;
+            // Commands to AI allies cost half a turn
+            out.commandCost = $dataSkills.filter(k => k && /<Pseudo (State|Order):/.test(k.note)).every(k => k.siTurnCost === 50);
             out.popup = card._siDamageSprites.length === 1 && card._siDamageSprites[0].children.length === 1;
             const before = s._hudCards[0].width;
             $gameParty.addActor(12);
@@ -43,6 +47,8 @@ module.exports = {
         t.eq(r.lifted.join(), r.active, 'acting card lifts');
         t.eq(r.alliesHidden, true, 'no ally strip without allies');
         t.eq(r.popup, true, 'damage number on the card');
+        t.eq(r.listRows, true, 'lists show four lines, the help has room');
+        t.eq(r.commandCost, true, 'ally commands cost half a turn');
         t.eq(r.alliesShown && r.narrower, true, 'ally strip appears and the cards make room');
         t.eq(r.fourFit, true, 'four allies fit in the strip');
     },
