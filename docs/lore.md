@@ -544,7 +544,8 @@ between them they are the island's emergency service, and neither is an army.
 - **The initiation: the leap.** A candidate flies from the stack to the shore. Jumping counts as a death and
   landing as coming back, so the leap is what makes an ordinary man a priest ("died and came back"), able
   to see ghosts. Belief is magic on the island: believing you will fly is part of flying.
-- **Gear:** **seabird-feather vests** and **carved wooden bird-mask helmets**. On the stack a man is Sooty
+- **Gear:** **seabird-feather vests** and **carved wooden bird-mask helmets** (the **Birdman** armor set:
+  Carved Bird Mask, Tern-Feather Cape, Seabird-Feather Vest, Tern-Bone Whistle; see concept.md). On the stack a man is Sooty
   Bird's, not his family's; the mask hides whose son he was.
 - **Not for life:** a Birdman **comes home when he wants**, marries, takes up his old work, and keeps the
   title and the right to fly. Many serve a few years as young men; some never leave the stack.
@@ -565,8 +566,6 @@ between them they are the island's emergency service, and neither is an army.
   own magic ("not at night": terns don't fly in the dark).
 - **Rescue, not game over:** losing in the wilds (outside story fights) means a Birdman finds you; you wake
   at the nearest idol, poorer and later in the day.
-- **A Birdman armor set:** Seabird-Feather Vest, Carved Bird Mask, perhaps a Tern-Feather Cape and a
-  Tern-Bone Whistle; Air spells and evasion against ranged attacks, Flying at battle start with the full set.
 - **Characters:** the head of the order (a "Moon-Watcher", since Sooty Bird lives in the moon); a Birdman
   once caught by Dama, now working beside her; a "grounded" Birdman who fell short on his leap and keeps
   the order's records; Hira the tern-watcher, never chosen.
