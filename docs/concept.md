@@ -1050,7 +1050,7 @@ Weapon skills above.
     name and Health; the cards make room for it.
 - **Rolling Health** (`SI_RollingHealth.js`), as in EarthBound: damage to the party rolls the Health
   counter down instead of landing at once. Nobody falls until the counter reaches 0, so a quick heal
-  saves someone who took a mortal blow. A full bar takes 15 seconds to roll away (plugin parameter);
+  saves someone who took a mortal blow. A full bar takes 15 seconds to roll away (plugin parameter), counted only during the party's turns: it waits while an enemy acts;
   healing rolls up twice as fast. The counter keeps rolling while you choose a command, and pauses for
   messages. Win or run first and the rest of the damage is forgotten. Enemies take damage at once.
   Health still to roll away shows as a red stretch of the bar. **Options > Rolling Health** turns it off.

@@ -19,8 +19,9 @@
  * reaches 0, so a quick heal can save someone who took a mortal blow.
  * Healing rolls the counter up (twice as fast).
  *
- * - The counter keeps rolling while you choose commands, and pauses while
- *   a message is on screen.
+ * - The counter keeps rolling while you choose commands and while the
+ *   party acts. It waits while an enemy takes its turn, and while a message
+ *   is on screen, so a mortal blow always leaves time to answer it.
  * - Win (or run) before it reaches 0 and the rest of the damage is
  *   forgotten; healing still owed lands at once.
  * - Enemies take their damage at once, as before.
@@ -129,7 +130,14 @@ SmokingIsle.RollingHealth = SmokingIsle.RollingHealth || {};
 
     $.isPaused = function() {
         return $gameMessage.isBusy() || BattleManager.isBattleEnd() || BattleManager.isAborting() ||
-            BattleManager._phase === 'init' || BattleManager._phase === 'start';
+            BattleManager._phase === 'init' || BattleManager._phase === 'start' || $.enemyActing();
+    };
+
+    // An enemy's turn (its action and animations): the counter waits, so a mortal blow
+    // still leaves the party their own turn to answer it.
+    $.enemyActing = function() {
+        var subject = BattleManager._subject;
+        return !!subject && subject.isEnemy() && BattleManager._phase !== 'input';
     };
 
     $.update = function(scene) {

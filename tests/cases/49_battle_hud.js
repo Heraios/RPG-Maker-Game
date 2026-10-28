@@ -90,6 +90,13 @@ module.exports = {
             const boar = $gameTroop.members()[0], hp = boar.hp;
             boar.gainHp(-3);
             out.enemyAtOnce = boar.hp === hp - 3;
+            // An enemy's turn: the counter waits.
+            sib.setHp(sib.mhp); sib.gainHp(-10);
+            const prevSubject = BattleManager._subject, prevPhase = BattleManager._phase;
+            BattleManager._subject = boar; BattleManager._phase = 'action';
+            out.waitsForEnemy = SmokingIsle.RollingHealth.isPaused();
+            BattleManager._subject = prevSubject; BattleManager._phase = prevPhase;
+            sib.clearHpRoll(); sib.setHp(sib.mhp);
             // Off: damage lands at once.
             ConfigManager.rollingHealth = false;
             sib.gainHp(-4);
@@ -108,6 +115,7 @@ module.exports = {
         t.eq(r.forgotten, true, 'damage still rolling is forgotten when the battle ends');
         t.eq(r.enemyAtOnce, true, 'enemies take damage at once');
         t.eq(r.off, true, 'Rolling Health off: damage at once');
+        t.eq(r.waitsForEnemy, true, 'the counter waits while an enemy takes its turn');
         // It rolls on its own while a command is being chosen.
         await h.page.waitForTimeout(1000);
         const live = await h.eval(() => { const sib = $gameActors.actor(3); return { hp: sib.hp, mhp: sib.mhp }; });
