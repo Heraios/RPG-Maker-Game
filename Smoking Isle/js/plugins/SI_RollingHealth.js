@@ -9,7 +9,7 @@
  * @param Roll Seconds
  * @type number
  * @desc Seconds the Health counter takes to roll from full to nothing.
- * @default 6
+ * @default 15
  *
  * @help
  * Place after SI_Ailments and SI_TurnOrder, before SI_BattleHud.
@@ -39,7 +39,7 @@ SmokingIsle.RollingHealth = SmokingIsle.RollingHealth || {};
     'use strict';
 
     var params = PluginManager.parameters('SI_RollingHealth');
-    $.seconds = Number(params['Roll Seconds'] || 6);
+    $.seconds = Number(params['Roll Seconds'] || 15);
 
     $.isOn = function() {
         return ConfigManager.rollingHealth !== false;

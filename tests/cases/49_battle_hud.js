@@ -64,7 +64,7 @@ module.exports = {
             sib.gainHp(-10);
             out.notYet = sib.hp === sib.mhp && sib.hpTarget() === sib.mhp - 10;
             sib.updateHpRoll();
-            for (let i = 0; i < 30; i++) sib.updateHpRoll();
+            for (let i = 0; i < 90; i++) sib.updateHpRoll();
             out.partway = sib.hp < sib.mhp && sib.hp > sib.mhp - 10;
             roll(sib);
             out.landed = sib.hp === sib.mhp - 10;

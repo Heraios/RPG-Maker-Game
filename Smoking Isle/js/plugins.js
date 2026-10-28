@@ -36,7 +36,7 @@ var $plugins =
 {"name":"SI_Specialists","status":true,"description":"Smoking Isle: Aday the mechanist (items, Toss, Tinker, Mend Gear) and Kathrout the scholar (studying glyphs, not seeing spirits).","parameters":{}},
 {"name":"SI_Resting","status":true,"description":"Smoking Isle: rules for the characters' own resting moves (Meditate, Land, Diver's Breath, Slouch, Oil Joints, Photosynthesize...).","parameters":{}},
 {"name":"SI_WeaponArts","status":true,"description":"Smoking Isle: weapon arts: stances (Brace, Riposte, Ward Off, Cover), Throw Knife, the off-hand follow-up, bringing flyers down, and skill bonuses by enemy kind.","parameters":{}},
-{"name":"SI_RollingHealth","status":true,"description":"Smoking Isle: EarthBound-style rolling Health for the party.","parameters":{"Roll Seconds":"6"}},
+{"name":"SI_RollingHealth","status":true,"description":"Smoking Isle: EarthBound-style rolling Health for the party.","parameters":{"Roll Seconds":"15"}},
 {"name":"SI_Screen","status":true,"description":"Smoking Isle: widescreen fixes, turn order strip, word wrap for dialogue and the battle log, and a Battle Text speed option.","parameters":{"Battle Text Speeds":"72,48,24"}},
 {"name":"SI_BattleHud","status":true,"description":"Smoking Isle: the battle screen (somewhere between EarthBound and the SNES Shin Megami Tensei games).","parameters":{}}
 ];
