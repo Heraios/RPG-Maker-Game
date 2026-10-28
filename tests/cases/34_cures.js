@@ -10,7 +10,7 @@ module.exports = {
             const cast = (who, name, target) => { const a = new Game_Action(who); a.setSkill(SK(name).id); target.clearResult(); a.apply(target); };
             const yoon = A(2), sib = A(3), lasa = A(4), pada = A(5);
             // every tier exists, with a glyph
-            const names = ['Raau', 'Raauben', 'Raaugun', 'Kami', 'Kamiben', 'Kamigun', 'Keva', 'Kevaben', 'Kevagun'];
+            const names = ['Raau', 'Raauben', 'Raaugun', 'Kami', 'Kamiben', 'Kamigun'];   // Keva is cave magic now: no glyph
             out.glyphs = names.filter(n => !SK(n) || !AR('Glyph: ' + n) || AR('Glyph: ' + n).traits[0].dataId !== SK(n).id).join(', ');
             // Raau: bodily ailments, not the elemental states
             ['Venom', 'Bleed', 'Tipsy', 'Wet'].forEach(n => sib.addState(ST(n)));
@@ -43,7 +43,7 @@ module.exports = {
             out.lasa = lasa.isLearnedSkill(SK('Keva').id) + '/' + [2, 3, 5].some(id => A(id).isLearnedSkill(SK('Keva').id));
             return out;
         });
-        t.eq(r.glyphs, '', 'all nine spells exist, each with its glyph');
+        t.eq(r.glyphs, '', 'all six cure spells exist, each with its glyph');
         t.eq(r.raau, 'false,false,false,true', 'Raau cures Venom, Bleed and Tipsy, but leaves the elemental states alone');
         t.eq(r.salting, 'true/false', 'only Raauben cures Salting');
         t.eq(r.kami, false, 'Kami cures Panicked and Despair');

@@ -20,7 +20,7 @@ module.exports = {
             out.moves = ['Copper Spear', 'Heather Staff', 'Copper Axe', 'Obsidian Paddle', 'Copper Knife', 'Basalt Hammer', 'Copper Mace'].map(moves).join(' | ');
             // Hook Down brings a flyer down
             const eagle = EN('Golden Eagle'), yoon = A(2), hook = new Game_Action(yoon); hook.setSkill(SK('Hook Down').id);
-            const wasFlying = SmokingIsle.Ranged.isFlying(eagle); eagle.clearResult(); hook.apply(eagle);
+            const wasFlying = SmokingIsle.Ranged.isFlying(eagle); eagle.clearResult(); hook.itemHit = () => 1; hook.itemEva = () => 0; hook.apply(eagle);   // no lucky dodge
             out.hook = wasFlying + '/' + SmokingIsle.Ranged.isFlying(eagle);
             // Ground Pound skips flyers; Haul In needs an Entangled target
             const pound = new Game_Action(yoon); pound.setSkill(SK('Ground Pound').id);
