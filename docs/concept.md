@@ -2295,6 +2295,21 @@ of Sooty Bird, starts with Hiri). They go in any tattoo slot and have no tiers, 
 | Viri / Viriben / Virisin ("to coil") | The Daughters of the Wells, one tier each | One enemy: Water damage (×0.8 / 1.4 / 2.0) and Dragged Below (40 / 60 / 80%) | 6 / 12 / 20 |
 
 
+**Seafarer spells (codices).** Islander tattoos carry the high pantheon, the Lady of the Woods and her
+husbands; Seafarer codices favour the bull-men and the Ladies the Islanders keep their distance from, and the
+Seafarers' own names for the high gods (Atua for the Red Bowl, Vero the Moon, Hiero the Sun). Built as skills
+(`<School: seafarer>`, rules in `SI_SeafarerMagic.js`); not yet placed in codices.
+
+| Spell | God | Tiers | Effect | MP |
+|-------|-----|-------|--------|----|
+| Tiho-uha | Dark Lady (Lady of the Mountains) | single, -gun (party) | **Protect**: **Sheltered**, 30% less physical damage, 3 turns | 6 / 14 |
+| Mea-uha | Red Lady (Lady of the Mountains) | single, -ben, -sin, -gun, -gunben | **Slow**: pushes enemies back on the timeline (40 / 70 / 100; all enemies 40 / 70) | 4 / 8 / 14 / 9 / 16 |
+| Kiva | Lady of the Wind | single, -gun (all enemies) | **Silence**, "drowns out chanting": **Drowned Out**, no Magical skills for 3 turns (80% / 60% each) | 6 / 14 |
+| Tama | Lady of the Sun | single, -gun (all enemies) | **Dispel**, "burns away boons": strips Boons and Remedies states and raised stats | 6 / 14 |
+| Atua | God of the World (the Red Bowl) | single, -gun (party) | **Reflect**: **Mirrored**, the next damaging spell an enemy casts at them is turned back, then it ends (up to 3 turns) | 8 / 18 |
+| Vero | The Moon | single, -ben, -sin, -gun, -gunben | **Haste**: pulls allies forward on the timeline (40 / 70 / 100; party 40 / 70); not the caster | 5 / 9 / 15 / 12 / 20 |
+| Hiero | The Sun | single, -ben, -sin, -gun, -gunben | **Blaze**: 15 / 25 / 40% of current Health (all enemies 15 / 25%). Pure mental damage: no element, resistance, guard or critical changes it, and it can't be reflected | 8 / 14 / 22 / 16 / 26 |
+
 **Gau** ("to bite"), an ordinary glyph: drains Health from one enemy (×1.0; Gauben ×1.8; Gaugun all enemies ×0.8).
 MP 5 / 10 / 12.
 

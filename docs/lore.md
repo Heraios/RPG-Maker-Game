@@ -1056,6 +1056,13 @@ after gaining a body.
    one is speaking a piece of a god's name, which is why they are earned at **shrines**, guarded by priests,
    gifted rather than taught. (Seafarers don't wear glyph tattoos at all; a Seafarer scholar like Kathrout
    works from books, the codices, instead.)
+   **Islander tattoos and Seafarer codices draw on different gods.** Tattoos carry the high pantheon (Red
+   Bowl, Star Mother, Star Child, Sooty Bird, the Destroyer), the Lady of the Woods and her husbands.
+   Codices favour the **bull-men** and the Ladies the Islanders keep their distance from (the Lady of the
+   Wind, the Lady of the Sun, and the Lady of the Mountains, who married the King), under the Seafarers'
+   own names for the high gods: **Atua**, the God of the World (their Red Bowl), **Vero** the Moon and
+   **Hiero** the Sun. Their spells are for imposing one's will (slow, silence, dispel, reflect, haste);
+   the Islanders' for surviving the island.
 2. **A primal force or element.** The generic spells: Ahi (fire), Rari (water), Hagu (air), Keri (earth),
    and the other forces: Mahu (healing), Ara (life returning), Raau (plant-medicine), Kami (the mind), Keva
    (blinding dark), Gau (the bite, hunger). Anyone who can read them can use them.
