@@ -73,7 +73,8 @@ service or sealing them away, and founding the Kingdom of All the Sea.
 rainy, fertile side of the rim, and **the Red Lady** of the endless, trackless jagged highlands
 beyond. She became **the King's wife (wives)**: she split herself permanently into two beings and
 **became mortal**, so their very many children (twins, triplets and more, from both bodies) are
-**unusually powerful humans**. Thenmy and the Princess are among them. It was **a love match**, and
+**unusually powerful humans**. **Princess Meneswa** is one of them. **Thenmy is not**: his mother was one of
+the King's many **mortal wives**, a "lesser wife" in Meneswa's mouth. It was **a love match**, and
 also her escape from her divine family's drama. The Dark Lady and the Red Lady are **alive and live in
 the capital**. Like the other Ladies she has **two husbands**: **the King of All the Sea**, and **the
 Charging Bull**, a bull-man the Seafarers revere. (Open: which of her two bodies each one married.)
@@ -1167,7 +1168,7 @@ integration; the "primitive" islanders would be "civilized" while keeping a voic
 **The demon ritual was Juda's own idea**, to get rid of those who would oppose the plan (like
 Pada). Thenmy knew nothing of it and would have balked immediately.
 
-**The sister:** whatever happens with Thenmy, the sister who was to marry Juda grows frustrated
+**The sister:** whatever happens with Thenmy, **Meneswa**, the half-sister who was to marry Juda, grows frustrated
 with the whole situation and **seizes control of the invasion force in a coup**, choosing to
 subjugate the island through straightforward brutality (the Princess of Act 5).
 
@@ -1497,8 +1498,9 @@ turns the more evidence was found, the villagers with her are better armed, and 
 - **Ladder the goat** climbs ladders, so maybe he can climb anything: a comic overworld helper?
 
 ### From the pantheon (extrapolations to confirm)
-- **The royal family has divine blood.** Thenmy and the Princess are grandchildren of a Lady, and
-  so great-grandchildren of Star Mother. Thenmy's paladin magic is his heritage. The empire calls
+- **The royal family has divine blood, but not all of it.** Meneswa is the Lady of the Mountains'
+  daughter, and so a granddaughter of Star Mother. Thenmy, the son of a mortal wife, has none: his
+  strength and paladin magic are his own, which is part of why Meneswa despises him. The empire calls
   the Ladies' family thieves and criminals while being ruled by their descendants.
 - **The King's founding adventure is a dark mirror of the player's party.** The heroes of an
   earlier JRPG became the empire, and their "righting wrongs" meant chaining and conscripting gods.
@@ -1531,9 +1533,8 @@ turns the more evidence was found, the villagers with her are better armed, and 
 ## 6. Open questions
 - ~~What adults see of the Children of the Caves?~~ Answered: they choose who sees them (see "Children of
   the Caves").
-- **Thenmy's mother.** The founding section makes Thenmy and the Princess children of the King and the Lady
-  of the Mountains; "The royal family has divine blood" calls them her grandchildren; and the Princess calls
-  Thenmy "son of a lesser wife" (scenes.md, the coup). Which is it, and is the Princess's mother the Lady?
+- ~~Thenmy's mother?~~ Answered: Meneswa is the Lady of the Mountains' daughter; Thenmy's mother was one of
+  the King's mortal wives.
 - **The Lady of the Mountains' husbands:** which of her two bodies married the King, and which the Charging
   Bull?
 - ~~What is the "demon" Juda tried to summon?~~ Answered: Yoon themself (see "The murder").
@@ -1543,5 +1544,5 @@ turns the more evidence was found, the villagers with her are better armed, and 
   come from the north-east, so the north is wet forest and the south and south-west are dry. The town and
   the salt marsh are on the east side. Still open to change.
 - ~~Parl's past~~ **Decided:** both. A tribute collector's crewman *and* a literate spy (see Parl).
-- **Names:** the King of All the Sea, the Princess.
+- **Names:** the King of All the Sea, the Princess (**Meneswa**).
 

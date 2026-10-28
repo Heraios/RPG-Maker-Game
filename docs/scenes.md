@@ -786,11 +786,11 @@ ghost child.)*
 ---
 
 ## The Princess's coup (fragment)
-**Needs:** Thenmy, the Princess. **When:** Act 5, the coup.
+**Needs:** Thenmy, the Princess (Meneswa). **When:** Act 5, the coup.
 
 **Thenmy:** Sister! This is insanity! What are you doing?
 
-**Princess:** What you should have, you weak, limp-wristed son of a lesser wife! I was promised rule of a rich
+**Meneswa:** What you should have, you weak, limp-wristed son of a lesser wife! I was promised rule of a rich
 island through an old and doddering husband. Now the dodderer is dead, and my rich island is rising against
 me. Fine. We'll kill all the monsters born of mating with beasts, and those who resist us!
 
@@ -798,4 +798,5 @@ me. Fine. We'll kill all the monsters born of mating with beasts, and those who 
 - "The dodderer" is Juda, the husband she was promised; she believes him dead (he returns in Act 5).
 - "Monsters born of mating with beasts": the Seafarer theology at its ugliest. The Ladies' families (goat and
   boar husbands, the People of the Forest, the Children of the Caves) are "beasts" to her.
-- "Son of a lesser wife": see lore.md, open questions (Thenmy's mother).
+- "Son of a lesser wife": Meneswa is the Lady of the Mountains' daughter; Thenmy's mother was one of the
+  King's mortal wives (lore.md, "The founding of the Kingdom of All the Sea").

@@ -2781,7 +2781,7 @@ script that checked every reference still pointed at the same thing).
 - **Act numbering:** the cast notes put Sib's recruitment in "early Act 1" and Juda/Dama in
   Act 2, while the story outline has Act 1 ending at contact with Sib and the mountain in Act 3.
   This document follows the story outline.
-- **The Princess:** her name, and whether she is ever playable.
+- **The Princess (Meneswa):** whether she is ever playable.
 - **Durability:** is equipment durability a real system for everyone, or is "bronze is
   unbreakable" flavour only?
 - **The mystery:** how much active deduction is there (gathering evidence, accusations, being
