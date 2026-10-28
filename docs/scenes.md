@@ -473,3 +473,329 @@ soldiers in bronze.
 - The husband exchange plants the Dama–Thenmy romance lightly, either way.
 - Kathrout's three campfire beats (this, "Jarred Lightning", "Sib Is Sib") make a mini-arc: Islanders
   keep telling her "ask us, not your notebook".
+
+---
+
+## "You Just Look Like Sib"
+**Needs:** Yoon, Sib. **When:** after Yoon's new body (end of Act 2), or later, once Sib's "looking weird"
+fear has come up a few times.
+
+**Yoon:** You don't look weird. You just look like Sib.
+
+**Sib:** I'm short, Yoon. Really short. I'm not likely to get much bigger. The healer said. I've got thin stick
+arms and a stocky chest. I look a little like a girl, but I'm not one. My heart has to work hard. I get tired so
+easy even though I exercise a lot. My nails are small. My fingers are the wrong length. My elbows stick out
+funny.
+
+*(A pause. Sib won't look up.)*
+
+> **Choice:** "I know. I've been looking at you for a long time." / "I don't even know what MY face looks like." /
+> Take Sib's hand and look at it.
+
+**▸ "I know. I've been looking at you for a long time."**
+
+**Yoon:** I know all of that. Short. Stick arms. The elbows. I've been looking at you since before I died.
+
+**Yoon:** When I was a ghost, I couldn't see faces right. Everyone was smoke. But I could see you. You were the
+only one who looked like *someone*.
+
+**Sib:** ...That's not a normal thing to say, Yoon.
+
+**Yoon:** It's a true thing.
+
+**▸ "I don't even know what MY face looks like."**
+
+**Yoon:** I don't know what *my* face looks like. This one's borrowed. It's made of blood and pork and a pearl.
+
+**Yoon:** You know exactly what yours looks like. You can list it! That's a lot more than I've got.
+
+**Sib:** *(a wet laugh)* That's horrible.
+
+**Yoon:** At least you know what your face is.
+
+**▸ Take Sib's hand and look at it.**
+
+*(Yoon takes Sib's hand and turns it over, studying it very seriously: the small nails, the short fingers.)*
+
+**Yoon:** These are the hands that drew the circle. That brought me back.
+
+**Yoon:** They're the right length. They're exactly long enough.
+
+*(Sib doesn't pull their hand away.)*
+
+**All branches continue:**
+
+**Sib:** ...The healer said I'll probably always be like this.
+
+**Yoon:** Good.
+
+**Sib:** *Good?*
+
+**Yoon:** Then I'll always know which one is you.
+
+**Sib:** ...
+
+**Sib:** You're so weird, Yoon.
+
+**Yoon:** I know. You're the one who said so first.
+
+**Notes**
+- Sib's list touches their condition (lore.md, "Yoon and Sib") without anyone naming it.
+- The hand branch can feed Sib's crush, and still works if the player never returns it.
+
+---
+
+## Campfire: "Since They Were Babies"
+**Needs:** Thenmy, Dama, Aday, Lasa. **When:** Act 4 or later.
+
+Lasa lets the whole party see her; to the adults (Thenmy, Dama) she looks like an uncanny little winged fae,
+which is why Thenmy calls her "Lady" (lore.md, "Children of the Caves: who sees them").
+
+*(Across the camp, Yoon and Sib are sitting back to back. Sib is reading; Yoon is carving something, badly.
+Every so often one of them leans on the other without looking.)*
+
+**Thenmy:** The Returned Child and the little priest seem... very close.
+
+**Dama:** Hm. That's one word for it.
+
+**Aday:** They've been best friends since they were *babies*. Like, actual babies. Everyone in Zonfahare knows.
+
+**Thenmy:** Truly? Since infancy?
+
+**Dama:** Their families lived across the river from each other. The way I heard it, the two of them met
+crawling. Sib bit Yoon. Yoon bit back. That was that.
+
+**Thenmy:** *(laughing)* A blood oath, then.
+
+**Lasa:** That's not how it went! Yoon bit first.
+
+**Thenmy:** *(very politely, to the little winged figure hovering by his ear)* Did they, Lady Lasa?
+
+**Lasa:** Lady! Hee! Yes. And then Sib cried, and Yoon got so upset Yoon cried *louder*, and then they fell
+asleep in a pile.
+
+**Thenmy:** Oh. Oh, that's lovely.
+
+**Aday:** He calls everyone "lady". He called the goat "madam" yesterday.
+
+**Thenmy:** It was a very dignified goat.
+
+**Lasa:** They did that all the time. They had a hiding spot in the lava tubes where they played priests and
+hunters. Sib was always the priest. Yoon was always the dead thing the priest had to bless.
+
+**Dama:** Of course Yoon was.
+
+**Thenmy:** I have forty-one brothers and sisters. I don't think any of us ever fell asleep in a pile.
+
+**Dama:** Forty-*one*?
+
+**Thenmy:** Forty-one that I know of. We were raised in different palaces by different tutors. I met some of
+them for the first time at my father's jubilee. My sister and I...
+
+*(He trails off.)*
+
+**Thenmy:** Never mind. To have one friend like that, from the very start. That's worth more than a kingdom.
+
+**Lasa:** I know. That's why I'm here.
+
+*(Thenmy bows to her, very seriously.)*
+
+**Thenmy:** Then thank you, Lady Lasa, for looking after them.
+
+**Lasa:** "Lady" is too much! *(She is delighted.)*
+
+**Thenmy:** I'm told I do that.
+
+*(Across the camp, Yoon looks up.)*
+
+**Yoon:** Why is the prince bowing to Lasa?
+
+**Sib:** Because she let him see her as a lady. She's been showing off all week.
+
+**Yoon:** He's very polite.
+
+**Sib:** *(going back to their book)* I like him a little bit now.
+
+**Notes**
+- Thenmy's age (26), the 41 siblings and the "madam" goat are placeholders to change freely.
+- Lasa's "That's why I'm here" works before her realisation that Yoon was her child, and hits harder after.
+
+---
+
+## Scene: "Your Chosen Puppet"
+**Needs:** Thenmy, Yoon, Sib, Dama. **When:** soon after Thenmy joins, once his plan for Juda is known.
+
+*(Night. Thenmy has just remarked that the party fights well "for children".)*
+
+**Yoon:** If my dad was here, he'd have fought you all off by himself.
+
+**Yoon:** But *your* chosen puppet went and burned him alive.
+
+*(Silence. Even the fire seems quieter.)*
+
+**Sib:** Yoon...
+
+**Thenmy:** No. Let them say it.
+
+**Thenmy:** I chose Juda. I read his letters, I admired his learning, and I wrote to my father that here was a
+wise man the island would follow. I meant to make him your ruler, and to marry him to my sister.
+
+**Thenmy:** I did not know what he had done to you. Or what he would do to your father.
+
+**Yoon:** That doesn't make him less dead.
+
+**Thenmy:** No. It doesn't.
+
+**Thenmy:** A man who picks up a knife answers for where it cuts, whether he knew it was poisoned or not. I
+picked him up. I'm sorry, Yoon. I won't ask you to forgive it.
+
+> **Choice:** "Good. Don't ask." / "Tell me about him. What did he write to you?" / "My dad would have liked
+> you. That makes it worse."
+
+**▸ "Good. Don't ask."**
+
+**Yoon:** Good. Don't ask.
+
+**Thenmy:** I won't.
+
+*(Yoon turns away. Sib shuffles closer to Yoon without a word.)*
+
+**Dama:** *(quietly, to Thenmy)* That was the right answer, prince.
+
+**Thenmy:** It was the only honest one.
+
+**▸ "Tell me about him. What did he write to you?"**
+
+**Yoon:** What did he write to you? Juda.
+
+**Thenmy:** That the island was gentle and leaderless. That its priests were wise but its chiefs were vain. That
+he alone understood both your people and mine.
+
+**Yoon:** He said things like that to us too.
+
+**Thenmy:** ...Then we were fooled by the same voice.
+
+**Sib:** *(very small)* He taught me to read.
+
+*(Yoon takes Sib's hand.)*
+
+**▸ "My dad would have liked you. That makes it worse."**
+
+**Yoon:** My dad would have liked you. You're polite to goats. He was polite to goats.
+
+**Yoon:** That makes it worse.
+
+**Thenmy:** ...Yes. I imagine it does.
+
+**All branches continue:**
+
+**Thenmy:** Tell me about him. When you want to. Whoever knew him.
+
+**Dama:** Tell you about Pada? He was the mightiest hunter on the island. A better warrior than I am. He killed
+the Great Boar with only Yoon and Sib and Lasa for help. The Great Boar was a boar born from the Lady of the
+Woods in her swine form.
+
+**Dama:** He was kind and quiet and gentle. He was a good neighbour and a better friend. He married a poor, lame
+herbalist because he loved her. Everyone wanted him to be chief, but he was too shy at speaking.
+
+**Thenmy:** ...The Great Boar. A son of the Lady of the Woods. With three children at his side.
+
+**Dama:** Two children and a cave fae. Yes.
+
+**Thenmy:** In Keftiu they would carve that on a temple wall.
+
+**Dama:** Here we told it at the fire, and he went red and left to check his traps.
+
+**Lasa:** He did! Every time! He'd say "I have to check the traps" and there weren't any traps!
+
+**Sib:** He gave us his food. Every trip. He said he wasn't hungry. He was always hungry.
+
+**Yoon:** He carried me when I was a ghost. You can't carry a ghost. He did it anyway. He put his arms out the
+right way and walked slower so I could keep up.
+
+*(A pause.)*
+
+**Thenmy:** Too shy to be chief.
+
+**Dama:** He'd have been a good one. The island chose louder men.
+
+**Thenmy:** My father chose me because I was the loudest of forty-one. *(He looks into the fire.)* I think your
+island might have had it right, and chosen wrong anyway.
+
+**Thenmy:** Your father fought for you on that mountain. I can't give him back. But I can stand where he stood.
+If anything comes for you or the little priest, it goes through me first.
+
+**Yoon:** It better.
+
+**Thenmy:** Thank you, Chief Dama. For telling me. I'll remember him properly.
+
+**Yoon:** ...You can call him Pada.
+
+**Thenmy:** Pada, then.
+
+**Notes**
+- Thenmy takes the blame without excuses; "I can stand where he stood" matches his adult-protection mechanic.
+- "Check the traps" can be seeded as a running joke in Act 2, while Pada is alive.
+- If Juda returns in Act 5, Thenmy's guilt resurfaces.
+
+---
+
+## War council: "No Army"
+**Needs:** the full party. **When:** Act 5, after the Princess's coup. **Setting:** the council at Zonfahare.
+
+**Dama:** All right. We count what we have.
+
+**Dama:** Forty spearwives, give or take. Harpoons and nets. And any spearwife can raise a posse: hunters with
+bows, axes and spears. Men like Pada. Fewer of them now.
+
+**Sib:** The Birdmen. About forty too. They have slings, for chasing animals off the fields and bringing down
+birds. And they can fly.
+
+**Sib:** And the priests. Every priest knows glyphs. Most of them have never used one on a person.
+
+**Aday:** And the Lightning Clan. We're not fighters. But you don't want to grab a battery tender's arm while
+she's holding the wire. Mum says the clan can "turn its arts to self-defence at need."
+
+**Aday:** *(quietly)* And we still won't cut a line. Even theirs.
+
+**Falmi:** The forest! Mother's people. The boar-men will fight, and the Owls of Ill Omen watch every path. And
+Uncle Deception can be anyone at all. The Princess's soldiers broke the forest agreements. Mother doesn't
+forgive that.
+
+**Tou:** My court is small and strange. But it is mine. The fae of the palace will answer me. The Stonemen kneel
+to me. The old Crew-beasts guard what I tell them to guard.
+
+**Tou:** *(more quietly)* And the Children of the Caves are... kind to me. I am still learning why.
+
+**Lasa:** *(looking at her feet)* ...We'll come. We'll all come.
+
+**Thenmy:** And those of my soldiers who would not raise a hand against children, and will not now. Not many.
+But they are good men, and they know how my sister fights.
+
+*(Thenmy looks around the fire: spearwives, bird-priests, telegraph keepers, forest spirits, a doll queen, a
+ghost child.)*
+
+**Thenmy:** They said your people had no army.
+
+**Thenmy:** Now I am glad they were wrong. We have something with which to face my sister's madness.
+
+**Dama:** It isn't an army. It's an island.
+
+**Thenmy:** ...Then it's better than an army.
+
+---
+
+## The Princess's coup (fragment)
+**Needs:** Thenmy, the Princess. **When:** Act 5, the coup.
+
+**Thenmy:** Sister! This is insanity! What are you doing?
+
+**Princess:** What you should have, you weak, limp-wristed son of a lesser wife! I was promised rule of a rich
+island through an old and doddering husband. Now the dodderer is dead, and my rich island is rising against
+me. Fine. We'll kill all the monsters born of mating with beasts, and those who resist us!
+
+**Notes**
+- "The dodderer" is Juda, the husband she was promised; she believes him dead (he returns in Act 5).
+- "Monsters born of mating with beasts": the Seafarer theology at its ugliest. The Ladies' families (goat and
+  boar husbands, the People of the Forest, the Children of the Caves) are "beasts" to her.
+- "Son of a lesser wife": see lore.md, open questions (Thenmy's mother).

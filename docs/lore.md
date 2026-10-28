@@ -287,6 +287,11 @@ major favor. **The showcase for animal Talk**: tracking, reading signs, choosing
 - **Females:** beautiful small winged women in red, with silver-embroidered hats; can produce
   blinding light.
 - **Males:** short and chubby, in long vestments and a red broad-brimmed hat over curly hair.
+- **Who sees them:** a Child of the Caves **chooses** who sees her. Strangers see nothing, or a glimpse at
+  the edge of a lamp. **Children** she lets see her see another child, a little odd. **Adults** she lets see
+  her see the uncanny fae (the winged woman in red, the chubby man in a broad hat) and hear a voice that isn't
+  quite a child's. Lasa lets the whole party see her; Pada calls her "spirit", and Thenmy calls her "Lady
+  Lasa". **Kathrout**, who sees no ghosts or spirits, oddly sees Lasa *as a child*, the way children do.
 
 Attracted to shiny objects, which they hide in secret deposits. Experts in underground passages.
 Mostly harmless pranksters: pulling clothes off people, stealing quilts, harassing domestic animals,
@@ -574,6 +579,20 @@ between them they are the island's emergency service, and neither is an army.
 - **Party:** Sib outranks them as high priest (awkward); Yoon already "died and came back" (*"I've already
   fallen off something high. Do I get a mask?"*); Lasa flies and they are mildly offended; Kathrout's
   namesake recorded Rapa Nui's birdman cult; Aday wants to build them better whistles.
+
+### The island's defenders
+The island has **no army**, and before the invasion needed none. What it has:
+- **Spearwives** (about 40): harpoons and nets; any spearwife can raise a **posse** of hunters with bows,
+  axes and spears (men like Pada).
+- **Birdmen** (about 40): **slings**, for chasing animals off the fields and bringing down birds, and flight.
+- **Priests:** glyph magic, though most have never used a glyph on a person.
+- **The Lightning Clan:** not fighters, but they can turn their arts to self-defence at need (and still never
+  cut a line).
+
+By Act 5, against the Princess, they are joined by **the Lady of the Woods** and her people (the boar-men, the
+Owls of Ill Omen, the Master of Deception), **Tou's court** (the palace fae, the Stonemen, the Crew-beasts, the
+Children of the Caves), and **the soldiers who follow Thenmy**. Thenmy: *"They said your people had no army.
+Now I am glad they were wrong."* Dama: *"It isn't an army. It's an island."* (scenes.md, "No Army".)
 
 ### Priests
 Priests heal, hold funerals, **mummify the dead**, talk to ghosts and spirits, and read omens. They
@@ -1167,7 +1186,12 @@ sworn investigators: see "Spearwives") with finding out how he stole the pearls 
 ### Yoon's family
 - **Mada:** Yoon's mother, the **village herbalist** (considered **the best on the island**), lame in one leg. Keeps some of her own blood for
   ritual potions, which is where the body's ritual gets hers.
-- **Pada:** Yoon's father, considered **the best hunter on the island**.
+- **Pada:** Yoon's father, considered **the best hunter on the island**, and a better warrior than Dama.
+  Kind, quiet and gentle; a good neighbour and a better friend. He married Mada, a **poor**, lame herbalist,
+  for love. **Everyone wanted him to be chief, but he was too shy at speaking.** In Act 2 he kills **the Great
+  Boar** (born of the Lady of the Woods in her swine form) with only Yoon, Sib and Lasa to help. Whenever the
+  story is told at the fire he goes red and leaves "to check his traps" (there are no traps). He gives the
+  children his food on every trip, and carried ghost Yoon though you can't carry a ghost.
 - **The twins:** Yoon's younger twin siblings, a boy and a girl. As twins they can see ghosts: they
   see Yoon, they're the ones who tell Pada that Yoon is a ghost, and they give their blood for the body.
 - **Hair:** Mada has **blue** hair and Pada **light brown**. Each twin has the opposite-gender parent's
@@ -1505,10 +1529,13 @@ turns the more evidence was found, the villagers with her are better armed, and 
 ---
 
 ## 6. Open questions
-- **What adults see of the Children of the Caves:** a suggestion to confirm. (Pada does see and hear Lasa,
-  and calls her "spirit".) Adults who glimpse one see an
-  uncanny little fae figure (the winged woman in red, the chubby man in a broad hat); children see another
-  child.
+- ~~What adults see of the Children of the Caves?~~ Answered: they choose who sees them (see "Children of
+  the Caves").
+- **Thenmy's mother.** The founding section makes Thenmy and the Princess children of the King and the Lady
+  of the Mountains; "The royal family has divine blood" calls them her grandchildren; and the Princess calls
+  Thenmy "son of a lesser wife" (scenes.md, the coup). Which is it, and is the Princess's mother the Lady?
+- **The Lady of the Mountains' husbands:** which of her two bodies married the King, and which the Charging
+  Bull?
 - ~~What is the "demon" Juda tried to summon?~~ Answered: Yoon themself (see "The murder").
 - **Do the four elements map onto the four great domains** (section 4)?
 - **What are the Navigator-Lord remnants?**
