@@ -1,6 +1,6 @@
-// The god glyphs (Hiri, Gita, Emu, Iri, Ihi; the Ladies' Geha, Huhuti, Guhu, Huira; the husbands' Garo,
-// Gogoro, Iku, Puhi; the Daughters' Viri)
-// and Gau. Sib starts with Sooty Bird's Hiri.
+// The Islander god glyphs (Hiri, Gita, Emu, Iri; the Lady of the Woods' Geha, Huhuti; her husbands' Garo, Gogoro,
+// Hakahepo; the Daughters' Viri; White Bird's Manu; the Moon's Huki), and the spells that moved elsewhere: Ihi and Gau
+// (cave magic), Iku, Puhi, Guhu and Huira (Seafarer codices). Sib starts with Sooty Bird's Hiri.
 
 module.exports = {
     'god glyphs': async (h, t) => {
@@ -10,7 +10,8 @@ module.exports = {
                   ST = n => SmokingIsle.Ailments.stateByName(n), out = {};
             const cast = (who, name, target) => { const a = new Game_Action(who); a.setSkill(SK(name).id); target.clearResult(); a.apply(target); return a; };
             const yoon = A(2), sib = A(3), pada = A(5), boar = $gameTroop.members()[0], rnd = Math.random;
-            const names = ['Hiri', 'Gita', 'Emu', 'Iri', 'Ihi', 'Garo', 'Gogoro', 'Iku', 'Puhi', 'Viri', 'Viriben', 'Virisin', 'Gau', 'Gauben', 'Gaugun'];
+            const names = ['Hiri', 'Gita', 'Emu', 'Iri', 'Garo', 'Gogoro', 'Hakahepo', 'Viri', 'Viriben', 'Virisin', 'Geha', 'Huhuti', 'Manu', 'Huki'];
+            out.moved = ['Ihi', 'Gau', 'Gauben', 'Gaugun', 'Iku', 'Puhi', 'Guhu', 'Huira', 'Keva'].filter(n => !SK(n) || AR('Glyph: ' + n)).join(', ');
             out.glyphs = names.filter(n => !SK(n) || !AR('Glyph: ' + n) || AR('Glyph: ' + n).traits[0].dataId !== SK(n).id).join(', ');
             // Sib starts with Sooty Bird's glyph
             out.sib = sib.skills().some(s => s.name === 'Hiri');
@@ -56,7 +57,7 @@ module.exports = {
             // Gau drains
             boar.recoverAll(); yoon.setHp(1); cast(yoon, 'Gau', boar); out.gau = yoon.hp > 1;
             // the Ladies: Geha, Huhuti, Guhu, Huira; Puhi is the Bull of Water's
-            out.puhiGod = /Bull of Water/.test(AR('Glyph: Puhi').description);
+            out.puhiGod = /Bull of Water/.test(AR('Codex of the Bulls').description) && /Puhi/.test(AR('Codex of the Bulls').description);
             pada.recoverAll(); pada.setHp(10); pada.setTp(50); cast(yoon, 'Geha', pada); pada.regenerateAll();
             out.geha = (pada.hp > 10) + '/' + (pada.tp < 50);
             Math.random = () => 0.1;
@@ -68,7 +69,8 @@ module.exports = {
             Math.random = rnd;
             return out;
         });
-        t.eq(r.glyphs, '', 'every new spell exists, each with its glyph');
+        t.eq(r.glyphs, '', 'every Islander god spell exists, each with its glyph');
+        t.eq(r.moved, '', 'cave and Seafarer spells still exist, but have no glyph');
         t.ok(r.sib, 'Sib starts with Sooty Bird\'s glyph, Hiri');
         t.eq(r.hiri, '80/80/true', 'Hiri: 20% less Cut and magic damage, and flying');
         t.eq(r.gita, 'false/1/false', 'Gita: no ailments; the killing blow leaves 1 Health, then it ends');
@@ -82,7 +84,7 @@ module.exports = {
         t.ok(r.viri, 'Virisin drags an enemy below');
         t.eq(r.iku, '1/true', 'Iku: a sure critical with the best roll');
         t.ok(r.gau, 'Gau drains Health');
-        t.ok(r.puhiGod, 'Puhi is the Bull of Water\'s glyph');
+        t.ok(r.puhiGod, 'Puhi, the Bull of Water\'s spell, is in the Codex of the Bulls');
         t.eq(r.geha, 'true/true', 'Geha: the party heals and sheds Fatigue each turn');
         t.ok(r.huhuti, 'Huhuti: roots entangle the enemies');
         t.eq(r.guhu, '0/true', 'Guhu: ranged attacks can\'t hit the party; melee still can');

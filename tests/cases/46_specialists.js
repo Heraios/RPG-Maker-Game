@@ -13,7 +13,7 @@ module.exports = {
             out.child = !!/<Child>/.test(aday.actor().note) && !/<Child>/.test(kath.actor().note);
             out.naming = [13, 14].every(id => SmokingIsle.Naming.onJoin.indexOf(id) >= 0);
             out.start = [aday.weapons()[0] && aday.weapons()[0].name, kath.weapons()[0] && kath.weapons()[0].name,
-                kath.armors().some(a => a.name === 'Codex of Embers')].join('/');
+                kath.armors().some(a => a.name === 'Codex of the Sun')].join('/');
             // taboos: Aday eats birds but never eggs; Kathrout no shells, no wine, no grave goods
             out.aday = [!!aday.tabooRefusal(IT('Seabird Eggs')), !aday.tabooRefusal(IT('Roast Chicken')), !!aday.tabooRefusal(IT('Raw Meat'))].join();
             out.kath = [!!kath.tabooRefusal(IT('Seabird Eggs')), !!kath.tabooRefusal(IT('Islander Wine')), !kath.tabooRefusal(IT('Barley Bread'))].join();
@@ -63,7 +63,7 @@ module.exports = {
         t.eq(r.who, 'Aday/Mechanist/Kathrout/Scholar/Fa_Actor3/Fa_Actor3', 'the two new party members');
         t.ok(r.child, 'Aday is a child, Kathrout an adult');
         t.ok(r.naming, 'both are named when they join');
-        t.eq(r.start, 'Bronze Knife/Heather Staff/true', 'Aday starts with his bronze knife; Kathrout with a staff and the Codex of Embers');
+        t.eq(r.start, 'Bronze Knife/Heather Staff/true', 'Aday starts with his bronze knife; Kathrout with a staff and the Codex of the Sun');
         t.eq(r.aday, 'true,true,true', 'Aday: never eggs, yes to birds, no to land meat');
         t.eq(r.kath, 'true,true,true', 'Kathrout: no eggs, no wine, bread is fine');
         t.ok(r.grave, 'Kathrout won\'t wear grave goods');

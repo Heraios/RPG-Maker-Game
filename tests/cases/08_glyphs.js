@@ -11,7 +11,7 @@ module.exports = {
             [sib, yoon, th, tou, ghost].forEach(a => a.initEquips($dataActors[a.actorId()].equips));
             const tattooSlots = a => a.equipSlots().filter(e => e === 7).length;
             const codexSlots = a => a.equipSlots().filter(e => e === 8).length;
-            const spells = a => a.skills().filter(s => s.id >= 410 && s.id <= 439).map(s => s.name);   // the regular spell families
+            const spells = a => a.skills().filter(s => s.id >= 410 && s.id <= 567).map(s => s.name);   // the Magic section
             const out = {
                 sibTattoos: tattooSlots(sib), sibCodex: codexSlots(sib), thTattoos: tattooSlots(th), thCodex: codexSlots(th),
                 touSlots: tattooSlots(tou) + codexSlots(tou), sibSpells: spells(sib), thSpells: spells(th),
@@ -40,7 +40,7 @@ module.exports = {
         t.eq(r.touSlots, 1, 'Tou (innate caster) has no tattoos, but reads: a codex slot');
         t.ok(r.sibSpells.includes('Mahu') && r.sibSpells.includes('Ahi'), "Sib's starting tattoos grant Mahu and Ahi: " + r.sibSpells);
         t.eq(r.sibLearnedAhi, false, 'Sib knows Ahi from the tattoo, not by learning it');
-        t.ok(r.thSpells.includes('Mahu') && r.thSpells.includes('Ara'), "Thenmy's Codex of Mending grants its spells: " + r.thSpells);
+        t.ok(r.thSpells.includes('Mahu') && r.thSpells.includes('Vero'), "Thenmy's Codex of the Moon grants its spells: " + r.thSpells);
         t.eq(r.yoonSpells.length, 0, "human Yoon's new body starts with no glyphs");
         t.eq(r.ghostSpells.length, 0, 'the Ghost has no regular spells');
         t.ok(r.occupiedLocked, 'an occupied tattoo slot cannot be changed');

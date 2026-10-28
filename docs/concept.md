@@ -2274,44 +2274,65 @@ None of them touch the elemental states (Wet, Smoldering, Mired and the rest): t
 the elemental cycle. The remedies stay cheaper and more specific. **Keva in the dark** (`<Dark Bonus>`: a
 `<Dark>` map, or outdoors at night) lands 25% more often and lasts a turn longer.
 
-**God glyphs.** Each god, Lady and husband has a glyph, earned through **shrine quests** (Sib, a priest
-of Sooty Bird, starts with Hiri). They go in any tattoo slot and have no tiers, except the Daughters' Viri.
+**Magic by culture.** Generic spells (the roots above, at their basic tiers) are open to all. The top tiers
+belong to one culture each: **-gunben** (reliable top-tier group damage) is **Islander**, tattoo only;
+**-sin** (top-tier single target) is **First Sailor** (`<School: first-sailor>`; Tou knows all four);
+**-hari** (random hits) is **Seafarer**, from codices. There are no -sin or -hari tattoos. Islanders trade
+versatility for specificity: one tattoo is one spell, but it can be any tier, the strongest included.
+
+**Islander god glyphs.** Tattoos carry the high pantheon, the Lady of the Woods and her family, earned
+through **shrine quests** (Sib, a priest of Sooty Bird, starts with Hiri). They go in any tattoo slot and have
+no tiers, except the Daughters' Viri.
 
 | Glyph | God | Effect | MP |
 |-------|-----|--------|----|
 | Hiri ("to rise in coils of smoke; to hover") | Sooty Bird | One ally, 3 turns: 20% less Cut and magic damage, and **Flying** (75% evasion against melee) | 8 |
+| Manu | White Bird | One ally, 3 turns, **White-Winged**: no elemental states, and 30% less fire, water, air and earth damage | 8 |
 | Gita ("to tie securely") | Star Mother | One ally, 3 turns, **Anchored**: immune to ailments; the first blow that would knock them out leaves 1 Health (and ends it) | 10 |
 | Emu ("to sink") | Red Bowl | All enemies: Water damage (×1.5); any already **Sodden** are **Dragged Below** by the caster | 16 |
 | Iri ("to go up") | Star Child | One ally, for the battle, **Ascending**: if knocked out, they rise again at 25% Health (once) | 12 |
-| Ihi ("to tear to pieces") | The Destroyer | One enemy: heavy Fire and Crush damage (×3.5) and **Cracked**. Costs 6 Fatigue | 20 |
+| Huki | The Moon | One enemy: Sleep, 80%. Any hit wakes it | 6 |
 | Geha ("to be satiated") | Lady of the Woods (rainforest aspect: gregarious) | Party, 3 turns, **Sated**: heals 8% Health and sheds 5 Fatigue each turn | 12 |
 | Huhuti ("to uproot") | Lady of the Woods (alpine aspect: cold) | All enemies: roots burst up, Entangled 60% each | 12 |
-| Guhu ("to refuse, reject") | Lady of the Wind | Party, 2 turns, **Windward**: ranged attacks can't hit | 10 |
-| Huira ("to shine, glitter") | Lady of the Sun | All enemies Dazzled; the party is Brave and **Sunlit** (a light: no darkness penalty) for 4 turns | 14 |
 | Garo ("to disappear, become lost") | Shepherd of the Deer | Party, 2 turns: Evasion +50%, and escape always works | 8 |
 | Gogoro ("to snore") | Master of Deception | All enemies: Sleep, 60% each | 9 |
-| Iku ("to choose the best") | Bull of Heaven | One ally: the next damaging attack is a critical with the best damage roll | 6 |
-| Puhi ("to fish at night with bait") | Bull of Water | One enemy: Hypnotized (attacks its own allies), 70% | 10 |
+| Hakahepo ("Nightmare") | Master of Deception | One enemy: a random mental ailment (Confused, Hypnotized, Despair, Panicked or Enraged); if asleep, also heavy **Mind** damage (×2.5), which wakes it | 10 |
 | Viri / Viriben / Virisin ("to coil") | The Daughters of the Wells, one tier each | One enemy: Water damage (×0.8 / 1.4 / 2.0) and Dragged Below (40 / 60 / 80%) | 6 / 12 / 20 |
 
+**Seafarer spells (codices).** Codices favour the bull-men and the Ladies the Islanders keep their distance
+from, and the Seafarers' own names for the high gods: **Atua** (the God of the World, their Red Bowl, father
+of the King), and his eyes and children **Vero** (the Moon) and **Hiero** (the Sun). Rules in `SI_SpellRules.js`
+(`<School: seafarer>`). Each is single target and group (-gun).
 
-**Seafarer spells (codices).** Islander tattoos carry the high pantheon, the Lady of the Woods and her
-husbands; Seafarer codices favour the bull-men and the Ladies the Islanders keep their distance from, and the
-Seafarers' own names for the high gods (Atua for the Red Bowl, Vero the Moon, Hiero the Sun). Built as skills
-(`<School: seafarer>`, rules in `SI_SeafarerMagic.js`); not yet placed in codices.
+| Spell | God | Effect (single / group) | MP |
+|-------|-----|-------------------------|----|
+| Atua | God of the World | **Reflect**: **Mirrored**, the next damaging spell an enemy casts at them is turned back, then it ends (up to 3 turns). One ally / party | 8 / 18 |
+| Vero | The Moon | **Haste**: pulls one ally forward 100 / the party 70 on the timeline (not the caster) | 15 / 20 |
+| Hiero | The Sun | **Blaze**: 40% of one enemy's / 25% of every enemy's current Health. Pure mental damage: no element, resistance, guard or critical changes it, and it can't be reflected | 22 / 26 |
+| Tiho-uha | Dark Lady (Lady of the Mountains) | **Protect**: **Sheltered**, 30% less physical damage, 3 turns. One ally / party | 6 / 14 |
+| Mea-uha | Red Lady (Lady of the Mountains) | **Slow**: pushes one enemy back 100 / all enemies 70 | 14 / 16 |
+| Kiva | Lady of the Wind | **Silence**, "drowns out chanting": **Drowned Out**, no Magical skills for 3 turns (80% / 60% each) | 6 / 14 |
+| Guhu ("to refuse, reject") | Lady of the Wind | Party, 2 turns, **Windward**: ranged attacks can't hit (single tier) | 10 |
+| Tama | Lady of the Sun | **Dispel**, "burns away boons": strips Boons and Remedies states and raised stats. One enemy / all | 6 / 14 |
+| Huira ("to shine, glitter") | Lady of the Sun | All enemies Dazzled; the party is Brave and **Sunlit** for 4 turns (single tier) | 14 |
+| Puaka | The Charging Bull (the Lady of the Mountains' husband) | **Might up**, 3 turns. One ally / party | 5 / 12 |
+| Ariki | The King of All the Sea (her other husband) | Removes every lowered stat and every elemental state, leaving no removal states. One ally / party | 6 / 14 |
+| Iku ("to choose the best") | Bull of Heaven | One ally: the next damaging attack is a critical with the best damage roll (single tier) | 6 |
+| Puhi ("to fish at night with bait") | Bull of Water | One enemy: Hypnotized (attacks its own allies), 70% (single tier) | 10 |
 
-| Spell | God | Tiers | Effect | MP |
-|-------|-----|-------|--------|----|
-| Tiho-uha | Dark Lady (Lady of the Mountains) | single, -gun (party) | **Protect**: **Sheltered**, 30% less physical damage, 3 turns | 6 / 14 |
-| Mea-uha | Red Lady (Lady of the Mountains) | single, -ben, -sin, -gun, -gunben | **Slow**: pushes enemies back on the timeline (40 / 70 / 100; all enemies 40 / 70) | 4 / 8 / 14 / 9 / 16 |
-| Kiva | Lady of the Wind | single, -gun (all enemies) | **Silence**, "drowns out chanting": **Drowned Out**, no Magical skills for 3 turns (80% / 60% each) | 6 / 14 |
-| Tama | Lady of the Sun | single, -gun (all enemies) | **Dispel**, "burns away boons": strips Boons and Remedies states and raised stats | 6 / 14 |
-| Atua | God of the World (the Red Bowl) | single, -gun (party) | **Reflect**: **Mirrored**, the next damaging spell an enemy casts at them is turned back, then it ends (up to 3 turns) | 8 / 18 |
-| Vero | The Moon | single, -ben, -sin, -gun, -gunben | **Haste**: pulls allies forward on the timeline (40 / 70 / 100; party 40 / 70); not the caster | 5 / 9 / 15 / 12 / 20 |
-| Hiero | The Sun | single, -ben, -sin, -gun, -gunben | **Blaze**: 15 / 25 / 40% of current Health (all enemies 15 / 25%). Pure mental damage: no element, resistance, guard or critical changes it, and it can't be reflected | 8 / 14 / 22 / 16 / 26 |
+**Cave magic** (innate, no glyphs): **Gau** ("to bite": drains Health from one enemy, ×1.0; Gauben ×1.8; Gaugun
+all enemies ×0.8; MP 5 / 10 / 12), **Keva** (blinding dark) and **Ihi** ("to tear to pieces", the Destroyer's: one
+enemy, heavy Fire and Crush damage ×3.5 and **Cracked**; costs 6 Fatigue; MP 20).
 
-**Gau** ("to bite"), an ordinary glyph: drains Health from one enemy (×1.0; Gauben ×1.8; Gaugun all enemies ×0.8).
-MP 5 / 10 / 12.
+**Innate magic.** Nobody learns spells by levelling up: innate casters start with theirs, and gain more
+through story.
+
+| Who | From the start | Through story |
+|-----|----------------|---------------|
+| Lasa (cave) | Mahu, Raau, Keri, Keriben, Keva, Kevaben, Kevagun, Gau, Gauben | **Ihi**, late |
+| Falmi (the forest's heir) | Raau, Geha, **Hahikiri** ("Roots and Bark": himself, 3 turns, regeneration doubled and Endurance +25%; MP 6) | Huhuti (meeting his mother's alpine body), Gogoro and Garo (his fathers), Viri / Viriben / Virisin (one per Daughter of the Wells he frees), maybe Mahu |
+| Tou (First Sailor) | Ahisin, Rarisin, Hagusin, Kerisin | First Sailor inscriptions |
+| Yoon | (the ??? Glyph) | **Ihi**: a word they know without knowing how |
 
 **Healing items** are different: no Fatigue or MP, small **fixed** amounts, and they often apply
 healing *states* or remove ailments and debuffs (e.g. Bandages: about 20 HP and removes Bleed).
@@ -2324,7 +2345,7 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
 |-----|-----------------------|
 | Islanders (Human Yoon, Sib, Pada, Juda, Dama; Parl if he joins the village) | **Tattoo** slots on the body, each tattoo encoding one spell (see below). Tattoos can only be swapped in the late game (magical healing) |
 | Readers (see Literacy below) | A single **Codex** slot; what a codex teaches depends on how well you read All-Seafarer script |
-| Tou, Falmi, Lasa | Innately, no medium (learned like normal skills) |
+| Tou, Falmi, Lasa | Innately, no medium: from the start or through story (see Innate magic) |
 | Ghost Yoon | Only the unique ghost abilities; regular magic and weapon skills come after gaining a body |
 
 - **Tattoo slots are body positions:** Lower L Arm, Lower R Arm, Upper L Arm, Upper R Arm (filled in
@@ -2344,7 +2365,7 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
   and Writhe, Ghostly Touch, Become Ethereal, the Wails and the Cries). Nobody can read it, and it can
   never be removed (`<Permanent>`). It is later revealed to be **the name of the Destroyer**.
 - **Tattoos** are equipment items that grant one spell each (MV's "Add Skill" trait): one "Glyph"
-  tattoo exists for every spell (Glyph: Ahi ... Glyph: Mahu-Ara).
+  tattoo exists for every generic spell except the -sin and -hari tiers, and for each Islander god.
 - **Tattoos are permanent** while the switch "Tattoo removal (late game)" is off: empty tattoo slots
   can be filled, but an occupied one can't be removed or replaced, and Optimize/Clear never touch
   tattoos. Once removal is allowed, a removed or replaced tattoo is **destroyed**, not returned to the bag.
@@ -2352,18 +2373,23 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
   script later, switch "Sib reads Seafarer script"), Parl (All-Seafarer), Tou (First Sailor; All-Seafarer
   later, switch "Tou reads Seafarer script"), Falmi (Islander, First Sailor), Juda (all three), Thenmy
   (All-Seafarer, and **Codex Mastery**). Lasa, Pada and Dama can't read, so they have no codex slot.
-- **Codices** teach in three tiers:
-  - **Anyone who reads** gets the codex's **Cultural move**.
-  - **Readers of All-Seafarer script** (Parl, Juda, later Sib and Tou) also get its **three weaker spells**.
-  - **Thenmy** (Codex Mastery) gets **all six** spells.
+- **Codices** are Seafarer gods' books, each pairing its gods with a generic spell. Three tiers:
+  1. **Anyone who reads:** a **cultural move** and a basic single-target generic spell.
+  2. **Readers of All-Seafarer script** (Parl, Juda, Kathrout, later Sib and Tou): at least one god spell,
+     a second god spell or another generic spell, and the second tier of the tier-1 spell.
+  3. **Codex Mastery** (Thenmy, Kathrout): the gods' group versions, the -hari of the tier-1 spell (or a
+     stand-in where there is none), and the upgrade of tier 2's extra generic spell.
 
-  | Codex | Cultural move | Weaker spells | Mastery adds | Bonus |
+  | Codex | Tier 1 | Tier 2 | Tier 3 | Bonus |
   |---|---|---|---|---|
-  | Codex of Embers | **Fire Drill** (puts out Smoldering and Enflamed, party) | Ahi, Ahiben, Ahigun | Ahisin, Ahigunben, Ahihari | MAT +2 |
-  | Codex of Mending | **Field Dressing** (stops Bleed, starts Mending) | Mahu, Mahuben, Ara | Mahugun, Araben, Mahu-Ara | MDF +2 |
-  | Sailor's Codex | **Read the Wind** (party AGI up, 3 turns) | Rari, Hagu, Keri | Rariben, Haguben, Keriben | AGI +2 |
+  | Codex of the Sun | **Fire Drill** (puts out Smoldering and Enflamed), Ahi | Ahiben, Hiero, Tama | Hierogun, Tamagun, Huira, Ahihari | Spirit +2 |
+  | Codex of the Moon | **Field Dressing** (stops Bleed, starts Mending), Mahu | Mahuben, Vero, Kami | Verogun, Kamiben, Mahugun | Resolve +2 |
+  | Codex of the Wind | **Read the Wind** (party Speed up, 3 turns), Hagu | Haguben, Kiva, Guhu | Kivagun, Haguhari | Speed +2 |
+  | Codex of the Mountains | **Steady Footing** (removes Burdened and Mired; resists them 2 turns), Keri | Keriben, Tiho-uha, Mea-uha | Tiho-uhagun, Mea-uhagun, Kerihari | Endurance +2 |
+  | Codex of the World | **Bail Out** (removes Wet and Sodden), Rari | Rariben, Atua, Ariki | Atuagun, Arikigun, Rarihari | Resolve +2 |
+  | Codex of the Bulls | **Bull-Leap** (half a turn: the next melee attack misses), Raau | Raauben, Puaka, Iku | Puakagun, Puhi, Raaugun | Might +2 |
 - **Starting glyphs:** Sib has Mahu and Ahi; Juda has Mahu, Mahuben, Ara, Ahiben, Rariben; Dama has
-  Rari; Thenmy carries the Codex of Mending. Human Yoon's new body starts blank.
+  Rari; Thenmy carries the Codex of the Moon; Parl the Codex of the Wind; Kathrout the Codex of the Sun. Human Yoon's new body starts blank.
 - The test room's **Tattooist** gives every glyph and codex and toggles the removal switch.
 
 ### Damage types

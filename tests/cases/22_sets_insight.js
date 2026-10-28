@@ -26,7 +26,7 @@ module.exports = {
             put(tou, 'Scoria Pupil', 1); out.regalia = sets(tou);
             // Officer's Kit: the whole party moves faster
             const th = A(11); $gameParty.removeActor(4); $gameParty.addActor(11); th.clearEquipments(); const agi0 = A(2).agi;
-            put(th, 'Bronze Signet'); put(th, "Sailor's Compass"); put(th, 'Codex of Mending'); th.refresh(); out.officer = sets(th); out.partyAgi = A(2).agi / agi0;
+            put(th, 'Bronze Signet'); put(th, "Sailor's Compass"); put(th, 'Codex of the Moon'); th.refresh(); out.officer = sets(th); out.partyAgi = A(2).agi / agi0;
             // Guardian Lizard
             const dama = A(7); dama.clearEquipments(); put(dama, 'Guardian Lizard Scale'); put(dama, 'Lizard-Scale Charm'); out.lizard = sets(dama);
             // Spirit and Wits

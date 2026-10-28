@@ -1,10 +1,11 @@
 //=============================================================================
-// SI_SeafarerMagic.js
+// SI_SpellRules.js
 //=============================================================================
 
 /*:
- * @plugindesc Smoking Isle: the rules behind the Seafarers' codex spells
- * (Kiva's silence, Tama's dispel, Atua's reflection, Hiero's blaze).
+ * @plugindesc Smoking Isle: rules behind the god spells (Kiva's silence,
+ * Tama's dispel, Atua's reflection, Hiero's blaze, Hakahepo's nightmares,
+ * Bull-Leap).
  * @author Smoking Isle
  *
  * @help
@@ -27,18 +28,25 @@
  *                     profile, resistance, guard, variance or critical
  *                     changes it (Hiero)
  *
+ *   <Random State: Confused, Panicked>
+ *                     adds one of the named states, picked at random
+ *                     (80%, times the target's resistance) (Hakahepo)
+ *
  * State note:
  *   <Reflect Once>    turns the first damaging spell an enemy casts at the
  *                     holder back on its caster, then the state ends (Atua).
  *                     Healing and friendly spells pass through, and so does
  *                     <Pure Damage>.
+ *   <Vault>           the next melee attack on the holder misses, whatever
+ *                     the odds; then the state ends (Bull-Leap). Ranged
+ *                     attacks are not affected.
  */
 
 var Imported = Imported || {};
-Imported.SI_SeafarerMagic = true;
+Imported.SI_SpellRules = true;
 
 var SmokingIsle = SmokingIsle || {};
-SmokingIsle.SeafarerMagic = SmokingIsle.SeafarerMagic || {};
+SmokingIsle.SpellRules = SmokingIsle.SpellRules || {};
 
 (function($) {
     'use strict';
@@ -87,6 +95,29 @@ SmokingIsle.SeafarerMagic = SmokingIsle.SeafarerMagic || {};
     };
 
     //-------------------------------------------------------------------------
+    // A random state (Hakahepo)
+    //-------------------------------------------------------------------------
+
+    $.randomState = function(item) {
+        var m = /<Random State:\s*([^>]+)>/i.exec((item && item.note) || '');
+        if (!m) return 0;
+        var names = m[1].split(',').map(function(n) { return n.trim(); }).filter(Boolean);
+        var name = names[Math.floor(Math.random() * names.length)];
+        var state = $dataStates.filter(function(s) { return s && s.name === name; })[0];
+        return state ? state.id : 0;
+    };
+
+    var _Game_Action_applyRandom = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        _Game_Action_applyRandom.call(this, target);
+        var id = $.randomState(this.item());
+        if (id && target.result().isHit() && target.isAlive() && Math.random() < 0.8 * target.stateRate(id)) {
+            target.addState(id);
+            target.result().success = true;
+        }
+    };
+
+    //-------------------------------------------------------------------------
     // Pure damage
     //-------------------------------------------------------------------------
 
@@ -124,4 +155,30 @@ SmokingIsle.SeafarerMagic = SmokingIsle.SeafarerMagic || {};
         if (state) target.removeState(state.id);
     };
 
-})(SmokingIsle.SeafarerMagic);
+    //-------------------------------------------------------------------------
+    // Vault (Bull-Leap)
+    //-------------------------------------------------------------------------
+
+    $.vaultState = function(battler) {
+        return battler.states().filter(function(s) { return $.has(s, 'Vault'); })[0] || null;
+    };
+
+    $.isMelee = function(action) {
+        var item = action.item();
+        return action.isPhysical() && !(SmokingIsle.Ranged && SmokingIsle.Ranged.isRanged(item));
+    };
+
+    var _Game_Action_itemEva = Game_Action.prototype.itemEva;
+    Game_Action.prototype.itemEva = function(target) {
+        if ($.vaultState(target) && $.isMelee(this) && this.subject().isActor() !== target.isActor()) return 1;
+        return _Game_Action_itemEva.call(this, target);
+    };
+
+    var _Game_Action_applyVault = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        var vault = $.vaultState(target), leaps = vault && $.isMelee(this) && this.subject().isActor() !== target.isActor();
+        _Game_Action_applyVault.call(this, target);
+        if (leaps && target.isStateAffected(vault.id)) target.removeState(vault.id);
+    };
+
+})(SmokingIsle.SpellRules);

@@ -75,7 +75,8 @@ beyond. She became **the King's wife (wives)**: she split herself permanently in
 **became mortal**, so their very many children (twins, triplets and more, from both bodies) are
 **unusually powerful humans**. Thenmy and the Princess are among them. It was **a love match**, and
 also her escape from her divine family's drama. The Dark Lady and the Red Lady are **alive and live in
-the capital**.
+the capital**. Like the other Ladies she has **two husbands**: **the King of All the Sea**, and **the
+Charging Bull**, a bull-man the Seafarers revere. (Open: which of her two bodies each one married.)
 
 **Some Ladies fight for the Princess**: Ladies that the founding party conscripted into the empire's
 service.
@@ -161,6 +162,7 @@ Each took a mortal husband over the centuries, who eventually became minor gods 
 | Lady of the Woods | The forests | The Master of Deception, the Shepherd of the Deer |
 | Lady of the Wind | Marsh, coasts, mountain peak | The Bull of Water |
 | Lady of the Sun | Once the desert (now chained) | The Bull of Heaven |
+| Lady of the Mountains (the Dark Lady and the Red Lady) | The crater rim; now the Seafarer capital | The King of All the Sea, the Charging Bull |
 
 ---
 
@@ -1051,21 +1053,28 @@ after gaining a body.
 
 **What a glyph is.** Every glyph is one of three things, or a combination of them:
 1. **A god's True Name, or an aspect of a god.** The god glyphs (Hiri for Sooty Bird, Gita for the Star
-   Mother, Emu for the Red Bowl, Ihi for the Destroyer...). An *aspect* is a part of a god: Geha and Huhuti
+   Mother, Emu for the Red Bowl, Manu for White Bird...). An *aspect* is a part of a god: Geha and Huhuti
    are the Lady of the Woods' two aspects, and Viri (in three tiers) is her Daughters of the Wells. Reading
    one is speaking a piece of a god's name, which is why they are earned at **shrines**, guarded by priests,
    gifted rather than taught. (Seafarers don't wear glyph tattoos at all; a Seafarer scholar like Kathrout
    works from books, the codices, instead.)
    **Islander tattoos and Seafarer codices draw on different gods.** Tattoos carry the high pantheon (Red
-   Bowl, Star Mother, Star Child, Sooty Bird, the Destroyer), the Lady of the Woods and her husbands.
+   Bowl, Star Mother, Star Child, White Bird and Sooty Bird, the Moon), the Lady of the Woods and her
+   husbands.
    Codices favour the **bull-men** and the Ladies the Islanders keep their distance from (the Lady of the
    Wind, the Lady of the Sun, and the Lady of the Mountains, who married the King), under the Seafarers'
-   own names for the high gods: **Atua**, the God of the World (their Red Bowl), **Vero** the Moon and
-   **Hiero** the Sun. Their spells are for imposing one's will (slow, silence, dispel, reflect, haste);
+   own names for the high gods: **Atua**, the God of the World (their Red Bowl, father of the King), and
+   **Vero** the Moon and **Hiero** the Sun, who are **Atua's eyes and his children**. The bull-men (the
+   Charging Bull, the Bull of Heaven, the Bull of Water) and the King himself have spells there too. Their spells are for imposing one's will (slow, silence, dispel, reflect, haste);
    the Islanders' for surviving the island.
 2. **A primal force or element.** The generic spells: Ahi (fire), Rari (water), Hagu (air), Keri (earth),
-   and the other forces: Mahu (healing), Ara (life returning), Raau (plant-medicine), Kami (the mind), Keva
-   (blinding dark), Gau (the bite, hunger). Anyone who can read them can use them.
+   and the other forces: Mahu (healing), Ara (life returning), Raau (plant-medicine), Kami (the mind).
+   Anyone who can read them can use them, but each culture keeps its own top tier: the Islanders the
+   group tier (-gunben), the First Sailors the single-target tier (-sin), the Seafarers the random tier
+   (-hari).
+   **Cave magic** is innate to the caves and carved on nothing: **Keva** (blinding dark), **Gau** (the bite,
+   hunger) and **Ihi**, the Destroyer's own tearing word from his house in the lava tubes. Lasa has it as a
+   Child of the Caves; Yoon, who woke in the Destroyer's house, knows Ihi without knowing how.
 3. **Combinations.** Mahu-Ara (healing and revival together), and Yoon's compound Touches
    (Burning-Chilling and the rest). A god combined with a force is the strongest and most dangerous kind:
    Yoon's **Infernal** skills are the **Destroyer's name** (the ??? glyph on Yoon's face) bound to fire and
