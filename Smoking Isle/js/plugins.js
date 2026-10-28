@@ -39,5 +39,6 @@ var $plugins =
 {"name":"SI_RollingHealth","status":true,"description":"Smoking Isle: EarthBound-style rolling Health for the party.","parameters":{"Roll Seconds":"15"}},
 {"name":"SI_Screen","status":true,"description":"Smoking Isle: widescreen fixes, turn order strip, word wrap for dialogue and the battle log, and a Battle Text speed option.","parameters":{"Battle Text Speeds":"72,48,24"}},
 {"name":"SI_BattleHud","status":true,"description":"Smoking Isle: the battle screen (somewhere between EarthBound and the SNES Shin Megami Tensei games).","parameters":{}},
-{"name":"SI_SpellRules","status":true,"description":"Smoking Isle: rules behind the god spells (Kiva's silence, Tama's dispel, Atua's reflection, Hiero's blaze, Hakahepo's nightmares, Bull-Leap).","parameters":{}}
+{"name":"SI_SpellRules","status":true,"description":"Smoking Isle: rules behind the god spells (Kiva's silence, Tama's dispel, Atua's reflection, Hiero's blaze, Hakahepo's nightmares, Bull-Leap).","parameters":{}},
+{"name":"SI_Wanderers","status":true,"description":"Smoking Isle: enemies you can see on the map. They wander, spot you, chase you, run from a party far stronger, and fight on contact.","parameters":{"Wander Speed":"3","Chase Speed":"4","Flee Speed":"5","Default Sight":"5","Leash":"8","Weak Rounds":"1","Weak Loss":"10","Grace Frames":"120","Defeat Common Event":"0"}}
 ];

@@ -2158,6 +2158,15 @@ death, the **better armed** the villagers with her are, and the **fewer NPCs Jud
   "sting" areas), tense later.
 - **Encounters:** about 80% are **visible enemies** on the map; random encounters only in certain
   caves and dark areas.
+  - **Visible enemies** (`SI_Wanderers.js`): wander near their spot; spot the party in a **cone** in front of
+    them (default 5 tiles) and chase, giving up **8 tiles** from home. **Contact always starts a fight** (Talk
+    happens in battle). Touch one **from behind** and the party strikes first; if it touches the party from
+    behind, it does (the Copper Bell prevents that).
+  - **Weak enemies run** (faster than the party; they can still be caught and fought): the troop is weak if,
+    by real stats, the party would beat it in **about a round** while losing **under 10%** of its Health.
+    `<Never Flees>`, `<Bold>` and `<Timid>` adjust it.
+  - **Gone until the next day** once beaten, talked down or escaped from you. Night changes only which
+    enemies are out (`<Night Only>` / `<Day Only>`).
 - **Fatigue is an expedition resource.** Abilities raise it **very slowly**, because it carries
   over between fights and also comes from strenuous overworld actions:
   - Scrabbling up cliffs, mining, swimming, squeezing through tight tunnels, and so on.

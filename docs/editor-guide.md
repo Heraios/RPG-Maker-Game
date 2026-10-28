@@ -386,16 +386,30 @@ Several tags can go in the same Note box, one per line.
 
 ## Enemies on the map
 
-Most fights are **visible enemies**: an event the player bumps into.
+Most fights are **visible enemies**: an event the player bumps into. For ordinary wandering enemies
+the **SI_Wanderers** plugin does everything; you only place the event.
 
-1. Make an event with the enemy's map graphic. **Priority:** *Same as characters*; **Trigger:** *Event
-   Touch* (it starts the fight when it reaches you) or *Action Button*. For a wandering enemy, set
-   **Autonomous Movement** to *Approach* or *Random*.
-2. **Contents:** tab 2 → **Battle Processing...** → **Direct designation**, and pick the troop
-   (e.g. `Mouflon*3`). Tick **Can Escape** for ordinary fights; leave it off
-   for bosses.
-3. **If Win** / **If Escape**: under *If Win*, add **Control Self Switch → A = ON**, and make a second
-   event page with Self Switch A as its condition and no graphic, so the enemy stays gone.
+1. Make an event with the enemy's map graphic. Trigger and movement don't matter: the plugin takes over.
+2. In the event's **Note** box (top of the event window), write the troop it fights:
+   `<Wanderer: 12>` (troop 12). That's all. Optional tags in the same box:
+
+   | Tag | Effect |
+   |---|---|
+   | `<Sight: 5>` | How far it sees, in a cone in front of it (default 5 tiles) |
+   | `<Night Only>` / `<Day Only>` | Only out at night / by day |
+   | `<Never Flees>` | Never runs from the party (bosses, demons, Black Hounds) |
+   | `<Bold>` / `<Timid>` | Runs only from a much stronger party / from a less overwhelming one |
+
+What it does in game: it wanders near where you placed it, chases the party when they step into its
+sight cone (giving up 8 tiles from home), and fights on contact. **Touching it from behind** gives the party
+the first strike; **it touching the party from behind** gives it the first strike. A troop the party would
+beat in about a round, losing under 10% Health, **runs away** (faster than the party; it can still be caught).
+Beaten, talked down, or got away: **gone until the next day**. The Test Room has two to try (Wild Boars,
+and timid Shore Crabs). Speeds, sight, leash and the "weak" line are in the plugin's parameters.
+
+**Bosses and story fights** stay hand-made: an event with **Battle Processing** (tab 2 → Direct designation),
+**Can Escape** off, and the story continuing **after** it. For one that should stay gone, add **Control Self
+Switch → A = ON** under *If Win*, and a second page with Self Switch A as its condition and no graphic.
 
 Random encounters (caves and dark places only) go in **Map Properties → Encounters**: add the troops
 there. At night, a map's `<Night Troops: ...>` note replaces that list.
