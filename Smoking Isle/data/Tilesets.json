@@ -7,7 +7,7 @@ null,
 {"id":5,"flags":[16],"mode":1,"name":"Inside","note":"","tilesetNames":["Tl_Inside_A1","Tl_Inside_A2","Tl_Outside_A3","Tl_Inside_A4","Tl_Inside_A5","Tl_Inside_B","Tl_Inside_C","Tl_Dungeon_B","Tl_Dungeon_C"]},
 {"id":6,"flags":[16],"mode":1,"name":"Dungeon","note":"","tilesetNames":["Tl_Dungeon_A1","Tl_Dungeon_A2","Tl_Outside_A3","Tl_Dungeon_A4","Tl_Dungeon_A5","Tl_Dungeon_B","Tl_Dungeon_C","Tl_Inside_B","Tl_Inside_C"]},
 {"id":7,"flags":[16],"mode":1,"name":"World","note":"","tilesetNames":["Tl_World_A1","Tl_World_A2","","","","Tl_World_B","","",""]},
-{"id":8,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
+{"id":8,"flags":[16],"mode":1,"name":"Ship","note":"","tilesetNames":["Tl_Outside_A1","Tl_Vehicle_A2","Tl_Outside_A3","Tl_Vehicle_A4","Tl_Vehicle_A5","Tl_Vehicle_B","Tl_Vehicle_C","ship-B","ship-E"]},
 {"id":9,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]},
 {"id":10,"flags":[16],"mode":1,"name":"","note":"","tilesetNames":["","","","","","","","",""]}
 ]
