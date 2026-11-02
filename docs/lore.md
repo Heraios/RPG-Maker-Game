@@ -680,15 +680,21 @@ Destroyer** (revealed later).
 ### Woods (decided)
 | Wood | Where | Used for | Notes |
 |------|-------|----------|-------|
-| **Dragonheart** | Dragon trees, dry slopes | Fire-hardened two-handed swords | The wood itself is soft and spongy; *dragonheart* is the heartwood soaked in the tree's own red resin and fire-hardened, which makes it sword-worthy |
-| **Canary ebony** (barbusano) | Laurel rainforest | Clubs, mace hafts, paddle-sword bodies | Very hard and dark |
-| **Pine heartwood** | Highland pine forest | Spear shafts, shields, building | Resin-soaked, rot-proof, **fire-resistant** (the trees survive volcanic fires) |
-| **Tree heather** | Laurel forest edges, uplands | Staves, spear shafts, vaulting poles | Hard and springy; shepherds vault ravines on heather poles |
-| **Juniper** | Dry slopes | Hafts, small bows | Durable, aromatic |
-| **Yew** | Alpine forest | Bows | The Shepherd of the Deer's territory |
-| **Ash** | Alpine forest | Spear shafts | |
-| **Toromiro** | Rare; sacred groves | Ritual objects, priests' staffs, **First Sailor relics** (Kavakava figures, glyph tablets) | Sacred carving wood. Juda's staff could be toromiro |
-| **Til** (stinking laurel) | Laurel rainforest | Not a weapon wood | Sacred: the island's rain tree is a til (after El Hierro's Garoé). A place and a quest, not a material |
+| **Ebony** (Canary ebony, barbusano) | Laurel rainforest | Clubs, paddle-sword bodies, bucklers | Very hard, dark and heavy. Raw wood: it splits in time unless fire-hardened |
+| **Mahogany** | Laurel rainforest | Clubs, paddle-sword bodies, bucklers, slat armor | Red and tough: **never splits or wears**, the best wood before bronze. Edging set into it falls off, but the body stays |
+| **Tree heather** | Laurel forest edges, uplands | Staves, simple spears, vaulting poles | Hard and springy; shepherds vault ravines on heather poles. Raw wood: splits unless fire-hardened |
+| **Ash** | Alpine forest | Spear shafts, a flatbow | Light: ash-shafted spears are quicker in the hand (Speed +2) |
+| **Pine heartwood** | Highland pine forest | Spear shafts, shields, slat armor, building | Resin-soaked, rot-proof, **fire-resistant** (the trees survive volcanic fires) |
+| **Juniper** | Dry slopes | Hafts, small bows | Durable, aromatic: the everyday bow wood |
+| **Yew** | Alpine forest | Longbows | The best bow wood. The Shepherd of the Deer's territory |
+| **Rain-tree** (the sacred til) | Banotapu, the grove of the dead stand | Priests' staves | Never cut from a living tree, only fallen or given; glyphs come easier to whoever holds it. The island's rain tree is a til (after El Hierro's Garoé) |
+| **Sandalwood** | Sacred groves | Priests' staves, prayer beads, caskets | Fragrant and calming (the Sandalwood Staff starts its bearer Calm). Juda's staff |
+| **Dragonheart** | Dragon trees, dry slopes | Fire-hardened two-handed swords, painted shields | The wood itself is soft and spongy; *dragonheart* is the heartwood soaked in the tree's own red resin and fire-hardened, which makes it sword-worthy |
+| **Laurel** | Laurel rainforest | Slat armor, building, firewood | Not a weapon wood |
+| **Wax myrtle, palm, driftwood** | Coasts and forest edges | Firewood, building, candles (wax myrtle) | Not weapon woods |
+
+**Fire-hardening:** any raw-wood weapon (ebony, heather) can be fire-hardened: it then never wears, and its
+wielder takes 10% less fire damage.
 
 ### Other organics (decided)
 | Group | Materials | Used for |
