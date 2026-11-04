@@ -179,3 +179,19 @@ def save_me(L, R, path):
     n = len(L); fade = int(0.3 * SR)
     L = L.copy(); R = R.copy(); L[-fade:] *= np.linspace(1, 0, fade); R[-fade:] *= np.linspace(1, 0, fade)
     save_stereo(L, R, path)
+
+def organ(m, dur, vol=1.0):
+    s = partials(m, dur, [(1, 1.0, None), (2, 0.6, None), (3, 0.35, None), (4, 0.3, None), (6, 0.15, None), (8, 0.12, None)])
+    return s * adsr(len(s), a=0.03, d=0.05, s=0.95, r=0.12) * vol * 0.6
+
+def choir(m, dur, vol=1.0):
+    """An 'aah' pad: soft harmonics with a vowel bump, a slow swell and a gentle vibrato."""
+    parts = [(1, 1.0, None), (2, 0.5, None), (3, 0.55, None), (4, 0.25, None), (5, 0.12, None)]
+    s = sum(partials(m, dur, parts, vib=0.006, vib_delay=0.1, detune=dt) for dt in (-0.003, 0.003)) / 2
+    return s * adsr(len(s), a=0.35, d=0.2, s=0.9, r=0.4) * vol
+
+def stab(m, dur, vol=1.0):
+    """A short, bowed string stab."""
+    parts = [(k, 1 / k * (0.85 ** k), None) for k in range(1, 12)]
+    s = sum(partials(m, dur, parts, detune=dt) for dt in (-0.004, 0.004)) / 2
+    return s * adsr(len(s), a=0.008, d=0.08, s=0.5, r=0.05) * vol
