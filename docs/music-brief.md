@@ -20,8 +20,8 @@ fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
 whistle), and Mediterranean modes for the invaders.
 
-**Made so far** (in `music/`, built in code): **Yoon** (the main theme, in `audio/bgm`), **Battle_Wild** and
-**Battle_Spirits**, plus 8-bit sketches of these and of Sib's theme.
+**Made so far** (in `music/`, built in code): **Yoon**, **Sib** and **Thenmy** (leitmotif tracks), **Battle_Wild** and
+**Battle_Spirits** (in `audio/bgm`), and the **Victory_Isle** jingle (in `audio/me`), plus 8-bit sketches.
 
 ## Three peoples, three sounds
 | Who | Sound | Notes |

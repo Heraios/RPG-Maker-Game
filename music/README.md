@@ -14,6 +14,9 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 | `battle_wild16.py` | **Battle_Wild** in 16-bit, the one in the game: `Smoking Isle/audio/bgm/Battle_Wild.ogg` |
 | `battle_spirits.py` | Battle_Spirits in 8-bit (`sketches/Battle_Spirits_8bit.ogg`) |
 | `battle_spirits16.py` | **Battle_Spirits** in 16-bit, the one in the game: `Smoking Isle/audio/bgm/Battle_Spirits.ogg` |
+| `sib16.py` | **Sib** in 16-bit: `Smoking Isle/audio/bgm/Sib.ogg` (Sib, the little priest, Yoon and Sib) |
+| `thenmy16.py` | **Thenmy** in 16-bit: `Smoking Isle/audio/bgm/Thenmy.ogg` (brass, strings, harp; the march; his kindness) |
+| `victory16.py` | **Victory_Isle**, the victory jingle: `Smoking Isle/audio/me/Victory_Isle.ogg` (plays once) |
 
 To rebuild (needs Python with numpy, and ffmpeg), from this folder: `python3 yoon_full.py` (and the others).
 The generated files appear here; copy `Yoon.ogg` into `Smoking Isle/audio/bgm/`.

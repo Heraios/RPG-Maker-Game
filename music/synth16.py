@@ -155,3 +155,27 @@ def brass(m, dur, vol=1.0):
         if hz(m) * k > 14000: break
         s += np.sin(ph * k) / k * (bright ** (k - 1) if k > 1 else 1)
     return s * adsr(n, a=0.02, d=0.08, s=0.75, r=0.06) * vol
+
+def harp(m, dur, vol=1.0):
+    d = max(dur, 1.0)
+    s = partials(m, d, [(1, 1.0, 1.1), (2, 0.3, 0.45), (3, 0.12, 0.2), (4, 0.05, 0.1)])
+    return s * adsr(len(s), a=0.002, d=0.01, s=1, r=0.12) * vol
+
+def timpani(m, vol=1.0):
+    n = int(1.2 * SR); t = np.arange(n) / SR
+    f = hz(m) * (1 + 0.08 * np.exp(-t / 0.04))
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    s = (np.sin(ph) + 0.5 * np.sin(ph * 1.5) * np.exp(-t / 0.2) + 0.3 * np.sin(ph * 1.98) * np.exp(-t / 0.15)) * np.exp(-t / 0.45)
+    s += np.random.uniform(-1, 1, n) * np.exp(-t / 0.01) * 0.3
+    return s * vol
+
+def cymbal(vol=1.0, dur=1.5):
+    n = int(dur * SR); t = np.arange(n) / SR
+    x = np.random.uniform(-1, 1, n); x = x - np.convolve(x, np.ones(4) / 4, 'same')
+    return x * np.exp(-t / (dur / 3)) * vol
+
+def save_me(L, R, path):
+    """A one-shot jingle (no loop)."""
+    n = len(L); fade = int(0.3 * SR)
+    L = L.copy(); R = R.copy(); L[-fade:] *= np.linspace(1, 0, fade); R[-fade:] *= np.linspace(1, 0, fade)
+    save_stereo(L, R, path)
