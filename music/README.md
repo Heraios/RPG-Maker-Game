@@ -8,10 +8,14 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 |---|---|
 | `yoon.py` | Yoon's theme in three moods: curious, eerie, sweet (`sketches/yoon_*.ogg`) |
 | `sib.py` | Sib's theme: Sib, the little priest, and Yoon and Sib together (`sketches/sib_*.ogg`) |
-| `yoon_full.py` | The full Yoon track: `Smoking Isle/audio/bgm/Yoon.ogg`, with loop points (intro plays once) |
-| `battle.py` | Battle sketches A (earthy) and B (tense), and **Battle_Wild** (A with B's intro): `Smoking Isle/audio/bgm/Battle_Wild.ogg` |
-| `battle_spirits.py` | **Battle_Spirits**: the spirits and fae battle theme (7/8, giggly), with the drum-roll intro |
-| `battle_spirits16.py` | Battle_Spirits redone in the 16-bit style (`sketches/Battle_Spirits_16bit.ogg`) |
+| `yoon_full.py` | The full Yoon track, 8-bit (`sketches/Yoon_8bit.ogg`) |
+| `yoon_full16.py` | **Yoon** in 16-bit, the one in the game: `Smoking Isle/audio/bgm/Yoon.ogg` (loop points: the intro plays once) |
+| `battle.py` | Battle sketches A (earthy) and B (tense), and Battle_Wild in 8-bit (`sketches/Battle_Wild_8bit.ogg`) |
+| `battle_wild16.py` | **Battle_Wild** in 16-bit, the one in the game: `Smoking Isle/audio/bgm/Battle_Wild.ogg` |
+| `battle_spirits.py` | Battle_Spirits in 8-bit (`sketches/Battle_Spirits_8bit.ogg`) |
+| `battle_spirits16.py` | **Battle_Spirits** in 16-bit, the one in the game: `Smoking Isle/audio/bgm/Battle_Spirits.ogg` |
 
 To rebuild (needs Python with numpy, and ffmpeg), from this folder: `python3 yoon_full.py` (and the others).
 The generated files appear here; copy `Yoon.ogg` into `Smoking Isle/audio/bgm/`.
+
+The soundtrack's style is **16-bit** (SNES); the 8-bit versions are kept as sketches.

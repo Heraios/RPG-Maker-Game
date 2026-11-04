@@ -4,20 +4,24 @@ For a composer, or for judging free and paid music packs. Placeholder music in t
 default tracks (`audio/bgm`).
 
 ## The sound in one line
-**NES-era chiptune with island colour, warmed by the odd real instrument** — somewhere between *Mother* /
-*EarthBound* and a myth told around a fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
+**16-bit (SNES-era) with island colour** — somewhere between *EarthBound* / *Mother 3* and a myth told around a
+fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 
-- **Core:** chiptune in the NES palette: two pulse channels, triangle bass, noise percussion. Simple, catchy,
-  memorable melodies.
-- **Colour (the EarthBound side):** now and then a real or sampled sound breaks through: a log drum, a conch
-  call, a bone flute, a hand-clap, a sung syllable, a ship's bell. Use it sparingly, for character.
+- **Core:** SNES-style sampled instruments: **marimba, kalimba, flute, string pads, slap and plucked bass, bells,
+  brass stabs**, and wooden percussion (log drums, toms, shakers, claps). Stereo, with the SNES's echo and reverb
+  and its warm, slightly muffled sound. Simple, catchy, memorable melodies.
+- **Island colour:** the log drums in a 3-3-2 rhythm, chant-like flute lines, marimba and kalimba as the
+  "island" voices; brass and strings for the Seafarers.
 - **Tone:** sweet and funny on the surface (a school-trip friend group with a ghost, a fae, a doll queen and a
   forest prince in it), with grief and dread underneath (a murdered child, a betrayal, an invasion). The music
   should be able to be playful and then, with the same melody, break your heart.
 
-**Reference points:** *Mother* (NES), *EarthBound* and *Mother 3*, the NES *Dragon Quest* and *Final Fantasy*
-games; for the island colour, Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras*
-castanets, the *silbo* whistle), and Mediterranean modes for the invaders.
+**Reference points:** *EarthBound* and *Mother 3*, *Chrono Trigger*, *Secret of Mana*; for the island colour,
+Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
+whistle), and Mediterranean modes for the invaders.
+
+**Made so far** (in `music/`, built in code): **Yoon** (the main theme, in `audio/bgm`), **Battle_Wild** and
+**Battle_Spirits**, plus 8-bit sketches of these and of Sib's theme.
 
 ## Three peoples, three sounds
 | Who | Sound | Notes |
@@ -79,6 +83,6 @@ Optional ambience (`audio/bgs`, no melody): surf, wind, marsh frogs, cave drips,
   the composer keeps the right to show it in their portfolio.
 
 ## Doing it yourself
-**FamiStudio** (free) writes real NES-style music and exports `.ogg` directly; **BeepBox** (free, in a browser)
+**BeepBox** (free, in a browser)
 is the easiest way to sketch a melody. A good first step either way: write **Yoon's theme** as a short melody,
 then build other tracks around it.

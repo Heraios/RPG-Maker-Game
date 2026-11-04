@@ -143,3 +143,15 @@ def finish_loop(L, R, start_s, end_s):
     for ch in (L, R):
         tail = ch[e:e + 3 * SR]; c = ch[:e].copy(); c[s:s + len(tail)] += tail; out.append(c)
     return out[0], out[1], (s, e - s)
+
+def brass(m, dur, vol=1.0):
+    """A SNES-style brass stab: bright at the start, mellowing as it holds."""
+    n = int(dur * SR); t = np.arange(n) / SR
+    bright = 0.35 + 0.65 * np.exp(-t / 0.12)
+    f = hz(m) * (1 + 0.004 * np.sin(2 * np.pi * 5 * t) * np.clip((t - 0.15) / 0.2, 0, 1))
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    s = np.zeros(n)
+    for k in range(1, 14):
+        if hz(m) * k > 14000: break
+        s += np.sin(ph * k) / k * (bright ** (k - 1) if k > 1 else 1)
+    return s * adsr(n, a=0.02, d=0.08, s=0.75, r=0.06) * vol
