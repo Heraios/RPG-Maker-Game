@@ -20,6 +20,7 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 | `seafarer16.py` | **Seafarers**: `Smoking Isle/audio/bgm/Seafarers.ogg` (the Seafarer fanfare leitmotif: brass, lyre, march) |
 | `battle_seafarer16.py` | **Battle_Seafarers**: `Smoking Isle/audio/bgm/Battle_Seafarers.ogg` (the fanfare fast, with Thenmy's dark note) |
 | `meneswa16.py` | **Meneswa**: `Smoking Isle/audio/bgm/Meneswa.ogg` (Thenmy's fifth twisted to a tritone; a cold waltz) |
+| `pada16.py` | **Pada**: `Smoking Isle/audio/bgm/Pada.ogg` (the hunter's horn call; a warm folk tune in D major; the protector) |
 | `thenmy16.py` | **Thenmy** in 16-bit: `Smoking Isle/audio/bgm/Thenmy.ogg` (brass, strings, harp; the march; his kindness) |
 | `victory16.py` | **Victory_Isle**, the victory jingle: `Smoking Isle/audio/me/Victory_Isle.ogg` (plays once) |
 
