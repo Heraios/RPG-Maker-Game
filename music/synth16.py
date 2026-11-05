@@ -87,7 +87,9 @@ class Stereo:
         n = int(seconds * SR) + 3 * SR
         self.L = np.zeros(n); self.R = np.zeros(n)
     def add(self, at, sig, vol=1.0, pan=0.0):
-        i = int(at * SR); sig = sig[:len(self.L) - i] * vol
+        i = int(at * SR)
+        if i >= len(self.L): return                  # starts after the end: nothing to add
+        sig = sig[:len(self.L) - i] * vol
         self.L[i:i + len(sig)] += sig * np.sqrt((1 - pan) / 2) * 1.414
         self.R[i:i + len(sig)] += sig * np.sqrt((1 + pan) / 2) * 1.414
 
