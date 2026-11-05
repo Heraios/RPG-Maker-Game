@@ -22,6 +22,7 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 | `meneswa16.py` | **Meneswa**: `Smoking Isle/audio/bgm/Meneswa.ogg` (Thenmy's fifth twisted to a tritone; a cold waltz) |
 | `pada16.py` | **Pada**: `Smoking Isle/audio/bgm/Pada.ogg` (the hunter's horn call; a warm folk tune in D major; the protector) |
 | `boss_great_boar16.py` | **Boss_Great_Boar**: `Smoking Isle/audio/bgm/Boss_Great_Boar.ogg` (Battle_Wild made epic; a 7/8 charge; Pada's theme in D major at battle speed) |
+| `party16.py` | The rest of the party's leitmotifs, in `Smoking Isle/audio/bgm/`: **Lasa**, **Juda**, **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Patience**, **Aday**, **Kathrout** (`python3 party16.py tou` makes one) |
 | `thenmy16.py` | **Thenmy** in 16-bit: `Smoking Isle/audio/bgm/Thenmy.ogg` (brass, strings, harp; the march; his kindness) |
 | `victory16.py` | **Victory_Isle**, the victory jingle: `Smoking Isle/audio/me/Victory_Isle.ogg` (plays once) |
 
