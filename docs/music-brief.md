@@ -53,6 +53,56 @@ Short melodies (4–8 bars) that come back throughout, changed to fit the moment
 4. **The Seafarers:** a fanfare. Proud under Thenmy; cruel and distorted under Meneswa.
 5. **Juda:** warm and wise at first; the same melody in a minor, broken form after the betrayal.
 
+## Places: the plan
+**The Island tune is the base of every town, village and sacred site, and of the grasslands.** Each place
+arranges it its own way, over that place's own sounds. The rule: the more people live somewhere, the more
+music. Towns are mostly music over everyday sounds; villages are sounds with a little of the tune; the wilds
+are mostly ambience (like Lava_Tubes). Every settlement has a telegraph station, so each can have faint
+telegraph clicks (perhaps tapping the place's name in Morse). In Act 4, each town can have an occupied
+version: thinner, the tune hesitant, a Seafarer drum in the distance.
+
+**Towns** (the tune, full):
+- **Zonfahare:** market crowd, haggling, goats, lots of telegraph; the full tune on marimba and flute. Home.
+- **Mansehare:** surf, gulls, creaking boats; the tune as a rowing song; a Seafarer horn from the docks.
+- **Afarohare:** wind in the barley, goat bells, the mill; slow and sunny, a harvest dance (Yeray's wine).
+- **Namethare:** picks in the tunnels, the battery hum; low and dignified, chant for the tombs.
+- **Celhare:** electroplating crackle, silver chimes; the richest, showiest version; Aday's tinkering motif.
+
+**Villages** (sounds first, fragments of the tune):
+- **Aguerekeu:** frogs, water under the stilts, Riro's pole; a Hag's crane call far off that nobody reacts to.
+- **Idekeu:** axes, a falling tree, pitch fires, Tuu coughing; a rough work song.
+- **Chafakeu:** sheep bells, wind; the tune whistled across the valley, answered by another whistle (*silbo*).
+- **Tabonakeu:** chisels; the tune in stone clacks over desert wind; silence where the Stonemen stand.
+- **Corajakeu:** great wind, seabirds, creaking ropes; a brave little tune plucked high over booming waves.
+- **Tacandakeu:** bubbling springs, steam, the electric hum; the tune ticking like a machine.
+
+**Sacred sites** (the tune slow and chant-like):
+- **Tiltapu:** mist dripping off leaves; a choir from the tree; the tune slow, as if the tree answers.
+- **Jarcotapu:** dry wind, low chant, scraping tools; quietly dark-funny; a hint of Juda's theme (a clue).
+- **Amentapu:** terns, wind, the egg race's drum; the Birdmen's song over the water.
+- **Banotapu:** almost silent; creaking dead wood; a tiny high melody for the sapling. Burning in Act 5.
+
+**Grasslands** (the terraces): warm wind, crickets, goat bells far off; the tune drifting in now and then.
+
+**The other wilds** (ambience, their own music):
+- **Beaches and coastal plain:** surf, wind, gulls; a slow flute that comes and goes.
+- **Laurel rainforest:** drips, birds, insects; something watching; a melody that stops when you stop.
+- **Salt marsh:** frogs, insects, slow water, a heron; a reed-pipe drone; uneasy.
+- **Volcanic desert:** heat shimmer, dry wind, stones settling; long notes; Stoneman steps that stop.
+- **Alpine forest and meadows:** cold wind in pines; Juda's warm theme hidden in it, cooling later.
+- **Snowy peak:** wind, a wind-choir (the Lady of the Wind), one high flute.
+- **Dry-side sea cliffs:** booming waves, seabirds, hard wind.
+- **Lava tubes:** done (Lava_Tubes).
+
+**Other peoples' homes:** the Lady's Table (a too-merry forest feast), the Children's Garden (whispers,
+giggles; fragile), the Maiden's Spring (water, wordless song), the Boar's Wallow (mud, drums, cheering),
+Tou's palace (her minuet in empty halls), the Warrens (the cave-fae melody, busy and sly), the Hag Roost (a
+wrong lullaby), the Owl Towers (owls, ruins, Tou's minuet broken), the Seafarer camp (drills, snare, the
+fanfare; homesick songs at night).
+
+**Day and night:** each wild place can have a night version (forest birds become owls and frogs; the desert
+turns to cold wind and stars); a small plugin could switch tracks by the game's time of day.
+
 ## Track list
 Loop = loops in game; Jingle = plays once.
 
