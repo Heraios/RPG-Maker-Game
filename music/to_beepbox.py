@@ -16,6 +16,7 @@ SONGS = {
     'Laurel_Forest':    ('laurel_forest16.py', None, 60 / 88, 4, 4),
     'Alpine_Forest':    ('alpine_forest16.py', None, 60 / 66, 4, 4),
     'Grasslands':       ('grasslands16.py', None, 60 / 80, 4, 4),
+    'Grief':            ('grief16.py', None, 60 / 58, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),

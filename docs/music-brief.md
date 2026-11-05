@@ -20,7 +20,7 @@ fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
 whistle), and Mediterranean modes for the invaders.
 
-**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
+**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Grief** (the mourning; later Pada), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
@@ -146,7 +146,7 @@ Loop = loops in game; Jingle = plays once.
 | 17 | **Boss** | Heavy, urgent; for the Ladies, the Bulls and the Great Boar | Loop |
 | 18 | **Juda** | His warm theme turned dark; the betrayal and the fight on the mountain | Loop |
 | 19 | **Final boss** | Every motif colliding; the Destroyer's drone underneath | Loop |
-| 20 | **Sorrow** | Yoon and Sib's theme, slow and broken; Pada's death | Loop |
+| 20 | **Sorrow** (done: Grief) | Yoon and Sib's theme, slow and broken; the village's lament (the Island answer in the minor); the mourning in Act 1, Pada's death | Loop |
 | 21 | **Tension / mystery** | Investigation, Dama's case, secrets | Loop |
 | 22 | **Campfire** | Warm, quiet, a little funny; the party's evening scenes | Loop |
 | 23 | **Victory** | Short, bright fanfare | Jingle |

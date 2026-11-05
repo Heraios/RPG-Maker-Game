@@ -31,6 +31,7 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 | `alpine_forest16.py` | **Alpine_Forest**: `Smoking Isle/audio/bgm/Alpine_Forest.ogg`, about 3½ minutes, mostly ambience (wind in the pines, a stream, woodpecker, ravens): Falmi's theme slow and frosty for the Lady's goat-centaur aspect, her hooves and herd bells, and the Shepherd of the Deer's pipe |
 | `grasslands16.py` | **Grasslands**: `Smoking Isle/audio/bgm/Grasslands.ogg`, about three minutes, mostly ambience (warm wind, crickets, skylarks, goat bells): the Island tune drifting in from over the hill, two herders whistling it across the valley, then walking with you |
 | `ambience.py` | Shared nature sounds for the ambient tracks (wind, birds, insects, bells, hooves, a stream) |
+| `grief16.py` | **Grief**: `Smoking Isle/audio/bgm/Grief.ogg` (the village mourning Yoon; later Pada): Yoon and Sib's music slow and broken, the village's lament (the Island tune's answer in the minor), Yoon answering Sib unheard |
 | `title16.py` | **Title**: `Smoking Isle/audio/bgm/Title.ogg`, the title screen (Yoon's theme on a lone kalimba, then the island joins; the volcano breathing) |
 | `prologue16.py` | **Prologue**: `Smoking Isle/audio/bgm/Prologue.ogg` (Thenmy telling the story: a lyre by a fire, his theme, the myth of the stolen star in the middle) |
 | `lava_tubes16.py` | **Lava_Tubes**: `Smoking Isle/audio/bgm/Lava_Tubes.ogg` (about three minutes, mostly ambience: drone, drips, lava, a heartbeat, a far-off cave-fae melody) |
