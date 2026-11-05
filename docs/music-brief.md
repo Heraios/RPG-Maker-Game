@@ -84,21 +84,40 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
 
 **Grasslands** (the terraces): warm wind, crickets, goat bells far off; the tune drifting in now and then.
 
+**The Forest: Falmi's theme.** The forests, the Lady of the Woods, her husbands (the Master of Deception and
+the Shepherd of the Deer) and the forest "towns" all share **Falmi's leitmotif** (F major; she was grown for the
+Lady). Each arranges it its own way:
+- **Laurel rainforest:** drips, birds, insects, something watching; Falmi's theme in fragments that stop when you
+  stop. Warm and wet: the Lady's porcine aspect (temperamental, gregarious).
+- **Alpine forest and meadows:** cold wind in the pines; Falmi's theme slower and cooler: the Lady's
+  goat-centaur aspect (polite, cold).
+- **The Lady of the Woods:** the theme grand and old, as if Falmi's tune were really hers all along.
+- **The Master of Deception:** the theme as a trick: it changes shape, starts in the wrong key, giggles.
+- **The Shepherd of the Deer:** the theme on a lone shepherd's pipe, with bells; the songs priests teach him.
+- **The Lady's Table:** a too-merry feast on it. **The Children's Garden:** whispers and giggles, the theme
+  tiny and fragile (the Princess's fires come for it in Act 5). **The Maiden's Spring:** running water, a wordless
+  song on it. **The Boar's Wallow:** mud, heavy drums, cheering; the theme as a stomp.
+
+**The Buried Court and the dry side: Tou's theme.** The volcanic desert and Tou's palace each have **Tou's
+leitmotif** (her music-box minuet, E minor, 3/4):
+- **Volcanic desert:** heat shimmer, dry wind, stones settling; the minuet stretched into long notes;
+  Stoneman steps that stop when you look.
+- **Tou's palace:** the minuet in empty halls with long echoes; a frozen court.
+- **The Warrens:** cave ambience (as in Lava_Tubes), with Tou's minuet faintly under it: the Children of the
+  Caves are her subjects.
+- **The Owl Towers:** the two themes **at war**: Falmi's (F major) and Tou's (E minor) a semitone apart,
+  fighting over the ruins, as the Lady and Tou dispute the Owls' loyalty. (Falmi's own theme already stumbles
+  over Tou's tune.)
+
 **The other wilds** (ambience, their own music):
 - **Beaches and coastal plain:** surf, wind, gulls; a slow flute that comes and goes.
-- **Laurel rainforest:** drips, birds, insects; something watching; a melody that stops when you stop.
 - **Salt marsh:** frogs, insects, slow water, a heron; a reed-pipe drone; uneasy.
-- **Volcanic desert:** heat shimmer, dry wind, stones settling; long notes; Stoneman steps that stop.
-- **Alpine forest and meadows:** cold wind in pines; Juda's warm theme hidden in it, cooling later.
 - **Snowy peak:** wind, a wind-choir (the Lady of the Wind), one high flute.
 - **Dry-side sea cliffs:** booming waves, seabirds, hard wind.
 - **Lava tubes:** done (Lava_Tubes).
 
-**Other peoples' homes:** the Lady's Table (a too-merry forest feast), the Children's Garden (whispers,
-giggles; fragile), the Maiden's Spring (water, wordless song), the Boar's Wallow (mud, drums, cheering),
-Tou's palace (her minuet in empty halls), the Warrens (the cave-fae melody, busy and sly), the Hag Roost (a
-wrong lullaby), the Owl Towers (owls, ruins, Tou's minuet broken), the Seafarer camp (drills, snare, the
-fanfare; homesick songs at night).
+**Other homes:** the Hag Roost (a wrong lullaby), the Seafarer camp (drills, snare, the fanfare; homesick
+songs at night).
 
 **Day and night:** each wild place can have a night version (forest birds become owls and frogs; the desert
 turns to cold wind and stars); a small plugin could switch tracks by the game's time of day.
