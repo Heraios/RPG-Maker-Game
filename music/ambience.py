@@ -179,3 +179,21 @@ def clacks(S, t, vol=0.05):                       # bone and shell chimes knocki
     for i in range(np.random.randint(3, 7)):
         n = int(0.08 * SR); tt = np.arange(n) / SR; f = rnd(800, 1500)
         S.add(t + i * rnd(0.06, 0.2), (np.sin(2 * np.pi * f * tt) + 0.4 * np.sin(2 * np.pi * f * 2.76 * tt)) * np.exp(-tt / 0.015) * vol, pan=pan)
+
+# ---------------------------------------------------------------- the telegraph
+MORSE = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..',
+         'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
+         'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..'}
+
+def telegraph(S, t, word, unit, vol=0.16, pan=-0.65):
+    """A telegraph sounder tapping `word` in Morse (key down, key up). Returns when it finishes."""
+    def click(v):
+        n = int(0.012 * SR); return rnd(-1, 1, n) * np.exp(-np.arange(n) / SR / 0.002) * v
+    for ch in word:
+        if ch == ' ': t += 4 * unit; continue
+        for sym in MORSE[ch]:
+            d = unit * (3 if sym == '-' else 1)
+            S.add(t, click(vol), pan=pan); S.add(t + d, click(vol * 0.6), pan=pan)
+            t += d + unit
+        t += 2 * unit
+    return t

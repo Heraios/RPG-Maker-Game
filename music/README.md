@@ -32,9 +32,10 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 | `grasslands16.py` | **Grasslands**: `Smoking Isle/audio/bgm/Grasslands.ogg`, about three minutes, mostly ambience (warm wind, crickets, skylarks, goat bells): the Island tune drifting in from over the hill, two herders whistling it across the valley, then walking with you |
 | `ambience.py` | Shared nature sounds for the ambient tracks (wind, birds, insects, bells, hooves, a stream) |
 | `grief16.py` | **Grief**: `Smoking Isle/audio/bgm/Grief.ogg` (the village mourning Yoon; later Pada): Yoon and Sib's music slow and broken, the village's lament (the Island tune's answer in the minor), Yoon answering Sib unheard |
-| `marsh_tune.py` | The Marsh tune (E minor, a reed-pipe melody leaning on B flat), shared by the marsh tracks and Mansehare |
+| `marsh_tune.py` | The Marsh tune (E minor, a reed-pipe melody leaning on B flat), shared by the marsh tracks and Aguerekeu |
 | `salt_marsh16.py` | **Salt_Marsh**: `Smoking Isle/audio/bgm/Salt_Marsh.ogg`, about 2¾ minutes, mostly ambience (frogs, lapping water, herons, cranes far off): the Marsh tune on a reed pipe over a wavering drone |
-| `mansehare16.py` | **Mansehare**: `Smoking Isle/audio/bgm/Mansehare.ogg`, the shore town: the Island tune as a rowing song, the Marsh tune down the river, then both together; a Seafarer horn from the docks; surf, gulls, boats |
+| `mansehare16.py` | **Mansehare**: `Smoking Isle/audio/bgm/Mansehare.ogg`, the shore town: the Island tune as a rowing song, the pearl divers' slow version, the Seafarer fanfare as a friendly counter-line (Seafarers live here too) and a horn on the docks; surf, gulls, the telegraph tapping MANSEHARE |
+| `aguerekeu16.py` | **Aguerekeu**: `Smoking Isle/audio/bgm/Aguerekeu.ogg`, the marsh village on stilts: the Island tune as a poling song blended with the Marsh tune; frogs, water under the floors, a crane nobody reacts to; the telegraph tapping AGUEREKEU (and, faintly, another hand on the line) |
 | `boss_parl16.py` | **Boss_Parl**: `Smoking Isle/audio/bgm/Boss_Parl.ogg`, Parl's jig crossed with Battle_Seafarers' riff in a driving 12/8; an intro built like the Great Boar's |
 | `hag_roost16.py` | **Hag_Roost**: `Smoking Isle/audio/bgm/Hag_Roost.ogg`, the Marsh tune as a wrong lullaby in 3/4, with Tou's minuet faintly out of step under it |
 | `title16.py` | **Title**: `Smoking Isle/audio/bgm/Title.ogg`, the title screen (Yoon's theme on a lone kalimba, then the island joins; the volcano breathing) |

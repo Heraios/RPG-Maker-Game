@@ -19,6 +19,7 @@ SONGS = {
     'Grief':            ('grief16.py', None, 60 / 58, 4, 4),
     'Salt_Marsh':       ('salt_marsh16.py', None, 60 / 70, 4, 4),
     'Mansehare':        ('mansehare16.py', None, 60 / 96, 4, 4),
+    'Aguerekeu':        ('aguerekeu16.py', None, 60 / 96, 4, 4),
     'Boss_Parl':        ('boss_parl16.py', None, 60 / 112, 4, 3),         # 12/8: a beat is a dotted quarter
     'Hag_Roost':        ('hag_roost16.py', None, 60 / 66, 3, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),

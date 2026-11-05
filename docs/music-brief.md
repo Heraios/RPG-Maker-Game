@@ -20,7 +20,7 @@ fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
 whistle), and Mediterranean modes for the invaders.
 
-**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Salt_Marsh**, **Mansehare**, **Hag_Roost**, **Boss_Parl**, **Grief** (the mourning; later Pada), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
+**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Salt_Marsh**, **Mansehare**, **Aguerekeu**, **Hag_Roost**, **Boss_Parl**, **Grief** (the mourning; later Pada), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
@@ -57,20 +57,21 @@ Short melodies (4–8 bars) that come back throughout, changed to fit the moment
 **The Island tune is the base of every town, village and sacred site, and of the grasslands.** Each place
 arranges it its own way, over that place's own sounds. The rule: the more people live somewhere, the more
 music. Towns are mostly music over everyday sounds; villages are sounds with a little of the tune; the wilds
-are mostly ambience (like Lava_Tubes). Every settlement has a telegraph station, so each can have faint
-telegraph clicks (perhaps tapping the place's name in Morse). In Act 4, each town can have an occupied
+are mostly ambience (like Lava_Tubes). Every settlement has a telegraph station, so each has faint
+telegraph clicks tapping the place's name in Morse. In Act 4, each town can have an occupied
 version: thinner, the tune hesitant, a Seafarer drum in the distance.
 
 **Towns** (the tune, full):
 - **Zonfahare** (done): market crowd, goats, Tegue's hammer, the telegraph tapping ZONFAHARE; the full tune. Home.
-- **Mansehare** (done): surf, gulls, creaking boats; the Island tune as a rowing song, blended with the Marsh tune
-  (the town sits where the river meets the sea); a Seafarer horn from the docks.
+- **Mansehare** (done): surf, gulls, creaking boats; the Island tune as a rowing song; the pearl divers' slow
+  version; the Seafarer fanfare made major as a friendly counter-line (Seafarers live here too); a horn on the docks.
 - **Afarohare:** wind in the barley, goat bells, the mill; slow and sunny, a harvest dance (Yeray's wine).
 - **Namethare:** picks in the tunnels, the battery hum; low and dignified, chant for the tombs.
 - **Celhare:** electroplating crackle, silver chimes; the richest, showiest version; Aday's tinkering motif.
 
 **Villages** (sounds first, fragments of the tune):
-- **Aguerekeu:** frogs, water under the stilts, Riro's pole; a Hag's crane call far off that nobody reacts to.
+- **Aguerekeu** (done): frogs, water under the stilts, the poling stroke; the Island tune **blended with the Marsh
+  tune**; a Hag's crane call far off that nobody reacts to; faintly, a second hand on the telegraph line (Parl).
 - **Idekeu:** axes, a falling tree, pitch fires, Tuu coughing; a rough work song.
 - **Chafakeu:** sheep bells, wind; the tune whistled across the valley, answered by another whistle (*silbo*).
 - **Tabonakeu:** chisels; the tune in stone clacks over desert wind; silence where the Stonemen stand.
