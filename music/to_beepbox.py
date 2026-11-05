@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
-# name: (script, function in it (party16, inside16, shrine16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
+# name: (script, function in it (party16, inside16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
     'Island':           ('island16.py', None, 60 / 108, 4, 4),
     'Zonfahare':        ('zonfahare16.py', None, 60 / 112, 4, 4),
@@ -29,6 +29,10 @@ SONGS = {
     'Island_Chant':     ('shrine16.py', 'chant_track', 60 / 76, 4, 4),
     'Dread':            ('dread16.py', None, 60 / 50, 4, 4),
     'Battle_Ancients':  ('battle_ancients16.py', None, 60 / 168, 3, 4),
+    'Defeat_Isle':      ('jingles16.py', 'defeat', 60 / 66, 4, 4),
+    'Rest_Isle':        ('jingles16.py', 'rest', 60 / 72, 4, 4),
+    'Item_Isle':        ('jingles16.py', 'item', 60 / 120, 4, 4),
+    'Save_Isle':        ('jingles16.py', 'save', 60 / 84, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
@@ -158,7 +162,7 @@ def song_json(rec, beat, bpb, tpb):
         ls, le = 0, max(parts(t + d) for t, v, m, d, vol in rec.events)
     intro_bars = -(-ls // BAR)
     shift = intro_bars * BAR - ls                    # the loop starts on a bar line
-    loop_bars = max(1, int(round((le - ls) / BAR)))
+    loop_bars = max(1, int(round((le - ls) / BAR)) if rec.loop else -(-(le - ls) // BAR))   # a jingle keeps its last bar
     end = (intro_bars + loop_bars) * BAR
 
     # group into channels: each pitched instrument; drums by family

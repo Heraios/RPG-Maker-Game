@@ -42,6 +42,7 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 | `shrine16.py` | **Shrine** (inside a shrine or temple: a priest humming the Island tune over a drone, drips in a stone basin, chimes) and **Island_Chant** (the Island tune as a ceremony: a priest calls, the people answer, slit drums) |
 | `dread16.py` | **Dread**: `Smoking Isle/audio/bgm/Dread.ogg`, discovering the murder: a sting, then Yoon's first four notes stuck on the wrong one, a heartbeat, cave drips; Juda's hymn, bent, barely there |
 | `battle_ancients16.py` | **Battle_Ancients**: `Smoking Isle/audio/bgm/Battle_Ancients.ogg`, for First Sailor remnants (Hags, Owls, Stonemen): Tou's minuet as a dark, fast waltz; the Hags' lullaby with an owl; the Stonemen at half speed |
+| `jingles16.py` | The short jingles, in `Smoking Isle/audio/me/`: **Defeat_Isle** (battle lost and game over), **Rest_Isle** (resting), **Item_Isle** (a key item, like each body ingredient), **Save_Isle** (a Red Bowl idol) |
 | `title16.py` | **Title**: `Smoking Isle/audio/bgm/Title.ogg`, the title screen (Yoon's theme on a lone kalimba, then the island joins; the volcano breathing) |
 | `prologue16.py` | **Prologue**: `Smoking Isle/audio/bgm/Prologue.ogg` (Thenmy telling the story: a lyre by a fire, his theme, the myth of the stolen star in the middle) |
 | `lava_tubes16.py` | **Lava_Tubes**: `Smoking Isle/audio/bgm/Lava_Tubes.ogg` (about three minutes, mostly ambience: drone, drips, lava, a heartbeat, a far-off cave-fae melody) |

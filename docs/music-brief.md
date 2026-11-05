@@ -24,7 +24,7 @@ whistle), and Mediterranean modes for the invaders.
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
-**Victory_Isle** jingle (in `audio/me`), plus 8-bit sketches.
+**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches.
 
 **Leitmotif links:** the Seafarer fanfare (1-5-1-2-flat 3) runs through Seafarers and Battle_Seafarers;
 Thenmy's opening fifth (C up to G) becomes a tritone (C up to G-flat) in Meneswa's theme; his dark D-flat
@@ -155,8 +155,8 @@ Loop = loops in game; Jingle = plays once.
 | 21 | **Tension / mystery** (Dread done, for the murder's discovery) | Investigation, Dama's case, secrets | Loop |
 | 22 | **Campfire** | Warm, quiet, a little funny; the party's evening scenes | Loop |
 | 23 | **Victory** | Short, bright fanfare | Jingle |
-| 24 | **Defeat** | Short, sad | Jingle |
-| 25 | **Item get / rest / save** | Tiny, cheerful | Jingle |
+| 24 | **Defeat** (done: Defeat_Isle; also the game over) | Short, sad | Jingle |
+| 25 | **Item get / rest / save** (done: Item_Isle, Rest_Isle, Save_Isle) | Tiny, cheerful | Jingle |
 
 Optional ambience (`audio/bgs`, no melody): surf, wind, marsh frogs, cave drips, crackling fire, telegraph clicks.
 
