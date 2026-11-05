@@ -1,0 +1,4 @@
+# Renders made by running the scripts here (the finished tracks are copied into the game)
+/*.wav
+/*.ogg
+__pycache__/
