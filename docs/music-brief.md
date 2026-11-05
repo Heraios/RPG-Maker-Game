@@ -20,7 +20,7 @@ fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
 whistle), and Mediterranean modes for the invaders.
 
-**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Title** (on the title screen), **Prologue** (Thenmy telling the
+**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
@@ -62,7 +62,7 @@ telegraph clicks (perhaps tapping the place's name in Morse). In Act 4, each tow
 version: thinner, the tune hesitant, a Seafarer drum in the distance.
 
 **Towns** (the tune, full):
-- **Zonfahare:** market crowd, haggling, goats, lots of telegraph; the full tune on marimba and flute. Home.
+- **Zonfahare** (done): market crowd, goats, Tegue's hammer, the telegraph tapping ZONFAHARE; the full tune. Home.
 - **Mansehare:** surf, gulls, creaking boats; the tune as a rowing song; a Seafarer horn from the docks.
 - **Afarohare:** wind in the barley, goat bells, the mill; slow and sunny, a harvest dance (Yeray's wine).
 - **Namethare:** picks in the tunnels, the battery hum; low and dignified, chant for the tombs.
