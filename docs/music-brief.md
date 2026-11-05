@@ -20,7 +20,8 @@ fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
 whistle), and Mediterranean modes for the invaders.
 
-**Made so far** (in `music/`, built in code): a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
+**Made so far** (in `music/`, built in code): **Title** (on the title screen), **Prologue** (Thenmy telling the
+story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
 **Victory_Isle** jingle (in `audio/me`), plus 8-bit sketches.
@@ -31,7 +32,8 @@ returns in both the battle and hers. Pada's theme is in D major: Yoon's home not
 with a hunter's horn call in open fifths, for the Great Boar fight to quote. Juda_Corrupted is Juda's hymn with every
 warm note flattened; a faint whole-tone chord at the end of the warm version hides the Navigator Lord. Patience's
 theme quotes Yoon's slowly (the dog who waited); Falmi's stumbles over Tou's music-box minuet; Aday's taps
-"ADAY" in Morse; Parl's quotes the Seafarer fanfare, homesick.
+"ADAY" in Morse; Parl's quotes the Seafarer fanfare, homesick. The Prologue's myth section darkens on the same D-flat as
+Thenmy's theme; the Children of the Caves' melody in Lava_Tubes is in D double harmonic (Yoon's D, made strange).
 
 ## Three peoples, three sounds
 | Who | Sound | Notes |

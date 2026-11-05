@@ -24,6 +24,9 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 | `boss_great_boar16.py` | **Boss_Great_Boar**: `Smoking Isle/audio/bgm/Boss_Great_Boar.ogg` (Battle_Wild made epic; a 7/8 charge; Pada's theme in D major at battle speed) |
 | `party16.py` | The rest of the party's leitmotifs, in `Smoking Isle/audio/bgm/`: **Lasa**, **Juda**, **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Patience**, **Aday**, **Kathrout** (`python3 party16.py tou` makes one) |
 | `thenmy16.py` | **Thenmy** in 16-bit: `Smoking Isle/audio/bgm/Thenmy.ogg` (brass, strings, harp; the march; his kindness) |
+| `title16.py` | **Title**: `Smoking Isle/audio/bgm/Title.ogg`, the title screen (Yoon's theme on a lone kalimba, then the island joins; the volcano breathing) |
+| `prologue16.py` | **Prologue**: `Smoking Isle/audio/bgm/Prologue.ogg` (Thenmy telling the story: a lyre by a fire, his theme, the myth of the stolen star in the middle) |
+| `lava_tubes16.py` | **Lava_Tubes**: `Smoking Isle/audio/bgm/Lava_Tubes.ogg` (about three minutes, mostly ambience: drone, drips, lava, a heartbeat, a far-off cave-fae melody) |
 | `to_beepbox.py` | Every 16-bit track above as a **BeepBox** song in `beepbox/` (`Yoon.json` and so on). In BeepBox: **File → Import JSON**, then pick the file. BeepBox uses its own simple instruments, so it sounds chippier, but every note, bar and loop is there to edit |
 | `victory16.py` | **Victory_Isle**, the victory jingle: `Smoking Isle/audio/me/Victory_Isle.ogg` (plays once) |
 

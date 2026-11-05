@@ -11,6 +11,9 @@ import numpy as np
 
 # name: (script, function in party16 or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
+    'Title':            ('title16.py', None, 60 / 76, 4, 4),
+    'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
+    'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
     'Yoon':             ('yoon_full16.py', None, 60 / 100, 4, 4),
     'Sib':              ('sib_alone16.py', None, 60 / 96, 4, 4),
     'Yoon_and_Sib':     ('yoon_and_sib16.py', None, 60 / 92, 4, 4),
