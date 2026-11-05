@@ -24,6 +24,7 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 | `boss_great_boar16.py` | **Boss_Great_Boar**: `Smoking Isle/audio/bgm/Boss_Great_Boar.ogg` (Battle_Wild made epic; a 7/8 charge; Pada's theme in D major at battle speed) |
 | `party16.py` | The rest of the party's leitmotifs, in `Smoking Isle/audio/bgm/`: **Lasa**, **Juda**, **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Patience**, **Aday**, **Kathrout** (`python3 party16.py tou` makes one) |
 | `thenmy16.py` | **Thenmy** in 16-bit: `Smoking Isle/audio/bgm/Thenmy.ogg` (brass, strings, harp; the march; his kindness) |
+| `to_beepbox.py` | Every 16-bit track above as a **BeepBox** song in `beepbox/` (`Yoon.json` and so on). In BeepBox: **File → Import JSON**, then pick the file. BeepBox uses its own simple instruments, so it sounds chippier, but every note, bar and loop is there to edit |
 | `victory16.py` | **Victory_Isle**, the victory jingle: `Smoking Isle/audio/me/Victory_Isle.ogg` (plays once) |
 
 To rebuild (needs Python with numpy, and ffmpeg), from this folder: `python3 yoon_full.py` (and the others).

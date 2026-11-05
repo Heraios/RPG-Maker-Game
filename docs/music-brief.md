@@ -93,6 +93,6 @@ Optional ambience (`audio/bgs`, no melody): surf, wind, marsh frogs, cave drips,
   the composer keeps the right to show it in their portfolio.
 
 ## Doing it yourself
-**BeepBox** (free, in a browser)
-is the easiest way to sketch a melody. A good first step either way: write **Yoon's theme** as a short melody,
-then build other tracks around it.
+**BeepBox** (free, in a browser) is the easiest way to sketch a melody. Every track made so far is in
+`music/beepbox/` as a BeepBox song: open BeepBox, choose **File → Import JSON**, and pick one (for example
+`Yoon.json`) to see and change its notes.
