@@ -20,7 +20,7 @@ fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
 whistle), and Mediterranean modes for the invaders.
 
-**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
+**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Laurel_Forest** (the Lady's lowland aspect), **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
@@ -87,7 +87,7 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
 **The Forest: Falmi's theme.** The forests, the Lady of the Woods, her husbands (the Master of Deception and
 the Shepherd of the Deer) and the forest "towns" all share **Falmi's leitmotif** (F major; she was grown for the
 Lady). Each arranges it its own way:
-- **Laurel rainforest:** drips, birds, insects, something watching; Falmi's theme in fragments that stop when you
+- **Laurel rainforest** (done: Laurel_Forest): drips, birds, insects, something watching; Falmi's theme in fragments that stop when you
   stop. Warm and wet: the Lady's porcine aspect (temperamental, gregarious).
 - **Alpine forest and meadows:** cold wind in the pines; Falmi's theme slower and cooler: the Lady's
   goat-centaur aspect (polite, cold).

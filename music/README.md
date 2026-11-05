@@ -27,6 +27,7 @@ drums, stereo, echo and reverb). The other scripts are compositions written with
 | `island16.py` | **Island**: `Smoking Isle/audio/bgm/Island.ogg`, the Island tune everyone knows (call and answer; then all together, a dance, and a lullaby). Every town and village track will be built on it |
 | `island_tune.py` | The Island tune itself (the notes, chords and harmony), shared by the town and village tracks |
 | `zonfahare16.py` | **Zonfahare**: `Smoking Isle/audio/bgm/Zonfahare.ogg`, the main town (the Island tune at its fullest over a market crowd, goats, a hammer, and the telegraph tapping ZONFAHARE in Morse) |
+| `laurel_forest16.py` | **Laurel_Forest**: `Smoking Isle/audio/bgm/Laurel_Forest.ogg`, about three minutes, mostly ambience (drizzle, drips, birds, pigs): Falmi's theme as the Lady of the Woods in her lowland aspect, warm, moody, with a trick from the Master of Deception |
 | `title16.py` | **Title**: `Smoking Isle/audio/bgm/Title.ogg`, the title screen (Yoon's theme on a lone kalimba, then the island joins; the volcano breathing) |
 | `prologue16.py` | **Prologue**: `Smoking Isle/audio/bgm/Prologue.ogg` (Thenmy telling the story: a lyre by a fire, his theme, the myth of the stolen star in the middle) |
 | `lava_tubes16.py` | **Lava_Tubes**: `Smoking Isle/audio/bgm/Lava_Tubes.ogg` (about three minutes, mostly ambience: drone, drips, lava, a heartbeat, a far-off cave-fae melody) |
