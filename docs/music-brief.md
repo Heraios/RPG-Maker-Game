@@ -20,7 +20,7 @@ fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
 whistle), and Mediterranean modes for the invaders.
 
-**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Salt_Marsh**, **Mansehare**, **Aguerekeu**, **Hag_Roost**, **Boss_Parl**, **Grief** (the mourning; later Pada), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
+**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Island_Chant**, **Shrine**, inside versions (**Zonfahare_Inside**, **Mansehare_Inside**, **Aguerekeu_Inside**), **Dread**, **Battle_Ancients**, **Salt_Marsh**, **Mansehare**, **Aguerekeu**, **Hag_Roost**, **Boss_Parl**, **Grief** (the mourning; later Pada), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
@@ -32,7 +32,8 @@ returns in both the battle and hers. Pada's theme is in D major: Yoon's home not
 with a hunter's horn call in open fifths, for the Great Boar fight to quote. Juda_Corrupted is Juda's hymn with every
 warm note flattened; a faint whole-tone chord at the end of the warm version hides the Navigator Lord. Patience's
 theme quotes Yoon's slowly (the dog who waited); Falmi's stumbles over Tou's music-box minuet; Aday's taps
-"ADAY" in Morse; Parl's quotes the Seafarer fanfare, homesick; his boss fight crosses his jig with Battle_Seafarers' riff. The Island tune is a call (G A B D, D E D) and an answer
+"ADAY" in Morse; Parl's quotes the Seafarer fanfare, homesick; Dread hides Juda's hymn, bent, low on an organ (a clue);
+Battle_Ancients (Hags, Owls, Stonemen) is Tou's minuet as a fight; his boss fight crosses his jig with Battle_Seafarers' riff. The Island tune is a call (G A B D, D E D) and an answer
 (B A G A, B A G); its last answer dips to a flat seventh (F), the island's own colour. The Prologue's myth section darkens on the same D-flat as
 Thenmy's theme; the Children of the Caves' melody in Lava_Tubes is in D double harmonic (Yoon's D, made strange).
 
@@ -58,7 +59,8 @@ Short melodies (4–8 bars) that come back throughout, changed to fit the moment
 arranges it its own way, over that place's own sounds. The rule: the more people live somewhere, the more
 music. Towns are mostly music over everyday sounds; villages are sounds with a little of the tune; the wilds
 are mostly ambience (like Lava_Tubes). Every settlement has a telegraph station, so each has faint
-telegraph clicks tapping the place's name in Morse. In Act 4, each town can have an occupied
+telegraph clicks tapping the place's name in Morse. Each also has an **inside** version (the outdoor sounds
+muffled through the walls, a hearth, the tune small and homely). In Act 4, each town can have an occupied
 version: thinner, the tune hesitant, a Seafarer drum in the distance.
 
 **Towns** (the tune, full):
@@ -141,7 +143,7 @@ Loop = loops in game; Jingle = plays once.
 | 9 | **Lava tubes** | Dark, echoing, dripping; the caves' drone with a faint cave-fae melody | Loop |
 | 10 | **Mountain / alpine forest** | Cold, high, lonely; the trek with Juda | Loop |
 | 11 | **Volcanic desert** | Hot, harsh, shimmering; long notes | Loop |
-| 12 | **Shrine / temple** | Calm, sacred, chant-like | Loop |
+| 12 | **Shrine / temple** (done: Shrine; Island_Chant for ceremonies) | Calm, sacred, chant-like: the Island tune hummed by a priest | Loop |
 | 13 | **Tou's buried palace** | The First Sailors' eerie beauty; lonely and royal | Loop |
 | 14 | **Seafarer camp / occupation** | The Seafarer fanfare, military and oppressive | Loop |
 | 15 | **Battle** | Driving, upbeat, island percussion under a pulse melody | Loop |
@@ -150,7 +152,7 @@ Loop = loops in game; Jingle = plays once.
 | 18 | **Juda** | His warm theme turned dark; the betrayal and the fight on the mountain | Loop |
 | 19 | **Final boss** | Every motif colliding; the Destroyer's drone underneath | Loop |
 | 20 | **Sorrow** (done: Grief) | Yoon and Sib's theme, slow and broken; the village's lament (the Island answer in the minor); the mourning in Act 1, Pada's death | Loop |
-| 21 | **Tension / mystery** | Investigation, Dama's case, secrets | Loop |
+| 21 | **Tension / mystery** (Dread done, for the murder's discovery) | Investigation, Dama's case, secrets | Loop |
 | 22 | **Campfire** | Warm, quiet, a little funny; the party's evening scenes | Loop |
 | 23 | **Victory** | Short, bright fanfare | Jingle |
 | 24 | **Defeat** | Short, sad | Jingle |

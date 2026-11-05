@@ -197,3 +197,31 @@ def telegraph(S, t, word, unit, vol=0.16, pan=-0.65):
             t += d + unit
         t += 2 * unit
     return t
+
+# ---------------------------------------------------------------- indoors
+class Muffle:
+    """Wrap a track so sounds added through it are heard through a wall: dull, and quieter."""
+    def __init__(self, S, cutoff=500, gain=0.8):
+        self.S, self.cutoff, self.gain = S, cutoff, gain
+    def add(self, at, sig, vol=1.0, pan=0.0):
+        if isinstance(sig, np.ndarray): sig = lowpass(sig, self.cutoff) * self.gain * 1.5
+        self.S.add(at, sig, vol, pan * 0.5)
+
+def hearth(S, start, end, fade, vol=0.12, pan=-0.2):
+    """A fire in the hearth, all through: soft roar and crackles (runs right up to the loop's end)."""
+    n = int((end - start) * SR); x = np.zeros(n)
+    idx = np.random.randint(0, n, int((end - start) * 7)); x[idx] = rnd(-1, 1, len(idx))
+    x = np.convolve(x, np.exp(-np.arange(300) / 40), 'same')
+    x += lowpass(rnd(-1, 1, n), 300) * 0.6
+    S.add(start, x * _bed(n, fade) * vol, pan=pan)
+
+def crowd(S, start, end, fade, vol=0.03, pan=0.0):
+    """People talking, all through: voice-band noise chopped into syllables (runs right up to the loop's end)."""
+    n = int((end - start) * SR); x = rnd(-1, 1, n)
+    x = np.convolve(x, np.ones(12) / 12, 'same') - np.convolve(x, np.ones(70) / 70, 'same')
+    k = rnd(0, 1, int((end - start) * 5) + 2); syl = np.interp(np.arange(n) / SR * 5, np.arange(len(k)), k) ** 2
+    S.add(start, x * (0.25 + syl) * _bed(n, fade) * vol * 3, pan=pan)
+
+def drip(S, t, vol=0.05):                         # a drop in a cave or a stone basin: plink, and its ring
+    n = int(0.25 * SR); tt = np.arange(n) / SR; f = rnd(900, 1800) * (1 + 0.25 * np.exp(-tt / 0.01))
+    S.add(t, np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt / 0.05) * vol, pan=rnd(-0.8, 0.8))
