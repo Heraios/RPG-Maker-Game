@@ -20,7 +20,7 @@ fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
 whistle), and Mediterranean modes for the invaders.
 
-**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Grief** (the mourning; later Pada), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
+**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Salt_Marsh**, **Mansehare**, **Hag_Roost**, **Boss_Parl**, **Grief** (the mourning; later Pada), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
@@ -32,7 +32,7 @@ returns in both the battle and hers. Pada's theme is in D major: Yoon's home not
 with a hunter's horn call in open fifths, for the Great Boar fight to quote. Juda_Corrupted is Juda's hymn with every
 warm note flattened; a faint whole-tone chord at the end of the warm version hides the Navigator Lord. Patience's
 theme quotes Yoon's slowly (the dog who waited); Falmi's stumbles over Tou's music-box minuet; Aday's taps
-"ADAY" in Morse; Parl's quotes the Seafarer fanfare, homesick. The Island tune is a call (G A B D, D E D) and an answer
+"ADAY" in Morse; Parl's quotes the Seafarer fanfare, homesick; his boss fight crosses his jig with Battle_Seafarers' riff. The Island tune is a call (G A B D, D E D) and an answer
 (B A G A, B A G); its last answer dips to a flat seventh (F), the island's own colour. The Prologue's myth section darkens on the same D-flat as
 Thenmy's theme; the Children of the Caves' melody in Lava_Tubes is in D double harmonic (Yoon's D, made strange).
 
@@ -63,7 +63,8 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
 
 **Towns** (the tune, full):
 - **Zonfahare** (done): market crowd, goats, Tegue's hammer, the telegraph tapping ZONFAHARE; the full tune. Home.
-- **Mansehare:** surf, gulls, creaking boats; the tune as a rowing song; a Seafarer horn from the docks.
+- **Mansehare** (done): surf, gulls, creaking boats; the Island tune as a rowing song, blended with the Marsh tune
+  (the town sits where the river meets the sea); a Seafarer horn from the docks.
 - **Afarohare:** wind in the barley, goat bells, the mill; slow and sunny, a harvest dance (Yeray's wine).
 - **Namethare:** picks in the tunnels, the battery hum; low and dignified, chant for the tombs.
 - **Celhare:** electroplating crackle, silver chimes; the richest, showiest version; Aday's tinkering motif.
@@ -111,12 +112,13 @@ leitmotif** (her music-box minuet, E minor, 3/4):
 
 **The other wilds** (ambience, their own music):
 - **Beaches and coastal plain:** surf, wind, gulls; a slow flute that comes and goes.
-- **Salt marsh:** frogs, insects, slow water, a heron; a reed-pipe drone; uneasy.
+- **Salt marsh** (done: Salt_Marsh): frogs, insects, slow water, a heron; the **Marsh tune** (E minor, leaning on a
+  B flat) on a reed pipe over a drone; uneasy.
 - **Snowy peak:** wind, a wind-choir (the Lady of the Wind), one high flute.
 - **Dry-side sea cliffs:** booming waves, seabirds, hard wind.
 - **Lava tubes:** done (Lava_Tubes).
 
-**Other homes:** the Hag Roost (a wrong lullaby), the Seafarer camp (drills, snare, the fanfare; homesick
+**Other homes:** the Hag Roost (done: the Marsh tune as a wrong lullaby, Tou's minuet faintly under it), the Seafarer camp (drills, snare, the fanfare; homesick
 songs at night).
 
 **Day and night:** each wild place can have a night version (forest birds become owls and frogs; the desert
