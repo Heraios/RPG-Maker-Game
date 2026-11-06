@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
-# name: (script, function in it (party16, inside16, night16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
+# name: (script, function in it (party16, inside16, night16, home16, beach16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
     'Island':           ('island16.py', None, 60 / 108, 4, 4),
     'Zonfahare':        ('zonfahare16.py', None, 60 / 112, 4, 4),
@@ -49,6 +49,14 @@ SONGS = {
     'Laurel_Forest_Night': ('night16.py', 'laurel', 60 / 66, 4, 4),
     'Grasslands_Night': ('night16.py', 'grasslands', 60 / 66, 4, 4),
     'Salt_Marsh_Night': ('night16.py', 'marsh_night', 60 / 60, 4, 4),
+    'Chase':            ('chase16.py', None, 60 / 112, 4, 3),             # 12/8: a beat is a dotted quarter
+    'Home':             ('home16.py', 'home', 60 / 76, 4, 4),
+    'Home_Grieving':    ('home16.py', 'grieving', 60 / 60, 4, 4),
+    'Living_Things':    ('living_things16.py', None, 60 / 72, 4, 4),
+    'Comedy':           ('comedy16.py', None, 60 / 126, 4, 4),
+    'Snowy_Peak':       ('snowy_peak16.py', None, 60 / 60, 4, 4),
+    'Beach':            ('beach16.py', 'day', 60 / 84, 4, 4),
+    'Beach_Night':      ('beach16.py', 'night', 60 / 66, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
