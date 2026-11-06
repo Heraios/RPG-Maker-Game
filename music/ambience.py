@@ -46,6 +46,27 @@ def crickets(S, start, end, fade, vol=0.02):
         out += np.sin(2 * np.pi * f * tt) * pulse
     S.add(start, out * np.clip(tt / fade, 0, 1) * vol, pan=0.3)
 
+def grasshoppers(S, start, end, vol=0.02, count=4):
+    """Grasshoppers in the sun: dry, rasping bursts, here and there (a daytime sound; crickets are the night's)."""
+    for g in range(count):
+        pan = rnd(-0.8, 0.8); rate = rnd(18, 30); t = start + rnd(0, 4)
+        while True:
+            d = rnd(0.8, 2.2)
+            if t + d > end - 0.2: break
+            n = int(d * SR); tt = np.arange(n) / SR; x = rnd(-1, 1, n)
+            x = x - np.convolve(x, np.ones(3) / 3, 'same')                      # bright, papery
+            ticks = np.clip(np.sin(2 * np.pi * rate * tt), 0, 1) ** 6
+            S.add(t, x * ticks * _env(n) * vol * 3, pan=pan)
+            t += d + rnd(1.5, 7.0)
+
+def bee(S, t, dur=3.0, vol=0.02):                 # a bee drifting past
+    n = int(dur * SR); tt = np.arange(n) / SR; f = rnd(200, 250) * (1 + 0.03 * np.sin(2 * np.pi * 3 * tt))
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    x = sum(np.sin(ph * k) / k for k in range(1, 10)) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.9 * tt))
+    p0 = rnd(-0.9, 0.9); half = n // 2
+    S.add(t, lowpass(x, 2500)[:half] * _env(n)[:half] * vol, pan=p0)
+    S.add(t + half / SR, lowpass(x, 2500)[half:] * _env(n)[half:] * vol, pan=-p0 * 0.5)
+
 def woodpecker(S, t, vol=0.15):
     pan = rnd(-0.9, 0.9); hits = np.random.randint(10, 18)
     for i in range(hits):

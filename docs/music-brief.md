@@ -88,7 +88,7 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
 - **Amentapu:** terns, wind, the egg race's drum; the Birdmen's song over the water.
 - **Banotapu:** almost silent; creaking dead wood; a tiny high melody for the sapling. Burning in Act 5.
 
-**Grasslands** (done; the terraces): warm wind, crickets, goat bells far off; the tune drifting in now and then.
+**Grasslands** (done; the terraces): warm wind, grasshoppers, goat bells far off; the tune drifting in now and then.
 
 **The Forest: Falmi's theme.** The forests, the Lady of the Woods, her husbands (the Master of Deception and
 the Shepherd of the Deer) and the forest "towns" all share **Falmi's leitmotif** (F major; she was grown for the
@@ -127,7 +127,9 @@ leitmotif** (her music-box minuet, E minor, 3/4):
 songs at night).
 
 **Day and night:** each wild place can have a night version (forest birds become owls and frogs; the desert
-turns to cold wind and stars); a small plugin could switch tracks by the game's time of day.
+turns to cold wind and stars). The **SI_NightMusic** plugin switches them by the game's time of day: a map whose
+track has a night version (its name plus `_Night`) plays that at night, fading across when night falls or day
+breaks. By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
 
 ## Still to make: Acts 1 and 2
 **Already planned:**

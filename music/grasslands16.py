@@ -6,7 +6,7 @@ from ambience import *
 np.random.seed(371)
 R = None
 # The grasslands: the upland terraces, barley and vines, goats. Mostly ambience: a warm wind in the grass,
-# crickets, skylarks, goat bells. The Island tune drifts in on the wind, as if from a village over the hill;
+# grasshoppers and a passing bee, skylarks, goat bells. The Island tune drifts in on the wind, as if from a village over the hill;
 # two herders whistle its call and answer to each other across the valley (the Canary silbo); then the
 # tune walks along with you for a while, unhurried, before it drifts off again.
 bpm = 80; b = 60 / bpm; bar = 4 * b
@@ -38,7 +38,9 @@ def strum(t, roots, vol=0.06, beats=4):                  # a harp strummed lazil
 
 # ---------------------------------------------------------------- the land, all the way through
 bed_wind(S, 0, END, INTRO * bar, vol=0.06, smooth=60, pan=-0.1)        # a soft, warm wind (low, rounded)
-crickets(S, 0, END, INTRO * bar, vol=0.015)
+grasshoppers(S, 0, END, vol=0.018, count=4)                         # by day: grasshoppers, not crickets
+for k in range(3, INTRO + BARS, 7):
+    if rnd() < 0.6: bee(S, k * bar + rnd(0, 3) * bar, rnd(2.5, 4), 0.018)
 for k in range(0, INTRO + BARS, 4): gust(S, k * bar + rnd(0, 3) * bar, rnd(6, 10) * b, 0.05, smooth=50)
 for k in range(1, INTRO + BARS, 6):
     if rnd() < 0.8: lark(S, k * bar + rnd(0, 4) * bar, rnd(3, 6))
@@ -75,7 +77,7 @@ strum(B(33), [40, 43, 41, 43], 0.035)
 far(B(39), ANS2, 0.07, pan=-0.75)
 strum(B(41), [41, 43], vol=0.035, beats=8)
 
-# 45-56: evening coming: the tune at half speed on a kalimba, over the crickets; then the wind alone
+# 45-56: evening coming: the tune at half speed on a kalimba; then the wind alone
 half = [(m, d * 2) for m, d in CALL1 + ANS1]
 seq(S, half, b, B(45), lambda m, d: kalimba(m + 12, max(d * 0.5, 0.5), vol=0.18), pan=0.2)
 for k, r in enumerate((43, 43, 48, 48, 40, 40, 38, 43)): S.add(B(45 + k), strings(CH[r][1], bar * 0.98, vol=0.03))
