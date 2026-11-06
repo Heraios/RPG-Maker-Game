@@ -1,31 +1,43 @@
 // The real opening: New Game -> the Prologue (map 5) -> the Ghost waking in the lava tube (map 6),
 // and map 6's Act 1 / Act 2 events.
 
-const startGame = async (h, at) => {
-    await h.page.goto(h.base + '/index.html');
+const startGame = async (h, at, playtest) => {
+    await h.page.goto(h.base + '/index.html' + (playtest ? '?test' : ''));   // ?test: an editor playtest
     await h.page.waitForFunction(() => window.SceneManager && SceneManager._scene instanceof Scene_Title && SceneManager._sceneStarted, null, { timeout: 60000 });
-    await h.page.evaluate(at => {
+    await h.page.evaluate(([at, playtest]) => {
         if (at) Object.assign($dataSystem, { startMapId: at[0], startX: at[1], startY: at[2] });
         SceneManager._scene.commandNewGame();   // the real start (the Prologue) unless told otherwise
-    }, at || null);
+    }, [at || null, !!playtest]);
 };
 const onMap = (h, id) => h.page.waitForFunction(i => SceneManager._scene instanceof Scene_Map && SceneManager._sceneStarted && $gameMap.mapId() === i, id, { timeout: 30000 });
 const ev = name => $gameMap.events().find(e => e.event().name === name);
 
 module.exports = {
     'the opening: the Prologue, then the Ghost wakes alone': async (h, t) => {
-        await startGame(h);
+        await startGame(h, null, true);
         await onMap(h, 5);
-        const start = await h.eval(() => ({ visible: !$gamePlayer.isTransparent() }));
+        await h.page.waitForTimeout(500);
+        const start = await h.eval(() => ({ visible: !$gamePlayer.isTransparent(), bgm: AudioManager._currentBgm && AudioManager._currentBgm.name }));
         for (let i = 0; i < 6; i++) { await h.pumpMessages(); if (await h.eval(() => $gameMap.mapId() === 6)) break; await h.page.waitForTimeout(500); }
         await onMap(h, 6);
         await h.page.waitForTimeout(800);
         await h.pumpMessages();
         const r = await h.eval(() => ({
             party: $gameParty._actors.join(','), name: $gameActors.actor(1).name(), story: $gameVariables.value(5),
-            visible: !$gamePlayer.isTransparent(), pos: $gamePlayer.x + ',' + $gamePlayer.y
+            visible: !$gamePlayer.isTransparent(), pos: $gamePlayer.x + ',' + $gamePlayer.y,
+            pass: $gameParty.numItems($dataItems[736])
         }));
+        // the Test Room Pass: its common event puts back the test party and goes to the Test Room
+        await h.eval(() => $gameTemp.reserveCommonEvent($dataItems[736].effects[0].dataId));
+        await onMap(h, 4);
+        await h.page.waitForTimeout(500);
+        await h.pumpMessages();
+        const room = await h.eval(() => ({ party: $gameParty._actors.slice().sort((a, b) => a - b).join(','), visible: !$gamePlayer.isTransparent() }));
         t.eq(start.visible, false, 'the player is invisible on the black Prologue');
+        t.eq(start.bgm, 'Prologue', 'the Prologue plays its music');
+        t.eq(r.pass, 1, 'in playtests the party starts with the Test Room Pass');
+        t.eq(room.party, '2,3,4,5,12', 'the pass brings back the test party...');
+        t.ok(room.visible, '...in the Test Room, visible');
         t.eq(r.party, '1', 'the Ghost alone');
         t.eq(r.name, '???', 'the Ghost has no name yet');
         t.eq(r.story, 10, 'waking sets the Story variable to 10');

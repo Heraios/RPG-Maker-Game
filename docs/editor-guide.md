@@ -76,8 +76,8 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    | 9 | Juda half-risen (Act 3) | | | |
    | 13 | Tube: have the old rope (map 6) | | 5 | Story (Acts 1–2: 10 woke, 20 Lasa, 50 Sib, 60 the bone) |
 
-6. **Common events 3–10** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
-   Choose Yoon, Yoon's Room: Keepsakes).
+6. **Common events 3–10 and 15** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
+   Choose Yoon, Yoon's Room: Keepsakes; 15 Playtest: To the Test Room).
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
    effects), 213 (Ready to Toss, Aday's Toss) and 214–219 (the weapon-art stances: Braced, En Garde,
    Warding, Covered, Following Up, Brought Down) are also used by number.
@@ -189,6 +189,10 @@ one real hazard.
 - **Map 5 "Prologue"** is black on purpose: its one event shows Thenmy's narration, fades out, plays three
   drips and moves the player to map 6. It also makes the party **the Ghost alone**. Add pictures (the sea,
   the fleet, the smoking peak) with *Show Picture* where the comment in the event says.
+- **The Prologue plays the Prologue track** (map 5's Autoplay BGM); it fades out with the screen before
+  the drips.
+- **Playtesting:** in a playtest (only), the Prologue puts a **Test Room Pass** (item 736, Key Items) in the
+  bag. Use it from the menu to go to the Test Room with the test party (common event 15).
 - **New Game starts on the Prologue.** The player starts invisible (Database → System → *Transparent*),
   so nothing shows on the black screen; the Ghost appears when it wakes. To test other things quickly,
   set the starting position to the Test Room for a while (right-click a tile → **Set Starting Position →
