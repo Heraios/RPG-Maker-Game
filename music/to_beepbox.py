@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
-# name: (script, function in it (party16, inside16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
+# name: (script, function in it (party16, inside16, night16, home16, beach16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
     'Island':           ('island16.py', None, 60 / 108, 4, 4),
     'Zonfahare':        ('zonfahare16.py', None, 60 / 112, 4, 4),
@@ -33,6 +33,30 @@ SONGS = {
     'Rest_Isle':        ('jingles16.py', 'rest', 60 / 72, 4, 4),
     'Item_Isle':        ('jingles16.py', 'item', 60 / 120, 4, 4),
     'Save_Isle':        ('jingles16.py', 'save', 60 / 84, 4, 4),
+    'Ritual':           ('ritual16.py', None, 60 / 76, 4, 4),
+    'Mystery':          ('mystery16.py', None, 60 / 96, 4, 4),
+    'Campfire':         ('campfire16.py', None, 60 / 56, 4, 3),           # 6/8: a beat is a dotted quarter
+    'Ladys_Table':      ('ladys_table16.py', None, 60 / 132, 4, 4),       # 2/4: a BeepBox bar is two
+    'Warrens':          ('warrens16.py', None, 60 / 84, 3, 4),
+    'Recognition':      ('recognition16.py', None, 60 / 66, 4, 4),
+    'Sneaking':         ('sneaking16.py', None, 60 / 108, 4, 4),
+    'Wells':            ('wells16.py', None, 60 / 72, 3, 4),
+    'Forbidden_Lore':   ('forbidden_lore16.py', None, 60 / 60, 4, 4),
+    'Hunt':             ('hunt16.py', None, 60 / 72, 4, 4),
+    'Zonfahare_Night':  ('night16.py', 'zonfahare', 60 / 72, 4, 4),
+    'Mansehare_Night':  ('night16.py', 'mansehare', 60 / 66, 4, 4),
+    'Aguerekeu_Night':  ('night16.py', 'aguerekeu', 60 / 70, 4, 4),
+    'Laurel_Forest_Night': ('night16.py', 'laurel', 60 / 66, 4, 4),
+    'Grasslands_Night': ('night16.py', 'grasslands', 60 / 66, 4, 4),
+    'Salt_Marsh_Night': ('night16.py', 'marsh_night', 60 / 60, 4, 4),
+    'Chase':            ('chase16.py', None, 60 / 112, 4, 3),             # 12/8: a beat is a dotted quarter
+    'Home':             ('home16.py', 'home', 60 / 76, 4, 4),
+    'Home_Grieving':    ('home16.py', 'grieving', 60 / 60, 4, 4),
+    'Living_Things':    ('living_things16.py', None, 60 / 72, 4, 4),
+    'Comedy':           ('comedy16.py', None, 60 / 126, 4, 4),
+    'Snowy_Peak':       ('snowy_peak16.py', None, 60 / 60, 4, 4),
+    'Beach':            ('beach16.py', 'day', 60 / 84, 4, 4),
+    'Beach_Night':      ('beach16.py', 'night', 60 / 66, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
@@ -132,7 +156,7 @@ def install():
     s16.Stereo = Recorder
     s16.snes_master = lambda L, R, **kw: (L, R)
     def finish_loop(L, R, start_s, end_s): owner(L).loop = (start_s, end_s); return L, R, (0, 1)
-    def save_stereo(L, R, path, loop=None, preview=None): owner(L).path = path
+    def save_stereo(L, R, path, loop=None, preview=None, gain=1.0): owner(L).path = path
     def save_me(L, R, path): owner(L).path = path
     s16.finish_loop, s16.save_stereo, s16.save_me = finish_loop, save_stereo, save_me
     pad = np.pad

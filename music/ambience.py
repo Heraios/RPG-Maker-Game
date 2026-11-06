@@ -46,6 +46,27 @@ def crickets(S, start, end, fade, vol=0.02):
         out += np.sin(2 * np.pi * f * tt) * pulse
     S.add(start, out * np.clip(tt / fade, 0, 1) * vol, pan=0.3)
 
+def grasshoppers(S, start, end, vol=0.02, count=4):
+    """Grasshoppers in the sun: dry, rasping bursts, here and there (a daytime sound; crickets are the night's)."""
+    for g in range(count):
+        pan = rnd(-0.8, 0.8); rate = rnd(18, 30); t = start + rnd(0, 4)
+        while True:
+            d = rnd(0.8, 2.2)
+            if t + d > end - 0.2: break
+            n = int(d * SR); tt = np.arange(n) / SR; x = rnd(-1, 1, n)
+            x = x - np.convolve(x, np.ones(3) / 3, 'same')                      # bright, papery
+            ticks = np.clip(np.sin(2 * np.pi * rate * tt), 0, 1) ** 6
+            S.add(t, x * ticks * _env(n) * vol * 3, pan=pan)
+            t += d + rnd(1.5, 7.0)
+
+def bee(S, t, dur=3.0, vol=0.02):                 # a bee drifting past
+    n = int(dur * SR); tt = np.arange(n) / SR; f = rnd(200, 250) * (1 + 0.03 * np.sin(2 * np.pi * 3 * tt))
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    x = sum(np.sin(ph * k) / k for k in range(1, 10)) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.9 * tt))
+    p0 = rnd(-0.9, 0.9); half = n // 2
+    S.add(t, lowpass(x, 2500)[:half] * _env(n)[:half] * vol, pan=p0)
+    S.add(t + half / SR, lowpass(x, 2500)[half:] * _env(n)[half:] * vol, pan=-p0 * 0.5)
+
 def woodpecker(S, t, vol=0.15):
     pan = rnd(-0.9, 0.9); hits = np.random.randint(10, 18)
     for i in range(hits):
@@ -225,3 +246,36 @@ def crowd(S, start, end, fade, vol=0.03, pan=0.0):
 def drip(S, t, vol=0.05):                         # a drop in a cave or a stone basin: plink, and its ring
     n = int(0.25 * SR); tt = np.arange(n) / SR; f = rnd(900, 1800) * (1 + 0.25 * np.exp(-tt / 0.01))
     S.add(t, np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt / 0.05) * vol, pan=rnd(-0.8, 0.8))
+
+# ---------------------------------------------------------------- night
+def owl(S, t, vol=0.06, pan=None):                # a tawny owl: hoo... hoo-hoo-hoooo
+    pan = rnd(-0.8, 0.8) if pan is None else pan; f0 = rnd(360, 430)
+    for at, d in ((0, 0.45), (0.9, 0.18), (1.15, 0.18), (1.4, 0.6)):
+        n = int(d * SR); tt = np.arange(n) / SR; f = f0 * (1 - 0.05 * tt / d)
+        x = np.sin(2 * np.pi * np.cumsum(f) / SR) + rnd(-0.08, 0.08, n)
+        S.add(t + at, x * np.sin(np.pi * tt / d) * vol, pan=pan)
+
+def nightjar(S, t, dur=3.0, vol=0.02, pan=None):  # a nightjar churring: a long, purring trill
+    pan = rnd(-0.8, 0.8) if pan is None else pan
+    n = int(dur * SR); tt = np.arange(n) / SR; f = 1200 * (1 + 0.05 * np.sin(2 * np.pi * 0.5 * tt))
+    x = np.sin(2 * np.pi * np.cumsum(f) / SR) * (0.5 + 0.5 * np.sign(np.sin(2 * np.pi * 38 * tt)))
+    S.add(t, lowpass(x, 3000) * _env(n) * vol, pan=pan)
+
+def bittern(S, t, vol=0.12, pan=None):            # a bittern booming in the reeds: uh-WOOMP, three times
+    pan = rnd(-0.6, 0.6) if pan is None else pan
+    for i in range(3):
+        n = int(0.6 * SR); tt = np.arange(n) / SR; f = 90 * (1 + 0.15 * np.sin(np.pi * tt / 0.6))
+        x = np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.3 * np.sin(4 * np.pi * np.cumsum(f) / SR)
+        S.add(t + i * 1.4, x * adsr(n, a=0.08, d=0.1, s=0.8, r=0.25) * vol, pan=pan)
+        S.add(t + i * 1.4 - 0.25, x[:int(0.15 * SR)] * vol * 0.3, pan=pan)   # the gulp before it
+
+def dog(S, t, vol=0.05, barks=2, pan=None):       # a dog barking somewhere across town
+    pan = rnd(-0.9, 0.9) if pan is None else pan
+    for i in range(barks):
+        n = int(0.16 * SR); tt = np.arange(n) / SR; ph = 2 * np.pi * np.cumsum(520 * (1 - 0.4 * tt / 0.16)) / SR
+        x = sum(np.sin(ph * k) / k for k in range(1, 8)) + rnd(-0.6, 0.6, n)
+        S.add(t + i * rnd(0.25, 0.4), lowpass(x, 1500) * np.exp(-tt / 0.05) * vol, pan=pan)
+
+def twinkle(S, t, vol=0.02):                      # stars, or fireflies: a tiny high glint
+    n = int(0.8 * SR); tt = np.arange(n) / SR; f = rnd(2500, 4500)
+    S.add(t, (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(2 * np.pi * f * 2.76 * tt)) * np.exp(-tt / 0.2) * vol, pan=rnd(-0.9, 0.9))

@@ -24,7 +24,7 @@ whistle), and Mediterranean modes for the invaders.
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
-**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches.
+**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore**, **Hunt**, **Chase**, **Home**, **Home_Grieving**, **Living_Things**, **Comedy**, **Snowy_Peak**, **Beach**. Night versions: **Zonfahare_Night**, **Mansehare_Night**, **Aguerekeu_Night**, **Laurel_Forest_Night**, **Grasslands_Night**, **Salt_Marsh_Night**, **Beach_Night**.
 
 **Leitmotif links:** the Seafarer fanfare (1-5-1-2-flat 3) runs through Seafarers and Battle_Seafarers;
 Thenmy's opening fifth (C up to G) becomes a tritone (C up to G-flat) in Meneswa's theme; his dark D-flat
@@ -36,6 +36,11 @@ theme quotes Yoon's slowly (the dog who waited); Falmi's stumbles over Tou's mus
 Battle_Ancients (Hags, Owls, Stonemen) is Tou's minuet as a fight; his boss fight crosses his jig with Battle_Seafarers' riff. The Island tune is a call (G A B D, D E D) and an answer
 (B A G A, B A G); its last answer dips to a flat seventh (F), the island's own colour. The Prologue's myth section darkens on the same D-flat as
 Thenmy's theme; the Children of the Caves' melody in Lava_Tubes is in D double harmonic (Yoon's D, made strange).
+Moved down into D, Tou's minuet starts with the same five notes as Yoon's theme (D F A G-sharp A); the Warrens
+plays it that way. The Ritual gathers every friend's motif into Yoon's theme; Mystery hides Juda's hymn in the bass.
+Falmi's sprout (F A C) and Yoon's opening (D F A) share F and A: in Living_Things the sprout grows into Yoon's theme
+a note at a time. The **Lady of the Wind** has her own leitmotif (`music/wind_tune.py`: E dorian, a falling gust, a
+rising gust, a high cold arc with a C sharp, a sigh), first heard on Snowy_Peak.
 
 ## Three peoples, three sounds
 | Who | Sound | Notes |
@@ -86,7 +91,7 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
 - **Amentapu:** terns, wind, the egg race's drum; the Birdmen's song over the water.
 - **Banotapu:** almost silent; creaking dead wood; a tiny high melody for the sapling. Burning in Act 5.
 
-**Grasslands** (done; the terraces): warm wind, crickets, goat bells far off; the tune drifting in now and then.
+**Grasslands** (done; the terraces): warm wind, grasshoppers, goat bells far off; the tune drifting in now and then.
 
 **The Forest: Falmi's theme.** The forests, the Lady of the Woods, her husbands (the Master of Deception and
 the Shepherd of the Deer) and the forest "towns" all share **Falmi's leitmotif** (F major; she was grown for the
@@ -114,10 +119,12 @@ leitmotif** (her music-box minuet, E minor, 3/4):
   over Tou's tune.)
 
 **The other wilds** (ambience, their own music):
-- **Beaches and coastal plain:** surf, wind, gulls; a slow flute that comes and goes.
+- **Beaches and coastal plain** (done: Beach and Beach_Night, the coast near Mansehare): surf, wind, gulls, shell
+  chimes; a slow flute that comes and goes with the waves; Dama's conch far out; Mansehare's rowing song down the coast.
 - **Salt marsh** (done: Salt_Marsh): frogs, insects, slow water, a heron; the **Marsh tune** (E minor, leaning on a
   B flat) on a reed pipe over a drone; uneasy.
-- **Snowy peak:** wind, a wind-choir (the Lady of the Wind), one high flute.
+- **Snowy peak** (done: Snowy_Peak): wind, a wind-choir singing the Lady of the Wind's own leitmotif, one high flute;
+  Yoon's theme frozen on glass bells (the last ingredient).
 - **Dry-side sea cliffs:** booming waves, seabirds, hard wind.
 - **Lava tubes:** done (Lava_Tubes).
 
@@ -125,39 +132,42 @@ leitmotif** (her music-box minuet, E minor, 3/4):
 songs at night).
 
 **Day and night:** each wild place can have a night version (forest birds become owls and frogs; the desert
-turns to cold wind and stars); a small plugin could switch tracks by the game's time of day.
+turns to cold wind and stars). The **SI_NightMusic** plugin switches them by the game's time of day: a map whose
+track has a night version (its name plus `_Night`) plays that at night, fading across when night falls or day
+breaks. By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
 
 ## Still to make: Acts 1 and 2
 **Already planned:**
-- **The ritual:** building Yoon's body, the climax of Act 2: every ingredient and every friend's theme gathering
+- **The ritual** (done: Ritual): building Yoon's body, the climax of Act 2: every ingredient and every friend's theme gathering
   into Yoon's theme as they get a body.
-- **Mystery:** everyday clue-hunting (questioning people, Dama's pearl case, Uira's telegraph logs); lighter than
-  Dread, curious; it could hint at Juda's theme.
-- **Campfire:** the campfire scenes and resting at bothies; warm, quiet, a little funny.
-- **The Lady's Table:** Falmi's theme as her feast (Pada asks permission for the hunt).
-- **The Warrens:** the Children of the Caves' village: cave ambience with Tou's minuet faintly under it.
-- **Snowy peak:** if the snow for the body is gathered above the alpine forest.
-- If the route goes there: **Idekeu**, **Chafakeu**, a **beach** track, **Afarohare**, **Jarcotapu**.
+- **Mystery** (done): everyday clue-hunting (questioning people, Dama's pearl case, Uira's telegraph logs); lighter than
+  Dread, curious; it hints at Juda's theme.
+- **Campfire** (done): the campfire scenes and resting at bothies; warm, quiet, a little funny.
+- **The Lady's Table** (done: Ladys_Table): Falmi's theme as her feast (Pada asks permission for the hunt).
+- **The Warrens** (done): the Children of the Caves' village: cave ambience with Tou's minuet faintly under it.
+- **Snowy peak** (done: Snowy_Peak). **Beach** (done: Beach, Beach_Night).
+- If the route goes there: **Idekeu**, **Chafakeu**, **Afarohare**, **Jarcotapu**.
 
 **New ideas:**
 - **First Words** (Act 1): Lasa teaching Yoon to speak: her theme and Yoon's taking turns, Yoon's starting as
   single notes and slowly joining into phrases.
 - **Unseen** (Act 1): Yoon drifting among people who can't see them: Zonfahare's music thin and far away, or a
   lonely kalimba against the warm sounds of life.
-- **Home:** Yoon's family house (the twins can see Yoon; the family grieving): Yoon's theme as a half-remembered
+- **Home** (done: Home and Home_Grieving; the house on the river eyot): Yoon's family house (the twins can see Yoon; the family grieving): Yoon's theme as a half-remembered
   music box, warmer than Grief.
-- **Recognition** (end of Act 1): Sib realising who the ghost is: a bell, Sib's counting notes, then Yoon's,
+- **Recognition** (done; end of Act 1): Sib realising who the ghost is: a bell, Sib's counting notes, then Yoon's,
   finally heard (Grief's unheard answer, reversed).
-- **Sneaking:** the ritual is forbidden and Juda mustn't know: tiptoeing, plucked, comic pauses.
-- **Forbidden Lore:** Sib reading the ritual in Juda's books by candlelight: his hymn hushed, something wrong in it.
-- **The Chase:** hunting Parl down before his fight: his jig fast and slippery, running into Boss_Parl.
-- **The Hunt:** tracking the Great Boar with Pada: quiet and tense, his horn call held back, a heartbeat drum.
-- **The Wells:** freeing one of the Lady's daughters from a First Sailor well: water, stone, echoes; Tou's minuet
+- **Sneaking** (done): the ritual is forbidden and Juda mustn't know: tiptoeing, plucked, comic pauses.
+- **Forbidden Lore** (done: Forbidden_Lore): Sib reading the ritual in Juda's books by candlelight: his hymn hushed, something wrong in it.
+- **The Chase** (done: Chase): hunting Parl down before his fight: his jig fast and slippery, running into Boss_Parl.
+- **The Hunt** (done: Hunt): tracking the Great Boar with Pada: quiet and tense, his horn call held back, a heartbeat drum.
+- **The Wells** (done: Wells): freeing one of the Lady's daughters from a First Sailor well: water, stone, echoes; Tou's minuet
   and Falmi's theme tangled together. A daughter could fight to Battle_Ancients.
-- **Living Things:** harvesting the dragon tree and the living bellflower (the heart): Falmi's sprouting phrase
+- **Living Things** (done: Living_Things): harvesting the dragon tree and the living bellflower (the heart): Falmi's sprouting phrase
   growing into Yoon's theme.
-- **Night versions** of Zonfahare and the Grasslands (and Aguerekeu, with Ana's night shift on the telegraph).
-- **A comedy cue** for the funny beats (Hupa flirting with an oblivious Pada, Ure naming his leeches).
+- **Night versions** (done: Zonfahare_Night, Mansehare_Night, Aguerekeu_Night with Ana's night shift on the telegraph,
+  Laurel_Forest_Night, Grasslands_Night, Salt_Marsh_Night). New towns and wilds can get theirs the same way, in `night16.py`.
+- **A comedy cue** (done: Comedy) for the funny beats (Hupa flirting with an oblivious Pada, Ure naming his leeches).
 
 ## Track list
 Loop = loops in game; Jingle = plays once.
@@ -184,8 +194,8 @@ Loop = loops in game; Jingle = plays once.
 | 18 | **Juda** | His warm theme turned dark; the betrayal and the fight on the mountain | Loop |
 | 19 | **Final boss** | Every motif colliding; the Destroyer's drone underneath | Loop |
 | 20 | **Sorrow** (done: Grief) | Yoon and Sib's theme, slow and broken; the village's lament (the Island answer in the minor); the mourning in Act 1, Pada's death | Loop |
-| 21 | **Tension / mystery** (Dread done, for the murder's discovery) | Investigation, Dama's case, secrets | Loop |
-| 22 | **Campfire** | Warm, quiet, a little funny; the party's evening scenes | Loop |
+| 21 | **Tension / mystery** (done: Dread, for the murder's discovery; Mystery, for clue-hunting) | Investigation, Dama's case, secrets | Loop |
+| 22 | **Campfire** (done) | Warm, quiet, a little funny; the party's evening scenes | Loop |
 | 23 | **Victory** | Short, bright fanfare | Jingle |
 | 24 | **Defeat** (done: Defeat_Isle; also the game over) | Short, sad | Jingle |
 | 25 | **Item get / rest / save** (done: Item_Isle, Rest_Isle, Save_Isle) | Tiny, cheerful | Jingle |

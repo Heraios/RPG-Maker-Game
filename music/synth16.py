@@ -123,10 +123,11 @@ def snes_master(L, R, echo=0.24, fb=0.35, reverb=0.18, cutoff=9000):
         out.append(lowpass(y, cutoff))                           # the warm SNES muffle
     return out
 
-def save_stereo(L, R, path, loop=None, preview=None):
+def save_stereo(L, R, path, loop=None, preview=None, gain=1.0):
+    """gain: below 1 for a track that should sit quieter than the songs (0.63 is about 4 dB quieter)."""
     peak = max(np.max(np.abs(L)), np.max(np.abs(R))); L = L / peak; R = R / peak
     drive = 2.2                                   # a gentle limiter: louder, without clipping
-    L = np.tanh(L * drive) / np.tanh(drive) * 0.9; R = np.tanh(R * drive) / np.tanh(drive) * 0.9
+    L = np.tanh(L * drive) / np.tanh(drive) * 0.9 * gain; R = np.tanh(R * drive) / np.tanh(drive) * 0.9 * gain
     def write(l, r, wav, ogg, meta):
         data = np.empty(len(l) * 2); data[0::2] = l; data[1::2] = r
         with wave.open(wav, 'w') as w:
