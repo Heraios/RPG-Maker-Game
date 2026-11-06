@@ -62,6 +62,9 @@
  *   <Bold>            runs only from a party twice as overwhelming
  *   <Timid>           runs from a party half as overwhelming
  *
+ * Page conditions gate it: while none of its pages' conditions are met
+ * (say, a page that needs a story switch), it isn't out at all.
+ *
  * What it does:
  * - Wanders near where it was placed. When the party steps into its sight
  *   cone it chases them, until it is Leash tiles from its start, then goes
@@ -187,6 +190,7 @@ SmokingIsle.Wanderers = SmokingIsle.Wanderers || {};
     Game_Event.prototype.isWanderAway = function() {
         var w = this.wanderer();
         if (!w) return false;
+        if (this._pageIndex < 0) return true;   // no page's conditions are met: not out (lets the story gate it)
         var day = $.gone()[this.wanderKey()];
         if (day !== undefined && day >= $.day()) return true;
         var night = SmokingIsle.Time && SmokingIsle.Time.isNight ? SmokingIsle.Time.isNight() : false;

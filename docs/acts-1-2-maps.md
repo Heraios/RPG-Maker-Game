@@ -10,12 +10,10 @@ switches, variables, common events) are reserved only once they're built.
 
 | Map | Name | State |
 |---|---|---|
-| 1 | MAP001 | 256×100, Overworld tileset: ocean with one land blob. Sketch, no events |
-| 2 | MAP002 | 123×250, Exterior: a large water shape and a small cluster. Sketch, no events |
-| 3 | MAP003 | 17×13, Interior: a few tiles. Sketch, no events |
-| 4 | TEST ROOM | Working examples of every system; New Game starts here |
-| 5 | Prologue | **Done**: Thenmy's narration, drips, moves to map 6 with the Ghost alone |
-| 6 | Lava Tube: Waking | Placeholder floor; `Waking` autorun; the remains at (8, 6) and five `TODO` objects (below), not yet scripted |
+| 1–3 | — | Deleted (they were early sketches) |
+| 4 | TEST ROOM | Working examples of every system; the automated tests start here |
+| 5 | Prologue | **Done**, and **New Game starts here**: Thenmy's narration, drips, moves to map 6 with the Ghost alone |
+| 6 | Lava Tube: Waking | **Playable**: Act 1 and Act 2 pages for every object, the reflection (Yoon's gender), Lasa's arrival, the skylight. See editor-guide.md, "The opening" |
 
 Ready to use: Star Mother, Red Bowl, Sooty Bird idols and the Sundial (CE 3, 6, 7, 4); Gather (CE 5);
 Crawlway (CE 8); Choose Yoon (CE 9) and Yoon's Room: Keepsakes (CE 10); **Scene: Yoon's New Body (CE 11)**,
@@ -229,8 +227,7 @@ open question.
 
 ## Open questions
 
-1. **Maps 1–3:** delete them, or keep them? Is MAP001 meant to become an overworld map? The design leans
-   on Sooty Bird idols for travel, not an overworld.
+1. ~~**Maps 1–3**~~ **Deleted.**
 2. **Act 1 length and content:** Act 1 has no combat. How is it played: First Words spots, eavesdropping on
    people in town, small ghost puzzles (passing through things? moving small objects?)? How many words does
    Yoon need before reaching Sib?

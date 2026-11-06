@@ -84,6 +84,7 @@ function serve(dir) {
 function makeHelpers(page, base) {
     const h = {
         page,
+        base,
         // Boot straight into a battle against troop `troopId` (Battle Test mode).
         async battle() {
             await page.goto(base + '/index.html?btest');
@@ -99,12 +100,16 @@ function makeHelpers(page, base) {
                 if (SmokingIsle.WeaponArts) SmokingIsle.WeaponArts.teachAll();
             });
         },
-        // Start a New Game (the test room) and finish its setup event.
+        // Start a New Game in the test room and finish its setup event.
         async newGame() {
             await page.goto(base + '/index.html');
             await page.waitForFunction(() => window.SceneManager && SceneManager._scene instanceof Scene_Title &&
                 SceneManager._sceneStarted, null, { timeout: 60000 });
-            await page.evaluate(() => SceneManager._scene.commandNewGame());
+            // The real game starts at the Prologue; the tests start in the Test Room.
+            await page.evaluate(() => {
+                Object.assign($dataSystem, { startMapId: 4, startX: 10, startY: 5, optTransparent: false });
+                SceneManager._scene.commandNewGame();
+            });
             await page.waitForFunction(() => SceneManager._scene instanceof Scene_Map && SceneManager._sceneStarted);
             await page.waitForTimeout(300);
             await h.pumpMessages();

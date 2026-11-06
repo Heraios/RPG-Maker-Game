@@ -10,6 +10,9 @@ module.exports = {
             const boar = $gameMap.events().find(e => e.event().name === 'Wanderer: Wild Boars');
             const crab = $gameMap.events().find(e => e.event().name.indexOf('Shore Crabs') >= 0);
             out.parsed = !!boar.wanderer() && boar.wanderer().troopId === 1 && crab.wanderer().nerve === 2;
+            // no page whose conditions are met (gated by the story): not out
+            const pageIndex = boar._pageIndex; boar._pageIndex = -1;
+            out.gated = boar.isWanderAway(); boar._pageIndex = pageIndex; out.ungated = !boar.isWanderAway();
             // sight: a cone in front, not behind
             boar.locate(8, 11); boar.setDirection(8);
             $gamePlayer.locate(8, 8); out.seesAhead = boar.canSeeParty();
@@ -53,6 +56,7 @@ module.exports = {
             return out;
         });
         t.eq(r.parsed, true, 'note tags read');
+        t.ok(r.gated && r.ungated, 'an enemy with no active page (story-gated) is not out');
         t.eq([r.seesAhead, r.seesDiagonal, r.seesBehind, r.seesFar].join(), 'true,true,false,false', 'sight: a cone in front, within range');
         t.eq(r.weakWhenStrong, true, 'a far stronger party makes a troop weak');
         t.eq(r.boldNeedsMore, true, 'bold enemies need a stronger party still');

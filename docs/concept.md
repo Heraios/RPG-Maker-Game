@@ -2742,10 +2742,10 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
-**MAP004 "TEST ROOM"** is a throwaway map for trying the battle systems, and **New Game currently
-starts there**. It has a weapon chest, a recruiter (adds reserve members for Switch), an Insight
-crystal, one monster per test troop, and a campfire (full rest). To remove it: set the player's
-starting position back to **MAP001 (8, 6)** (Database → System), then delete the map.
+**MAP004 "TEST ROOM"** is a throwaway map for trying the battle systems. **New Game starts at the
+Prologue** (map 5); the automated tests start their own games in the Test Room. It has a weapon chest, a
+recruiter (adds reserve members for Switch), an Insight crystal, one monster per test troop, and a
+campfire (full rest). Its **Play the Opening** door runs the opening from there.
 
 ### Current database (as uploaded)
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.
