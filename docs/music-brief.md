@@ -127,6 +127,38 @@ songs at night).
 **Day and night:** each wild place can have a night version (forest birds become owls and frogs; the desert
 turns to cold wind and stars); a small plugin could switch tracks by the game's time of day.
 
+## Still to make: Acts 1 and 2
+**Already planned:**
+- **The ritual:** building Yoon's body, the climax of Act 2: every ingredient and every friend's theme gathering
+  into Yoon's theme as they get a body.
+- **Mystery:** everyday clue-hunting (questioning people, Dama's pearl case, Uira's telegraph logs); lighter than
+  Dread, curious; it could hint at Juda's theme.
+- **Campfire:** the campfire scenes and resting at bothies; warm, quiet, a little funny.
+- **The Lady's Table:** Falmi's theme as her feast (Pada asks permission for the hunt).
+- **The Warrens:** the Children of the Caves' village: cave ambience with Tou's minuet faintly under it.
+- **Snowy peak:** if the snow for the body is gathered above the alpine forest.
+- If the route goes there: **Idekeu**, **Chafakeu**, a **beach** track, **Afarohare**, **Jarcotapu**.
+
+**New ideas:**
+- **First Words** (Act 1): Lasa teaching Yoon to speak: her theme and Yoon's taking turns, Yoon's starting as
+  single notes and slowly joining into phrases.
+- **Unseen** (Act 1): Yoon drifting among people who can't see them: Zonfahare's music thin and far away, or a
+  lonely kalimba against the warm sounds of life.
+- **Home:** Yoon's family house (the twins can see Yoon; the family grieving): Yoon's theme as a half-remembered
+  music box, warmer than Grief.
+- **Recognition** (end of Act 1): Sib realising who the ghost is: a bell, Sib's counting notes, then Yoon's,
+  finally heard (Grief's unheard answer, reversed).
+- **Sneaking:** the ritual is forbidden and Juda mustn't know: tiptoeing, plucked, comic pauses.
+- **Forbidden Lore:** Sib reading the ritual in Juda's books by candlelight: his hymn hushed, something wrong in it.
+- **The Chase:** hunting Parl down before his fight: his jig fast and slippery, running into Boss_Parl.
+- **The Hunt:** tracking the Great Boar with Pada: quiet and tense, his horn call held back, a heartbeat drum.
+- **The Wells:** freeing one of the Lady's daughters from a First Sailor well: water, stone, echoes; Tou's minuet
+  and Falmi's theme tangled together. A daughter could fight to Battle_Ancients.
+- **Living Things:** harvesting the dragon tree and the living bellflower (the heart): Falmi's sprouting phrase
+  growing into Yoon's theme.
+- **Night versions** of Zonfahare and the Grasslands (and Aguerekeu, with Ana's night shift on the telegraph).
+- **A comedy cue** for the funny beats (Hupa flirting with an oblivious Pada, Ure naming his leeches).
+
 ## Track list
 Loop = loops in game; Jingle = plays once.
 
