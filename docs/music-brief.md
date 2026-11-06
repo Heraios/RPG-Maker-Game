@@ -24,7 +24,7 @@ whistle), and Mediterranean modes for the invaders.
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
-**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore** and **Hunt**.
+**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore** and **Hunt**. Night versions: **Zonfahare_Night**, **Mansehare_Night**, **Aguerekeu_Night**, **Laurel_Forest_Night**, **Grasslands_Night**, **Salt_Marsh_Night**.
 
 **Leitmotif links:** the Seafarer fanfare (1-5-1-2-flat 3) runs through Seafarers and Battle_Seafarers;
 Thenmy's opening fifth (C up to G) becomes a tritone (C up to G-flat) in Meneswa's theme; his dark D-flat
@@ -158,7 +158,8 @@ turns to cold wind and stars); a small plugin could switch tracks by the game's 
   and Falmi's theme tangled together. A daughter could fight to Battle_Ancients.
 - **Living Things:** harvesting the dragon tree and the living bellflower (the heart): Falmi's sprouting phrase
   growing into Yoon's theme.
-- **Night versions** of Zonfahare and the Grasslands (and Aguerekeu, with Ana's night shift on the telegraph).
+- **Night versions** (done: Zonfahare_Night, Mansehare_Night, Aguerekeu_Night with Ana's night shift on the telegraph,
+  Laurel_Forest_Night, Grasslands_Night, Salt_Marsh_Night). New towns and wilds can get theirs the same way, in `night16.py`.
 - **A comedy cue** for the funny beats (Hupa flirting with an oblivious Pada, Ure naming his leeches).
 
 ## Track list

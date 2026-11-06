@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
-# name: (script, function in it (party16, inside16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
+# name: (script, function in it (party16, inside16, night16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
     'Island':           ('island16.py', None, 60 / 108, 4, 4),
     'Zonfahare':        ('zonfahare16.py', None, 60 / 112, 4, 4),
@@ -43,6 +43,12 @@ SONGS = {
     'Wells':            ('wells16.py', None, 60 / 72, 3, 4),
     'Forbidden_Lore':   ('forbidden_lore16.py', None, 60 / 60, 4, 4),
     'Hunt':             ('hunt16.py', None, 60 / 72, 4, 4),
+    'Zonfahare_Night':  ('night16.py', 'zonfahare', 60 / 72, 4, 4),
+    'Mansehare_Night':  ('night16.py', 'mansehare', 60 / 66, 4, 4),
+    'Aguerekeu_Night':  ('night16.py', 'aguerekeu', 60 / 70, 4, 4),
+    'Laurel_Forest_Night': ('night16.py', 'laurel', 60 / 66, 4, 4),
+    'Grasslands_Night': ('night16.py', 'grasslands', 60 / 66, 4, 4),
+    'Salt_Marsh_Night': ('night16.py', 'marsh_night', 60 / 60, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
