@@ -15,13 +15,17 @@ switches, variables, common events) are reserved only once they're built.
 | 3 | MAP003 | 17×13, Interior: a few tiles. Sketch, no events |
 | 4 | TEST ROOM | Working examples of every system; New Game starts here |
 | 5 | Prologue | **Done**: Thenmy's narration, drips, moves to map 6 with the Ghost alone |
-| 6 | Lava Tube: Waking | Placeholder floor; `Waking` autorun and a `TODO` for the remains at (8, 6) |
+| 6 | Lava Tube: Waking | Placeholder floor; `Waking` autorun; the remains at (8, 6) and five `TODO` objects (below), not yet scripted |
 
 Ready to use: Star Mother, Red Bowl, Sooty Bird idols and the Sundial (CE 3, 6, 7, 4); Gather (CE 5);
 Crawlway (CE 8); Choose Yoon (CE 9) and Yoon's Room: Keepsakes (CE 10); **Scene: Yoon's New Body (CE 11)**,
 **Scene: The Bone (CE 12)**, **Scene: Jogging Yoon's Memory (CE 14)**; visible enemies (`<Wanderer: n>`);
 the Act 2 troops and bosses (Parl 30, Great Boar 27, Daughter of the Wells 26, Lady of the Woods 29);
 the body ingredients and clues as key items 721–733.
+
+Music for every Act 1–2 place and scene now exists (see music-brief.md); SI_NightMusic swaps a map's day
+track for its `_Night` version by itself. Clue-hunting can use Mystery, camp scenes Campfire, funny beats
+Comedy, and beaches Beach / Beach_Night.
 
 **Missing:** story switches and variables, a defeat/rescue common event (SI_Wanderers' *Defeat Common
 Event* is `0`, so losing a fight is a game over), and every map past the waking tube.
@@ -95,6 +99,13 @@ and loading screens, so **towns put several small interiors on one "Interiors" m
   Lasa joins, Story → 20.
 - **Word spots** (First Words): rock, water, light, bones... Each examined *with Lasa* teaches a word:
   Words +1, self switch A. Yoon's dialogue elsewhere branches on Words.
+- **Already placed (TODOs, no commands yet):** the **Star-Metal Sword** (16, 6), a meteoric iron sword
+  in the ground; the **Skull on a Spear** (21, 13–14), giving **Crew Remains** (item 127) and the first
+  **Wooden Spear** (weapon 131); two **mummification supplies** loot spots (27–28, 6); a **Broken Ladder**
+  (26, 15). The Ghost can't hold things or equip weapons, so each gets a Ghost page ("your hand passes
+  through it") and a pick-up page once Sib is along (Story ≥ 60). There's no meteoric-iron weapon in the
+  database yet, and the mummy supplies need contents (Linen Cloth? Ochre Grave Paint? Pine Pitch?).
+  Does the broken ladder block a way up until it's mended, or is it set dressing?
 - Does the Ghost need darkness? With no light, a `<Dark>` map is very dark. Either skip `<Dark>` in Act 1,
   or let the Ghost glow faintly.
 
@@ -103,8 +114,7 @@ eyot. A garden under the skylight (Sweet Potato, Taro, Bellflower Bush spots). A
 idol** for Act 2. A **crawlway** into a side tube shows the children-only rule early.
 
 **8 The Warrens** (optional in Act 1, see questions): Lasa's people's tunnel town. Children of the Caves NPCs,
-the Cave Hoard trader (buy back stolen things), more First Words spots. BGM: Lava_Tubes, or the planned
-Warrens track.
+the Cave Hoard trader (buy back stolen things), more First Words spots. BGM Warrens.
 
 **9 Yoon's Home (eyot)**: outdoor, `<Area: Home>`. The rocky eyot in the river just north of town, where
 town, forest, grassland and marsh meet. Ladder the goat on the roof.
@@ -113,22 +123,22 @@ town, forest, grassland and marsh meet. Ladder the goat on the roof.
 - **Patience** wags at the empty air (she joins with Sib).
 - Exits: town (south), marsh (east), fields (south-east), forest (north). This map is the Act 2 hub's heart.
 
-**10 Yoon's Home (inside)**: `<Indoors>` `<Area: Home>`, BGM Grief in Act 1, then the Home track.
+**10 Yoon's Home (inside)**: `<Indoors>` `<Area: Home>`, BGM Home_Grieving in Act 1, then Home.
 - **Keepsakes** in Yoon's room: CE 10 + self switch A.
 - **Mada's free rest point** (Star Mother idol, or a bed scripted the same way).
 
-**11 Zonfahare**: outdoor, no map tags needed. BGM Zonfahare (Act 1: thin, far away,
-the planned "Unseen" track). **Red Bowl idol** and **Sooty Bird idol** (`<Sooty Bird: Zonfahare>`) at the
+**11 Zonfahare**: outdoor, no map tags needed. BGM Zonfahare (SI_NightMusic swaps in
+Zonfahare_Night by itself). Sneaking for slipping past Juda. **Red Bowl idol** and **Sooty Bird idol** (`<Sooty Bird: Zonfahare>`) at the
 telegraph station. NPCs from lore.md: Tazo, Acaymo, Tegue, Arminda, Uira and Poko, Chief Tama, Old Tinerfe.
 - Act 1: people talk *about* Yoon and the search (mourning, the lava tubes, "Sib hasn't eaten").
   Seers react: Tinerfe squints, Tibiabin smiles. **Juda**: an event that sets switch 10 if Yoon walks into
   his line of sight (or a scripted moment).
-- **Contact with Sib** (Story 50): where? Juda's shrine at dusk, the telegraph station, or the tube
+- **Contact with Sib** (Story 50, BGM Recognition): where? Juda's shrine at dusk, the telegraph station, or the tube
   where they used to play. See questions.
 - Act 2: **Acaymo** sells the silver; Uira's **Telegraph Log** (a clue, Evidence +1) once the case opens.
 
 **12 Zonfahare Interiors**: `<Indoors>`. Several rooms on one map: **Juda's house and shrine** (Sib's room,
-the books for Forbidden Lore, sneaking past Juda at night), the **telegraph station**, the **market**,
+the books for Forbidden Lore (BGM Forbidden_Lore), sneaking past Juda at night (Sneaking)), the **telegraph station**, the **market**,
 **Tegue's** smithy (repairs only: he can't make weapons any more),
 **Arminda's** tattoo house (`open('tattooist')`), the **chief's hall**.
 
@@ -149,7 +159,7 @@ should feel like a mistake (troops 38, 39: a sting area).
 the ferryman (knows where Parl is, for the right price), **Ana** the night telegraph operator (the voice on
 the wire), Old Guacimara. Red Bowl idol and Sooty Bird idol.
 
-**16 Parl's Hideout**: in the deep marsh. **The Chase**, then **Boss: Parl (troop 30)**. After the battle:
+**16 Parl's Hideout**: in the deep marsh. **The Chase** (BGM Chase), then **Boss: Parl (troop 30)**. After the battle:
 the choice that sets variable 8 (dead / enemy / ally), Sea Pearl, **Parl's Notebook** (a clue).
 
 **17 Mansehare** + **18 Mansehare Interiors**: the shore town past the marsh. BGM Mansehare /
@@ -170,20 +180,20 @@ Bracken, Strawberry Tree spots; Wild Boars (1), the laurel mix (2), Centipedes (
 (61). The **broken staff** clue: Patience digs it up (a spot only Patience triggers? a Script check that
 actor 12 is in the party). Places Pada can't go yet are blocked until switch 11.
 
-**20 The Lady's Table**: her feasting hall. BGM: the planned Lady's Table track. Pada asks leave to hunt
+**20 The Lady's Table**: her feasting hall. BGM Ladys_Table. Pada asks leave to hunt
 the Great Boar and cut a dragon tree: switch 11 on. A failure or insult could lead to the lowland Lady boss
 (troop 29), or keep her as a later fight.
 
 **21 Laurel Forest: Deep**: Boar-Men (10), Imps and Green Horses (9), Owls (11), the Forest Patrol (12): the
 "you broke the forest's rules" fights; the simulation says place these only after Pada joins. The
 **Dragon Tree** (Dragon-Tree Framework: a story event, not CE 5, since it gives a key item once) and the
-**living Bellflower** (the heart; **Living Things**). Exits to the forest homes (optional): the **Maiden's
+**living Bellflower** (the heart; BGM Living_Things). Exits to the forest homes (optional): the **Maiden's
 Spring**, the **Children's Garden**, the **Boar's Wallow**, the **Owl Towers**.
 
-**22 The Great Boar's Ground**: **The Hunt** (tracking, Pada's horn call), then **Boss: Great Boar
+**22 The Great Boar's Ground**: **The Hunt** (BGM Hunt: tracking, Pada's horn call), then **Boss: Great Boar
 (troop 27)**, Can Escape off, then Great Boar Flesh and Story → 120.
 
-**23 The Well** (optional): a First Sailor well; **Boss: Daughter of the Wells (troop 26)**, switch 12.
+**23 The Well** (optional): a First Sailor well; **Boss: Daughter of the Wells (troop 26)**, switch 12. BGM Wells.
 
 **24 Highland Pines / Idekeu** (route 6): `<Dark At Night>`, BGM Alpine_Forest. The Idekeu loggers (Tuu,
 Ayoze, Hupa flirting with an oblivious Pada). Pine, Pine Resin, Juniper spots; Ravens (15), Mouflon (17).
@@ -191,10 +201,10 @@ Ayoze, Hupa flirting with an oblivious Pada). Pine, Pine Resin, Juniper spots; R
 **25 Alpine Meadows / Chafakeu**: Nui, Yeh, Bentor (he saw the Shepherd of the Deer). Alpine Herd (18),
 Golden Eagles (19), Hares (74). The Shepherd (troop 28) belongs to Act 3 or later unless you want it here.
 
-**26 The Snow Line**: wind, Snowline Quartz. The **Snow Urn**: a story event (the urn needs Sib's magic to
+**26 The Snow Line**: BGM Snowy_Peak. Wind, Snowline Quartz. The **Snow Urn**: a story event (the urn needs Sib's magic to
 stay frozen) → Story 130.
 
-**27 The Ritual Site**: where the body is made. **CE 11 Scene: Yoon's New Body**, then swap actor 1
+**27 The Ritual Site**: where the body is made. **CE 11 Scene: Yoon's New Body** (BGM Ritual), then swap actor 1
 (Ghost) for actor 2 (Yoon) in the party, Story 140, then **CE 14** the next morning. Where it happens is an
 open question.
 
