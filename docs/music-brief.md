@@ -24,7 +24,7 @@ whistle), and Mediterranean modes for the invaders.
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
-**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table** and **Warrens**.
+**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore** and **Hunt**.
 
 **Leitmotif links:** the Seafarer fanfare (1-5-1-2-flat 3) runs through Seafarers and Battle_Seafarers;
 Thenmy's opening fifth (C up to G) becomes a tritone (C up to G-flat) in Meneswa's theme; his dark D-flat
@@ -148,13 +148,13 @@ turns to cold wind and stars); a small plugin could switch tracks by the game's 
   lonely kalimba against the warm sounds of life.
 - **Home:** Yoon's family house (the twins can see Yoon; the family grieving): Yoon's theme as a half-remembered
   music box, warmer than Grief.
-- **Recognition** (end of Act 1): Sib realising who the ghost is: a bell, Sib's counting notes, then Yoon's,
+- **Recognition** (done; end of Act 1): Sib realising who the ghost is: a bell, Sib's counting notes, then Yoon's,
   finally heard (Grief's unheard answer, reversed).
-- **Sneaking:** the ritual is forbidden and Juda mustn't know: tiptoeing, plucked, comic pauses.
-- **Forbidden Lore:** Sib reading the ritual in Juda's books by candlelight: his hymn hushed, something wrong in it.
+- **Sneaking** (done): the ritual is forbidden and Juda mustn't know: tiptoeing, plucked, comic pauses.
+- **Forbidden Lore** (done: Forbidden_Lore): Sib reading the ritual in Juda's books by candlelight: his hymn hushed, something wrong in it.
 - **The Chase:** hunting Parl down before his fight: his jig fast and slippery, running into Boss_Parl.
-- **The Hunt:** tracking the Great Boar with Pada: quiet and tense, his horn call held back, a heartbeat drum.
-- **The Wells:** freeing one of the Lady's daughters from a First Sailor well: water, stone, echoes; Tou's minuet
+- **The Hunt** (done: Hunt): tracking the Great Boar with Pada: quiet and tense, his horn call held back, a heartbeat drum.
+- **The Wells** (done: Wells): freeing one of the Lady's daughters from a First Sailor well: water, stone, echoes; Tou's minuet
   and Falmi's theme tangled together. A daughter could fight to Battle_Ancients.
 - **Living Things:** harvesting the dragon tree and the living bellflower (the heart): Falmi's sprouting phrase
   growing into Yoon's theme.

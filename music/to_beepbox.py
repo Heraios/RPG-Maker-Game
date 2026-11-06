@@ -38,6 +38,11 @@ SONGS = {
     'Campfire':         ('campfire16.py', None, 60 / 56, 4, 3),           # 6/8: a beat is a dotted quarter
     'Ladys_Table':      ('ladys_table16.py', None, 60 / 132, 4, 4),       # 2/4: a BeepBox bar is two
     'Warrens':          ('warrens16.py', None, 60 / 84, 3, 4),
+    'Recognition':      ('recognition16.py', None, 60 / 66, 4, 4),
+    'Sneaking':         ('sneaking16.py', None, 60 / 108, 4, 4),
+    'Wells':            ('wells16.py', None, 60 / 72, 3, 4),
+    'Forbidden_Lore':   ('forbidden_lore16.py', None, 60 / 60, 4, 4),
+    'Hunt':             ('hunt16.py', None, 60 / 72, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
