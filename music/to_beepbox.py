@@ -33,6 +33,11 @@ SONGS = {
     'Rest_Isle':        ('jingles16.py', 'rest', 60 / 72, 4, 4),
     'Item_Isle':        ('jingles16.py', 'item', 60 / 120, 4, 4),
     'Save_Isle':        ('jingles16.py', 'save', 60 / 84, 4, 4),
+    'Ritual':           ('ritual16.py', None, 60 / 76, 4, 4),
+    'Mystery':          ('mystery16.py', None, 60 / 96, 4, 4),
+    'Campfire':         ('campfire16.py', None, 60 / 56, 4, 3),           # 6/8: a beat is a dotted quarter
+    'Ladys_Table':      ('ladys_table16.py', None, 60 / 132, 4, 4),       # 2/4: a BeepBox bar is two
+    'Warrens':          ('warrens16.py', None, 60 / 84, 3, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
@@ -132,7 +137,7 @@ def install():
     s16.Stereo = Recorder
     s16.snes_master = lambda L, R, **kw: (L, R)
     def finish_loop(L, R, start_s, end_s): owner(L).loop = (start_s, end_s); return L, R, (0, 1)
-    def save_stereo(L, R, path, loop=None, preview=None): owner(L).path = path
+    def save_stereo(L, R, path, loop=None, preview=None, gain=1.0): owner(L).path = path
     def save_me(L, R, path): owner(L).path = path
     s16.finish_loop, s16.save_stereo, s16.save_me = finish_loop, save_stereo, save_me
     pad = np.pad
