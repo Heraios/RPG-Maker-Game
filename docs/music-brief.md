@@ -24,7 +24,7 @@ whistle), and Mediterranean modes for the invaders.
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
-**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore**, **Hunt**, **Chase**, **Home**, **Home_Grieving**, **Living_Things**, **Comedy**, **Snowy_Peak**, **Beach**. Night versions: **Zonfahare_Night**, **Mansehare_Night**, **Aguerekeu_Night**, **Laurel_Forest_Night**, **Grasslands_Night**, **Salt_Marsh_Night**, **Beach_Night**.
+**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore**, **Hunt**, **Chase**, **Home**, **Home_Grieving**, **Living_Things**, **Comedy**, **Snowy_Peak**, **Beach**, **First_Words**. Night versions: **Zonfahare_Night**, **Mansehare_Night**, **Aguerekeu_Night**, **Laurel_Forest_Night**, **Grasslands_Night**, **Salt_Marsh_Night**, **Beach_Night**.
 
 **Leitmotif links:** the Seafarer fanfare (1-5-1-2-flat 3) runs through Seafarers and Battle_Seafarers;
 Thenmy's opening fifth (C up to G) becomes a tritone (C up to G-flat) in Meneswa's theme; his dark D-flat
@@ -41,6 +41,8 @@ plays it that way. The Ritual gathers every friend's motif into Yoon's theme; My
 Falmi's sprout (F A C) and Yoon's opening (D F A) share F and A: in Living_Things the sprout grows into Yoon's theme
 a note at a time. The **Lady of the Wind** has her own leitmotif (`music/wind_tune.py`: E dorian, a falling gust, a
 rising gust, a high cold arc with a C sharp, a sigh), first heard on Snowy_Peak.
+In First_Words, Yoon's first remembered word is "Sib" (Sib's three counting notes, answering Lasa's "Rock!"), the first
+note Yoon holds steady is A (Lasa's home note and the heart of Yoon's D minor), and a bar of Lasa's guilt hides at the end.
 
 ## Three peoples, three sounds
 | Who | Sound | Notes |
@@ -149,7 +151,7 @@ breaks. By day the wilds have daytime insects (grasshoppers, bees, cicadas); cri
 - If the route goes there: **Idekeu**, **Chafakeu**, **Afarohare**, **Jarcotapu**.
 
 **New ideas:**
-- **First Words** (Act 1): Lasa teaching Yoon to speak: her theme and Yoon's taking turns, Yoon's starting as
+- **First Words** (done: First_Words; Act 1): Lasa teaching Yoon to speak: her theme and Yoon's taking turns, Yoon's starting as
   single notes and slowly joining into phrases.
 - **Unseen** (Act 1): Yoon drifting among people who can't see them: Zonfahare's music thin and far away, or a
   lonely kalimba against the warm sounds of life.
