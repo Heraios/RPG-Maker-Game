@@ -457,7 +457,8 @@ with the party: to prove whose side he's on.
 - **Why he's required:** the party needs **a drill to dig deeper into the lava tubes**, and only Aday can
   design it.
 - **The drill breaks the island's oldest *tapu*.** The deep tubes below the old tombs are **the
-  Destroyer's**, and nobody digs there. **Atteneri** uses it against Sib ("a child priest letting a
+  Destroyer's**, and nobody digs there. **Where:** the cracked tomb (Grave D) in the lava tube where Yoon
+  woke (map 6), where warm air breathes up from below; Sib and Lasa already shy away from it in Act 2. **Atteneri** uses it against Sib ("a child priest letting a
   half-foreign child bore into the Destroyer's house"), some Islanders blame Aday's Seafarer blood, and Sib,
   as high priest, has to rule on it. Permission could be a scene: a rite at Jarcotapu, Itahisa's grudging
   blessing, an offering to the Star Mother.

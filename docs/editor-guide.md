@@ -200,8 +200,10 @@ one real hazard.
 - **Map 6 "Lava Tube: Waking"** is playable. The Ghost wakes over Yoon's remains (Story = 10). The Ghost's
   name is **???** for now.
   - **Act 1** (the Ghost; no combat): every object gives a wordless impression; the Ghost can't touch
-    anything. The **still water** at (12, 11) shows a face: "Do you see a boy, a girl, or something
-    else?" sets Yoon's gender. Walking into the **skylight garden** the first time, **Lasa** drops in and
+    anything. The **still water** at (25, 10), in the skylight's sunlight, twinkles until the Ghost looks in
+    (`!$Twinkle.png`, an event graphic any "look here" spot can reuse: copy the event's page 1 graphic and
+    movement route). It shows a face: "Do you see a boy, a girl, or something else?" sets Yoon's gender.
+    **Yoon's blood** (the stain at 10, 9) gives the Ghost a cold feeling the first time it steps on it. Walking into the **skylight garden** the first time, **Lasa** drops in and
     joins (Story = 20; her name screen opens). The Red Bowl saves.
   - **Act 2** (Sib in the party and **Story ≥ 50**: every Act 2 page has those two conditions): the
     remains run *Scene: The Bone* (Story = 60); the skull on the spear gives Crew Remains and a Wooden

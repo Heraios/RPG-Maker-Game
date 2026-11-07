@@ -55,6 +55,11 @@ module.exports = {
             const bats = $gameMap.events().find(e => e.event().name === 'Wandering Enemy: Bats');
             return { batsAway: bats.isWanderAway(), skeletonPage: $gameMap.events().find(e => e.event().name === "Yoon's Skeleton").findProperPageIndex() };
         });
+        // Yoon's blood: stepping on the stain gives the Ghost an impression, once
+        await h.eval(() => { $gamePlayer.locate(10, 8); $gamePlayer.moveStraight(2); });
+        await h.page.waitForTimeout(500);
+        await h.pumpMessages();
+        const blood = await h.eval(() => ({ on: $gamePlayer.x + ',' + $gamePlayer.y, felt: $gameSelfSwitches.value([6, $gameMap.events().find(e => e.event().name === "Yoon's Blood").eventId(), 'A']) }));
         // the reflection: the first choice (a boy)
         await h.eval(() => { $gameParty._actors = [1]; $gamePlayer.locate(11, 11); $gamePlayer.setDirection(6); $gameMap.event(45).start(); });
         await h.pumpMessages();
@@ -76,6 +81,8 @@ module.exports = {
         });
         t.ok(act1.batsAway, 'Act 1: no bats (no fighting as a ghost)');
         t.eq(act1.skeletonPage, 0, 'Act 1: the remains only give the ghost an impression');
+        t.eq(blood.on, '10,9', 'the Ghost steps onto the stain');
+        t.ok(blood.felt, 'and feels it (Yoon\'s Blood, once)');
         t.eq(gender.g, 1, 'the reflection sets Yoon\'s gender');
         t.ok(gender.done, '...once');
         t.eq(lasa.party, '1,4', 'Lasa joins in the garden');
