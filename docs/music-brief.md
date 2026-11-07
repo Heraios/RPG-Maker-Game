@@ -24,7 +24,7 @@ whistle), and Mediterranean modes for the invaders.
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
-**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore**, **Hunt**, **Chase**, **Home**, **Home_Grieving**, **Living_Things**, **Comedy**, **Snowy_Peak**, **Beach**, **First_Words**. Night versions: **Zonfahare_Night**, **Mansehare_Night**, **Aguerekeu_Night**, **Laurel_Forest_Night**, **Grasslands_Night**, **Salt_Marsh_Night**, **Beach_Night**.
+**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore**, **Hunt**, **Chase**, **Home**, **Home_Grieving**, **Living_Things**, **Comedy**, **Snowy_Peak**, **Beach**, **First_Words**, **Unseen**, **Eyot** and **Eyot_Grieving** (Yoon's home outside), **Idekeu**, **Chafakeu**, **Maiden_Spring**, **Childrens_Garden**, **Boars_Wallow**, **Owl_Towers**. Night versions: **Zonfahare_Night**, **Mansehare_Night**, **Aguerekeu_Night**, **Laurel_Forest_Night**, **Grasslands_Night**, **Salt_Marsh_Night**, **Beach_Night**, **Eyot_Night**, **Idekeu_Night**, **Chafakeu_Night**, **Alpine_Forest_Night**.
 
 **Leitmotif links:** the Seafarer fanfare (1-5-1-2-flat 3) runs through Seafarers and Battle_Seafarers;
 Thenmy's opening fifth (C up to G) becomes a tritone (C up to G-flat) in Meneswa's theme; his dark D-flat
@@ -81,8 +81,8 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
 **Villages** (sounds first, fragments of the tune):
 - **Aguerekeu** (done): frogs, water under the stilts, the poling stroke; the Island tune **blended with the Marsh
   tune**; a Hag's crane call far off that nobody reacts to; faintly, a second hand on the telegraph line (Parl).
-- **Idekeu:** axes, a falling tree, pitch fires, Tuu coughing; a rough work song.
-- **Chafakeu:** sheep bells, wind; the tune whistled across the valley, answered by another whistle (*silbo*).
+- **Idekeu** (done, with Idekeu_Night): axes, a falling tree, pitch fires, Tuu coughing; a rough work song.
+- **Chafakeu** (done, with Chafakeu_Night; Yeh's telegraph rambles on): sheep bells, wind; the tune whistled across the valley, answered by another whistle (*silbo*).
 - **Tabonakeu:** chisels; the tune in stone clacks over desert wind; silence where the Stonemen stand.
 - **Corajakeu:** great wind, seabirds, creaking ropes; a brave little tune plucked high over booming waves.
 - **Tacandakeu:** bubbling springs, steam, the electric hum; the tune ticking like a machine.
@@ -105,9 +105,9 @@ Lady). Each arranges it its own way:
 - **The Lady of the Woods:** the theme grand and old, as if Falmi's tune were really hers all along.
 - **The Master of Deception:** the theme as a trick: it changes shape, starts in the wrong key, giggles.
 - **The Shepherd of the Deer:** the theme on a lone shepherd's pipe, with bells; the songs priests teach him.
-- **The Lady's Table:** a too-merry feast on it. **The Children's Garden:** whispers and giggles, the theme
-  tiny and fragile (the Princess's fires come for it in Act 5). **The Maiden's Spring:** running water, a wordless
-  song on it. **The Boar's Wallow:** mud, heavy drums, cheering; the theme as a stomp.
+- **The Lady's Table:** a too-merry feast on it. **The Children's Garden** (done: Childrens_Garden): whispers and giggles, the theme
+  tiny and fragile (the Princess's fires come for it in Act 5). **The Maiden's Spring** (done: Maiden_Spring): running water, a wordless
+  song on it. **The Boar's Wallow** (done: Boars_Wallow): mud, heavy drums, cheering; the theme as a stomp.
 
 **The Buried Court and the dry side: Tou's theme.** The volcanic desert and Tou's palace each have **Tou's
 leitmotif** (her music-box minuet, E minor, 3/4):
@@ -116,7 +116,7 @@ leitmotif** (her music-box minuet, E minor, 3/4):
 - **Tou's palace:** the minuet in empty halls with long echoes; a frozen court.
 - **The Warrens:** cave ambience (as in Lava_Tubes), with Tou's minuet faintly under it: the Children of the
   Caves are her subjects.
-- **The Owl Towers:** the two themes **at war**: Falmi's (F major) and Tou's (E minor) a semitone apart,
+- **The Owl Towers** (done: Owl_Towers): the two themes **at war**: Falmi's (F major) and Tou's (E minor) a semitone apart,
   fighting over the ruins, as the Lady and Tou dispute the Owls' loyalty. (Falmi's own theme already stumbles
   over Tou's tune.)
 
@@ -136,7 +136,8 @@ songs at night).
 **Day and night:** each wild place can have a night version (forest birds become owls and frogs; the desert
 turns to cold wind and stars). The **SI_NightMusic** plugin switches them by the game's time of day: a map whose
 track has a night version (its name plus `_Night`) plays that at night, fading across when night falls or day
-breaks. By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
+breaks. A map note `<Story BGM: Unseen, 50>` gives a map other music until the Story variable reaches 50
+(Act 1: Unseen in Zonfahare, Eyot_Grieving on the eyot, Home_Grieving at home). By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
 
 ## Still to make: Acts 1 and 2
 **Already planned:**
@@ -148,12 +149,12 @@ breaks. By day the wilds have daytime insects (grasshoppers, bees, cicadas); cri
 - **The Lady's Table** (done: Ladys_Table): Falmi's theme as her feast (Pada asks permission for the hunt).
 - **The Warrens** (done): the Children of the Caves' village: cave ambience with Tou's minuet faintly under it.
 - **Snowy peak** (done: Snowy_Peak). **Beach** (done: Beach, Beach_Night).
-- If the route goes there: **Idekeu**, **Chafakeu**, **Afarohare**, **Jarcotapu**.
+- **Idekeu** and **Chafakeu** (done). If the route goes there: **Afarohare**, **Jarcotapu**.
 
 **New ideas:**
 - **First Words** (done: First_Words; Act 1): Lasa teaching Yoon to speak: her theme and Yoon's taking turns, Yoon's starting as
   single notes and slowly joining into phrases.
-- **Unseen** (Act 1): Yoon drifting among people who can't see them: Zonfahare's music thin and far away, or a
+- **Unseen** (done; Act 1): Yoon drifting among people who can't see them: Zonfahare's music thin and far away, or a
   lonely kalimba against the warm sounds of life.
 - **Home** (done: Home and Home_Grieving; the house on the river eyot): Yoon's family house (the twins can see Yoon; the family grieving): Yoon's theme as a half-remembered
   music box, warmer than Grief.
