@@ -58,6 +58,10 @@ SONGS = {
     'Beach':            ('beach16.py', 'day', 60 / 84, 4, 4),
     'Beach_Night':      ('beach16.py', 'night', 60 / 66, 4, 4),
     'First_Words':      ('first_words16.py', None, 0.81, 4, 3),           # 6/8: a beat is a dotted quarter
+    'Unseen':           ('unseen16.py', None, 60 / 96, 4, 4),
+    'Eyot':             ('eyot16.py', 'day', 60 / 92, 4, 4),
+    'Eyot_Grieving':    ('eyot16.py', 'grieving', 60 / 66, 4, 4),
+    'Eyot_Night':       ('eyot16.py', 'night', 60 / 66, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),

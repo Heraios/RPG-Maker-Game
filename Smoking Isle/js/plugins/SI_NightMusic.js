@@ -11,7 +11,7 @@
  * @param Night Tracks
  * @desc Tracks that have a night version, named the same with _Night on the
  * end (in audio/bgm). A map playing one of these switches at night.
- * @default Zonfahare, Mansehare, Aguerekeu, Laurel_Forest, Grasslands, Salt_Marsh, Beach
+ * @default Zonfahare, Mansehare, Aguerekeu, Laurel_Forest, Grasslands, Salt_Marsh, Beach, Eyot
  *
  * @param Night Periods
  * @desc Which periods count as night for the music (0 Dawn, 1 Day, 2 Dusk,
