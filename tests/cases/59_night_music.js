@@ -58,4 +58,37 @@ module.exports = {
         const missing = r.tracks.filter(n => !['.ogg', '.m4a'].every(x => fs.existsSync(path.join(bgm, n + '_Night' + x))));
         t.eq(missing.join(', '), '', 'every night version is in audio/bgm (.ogg and .m4a)');
     },
+    'story music: <Story BGM> plays other music early in the story': async (h, t) => {
+        await h.newGame();
+        const r = await h.eval(() => {
+            const N = SmokingIsle.NightMusic, T = SmokingIsle.Time, out = {}, calls = [];
+            const AM = AudioManager, keep = { play: AM.playBgm, out: AM.fadeOutBgm, in: AM.fadeInBgm };
+            AM.playBgm = function(bgm) { calls.push('play ' + bgm.name); this._currentBgm = { name: bgm.name }; };
+            AM.fadeOutBgm = function() { calls.push('fade out'); this._currentBgm = null; };
+            AM.fadeInBgm = function() { calls.push('fade in'); };
+            const take = () => calls.splice(0).join(', ');
+            const settle = () => { for (let i = 0; i < 400; i++) N.update(); };
+            const note = $dataMap.note, auto = $dataMap.autoplayBgm, bgm = $dataMap.bgm, story = $gameVariables.value(5);
+            $dataMap.autoplayBgm = true; $dataMap.bgm = { name: 'Zonfahare', volume: 90, pitch: 100, pan: 0 };
+            $dataMap.note = '<Story BGM: Unseen, 50>';
+            $gameVariables.setValue(5, 30);
+            T.state().period = 1; $gameMap.autoplay(); out.act1Day = take();
+            T.state().period = 3; settle(); out.act1Night = take();
+            $gameVariables.setValue(5, 50); settle(); out.act2Night = take();
+            T.state().period = 1; settle(); out.act2Day = take();
+            // two notes: the lowest the story hasn't reached wins
+            $dataMap.note = '<Story BGM: Eyot_Grieving, 50><Story BGM: Grief, 30>';
+            $gameVariables.setValue(5, 10); $gameMap.autoplay(); out.first = take();
+            $gameVariables.setValue(5, 40); $gameMap.autoplay(); out.second = take();
+            AM.playBgm = keep.play; AM.fadeOutBgm = keep.out; AM.fadeInBgm = keep.in; AM._currentBgm = null;
+            $dataMap.note = note; $dataMap.autoplayBgm = auto; $dataMap.bgm = bgm; $gameVariables.setValue(5, story); T.state().period = 1;
+            return out;
+        });
+        t.eq(r.act1Day, 'play Unseen', 'in Act 1 (Story 30) the town plays Unseen');
+        t.eq(r.act1Night, '', '... at night too (the night swap waits for Act 2)');
+        t.eq(r.act2Night, 'fade out, play Zonfahare_Night, fade in', 'when the story reaches 50, it fades to the town\'s own music (here, its night version)');
+        t.eq(r.act2Day, 'fade out, play Zonfahare, fade in', 'and by day, the town\'s day track');
+        t.eq(r.first, 'play Grief', 'with two notes, the lowest unreached one plays');
+        t.eq(r.second, 'play Eyot_Grieving', '... then the next');
+    },
 };

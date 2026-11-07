@@ -4,7 +4,8 @@
 
 /*:
  * @plugindesc Smoking Isle: night music. At night a map's music switches to its
- * night version (Zonfahare -> Zonfahare_Night), fading across, and back by day.
+ * night version (Zonfahare -> Zonfahare_Night), fading across, and back by day;
+ * and <Story BGM> notes give a map other music early in the story.
  * @author Smoking Isle
  *
  * @param Night Tracks
@@ -16,6 +17,10 @@
  * @desc Which periods count as night for the music (0 Dawn, 1 Day, 2 Dusk,
  * 3 Night). "2, 3" would switch at dusk too.
  * @default 3
+ *
+ * @param Story Variable
+ * @desc The variable that holds the story's progress, for <Story BGM> map notes.
+ * @default 5
  *
  * @param Fade Seconds
  * @desc When night falls (or day breaks) on a map: seconds for the old track
@@ -40,6 +45,12 @@
  * Map notes:
  *   <Night BGM: Shrine>   at night this map plays Shrine instead (any track)
  *   <Night BGM: none>     this map keeps its day track at night
+ *   <Story BGM: Unseen, 50>
+ *                         until the Story variable reaches 50, this map plays
+ *                         Unseen instead, by day and by night (Act 1's ghost
+ *                         in town); after that, its own track and night track.
+ *                         A map can have several: the lowest number that the
+ *                         story hasn't reached yet wins.
  *
  * A new night version: add its name (without _Night) to Night Tracks.
  */
@@ -58,6 +69,7 @@ SmokingIsle.NightMusic = SmokingIsle.NightMusic || {};
     $.tracks = list(params['Night Tracks']);
     $.periods = list(params['Night Periods'] || '3').map(Number);
     $.fadeSeconds = Number(params['Fade Seconds'] || 3);
+    $.storyVariable = Number(params['Story Variable'] || 5);
     $.pending = null;                       // a track waiting for the old one to fade out
     $.lastKey = null;                       // the map and day/night we last chose music for
 
@@ -73,15 +85,27 @@ SmokingIsle.NightMusic = SmokingIsle.NightMusic || {};
         return $.tracks.indexOf(bgm.name) >= 0 ? bgm.name + '_Night' : null;
     };
 
+    // A <Story BGM: name, n> note the story hasn't passed yet (the lowest n), or null.
+    $.storyName = function() {
+        var re = /<Story BGM:\s*([^,>]+),\s*(\d+)\s*>/gi, note = ($dataMap && $dataMap.note) || '', m, best = null;
+        var story = $.storyVariable ? $gameVariables.value($.storyVariable) : 0;
+        while ((m = re.exec(note))) {
+            var until = Number(m[2]);
+            if (story < until && (!best || until < best.until)) best = { name: m[1].trim(), until: until };
+        }
+        return best ? best.name : null;
+    };
+
     // What this map should be playing now (null if it has no autoplay music).
     $.mapBgm = function() {
         if (!$dataMap || !$dataMap.autoplayBgm) return null;
-        var day = $dataMap.bgm, night = $.nightName(day);
+        var day = $dataMap.bgm, night = $.nightName(day), early = $.storyName();
+        if (early) return { name: early, volume: day.volume, pitch: day.pitch, pan: day.pan };
         if (night && $.isNightTime()) return { name: night, volume: day.volume, pitch: day.pitch, pan: day.pan };
         return day;
     };
 
-    $.key = function() { return $gameMap.mapId() + ':' + $.isNightTime(); };
+    $.key = function() { var want = $.mapBgm(); return $gameMap.mapId() + ':' + (want ? want.name : ''); };
 
     // Entering a map: play the right version straight away.
     var _Game_Map_autoplay = Game_Map.prototype.autoplay;
@@ -111,6 +135,8 @@ SmokingIsle.NightMusic = SmokingIsle.NightMusic || {};
         var current = AudioManager._currentBgm;
         if (!current || current.name === want.name) return;
         var mine = [$dataMap.bgm.name, $.nightName($dataMap.bgm)];
+        var re = /<Story BGM:\s*([^,>]+),/gi, note = $dataMap.note || '', m;
+        while ((m = re.exec(note))) mine.push(m[1].trim());
         if (mine.indexOf(current.name) < 0) return;            // an event's music: leave it alone
         AudioManager.fadeOutBgm($.fadeSeconds);
         $.pending = { bgm: want, wait: Math.round($.fadeSeconds * 60) };
