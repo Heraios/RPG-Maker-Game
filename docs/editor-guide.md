@@ -74,10 +74,13 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    | 7 | Night | | | |
    | 8 | Can see | | | |
    | 9 | Juda half-risen (Act 3) | | | |
-   | 13 | Tube: have the old rope (map 6) | | 5 | Story (Acts 1–2: 10 woke, 20 Lasa, 50 Sib, 60 the bone) |
+   | 13 | Tube: have the old rope (map 6) | | 5 | Story (Acts 1–2: 10 woke, 20 Lasa, 25 words, 30 face, 50 Sib, 60 the bone) |
+   | | | | 6 | Words known (First Words) |
+   | | | | 9–11 | Yoon's temperament: Sweet, Funny, Unhinged |
+   | | | | 12–13 | Lasa: times floated away; first impression |
 
-6. **Common events 3–10 and 15** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
-   Choose Yoon, Yoon's Room: Keepsakes; 15 Playtest: To the Test Room).
+6. **Common events 3–10 and 15–18** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
+   Choose Yoon, Yoon's Room: Keepsakes; 15 Playtest: To the Test Room; 16–18 First Words).
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
    effects), 213 (Ready to Toss, Aday's Toss) and 214–219 (the weapon-art stances: Braced, En Garde,
    Warding, Covered, Following Up, Brought Down) are also used by number.
@@ -199,12 +202,25 @@ one real hazard.
   Player**); the automated tests start in the Test Room on their own, whatever the start is.
 - **Map 6 "Lava Tube: Waking"** is playable. The Ghost wakes over Yoon's remains (Story = 10). The Ghost's
   name is **???** for now.
-  - **Act 1** (the Ghost; no combat): every object gives a wordless impression; the Ghost can't touch
-    anything. The **still water** at (25, 10), in the skylight's sunlight, twinkles until the Ghost looks in
-    (`!$Twinkle.png`, an event graphic any "look here" spot can reuse: copy the event's page 1 graphic and
-    movement route). It shows a face: "Do you see a boy, a girl, or something else?" sets Yoon's gender.
-    **Yoon's blood** (the stain at 10, 9) gives the Ghost a cold feeling the first time it steps on it. Walking into the **skylight garden** the first time, **Lasa** drops in and
-    joins (Story = 20; her name screen opens). The Red Bowl saves.
+  - **Act 1** (the Ghost; no combat; it starts with **no moves**): every object gives a wordless
+    impression; the Ghost can't touch anything. **Yoon's blood** (the stain at 10, 9) gives a cold feeling
+    the first time the Ghost steps on it. Then **"First Words"** (scenes.md), built:
+    - **Lasa** drops in the first time the Ghost floats into the skylight's light (event "Lasa (First
+      Words)": a parallel page watches, an autorun page plays the scene). Her offer is **common event 16**:
+      float closer, float away, or wail. Floating away, she waits in the garden (talk to her again); the
+      fourth time she forces her way in. Joining is **common event 17** (her name screen; Mournful Wail;
+      Story = 20).
+    - **The lessons:** with Lasa in the party, each object teaches a word (its "lesson" page, then an
+      "after" page on **Self Switch B**, where the Ghost's line uses the word). 13 words: bones, sleep, star,
+      head, jar, rope, up, fire, sit, food, rock, down, remember. Each try is a choice that raises Sweet,
+      Funny or Unhinged. **Common event 18** runs after each new word: Lasa cheers every third, and at 13
+      the finale (the nickname, Snuggly, Flighty or Spooky, becomes the Ghost's name; Story = 25).
+    - **The face:** the **still water** at (25, 10) starts to twinkle (`!$Twinkle.png`: copy its page's
+      graphic and movement route for any other "look here" spot). Boy, girl or in between sets Yoon's
+      gender; Story = 30. The ladder then offers the way out, floating up through the sky-hole.
+    - Gathering spots and the Red Bowl teach their word first, then work as usual.
+    - **To change the words or lines:** each lesson is on its object's lesson page; Lasa's offer, joining
+      and the finale are common events 16–18.
   - **Act 2** (Sib in the party and **Story ≥ 50**: every Act 2 page has those two conditions): the
     remains run *Scene: The Bone* (Story = 60); the skull on the spear gives Crew Remains and a Wooden
     Spear; the jars give embalming supplies; the rope (switch 13) mends the broken ladder; the log rests;

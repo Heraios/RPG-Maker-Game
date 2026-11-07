@@ -210,9 +210,9 @@ open question.
 
 | CE | Name | What it does |
 |---|---|---|
-| 16 | Defeat: Rescue | Set as SI_Wanderers' *Defeat Common Event*. Story < 100: fade, Sib wakes the party at home (map 10); Story ≥ 100: Pada carries everyone to the last Star Mother idol. Recover all; Pada's scolding line |
-| 17 | Evidence +1 | Adds 1 to variable 7, plays a sound and shows "A clue: ..."; every clue event calls it |
-| 18 | Ritual check | Counts key items 721–727 and tells the party what is still missing (Sib reads the list) |
+| 19 | Defeat: Rescue | Set as SI_Wanderers' *Defeat Common Event*. Story < 100: fade, Sib wakes the party at home (map 10); Story ≥ 100: Pada carries everyone to the last Star Mother idol. Recover all; Pada's scolding line |
+| 20 | Evidence +1 | Adds 1 to variable 7, plays a sound and shows "A clue: ..."; every clue event calls it |
+| 21 | Ritual check | Counts key items 721–727 and tells the party what is still missing (Sib reads the list) |
 
 ## Clues found in Acts 1–2
 

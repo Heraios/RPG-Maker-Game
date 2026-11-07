@@ -7,6 +7,7 @@ branch says otherwise.
 ---
 
 ## Act 1: "First Words" (Lasa finds the Ghost)
+**Built** on map 6 (see editor-guide.md, "The opening"): common events 16–18 and each object's lesson page.
 **Needs:** the Ghost alone. **Setting:** map 6, the lava tube where the Ghost wakes; the skylight garden.
 **Music:** First Words (to make: Lasa's theme and Yoon's taking turns, Yoon's single notes slowly joining
 into phrases).
