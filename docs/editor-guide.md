@@ -74,9 +74,13 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    | 7 | Night | | | |
    | 8 | Can see | | | |
    | 9 | Juda half-risen (Act 3) | | | |
+   | 13 | Tube: have the old rope (map 6) | | 5 | Story (Acts 1–2: 10 woke, 20 Lasa, 25 words, 30 face, 50 Sib, 60 the bone) |
+   | | | | 6 | Words known (First Words) |
+   | | | | 9–11 | Yoon's temperament: Sweet, Funny, Unhinged |
+   | | | | 12–13 | Lasa: times floated away; first impression |
 
-6. **Common events 3–10** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
-   Choose Yoon, Yoon's Room: Keepsakes).
+6. **Common events 3–10 and 15–18** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
+   Choose Yoon, Yoon's Room: Keepsakes; 15 Playtest: To the Test Room; 16–18 First Words).
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
    effects), 213 (Ready to Toss, Aday's Toss) and 214–219 (the weapon-art stances: Braced, En Garde,
    Warding, Covered, Following Up, Brought Down) are also used by number.
@@ -188,12 +192,43 @@ one real hazard.
 - **Map 5 "Prologue"** is black on purpose: its one event shows Thenmy's narration, fades out, plays three
   drips and moves the player to map 6. It also makes the party **the Ghost alone**. Add pictures (the sea,
   the fleet, the smoking peak) with *Show Picture* where the comment in the event says.
-- **Map 6 "Lava Tube: Waking"** has a **placeholder** grey floor: repaint it as the lava tube. The `TODO`
-  event under the Ghost is Yoon's remains; give it a skeleton graphic.
-- **To make the real game start there:** in the editor, right-click a tile on the Prologue map →
-  **Set Starting Position → Player**. While you're still testing other things, leave the start in the
-  Test Room and use its **Play the Opening** door instead. (That door turns your test party into the
-  Ghost alone.)
+- **The Prologue plays the Prologue track** (map 5's Autoplay BGM); it fades out with the screen before
+  the drips.
+- **Playtesting:** in a playtest (only), the Prologue puts a **Test Room Pass** (item 736, Key Items) in the
+  bag. Use it from the menu to go to the Test Room with the test party (common event 15).
+- **New Game starts on the Prologue.** The player starts invisible (Database → System → *Transparent*),
+  so nothing shows on the black screen; the Ghost appears when it wakes. To test other things quickly,
+  set the starting position to the Test Room for a while (right-click a tile → **Set Starting Position →
+  Player**); the automated tests start in the Test Room on their own, whatever the start is.
+- **Map 6 "Lava Tube: Waking"** is playable. The Ghost wakes over Yoon's remains (Story = 10). The Ghost's
+  name is **???** for now.
+  - **Act 1** (the Ghost; no combat; it starts with **no moves**): every object gives a wordless
+    impression; the Ghost can't touch anything. **Yoon's blood** (the stain at 10, 9) gives a cold feeling
+    the first time the Ghost steps on it. Then **"First Words"** (scenes.md), built:
+    - **Lasa** drops in the first time the Ghost floats into the skylight's light (event "Lasa (First
+      Words)": a parallel page watches, an autorun page plays the scene). Her offer is **common event 16**:
+      float closer, float away, or wail. Floating away, she waits in the garden (talk to her again); the
+      fourth time she forces her way in. Joining is **common event 17** (her name screen; Mournful Wail;
+      Story = 20).
+    - **The lessons:** with Lasa in the party, each object teaches a word (its "lesson" page, then an
+      "after" page on **Self Switch B**, where the Ghost's line uses the word). 13 words: bones, sleep, star,
+      head, jar, rope, up, fire, sit, food, rock, down, remember. Each try is a choice that raises Sweet,
+      Funny or Unhinged. **Common event 18** runs after each new word: Lasa cheers every third, and at 13
+      the finale (the nickname, Snuggly, Flighty or Spooky, becomes the Ghost's name; Story = 25).
+    - **The face:** the **still water** at (25, 10) starts to twinkle (`!$Twinkle.png`: copy its page's
+      graphic and movement route for any other "look here" spot). Boy, girl or in between sets Yoon's
+      gender; Story = 30. The ladder then offers the way out, floating up through the sky-hole.
+    - Gathering spots and the Red Bowl teach their word first, then work as usual.
+    - **To change the words or lines:** each lesson is on its object's lesson page; Lasa's offer, joining
+      and the finale are common events 16–18.
+  - **Act 2** (Sib in the party and **Story ≥ 50**: every Act 2 page has those two conditions): the
+    remains run *Scene: The Bone* (Story = 60); the skull on the spear gives Crew Remains and a Wooden
+    Spear; the jars give embalming supplies; the rope (switch 13) mends the broken ladder; the log rests;
+    the old campfire has a clue and crafts; an adult with a pick breaks the basalt boulder; the bats come
+    out; mushrooms (Lasa), jasper and chalcedony are gathering spots. To try Act 2 in a playtest, add Sib
+    and set variable 5 to 50.
+  - **Still to do** (notes in each event): the star-metal sword stays put (no weapon yet); the ladder
+    and the two exits lead to maps that don't exist yet; the rare mushroom needs its own item.
 
 ---
 
@@ -399,6 +434,7 @@ the **SI_Wanderers** plugin does everything; you only place the event.
    | `<Night Only>` / `<Day Only>` | Only out at night / by day |
    | `<Never Flees>` | Never runs from the party (bosses, demons, Black Hounds) |
    | `<Bold>` / `<Timid>` | Runs only from a much stronger party / from a less overwhelming one |
+   | Page conditions | While none of its pages' conditions are met, it isn't out at all: give its page a story condition (map 6's bats need Sib and Story ≥ 50) |
 
 What it does in game: it wanders near where you placed it, chases the party when they step into its
 sight cone (giving up 8 tiles from home), and fights on contact. **Touching it from behind** gives the party

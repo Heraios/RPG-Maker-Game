@@ -46,12 +46,12 @@ module.exports = {
             P.addActor(7);
             out.fits = P.allMembers().filter(a => C.fits(a)).map(a => a.name()).join(',');
             out.ce = $dataCommonEvents[8].name;
-            C.goThrough({ mapId: 1, x: 2, y: 2, dir: 2 });
+            C.goThrough({ mapId: 6, x: 17, y: 13, dir: 2 });
             out.party = P.allMembers().map(a => a.name()).join(',');
             out.waiting = C.waiting().mapId + ':' + C.waiting().actorIds.join(',');
             return out;
         });
-        await h.page.waitForFunction(() => $gameMap.mapId() === 1 && SceneManager._scene instanceof Scene_Map && SceneManager._sceneStarted, null, { timeout: 10000 });
+        await h.page.waitForFunction(() => $gameMap.mapId() === 6 && SceneManager._scene instanceof Scene_Map && SceneManager._sceneStarted, null, { timeout: 10000 });
         await h.pumpMessages();
         const r2 = await h.eval(() => {
             const out = { away: $gameParty.allMembers().map(a => a.name()).join(',') };

@@ -170,7 +170,8 @@ options are scary or way out there**, and the player can pick them. Examples of 
 - Comforting Sib: *"If anyone hurts you I'll put them under the mountain. ...Is that not what friends say?"*
 These sit beside ordinary, sweet and funny options, never instead of them. Other characters react: Sib laughs
 nervously, Lasa takes it as ghost talk, Pada goes quiet, the twins giggle, Juda watches very carefully.
-They feed the ghost-or-demon ambiguity without ever settling it.
+They feed the ghost-or-demon ambiguity without ever settling it. Which kind of line the player picks is
+tracked as **Yoon's temperament** (Sweet, Funny, Unhinged): see "Yoon's temperament" under Systems.
 
 **And it's not that big a leap from before.** Living Yoon was already a bit off-putting: a child happily
 elbow-deep in something. As a boy, butchering the game from Pada's hunts; as a girl, doing vet work on the
@@ -457,7 +458,8 @@ with the party: to prove whose side he's on.
 - **Why he's required:** the party needs **a drill to dig deeper into the lava tubes**, and only Aday can
   design it.
 - **The drill breaks the island's oldest *tapu*.** The deep tubes below the old tombs are **the
-  Destroyer's**, and nobody digs there. **Atteneri** uses it against Sib ("a child priest letting a
+  Destroyer's**, and nobody digs there. **Where:** the cracked tomb (Grave D) in the lava tube where Yoon
+  woke (map 6), where warm air breathes up from below; Sib and Lasa already shy away from it in Act 2. **Atteneri** uses it against Sib ("a child priest letting a
   half-foreign child bore into the Destroyer's house"), some Islanders blame Aday's Seafarer blood, and Sib,
   as high priest, has to rule on it. Permission could be a scene: a rite at Jarcotapu, Itahisa's grudging
   blessing, an offering to the Star Mother.
@@ -485,7 +487,8 @@ A wealthy, independent Seafarer scholar from Keftiu, writing the first proper ac
 Her name distorts **Katherine Routledge**, who led the 1914–15 expedition to Rapa Nui, recorded the birdman
 cult and the islanders' oral history, credited her informants by name, and was caught between the islanders
 and the company that ran the island during the 1914 uprising. Lives in Mansehare, next door to Iras. Her
-sidequest chain fills the compendium (see lore.md, "People of the island").
+sidequest chain adds the scholar's entries to the compendium, **Remembered**, and her notes on what Yoon
+already knows (see "Journal" below, and lore.md, "People of the island").
 
 - **Personality:** brisk and fearless; terrible at small talk, wonderful at listening; morally serious about
   understanding people; pedantic, and honest about her own mistakes. Her blind spot is the empire: she thinks
@@ -804,8 +807,8 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Relationships and sidequests | Yoon's skill learning, Pada's bow, Thenmy's swords | Variables per character; skills and weapon types unlocked by sidequest switches |
 | Missable content | Pada's sidequests | Switches that lock when Pada dies |
 | Languages and literacy | Islander, All-Seafarer, First Sailor | Party checks on inscription and document events (Sib, Parl, Falmi, Tou, Thenmy) |
-| Compendium | Kathrout the scholar's sidequest chain (see lore.md, "People of the island") | Entries on enemies, items, places and customs unlock as you help her; ItemBook/EnemyBook-style menu |
-| Clue and evidence tracking | Murder mystery | A custom journal menu, or repurposing the ItemBook plugin |
+| Journal: quests, evidence, compendium | Act 2's open quest order, Pada's missable sidequests, the murder mystery, Known Words, Kathrout | One custom Journal menu with three tabs (Quests, Evidence, Remembered). See "Journal" |
+| Yoon's temperament | Sweet, Funny and Unhinged choices | Three variables; extra dialogue options, moves, Talk bonuses and small stat states at thresholds. See "Yoon's temperament" |
 | Player-chosen gender | Yoon | Choice (boy, girl or third gender) that sets pronoun substitution in dialogue (he / she / they), how people address Yoon and small flavor effects. **Yoon looks the same whatever the choice.** Built: `SI_Yoon.js`; its per-gender Look settings stay empty |
 | Underwater exploration | Dama | Map events and region checks gated on her spell |
 | Faction choices | Pearl thief, Thenmy | Variables that branch recruitment and relationships |
@@ -970,6 +973,10 @@ the travelling priest (Ward Off), Itahisa (Blood Offering), Jarcotapu (Consecrat
 
 ### Yoon's skills
 The Ghost's versions hit all enemies or all allies; human Yoon's versions hit one target.
+
+**The Ghost starts with no moves.** It learns them from story scenes (Mournful Wail in "First Words",
+scenes.md) and from its temperament (see "Yoon's temperament"), not from levels. *To do:* take the Touches,
+Wails and Cries out of the Ghost class's level 1 learnings.
 
 | Skill | Effect |
 |-------|--------|
@@ -2153,6 +2160,98 @@ the confrontation goes: the more evidence, **the sooner Dama arrives** after Jud
 death, the **better armed** the villagers with her are, and the **fewer NPCs Juda kills** before
 "dying". See lore.md, "The murder", for what happened and the draft clue list.
 
+### Journal
+One **Journal** command in the main menu, with three tabs. Events add entries with one Script line; the
+entries' text lives in one data file, so it can be written and edited outside the editor. A small sound and a
+line at the bottom of the screen ("Journal: a new word") say something was added; the menu is never forced
+open. A custom plugin (`SI_Journal.js`, to build); ItemBook and EnemyBook (both off) are built for items and
+enemies, so a journal made for this game reads better.
+
+**Quests**
+- **Act 2 is open:** silver, pearl and blood in any order, beside town sidequests. Each quest has a title, who
+  gave it, and short steps that tick off as they're done, in Yoon's voice ("Sib says we need silver.").
+- **Sections:** Now, Done, and **Missed**. **Pada's sidequests** still open when he dies in Act 3 move to
+  Missed, greyed out, each with a closing line. The menu stays ordinary; the moment is the grief.
+- **Only the story says what's next.** The log reminds; it doesn't point at the map.
+
+**Evidence**
+- The murder clues (lore.md, "The clue list"): each with where it was found and what it looked like, **never
+  what it means**. The player can't solve the murder directly; the page shows the case growing.
+- Every entry raises the **Evidence** count (the planned variable 7) that decides the mountain fight. The
+  count itself is never shown.
+- A clue found twice (the Copper Ball, then the Broken Staff) adds a line to the first entry: "It fits."
+
+**Remembered** (the compendium)
+The Ghost has no memory, so the compendium is **Yoon's new memory**, named for the word the Red Bowl teaches.
+Yoon keeps it from the first scene; Kathrout adds to it from Act 4.
+
+| Category | Opens | What's in an entry |
+|---|---|---|
+| **Known Words** | Act 1, "First Words" | The word, where it was learned, the line that taught it, and how the Ghost first said it ("Bonz.") |
+| **People** | Act 1 | Who they are and what Yoon has heard them say. Seers (who can see the Ghost) are marked |
+| **Places** | Act 1 | A line or two; the Sooty Bird idols touched there |
+| **Creatures** | Act 2 | The enemies: what Insight and Talk have shown (likes, fears), drops. Replaces EnemyBook |
+| **Things** | Act 2 | Items worth a note: relics, key items, treasures |
+| **Customs and Gods** | Act 4 | Kathrout's entries, as her chain goes on |
+| **Yoon** | Act 1 | One entry about Yoon, rewritten as things are learned (below) |
+
+- **Known Words keeps growing** through Act 1 in town: names, "mother", "dead", "priest". **"Sib"** goes in
+  during the rock lesson, marked **?**: the Ghost blurted it and doesn't know what it is. The Recognition scene
+  fills it in.
+- **Kathrout's notes:** in Act 4 she reads the Journal (with permission) and adds short notes in her own
+  voice to entries Yoon already has, sometimes correcting them. Her chain adds Customs and Gods.
+- **The Yoon entry** describes the temperament in words, never numbers: "Lasa says you're snuggly." / "Sib says
+  you're *a lot*." / "The twins think you're the funniest ghost." It also holds the name (??? and the
+  nickname, then Yoon's) and, once there's a body, the face.
+
+### Yoon's temperament
+Every Act 1–2 choice written in Yoon's voice has a **Sweet**, a **Funny** and an **Unhinged** option (see
+"Personality" under Yoon). Each choice adds 1 to its own count: variables **9 Sweet, 10 Funny, 11 Unhinged**.
+The counts are shared by the Ghost and human Yoon, and **never shown**.
+
+**Dialogue: extra options, never fewer.** The three basic options are always there. A high count adds a
+**fourth** option in that style:
+
+| Count | What opens |
+|---|---|
+| 5 | Small extras: a second Sweet, Funny or Unhinged line in some scenes |
+| 10 | Stronger lines. Unhinged 10 opens the "way out there" lines (see "Personality") |
+| 20 | Scene changes: Sib, Lasa or the twins answer differently; for Unhinged, Juda watches very carefully |
+
+Each count unlocks **on its own** (not "whichever is highest"), so a player who mixes them opens all three,
+only more slowly, and Yoon's character can change over the game.
+
+**Who notices:**
+- **Lasa's nickname** for the Ghost follows the highest count at the end of "First Words": Sweet **Snuggly**,
+  Funny **Flighty**, Unhinged **Spooky** (a tie goes to the first-impression choice).
+- **Sib** laughs nervously at Unhinged lines; **the twins** giggle at them; **Pada** goes quiet.
+- **Juda** (optional, to decide): high Unhinged makes him surer Yoon is the demon he meant to summon. His Act 3
+  lines get colder. It deepens the ghost-or-demon question without answering it.
+
+**Moves.** The Ghost starts with none; temperament gives most of them (the story gives the rest):
+
+| Count | Sweet | Funny | Unhinged |
+|---|---|---|---|
+| 5 | Calming Cry | Bewildering Wail | Terrifying Wail |
+| 10 | Joyful Cry | (a Touch, to choose) | Maddening Wail |
+| 20 | Rallying Cry, Focusing Cry | (a Touch, to choose) | (a Touch, to choose) |
+
+Mournful Wail always comes from the story ("First Words"). The Touches, Spirit Surge and Ghostly Touch are
+still to place: story, temperament or Insight.
+
+**Talk.** Small bonuses in the Talk system (SI_Talk), fitting each style:
+- **Sweet:** Soothe and Plead work a little better.
+- **Funny:** pranksters (Children of the Caves, Forest Imps) warm to Yoon faster.
+- **Unhinged:** Yoon can **Threaten**, which no other child can (now only Pada). A small dead child being
+  frightening is very much the point.
+
+**Stats.** Tiny, hidden, always-on states (like Yoon's gender states 210–212), one level per threshold:
+Sweet **Resolve**, Funny **Luck**, Unhinged **magic damage**. Small enough that nobody picks a line for the
+numbers.
+
+**The risk:** if the rewards are big or visible, players choose for stats instead of for who Yoon is. So: no
+numbers anywhere, small effects, and the Yoon entry in Remembered describes the temperament only in words.
+
 ### Difficulty, encounters and defeat (design)
 - **Difficulty escalates with the story:** forgiving early (unless you wander into optional
   "sting" areas), tense later.
@@ -2742,10 +2841,10 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
 ### Test room (temporary)
-**MAP004 "TEST ROOM"** is a throwaway map for trying the battle systems, and **New Game currently
-starts there**. It has a weapon chest, a recruiter (adds reserve members for Switch), an Insight
-crystal, one monster per test troop, and a campfire (full rest). To remove it: set the player's
-starting position back to **MAP001 (8, 6)** (Database → System), then delete the map.
+**MAP004 "TEST ROOM"** is a throwaway map for trying the battle systems. **New Game starts at the
+Prologue** (map 5); the automated tests start their own games in the Test Room. It has a weapon chest, a
+recruiter (adds reserve members for Switch), an Insight crystal, one monster per test troop, and a
+campfire (full rest). Its **Play the Opening** door runs the opening from there.
 
 ### Current database (as uploaded)
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.

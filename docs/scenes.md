@@ -6,6 +6,174 @@ branch says otherwise.
 
 ---
 
+## Act 1: "First Words" (Lasa finds the Ghost)
+**Built** on map 6 (see editor-guide.md, "The opening"): common events 16–18 and each object's lesson page.
+**Needs:** the Ghost alone. **Setting:** map 6, the lava tube where the Ghost wakes; the skylight garden.
+**Music:** First Words (to make: Lasa's theme and Yoon's taking turns, Yoon's single notes slowly joining
+into phrases).
+
+The Ghost starts with **no moves at all**. It has no language: until the lessons, its own lines are
+wordless, and Lasa's words reach it **mind to mind** (shown in the *dim* message window). After the
+lessons, she speaks in ordinary windows.
+
+**Yoon's temperament** starts here: three hidden counts, **Sweet**, **Funny** and **Unhinged**, each raised
+by the matching choice. Later scenes read them. **Lasa's nickname** for the Ghost follows the highest:
+Sweet → **Snuggly**, Funny → **Flighty**, Unhinged → **Spooky** (a tie goes to the first-impression
+choice).
+
+### 1. The drop-in
+*(The first time the Ghost floats into the skylight's light. A small figure drops down the beam and lands
+in the garden. "!" over the Ghost.)*
+
+*You feel words form in your head.*
+
+**Lasa** *(dim window)*: A little spirit in a moldy tomb? Oh! I can help you!
+
+> **Choice:** Float closer. *(Sweet)* / Float away. *(Funny)* / Let out a wail. *(Unhinged)*
+
+**▸ Float closer** *(Sweet +1)*
+
+**Lasa:** Hi!
+
+*(Go to 2.)*
+
+**▸ Float away** *(Funny +1)*
+
+**Lasa:** Don't leave!
+
+*(The Ghost drifts two steps back. Lasa stays in the garden. Talking to her brings back the same choice,
+with her line changing each time the Ghost floats away:)*
+
+| Times | Lasa |
+|---|---|
+| 1 | Don't leave! |
+| 2 | Hey! Come back! |
+| 3 | I can do this all day, you know. |
+| 4 | ...Fine! |
+
+*(On the fourth, she zips after the Ghost and plants herself in front of it.)*
+
+**Lasa:** I'm coming with you. You can't stop me. I'm already here. See? Here. With you.
+
+*(She joins the party anyway. Go to 2.)*
+
+**▸ Let out a wail** *(Unhinged +1)*
+
+*(A long, cold, aching sound. The dust motes shiver in the light.)*
+
+**Lasa:** Ooooh! Spooky! Your voice is so cold.
+
+*(The Ghost learns **Mournful Wail**.)*
+
+*(Go to 2.)*
+
+### 2. "I'm Lasa"
+*(Lasa joins the party, if she hasn't forced her way in already. Her name screen opens.)*
+
+**Lasa:** I'm \N[4]! \N[4]! That's me.
+
+**Lasa:** What's the matter? Can't you talk?
+
+*(The Ghost opens a mouth it doesn't have. What comes out is a wail.)*
+
+*(If it doesn't know Mournful Wail yet, it learns it now.)*
+
+*(If it wailed in 1:)* **Lasa:** Again! Hee!
+
+**Lasa:** That's okay, I have words for you! Let's learn some!
+
+**Lasa:** Head-words only work on spirits, see. To talk to living people you need mouth-words.
+
+**Lasa:** Why don't we look at the stuff here, and I'll teach you!
+
+### 3. The lessons
+*(Free roam. Each object in the tube now has a lesson while Lasa is in the party. Examining it: Lasa names
+it, the Ghost tries the word, and the Ghost's own line about it gains the word from then on. New words
+show as **New word: bones**.)*
+
+The Ghost's try is a choice every time, and it raises the temperament counts too:
+
+> **Choice:** Say it carefully. *(Sweet)* / Say it wrong. *(Funny)* / Wail it. *(Unhinged)*
+
+- **Carefully:** the Ghost says the word. **Lasa:** Perfect!
+- **Wrong:** the Ghost mangles it (below). Lasa's reaction is below too.
+- **Wail:** "BOOOOONES." **Lasa:** ...Close enough!
+
+| Object | Word | Lasa teaches | Said wrong / Lasa | Before (Ghost alone) | After |
+|---|---|---|---|---|---|
+| Yoon's remains | **bones** | Bones! Everybody's got them. On the inside. Usually. | "Bonz." / Bonz! I like it. | ...small. White. Hard. Cold. | ...bones. Small bones. |
+| A grave | **sleep** | Sleepers. They're sleeping a long, long time. Shh! | "Sheep." / No, those are fluffy. | ...someone, wrapped tight. Still. | ...a sleeper. Shh. |
+| Star-metal sword | **star** | Star-iron! It fell out of the sky. From a star! | "Stab." / ...That too, I guess. | ...dark. Bright. Both. It hums. | ...the star. It hums. |
+| Skull on the spear | **head** | That's a head-bone. Somebody was mean to it. | "Hat." / It is NOT a hat. | ...it watches the water. | ...a head. Someone's. |
+| Embalming jars | **jar** | Jars! Things go in. Stinky things. | "Jaw." / That's what's IN the jars. | ...a sharp smell. Sweet and wrong. | ...jars. Stinky. |
+| Rope | **rope** | Rope! For tying and climbing and tripping. | "Rop." / You dropped the E. | ...it doesn't move for you. | ...rope. |
+| Broken ladder | **up** | Up! That's where the sky is. | "Pu." / That's up backwards. | ...light. Too far. | ...up. Up there. |
+| Old campfire | **fire** | Fire. Hot. Burny. | "Fear." / ...Mm. | ...ashes. Something burned. | ...fire. Old fire. |
+| Resting log | **sit** | Sit! You put your bottom down. Do you have a bottom? | "Shh." / That's the sleepers' word. | ...you sit. You don't get tired. | ...sit. |
+| Mushrooms | **food** | Food! My food. You don't eat, lucky. | "Foo." / Foo! Ha! | ...soft. Pale. Growing. | ...food. Lasa's food. |
+| Jasper / chalcedony | **rock** | Rock! Rocks are everywhere. Don't worry about rocks. | "Sib." / No, that's... huh. Where'd you get that? | ...hard. Pretty. | ...rock. |
+| Cracked tomb | **down** | That's 'down'. We don't go down. | "Doom." / ...Yeah. Pretty much. | ...warm air. Far below. | ...down. No. |
+| Red Bowl | **remember** | The Red Bowl remembers things for you. That's 'remember'. | "Ember." / That's a fire word. Try again later. | ...it holds something. | ...remember. |
+
+*(The "Sib" mistake on the rock is a joke the player only gets later: the Ghost half-remembers a name.)*
+
+Places that teach **no** word (they don't count):
+- **Yoon's blood** (the stain): **Lasa:** That's... um. Let's look at something else. *(She won't name it.
+  She doesn't know why.)*
+- **Grave E's glyphs**: **Lasa:** Ugh. Slippery. Don't look at those.
+- **Scattered bones**: **Lasa:** More bones! You know this one!
+
+*(All 13 words: go to 4. A counter isn't shown; Lasa reacts instead, after about every third word:
+"You're getting so good!" / "So many words!")*
+
+### 4. "What's your name?"
+*(After the last lesson, ordinary message windows from here on.)*
+
+**Lasa:** You really didn't know those words? Wow! You must have been a spirit a long time.
+
+**Lasa:** What's your name?
+
+*(The Ghost reaches for it. There's nothing there.)*
+
+**Lasa:** You don't know? Okay.
+
+**Lasa:** I'll just call you *(Snuggly / Flighty / Spooky)* till you remember.
+
+**Lasa:** Let's look at your face. Maybe you'll remember.
+
+*(The still water at the pond's edge starts to twinkle. Lasa flies over to it.)*
+
+### 5. The face
+*(Examining the twinkling water.)*
+
+**Lasa:** See! There's your face!
+
+*(A face looks up out of the water. It doesn't look like anything yet.)*
+
+**Lasa:** Oh... Are you a boy or a girl?
+
+> **Choice:** A boy. / A girl. / In between.
+
+**Lasa:** A boy! Got it! / A girl! Got it! / In between! Got it!
+
+*(Suggested ending, to confirm:)* **Lasa:** Now let's go find out who you are! Up we go!
+
+*(Spirits don't need ladders: Lasa flies and the Ghost floats, up through the sky-hole. Act 1 leaves by the
+sky; in Act 2 the living children come back down by the mended ladder.)*
+
+**Build notes:**
+- **No moves at the start:** the Ghost's class currently learns every Touch, Wail and Cry at level 1. Take
+  them out of its learnings, so it starts empty and learns them from scenes like this one.
+- **Variables:** Words (6), Sweet (9), Funny (10), Unhinged (11), plus a float-away counter.
+- **The nickname:** the Ghost could actually be *named* Snuggly, Flighty or Spooky (actor 1) until Yoon's
+  name is known, so menus and `\N[1]` say it too. Ghost and human Yoon share a name (SI_Naming), so
+  whatever names Yoon later replaces it.
+- **The reflection:** replaces the current still-water event (the twinkle only appears in step 4).
+- **Lessons:** each object gets a lesson page (Lasa in the party) and an "after" page (Self Switch B, the
+  word learned), so its Act 1 line changes once the word is learned.
+
+---
+
 ## Campfire: "Sib Is Sib"
 **Needs:** Thenmy, Kathrout, Aday (Act 4 on). **Setting:** a campfire.
 
