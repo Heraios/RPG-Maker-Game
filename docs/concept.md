@@ -487,8 +487,8 @@ A wealthy, independent Seafarer scholar from Keftiu, writing the first proper ac
 Her name distorts **Katherine Routledge**, who led the 1914–15 expedition to Rapa Nui, recorded the birdman
 cult and the islanders' oral history, credited her informants by name, and was caught between the islanders
 and the company that ran the island during the 1914 uprising. Lives in Mansehare, next door to Iras. Her
-sidequest chain adds the scholar's entries to the compendium, **Remembered**, and her notes on what Yoon
-already knows (see "Journal" below, and lore.md, "People of the island").
+sidequest chain adds the scholar's entries to the compendium, **Remembered**, and her margin notes on what Yoon
+already knows (see "Memory (the journal)" below, and lore.md, "People of the island").
 
 - **Personality:** brisk and fearless; terrible at small talk, wonderful at listening; morally serious about
   understanding people; pedantic, and honest about her own mistakes. Her blind spot is the empire: she thinks
@@ -807,7 +807,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Relationships and sidequests | Yoon's skill learning, Pada's bow, Thenmy's swords | Variables per character; skills and weapon types unlocked by sidequest switches |
 | Missable content | Pada's sidequests | Switches that lock when Pada dies |
 | Languages and literacy | Islander, All-Seafarer, First Sailor | Party checks on inscription and document events (Sib, Parl, Falmi, Tou, Thenmy) |
-| Journal: quests, evidence, compendium | Act 2's open quest order, Pada's missable sidequests, the murder mystery, Known Words, Kathrout | One custom Journal menu with three tabs (Quests, Evidence, Remembered). See "Journal" |
+| Memory (the journal): quests, evidence, compendium | Act 2's open quest order, Pada's missable sidequests, the murder mystery, Known Words, Kathrout | One custom Memory menu (and the J key) with three tabs (Quests, Evidence, Remembered). See "Memory (the journal)" |
 | Yoon's temperament | Sweet, Funny and Unhinged choices | Three variables; extra dialogue options, moves, Talk bonuses and small stat states at thresholds. See "Yoon's temperament" |
 | Player-chosen gender | Yoon | Choice (boy, girl or third gender) that sets pronoun substitution in dialogue (he / she / they), how people address Yoon and small flavor effects. **Yoon looks the same whatever the choice.** Built: `SI_Yoon.js`; its per-gender Look settings stay empty |
 | Underwater exploration | Dama | Map events and region checks gated on her spell |
@@ -2160,49 +2160,79 @@ the confrontation goes: the more evidence, **the sooner Dama arrives** after Jud
 death, the **better armed** the villagers with her are, and the **fewer NPCs Juda kills** before
 "dying". See lore.md, "The murder", for what happened and the draft clue list.
 
-### Journal
-One **Journal** command in the main menu, with three tabs. Events add entries with one Script line; the
-entries' text lives in one data file, so it can be written and edited outside the editor. A small sound and a
-line at the bottom of the screen ("Journal: a new word") say something was added; the menu is never forced
-open. A custom plugin (`SI_Journal.js`, to build); ItemBook and EnemyBook (both off) are built for items and
-enemies, so a journal made for this game reads better.
+### Memory (the journal)
+**Memory** is what Yoon remembers. The Ghost can't hold a pen, so there is no book: the menu is Yoon's own
+memory, written in Yoon's voice, short and fragmentary while Yoon has few words and fuller as Yoon learns
+more. **Margin notes** from the party sit beside Yoon's lines: eventually every party member has a voice in
+it (Lasa doodles and cheers, Sib corrects, Pada is gentle, Kathrout annotates like a scholar).
+
+- **Opening it:** a **Memory** command in the main menu, and the **J** key on the map.
+- **Layout** (1280 x 720): three tabs across the top (**Quests**, **Evidence**, **Remembered**); a list on
+  the left, with sections; the entry on the right, with a picture where the game has one (a face for
+  People, battler art for Creatures, an icon for Things).
+- **Notices:** a small line in a corner ("Remembered: bones", "New quest: The Pearl Thief") with a soft
+  sound when something is added. Never during battle (they wait), several queue, and the menu is never
+  forced open.
+- **Built as** a custom plugin (`SI_Journal.js`, to build). ItemBook and EnemyBook (both off) are made for
+  items and enemies; this replaces them.
 
 **Quests**
 - **Act 2 is open:** silver, pearl and blood in any order, beside town sidequests. Each quest has a title, who
   gave it, and short steps that tick off as they're done, in Yoon's voice ("Sib says we need silver.").
 - **Sections:** Now, Done, and **Missed**. **Pada's sidequests** still open when he dies in Act 3 move to
   Missed, greyed out, each with a closing line. The menu stays ordinary; the moment is the grief.
-- **Only the story says what's next.** The log reminds; it doesn't point at the map.
+- **Only the story says what's next.** Steps remind; they don't point at the map ("Sib says the silver
+  trader is in town", not a place on the map).
+- **The Body:** its own page. A silhouette of the homunculus fills in as each ingredient is found: the bone,
+  the silver bracelet, the pearl, kin's blood, the Great Boar's flesh, the dragon-tree framework, the
+  bellflower heart, the snow brain. The ritual scene can reuse it. Needs a silhouette image (a placeholder
+  first).
 
 **Evidence**
-- The murder clues (lore.md, "The clue list"): each with where it was found and what it looked like, **never
-  what it means**. The player can't solve the murder directly; the page shows the case growing.
-- Every entry raises the **Evidence** count (the planned variable 7) that decides the mountain fight. The
+- **Opens after the Bone scene** (common event 12), when the player first knows it was murder. Until then the
+  tab isn't there.
+- The murder clues (lore.md, "The clue list"): each with where and when it was found and what it looked like,
+  **never what it means**. The player can't solve the murder directly; the page shows the case growing.
+- Every clue raises the **Evidence** count (the planned variable 7) that decides the mountain fight. The
   count itself is never shown.
-- A clue found twice (the Copper Ball, then the Broken Staff) adds a line to the first entry: "It fits."
+- Matching clues link up: the Copper Ball, then the Broken Staff, adds "It fits." to the first.
+- **Questions:** a short list of things Yoon wonders ("Who was in the tubes that day?", "Why was the tomb
+  warded?"), crossed out or reworded as clues come in. Detective work without solving the case for the player.
 
 **Remembered** (the compendium)
-The Ghost has no memory, so the compendium is **Yoon's new memory**, named for the word the Red Bowl teaches.
-Yoon keeps it from the first scene; Kathrout adds to it from Act 4.
+Named for the word the Red Bowl teaches. Yoon keeps it from the first scene. **Entries not yet found show as
+???**, so the player can see there is more.
 
-| Category | Opens | What's in an entry |
-|---|---|---|
-| **Known Words** | Act 1, "First Words" | The word, where it was learned, the line that taught it, and how the Ghost first said it ("Bonz.") |
-| **People** | Act 1 | Who they are and what Yoon has heard them say. Seers (who can see the Ghost) are marked |
-| **Places** | Act 1 | A line or two; the Sooty Bird idols touched there |
-| **Creatures** | Act 2 | The enemies: what Insight and Talk have shown (likes, fears), drops. Replaces EnemyBook |
-| **Things** | Act 2 | Items worth a note: relics, key items, treasures |
-| **Customs and Gods** | Act 4 | Kathrout's entries, as her chain goes on |
-| **Yoon** | Act 1 | One entry about Yoon, rewritten as things are learned (below) |
+| Category | Opens | Fills in when | What's in an entry |
+|---|---|---|---|
+| **Known Words** | Act 1, "First Words" | A lesson teaches a word (already recorded) | The word, where it was learned, the line that taught it, how the Ghost first said it ("Bonz.") |
+| **People** | Act 1 | An event adds them (first talk) | Who they are and what Yoon has heard them say. Seers (who can see the Ghost) are marked |
+| **Places** | Act 1 | The party first enters a map with a place note | A line or two; the Sooty Bird idols touched there |
+| **Creatures** | Act 2 | First fought or talked to; grows with Insight and Talk | What Insight and Talk have shown (likes, fears), drops |
+| **Things** | Act 2 | An item tagged to be remembered is first picked up | Relics, key items, treasures |
+| **Customs and Gods** | Act 4 | Kathrout's chain | What she has told Yoon |
+| **Yoon** | Act 1 | Rewritten as things are learned | Below |
 
 - **Known Words keeps growing** through Act 1 in town: names, "mother", "dead", "priest". **"Sib"** goes in
   during the rock lesson, marked **?**: the Ghost blurted it and doesn't know what it is. The Recognition scene
   fills it in.
-- **Kathrout's notes:** in Act 4 she reads the Journal (with permission) and adds short notes in her own
-  voice to entries Yoon already has, sometimes correcting them. Her chain adds Customs and Gods.
-- **The Yoon entry** describes the temperament in words, never numbers: "Lasa says you're snuggly." / "Sib says
-  you're *a lot*." / "The twins think you're the funniest ghost." It also holds the name (??? and the
-  nickname, then Yoon's) and, once there's a body, the face.
+- **The Yoon entry:** the name (??? , then the nickname, then Yoon's name); the temperament in words, never
+  numbers ("Lasa says you're snuggly." / "Sib says you're *a lot*." / "The twins think you're the funniest
+  ghost."); once there's a body, the face.
+
+**Writing entries**
+- **The text lives in one file** (`data/Journal.json`, or a plainer text format), sorted by tab, so it can be
+  written and edited outside the editor. Events only switch entries on, with one Script line
+  (`SmokingIsle.Journal.add('people', 'tazo')`, `SmokingIsle.Journal.step('pearl', 2)`).
+- **Items, enemies and maps** can carry their entries in their Note boxes instead (`<Remember: ...>`,
+  `<Place: Zonfahare>`), next to the thing they describe.
+- **Margin notes** belong to an entry and a party member; one shows when that member has been in the party.
+- **TODO lines** ("TODO: write Tazo") show in playtests only, so gaps are easy to spot.
+
+**Building it in stages**
+1. The Memory menu and J key, the tabs, Known Words, Quests (with The Body), Evidence, and the notices.
+2. The categories that fill themselves (Creatures, Things, Places), People, the Yoon entry, margin notes.
+3. Kathrout's Customs and Gods, and the Body art.
 
 ### Yoon's temperament
 Every Act 1–2 choice written in Yoon's voice has a **Sweet**, a **Funny** and an **Unhinged** option (see
