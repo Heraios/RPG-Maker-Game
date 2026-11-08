@@ -20,11 +20,11 @@ fire on a volcanic island (the Canary Islands, Rapa Nui, Minoan Crete).
 Polynesian log-drum and chant rhythms, Canarian folk (*tajaraste*, the *chácaras* castanets, the *silbo*
 whistle), and Mediterranean modes for the invaders.
 
-**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Island_Chant**, **Shrine**, inside versions (**Zonfahare_Inside**, **Mansehare_Inside**, **Aguerekeu_Inside**), **Dread**, **Battle_Ancients**, **Salt_Marsh**, **Mansehare**, **Aguerekeu**, **Hag_Roost**, **Boss_Parl**, **Grief** (the mourning; later Pada), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
+**Made so far** (in `music/`, built in code): **Island** (the Island tune), **Island_Chant**, **Shrine**, inside versions (**Zonfahare_Inside**, **Mansehare_Inside**, **Aguerekeu_Inside**), **Dread**, **Battle_Ancients**, **Salt_Marsh**, **Mansehare**, **Aguerekeu**, **Hag_Roost**, **Boss_Parl**, **Boss_Daughter_Wells**, **Boss_Lady_Woods**, **Grief** (the mourning; later Pada), **Laurel_Forest** (the Lady's lowland aspect), **Alpine_Forest** (her highland aspect), **Grasslands**, **Zonfahare** (the main town), **Title** (on the title screen), **Prologue** (Thenmy telling the
 story), **Lava_Tubes** (long, mostly ambience), a leitmotif for every party member (**Yoon**, **Sib**, **Lasa**, **Pada**,
 **Juda** and **Juda_Corrupted**, **Dama**, **Parl**, **Tou**, **Falmi**, **Thenmy**, **Patience**, **Aday**, **Kathrout**), **Yoon_and_Sib**, **Seafarers** and
 **Meneswa** (themes), **Battle_Wild**, **Battle_Spirits** and **Battle_Seafarers** (in `audio/bgm`), and the
-**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore**, **Hunt**, **Chase**, **Home**, **Home_Grieving**, **Living_Things**, **Comedy**, **Snowy_Peak**, **Beach**, **First_Words**, **Unseen**, **Eyot** and **Eyot_Grieving** (Yoon's home outside), **Idekeu**, **Chafakeu**, **Maiden_Spring**, **Childrens_Garden**, **Boars_Wallow**, **Owl_Towers**. Night versions: **Zonfahare_Night**, **Mansehare_Night**, **Aguerekeu_Night**, **Laurel_Forest_Night**, **Grasslands_Night**, **Salt_Marsh_Night**, **Beach_Night**, **Eyot_Night**, **Idekeu_Night**, **Chafakeu_Night**, **Alpine_Forest_Night**.
+**Victory_Isle**, **Defeat_Isle**, **Rest_Isle**, **Item_Isle** and **Save_Isle**, **Clue_Isle** and **Memory_Isle** jingles (in `audio/me`), plus 8-bit sketches. For Acts 1 and 2: **Ritual**, **Mystery**, **Campfire**, **Ladys_Table**, **Warrens**, **Recognition**, **Sneaking**, **Wells**, **Forbidden_Lore**, **Hunt**, **Chase**, **Home**, **Home_Grieving**, **Living_Things**, **Comedy**, **Snowy_Peak**, **Beach**, **First_Words**, **Unseen**, **Eyot** and **Eyot_Grieving** (Yoon's home outside), **Idekeu**, **Chafakeu**, **Maiden_Spring**, **Childrens_Garden**, **Boars_Wallow**, **Owl_Towers**, **Lava_Tube_Country**, **Raft** and **Canoe** (the vehicles). Night versions: **Zonfahare_Night**, **Mansehare_Night**, **Aguerekeu_Night**, **Laurel_Forest_Night**, **Grasslands_Night**, **Salt_Marsh_Night**, **Beach_Night**, **Eyot_Night**, **Idekeu_Night**, **Chafakeu_Night**, **Alpine_Forest_Night**, **Lava_Tube_Country_Night**.
 
 **Leitmotif links:** the Seafarer fanfare (1-5-1-2-flat 3) runs through Seafarers and Battle_Seafarers;
 Thenmy's opening fifth (C up to G) becomes a tritone (C up to G-flat) in Meneswa's theme; his dark D-flat
@@ -136,7 +136,9 @@ songs at night).
 **Day and night:** each wild place can have a night version (forest birds become owls and frogs; the desert
 turns to cold wind and stars). The **SI_NightMusic** plugin switches them by the game's time of day: a map whose
 track has a night version (its name plus `_Night`) plays that at night, fading across when night falls or day
-breaks. A map note `<Story BGM: Unseen, 50>` gives a map other music until the Story variable reaches 50
+breaks. The **SI_BattleMusic** plugin picks each fight's music: boss themes by troop, then Battle_Ancients for
+First Sailor remnants (Hags, Owls, Stonemen), Battle_Seafarers, Battle_Spirits for spirits and fae, else Battle_Wild.
+A map note `<Story BGM: Unseen, 50>` gives a map other music until the Story variable reaches 50
 (Act 1: Unseen in Zonfahare, Eyot_Grieving on the eyot, Home_Grieving at home). By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
 
 ## Still to make: Acts 1 and 2

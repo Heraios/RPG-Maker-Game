@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
-# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, bosses16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
+# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, bosses16, lava_country16, vehicles16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
     'Island':           ('island16.py', None, 60 / 108, 4, 4),
     'Zonfahare':        ('zonfahare16.py', None, 60 / 112, 4, 4),
@@ -75,6 +75,10 @@ SONGS = {
     'Owl_Towers':       ('forest_homes16.py', 'owls', 60 / 84, 4, 4),
     'Boss_Daughter_Wells': ('bosses16.py', 'daughter', 60 / 144, 3, 4),
     'Boss_Lady_Woods':  ('bosses16.py', 'lady', 60 / 132, 4, 4),
+    'Lava_Tube_Country': ('lava_country16.py', 'day', 60 / 72, 4, 4),
+    'Lava_Tube_Country_Night': ('lava_country16.py', 'night', 60 / 60, 4, 4),
+    'Raft':             ('vehicles16.py', 'raft', 60 / 76, 4, 4),
+    'Canoe':            ('vehicles16.py', 'canoe', 60 / 96, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
