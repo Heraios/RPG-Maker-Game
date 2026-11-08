@@ -2231,6 +2231,7 @@ Named for the word the Red Bowl teaches. Yoon keeps it from the first scene. **E
 
 **Building it in stages**
 1. The Memory menu and J key, the tabs, Known Words, Quests (with The Body), Evidence, and the notices.
+   **Built:** `SI_Journal.js`, `data/Journal.json`; see editor-guide.md, "Memory".
 2. The categories that fill themselves (Creatures, Things, Places), People, the Yoon entry, margin notes.
 3. Kathrout's Customs and Gods, and the Body art.
 

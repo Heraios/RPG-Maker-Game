@@ -238,6 +238,35 @@ one real hazard.
 
 ---
 
+## Memory (Yoon's journal)
+
+**Memory** opens from the main menu or with **J** on the map: three tabs, **Quests**, **Evidence** (it
+appears after the Bone scene) and **Remembered** (Known Words so far). All its text is in
+**`data/Journal.json`**, a plain text file you can open in any text editor (RPG Maker ignores it). Ask
+Claude to add or change entries there, or edit it yourself: keep the quotes and commas.
+
+Events switch entries on with one **Script** command (tab 3 → Script...):
+
+| Script | What it does |
+|---|---|
+| `SmokingIsle.Journal.quest('pearl')` | A quest starts (its first step shows); a notice in the corner |
+| `SmokingIsle.Journal.step('pearl', 2)` | It reaches step 2; step 1 ticks off |
+| `SmokingIsle.Journal.complete('pearl')` | Done |
+| `SmokingIsle.Journal.miss('pearl')` / `missGiver('Pada')` | Missed (greyed out): one quest, or every open quest from that giver |
+| `SmokingIsle.Journal.clue('ball')` | A clue (adds 1 to the hidden Evidence count, variable 7, once) |
+| `SmokingIsle.Journal.learnWord('bones', 0)` | A word (0 said carefully, 1 wrong, 2 wailed): the First Words lessons do this |
+
+- The id in the quotes (`'pearl'`) is the entry's name in `Journal.json`.
+- **Margin notes:** an entry's `"notes"` (by actor number, `"4"` for Lasa) show once that member has been
+  in the party.
+- **TODO text** (starting `TODO`) only shows in playtests.
+- **The Body** is the first entry in Quests from Story 60: its ingredients light up as the party holds
+  their key items (721–727). Its picture is a placeholder, `img/pictures/Memory_Body.png` (drawn by
+  `art/memory_body.py`): nine frames side by side, the silhouette and then each ingredient's part.
+- Already wired: Lasa's "Mouth-words" quest (she joins → the finale → the face) and then "Who am I?"; the
+  Bone scene (common event 12) opens Evidence with the crushed skull and the cut marks; Sib's Act 2 line at
+  Yoon's blood adds that clue.
+
 ## Gathering spots
 
 A gathering spot is a tree, plant, rock, pool and so on that the party can harvest once a day. When

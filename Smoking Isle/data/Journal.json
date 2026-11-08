@@ -1,0 +1,247 @@
+{
+ "_readme": "The text of Memory (SI_Journal.js). Quests, clues and words are switched on by events; see the plugin's help. Keys are ids used in events. 'notes' are margin notes by actor id, shown once that member has been in the party. Lines starting TODO only show in playtests.",
+ "quests": {
+  "words": {
+   "title": "Mouth-words",
+   "giver": "\\N[4]",
+   "steps": [
+    "Look at the things here. \\N[4] says the words.",
+    "\\N[4] wants to see my face. In the water, in the light."
+   ],
+   "done": "I have words now. And a face, in the water.",
+   "notes": {
+    "4": "You're a very fast learner!"
+   }
+  },
+  "who": {
+   "title": "Who am I?",
+   "giver": "\\N[4]",
+   "steps": [
+    "Up through the sky-hole. Find out who I am."
+   ],
+   "done": "TODO: when Act 1 ends (contact with Sib)."
+  },
+  "silver": {
+   "title": "Pure Silver",
+   "giver": "\\N[3]",
+   "steps": [
+    "TODO: Sib says the body needs pure silver, for a bracelet.",
+    "TODO: the silver trader in town."
+   ],
+   "done": "TODO"
+  },
+  "pearl": {
+   "title": "The Pearl Thief",
+   "giver": "\\N[3]",
+   "steps": [
+    "TODO: a pearl from the sea, to set in the bracelet.",
+    "TODO: someone stole the tribute pearls. Dama is looking for them."
+   ],
+   "done": "TODO"
+  },
+  "blood": {
+   "title": "Kin's Blood",
+   "giver": "\\N[3]",
+   "steps": [
+    "TODO: blood from my family."
+   ],
+   "done": "TODO"
+  }
+ },
+ "clues": {
+  "skull": {
+   "title": "The crushed skull",
+   "where": "My bones, in the tube where I woke.",
+   "text": "The back of my head is broken. Round, heavy. Something hit it, from behind. A lot.",
+   "notes": {
+    "3": "Not a fall. Not a fall."
+   }
+  },
+  "cuts": {
+   "title": "Cut marks",
+   "where": "My bones, in the tube where I woke.",
+   "text": "Little cuts on the bones. Neat ones. Sib says it's how priests make an animal ready for the gods."
+  },
+  "blood": {
+   "title": "The old blood",
+   "where": "The stone outside the tombs.",
+   "text": "An old stain. It smells like me. Like the bones.",
+   "notes": {
+    "4": "I don't like that one."
+   }
+  },
+  "offering": {
+   "title": "The burned offering",
+   "where": "TODO: the secret tomb.",
+   "text": "TODO: something burned over a grave."
+  },
+  "records": {
+   "title": "The missing tomb",
+   "where": "TODO: the priests' tomb records.",
+   "text": "TODO: the tomb isn't in the records."
+  },
+  "staff": {
+   "title": "The Broken Staff",
+   "where": "TODO: buried in the woods (Patience dug it up).",
+   "text": "TODO: a rain-tree staff, snapped. The top is missing.",
+   "fits": "ball"
+  },
+  "ball": {
+   "title": "The Copper Ball",
+   "where": "TODO: the marsh.",
+   "text": "TODO: a dented copper ball. It once topped a staff.",
+   "fits": "staff"
+  },
+  "notes": {
+   "title": "Juda's Notes",
+   "where": "TODO: Juda's books.",
+   "text": "TODO: notes on First Sailor homunculus making."
+  },
+  "log": {
+   "title": "The Telegraph Log",
+   "where": "TODO: Uira, at the telegraph station.",
+   "text": "TODO: who sent what, and when, the day I went missing."
+  }
+ },
+ "questions": [
+  {
+   "text": "What hit me?",
+   "answeredBy": "ball",
+   "after": "What hit me? Round. Copper. On a stick?"
+  },
+  {
+   "text": "Why were my bones cut like that?"
+  },
+  {
+   "text": "Who was in the tubes that day?",
+   "answeredBy": "log",
+   "after": "Who was in the tubes that day? Somebody's not where they said."
+  }
+ ],
+ "words": {
+  "bones": {
+   "where": "The small bones, in the tube where I woke.",
+   "taught": "Bones! Everybody's got them. On the inside. Usually.",
+   "wrong": "Bonz."
+  },
+  "sleep": {
+   "where": "The old graves by the tube.",
+   "taught": "Sleepers. They're sleeping a long, long time. Shh!",
+   "wrong": "Sheep."
+  },
+  "star": {
+   "where": "The sword in the teal tomb.",
+   "taught": "Star-iron! It fell out of the sky. From a star!",
+   "wrong": "Stab."
+  },
+  "head": {
+   "where": "The skull on the spear.",
+   "taught": "That's a head-bone. Somebody was mean to it.",
+   "wrong": "Hat."
+  },
+  "jar": {
+   "where": "The jars that smell.",
+   "taught": "Jars! Things go in. Stinky things.",
+   "wrong": "Jaw."
+  },
+  "rope": {
+   "where": "The coil of rope by the tombs.",
+   "taught": "Rope! For tying and climbing and tripping.",
+   "wrong": "Rop."
+  },
+  "up": {
+   "where": "The broken ladder under the light.",
+   "taught": "Up! That's where the sky is.",
+   "wrong": "Pu."
+  },
+  "fire": {
+   "where": "The old fire outside the tombs.",
+   "taught": "Fire. Hot. Burny.",
+   "wrong": "Fear."
+  },
+  "sit": {
+   "where": "The log by the old fire.",
+   "taught": "Sit! You put your bottom down. Do you have a bottom?",
+   "wrong": "Shh."
+  },
+  "food": {
+   "where": "The pale mushrooms.",
+   "taught": "Food! My food. You don't eat, lucky.",
+   "wrong": "Foo."
+  },
+  "rock": {
+   "where": "The rocks in the tube.",
+   "taught": "Rock! Rocks are everywhere. Don't worry about rocks.",
+   "wrong": "Sib.",
+   "notes": {
+    "4": "You said 'Sib'! Who's Sib? Is Sib a rock?"
+   }
+  },
+  "down": {
+   "where": "The cracked tomb, where warm air comes up.",
+   "taught": "That's 'down'. We don't go down.",
+   "wrong": "Doom.",
+   "notes": {
+    "4": "We REALLY don't go down."
+   }
+  },
+  "remember": {
+   "where": "The Red Bowl.",
+   "taught": "The Red Bowl remembers things for you. That's 'remember'.",
+   "wrong": "Ember.",
+   "notes": {
+    "4": "Remember everything! I'll help!"
+   }
+  }
+ },
+ "body": [
+  {
+   "id": "bone",
+   "name": "A bone of my own",
+   "becomes": "",
+   "story": 60
+  },
+  {
+   "id": "framework",
+   "name": "Dragon-tree wood",
+   "becomes": "the skeleton",
+   "item": 727
+  },
+  {
+   "id": "flesh",
+   "name": "The Great Boar's flesh",
+   "becomes": "the flesh",
+   "item": 721
+  },
+  {
+   "id": "blood",
+   "name": "Kin's blood",
+   "becomes": "the blood",
+   "item": 722
+  },
+  {
+   "id": "heart",
+   "name": "A living bellflower",
+   "becomes": "the heart",
+   "item": 726
+  },
+  {
+   "id": "brain",
+   "name": "Snow, kept frozen",
+   "becomes": "the brain",
+   "item": 723
+  },
+  {
+   "id": "silver",
+   "name": "A silver bracelet",
+   "becomes": "holds the pearl",
+   "item": 724
+  },
+  {
+   "id": "pearl",
+   "name": "A pearl from the sea",
+   "becomes": "anchors the soul",
+   "item": 725
+  }
+ ]
+}
