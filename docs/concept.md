@@ -1855,7 +1855,15 @@ Tangata on Rapa Nui) are long, winding tunnels left when a lava river drained un
 `SI_Gather.js`. A gathering spot is a map event with `<Gather: Laurel>` in its note and one command, **Call
 Common Event: Gather**. Copy and paste it for more of the same species. A second page with **Self Switch A**
 as its condition can show a stump or a picked plant.
-- **Once a day:** a spot gives once, then regrows at the next dawn (or after sleeping).
+- **How spots come back** (decided): sleeping always jumps to the next dawn, so "daily" means "after
+  every rest". So it depends on what the spot is:
+  - **Daily** (vanish until the next day): herbs, fruit, crops, mushrooms, shore finds, driftwood.
+  - **Slow** (stay visible, 2-3 days): trees and bark, resin, clay, ochre, peat, salt pans, vents, deer trails.
+  - **Finite** (a few hauls, one a day, then worked out for good): loose and quarried stone, **ore veins**,
+    and **rare trees that don't regrow** (Ebony, Mahogany, Sandalwood, Dragon Tree: a stump is left).
+  - **Always:** springs and wells.
+  - **Traders restock** what runs out: smiths and traders sell valuable non-perishables (stone, metals,
+    woods); the mine towns restock ore. Nothing the story needs comes only from a finite spot.
 - **You pick who gathers.** Only party members who can do the job are offered; if nobody can, a message
   says what's needed ("This needs an adult with a metal axe equipped.").
   - **Adults only:** hard woods (Ebony, Mahogany) and mining. Only adults bring down **logs** and other
@@ -1890,6 +1898,10 @@ as its condition can show a stump or a picked plant.
 - **Animal parts** come from enemies, not spots.
 - **Test room:** five sample spots along the bottom row (Laurel, Moon Sorrel, Obsidian, Clay Pit, Fishing
   Spot); the chest gives a Sundial, the picks and a Fishing Harpoon.
+
+**Time-gated content** (decided): some sidequests and pieces of the main story's optional evidence are
+time-limited. They are **always clearly marked** (Memory marks a time-limited quest with **!** and says
+"Only for a while"), and nothing time-limited can stop the game being beaten.
 
 ### Ranged weapons
 Ranged weapons go in a separate **Ranged** equipment slot and can't be swapped mid-fight.

@@ -66,5 +66,53 @@ module.exports = {
         t.ok(after.howto, 'Memory remembers how to pick things (Know-how)');
         t.eq(second, after.got, "the next mushroom: 'You know this one!', no second tutorial");
         t.ok(regrown, 'a new day: the spot is back');
+    },
+
+    'gathering: how spots come back (daily, slow, finite, felled, always)': async (h, t) => {
+        await h.newGame();
+        const r = await h.eval(() => {
+            const G = SmokingIsle.Gather, T = SmokingIsle.Time, out = {}, map = $gameMap.mapId();
+            const ev = n => $gameMap.events().find(e => e.event().name === 'Gather: ' + n).eventId();
+            const pada = $gameActors.actor(5), yoon = $gameActors.actor(2), real = Math.random; Math.random = () => 0.5;
+            const give = (a, name, type) => { const w = (type === 'w' ? $dataWeapons : $dataItems).find(x => x && x.name === name); $gameParty.gainItem(w, 1); if (type === 'w') a.forceChangeEquip(a.slotOfType(1), w); };
+            give(pada, 'Copper Pick', 'w');
+            // ore: six hauls, once a day, then worked out (the vein stays visible)
+            const oreSpot = ev('Obsidian'), texts = [];
+            for (let i = 0; i < 7; i++) { texts.push(G.gather(map, oreSpot, 'Copper Vein', pada).text); texts.push(G.gather(map, oreSpot, 'Copper Vein', pada).text); T.sleep(); }
+            out.oreToday = texts[1]; out.oreLast = texts[10]; out.oreAfter = texts[12];
+            out.oreD = $gameSelfSwitches.value([map, oreSpot, 'D']); out.oreShown = G.rule('Copper Vein').vanish === false;   // (this test borrows the Obsidian spot, which hides as loose stone)
+            // a rare tree: three hauls, then a stump
+            const axe = $dataWeapons.find(w => w && w.siMoves && w.siMoves.indexOf('metal') >= 0 && w.wtypeId === 6 && !/<Pick>/i.test(w.note));
+            $gameParty.gainItem(axe, 1); pada.forceChangeEquip(pada.slotOfType(1), axe);
+            const tree = ev('Laurel'), felled = [];
+            for (let i = 0; i < 3; i++) { felled.push(G.gather(map, tree, 'Ebony', pada).text); T.sleep(); }
+            out.felled = felled[2]; out.stump = G.gather(map, tree, 'Ebony', pada).text;
+            // loose stone: vanishes once worked out, not before
+            give(yoon, 'Knapping Kit'); const stone = ev('Clay Pit');
+            G.gather(map, stone, 'Obsidian', yoon); out.stoneShownSpent = !$gameMap.event(stone).siGatherSpent();
+            for (let i = 0; i < 5; i++) { T.sleep(); G.gather(map, stone, 'Obsidian', yoon); }
+            $gameMap.event(stone)._siGatherSpecies = 'Obsidian'; $gameMap.event(stone)._siGatherRule = undefined;
+            out.stoneGone = $gameMap.event(stone).siGatherSpent();
+            // a spring never runs out
+            const spring = ev('Fishing Spot');
+            out.spring = G.gather(map, spring, 'Spring', yoon).ok && G.gather(map, spring, 'Spring', yoon).ok;
+            // the rules, and a note override
+            out.rules = ['Bitterwood', 'Laurel', 'Clay Pit', 'Copper Vein', 'Sandalwood', 'Obsidian', 'Basalt', 'Spring']
+                .map(s => { const x = G.rule(s); return s + ':' + (x.always ? 'always' : (x.hauls ? x.hauls + 'x' : x.regrow + 'd')) + (x.felled ? '/felled' : '') + '/' + x.vanish; }).join(' ');
+            const fake = { event: () => ({ note: '<Regrow: 7>\n<Stays>' }) };
+            const o = G.rule('Bitterwood', fake); out.override = o.regrow + '/' + o.vanish;
+            Math.random = real;
+            return out;
+        });
+        t.eq(r.oreToday, "You've taken all you can for today.", 'ore: once a day');
+        t.eq(r.oreLast, 'Pada breaks off some Copper Ore. The vein is worked out.', 'ore: the sixth haul works it out');
+        t.eq(r.oreAfter, 'This vein is worked out.', 'ore: worked out for good, even days later');
+        t.ok(r.oreD && r.oreShown, 'a worked-out vein turns on Self Switch D and stays visible');
+        t.ok(/The tree comes down: only a stump is left\.$/.test(r.felled), 'a rare tree: the third haul fells it: ' + r.felled);
+        t.eq(r.stump, 'Only a stump is left.', 'rare trees don\'t regrow');
+        t.ok(r.stoneShownSpent && r.stoneGone, 'loose stone stays while it lasts, and vanishes once worked out');
+        t.ok(r.spring, 'a spring never runs out');
+        t.eq(r.rules, 'Bitterwood:1d/spent Laurel:3d/false Clay Pit:3d/false Copper Vein:6x/false Sandalwood:3x/felled/false Obsidian:5x/worked Basalt:6x/false Spring:always/false', 'the rules by kind and species');
+        t.eq(r.override, '7/false', 'a spot\'s Note can override (<Regrow: 7>, <Stays>)');
     }
 };

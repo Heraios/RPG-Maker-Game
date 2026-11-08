@@ -297,7 +297,15 @@ examined. Gathering also turns its Self Switch A on (and a new day off) for any 
   can teach him more with a **Script** command: `SmokingIsle.Gather.teach(11, 'fish')` (or `herb`,
   `food`, `dig`, `shore`; several at once like `'herb, food'`).
 
-- **One harvest a day per spot.** Place several spots if you want more of something in an area.
+- **How spots come back** (the "Comes back" column): small things (herbs, food, shore finds) **vanish
+  until the next day**; trees, bark and digging spots **stay visible** and take a few days ("Picked clean.
+  It'll grow back in a few days."); **stone, ore and rare trees run out**: a few hauls, one a day, then
+  worked out for good (loose stone vanishes; ore veins say "This vein is worked out."; Ebony, Mahogany,
+  Sandalwood and the Dragon Tree leave "a stump"); springs and wells never run out. Traders restock stone,
+  metal and wood.
+- **Change one spot** with its Note: `<Regrow: 5>` (days), `<Hauls: 10>`, `<Vanishes>`, `<Stays>`,
+  `<Always>`. A worked-out spot turns on its **Self Switch D**: give it a stump or rubble page if you like.
+- Place several spots if you want more of something in an area.
 - **The Ghost alone** can't gather: any spot gives "...your hand goes through it."
 - **Spots only some can gather** ("Only Lasa can gather this.") name only people who have been in the
   party; before that: "Only someone who knows the caves could gather this." (fishers, priests the same).
@@ -311,92 +319,92 @@ examined. Gathering also turns its Self Switch A on (and a new day off) for any 
 
 ### Species list (what to type in the note)
 
-| Type this | Gives | Rare extra | Tool | Who | Notes |
-|---|---|---|---|---|---|
-| `<Gather: Laurel>` | Laurel Branch | Laurel Log (15%) | Axe (equipped) | Anyone | log needs an adult |
-| `<Gather: Heather>` | Heather Branch | — | Axe (equipped) | Anyone | — |
-| `<Gather: Ash>` | Ash Branch | — | Axe (equipped) | Anyone | — |
-| `<Gather: Pine>` | Pine Branch | Pine Log (15%) | Axe (equipped) | Anyone | log needs an adult |
-| `<Gather: Juniper>` | Juniper Branch | Juniper Berries (40%) | Axe (equipped) | Anyone | — |
-| `<Gather: Yew>` | Yew Branch | — | Axe (equipped) | Anyone | — |
-| `<Gather: Wax Myrtle>` | Wax Myrtle Branch | Faya Berries (40%) | Axe (equipped) | Anyone | — |
-| `<Gather: Ebony>` | Ebony Branch | Ebony Log (10%) | Metal axe (equipped) | Adults only | — |
-| `<Gather: Mahogany>` | Scrap Wood | Mahogany Log (30%) | Metal axe (equipped) | Adults only | — |
-| `<Gather: Driftwood>` | Scrap Wood | Scrap Wood (50%) | By hand | Anyone | light work (children tire less) |
-| `<Gather: Pine Resin>` | Pine Pitch | — | Knife (equipped) | Anyone | — |
-| `<Gather: Dragon Tree>` | Dragon's Blood | Dragonheart Branch (15%) | Knife (equipped) | Anyone | log needs an adult |
-| `<Gather: Honey Palm>` | Palm Fronds | Palm Sap (25%) | Knife (equipped) | Anyone | — |
-| `<Gather: Mulberry>` | Mulberry Bark | — | Knife (equipped) | Anyone | — |
-| `<Gather: Rubber Tree>` | Latex | — | Knife (equipped) | Anyone | Latex + Sulfur Lump make Rubber (Lightning Clan electroplater) |
-| `<Gather: Sandalwood>` | Sandalwood Branch | — | Knife (equipped) | Sacred gatherers (Yoon, Sib, Juda, Falmi) | 50% chance |
-| `<Gather: Rain Tree>` | Rain-Tree Branch | — | By hand | Sacred gatherers (Yoon, Sib, Juda, Falmi) | 10% chance; only fallen wood |
-| `<Gather: Bitterwood>` | Bitterwood | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Cliff Mint>` | Cliff Mint | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Hill Thyme>` | Hill Thyme | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Ironwort>` | Ironwort | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Burnwort>` | Burnwort | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Ti Plant>` | Ti Leaves | Ti Root (25%) | By hand | Anyone | light work (children tire less); extra needs a Digging Stick |
-| `<Gather: Yellowroot>` | Yellowroot | — | Digging Stick (carried) | Anyone | light work (children tire less) |
-| `<Gather: Wart Fern>` | Wart Fern | — | By hand | Lasa | light work (children tire less) |
-| `<Gather: Moon Sorrel>` | Moon Sorrel | — | By hand | Anyone | night only; light work (children tire less) |
-| `<Gather: Kava>` | Kava | — | Digging Stick (carried) | Sacred gatherers (Yoon, Sib, Juda, Falmi) | — |
-| `<Gather: Pennyroyal>` | Pennyroyal Sprig | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Ephedra>` | Ephedra Twigs | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Milo>` | Milo Bark | — | Knife (equipped) | Anyone | — |
-| `<Gather: Spurge>` | Spurge Milk | — | Knife (equipped) | Anyone | light work (children tire less) |
-| `<Gather: Orchil>` | Orchil Lichen | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Reed Bed>` | Marsh Reed | Marsh Reed (50%) | Knife (equipped) | Anyone | light work (children tire less) |
-| `<Gather: Gourd Vine>` | Gourd | — | Knife (equipped) | Anyone | light work (children tire less) |
-| `<Gather: Barley>` | Barley | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Lentils>` | Lentils | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Grapevine>` | Grapes | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Syrup Berries>` | Syrup Berries | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Strawberry Tree>` | Strawberry-Tree Fruit | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Bracken>` | Fern-Root Flour | — | Digging Stick (carried) | Anyone | light work (children tire less) |
-| `<Gather: Bee Rock>` | Wild Honey | — | Torch (carried, used up) | Anyone | — |
-| `<Gather: Pine Cones>` | Pine Nuts | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Cosco Patch>` | Cosco Seeds | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Bean Field>` | Broad Beans | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Sweet Potato Patch>` | Sweet Potato | — | Digging Stick (carried) | Anyone | light work (children tire less) |
-| `<Gather: Taro Patch>` | Taro | — | Digging Stick (carried) | Anyone | light work (children tire less) |
-| `<Gather: Cave Mushrooms>` | Cave Mushrooms | — | By hand | Lasa | light work (children tire less) |
-| `<Gather: Bellflower Bush>` | Bellflower Nectar | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Fog Laurel>` | Fog Drip | — | By hand | Anyone | dawn only |
-| `<Gather: Dead Laurel>` | Fairy Butter | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Goblin's Gold>` | Goblin's Gold | — | By hand | Lasa | light work (children tire less) |
-| `<Gather: Cave Pool>` | Cave Pearls | — | By hand | Lasa | — |
-| `<Gather: Leaf Mould>` | Leaf Mould | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Beard Lichen>` | Beard Lichen | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Obsidian>` | Obsidian Shard | — | Knapping Kit (carried) | Anyone | — |
-| `<Gather: Chalcedony>` | Chalcedony | — | Knapping Kit (carried) | Anyone | — |
-| `<Gather: Jasper>` | Jasper | — | Knapping Kit (carried) | Anyone | — |
-| `<Gather: Basalt>` | Basalt | — | Knapping Kit (carried) | Anyone | — |
-| `<Gather: Andesite>` | Andesite | — | Knapping Kit (carried) | Anyone | — |
-| `<Gather: Olivine>` | Volcano Tear | — | Knapping Kit (carried) | Anyone | 30% chance |
-| `<Gather: Trachyte Cliff>` | Fire Opal | — | Knapping Kit (carried) | Anyone | 5% chance |
-| `<Gather: Scoria>` | Red Scoria | — | By hand | Anyone | — |
-| `<Gather: Pumice>` | Pumice Stone | — | By hand | Anyone | 50% chance; light work (children tire less) |
-| `<Gather: Snowline Quartz>` | Snow Quartz | — | By hand | Anyone | 50% chance; light work (children tire less) |
-| `<Gather: Hot Spring>` | Hot-Spring Sinter | Chalcedony (20%) | By hand | Anyone | 40% chance |
-| `<Gather: Sulfur Vent>` | Sulfur Lump | — | By hand | Anyone | — |
-| `<Gather: Copper Vein>` | Copper Ore | — | Pick (equipped) | Adults only | — |
-| `<Gather: Lead Vein>` | Lead Ore | — | Pick (equipped) | Adults only | — |
-| `<Gather: Lodestone>` | Lodestone | — | Pick (equipped) | Adults only | 30% chance |
-| `<Gather: Coal Seam>` | Brown Coal | — | Pick (equipped) | Adults only | — |
-| `<Gather: Deer Trail>` | Deer Hide | Antler (30%) | Knife (equipped) | Anyone (not Thenmy) | hunting: deer are taken, not fought |
-| `<Gather: Clay Pit>` | Clay | White Clay (10%) | Digging Stick (carried) | Anyone | — |
-| `<Gather: White Clay>` | White Clay | — | Digging Stick (carried) | Anyone | — |
-| `<Gather: Ochre>` | Red Ochre | — | Digging Stick (carried) | Anyone | — |
-| `<Gather: Salt Pan>` | Sea Salt | — | By hand | Anyone | light work (children tire less) |
-| `<Gather: Peat Bog>` | Peat | — | Digging Stick (carried) | Anyone | — |
-| `<Gather: Shore Rocks>` | Shellfish | Shell (25%) | Knife (equipped) | Anyone | light work (children tire less) |
-| `<Gather: Tide Pool>` | Shell | Coral (15%) | By hand | Anyone | light work (children tire less) |
-| `<Gather: Giant Clam>` | Shellfish | Pearl (25%) | Knife (equipped) | Adults only | — |
-| `<Gather: Seabird Cliff>` | Seabird Feather | Seabird Eggs (25%) | By hand | Anyone | light work (children tire less) |
-| `<Gather: Fishing Spot>` | Raw Fish | — | Harpoon (equipped) | Fishers (Dama, Parl) | — |
-| `<Gather: Eel Pool>` | Raw Eel | — | Harpoon (equipped) | Fishers (Dama, Parl) | — |
-| `<Gather: Spring>` | Fresh Water | — | By hand | Anyone | — |
-| `<Gather: Sacred Well>` | Well Water | — | By hand | Sacred gatherers (Yoon, Sib, Juda, Falmi) | — |
+| Type this | Gives | Rare extra | Tool | Who | Comes back | Notes |
+|---|---|---|---|---|---|---|
+| `<Gather: Laurel>` | Laurel Branch | Laurel Log (15%) | Axe (equipped) | Anyone | in 3 days | log needs an adult |
+| `<Gather: Heather>` | Heather Branch | — | Axe (equipped) | Anyone | in 3 days | — |
+| `<Gather: Ash>` | Ash Branch | — | Axe (equipped) | Anyone | in 3 days | — |
+| `<Gather: Pine>` | Pine Branch | Pine Log (15%) | Axe (equipped) | Anyone | in 3 days | log needs an adult |
+| `<Gather: Juniper>` | Juniper Branch | Juniper Berries (40%) | Axe (equipped) | Anyone | in 3 days | — |
+| `<Gather: Yew>` | Yew Branch | — | Axe (equipped) | Anyone | in 3 days | — |
+| `<Gather: Wax Myrtle>` | Wax Myrtle Branch | Faya Berries (40%) | Axe (equipped) | Anyone | in 3 days | — |
+| `<Gather: Ebony>` | Ebony Branch | Ebony Log (10%) | Metal axe (equipped) | Adults only | 3 hauls (one a day), then a stump | — |
+| `<Gather: Mahogany>` | Scrap Wood | Mahogany Log (30%) | Metal axe (equipped) | Adults only | 3 hauls (one a day), then a stump | — |
+| `<Gather: Driftwood>` | Scrap Wood | Scrap Wood (50%) | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Pine Resin>` | Pine Pitch | — | Knife (equipped) | Anyone | in 3 days | — |
+| `<Gather: Dragon Tree>` | Dragon's Blood | Dragonheart Branch (15%) | Knife (equipped) | Anyone | 3 hauls (one a day), then a stump | log needs an adult |
+| `<Gather: Honey Palm>` | Palm Fronds | Palm Sap (25%) | Knife (equipped) | Anyone | in 3 days | — |
+| `<Gather: Mulberry>` | Mulberry Bark | — | Knife (equipped) | Anyone | in 3 days | — |
+| `<Gather: Rubber Tree>` | Latex | — | Knife (equipped) | Anyone | in 3 days | Latex + Sulfur Lump make Rubber (Lightning Clan electroplater) |
+| `<Gather: Sandalwood>` | Sandalwood Branch | — | Knife (equipped) | Sacred gatherers (Yoon, Sib, Juda, Falmi) | 3 hauls (one a day), then a stump | 50% chance |
+| `<Gather: Rain Tree>` | Rain-Tree Branch | — | By hand | Sacred gatherers (Yoon, Sib, Juda, Falmi) | next day | 10% chance; only fallen wood |
+| `<Gather: Bitterwood>` | Bitterwood | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Cliff Mint>` | Cliff Mint | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Hill Thyme>` | Hill Thyme | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Ironwort>` | Ironwort | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Burnwort>` | Burnwort | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Ti Plant>` | Ti Leaves | Ti Root (25%) | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less); extra needs a Digging Stick |
+| `<Gather: Yellowroot>` | Yellowroot | — | Digging Stick (carried) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Wart Fern>` | Wart Fern | — | By hand | Lasa | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Moon Sorrel>` | Moon Sorrel | — | By hand | Anyone | next day (vanishes meanwhile) | night only; light work (children tire less) |
+| `<Gather: Kava>` | Kava | — | Digging Stick (carried) | Sacred gatherers (Yoon, Sib, Juda, Falmi) | next day (vanishes meanwhile) | — |
+| `<Gather: Pennyroyal>` | Pennyroyal Sprig | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Ephedra>` | Ephedra Twigs | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Milo>` | Milo Bark | — | Knife (equipped) | Anyone | in 3 days | — |
+| `<Gather: Spurge>` | Spurge Milk | — | Knife (equipped) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Orchil>` | Orchil Lichen | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Reed Bed>` | Marsh Reed | Marsh Reed (50%) | Knife (equipped) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Gourd Vine>` | Gourd | — | Knife (equipped) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Barley>` | Barley | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Lentils>` | Lentils | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Grapevine>` | Grapes | — | By hand | Anyone | in 3 days | light work (children tire less) |
+| `<Gather: Syrup Berries>` | Syrup Berries | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Strawberry Tree>` | Strawberry-Tree Fruit | — | By hand | Anyone | in 3 days | light work (children tire less) |
+| `<Gather: Bracken>` | Fern-Root Flour | — | Digging Stick (carried) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Bee Rock>` | Wild Honey | — | Torch (carried, used up) | Anyone | in 3 days | — |
+| `<Gather: Pine Cones>` | Pine Nuts | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Cosco Patch>` | Cosco Seeds | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Bean Field>` | Broad Beans | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Sweet Potato Patch>` | Sweet Potato | — | Digging Stick (carried) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Taro Patch>` | Taro | — | Digging Stick (carried) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Cave Mushrooms>` | Cave Mushrooms | — | By hand | Lasa | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Bellflower Bush>` | Bellflower Nectar | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Fog Laurel>` | Fog Drip | — | By hand | Anyone | next day | dawn only |
+| `<Gather: Dead Laurel>` | Fairy Butter | — | By hand | Anyone | in 3 days | light work (children tire less) |
+| `<Gather: Goblin's Gold>` | Goblin's Gold | — | By hand | Lasa | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Cave Pool>` | Cave Pearls | — | By hand | Lasa | in 3 days | — |
+| `<Gather: Leaf Mould>` | Leaf Mould | — | By hand | Anyone | in 3 days | light work (children tire less) |
+| `<Gather: Beard Lichen>` | Beard Lichen | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Obsidian>` | Obsidian Shard | — | Knapping Kit (carried) | Anyone | 5 hauls (one a day), then gone | — |
+| `<Gather: Chalcedony>` | Chalcedony | — | Knapping Kit (carried) | Anyone | 5 hauls (one a day), then gone | — |
+| `<Gather: Jasper>` | Jasper | — | Knapping Kit (carried) | Anyone | 5 hauls (one a day), then gone | — |
+| `<Gather: Basalt>` | Basalt | — | Knapping Kit (carried) | Anyone | 6 hauls (one a day), then worked out | — |
+| `<Gather: Andesite>` | Andesite | — | Knapping Kit (carried) | Anyone | 6 hauls (one a day), then worked out | — |
+| `<Gather: Olivine>` | Volcano Tear | — | Knapping Kit (carried) | Anyone | 5 hauls (one a day), then gone | 30% chance |
+| `<Gather: Trachyte Cliff>` | Fire Opal | — | Knapping Kit (carried) | Anyone | 4 hauls (one a day), then worked out | 5% chance |
+| `<Gather: Scoria>` | Red Scoria | — | By hand | Anyone | 5 hauls (one a day), then gone | — |
+| `<Gather: Pumice>` | Pumice Stone | — | By hand | Anyone | 5 hauls (one a day), then gone | 50% chance; light work (children tire less) |
+| `<Gather: Snowline Quartz>` | Snow Quartz | — | By hand | Anyone | 5 hauls (one a day), then gone | 50% chance; light work (children tire less) |
+| `<Gather: Hot Spring>` | Hot-Spring Sinter | Chalcedony (20%) | By hand | Anyone | in 2 days | 40% chance |
+| `<Gather: Sulfur Vent>` | Sulfur Lump | — | By hand | Anyone | in 2 days | — |
+| `<Gather: Copper Vein>` | Copper Ore | — | Pick (equipped) | Adults only | 6 hauls (one a day), then worked out | — |
+| `<Gather: Lead Vein>` | Lead Ore | — | Pick (equipped) | Adults only | 6 hauls (one a day), then worked out | — |
+| `<Gather: Lodestone>` | Lodestone | — | Pick (equipped) | Adults only | 3 hauls (one a day), then worked out | 30% chance |
+| `<Gather: Coal Seam>` | Brown Coal | — | Pick (equipped) | Adults only | 8 hauls (one a day), then worked out | — |
+| `<Gather: Deer Trail>` | Deer Hide | Antler (30%) | Knife (equipped) | Anyone (not Thenmy) | in 3 days | hunting: deer are taken, not fought |
+| `<Gather: Clay Pit>` | Clay | White Clay (10%) | Digging Stick (carried) | Anyone | in 3 days | — |
+| `<Gather: White Clay>` | White Clay | — | Digging Stick (carried) | Anyone | in 3 days | — |
+| `<Gather: Ochre>` | Red Ochre | — | Digging Stick (carried) | Anyone | in 3 days | — |
+| `<Gather: Salt Pan>` | Sea Salt | — | By hand | Anyone | in 2 days | light work (children tire less) |
+| `<Gather: Peat Bog>` | Peat | — | Digging Stick (carried) | Anyone | in 3 days | — |
+| `<Gather: Shore Rocks>` | Shellfish | Shell (25%) | Knife (equipped) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Tide Pool>` | Shell | Coral (15%) | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Giant Clam>` | Shellfish | Pearl (25%) | Knife (equipped) | Adults only | next day (vanishes meanwhile) | — |
+| `<Gather: Seabird Cliff>` | Seabird Feather | Seabird Eggs (25%) | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Fishing Spot>` | Raw Fish | — | Harpoon (equipped) | Fishers (Dama, Parl) | next day | — |
+| `<Gather: Eel Pool>` | Raw Eel | — | Harpoon (equipped) | Fishers (Dama, Parl) | next day | — |
+| `<Gather: Spring>` | Fresh Water | — | By hand | Anyone | never runs out | — |
+| `<Gather: Sacred Well>` | Well Water | — | By hand | Sacred gatherers (Yoon, Sib, Juda, Falmi) | never runs out | — |
 
 Tools: an **equipped** tool must be in the gatherer's hands (a weapon slot). A **carried** tool only
 needs to be in the bag. "By hand" needs nothing.

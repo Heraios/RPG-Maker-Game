@@ -71,6 +71,7 @@ module.exports = {
             const rnd = Math.random; Math.random = () => 0.2;
             out.noForager = G.gather(map, spot, 'Laurel', pada).got.length;
             pat.forceChangeEquip(pat.slotOfType(17), AR('Forager\'s Pack')); T.sleep();
+            delete G.spent()[G.key(map, spot)];   // laurel takes a few days to regrow; this test is about the pack
             out.forager = G.gather(map, spot, 'Laurel', pada).got.length;
             Math.random = rnd;
             out.dogGear = ['Stone Pack', 'Sharkskin Booties', 'Deerskin Booties', 'Felt Booties', 'Clay Bell', 'Ringing-Stone Bell', 'Silver-Studded Collar']

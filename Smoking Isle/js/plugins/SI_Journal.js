@@ -50,6 +50,11 @@
  *   SmokingIsle.Journal.knowhow('gathering')  a how-to (Remembered, Know-how):
  *                                             a tutorial, kept to re-read
  *
+ * Time-limited quests: give the quest a "timed" line in Journal.json ("Only
+ * until the next full moon."). It's marked ! in the list, the entry says
+ * "Only for a while: ...", and its notice says so. Nothing time-limited may
+ * stop the game being beaten.
+ *
  * A corner notice says what was added (never in battle: it waits). Words
  * add no notice: the lesson already says "New word".
  *
@@ -112,7 +117,7 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
         var q = $.data().quests && $.data().quests[id], s = $.state();
         if (!q || s.quests[id]) return;
         s.quests[id] = { step: 1, status: 'now', order: ++s.order };
-        $.notice('New quest: ' + q.title);
+        $.notice((q.timed ? 'New quest (only for a while): ' : 'New quest: ') + q.title);
     };
     $.step = function(id, n) {
         var s = $.state(); if (!s.quests[id]) $.quest(id);
@@ -200,7 +205,7 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
                     .sort(function(a, b) { return s.quests[b].order - s.quests[a].order; });
                 if (!ids.length) return;
                 rows.push({ kind: 'header', text: sec[1] });
-                ids.forEach(function(id) { rows.push({ kind: 'quest', id: id, text: d.quests[id].title, status: sec[0] }); });
+                ids.forEach(function(id) { rows.push({ kind: 'quest', id: id, text: d.quests[id].title, status: sec[0], timed: !!d.quests[id].timed }); });
             });
             if (!rows.length) rows.push({ kind: 'empty', text: 'Nothing yet.' });
         } else if (tab === 'evidence') {
@@ -350,6 +355,9 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
         if (r.kind === 'unknown' || r.kind === 'empty') this.changePaintOpacity(false);
         if (r.status === 'missed' || r.status === 'done') this.changePaintOpacity(false);
         var indent = (r.kind === 'body' || r.kind === 'questions') ? 0 : 16;
+        if (r.timed && r.status === 'now') {   // time-limited: always clearly marked
+            this.changeTextColor(this.crisisColor()); this.drawText('!', rect.x, rect.y, 16); this.resetTextColor();
+        }
         this.drawText(r.text, rect.x + indent, rect.y, rect.width - indent);
         this.changePaintOpacity(true);
     };
@@ -399,6 +407,11 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
             var q = d.quests[r.id], st = $.state().quests[r.id];
             title(q.title);
             if (q.giver) para('From ' + q.giver + '.', true);
+            if (q.timed && st.status === 'now') {
+                this.changeTextColor(this.crisisColor());
+                $.wrap(this, 'Only for a while: ' + q.timed, w).forEach(function(l) { this.drawText(l, 0, y, w); y += lh; }, this);
+                this.resetTextColor(); y += 8;
+            }
             (q.steps || []).forEach(function(s, i) {
                 if (i + 1 > st.step) return;
                 var done = i + 1 < st.step;

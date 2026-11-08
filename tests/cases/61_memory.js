@@ -39,6 +39,10 @@ module.exports = {
             const parts = $dataJournal.body;
             out.bone = J.bodyHas(parts[0]); out.pearlBefore = J.bodyHas(parts[7]);
             $gameParty.gainItem($dataItems[725], 1); out.pearlAfter = J.bodyHas(parts[7]);
+            // a time-limited quest is clearly marked
+            $dataJournal.quests.timedTest = { title: 'Ana at Night', timed: 'Only while Ana keeps the night shift.', steps: ['Listen to the wire.'] };
+            $gameTemp._siJournalNotices = []; J.quest('timedTest');
+            out.timed = $gameTemp._siJournalNotices[0] + '/' + J.rows('quests').some(x => x.id === 'timedTest' && x.timed);
             // margin notes: members who've been in the party
             out.met = J.hasMet(4) + '/' + J.hasMet(9);
             return out;
@@ -62,6 +66,7 @@ module.exports = {
         t.ok(r.bone, 'the bone counts from Story 60');
         t.ok(!r.pearlBefore && r.pearlAfter, 'an ingredient counts once the party holds it');
         t.eq(r.met, 'true/false', 'party members who have been in the party are remembered');
+        t.eq(r.timed, 'New quest (only for a while): Ana at Night/true', 'time-limited quests are clearly marked');
     },
 
     'memory: the screen, the menu command, J and the notices': async (h, t) => {

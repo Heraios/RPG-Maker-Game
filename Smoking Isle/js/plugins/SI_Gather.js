@@ -22,10 +22,16 @@
  * 1. Make a map event with a tree, plant or rock graphic.
  * 2. In its Note box, write the species:   <Gather: Laurel>
  * 3. Its only command: Call Common Event "Gather".
- * 4. That's all. Once gathered, the spot vanishes (hidden, walk-through,
- *    can't be examined) until a new day (dawn, or sleeping). Gathering also
- *    turns its Self Switch A on, and a new day turns it off, for events that
- *    want to know.
+ * 4. That's all. How a spot comes back depends on what it is ($.KIND_RULES
+ *    and $.SPECIES_RULES below): small things (herbs, food, shore finds)
+ *    vanish until the next day; trees, bark, digging, vents take a few days
+ *    and stay visible ("Picked clean."); stone, ore and rare trees (Ebony,
+ *    Mahogany, Sandalwood, Dragon Tree) give a few hauls, once a day, then
+ *    are worked out for good (loose stone vanishes; a felled tree leaves "a
+ *    stump"); springs and wells never run out. A spot's Note can override:
+ *    <Regrow: 3>  <Hauls: 5>  <Vanishes>  <Stays>  <Always>
+ *    Gathering turns its Self Switch A on until it's back; worked out also
+ *    turns on Self Switch D (for a stump or rubble page, if you want one).
  *
  * The Ghost alone (nobody who can gather) gets "...your hand goes through
  * it." Spots only some can gather name only people already met.
@@ -189,6 +195,51 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Sacred Well':   { kind: 'water', who: 'sacred', gives: 'Well Water' }
     };
 
+    // How a spot comes back once gathered. regrow: days until it's back (1 = the next day).
+    // hauls: a finite spot gives this many times (once a day), then it's worked out for good.
+    // vanish: 'spent' (hidden while spent), 'worked' (hidden once worked out) or false (stays visible).
+    // always: never spent. felled: a tree that doesn't regrow (a stump is left).
+    // A spot's Note can override: <Regrow: 3> <Hauls: 5> <Vanishes> <Stays> <Always>.
+    $.KIND_RULES = {
+        herb:  { regrow: 1, vanish: 'spent' }, food: { regrow: 1, vanish: 'spent' }, shore: { regrow: 1, vanish: 'spent' },
+        fish:  { regrow: 1, vanish: false },   hunt: { regrow: 3, vanish: false },   dig:   { regrow: 3, vanish: false },
+        wood:  { regrow: 3, vanish: false },   stone: { regrow: 1, hauls: 5, vanish: 'worked' },
+        ore:   { regrow: 1, hauls: 6, vanish: false }, water: { always: true, vanish: false }
+    };
+    $.SPECIES_RULES = {
+        // trees and bark: they stay, and take a few days
+        'Pine Resin': { regrow: 3, vanish: false }, 'Honey Palm': { regrow: 3, vanish: false }, 'Mulberry': { regrow: 3, vanish: false },
+        'Rubber Tree': { regrow: 3, vanish: false }, 'Milo': { regrow: 3, vanish: false }, 'Strawberry Tree': { regrow: 3, vanish: false },
+        'Grapevine': { regrow: 3, vanish: false }, 'Bee Rock': { regrow: 3, vanish: false }, 'Cave Pool': { regrow: 3, vanish: false },
+        'Dead Laurel': { regrow: 3, vanish: false }, 'Rain Tree': { regrow: 1, vanish: false }, 'Fog Laurel': { regrow: 1, vanish: false },
+        'Driftwood': { regrow: 1, vanish: 'spent' },
+        // rare trees don't regrow
+        'Ebony': { regrow: 1, hauls: 3, felled: true, vanish: false }, 'Mahogany': { regrow: 1, hauls: 3, felled: true, vanish: false },
+        'Sandalwood': { regrow: 1, hauls: 3, felled: true, vanish: false }, 'Dragon Tree': { regrow: 1, hauls: 3, felled: true, vanish: false },
+        // outcrops and vents stay
+        'Basalt': { regrow: 1, hauls: 6, vanish: false }, 'Andesite': { regrow: 1, hauls: 6, vanish: false },
+        'Trachyte Cliff': { regrow: 1, hauls: 4, vanish: false },
+        'Hot Spring': { regrow: 2, hauls: 0, vanish: false }, 'Sulfur Vent': { regrow: 2, hauls: 0, vanish: false },   // vents renew
+        'Salt Pan': { regrow: 2, vanish: false },
+        // ore veins
+        'Coal Seam': { regrow: 1, hauls: 8, vanish: false }, 'Lodestone': { regrow: 1, hauls: 3, vanish: false }
+    };
+    $.rule = function(species, event) {
+        var entry = $.TABLE[species] || {}, r = {};
+        [$.KIND_RULES[entry.kind] || { regrow: 1, vanish: 'spent' }, $.SPECIES_RULES[species] || {}].forEach(function(o) {
+            Object.keys(o).forEach(function(k) { r[k] = o[k]; });
+        });
+        var note = (event && event.event && event.event() && event.event().note) || '';
+        var m;
+        if ((m = /<Regrow:\s*(\d+)>/i.exec(note))) r.regrow = Number(m[1]);
+        if ((m = /<Hauls:\s*(\d+)>/i.exec(note))) r.hauls = Number(m[1]);
+        if (/<Vanishes>/i.test(note)) r.vanish = r.hauls ? 'worked' : 'spent';
+        if (/<Stays>/i.test(note)) r.vanish = false;
+        if (/<Always>/i.test(note)) r.always = true;
+        r.regrow = Math.max(1, r.regrow || 1);
+        return r;
+    };
+
     $.stickSnap = 5;   // % chance a Digging Stick snaps each use
 
     $.VERBS = { wood: 'cuts', herb: 'picks', food: 'gathers', stone: 'chips off', ore: 'breaks off', dig: 'digs up',
@@ -320,15 +371,26 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
 
     $.key = function(mapId, eventId) { return mapId + ':' + eventId; };
 
+    // spent: "map:event" -> the last day it stays spent. worked out: gone for good.
     $.isSpent = function(mapId, eventId) {
+        if ($.isWorkedOut(mapId, eventId)) return true;
         var day = $.spent()[$.key(mapId, eventId)];
         return day !== undefined && day >= SmokingIsle.Time.day();
     };
+    $.hauls = function() { return $gameSystem._siGatherHauls = $gameSystem._siGatherHauls || {}; };
+    $.workedOut = function() { return $gameSystem._siGatherOut = $gameSystem._siGatherOut || {}; };
+    $.isWorkedOut = function(mapId, eventId) { return !!$.workedOut()[$.key(mapId, eventId)]; };
+    $.eventOf = function(mapId, eventId) { return mapId === $gameMap.mapId() ? $gameMap.event(eventId) : null; };
 
     // A spent spot vanishes until it regrows: hidden, walk-through, and it can't be examined.
     Game_Event.prototype.siGatherSpent = function() {
         if (this._siGatherSpecies === undefined) this._siGatherSpecies = $.speciesOf(this);
-        return !!this._siGatherSpecies && $.isSpent(this._mapId, this._eventId);
+        if (!this._siGatherSpecies) return false;
+        if (this._siGatherRule === undefined) this._siGatherRule = $.rule(this._siGatherSpecies, this);
+        var v = this._siGatherRule.vanish;
+        if (v === 'spent') return $.isSpent(this._mapId, this._eventId);
+        if (v === 'worked') return $.isWorkedOut(this._mapId, this._eventId);
+        return false;
     };
     Game_Event.prototype.isTransparent = function() {
         return this.siGatherSpent() || Game_Character.prototype.isTransparent.call(this);
@@ -348,7 +410,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         Object.keys(spent).forEach(function(key) {
             if (spent[key] < today) {
                 var p = key.split(':');
-                $gameSelfSwitches.setValue([Number(p[0]), Number(p[1]), 'A'], false);
+                if (!$.workedOut()[key]) $gameSelfSwitches.setValue([Number(p[0]), Number(p[1]), 'A'], false);
                 delete spent[key];
             }
         });
@@ -363,7 +425,15 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     $.spotProblem = function(mapId, eventId, entry) {
         var T = SmokingIsle.Time;
         if (!entry) return 'Nothing to gather here.';
-        if ($.isSpent(mapId, eventId)) return 'Nothing more here today.';
+        var species = Object.keys($.TABLE).find(function(k) { return $.TABLE[k] === entry; });
+        var rule = $.rule(species, $.eventOf(mapId, eventId));
+        if ($.isWorkedOut(mapId, eventId)) {
+            return rule.felled ? 'Only a stump is left.' : entry.kind === 'ore' ? 'This vein is worked out.' : 'There\'s none left here.';
+        }
+        if (!rule.always && $.isSpent(mapId, eventId)) {
+            if (rule.hauls) return 'You\'ve taken all you can for today.';
+            return rule.regrow > 1 ? 'Picked clean. It\'ll grow back in a few days.' : 'Nothing more here today.';
+        }
         if (entry.night && !T.isNight()) return 'You can\'t find it now. It only shows itself at night.';
         if (entry.dawn && T.period() !== T.DAWN) return 'There\'s nothing here now. It only comes at dawn.';
         if (!entry.night && !T.canSee()) return 'It\'s too dark to see. You need a light.';
@@ -386,8 +456,15 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
             var forager = $gameParty.allMembers().some(function(m) { return m.equips().some(function(e) { return e && /<Forager>/i.test(e.note); }); });
             if (Math.random() * 100 < entry.extra[1] * (expert ? 2 : 1) * (forager ? 2 : 1)) got.push(entry.extra[0]);
         }
-        $.spent()[$.key(mapId, eventId)] = SmokingIsle.Time.day();
-        $gameSelfSwitches.setValue([mapId, eventId, 'A'], true);
+        var rule = $.rule(species, $.eventOf(mapId, eventId)), key = $.key(mapId, eventId), last = false;
+        if (!rule.always) {
+            $.spent()[key] = SmokingIsle.Time.day() + rule.regrow - 1;   // spent through this day
+            $gameSelfSwitches.setValue([mapId, eventId, 'A'], true);
+            if (rule.hauls) {
+                var n = $.hauls()[key] = ($.hauls()[key] || 0) + 1;
+                if (n >= rule.hauls) { $.workedOut()[key] = true; $gameSelfSwitches.setValue([mapId, eventId, 'D'], true); last = true; }
+            }
+        }
         var tire = ($.fatigue[entry.kind] || 0) * (entry.light && !adult ? 0.5 : 1);
         if (tire > 0 && actor.gainFatigue && !actor.hasNoFatigue()) actor.gainFatigue(tire);
         got.forEach(function(name) { $gameParty.gainItem($.find(name), 1); });
@@ -395,6 +472,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         if (got.length === 0) text = entry.fallen ? 'Nothing has fallen today.' : actor.name() + ' searches, but finds nothing this time.';
         else if (entry.fallen) text = 'Beneath the tree, ' + actor.name() + ' finds ' + $.article(got[0]) + got[0] + '.';
         else text = actor.name() + ' ' + $.VERBS[entry.kind] + ' ' + got.map(function(n, i) { return (i ? 'and ' : '') + $.article(n) + n; }).join(' ') + '.';
+        if (last) text += rule.felled ? ' The tree comes down: only a stump is left.' : entry.kind === 'ore' ? ' The vein is worked out.' : ' That was the last of it.';
         var slot = $.toolSlot(actor, entry);
         var worn = slot !== null && slot >= 0 && actor.rollWear ? actor.rollWear(slot) : null;
         if (entry.tool === 'torch') {

@@ -84,7 +84,8 @@ module.exports = {
             // a child with an axe cuts a branch, but only an adult brings down a log
             arm(falmi, 'Basalt Axe');
             out.childCut = G.gather(map, ev('Laurel'), 'Laurel', falmi).text + '/' + have('Laurel Log');
-            T.sleep(); arm(pada, 'Basalt Axe');
+            T.sleep(); delete G.spent()[G.key(map, ev('Laurel'))];   // laurel takes a few days to regrow; this test is about tools
+            arm(pada, 'Basalt Axe');
             out.adultCut = G.gather(map, ev('Laurel'), 'Laurel', pada).text;
             out.tired = pada.tp + '/' + falmi.tp;
             // hard woods: an adult with a metal axe
@@ -165,18 +166,20 @@ module.exports = {
             out.dark = G.gather(map, ev('Laurel'), 'Bitterwood', yoon).text;
             T.lightFor(100); out.lit = G.gather(map, ev('Laurel'), 'Bitterwood', yoon).ok;
             $dataMap.note = note;
-            T.sleep(); out.regrown = !$gameSelfSwitches.value([map, ev('Clay Pit'), 'A']) + '/' + G.gather(map, ev('Clay Pit'), 'Clay Pit', yoon).ok;
+            T.sleep(); out.notYet = G.gather(map, ev('Clay Pit'), 'Clay Pit', yoon).text;   // clay takes a few days
+            T.sleep(); T.sleep(); out.regrown = !$gameSelfSwitches.value([map, ev('Clay Pit'), 'A']) + '/' + G.gather(map, ev('Clay Pit'), 'Clay Pit', yoon).ok;
             Math.random = () => 0.99; out.rainTree = G.gather(map, ev('Laurel'), 'Rain Tree', yoon).text;
             Math.random = real;
             return out;
         });
         t.eq(r.clay, 'Yoon digs up some Clay./true', 'digging clay; the spot is spent');
-        t.eq(r.again, 'Nothing more here today.', 'once a day');
+        t.eq(r.again, "Picked clean. It'll grow back in a few days.", 'spent: clay takes a few days');
+        t.eq(r.notYet, "Picked clean. It'll grow back in a few days.", '...not back the next day');
         t.ok(/only shows itself at night/.test(r.sorrelDay), 'moon sorrel only by night');
         t.eq(r.sorrelNight, 'Yoon picks some Moon Sorrel.', 'at night, without a light');
         t.eq(r.dark, 'It\'s too dark to see. You need a light.', 'other spots need a light at night');
         t.ok(r.lit, 'with a light, gathering works at night');
-        t.eq(r.regrown, 'true/true', 'a new day: the spot regrows');
+        t.eq(r.regrown, 'true/true', 'three days on: the spot regrows');
         t.eq(r.rainTree, 'Nothing has fallen today.', 'the rain tree is never cut: only fallen branches, rarely');
     },
 
