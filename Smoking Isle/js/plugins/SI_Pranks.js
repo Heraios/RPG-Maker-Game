@@ -30,6 +30,11 @@
  *
  * Item / weapon / armor note:
  *   <Shiny>            thieves want it (copper, silver, bronze, pearls...).
+ *   <Steal Item>       (party skill, Lasa's Steal) takes one thing an enemy
+ *                      carries: its drops, plus <Steal: item 5, weapon 3>
+ *                      in the enemy's note. Speed and Luck; <Shiny> things
+ *                      come easier; once per enemy; sours Talk. An enemy
+ *                      with <No Steal> has nothing to take.
  *   <Steal Proof>      (armor/state) thieves can't take anything from the
  *                      wearer (the Lava-Tube set).
  *
@@ -69,6 +74,7 @@ SmokingIsle.Pranks = SmokingIsle.Pranks || {};
                 if (!skill) return;
                 var note = skill.note || '';
                 skill.siSteal = /<Steal>/i.test(note);
+                skill.siStealItem = /<Steal Item>/i.test(note);
                 var strip = /<Strip:\s*(\d+)>/i.exec(note);
                 skill.siStrip = strip ? Number(strip[1]) : 0;
             });
@@ -205,6 +211,11 @@ SmokingIsle.Pranks = SmokingIsle.Pranks || {};
                 target.result().success = true;
             }
         }
+        if (item.siStealItem && subject.isActor() && target.isEnemy()) {
+            target._siPrankMessages.push($.stealFromEnemy(subject, target).text);
+            target.result().success = true;
+            return;
+        }
         if (item.siSteal && subject.isEnemy() && target.isActor() && target.traitObjects().some(function(obj) {
             return obj && /<Steal Proof>/i.test(obj.note || '');
         })) {
@@ -233,6 +244,38 @@ SmokingIsle.Pranks = SmokingIsle.Pranks || {};
             target.result().success = true;
             subject.escape();
         }
+    };
+
+    // The party steals from an enemy (Lasa's Steal, <Steal Item>): one thing per enemy, from what it
+    // carries (its drops, and <Steal: item 5, weapon 3, armor 7> in the enemy's note). Chance from Speed
+    // and Luck; <Shiny> things come easier. <No Steal> on an enemy: nothing to take. It sours Talk.
+    $.stealTable = function(enemy) {
+        var data = enemy.enemy(), out = [];
+        (data.dropItems || []).forEach(function(d) { if (d.kind > 0 && d.dataId > 0) out.push([d.kind, d.dataId]); });
+        var m = /<Steal:\s*([^>]*)>/i.exec(data.note || '');
+        if (m) m[1].split(',').forEach(function(part) {
+            var p = /(item|weapon|armor)\s*(\d+)/i.exec(part);
+            if (p) out.push([{ item: 1, weapon: 2, armor: 3 }[p[1].toLowerCase()], Number(p[2])]);
+        });
+        return out.map(function(k) { return [$dataItems, $dataWeapons, $dataArmors][k[0] - 1][k[1]]; }).filter(Boolean);
+    };
+    $.stealChance = function(thief, enemy, item) {
+        var c = 40 + (thief.agi - enemy.agi) + thief.luk / 2;
+        if (item && item.siShiny) c *= 1.5;
+        return Math.max(15, Math.min(95, c)) / 100;
+    };
+    $.stealFromEnemy = function(thief, enemy) {
+        if (/<No Steal>/i.test(enemy.enemy().note || '')) return { text: '%1 has nothing to steal.'.format(enemy.name()) };
+        if (enemy._siStolenFrom) return { text: '%1 has nothing left to steal.'.format(enemy.name()) };
+        var table = $.stealTable(enemy);
+        if (!table.length) return { text: '%1 has nothing to steal.'.format(enemy.name()) };
+        var shiny = table.filter(function(i) { return i.siShiny; });
+        var pick = (shiny.length ? shiny : table)[Math.randomInt((shiny.length ? shiny : table).length)];
+        if (enemy.talkMood) enemy._siMood = Math.max(0, enemy.talkMood() - 15);   // being robbed sours it
+        if (Math.random() >= $.stealChance(thief, enemy, pick)) return { text: '%1 holds on tight!'.format(enemy.name()) };
+        enemy._siStolenFrom = true;
+        $gameParty.gainItem(pick, 1);
+        return { text: '%1 steals %2!'.format(thief.name(), pick.name), item: pick };
     };
 
     var _Window_BattleLog_displayActionResults = Window_BattleLog.prototype.displayActionResults;

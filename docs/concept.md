@@ -2484,7 +2484,7 @@ read, so everything she knows is innate.
 
 | Who | From the start | Through story |
 |-----|----------------|---------------|
-| Lasa (cave) | **Keri, Mahu, Kami, Keva, Gau**: a dabbler, a little of many kinds of magic | Everything else, one story event at a time: Keriben, Kevaben, Kevagun, Gauben, ...; **Ihi**, late |
+| Lasa (cave) | **Keri, Mahu, Kami, Keva, Gau**: a dabbler, a little of many kinds of magic. Plus her people's **innate** tricks (not spells: silence can't stop them): **Prank** (Endurance down, may panic) and **Steal** | One story event at a time: the field spells **Pura** (a light), **Tikea** (reveals secrets) and **Garo** (shared with Falmi: hidden, in battle and on the map); Keriben, Kevaben, Kevagun, Gauben; **Ihi**, late |
 | Falmi (the forest's heir) | Raau, Geha, **Hahikiri** ("Roots and Bark": himself, 3 turns, regeneration doubled and Endurance +25%; MP 6) | Huhuti (meeting his mother's alpine body), Gogoro and Garo (his fathers), Viri / Viriben / Virisin (one per Daughter of the Wells he frees), maybe Mahu |
 | Tou (First Sailor) | Ahisin, Rarisin, Hagusin, Kerisin | First Sailor inscriptions |
 | Yoon | (the ??? Glyph) | **Ihi**: a word they know without knowing how |

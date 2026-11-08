@@ -79,8 +79,8 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    | | | | 9–11 | Yoon's temperament: Sweet, Funny, Unhinged |
    | | | | 12–13 | Lasa: times floated away; first impression |
 
-6. **Common events 3–10 and 15–18** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
-   Choose Yoon, Yoon's Room: Keepsakes; 15 Playtest: To the Test Room; 16–18 First Words).
+6. **Common events 3–10 and 15–21** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
+   Choose Yoon, Yoon's Room: Keepsakes; 15 Playtest: To the Test Room; 16–18 First Words; 19–21 the field spells).
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
    effects), 213 (Ready to Toss, Aday's Toss) and 214–219 (the weapon-art stances: Braced, En Garde,
    Warding, Covered, Following Up, Brought Down) are also used by number.
@@ -269,6 +269,25 @@ Events switch entries on with one **Script** command (tab 3 → Script...):
 - Already wired: Lasa's "Mouth-words" quest (she joins → the finale → the face) and then "Who am I?"; the
   Bone scene (common event 12) opens Evidence with the crushed skull and the cut marks; Sib's Act 2 line at
   Yoon's blood adds that clue.
+
+## Field spells and secrets
+
+Some spells are used **from the menu on the map** (`SI_FieldMagic.js`). Lasa learns them through story: give
+them with **Change Skills**.
+
+| Spell | Skill | Common event | What it does |
+|---|---|---|---|
+| **Pura** | 501 | 19 | A light for 200 steps, like a Torch |
+| **Tikea** | 502 | 20 | Reveals **secrets** within 8 tiles |
+| **Garo** | 454 | 21 | In battle as before; on the map, wandering enemies don't notice the party for 120 steps |
+
+**Secrets:** put `<Secret>` in an event's Note (a hidden cache, a crack in a wall, something buried). It's
+invisible, walk-through and can't be examined until Tikea reveals it (for good). A story moment can reveal
+one with a Script: `SmokingIsle.FieldMagic.reveal(eventId)`. The steps and range are in the plugin's settings.
+
+**Lasa's Steal** takes one thing an enemy carries: its **drops**, plus anything listed in the enemy's Note as
+`<Steal: item 5, weapon 3>`. Items tagged `<Shiny>` come easier. `<No Steal>` on an enemy (a boss) means
+nothing to take. Once per enemy; it sours the enemy's Talk mood.
 
 ## Gathering spots
 
