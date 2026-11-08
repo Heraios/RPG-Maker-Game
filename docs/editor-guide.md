@@ -193,7 +193,8 @@ one real hazard.
   drips and moves the player to map 6. It also makes the party **the Ghost alone**. Add pictures (the sea,
   the fleet, the smoking peak) with *Show Picture* where the comment in the event says.
 - **The Prologue plays the Prologue track** (map 5's Autoplay BGM); it fades out with the screen before
-  the drips.
+  the drips. Its narration is **centred**: each message starts with `\CT`, which centres every line of a
+  message (wrapped lines too) and isn't shown. Use it in any Show Text.
 - **Playtesting:** in a playtest (only), the Prologue puts a **Test Room Pass** (item 736, Key Items) in the
   bag. Use it from the menu to go to the Test Room with the test party (common event 15).
 - **New Game starts on the Prologue.** The player starts invisible (Database → System → *Transparent*),
@@ -206,7 +207,9 @@ one real hazard.
     impression; the Ghost can't touch anything. **Yoon's blood** (the stain at 10, 9) gives a cold feeling
     the first time the Ghost steps on it. Then **"First Words"** (scenes.md), built:
     - **Lasa** drops in the first time the Ghost floats into the skylight's light (event "Lasa (First
-      Words)": a parallel page watches, an autorun page plays the scene). Her offer is **common event 16**:
+      Words)": a parallel page watches, an autorun page plays the scene). Her theme plays while you talk to
+      her; when the talk ends (she joins, or the Ghost floats away), **First_Words** plays. Until her name
+      screen, her lines are labelled **???**. Her offer is **common event 16**:
       float closer, float away, or wail. Floating away, she waits in the garden (talk to her again); the
       fourth time she forces her way in. Joining is **common event 17** (her name screen; Mournful Wail;
       Story = 20).
@@ -218,7 +221,10 @@ one real hazard.
     - **The face:** the **still water** at (25, 10) starts to twinkle (`!$Twinkle.png`: copy its page's
       graphic and movement route for any other "look here" spot). Boy, girl or in between sets Yoon's
       gender; Story = 30. The ladder then offers the way out, floating up through the sky-hole.
-    - Gathering spots and the Red Bowl teach their word first, then work as usual.
+    - Gathering spots and the Red Bowl teach their word first, then work as usual. Every word can be learned
+      inside the rocks that close off the starting area ("rock" from the two boulders there).
+    - **Light:** the two lava pools beside Grave E glow and flicker (events "Lava Glow", `!$LavaGlow.png`,
+      drawn additively, like the skylight).
     - **To change the words or lines:** each lesson is on its object's lesson page; Lasa's offer, joining
       and the finale are common events 16–18.
   - **Act 2** (Sib in the party and **Story ≥ 50**: every Act 2 page has those two conditions): the

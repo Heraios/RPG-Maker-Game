@@ -17,7 +17,13 @@ module.exports = {
         await startGame(h, null, true);
         await onMap(h, 5);
         await h.page.waitForTimeout(500);
-        const start = await h.eval(() => ({ visible: !$gamePlayer.isTransparent(), bgm: AudioManager._currentBgm && AudioManager._currentBgm.name }));
+        await h.page.waitForFunction(() => $gameMessage.isBusy() && SceneManager._scene._messageWindow._textState, null, { timeout: 30000 });
+        await h.page.waitForTimeout(800);
+        const start = await h.eval(() => {
+            const w = SceneManager._scene._messageWindow, line = SmokingIsle.Screen.lineFrom(w, w._textState.text, 0, w.contentsWidth());
+            return { visible: !$gamePlayer.isTransparent(), bgm: AudioManager._currentBgm && AudioManager._currentBgm.name,
+                     centred: w._siCenter, shown: !/CT/.test(w._textState.text), margin: Math.round((w.contentsWidth() - w.textWidth(line)) / 2) };
+        });
         for (let i = 0; i < 6; i++) { await h.pumpMessages(); if (await h.eval(() => $gameMap.mapId() === 6)) break; await h.page.waitForTimeout(500); }
         await onMap(h, 6);
         await h.page.waitForTimeout(800);
@@ -35,6 +41,8 @@ module.exports = {
         const room = await h.eval(() => ({ party: $gameParty._actors.slice().sort((a, b) => a - b).join(','), visible: !$gamePlayer.isTransparent() }));
         t.eq(start.visible, false, 'the player is invisible on the black Prologue');
         t.eq(start.bgm, 'Prologue', 'the Prologue plays its music');
+        t.ok(start.centred && start.shown, 'the narration is centred (\\CT, not shown)');
+        t.ok(start.margin > 40, 'its first line starts well in from the left (' + start.margin + ' px)');
         t.eq(r.pass, 1, 'in playtests the party starts with the Test Room Pass');
         t.eq(room.party, '2,3,4,5,12', 'the pass brings back the test party...');
         t.ok(room.visible, '...in the Test Room, visible');
@@ -88,7 +96,8 @@ module.exports = {
             await play([1], a => $gameVariables.value(12) === a[0] && (a[0] < 4 ? eval(a[1]) : $gameVariables.value(5) === 20), [k, settled]);
         }
         const lasa = await h.eval(() => ({ party: $gameParty._actors.join(','), story: $gameVariables.value(5), funny: $gameVariables.value(10), first: $gameVariables.value(13),
-                                           wail: $gameActors.actor(1).isLearnedSkill(591), gone: $gameMap.event(46).findProperPageIndex() }));
+                                           wail: $gameActors.actor(1).isLearnedSkill(591), bgm: AudioManager._currentBgm && AudioManager._currentBgm.name,
+                                           unnamed: !JSON.stringify($dataCommonEvents[16].list).includes('N[4]'), gone: $gameMap.event(46).findProperPageIndex() }));
         // a lesson: the remains teach 'bones' (said carefully: Sweet)
         await h.eval(() => $gameMap.event(2).start());
         await play([0], () => $gameVariables.value(6) === 1);
@@ -122,6 +131,8 @@ module.exports = {
         t.eq(lasa.story, 20, 'Story 20');
         t.eq(lasa.funny + '/' + lasa.first, '4/2', 'Funny 4, first impression funny');
         t.ok(lasa.wail, 'the Ghost wails and learns Mournful Wail');
+        t.eq(lasa.bgm, 'First_Words', 'when the talk ends, First Words plays');
+        t.ok(lasa.unnamed, 'before her name screen, Lasa\'s lines say ???, not her name');
         t.eq(lasa.gone, 3, 'Lasa\'s event is gone from the garden');
         t.eq(lesson.words + '/' + lesson.sweet, '1/1', 'a lesson: a new word; said carefully, Sweet +1');
         t.ok(lesson.done && lesson.page === 2, 'the remains now use the word');

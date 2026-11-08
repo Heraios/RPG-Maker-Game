@@ -9,8 +9,8 @@ branch says otherwise.
 ## Act 1: "First Words" (Lasa finds the Ghost)
 **Built** on map 6 (see editor-guide.md, "The opening"): common events 16–18 and each object's lesson page.
 **Needs:** the Ghost alone. **Setting:** map 6, the lava tube where the Ghost wakes; the skylight garden.
-**Music:** First Words (to make: Lasa's theme and Yoon's taking turns, Yoon's single notes slowly joining
-into phrases).
+**Music:** Lasa's theme while talking to her; **First_Words** from when the talk ends, through the lessons.
+Until her name screen, Lasa's lines are labelled ???.
 
 The Ghost starts with **no moves at all**. It has no language: until the lessons, its own lines are
 wordless, and Lasa's words reach it **mind to mind** (shown in the *dim* message window). After the

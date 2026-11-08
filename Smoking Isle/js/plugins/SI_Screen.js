@@ -21,6 +21,9 @@
  *   (AI allies in green, enemies in red).
  * - Dialogue wraps at word boundaries (long lines continue on the next line,
  *   then the next page). Battle log lines wrap too.
+ * - Centred text: write \CT anywhere in a message (Show Text) and every line
+ *   of it is centred, wrapped lines too. The code itself isn't shown. The
+ *   Prologue's narration uses it.
  * - Options > Battle Text: Slow / Normal / Fast. Holding OK still speeds the
  *   log up.
  */
@@ -120,6 +123,11 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
     var _Window_Message_processNormalCharacter = Window_Message.prototype.processNormalCharacter;
     Window_Message.prototype.processNormalCharacter = function(textState) {
         var text = textState.text, i = textState.index;
+        if (textState.siCenterNext) {   // \CT: start this line where its centred text begins
+            textState.siCenterNext = false;
+            var avail = this.contentsWidth() - textState.left;
+            textState.x = textState.left + Math.max(0, (avail - this.textWidth($.lineFrom(this, text, i, avail))) / 2);
+        }
         var wordStart = text[i] !== ' ' && (i === 0 || text[i - 1] === ' ');
         if (wordStart && textState.x > textState.left) {
             var word = /^[^\s\x1b]+/.exec(text.slice(i));
@@ -130,6 +138,46 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
             }
         }
         _Window_Message_processNormalCharacter.call(this, textState);
+    };
+
+    //-------------------------------------------------------------------------
+    // Centred text: \CT in a message centres each line
+    //-------------------------------------------------------------------------
+
+    // The text of the line starting at index i, as the word wrap above will break it.
+    $.lineFrom = function(win, text, i, avail) {
+        var end = text.indexOf('\n', i);
+        var raw = text.slice(i, end < 0 ? text.length : end).replace(/\x1b[A-Z]+(\[[^\]]*\])?|\x1b./gi, '');
+        var words = raw.split(' '), line = '';
+        for (var k = 0; k < words.length; k++) {
+            var next = line ? line + ' ' + words[k] : words[k];
+            if (line && win.textWidth(next) > avail) break;
+            line = next;
+        }
+        return line;
+    };
+
+    var _Window_Base_convertEscapeCharacters = Window_Base.prototype.convertEscapeCharacters;
+    Window_Base.prototype.convertEscapeCharacters = function(text) {
+        return _Window_Base_convertEscapeCharacters.call(this, String(text).replace(/\\CT/gi, ''));
+    };
+
+    var _Window_Message_startMessage = Window_Message.prototype.startMessage;
+    Window_Message.prototype.startMessage = function() {
+        this._siCenter = /\\CT/i.test($gameMessage.allText());
+        _Window_Message_startMessage.call(this);
+    };
+
+    var _Window_Message_newPage = Window_Message.prototype.newPage;
+    Window_Message.prototype.newPage = function(textState) {
+        _Window_Message_newPage.call(this, textState);
+        if (this._siCenter) textState.siCenterNext = true;
+    };
+
+    var _Window_Message_processNewLine = Window_Message.prototype.processNewLine;
+    Window_Message.prototype.processNewLine = function(textState) {
+        _Window_Message_processNewLine.call(this, textState);
+        if (this._siCenter) textState.siCenterNext = true;
     };
 
     //-------------------------------------------------------------------------
