@@ -21,6 +21,18 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 - You move around as a spirit, learning language with Lasa's help and piecing together that
   you "are" the spirit of a missing (actually dead) child the village is mourning.
 - No combat in this act.
+- **Funnelled to the edge of Zonfahare** (decided): rocks close off the lava-tube country; the way leads out
+  of the gully to where the fields meet the town. A month after Yoon went missing, the search is long over
+  and grief has turned to gossip and rumour; **Pada** still goes out alone every night; the **twins** say
+  they've seen Yoon (nobody believes them); **Sib** hasn't eaten properly in weeks.
+- **The Rite for the Lost** (decided): the moon custom makes the family wait ends today. The village holds
+  Yoon's funeral without a body at an empty tomb niche where the fields meet the lava country, Yoon's things
+  laid out, the village's lament (BGM Grief). **Juda presides**, weeping. **Sib stays away: they couldn't
+  bear it.** The Ghost, drawn to its own funeral, drifts among mourners who can't see it, overhearing who it
+  was and learning words ("Yoon", marked ? in Memory: the word everyone keeps saying).
+- **Juda sees the Ghost** (decided, a real moment): mid-prayer he looks up, straight at it, and stops for a
+  breath; then goes on. Lasa yanks the Ghost out of sight (BGM Sneaking). Switch 10 "Juda saw the Ghost".
+- Then on into town, home to the twins, and to Sib.
 - Ends when Yoon and Lasa make contact with Sib.
 
 ### Act 2 — The Body
@@ -2484,7 +2496,7 @@ read, so everything she knows is innate.
 
 | Who | From the start | Through story |
 |-----|----------------|---------------|
-| Lasa (cave) | **Keri, Mahu, Raau, Keva, Gau**: a dabbler, a little of many kinds of magic | Everything else, one story event at a time: Keriben, Kevaben, Kevagun, Gauben, ...; **Ihi**, late |
+| Lasa (cave) | **Keri, Mahu, Kami, Keva, Gau**: a dabbler, a little of many kinds of magic. Plus her people's **innate** tricks (not spells: silence can't stop them): **Prank** (Endurance down, may panic) and **Steal** | One story event at a time: the field spells **Pura** (a light), **Tikea** (reveals secrets) and **Garo** (shared with Falmi: hidden, in battle and on the map); Keriben, Kevaben, Kevagun, Gauben; **Ihi**, late |
 | Falmi (the forest's heir) | Raau, Geha, **Hahikiri** ("Roots and Bark": himself, 3 turns, regeneration doubled and Endurance +25%; MP 6) | Huhuti (meeting his mother's alpine body), Gogoro and Garo (his fathers), Viri / Viriben / Virisin (one per Daughter of the Wells he frees), maybe Mahu |
 | Tou (First Sailor) | Ahisin, Rarisin, Hagusin, Kerisin | First Sailor inscriptions |
 | Yoon | (the ??? Glyph) | **Ihi**: a word they know without knowing how |

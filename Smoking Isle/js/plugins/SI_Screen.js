@@ -21,6 +21,7 @@
  *   (AI allies in green, enemies in red).
  * - Dialogue wraps at word boundaries (long lines continue on the next line,
  *   then the next page). Battle log lines wrap too.
+ * - The Status screen's profile wraps to as many lines as it needs.
  * - Centred text: write \CT anywhere in a message (Show Text) and every line
  *   of it is centred, wrapped lines too. The code itself isn't shown. The
  *   Prologue's narration uses it.
@@ -178,6 +179,17 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
     Window_Message.prototype.processNewLine = function(textState) {
         _Window_Message_processNewLine.call(this, textState);
         if (this._siCenter) textState.siCenterNext = true;
+    };
+
+    //-------------------------------------------------------------------------
+    // The Status screen's profile wraps (one long line ran off the edge)
+    //-------------------------------------------------------------------------
+
+    Window_Status.prototype.drawProfile = function(x, y) {
+        var text = this.convertEscapeCharacters(this._actor.profile());
+        $.wrap(this, text, this.contentsWidth() - x).forEach(function(line, i) {
+            this.drawTextEx(line, x, y + i * this.lineHeight());
+        }, this);
     };
 
     //-------------------------------------------------------------------------

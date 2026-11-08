@@ -1,0 +1,112 @@
+//=============================================================================
+// SI_FieldMagic.js
+//=============================================================================
+
+/*:
+ * @plugindesc Smoking Isle: spells used from the menu on the map. Pura (a
+ * light), Tikea (reveals secrets) and Garo (wandering enemies don't notice).
+ * @author Smoking Isle
+ *
+ * @param Pura Steps
+ * @type number
+ * @desc Steps Pura's light lasts (a Torch is 300).
+ * @default 200
+ *
+ * @param Tikea Range
+ * @type number
+ * @desc How many tiles away Tikea reveals secrets.
+ * @default 8
+ *
+ * @param Garo Steps
+ * @type number
+ * @desc Steps the party stays unnoticed by wandering enemies.
+ * @default 120
+ *
+ * @param Reveal Animation
+ * @type animation
+ * @desc Played on each secret Tikea reveals.
+ * @default 92
+ *
+ * @help
+ * Place after SI_Time and SI_Wanderers.
+ *
+ * Each spell is a skill with the effect "Common Event" (19 Pura, 20 Tikea,
+ * 21 Garo); the common event calls one of these:
+ *   SmokingIsle.FieldMagic.pura()     a light for Pura Steps
+ *   SmokingIsle.FieldMagic.tikea()    reveals secrets in range; returns how many
+ *   SmokingIsle.FieldMagic.garo()     unnoticed for Garo Steps
+ *
+ * Secrets: an event with <Secret> in its note is invisible, walk-through and
+ * can't be examined until Tikea reveals it (for good). Hidden caches, a
+ * crack in a wall, a buried thing. Script: SmokingIsle.FieldMagic.reveal(id)
+ * reveals one by hand (a story moment).
+ */
+
+var Imported = Imported || {};
+Imported.SI_FieldMagic = true;
+
+var SmokingIsle = SmokingIsle || {};
+SmokingIsle.FieldMagic = SmokingIsle.FieldMagic || {};
+
+(function($) {
+    'use strict';
+
+    var params = PluginManager.parameters('SI_FieldMagic');
+    $.puraSteps = Number(params['Pura Steps'] || 200);
+    $.tikeaRange = Number(params['Tikea Range'] || 8);
+    $.garoSteps = Number(params['Garo Steps'] || 120);
+    $.revealAnimation = Number(params['Reveal Animation'] || 92);
+
+    // Pura: a light, like a Torch (SI_Time).
+    $.pura = function() { SmokingIsle.Time.lightFor($.puraSteps); };
+
+    // Secrets: hidden until revealed.
+    $.revealed = function() { return $gameSystem._siSecrets = $gameSystem._siSecrets || {}; };
+    $.key = function(mapId, eventId) { return mapId + ':' + eventId; };
+    $.isSecret = function(event) {
+        if (event._siSecret === undefined) event._siSecret = /<Secret>/i.test((event.event() && event.event().note) || '');
+        return event._siSecret;
+    };
+    $.isHidden = function(event) { return $.isSecret(event) && !$.revealed()[$.key(event._mapId, event._eventId)]; };
+    $.reveal = function(eventId) {
+        var e = $gameMap.event(eventId); if (!e) return;
+        $.revealed()[$.key($gameMap.mapId(), eventId)] = true;
+        e.requestAnimation($.revealAnimation);
+    };
+    $.tikea = function() {
+        var found = 0;
+        $gameMap.events().forEach(function(e) {
+            if (!$.isHidden(e)) return;
+            if (Math.abs(e.x - $gamePlayer.x) + Math.abs(e.y - $gamePlayer.y) > $.tikeaRange) return;
+            $.reveal(e.eventId()); found++;
+        });
+        return found;
+    };
+
+    var _isTransparent = Game_Event.prototype.isTransparent;
+    Game_Event.prototype.isTransparent = function() { return $.isHidden(this) || _isTransparent.call(this); };
+    var _isThrough = Game_Event.prototype.isThrough;
+    Game_Event.prototype.isThrough = function() { return $.isHidden(this) || _isThrough.call(this); };
+    var _start = Game_Event.prototype.start;
+    Game_Event.prototype.start = function() { if ($.isHidden(this)) return; _start.call(this); };
+
+    // Garo: wandering enemies don't notice the party for a while.
+    $.unseenSteps = function() { return $gameSystem._siUnseen || 0; };
+    $.garo = function() {
+        $gameSystem._siUnseen = $.garoSteps;
+        $gameMap.events().forEach(function(e) { if (e._siMode === 'chase') e._siMode = 'wander'; });
+    };
+    if (Game_Event.prototype.canSeeParty) {
+        var _canSeeParty = Game_Event.prototype.canSeeParty;
+        Game_Event.prototype.canSeeParty = function() { return $.unseenSteps() > 0 ? false : _canSeeParty.call(this); };
+    }
+    var _increaseSteps = Game_Party.prototype.increaseSteps;
+    Game_Party.prototype.increaseSteps = function() {
+        _increaseSteps.call(this);
+        if ($gameSystem._siUnseen > 0) {
+            $gameSystem._siUnseen--;
+            if ($gameSystem._siUnseen === 0 && SmokingIsle.Journal && SmokingIsle.Journal.notice) SmokingIsle.Journal.notice('Garo wears off.');
+        }
+    };
+
+})(SmokingIsle.FieldMagic);

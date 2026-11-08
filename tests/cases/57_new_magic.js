@@ -49,7 +49,7 @@ module.exports = {
             out.oldCodices = ['Codex of Embers', 'Codex of Mending', "Sailor's Codex"].filter(n => AR(n)).join();
             // innate magic, all from the start
             const lasa = A(4).skills().map(s => s.name), tou = A(9).skills().map(s => s.name), fal = falmi.skills().map(s => s.name);
-            out.lasa = ['Mahu', 'Raau', 'Keri', 'Keva', 'Gau'].every(n => lasa.includes(n)) &&
+            out.lasa = ['Mahu', 'Kami', 'Keri', 'Keva', 'Gau'].every(n => lasa.includes(n)) && !lasa.includes('Raau') &&
                 !['Keriben', 'Kerigun', 'Kevaben', 'Kevagun', 'Gauben', 'Gaugun', 'Ihi'].some(n => lasa.includes(n));   // the rest come through story
             out.falmi = ['Raau', 'Geha', 'Hahikiri'].every(n => fal.includes(n));
             out.tou = ['Ahisin', 'Rarisin', 'Hagusin', 'Kerisin'].every(n => tou.includes(n) && /<School: first-sailor>/.test(SK(n).note));
@@ -72,7 +72,7 @@ module.exports = {
         t.eq(r.bulls, true, 'a master reads every tier of the Codex of the Bulls');
         t.eq(r.codices, '', 'six codices');
         t.eq(r.oldCodices, '', 'the old codex names are gone');
-        t.eq(r.lasa, true, 'Lasa starts with Keri, Mahu, Raau, Keva and Gau; the rest come through story');
+        t.eq(r.lasa, true, 'Lasa starts with Keri, Mahu, Kami, Keva and Gau; the rest come through story');
         t.eq(r.falmi, true, 'Falmi: Raau, Geha, Hahikiri');
         t.eq(r.tou, true, 'Tou: the four First Sailor -sin spells');
         t.eq(r.noLevelMagic, true, 'nobody learns spells by levelling up');
