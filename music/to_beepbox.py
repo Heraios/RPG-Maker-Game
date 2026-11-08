@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
-# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
+# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, bosses16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
     'Island':           ('island16.py', None, 60 / 108, 4, 4),
     'Zonfahare':        ('zonfahare16.py', None, 60 / 112, 4, 4),
@@ -71,6 +71,8 @@ SONGS = {
     'Childrens_Garden': ('forest_homes16.py', 'garden', 60 / 80, 4, 4),
     'Boars_Wallow':     ('forest_homes16.py', 'wallow', 60 / 100, 4, 4),
     'Owl_Towers':       ('forest_homes16.py', 'owls', 60 / 84, 4, 4),
+    'Boss_Daughter_Wells': ('bosses16.py', 'daughter', 60 / 144, 3, 4),
+    'Boss_Lady_Woods':  ('bosses16.py', 'lady', 60 / 132, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
