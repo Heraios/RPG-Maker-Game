@@ -47,6 +47,8 @@
  *   SmokingIsle.Journal.clue('skull')         a clue (Evidence +1, once)
  *   SmokingIsle.Journal.learnWord('bones', 0) a word (0 said carefully,
  *                                             1 said wrong, 2 wailed)
+ *   SmokingIsle.Journal.knowhow('gathering')  a how-to (Remembered, Know-how):
+ *                                             a tutorial, kept to re-read
  *
  * A corner notice says what was added (never in battle: it waits). Words
  * add no notice: the lesson already says "New word".
@@ -93,6 +95,7 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
         s.clues = s.clues || [];        // ids, in the order found
         s.said = s.said || {};          // word -> 0 carefully, 1 wrong, 2 wailed
         s.met = s.met || {};            // actor id -> true once in the party
+        s.knowhow = s.knowhow || [];    // how-tos learned, in order
         s.order = s.order || 0;
         return s;
     };
@@ -155,6 +158,14 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
     };
     $.knowsWord = function(word) { return $.words().indexOf(word) >= 0; };
 
+    $.knowhow = function(id) {
+        var k = $.data().knowhow && $.data().knowhow[id], s = $.state();
+        if (!k || s.knowhow.indexOf(id) >= 0) return;
+        s.knowhow.push(id);
+        $.notice('Remembered: ' + k.title);
+    };
+    $.knowsHow = function(id) { return $.state().knowhow.indexOf(id) >= 0; };
+
     $.hasMet = function(actorId) { return !!$.state().met[actorId]; };
     var _Game_Party_addActor = Game_Party.prototype.addActor;
     Game_Party.prototype.addActor = function(actorId) {
@@ -204,6 +215,13 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
             Object.keys(words).forEach(function(w) {
                 rows.push($.knowsWord(w) ? { kind: 'word', id: w, text: w } : { kind: 'unknown', text: '???' });
             });
+            var how = d.knowhow || {};
+            if (Object.keys(how).length) {
+                rows.push({ kind: 'header', text: 'Know-how' });
+                Object.keys(how).forEach(function(id) {
+                    rows.push($.knowsHow(id) ? { kind: 'knowhow', id: id, text: how[id].title } : { kind: 'unknown', text: '???' });
+                });
+            }
         }
         return rows;
     };
@@ -422,6 +440,11 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
             para(todo(c.text));
             if (c.fits && $.hasClue(c.fits)) para('It fits.');
             notes(c);
+        } else if (r.kind === 'knowhow') {
+            var k = d.knowhow[r.id];
+            title(k.title);
+            (k.text || []).forEach(function(line) { para(todo(line)); });
+            notes(k);
         } else if (r.kind === 'word') {
             var wd = d.words[r.id], said = $.state().said[r.id];
             title(r.id);

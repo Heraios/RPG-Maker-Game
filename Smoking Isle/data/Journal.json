@@ -243,5 +243,18 @@
    "becomes": "anchors the soul",
    "item": 725
   }
- ]
+ ],
+ "knowhow": {
+  "gathering": {
+   "title": "Picking things",
+   "text": [
+    "\\N[4] showed me. Lots of things on the island can be picked: plants, rocks, water.",
+    "Some need tools, like a knife or a digging stick. Some only certain people can pick. Cave things are \\N[4]'s.",
+    "Once something's picked, it's gone till tomorrow. Then it grows back."
+   ],
+   "notes": {
+    "4": "Cave things are MINE."
+   }
+  }
+ }
 }

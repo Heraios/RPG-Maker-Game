@@ -31,7 +31,7 @@ module.exports = {
             out.said = J.state().said.bones;
             out.words = $gameVariables.value(6);
             out.wordRows = J.rows('remembered').filter(x => x.kind === 'word').map(x => x.text).join(',');
-            out.unknownWords = J.rows('remembered').filter(x => x.kind === 'unknown').length;
+            out.unknownWords = J.rows('remembered').filter((x, i, all) => x.kind === 'unknown' && all.slice(0, i).filter(y => y.kind === 'header').length === 1).length;
             out.wailed = J.wailed('remember');
             // the Body: from Story 60; an ingredient counts while the party holds its key item
             $gameVariables.setValue(5, 50); out.bodyBefore = J.bodyOpen();

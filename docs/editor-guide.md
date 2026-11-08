@@ -221,7 +221,9 @@ one real hazard.
     - **The face:** the **still water** at (25, 10) starts to twinkle (`!$Twinkle.png`: copy its page's
       graphic and movement route for any other "look here" spot). Boy, girl or in between sets Yoon's
       gender; Story = 30. The ladder then offers the way out, floating up through the sky-hole.
-    - Gathering spots and the Red Bowl teach their word first, then work as usual. Every word can be learned
+    - Gathering spots and the Red Bowl teach their word first, then work as usual. **The first mushroom**
+      (whichever teaches "food") runs Lasa's **gathering tutorial**: she picks it, explains tools, who can
+      pick what, and regrowing, and Memory remembers it under **Know-how**. Every word can be learned
       inside the rocks that close off the starting area ("rock" from the two boulders there).
     - **Light:** the two lava pools beside Grave E glow and flicker (events "Lava Glow", `!$LavaGlow.png`,
       drawn additively, like the skylight).
@@ -255,6 +257,7 @@ Events switch entries on with one **Script** command (tab 3 → Script...):
 | `SmokingIsle.Journal.miss('pearl')` / `missGiver('Pada')` | Missed (greyed out): one quest, or every open quest from that giver |
 | `SmokingIsle.Journal.clue('ball')` | A clue (adds 1 to the hidden Evidence count, variable 7, once) |
 | `SmokingIsle.Journal.learnWord('bones', 0)` | A word (0 said carefully, 1 wrong, 2 wailed): the First Words lessons do this |
+| `SmokingIsle.Journal.knowhow('gathering')` | A how-to under Remembered → **Know-how**, kept to re-read (tutorials) |
 
 - The id in the quotes (`'pearl'`) is the entry's name in `Journal.json`.
 - **Margin notes:** an entry's `"notes"` (by actor number, `"4"` for Lasa) show once that member has been
@@ -283,14 +286,10 @@ gets tired, and wears the tool down a little.
 5. **Options:** leave **Walking** on; **Priority:** *Same as characters* (so it blocks the way like a
    real tree); **Trigger:** *Action Button*.
 6. **Contents:** one command, **Common Event... → Gather** (common event 5).
-7. **Optional second page (the picked-clean look):** click **New Event Page**. Under **Conditions**,
-   tick **Self Switch** and leave it on **A**. Give this page a stump, picked or empty graphic, and
-   leave its Contents empty (or add a Show Text such as "Nothing left to pick today."). Gathering turns
-   Self Switch A on; the next dawn (or sleeping at a Star Mother idol) turns it off, so the first page
-   comes back.
-
 That's all. The common event and plugin handle choosing the gatherer, checking tools, darkness,
-night-only plants, fatigue, tool wear and the daily reset.
+night-only plants, fatigue, tool wear and the daily reset. **No second page is needed:** once gathered,
+the spot **vanishes until the next day** (dawn, or sleeping): hidden, walk-through, and it can't be
+examined. Gathering also turns its Self Switch A on (and a new day off) for any event that wants to know.
 
 ### Things to know
 
@@ -299,6 +298,9 @@ night-only plants, fatigue, tool wear and the daily reset.
   `food`, `dig`, `shore`; several at once like `'herb, food'`).
 
 - **One harvest a day per spot.** Place several spots if you want more of something in an area.
+- **The Ghost alone** can't gather: any spot gives "...your hand goes through it."
+- **Spots only some can gather** ("Only Lasa can gather this.") name only people who have been in the
+  party; before that: "Only someone who knows the caves could gather this." (fishers, priests the same).
 - **Night:** gathering needs a light (a Torch, Myrtle Candle, Patience's Lamp Pack...), except for
   night-only plants (Moon Sorrel). In `<Dark>` maps it always needs a light.
 - **Dawn spots** (Fog Laurel) only give at dawn.

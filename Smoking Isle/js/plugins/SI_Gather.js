@@ -22,9 +22,13 @@
  * 1. Make a map event with a tree, plant or rock graphic.
  * 2. In its Note box, write the species:   <Gather: Laurel>
  * 3. Its only command: Call Common Event "Gather".
- * 4. Optional: a second page with Self Switch A as its condition and a
- *    stump / picked / empty graphic. Gathering turns A on; a new day (dawn,
- *    or sleeping) turns it off again.
+ * 4. That's all. Once gathered, the spot vanishes (hidden, walk-through,
+ *    can't be examined) until a new day (dawn, or sleeping). Gathering also
+ *    turns its Self Switch A on, and a new day turns it off, for events that
+ *    want to know.
+ *
+ * The Ghost alone (nobody who can gather) gets "...your hand goes through
+ * it." Spots only some can gather name only people already met.
  *
  * ============================================================================
  * Who gathers, and with what
@@ -280,14 +284,25 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     };
 
     // What the job needs, for the "nobody can" message.
+    // Who could gather it, by kind, when nobody met yet can (their names would be a spoiler).
+    $.UNMET = { cave: 'someone who knows the caves', fish: 'someone who fishes', sacred: 'a priest' };
+    $.hasMet = function(actorId) {
+        var J = SmokingIsle.Journal;
+        return J && J.hasMet ? J.hasMet(actorId) : true;
+    };
+
     $.needs = function(entry) {
         var tool = { knife: 'a knife', axe: 'an axe', 'metal axe': 'a metal axe', pick: 'a pick', harpoon: 'a harpoon' }[entry.tool];
         if (!tool && !entry.who) return 'Nobody can gather this.';
         var who = entry.who || 'any', people;
         if ($.WHO[who]) {
-            people = $dataActors.filter(function(a) { return a && new RegExp('<Gathers:[^>]*\\b' + $.WHO[who] + '\\b', 'i').test(a.note); })
+            people = $dataActors.filter(function(a) { return a && new RegExp('<Gathers:[^>]*\\b' + $.WHO[who] + '\\b', 'i').test(a.note) && $.hasMet(a.id); })
                 .map(function(a) { return $gameActors.actor(a.id).name(); });
             people = people.length > 1 ? people.slice(0, -1).join(', ') + ' or ' + people[people.length - 1] : people[0];
+            if (!people) {
+                var unmet = $.UNMET[who] || 'someone else';
+                return (tool ? 'This needs ' + unmet + ', with ' + tool + ' equipped.' : 'Only ' + unmet + ' could gather this.');
+            }
         }
         if (who === 'adult') return 'This needs an adult' + (tool ? ' with ' + tool + ' equipped.' : '.');
         if (people) return (tool ? 'This needs ' + people + ', with ' + tool + ' equipped.' : 'Only ' + people + ' can gather this.');
@@ -308,6 +323,23 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     $.isSpent = function(mapId, eventId) {
         var day = $.spent()[$.key(mapId, eventId)];
         return day !== undefined && day >= SmokingIsle.Time.day();
+    };
+
+    // A spent spot vanishes until it regrows: hidden, walk-through, and it can't be examined.
+    Game_Event.prototype.siGatherSpent = function() {
+        if (this._siGatherSpecies === undefined) this._siGatherSpecies = $.speciesOf(this);
+        return !!this._siGatherSpecies && $.isSpent(this._mapId, this._eventId);
+    };
+    Game_Event.prototype.isTransparent = function() {
+        return this.siGatherSpent() || Game_Character.prototype.isTransparent.call(this);
+    };
+    Game_Event.prototype.isThrough = function() {
+        return this.siGatherSpent() || Game_Character.prototype.isThrough.call(this);
+    };
+    var _Game_Event_start = Game_Event.prototype.start;
+    Game_Event.prototype.start = function() {
+        if (this.siGatherSpent()) return;
+        _Game_Event_start.call(this);
     };
 
     // A new day: every spot regrows and its Self Switch A goes off.
@@ -393,7 +425,8 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         var eventId = interpreter.eventId ? interpreter.eventId() : interpreter._eventId;
         var mapId = $gameMap.mapId(), species = $.speciesOf($gameMap.event(eventId)), entry = $.TABLE[species];
         $.pending = null;
-        var problem = $.spotProblem(mapId, eventId, entry);
+        // The Ghost alone (nobody who can gather at all): its hand goes through it.
+        var problem = $.gatherers().length === 0 ? '...your hand goes through it.' : $.spotProblem(mapId, eventId, entry);
         if (!problem) {
             var able = $.gatherers().filter(function(a) { return $.canGather(a, entry); });
             if (able.length === 0) problem = $.needs(entry);
