@@ -107,9 +107,15 @@ and loading screens, so **towns put several small interiors on one "Interiors" m
 - Does the Ghost need darkness? With no light, a `<Dark>` map is very dark. Either skip `<Dark>` in Act 1,
   or let the Ghost glow faintly.
 
-**7 Lava Tube: Skylight**: `<Cave>`. The lower tube and its exit (a collapse, a *jameo*) toward the river
-eyot. A garden under the skylight (Sweet Potato, Taro, Bellflower Bush spots). A good first **Star Mother
-idol** for Act 2. A **crawlway** into a side tube shows the children-only rule early.
+**7 The Sky-Hole** (decided): outdoors, a **hidden gully** outside Zonfahare, out of the way (why Juda chose
+the tube below). Where the Ghost and Lasa **float up out of the skylight** at the end of First Words (the
+ladder's Act 1 page transfers here). First daylight: grasses, a **wild garden** round the rim, the sky.
+- **Yoon and Sib's secret place:** the top of their broken ladder; **their marks scratched in the rim**
+  (tallies, a toy, a half-worn name: the Ghost can't read them; in Act 2 Sib can).
+- **Ladder the goat** grazing at the rim (he follows the kids; he's been coming here since Yoon vanished).
+- Paths out of the gully, towards town and the fields. In Act 2 the party comes back here to go down the
+  mended ladder.
+- Music: the fields or a quiet outdoor track after the cave. Daylight (or late-afternoon gold).
 
 **8 The Warrens** (optional in Act 1, see questions): Lasa's people's tunnel town. Children of the Caves NPCs,
 the Cave Hoard trader (buy back stolen things), more First Words spots. BGM Warrens.
