@@ -131,6 +131,14 @@ town, forest, grassland and marsh meet. Ladder the goat on the roof.
 - **Keepsakes** in Yoon's room: CE 10 + self switch A.
 - **Mada's free rest point** (Star Mother idol, or a bed scripted the same way).
 
+**The edge of Zonfahare** (decided; its own map or the south edge of map 11): out of the gully, where the
+fields meet the lava country and the town. **The Rite for the Lost** is under way at an empty tomb niche
+(Yoon's keepsakes laid out; BGM Grief): Juda presiding, the family, villagers. The Ghost drifts among them,
+overhearing (rumours: the Children of the Caves took Yoon, the Lady of the Woods, the tubes, the Seafarer
+ships; Pada still searching; the twins "seeing" Yoon; Sib not there because they couldn't bear it) and
+learning words. **Juda sees it** (scripted: he looks up mid-prayer and stops; Lasa pulls the Ghost away;
+BGM Sneaking; switch 10). Seers react (Tinerfe squints, Tibiabin smiles). The way on leads into town.
+
 **11 Zonfahare**: outdoor, no map tags needed. BGM Zonfahare (SI_NightMusic swaps in
 Zonfahare_Night by itself). Sneaking for slipping past Juda. **Red Bowl idol** and **Sooty Bird idol** (`<Sooty Bird: Zonfahare>`) at the
 telegraph station. NPCs from lore.md: Tazo, Acaymo, Tegue, Arminda, Uira and Poko, Chief Tama, Old Tinerfe.

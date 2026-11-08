@@ -613,7 +613,13 @@ priest holds it, though: priests also come from twins, orphans and the "died and
 The dead are mummified and laid in **stone-cut tombs in the lava tubes**. A ghost is not alarming
 in itself: ghost Yoon is *concerning* because Yoon was a child who went missing about a month before
 the game starts, and because Yoon has no memories. **Juda defleshed Yoon's body**, which is why Yoon wakes over a bare skeleton only a month after
-going missing. **The ritual Sib uses to build Yoon a body is
+going missing.
+
+**The Rite for the Lost.** The dead are mummified, so a missing person with no body is in limbo: not
+entered in the priest's register of the dead, not mourned. **Custom** (as the Keeper of Custom rules) makes
+the family wait **one moon**; then the village holds a funeral without a body at an **empty tomb niche**,
+with the lost one's things laid out, and the priest enters them in the register. On the island belief is
+magic and mourning binds the dead to the living: a Rite for the Lost is a serious thing. **The ritual Sib uses to build Yoon a body is
 forbidden**: Sib learned it from **notes Juda made about First Sailor homunculus production**.
 
 ### Seeing the dead
@@ -1249,6 +1255,11 @@ betrothal promise** in certain endings.
    family tombs, **because it was out of the way**, and never knew it was Yoon and Sib's secret place, reached
    through the sky-hole. That day Yoon came alone. *(Idea, to decide: Juda had sent Sib on an errand that
    morning; Sib remembers it later, a clue under "Juda's whereabouts".)*
+   **Timeline (decided):** Juda took Yoon **about a month** before the game starts, and held the body in the
+   warded tomb, preparing it, for most of that month. The ritual itself came **only days before the game
+   begins** (timed to a moon). It failed; the ward fell; **the Ghost woke**, and Lasa, who had searched for
+   a month and never seen through the ward, found it. That's why the Ghost wakes a month after Yoon went
+   missing, and why it reaches Zonfahare on the day of Yoon's **Rite for the Lost** (see "Death").
 2. He **clubbed Yoon over the head with his ceremonial staff, topped with a copper ball**, crushing
    Yoon's skull.
 3. He took the body to **an isolated tomb only he knew about**, **defleshed** Yoon, and **burned the
@@ -1264,6 +1275,9 @@ betrothal promise** in certain endings.
    - **The given half** reached the Destroyer: the part of Yoon's soul that held their memories, and in
      exchange the mark of the bargain, the **??? glyph** (the Destroyer's name) and Yoon's ghost powers.
    - **The kept half** stayed as Yoon's ghost, held to the island by Juda's grief and then the village's.
+   **And the Rite for the Lost:** the moon the custom makes the family wait ends just as the Ghost wakes.
+   The Ghost is drawn to its own funeral; the village's mourning is what binds it to the island, and Juda,
+   presiding, weeps real tears (the half of Yoon his grief kept).
    This is why Yoon has no memories, why Juda can't tell whether Yoon is a demon or a ghost, why the Act 3
    memory ritual fails (those memories belong to a god now), and why his one moment of humanity is the thing
    that saved Yoon. **The "demon" he meant to summon was Yoon**: a trusting child's soul, made a servant of
