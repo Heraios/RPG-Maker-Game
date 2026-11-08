@@ -177,11 +177,11 @@ def cymbal(vol=1.0, dur=1.5):
     x = np.random.uniform(-1, 1, n); x = x - np.convolve(x, np.ones(4) / 4, 'same')
     return x * np.exp(-t / (dur / 3)) * vol
 
-def save_me(L, R, path):
-    """A one-shot jingle (no loop)."""
+def save_me(L, R, path, gain=1.0):
+    """A one-shot jingle (no loop). gain below 1 for a softer one."""
     n = len(L); fade = int(0.3 * SR)
     L = L.copy(); R = R.copy(); L[-fade:] *= np.linspace(1, 0, fade); R[-fade:] *= np.linspace(1, 0, fade)
-    save_stereo(L, R, path)
+    save_stereo(L, R, path, gain=gain)
 
 def organ(m, dur, vol=1.0):
     s = partials(m, dur, [(1, 1.0, None), (2, 0.6, None), (3, 0.35, None), (4, 0.3, None), (6, 0.15, None), (8, 0.12, None)])
