@@ -2406,8 +2406,8 @@ Spell names combine **Rapa Nui** roots with **Guanche** tier and target modifier
 | Araben | Revive one ally with 75% HP (learned later) | 18 |
 | Mahu-Ara | Heal all allies 20% max HP + 3× MAT, and revive the fallen with 10–100% HP | 40 |
 
-**Cures and blinding** (each a tattoo glyph; Lasa knows Keva innately: Keva at level 1, Kevagun at 4,
-Kevaben at 6):
+**Cures and blinding** (each a tattoo glyph; Lasa knows Keva innately from the start, and learns Kevaben and
+Kevagun through story):
 
 | Spell | Effect | MP |
 |-------|--------|----|
@@ -2480,7 +2480,7 @@ through story.
 
 | Who | From the start | Through story |
 |-----|----------------|---------------|
-| Lasa (cave) | Mahu, Raau, Keri, Keriben, Keva, Kevaben, Kevagun, Gau, Gauben | **Ihi**, late |
+| Lasa (cave) | **Keri, Mahu, Raau, Keva, Gau**: a dabbler, a little of many kinds of magic | Everything else, one story event at a time: Keriben, Kevaben, Kevagun, Gauben, ...; **Ihi**, late |
 | Falmi (the forest's heir) | Raau, Geha, **Hahikiri** ("Roots and Bark": himself, 3 turns, regeneration doubled and Endurance +25%; MP 6) | Huhuti (meeting his mother's alpine body), Gogoro and Garo (his fathers), Viri / Viriben / Virisin (one per Daughter of the Wells he frees), maybe Mahu |
 | Tou (First Sailor) | Ahisin, Rarisin, Hagusin, Kerisin | First Sailor inscriptions |
 | Yoon | (the ??? Glyph) | **Ihi**: a word they know without knowing how |
