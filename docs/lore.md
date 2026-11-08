@@ -1203,7 +1203,10 @@ sworn investigators: see "Spearwives") with finding out how he stole the pearls 
   see Yoon, they're the ones who tell Pada that Yoon is a ghost, and they give their blood for the body.
 - **Hair:** Mada has **blue** hair and Pada **light brown**. Each twin has the opposite-gender parent's
   colour: the boy Mada's blue, the girl Pada's brown. Yoon's blue hair comes from Mada.
-- **Ladder:** the family goat, named because he climbs ladders. Somehow.
+- **Ladder:** the family goat, named because he climbs ladders. Somehow. He **follows the kids everywhere**,
+  so he knew their secret place. Since Yoon vanished he keeps "running off", always to the same gully: the
+  family thinks he's just being a goat. He's grazing at the sky-hole's rim when the Ghost first comes up into
+  the daylight: the first living thing it meets above ground. He can't see ghosts; he stares anyway.
 - **Patience:** the family dog.
 
 **The family home** stands on a **rocky eyot in the river just north of Zonfahare proper**, on the edge of
@@ -1215,7 +1218,14 @@ Mada as an herbalist, and a third-gender or nonbinary child would be expected to
 gender is the player's choice (their looks don't change with it); this only colours dialogue.
 
 ### Yoon and Sib
-Best friends since basically birth. They liked to play in **the lava tubes near the village**. Sib has
+Best friends since basically birth. They liked to play in **the lava tubes near the village**.
+
+**The sky-hole: their secret place.** A collapse in a hidden gully outside the village, ringed by a wild
+garden, opens into the tube where the Ghost wakes (map 6). They went down by **their own lashed ladder**
+(broken now) and scratched their tallies into the rim. Nobody else knew; Ladder the goat followed them
+there. In Act 1 the Ghost and Lasa float up out of it (spirits don't need ladders); in Act 2 Sib, who
+knows the way, brings the party back down it, and mends the ladder. Sib can read the marks on the rim. It
+hurts. Sib has
 a **massive puppy-love crush** on Yoon, whatever gender the player chooses. Whether Yoon returns it is
 up to the player, and they're kids: it never goes beyond **holding hands**, and at most a **childhood
 betrothal promise** in certain endings.
@@ -1235,7 +1245,10 @@ betrothal promise** in certain endings.
 - After Act 3, Sib becomes the village priest **de facto**: Juda is gone and the island is being invaded.
 
 ### The murder (what really happened)
-1. **Juda kidnapped Yoon** while they were playing alone in the lava tubes.
+1. **Juda kidnapped Yoon** while they were playing alone in the lava tubes. He chose that tube, with its old
+   family tombs, **because it was out of the way**, and never knew it was Yoon and Sib's secret place, reached
+   through the sky-hole. That day Yoon came alone. *(Idea, to decide: Juda had sent Sib on an errand that
+   morning; Sib remembers it later, a clue under "Juda's whereabouts".)*
 2. He **clubbed Yoon over the head with his ceremonial staff, topped with a copper ball**, crushing
    Yoon's skull.
 3. He took the body to **an isolated tomb only he knew about**, **defleshed** Yoon, and **burned the
