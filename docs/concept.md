@@ -2406,8 +2406,8 @@ Spell names combine **Rapa Nui** roots with **Guanche** tier and target modifier
 | Araben | Revive one ally with 75% HP (learned later) | 18 |
 | Mahu-Ara | Heal all allies 20% max HP + 3× MAT, and revive the fallen with 10–100% HP | 40 |
 
-**Cures and blinding** (each a tattoo glyph; Lasa knows Keva innately: Keva at level 1, Kevagun at 4,
-Kevaben at 6):
+**Cures and blinding** (each a tattoo glyph; Lasa knows Keva innately from the start, and learns Kevaben and
+Kevagun through story):
 
 | Spell | Effect | MP |
 |-------|--------|----|
@@ -2476,11 +2476,15 @@ all enemies ×0.8; MP 5 / 10 / 12), **Keva** (blinding dark) and **Ihi** ("to te
 enemy, heavy Fire and Crush damage ×3.5 and **Cracked**; costs 6 Fatigue; MP 20).
 
 **Innate magic.** Nobody learns spells by levelling up: innate casters start with theirs, and gain more
-through story.
+through story. **The trade-off:** Lasa, Tou and Falmi learn **more spells** than the human characters, but
+they're **stuck with them**: an innate spell is part of who they are, never chosen, swapped or removed.
+Humans carry fewer spells but choose them (tattoos, which late-game healing can remove, and a codex they can
+swap). Tou and Falmi still read, so they still have a codex slot: their one swappable spell set. Lasa can't
+read, so everything she knows is innate.
 
 | Who | From the start | Through story |
 |-----|----------------|---------------|
-| Lasa (cave) | Mahu, Raau, Keri, Keriben, Keva, Kevaben, Kevagun, Gau, Gauben | **Ihi**, late |
+| Lasa (cave) | **Keri, Mahu, Raau, Keva, Gau**: a dabbler, a little of many kinds of magic | Everything else, one story event at a time: Keriben, Kevaben, Kevagun, Gauben, ...; **Ihi**, late |
 | Falmi (the forest's heir) | Raau, Geha, **Hahikiri** ("Roots and Bark": himself, 3 turns, regeneration doubled and Endurance +25%; MP 6) | Huhuti (meeting his mother's alpine body), Gogoro and Garo (his fathers), Viri / Viriben / Virisin (one per Daughter of the Wells he frees), maybe Mahu |
 | Tou (First Sailor) | Ahisin, Rarisin, Hagusin, Kerisin | First Sailor inscriptions |
 | Yoon | (the ??? Glyph) | **Ihi**: a word they know without knowing how |
