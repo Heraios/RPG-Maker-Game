@@ -2476,7 +2476,11 @@ all enemies ×0.8; MP 5 / 10 / 12), **Keva** (blinding dark) and **Ihi** ("to te
 enemy, heavy Fire and Crush damage ×3.5 and **Cracked**; costs 6 Fatigue; MP 20).
 
 **Innate magic.** Nobody learns spells by levelling up: innate casters start with theirs, and gain more
-through story.
+through story. **The trade-off:** Lasa, Tou and Falmi learn **more spells** than the human characters, but
+they're **stuck with them**: an innate spell is part of who they are, never chosen, swapped or removed.
+Humans carry fewer spells but choose them (tattoos, which late-game healing can remove, and a codex they can
+swap). Tou and Falmi still read, so they still have a codex slot: their one swappable spell set. Lasa can't
+read, so everything she knows is innate.
 
 | Who | From the start | Through story |
 |-----|----------------|---------------|
