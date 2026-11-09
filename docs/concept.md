@@ -21,6 +21,18 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 - You move around as a spirit, learning language with Lasa's help and piecing together that
   you "are" the spirit of a missing (actually dead) child the village is mourning.
 - No combat in this act.
+- **Funnelled to the edge of Zonfahare** (decided): rocks close off the lava-tube country; the way leads out
+  of the gully to where the fields meet the town. A month after Yoon went missing, the search is long over
+  and grief has turned to gossip and rumour; **Pada** still goes out alone every night; the **twins** say
+  they've seen Yoon (nobody believes them); **Sib** hasn't eaten properly in weeks.
+- **The Rite for the Lost** (decided): the moon custom makes the family wait ends today. The village holds
+  Yoon's funeral without a body at an empty tomb niche where the fields meet the lava country, Yoon's things
+  laid out, the village's lament (BGM Grief). **Juda presides**, weeping. **Sib stays away: they couldn't
+  bear it.** The Ghost, drawn to its own funeral, drifts among mourners who can't see it, overhearing who it
+  was and learning words ("Yoon", marked ? in Memory: the word everyone keeps saying).
+- **Juda sees the Ghost** (decided, a real moment): mid-prayer he looks up, straight at it, and stops for a
+  breath; then goes on. Lasa yanks the Ghost out of sight (BGM Sneaking). Switch 10 "Juda saw the Ghost".
+- Then on into town, home to the twins, and to Sib.
 - Ends when Yoon and Lasa make contact with Sib.
 
 ### Act 2 — The Body
