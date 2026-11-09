@@ -1262,6 +1262,22 @@ betrothal promise** in certain endings.
    missing, and why it reaches Zonfahare on the day of Yoon's **Rite for the Lost** (see "Death").
 2. He **clubbed Yoon over the head with his ceremonial staff, topped with a copper ball**, crushing
    Yoon's skull.
+
+**Why Yoon** (decided; never stated outright: the player pieces it together):
+- **Trust.** A child who poked at dead things hung around the priest: ten years of questions about insides,
+  omens and the dead (the third-gender Yoon was already learning augury). Yoon trusted Juda completely, which
+  is exactly what the ritual needed: an innocent child who trusted him.
+- **A death the village would accept.** Juda is the registrar of the dead. Yoon was the odd child from the
+  poor herbalist's family out on the eyot, the one even Sib's parents called "a little creepy"; when *that*
+  child vanished in the tubes, people nodded ("always poking where children shouldn't; the tubes took them")
+  and didn't dig. In Act 3 that becomes the village's guilt, and it's why those who refused to accept it
+  (Pada searching every night, Dama, the twins) matter.
+- **What the Destroyer would want.** The ritual was meant to make a demon, and a child unafraid of the dark
+  and of death is the best vessel there is. Juda recognised something in Yoon: was there always something in
+  Yoon a dark god could use?
+- **Why he wept.** He liked the weird kid: a small curious thing at ease with death, as he once was, an age
+  ago. He chose Yoon partly because he understood them, and that's why, at the last moment, he couldn't give
+  them up wholly. The trait that made Yoon the right victim is the one that half-saved them.
 3. He took the body to **an isolated tomb only he knew about**, **defleshed** Yoon, and **burned the
    flesh in the tomb over a grave** as an offering to summon a demon.
    The tomb is **warded with First Sailor glyphs** that blind the Children of the Caves, which is why Lasa,
