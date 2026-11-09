@@ -5,6 +5,8 @@
 #   1-4   telegraph pole tops (crossarm, clay insulators, clan cloth): wire running  -  |  \  /   (drawn above)
 #   5-8   telegraph wire runs, taut:  -  |  \  /                                              (drawn above)
 #   22-24 a sagging left-right span: 22 down from a pole, 23 low (repeat it), 24 up to the next pole
+#   1-8 and 22-24 are bare copper (verdigris). The same pieces in rubber-coated wire (black, grey sheen):
+#   32-35 pole tops, 36-39 runs, 40-42 the sagging span
 #   9     telegraph pole foot, a separate piece: paint on top of the rock (Exterior B 76)      (blocks)
 #   10    a cairn   11 a lava-tree mould   12-13 rubble (clinker)   14 a boulder              (block)
 #   15    lichen speckles                                                                       (walkable)
@@ -16,7 +18,9 @@ S = 24                                   # drawn size; doubled on save
 OUT = (0, 0, 0, 255)
 ROCK, ROCK_D, ROCK_L, RUST = (112, 106, 100, 255), (58, 55, 60, 255), (158, 150, 140, 255), (150, 104, 82, 255)   # lighter than the ground, so pieces stand out
 WOOD, WOOD_D, WOOD_L = (164, 100, 34, 255), (80, 48, 0, 255), (236, 193, 118, 255)
-COPPER, COPPER_D = (104, 178, 156, 255), (44, 98, 92, 255)      # weathered copper: verdigris, unlike the wooden poles
+COPPER, COPPER_D = (104, 178, 156, 255), (44, 98, 92, 255)      # bare wire: weathered copper (verdigris)
+RUBBER, RUBBER_D = (124, 126, 138, 255), (18, 16, 22, 255)       # rubber-coated wire: black, with a cool grey sheen
+BARE, COATED = (COPPER, COPPER_D), (RUBBER, RUBBER_D)
 CLAY, CLOTH, MARK = (232, 214, 186, 255), (178, 52, 44, 255), (238, 206, 84, 255)
 LICHEN, GLOW, GLOW_D = (156, 168, 120, 255), (236, 120, 40, 255), (150, 60, 24, 255)
 
@@ -33,7 +37,8 @@ def stone(d, x0, y0, x1, y1):           # a rounded stone with outline, highligh
     d.point((x0 + 2, y0 + 2), fill=ROCK_L); d.point((x0 + 3, y0 + 2), fill=ROCK_L)
 
 # wires: one line equation per direction, so runs join up from tile to tile (and pass the crossarm at y=9)
-def wire(d, kind):
+def wire(d, kind, col=BARE):
+    COPPER, COPPER_D = col
     if kind == '-':
         line(d, [(0, 9), (S - 1, 9)], COPPER); line(d, [(0, 10), (S - 1, 10)], COPPER_D)
     elif kind == '|':
@@ -52,7 +57,7 @@ def wire(d, kind):
             else: y = 14 + round(1 - abs(2 * t - 1))                     # the low middle, a touch lower in the centre
             px(d, x, y, COPPER); px(d, x, y + 1, COPPER_D)
 
-def pole_top(kind):
+def pole_top(kind, col=BARE):
     im, d = tile()
     d.rectangle([10, 6, 14, S - 1], fill=OUT); d.rectangle([11, 7, 13, S - 1], fill=WOOD)   # the shaft
     d.line([13, 7, 13, S - 1], fill=WOOD_D); d.point((11, 8), fill=WOOD_L)
@@ -61,11 +66,11 @@ def pole_top(kind):
     for x in (5, 18):                                                                      # clay insulators
         d.rectangle([x - 1, 5, x + 1, 7], fill=OUT); d.point((x, 6), fill=CLAY)
     d.rectangle([16, 10, 18, 16], fill=OUT); d.rectangle([17, 11, 17, 15], fill=CLOTH)    # the clan's cloth
-    wire(d, kind)
+    wire(d, kind, col)
     return im
 
-def wire_tile(kind):
-    im, d = tile(); wire(d, kind); return im
+def wire_tile(kind, col=BARE):
+    im, d = tile(); wire(d, kind, col); return im
 
 def pole_base():                          # the pole's foot, a separate piece: paint it on top of a rock (Exterior B tile 76)
     im, d = tile()                        # (everything else transparent) in the same tile; the pole top goes in the tile above
@@ -144,6 +149,10 @@ LAYOUT = {
     16: (crack('-'), WALK), 17: (crack('|'), WALK), 18: (crack('\\'), WALK), 19: (crack('/'), WALK),
     20: (tum[0], BLOCK), 21: (tum[1], BLOCK), 28: (tum[2], BLOCK), 29: (tum[3], BLOCK),
     22: (wire_tile('down'), UP), 23: (wire_tile('low'), UP), 24: (wire_tile('up'), UP),
+    # the same set in rubber-coated wire
+    32: (pole_top('-', COATED), UP), 33: (pole_top('|', COATED), UP), 34: (pole_top('\\', COATED), UP), 35: (pole_top('/', COATED), UP),
+    36: (wire_tile('-', COATED), UP), 37: (wire_tile('|', COATED), UP), 38: (wire_tile('\\', COATED), UP), 39: (wire_tile('/', COATED), UP),
+    40: (wire_tile('down', COATED), UP), 41: (wire_tile('low', COATED), UP), 42: (wire_tile('up', COATED), UP),
 }
 
 if __name__ == '__main__':
