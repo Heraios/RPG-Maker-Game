@@ -174,6 +174,72 @@ sky; in Act 2 the living children come back down by the mended ladder.)*
 
 ---
 
+## Act 1: "The Gully Walk" (more words, out in the open)
+**Needs:** the Ghost and Lasa, after First Words (Story 30). **Setting:** the gully (map 1, Lava Country
+tileset), from the sky-hole up through the lava flows to the edge of Zonfahare. **Music:** wind and quiet
+after the cave; near the top the lament (Grief) drifts in.
+
+The tube taught things of death and stone; the open air teaches the living world. Lessons work as in First
+Words (Lasa names it, the Ghost tries it: carefully / wrong / wailed, raising Sweet / Funny / Unhinged; the
+object's line gains the word; "New word: ..."), but Lasa speaks in ordinary windows now. **Three words are
+scripted** (sky, sun, home); **the rest are optional finds**, a reason to wander the kipuka, never a gate.
+Lasa cheers now and then, not on a count.
+
+### 1. Out of the sky-hole (scripted)
+*(Daylight. The cave music gives way to wind. The Ghost and Lasa rise out of the hole.)*
+
+**Lasa:** Sky! That's the biggest thing there is.
+
+> **Choice** (as in the lessons): Say it carefully. / Say it wrong. / Wail it.
+
+- Wrong: "Sigh." **Lasa:** Yes. Exactly.
+
+**Lasa:** And that's the sun. Don't look at it. ...You looked at it.
+
+> **Choice:** as above. Wrong: "Son." **Lasa:** Somebody's son, maybe!
+
+*(**Ladder the goat** is grazing at the rim. He can't see the Ghost; he stares anyway. From here he follows
+it, at a goat's distance, all the way to town.)*
+
+### 2. Optional finds
+
+| Where | Word | Lasa | Said wrong / Lasa | Before | After |
+|---|---|---|---|---|---|
+| Ladder the goat | **goat** | A goat! They eat everything and climb everything. | "Got." / Got goat. | ...it stares. It can't see you. It stares anyway. | ...goat. Staring. |
+| The kipuka grass | **grass** | Grass. It grows where the fire didn't. | "Gas." / ...Please don't. | ...soft. Alive. | ...grass. |
+| The stream | **water** | Water! You know water. You saw your face in it. | "Wawa." / That's baby talk. You're a big ghost. | ...it runs. It's going somewhere. | ...water. Going down to people. |
+| A dead tree | **tree** | A tree. A dead one. Everything here is a bit dead. Except us! ...Except me. | "Three." / One tree. | ...a hand, reaching up. Dry. | ...tree. Dead. |
+| The ravens | **bird** | Birds! *They* can see you. Birds see everything. | "Bud." / They're looking at you funny. | ...black. They look at you. | ...birds. Watching. |
+| The crack (the ghost-only crossing) | **float** | That's a crack. You go over it. *Float!* That's what you do. | "Flood." / Wet ghost. | ...a gap. Warm air under it. | ...float. |
+| A gusty spot | **wind** | Wind! You can't see it either. You're the same! | "Wine." / Yeray would like you. | ...something pushes. Nothing's there. | ...wind. Like you. |
+| The singing wires | **sing** | The wires sing! People talk through them. Far away. | "Sting." / They don't sting. Mostly. | ...a hum. In the poles. | ...singing wires. |
+| The road | **road** | A road. People walk on it to go places. | "Rude." / Roads are very polite. | ...flat. Worn. | ...road. |
+| Smoke above the town | **smoke** | Smoke! Fires. Cooking. People! | "Smock." / Close. | ...grey. Rising. | ...smoke. People. |
+
+- **"float"** doubles as the tutorial for the ghost-only crossing: the word and the ability arrive together
+  (in Act 2 the living children go round the long way).
+- **"Wine" / Yeray** is a seed: Yeray is Afarohare's wine snob.
+- **Blocked branches** into the deep country (rubble fields, a lava wall), with Lasa: *"Not that way. That's
+  the deep country. Big tubes, bad smells. I'll show you my home later."*
+
+### 3. The first view of Zonfahare (scripted, the last)
+*(The levees fall away, grass thickens, terraces begin. Zonfahare on its ridge, smoke rising. Far off,
+singing: the lament.)*
+
+**Lasa:** That's where people live. Lots of them. That's *home*.
+
+*(No choice: it's too big.)* **New word: home.**
+
+*(The Ghost's line, from here:)* ...home. Someone's.
+
+**Lasa:** Ooh. There's singing. Sad singing. *(The Ghost is pulled towards it: on to the Rite for the Lost.)*
+
+**Build notes:** the same lesson pages as First Words (the lesson page needs Lasa in the party; the "after"
+page is Self Switch B); `SmokingIsle.Journal.learnWord(...)` records each; Known Words reaches about 26. Words
+that come at the rite, not here: "Yoon" (marked ?), "Mada", "Pada", "dead", "lost", and "Sib" for real.
+
+---
+
 ## Campfire: "Sib Is Sib"
 **Needs:** Thenmy, Kathrout, Aday (Act 4 on). **Setting:** a campfire.
 
