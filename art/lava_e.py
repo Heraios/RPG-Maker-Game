@@ -5,7 +5,7 @@
 #   1-4   telegraph pole tops (crossarm, clay insulators, clan cloth): wire running  -  |  \  /   (drawn above)
 #   5-8   telegraph wire runs, taut:  -  |  \  /                                              (drawn above)
 #   22-24 a sagging left-right span: 22 down from a pole, 23 low (repeat it), 24 up to the next pole
-#   9     telegraph pole base: the pole set into a boulder (a copy of 14), Lightning Clan mark  (blocks)
+#   9     telegraph pole foot, a separate piece: paint on top of the rock (Exterior B 76)      (blocks)
 #   10    a cairn   11 a lava-tree mould   12-13 rubble (clinker)   14 a boulder              (block)
 #   15    lichen speckles                                                                       (walkable)
 #   16-19 cracks, still warm:  -  |  \  /   (walkable: the ghost-only crossing is a region you paint)
@@ -67,12 +67,11 @@ def pole_top(kind):
 def wire_tile(kind):
     im, d = tile(); wire(d, kind); return im
 
-def pole_base():                          # the pole set into a copy of the boulder (tile 14): a socket drilled in the rock
-    im = boulder(); d = ImageDraw.Draw(im)
-    d.rectangle([10, 0, 14, 9], fill=OUT); d.rectangle([11, 0, 13, 9], fill=WOOD); d.line([13, 0, 13, 9], fill=WOOD_D)
-    d.ellipse([8, 7, 16, 11], fill=OUT); d.ellipse([9, 8, 15, 10], fill=ROCK_D)             # the socket
-    d.rectangle([11, 0, 13, 8], fill=WOOD); d.line([13, 0, 13, 8], fill=WOOD_D)
-    for (x, y) in ((11, 2), (12, 3), (11, 4), (12, 5)): d.point((x, y), fill=MARK)          # Lightning Clan mark
+def pole_base():                          # the pole's foot, a separate piece: paint it on top of a rock (Exterior B tile 76)
+    im, d = tile()                        # (everything else transparent) in the same tile; the pole top goes in the tile above
+    d.ellipse([8, 5, 16, 9], fill=OUT); d.ellipse([9, 6, 15, 8], fill=ROCK_D)               # the socket in the rock's top
+    d.rectangle([10, 0, 14, 7], fill=OUT); d.rectangle([11, 0, 13, 7], fill=WOOD); d.line([13, 0, 13, 7], fill=WOOD_D)
+    for (x, y) in ((11, 1), (12, 2), (11, 3), (12, 4)): d.point((x, y), fill=MARK)          # Lightning Clan mark
     return im
 
 def cairn():
