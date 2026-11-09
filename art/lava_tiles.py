@@ -2,7 +2,7 @@
 # Makes the lava tilesets by recolouring the originals (the licence allows editing for the game): browns
 # become basalt (the brightest highlights a little rust, shadows blue-black).
 #   Lava Country (tileset 9, outdoors): Exterior A2/A4/A5 -> Lava-A2/A4/A5; greens become a drier olive.
-#   Lava Tubes (tileset 10, inside): Interior A2/A4/A5 -> Lava-Int-A2/A4/A5; greens stay lush (skylight
+#   Lava Tubes (tileset 10, inside): Interior A1/A2/A4/A5 -> Lava-Int-A1/A2/A4/A5 (A1: the water's banks); greens stay lush (skylight
 #   gardens are watered and sheltered) and lava's bright oranges and reds are kept.
 import colorsys
 from PIL import Image
@@ -36,3 +36,4 @@ def recolour(src, dst, dry_grass):
 for name in ('A2', 'A4', 'A5'):
     recolour('Ext-' + name, 'Lava-' + name, True)        # Lava Country (outdoors)
     recolour('Int-' + name, 'Lava-Int-' + name, False)   # Lava Tubes (inside)
+recolour('Int-A1', 'Lava-Int-A1', False)                 # Lava Tubes: the water tiles' banks (water stays blue)
