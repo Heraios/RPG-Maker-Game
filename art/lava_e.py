@@ -3,7 +3,8 @@
 # indoor sheet there). Pixel art drawn at 24x24 and doubled to 48x48, in the basalt palette of Lava-A2/A4.
 # Tile index -> what it is (the E sheet's tile ids are 768 + index; LAYOUT also sets each tile's passability):
 #   1-4   telegraph pole tops (crossarm, clay insulators, clan cloth): wire running  -  |  \  /   (drawn above)
-#   5-8   telegraph wire runs:  -  |  \  /                                                     (drawn above)
+#   5-8   telegraph wire runs, taut:  -  |  \  /                                              (drawn above)
+#   22-24 a sagging left-right span: 22 down from a pole, 23 low (repeat it), 24 up to the next pole
 #   9     telegraph pole base on a basalt cairn, with the Lightning Clan's mark                (blocks)
 #   10    a cairn   11 a lava-tree mould   12-13 rubble (clinker)   14 a boulder              (block)
 #   15    lichen speckles                                                                       (walkable)
@@ -15,7 +16,7 @@ S = 24                                   # drawn size; doubled on save
 OUT = (0, 0, 0, 255)
 ROCK, ROCK_D, ROCK_L, RUST = (112, 106, 100, 255), (58, 55, 60, 255), (158, 150, 140, 255), (150, 104, 82, 255)   # lighter than the ground, so pieces stand out
 WOOD, WOOD_D, WOOD_L = (164, 100, 34, 255), (80, 48, 0, 255), (236, 193, 118, 255)
-COPPER, COPPER_D = (214, 132, 66, 255), (120, 66, 30, 255)
+COPPER, COPPER_D = (104, 178, 156, 255), (44, 98, 92, 255)      # weathered copper: verdigris, unlike the wooden poles
 CLAY, CLOTH, MARK = (232, 214, 186, 255), (178, 52, 44, 255), (238, 206, 84, 255)
 LICHEN, GLOW, GLOW_D = (156, 168, 120, 255), (236, 120, 40, 255), (150, 60, 24, 255)
 
@@ -43,6 +44,13 @@ def wire(d, kind):
     elif kind == '/':                     # y = 21 - x
         for x in range(S):
             px(d, x, 21 - x, COPPER); px(d, x, 22 - x, COPPER_D)
+    elif kind in ('down', 'low', 'up'):   # a sagging span: pole, down, low (repeat), up, pole
+        for x in range(S):
+            t = x / (S - 1)
+            if kind == 'down': y = 9 + round(5 * (1 - (1 - t) ** 2))     # leaves the crossarm, curving down
+            elif kind == 'up': y = 9 + round(5 * (1 - t ** 2))           # curves back up to the next crossarm
+            else: y = 14 + round(1 - abs(2 * t - 1))                     # the low middle, a touch lower in the centre
+            px(d, x, y, COPPER); px(d, x, y + 1, COPPER_D)
 
 def pole_top(kind):
     im, d = tile()
@@ -136,6 +144,7 @@ LAYOUT = {
     14: (boulder(), BLOCK), 15: (lichen(), WALK),
     16: (crack('-'), WALK), 17: (crack('|'), WALK), 18: (crack('\\'), WALK), 19: (crack('/'), WALK),
     20: (tum[0], BLOCK), 21: (tum[1], BLOCK), 28: (tum[2], BLOCK), 29: (tum[3], BLOCK),
+    22: (wire_tile('down'), UP), 23: (wire_tile('low'), UP), 24: (wire_tile('up'), UP),
 }
 
 if __name__ == '__main__':
