@@ -22,6 +22,11 @@
  * @desc Steps the party stays unnoticed by wandering enemies.
  * @default 120
  *
+ * @param Veil Steps
+ * @type number
+ * @desc Steps Moonmilk Paint hides the party from wandering spirits.
+ * @default 200
+ *
  * @param Reveal Animation
  * @type animation
  * @desc Played on each secret Tikea reveals.
@@ -35,6 +40,10 @@
  *   SmokingIsle.FieldMagic.pura()     a light for Pura Steps
  *   SmokingIsle.FieldMagic.tikea()    reveals secrets in range; returns how many
  *   SmokingIsle.FieldMagic.garo()     unnoticed for Garo Steps
+ *
+ * Moonmilk Paint (item 278), used from the menu: common event 22 calls
+ *   SmokingIsle.FieldMagic.veil()    wandering spirits (and the dead) don't
+ *                                    notice the party for Veil Steps
  *
  * Secrets: an event with <Secret> in its note is invisible, walk-through and
  * can't be examined until Tikea reveals it (for good). Hidden caches, a
@@ -55,6 +64,7 @@ SmokingIsle.FieldMagic = SmokingIsle.FieldMagic || {};
     $.puraSteps = Number(params['Pura Steps'] || 200);
     $.tikeaRange = Number(params['Tikea Range'] || 8);
     $.garoSteps = Number(params['Garo Steps'] || 120);
+    $.veilSteps = Number(params['Veil Steps'] || 200);
     $.revealAnimation = Number(params['Reveal Animation'] || 92);
 
     // Pura: a light, like a Torch (SI_Time).
@@ -96,13 +106,33 @@ SmokingIsle.FieldMagic = SmokingIsle.FieldMagic || {};
         $gameSystem._siUnseen = $.garoSteps;
         $gameMap.events().forEach(function(e) { if (e._siMode === 'chase') e._siMode = 'wander'; });
     };
+    // Moonmilk Paint: wandering spirits (Talk Type: spirit; the dead are spirits) take the party for the dead.
+    $.veiledSteps = function() { return $gameSystem._siVeiled || 0; };
+    $.veil = function() {
+        $gameSystem._siVeiled = $.veilSteps;
+        $gameMap.events().forEach(function(e) { if (e._siMode === 'chase' && $.isSpiritWanderer(e)) e._siMode = 'wander'; });
+    };
+    $.isSpiritWanderer = function(event) {
+        var w = event.wanderer && event.wanderer(), troop = w && $dataTroops[w.troopId];
+        if (!troop) return false;
+        var members = troop.members.map(function(m) { return $dataEnemies[m.enemyId]; }).filter(Boolean);
+        return members.length > 0 && members.every(function(en) { return /<Talk Type:\s*spirit>/i.test(en.note || ''); });
+    };
     if (Game_Event.prototype.canSeeParty) {
         var _canSeeParty = Game_Event.prototype.canSeeParty;
-        Game_Event.prototype.canSeeParty = function() { return $.unseenSteps() > 0 ? false : _canSeeParty.call(this); };
+        Game_Event.prototype.canSeeParty = function() {
+            if ($.unseenSteps() > 0) return false;
+            if ($.veiledSteps() > 0 && $.isSpiritWanderer(this)) return false;
+            return _canSeeParty.call(this);
+        };
     }
     var _increaseSteps = Game_Party.prototype.increaseSteps;
     Game_Party.prototype.increaseSteps = function() {
         _increaseSteps.call(this);
+        if ($gameSystem._siVeiled > 0) {
+            $gameSystem._siVeiled--;
+            if ($gameSystem._siVeiled === 0 && SmokingIsle.Journal && SmokingIsle.Journal.notice) SmokingIsle.Journal.notice('The moonmilk paint flakes away.');
+        }
         if ($gameSystem._siUnseen > 0) {
             $gameSystem._siUnseen--;
             if ($gameSystem._siUnseen === 0 && SmokingIsle.Journal && SmokingIsle.Journal.notice) SmokingIsle.Journal.notice('Garo wears off.');

@@ -79,8 +79,8 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
    | | | | 9–11 | Yoon's temperament: Sweet, Funny, Unhinged |
    | | | | 12–13 | Lasa: times floated away; first impression |
 
-6. **Common events 3–10 and 15–21** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
-   Choose Yoon, Yoon's Room: Keepsakes; 15 Playtest: To the Test Room; 16–18 First Words; 19–21 the field spells).
+6. **Common events 3–10 and 15–22** (Star Mother Idol, Sundial, Gather, Red Bowl Idol, Sooty Bird Idol, Crawlway,
+   Choose Yoon, Yoon's Room: Keepsakes; 15 Playtest: To the Test Room; 16–18 First Words; 19–22 the field spells and Moonmilk Paint).
    Their wording can change, but don't move or delete them. States 210–212 (Yoon's hidden gender
    effects), 213 (Ready to Toss, Aday's Toss) and 214–219 (the weapon-art stances: Braced, En Garde,
    Warding, Covered, Following Up, Brought Down) are also used by number.
@@ -285,6 +285,12 @@ them with **Change Skills**.
 invisible, walk-through and can't be examined until Tikea reveals it (for good). A story moment can reveal
 one with a Script: `SmokingIsle.FieldMagic.reveal(eventId)`. The steps and range are in the plugin's settings.
 
+**Moonmilk Paint** (item 278) works the same way as a field spell: from the menu, wandering **spirits** (and the
+dead) don't notice the party for 200 steps (common event 22); in battle, every spirit's Talk mood +20, the
+dead's +30. It's made at a campfire from Moonmilk and Bonemeal (Mada's recipe); Moonmilk Eye-Wash (Moonmilk,
+Fresh Water) cures Blinded. **Cricket Legs** drop from giant cave crickets: roast them (known from the start),
+use them for a Bait Pouch, or offer them in Talk to bats, cave rats, ravens, owls, hawks and lizards.
+
 **Lasa's Steal** takes one thing an enemy carries: its **drops**, plus anything listed in the enemy's Note as
 `<Steal: item 5, weapon 3>`. Items tagged `<Shiny>` come easier. `<No Steal>` on an enemy (a boss) means
 nothing to take. Once per enemy; it sours the enemy's Talk mood.
@@ -387,6 +393,8 @@ examined. Gathering also turns its Self Switch A on (and a new day off) for any 
 | `<Gather: Sweet Potato Patch>` | Sweet Potato | — | Digging Stick (carried) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
 | `<Gather: Taro Patch>` | Taro | — | Digging Stick (carried) | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
 | `<Gather: Cave Mushrooms>` | Cave Mushrooms | — | By hand | Lasa | next day (vanishes meanwhile) | light work (children tire less) |
+| `<Gather: Skylight Fig>` | Wild Figs | Latex (25%) | By hand | Anyone | in 3 days | wild figs rooted in a skylight; fae-safe food (Lasa and Falmi eat them) |
+| `<Gather: Moonmilk>` | Moonmilk | — | By hand | Anyone | in 7 days | soft white paste on tube walls: eye-wash and bone-white paint |
 | `<Gather: Bellflower Bush>` | Bellflower Nectar | — | By hand | Anyone | next day (vanishes meanwhile) | light work (children tire less) |
 | `<Gather: Fog Laurel>` | Fog Drip | — | By hand | Anyone | next day | dawn only |
 | `<Gather: Dead Laurel>` | Fairy Butter | — | By hand | Anyone | in 3 days | light work (children tire less) |

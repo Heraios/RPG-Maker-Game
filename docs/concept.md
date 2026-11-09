@@ -1855,7 +1855,7 @@ Tangata on Rapa Nui) are long, winding tunnels left when a lava river drained un
 - **Crawlways** only the children fit through; **Lasa flies** across broken benches; **Dama's** underwater
   breathing opens flooded sumps and the sea tunnel; adults clear rubble.
 - **Hazards:** bad air near vents (Fatigue), steam, sharp rubbly floors, lavacicles.
-- **Life:** blind crabs, cave rats, crickets, bats near entrances; the Children of the Caves' pranks and
+- **Life:** blind crabs, cave rats, crickets (their legs: bait, Roast Cricket, and what bats and birds like), bats near entrances; **skylight figs** (Wild Figs: fae-safe food, and latex) and **moonmilk** on tube walls (eye-wash for Blinded; bone-white paint the dead take you for one of their own); the Children of the Caves' pranks and
   hoards; First Sailor ghosts deeper; the Destroyer's tubes deepest. Wart Fern, Cave Mushrooms, Goblin's
   Gold, Cave Pearls, Hot-Spring Sinter near vents.
 - **Story places:** the Children of the Caves' village under a skylight garden; burial tubes (Islander

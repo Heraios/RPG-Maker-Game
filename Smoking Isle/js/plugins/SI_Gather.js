@@ -150,6 +150,8 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Sweet Potato Patch': { kind: 'food', tool: 'stick', gives: 'Sweet Potato', light: true },
         'Taro Patch':    { kind: 'food', tool: 'stick', gives: 'Taro', light: true },
         'Cave Mushrooms': { kind: 'food', who: 'cave', gives: 'Cave Mushrooms', light: true },
+        'Skylight Fig':  { kind: 'food', gives: 'Wild Figs', extra: ['Latex', 25], light: true },   // wild figs rooted in a collapse
+        'Moonmilk':      { kind: 'herb', gives: 'Moonmilk', light: true },                          // soft white paste on tube walls
         // Fae food (only Lasa and Falmi can eat it)
         'Bellflower Bush': { kind: 'food', gives: 'Bellflower Nectar', light: true },
         'Fog Laurel':    { kind: 'water', gives: 'Fog Drip', dawn: true },
@@ -212,6 +214,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         'Rubber Tree': { regrow: 3, vanish: false }, 'Milo': { regrow: 3, vanish: false }, 'Strawberry Tree': { regrow: 3, vanish: false },
         'Grapevine': { regrow: 3, vanish: false }, 'Bee Rock': { regrow: 3, vanish: false }, 'Cave Pool': { regrow: 3, vanish: false },
         'Dead Laurel': { regrow: 3, vanish: false }, 'Rain Tree': { regrow: 1, vanish: false }, 'Fog Laurel': { regrow: 1, vanish: false },
+        'Skylight Fig': { regrow: 3, vanish: false }, 'Moonmilk': { regrow: 7, vanish: false },
         'Driftwood': { regrow: 1, vanish: 'spent' },
         // rare trees don't regrow
         'Ebony': { regrow: 1, hauls: 3, felled: true, vanish: false }, 'Mahogany': { regrow: 1, hauls: 3, felled: true, vanish: false },

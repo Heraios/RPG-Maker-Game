@@ -53,7 +53,7 @@ module.exports = {
         t.eq(r.honey, 'Yoon,Sib,Lasa,Dama,Parl,Tou,Falmi,Thenmy,Patience', 'wild honey: everyone who eats (Tou offers it)');
         t.eq(r.sweetPotato, 'Yoon,Sib,Dama,Parl,Tou,Thenmy,Patience', 'baked sweet potato: not the fae (cooked; a domestic crop)');
         t.ok(/Nobody but the fae/.test(r.faeLine) && /another kind of fae\. Lasa can't/.test(r.faeLine), 'the fae food lines: ' + r.faeLine);
-        t.eq(r.growth, 'Yoon 83/23/16/16/7/13 | Lasa 74/41/7/13/7/13 | Tou 67/21/13/16/13/19 | Falmi 79/32/10/14/10/13',
+        t.eq(r.growth, 'Yoon 83/23/16/19/7/16 | Lasa 74/41/7/13/7/16 | Tou 67/21/13/19/13/22 | Falmi 79/32/10/17/10/16',
             'growth (Health/Mana/Might/Endurance/Spirit/Speed): the fae catch up; Tou with the remains');
         t.ok(/only comes at dawn/.test(r.fogDay), 'fog drip only at dawn');
         t.eq(r.fogDawn, 'Yoon fills a gourd with some Fog Drip.', 'at dawn, fog combed from the leaves');
