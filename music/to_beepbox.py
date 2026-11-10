@@ -92,7 +92,7 @@ SONGS = {
     'Battle_Wild':      ('battle_wild16.py', None, 60 / 150, 4, 4),
     'Battle_Spirits':   ('battle_spirits16.py', None, 60 / 264, 7, 4),     # 7/8: one BeepBox beat = an eighth
     'Battle_Seafarers': ('battle_seafarer16.py', None, 60 / 156, 4, 4),
-    'Boss_Great_Boar':  ('boss_great_boar16.py', None, 60 / 336, 8, 4),    # 4/4 and 7/8 mixed: beats are eighths
+    'Boss_Great_Boar':  ('boss_great_boar16.py', None, 60 / 160, 4, 4),
     'Battle_Salt_Marsh': ('battle_salt_marsh16.py', None, 60 / 140, 4, 4),
     'Victory_Isle':     ('victory16.py', None, 60 / 140, 4, 4),
     'Lasa':             ('party16.py', 'lasa', 0.6, 4, 3),                  # 6/8: a beat is a dotted quarter
