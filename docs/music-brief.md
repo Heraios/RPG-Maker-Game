@@ -141,6 +141,19 @@ First Sailor remnants (Hags, Owls, Stonemen), Battle_Seafarers, Battle_Spirits f
 A map note `<Story BGM: Unseen, 50>` gives a map other music until the Story variable reaches 50
 (Act 1: Unseen in Zonfahare, Eyot_Grieving on the eyot, Home_Grieving at home). By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
 
+## Battle music: the new direction (pilot)
+Battles are moving from the earlier *EarthBound*-like themes to something closer to *Strange Journey*: **one battle
+theme per area, grown out of that area's own music** (same tune, same key, a related pulse), arranged for a 16-bit
+orchestra at war (war drums, a marching snare, driving strings, low brass, a chanting men's choir) with no ambience.
+**Every battle track opens with its own jingle** (its play-once intro: about a bar for ordinary fights, three or
+four seconds for bosses); the database's battle-start sound is muted. Bosses: fast, drums on every beat, no quiet
+sections, a key lift near the end of the loop. Shared parts are in `music/battle_kit.py`.
+- **Pilot (done):** Battle_Salt_Marsh, and Boss_Great_Boar reworked.
+- **To do if the pilot is right:** battle themes for the lava tubes and lava-tube country (quoting Lava_Tubes, the
+  Children of the Caves, Yoon and Sib), the grasslands, the laurel forest, the highlands and the shore; rework
+  Boss_Parl, Boss_Daughter_Wells and Boss_Lady_Woods. Seafarers keep Battle_Seafarers wherever they fight;
+  Battle_Wild, Battle_Spirits and Battle_Ancients remain only for maps without an area theme.
+
 ## Still to make: Acts 1 and 2
 **Already planned:**
 - **The ritual** (done: Ritual): building Yoon's body, the climax of Act 2: every ingredient and every friend's theme gathering

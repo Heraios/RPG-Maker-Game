@@ -14,6 +14,15 @@ module.exports = {
             $dataMap.note = '<Battle BGM: Battle_Spirits>';
             out.noteWild = pick(1); out.noteBoss = pick(30);
             $dataMap.note = note;
+            // an area with its own battle theme: the map's music decides (day or night); Seafarers and bosses still win
+            const auto = $dataMap.autoplayBgm, bgm = $dataMap.bgm;
+            $dataMap.autoplayBgm = true; $dataMap.bgm = { name: 'Salt_Marsh', volume: 90, pitch: 100, pan: 0 };
+            out.area = [1, 39, 14, 30].map(pick).join(' ');
+            $dataMap.bgm = { name: 'Salt_Marsh_Night', volume: 90, pitch: 100, pan: 0 }; out.areaNight = pick(63);
+            $dataMap.bgm = { name: 'Zonfahare', volume: 90, pitch: 100, pan: 0 }; out.noArea = pick(39);
+            $dataMap.autoplayBgm = auto; $dataMap.bgm = bgm;
+            let swoosh = 0; const keepSe = AudioManager.playStaticSe; AudioManager.playStaticSe = () => { swoosh++; };
+            SoundManager.playBattleStart(); AudioManager.playStaticSe = keepSe; out.swoosh = swoosh;
             // an event's own choice wins
             $gameSystem.setBattleBgm({ name: 'Grief', volume: 90, pitch: 100, pan: 0 });
             out.event = pick(30);
@@ -24,7 +33,7 @@ module.exports = {
             $gameTroop.setup(39); BattleManager.playBattleBgm();
             AudioManager.playBgm = keep;
             out.played = played; out.volume = $dataSystem.battleBgm.volume;
-            out.tracks = Object.values(M.bosses).concat(M.rules.map(x => x.track), [$dataSystem.battleBgm.name]);
+            out.tracks = Object.values(M.bosses).concat(M.rules.map(x => x.track), M.factions.map(x => x.track), M.areas.map(a => 'Battle_' + a), [$dataSystem.battleBgm.name]);
             return out;
         });
         const T = r.troops;
@@ -43,6 +52,10 @@ module.exports = {
         t.eq(r.noteWild + '/' + r.noteBoss, 'Battle_Spirits/Boss_Parl', 'a <Battle BGM> map note changes ordinary fights, not bosses');
         t.eq(r.event, 'Grief', 'music an event chose for the battle wins');
         t.eq(r.played, 'Battle_Ancients ' + r.volume, 'the battle really plays it, at the database volume');
+        t.eq(r.area, 'Battle_Salt_Marsh Battle_Salt_Marsh Battle_Seafarers Boss_Parl', 'in the salt marsh: boars and Hags fight to the marsh\'s battle theme; marines and bosses keep theirs');
+        t.eq(r.areaNight, 'Battle_Salt_Marsh', 'the night version of the area counts too');
+        t.eq(r.noArea, 'Battle_Ancients', 'a map with no area battle theme falls back to the enemy kind');
+        t.eq(r.swoosh, 0, 'the battle-start sound effect is muted (the track\'s jingle replaces it)');
         const bgm = path.join(__dirname, '..', '..', 'Smoking Isle', 'audio', 'bgm');
         const missing = [...new Set(r.tracks)].filter(n => !['.ogg', '.m4a'].every(x => fs.existsSync(path.join(bgm, n + x))));
         t.eq(missing.join(', '), '', 'every battle track is in audio/bgm (.ogg and .m4a)');

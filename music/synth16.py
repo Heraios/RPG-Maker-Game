@@ -77,6 +77,13 @@ def drum(kind, vol=1.0):
         n = int(0.08 * SR); t = np.arange(n) / SR
         x = np.random.uniform(-1, 1, n); x = x - np.convolve(x, np.ones(6) / 6, 'same')   # bright
         s = x * np.exp(-t / 0.025) * np.clip(t / 0.01, 0, 1)
+    elif kind in ('taiko', 'taikohi'):                     # a war drum: a deep skin, hit hard
+        n = int(0.5 * SR); t = np.arange(n) / SR; base = 82 if kind == 'taiko' else 124
+        f = base * (1 + 1.4 * np.exp(-t / 0.02)); s = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.13) * 0.8
+        s += np.sin(2 * np.pi * np.cumsum(f * 2.3) / SR) * np.exp(-t / 0.06) * 0.6        # the skin's ring (mid-range)
+        s += np.sin(2 * np.pi * np.cumsum(f * 3.6) / SR) * np.exp(-t / 0.03) * 0.3
+        slap = np.random.uniform(-1, 1, n) * np.exp(-t / 0.014); slap = np.convolve(slap, np.ones(5) / 5, 'same')
+        s = np.tanh((s + slap * 1.1) * 1.6) / 1.2
     elif kind == 'clap':
         n = int(0.2 * SR); t = np.arange(n) / SR; x = np.random.uniform(-1, 1, n)
         s = x * (np.exp(-t / 0.05) + 0.6 * np.exp(-np.abs(t - 0.012) / 0.004) + 0.4 * np.exp(-np.abs(t - 0.024) / 0.004))
@@ -123,10 +130,10 @@ def snes_master(L, R, echo=0.24, fb=0.35, reverb=0.18, cutoff=9000):
         out.append(lowpass(y, cutoff))                           # the warm SNES muffle
     return out
 
-def save_stereo(L, R, path, loop=None, preview=None, gain=1.0):
-    """gain: below 1 for a track that should sit quieter than the songs (0.63 is about 4 dB quieter)."""
+def save_stereo(L, R, path, loop=None, preview=None, gain=1.0, drive=2.2):
+    """gain: below 1 for a track that should sit quieter than the songs (0.63 is about 4 dB quieter).
+    drive: the limiter (2.2 is gentle; 4 or so for battle music, whose drum hits would otherwise hold it down)."""
     peak = max(np.max(np.abs(L)), np.max(np.abs(R))); L = L / peak; R = R / peak
-    drive = 2.2                                   # a gentle limiter: louder, without clipping
     L = np.tanh(L * drive) / np.tanh(drive) * 0.9 * gain; R = np.tanh(R * drive) / np.tanh(drive) * 0.9 * gain
     def write(l, r, wav, ogg, meta):
         data = np.empty(len(l) * 2); data[0::2] = l; data[1::2] = r
@@ -198,3 +205,22 @@ def stab(m, dur, vol=1.0):
     parts = [(k, 1 / k * (0.85 ** k), None) for k in range(1, 12)]
     s = sum(partials(m, dur, parts, detune=dt) for dt in (-0.004, 0.004)) / 2
     return s * adsr(len(s), a=0.008, d=0.08, s=0.5, r=0.05) * vol
+
+def horn(m, dur, vol=1.0):
+    """French horns: round and noble, a section of two; slower to speak than the brass stab."""
+    parts = [(1, 1.0, None), (2, 0.55, None), (3, 0.3, None), (4, 0.14, None), (5, 0.07, None), (6, 0.03, None)]
+    s = sum(partials(m, dur, parts, vib=0.003, vib_delay=0.25, detune=dt) for dt in (-0.003, 0.003)) / 2
+    return s * adsr(len(s), a=0.045, d=0.12, s=0.8, r=0.1) * vol
+
+def menchoir(m, dur, vol=1.0, attack=0.07):
+    """A low men's choir on "oh": three voices, the vowel's weight around 500 Hz. For chanting and held roots."""
+    f0 = hz(m); parts = []
+    for k in range(1, 16):
+        f = f0 * k
+        if f > 5000: break
+        vowel = 0.25 + 2.2 * np.exp(-((f - 520) / 220) ** 2) + 0.9 * np.exp(-((f - 950) / 260) ** 2)
+        parts.append((k, vowel / k ** 0.8, None))
+    top = max(a for _, a, _ in parts)
+    parts = [(k, a / top, d) for k, a, d in parts]
+    s = sum(partials(m, dur, parts, vib=0.005, vib_delay=0.2, detune=dt) for dt in (-0.006, 0, 0.005)) / 3
+    return s * adsr(len(s), a=attack, d=0.15, s=0.85, r=min(0.25, dur / 3)) * vol * 0.35

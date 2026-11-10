@@ -11,10 +11,25 @@
  * @desc Troop number and track, for boss fights.
  * @default 26 Boss_Daughter_Wells, 27 Boss_Great_Boar, 29 Boss_Lady_Woods, 30 Boss_Parl, 50 Boss_Lady_Woods
  *
+ * @param Area Tracks
+ * @desc Area music that has its own battle theme, named the same with Battle_
+ * in front (Salt_Marsh -> Battle_Salt_Marsh). Night versions count too.
+ * @default Salt_Marsh
+ *
+ * @param Faction Music
+ * @desc Enemies whose music beats the area's (an army, not part of a place).
+ * Same form as Kind Music.
+ * @default seafarer/soldier/sailor = Battle_Seafarers
+ *
  * @param Kind Music
- * @desc Rules in order, the first that matches wins: enemy tags or names
- * (separated by /), then = and the track. Rules are separated by ;
- * @default first-sailor/Owl of Ill Omen = Battle_Ancients; seafarer/soldier/sailor = Battle_Seafarers; spirit/fae = Battle_Spirits
+ * @desc For maps with no area battle theme. Rules in order, the first that
+ * matches wins: enemy tags or names (separated by /), = and the track; rules separated by ;
+ * @default first-sailor/Owl of Ill Omen = Battle_Ancients; spirit/fae = Battle_Spirits
+ *
+ * @param Mute Start Sound
+ * @desc true: no "battle start" sound effect (each battle track opens with
+ * its own jingle instead). false: play the database's sound as usual.
+ * @default true
  *
  * @help
  * Place after SI_Talk (it reads the enemies' Talk Type and Talk Tags).
@@ -25,10 +40,16 @@
  *   2. A boss fight (its troop listed in Boss Music) plays its theme.
  *   3. A map note <Battle BGM: Battle_Spirits> makes every other fight on
  *      that map play that track.
- *   4. Otherwise the first Kind Music rule that matches any enemy in the
+ *   4. A Faction Music rule that matches an enemy in the troop (Seafarers
+ *      bring their own music wherever they fight).
+ *   5. The area's battle theme: if the map's own music is in Area Tracks
+ *      (Salt_Marsh, or Salt_Marsh_Night), the fight plays Battle_Salt_Marsh:
+ *      the same tune and key, so the battle grows out of the place.
+ *   6. Otherwise the first Kind Music rule that matches any enemy in the
  *      troop: a word matches an enemy's Talk Type or Talk Tags (spirit, fae,
- *      first-sailor, seafarer...), or appears in its name (Owl of Ill Omen).
- *   5. Nothing matched: the database's battle music (Battle_Wild).
+ *      first-sailor...), or appears in its name (Owl of Ill Omen).
+ *   7. Nothing matched: the database's battle music (Battle_Wild).
+ * Every battle track starts with its own short jingle (its play-once intro).
  * Volume and pitch are the database battle music's own.
  *
  * Script call: SmokingIsle.BattleMusic.choose()  the track the current troop
@@ -50,11 +71,24 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
         var m = /(\d+)\s+(\S+)/.exec(part.trim());
         if (m) $.bosses[Number(m[1])] = m[2];
     });
-    $.rules = String(params['Kind Music'] || '').split(';').map(function(rule) {
-        var bits = rule.split('=');
-        if (bits.length < 2) return null;
-        return { words: bits[0].split('/').map(function(w) { return w.trim().toLowerCase(); }).filter(Boolean), track: bits[1].trim() };
-    }).filter(Boolean);
+    var parseRules = function(text) {
+        return String(text || '').split(';').map(function(rule) {
+            var bits = rule.split('=');
+            if (bits.length < 2) return null;
+            return { words: bits[0].split('/').map(function(w) { return w.trim().toLowerCase(); }).filter(Boolean), track: bits[1].trim() };
+        }).filter(Boolean);
+    };
+    $.rules = parseRules(params['Kind Music']);
+    $.factions = parseRules(params['Faction Music']);
+    $.areas = String(params['Area Tracks'] || '').split(',').map(function(a) { return a.trim(); }).filter(Boolean);
+    $.muteStart = String(params['Mute Start Sound'] || 'true') === 'true';
+
+    // The area battle theme for this map's music, or null.
+    $.areaTrack = function() {
+        if (!$dataMap || !$dataMap.autoplayBgm || !$dataMap.bgm) return null;
+        var name = String($dataMap.bgm.name || '').replace(/_Night$/, '');
+        return $.areas.indexOf(name) >= 0 ? 'Battle_' + name : null;
+    };
 
     var defaultName = function() { return ($dataSystem.battleBgm && $dataSystem.battleBgm.name) || ''; };
 
@@ -81,6 +115,11 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
         var note = /<Battle BGM:\s*([^>]+)>/i.exec(($dataMap && $dataMap.note) || '');
         if (note) return note[1].trim();
         var enemies = $gameTroop.members();
+        for (var f = 0; f < $.factions.length; f++) {
+            if ($.matches($.factions[f], enemies)) return $.factions[f].track;
+        }
+        var area = $.areaTrack();
+        if (area) return area;
         for (var i = 0; i < $.rules.length; i++) {
             if ($.matches($.rules[i], enemies)) return $.rules[i].track;
         }
@@ -93,5 +132,11 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
         if (!name || name === base.name) return _BattleManager_playBattleBgm.call(this);
         AudioManager.playBgm({ name: name, volume: base.volume, pitch: base.pitch, pan: base.pan });
         AudioManager.stopBgs();
+    };
+
+    // The battle track's own jingle replaces the "battle start" sound effect.
+    var _SoundManager_playBattleStart = SoundManager.playBattleStart;
+    SoundManager.playBattleStart = function() {
+        if (!$.muteStart) _SoundManager_playBattleStart.call(this);
     };
 })(SmokingIsle.BattleMusic);

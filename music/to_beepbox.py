@@ -92,7 +92,8 @@ SONGS = {
     'Battle_Wild':      ('battle_wild16.py', None, 60 / 150, 4, 4),
     'Battle_Spirits':   ('battle_spirits16.py', None, 60 / 264, 7, 4),     # 7/8: one BeepBox beat = an eighth
     'Battle_Seafarers': ('battle_seafarer16.py', None, 60 / 156, 4, 4),
-    'Boss_Great_Boar':  ('boss_great_boar16.py', None, 60 / 300, 8, 4),    # 4/4 and 7/8 mixed: beats are eighths
+    'Boss_Great_Boar':  ('boss_great_boar16.py', None, 60 / 336, 8, 4),    # 4/4 and 7/8 mixed: beats are eighths
+    'Battle_Salt_Marsh': ('battle_salt_marsh16.py', None, 60 / 140, 4, 4),
     'Victory_Isle':     ('victory16.py', None, 60 / 140, 4, 4),
     'Lasa':             ('party16.py', 'lasa', 0.6, 4, 3),                  # 6/8: a beat is a dotted quarter
     'Juda':             ('party16.py', 'juda', 60 / 66, 4, 4),
@@ -130,10 +131,12 @@ VOICES = {
     'organ':     inst('square', 60, fade_in=0.02, fade_out=12, unison='octave'),
     'choir':     inst('rounded', 60, fade_in=0.3, fade_out=48, unison='hum', vibrato='light'),
     'stab':      inst('sawtooth', 80, decay='decay 1', unison='hum'),
+    'horn':      inst('rounded', 80, fade_in=0.04, fade_out=12, unison='hum'),
+    'menchoir':  inst('rounded', 70, fade_in=0.06, fade_out=24, unison='octave', vibrato='light'),
 }
 PITCHED = list(VOICES)
 # Drums: BeepBox noise channels; the number is the noise "pitch" (0 low .. 11 high).
-DRUMS = {'kick': ('low', 1), 'tom': ('low', 4), 'tomhi': ('low', 6), 'log': ('wood', 9),
+DRUMS = {'taiko': ('low', 0), 'taikohi': ('low', 2), 'kick': ('low', 1), 'tom': ('low', 4), 'tomhi': ('low', 6), 'log': ('wood', 9),
          'snare': ('snare', 6), 'clap': ('snare', 8), 'shaker': ('high', 11), 'cymbal': ('high', 9)}
 DRUM_CHANNELS = {'low': ('retro', 'decay 2'), 'wood': ('clang', 'decay 1'),
                  'snare': ('white', 'decay 2'), 'high': ('white', 'decay 1')}
@@ -173,12 +176,13 @@ def install():
     for name in PITCHED:
         setattr(s16, name, (lambda n: lambda m, dur, vol=1.0: Hit(n, m, dur, vol))(name))
     s16.timpani = lambda m, vol=1.0: Hit('timpani', m, 0.5, vol)
+    s16.menchoir = lambda m, dur, vol=1.0, attack=0.07: Hit('menchoir', m, dur, vol)
     s16.drum = lambda kind, vol=1.0: Hit('drum', kind, 0.1, vol)
     s16.cymbal = lambda vol=1.0, dur=1.5: Hit('drum', 'cymbal', 0.1, vol)
     s16.Stereo = Recorder
     s16.snes_master = lambda L, R, **kw: (L, R)
     def finish_loop(L, R, start_s, end_s): owner(L).loop = (start_s, end_s); return L, R, (0, 1)
-    def save_stereo(L, R, path, loop=None, preview=None, gain=1.0): owner(L).path = path
+    def save_stereo(L, R, path, loop=None, preview=None, gain=1.0, drive=2.2): owner(L).path = path
     def save_me(L, R, path, gain=1.0): owner(L).path = path
     s16.finish_loop, s16.save_stereo, s16.save_me = finish_loop, save_stereo, save_me
     pad = np.pad
