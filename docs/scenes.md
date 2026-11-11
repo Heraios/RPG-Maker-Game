@@ -198,6 +198,10 @@ Lasa cheers now and then, not on a count.
 
 > **Choice:** as above. Wrong: "Son." **Lasa:** Somebody's son, maybe!
 
+**Lasa:** It's hot, the sun. You could be hot too, you know. Touch something and think *sun*.
+
+*(**Burning Touch** learned: Change Skills, "The Ghost learns Burning Touch.")*
+
 *(**Ladder the goat** is grazing at the rim. He can't see the Ghost; he stares anyway. From here he follows
 it, at a goat's distance, all the way to town.)*
 
@@ -215,6 +219,18 @@ it, at a goat's distance, all the way to town.)*
 | The singing wires | **sing** | The wires sing! People talk through them. Far away. | "Sting." / They don't sting. Mostly. | ...a hum. In the poles. | ...singing wires. |
 | The road | **road** | A road. People walk on it to go places. | "Rude." / Roads are very polite. | ...flat. Worn. | ...road. |
 | Smoke above the town | **smoke** | Smoke! Fires. Cooking. People! | "Smock." / Close. | ...grey. Rising. | ...smoke. People. |
+
+**Words that teach a Touch** (concept.md, "Moves from words"). After the new word, Lasa shows the Ghost what
+to do with it, and it learns a move (Change Skills, "The Ghost learns ..."). A fight nearby shows it off.
+
+| Word | Move | Lasa |
+|---|---|---|
+| water | Chilling Touch | Water's cold. Make *them* cold! Then I throw a rock, and they go all soggy. |
+| wind | Cutting Touch | You push like the wind does. Push their heads around so they can't aim! |
+| tree | Crushing Touch | That tree's hand looks heavy. Grab them like that. Slow things are easy to rob. |
+| grass | Spirit Surge | Grass comes back after the fire. You can wipe things clean too. Scrub them off! |
+| sing | Ghostly Touch | Something's running through the wires. You can drink that out of things. Don't make a face. |
+| smoke | Spiritual Writhe | Smoke twists. Twist what's already on them, then I'll knock it off. My favourite trick! |
 
 - **"float"** doubles as the tutorial for the ghost-only crossing: the word and the ability arrive together
   (in Act 2 the living children go round the long way).

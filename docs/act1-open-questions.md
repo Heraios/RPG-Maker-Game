@@ -50,7 +50,9 @@ east side); the land greens at the top; the exit at the top right.
 11. **Music:** what plays on map 1? (There's no lava-flows track: Lava_Tubes made thinner, the Grasslands near
     the top, wind and quiet?) And where does the lament (Grief) start drifting in?
 12. **Time of day:** arrive at dusk, so the rite is lamp-lit? (A story event can set the period.)
-13. **Map note:** `<Area: ...>`? Night troops? (Act 1 has no combat, so wanderers stay off until Act 2.)
+13. **Map note:** `<Area: ...>`? Night troops? **Fights now begin in the gully** (concept.md, "The Ghost and
+    Lasa in a fight"): which enemies (ravens, rock and giant lizards, cave crickets), where, and can animals hurt
+    the Ghost?
 14. **Gathering spots:** which go on map 1? Act 1 finds Lasa can pick by hand (scoria, pumice, ephedra, orchil,
     cosco, Goblin's Gold, wart fern), and Act 2 ones seen now and come back for (obsidian, olivine, jasper,
     ochre, spurge, a skylight fig, moonmilk in a collapse)?

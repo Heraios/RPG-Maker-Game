@@ -20,7 +20,9 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 - You "wake up" as a spirit over a skeletal corpse, with no memories and no language.
 - You move around as a spirit, learning language with Lasa's help and piecing together that
   you "are" the spirit of a missing (actually dead) child the village is mourning.
-- No combat in this act.
+- **No combat in the lava tube** (map 6). **Fights begin in the gully** (map 1): Lasa fights, and the Ghost
+  supports her with the moves its temperament and the gully's words give it (see "The Ghost and Lasa in a
+  fight").
 - **Funnelled to the edge of Zonfahare** (decided): rocks close off the lava-tube country; the way leads out
   of the gully to where the fields meet the town. A month after Yoon went missing, the search is long over
   and grief has turned to gossip and rumour; **Pada** still goes out alone every night; the **twins** say
@@ -987,7 +989,9 @@ the travelling priest (Ward Off), Itahisa (Blood Offering), Jarcotapu (Consecrat
 The Ghost's versions hit all enemies or all allies; human Yoon's versions hit one target.
 
 **The Ghost starts with no moves.** It learns them from story scenes (Mournful Wail in "First Words",
-scenes.md) and from its temperament (see "Yoon's temperament"), not from levels. *To do:* take the Touches,
+scenes.md), from its temperament (see "Yoon's temperament": the Wails and Cries) and from **words** (the
+gully's words teach the Touches, Spirit Surge, Ghostly Touch and Spiritual Writhe, see "Moves from words"),
+not from levels. *To do:* take the Touches,
 Wails and Cries out of the Ghost class's level 1 learnings.
 
 | Skill | Effect |
@@ -2288,11 +2292,52 @@ only more slowly, and Yoon's character can change over the game.
 | Count | Sweet | Funny | Unhinged |
 |---|---|---|---|
 | 5 | Calming Cry | Bewildering Wail | Terrifying Wail |
-| 10 | Joyful Cry | (a Touch, to choose) | Maddening Wail |
-| 20 | Rallying Cry, Focusing Cry | (a Touch, to choose) | (a Touch, to choose) |
+| 10 | Joyful Cry | (to decide) | Maddening Wail |
+| 20 | Rallying Cry, Focusing Cry | (to decide) | (to decide) |
 
-Mournful Wail always comes from the story ("First Words"). The Touches, Spirit Surge and Ghostly Touch are
-still to place: story, temperament or Insight.
+Mournful Wail always comes from the story ("First Words"). **Temperament gives the Ghost its voice; the world
+gives it touch:** the Touches come from words (below), so the three "(to decide)" slots no longer hold
+Touches. Options: nothing, a stronger Wail or Cry, or something new. Note the counts: after the 13 tube words
+and the gully's finds the highest is likely 8-12, so in Act 1 the Ghost has the 5 move and maybe the 10.
+
+**Moves from words** (decided). Each thing the Ghost learns to name in the gully (scenes.md, "The Gully
+Walk"), it learns to touch. Lasa explains each move in her own words.
+
+| Word (where) | Move | Why that word |
+|---|---|---|
+| **sun** (scripted, out of the sky-hole) | Burning Touch | Heat and light. Guaranteed before the first fight: the Ghost's only damage |
+| **water** (the stream) | Chilling Touch | Cold, wet |
+| **wind** (the gusty spot) | Cutting Touch | Air; "something pushes" |
+| **tree** (the dead tree) | Crushing Touch | "A dry hand, reaching up": it grips |
+| **grass** (the kipuka) | Spirit Surge | Clean, alive; what grows back after the fire |
+| **sing** (the telegraph wires) | Ghostly Touch | The hum carries something; the Ghost sips it |
+| **smoke** (above the town, last) | Spiritual Writhe | Smoke twists and rises |
+
+goat, bird, road and home teach no move; **float** is the ghost-only crossing (Region 10). Only **sun** is
+scripted, so a player who skips every find still has Burning Touch, Mournful Wail and a temperament move.
+
+**The Ghost and Lasa in a fight.** Lasa is the finisher and thief (Keri, Gau, Prank, Steal, Keva, Mahu,
+Kami; 32 Health, 28 Mana). The Ghost (15 Health, 60 Mana, no Fatigue) sets her up. The combos the moves
+were chosen for:
+- **Touch → Keri** (earth): Chilling Touch (Wet on all) → Keri makes it **Sodden** (35% more physical damage,
+  no Magic: good against spirit casters). Cutting Touch (Disoriented) → Keri removes it, leaving **Grounded**
+  (Might -50% for a turn).
+- **Touch → Writhe → Keri:** Cutting Touch, Spiritual Writhe (Disoriented → Feverish), Keri removes the
+  upgraded state: **Lasa gets an extra turn**. The finale combo, from the last word.
+- **Slow it, rob it:** Steal's chance is 40 + (Lasa's Speed - the enemy's) + half her Luck. Crushing Touch
+  (Burdened, -20% Speed) and Terrifying Wail (Panicked, -25%) raise it from about 49% to about 65% against a
+  Speed-40 enemy. Spirit Surge on a Wet enemy leaves **Chilled** (Speed -60% for a turn): a near-sure Steal.
+- **Never hit her:** Disoriented (-15% Hit) plus Keva's Dazzled (-50%) is -65%; Feverish plus Dazzled -85%.
+- **Fear:** Terrifying Wail panics animals (no physical skills): the gully's beasts can't reach her.
+  Bewildering Wail (Confused: 25% more damage taken) feeds Keri and Gau.
+- **Cries:** Rallying Cry (Brave, acts twice): Prank and Steal in one turn. Joyful Cry (+10% Mana a turn)
+  eases her Mana, paid from the Ghost's. Focusing Cry suits Gau or her knife (Keri can't crit).
+- Weak with her: Burning Touch (she has no fire or air to build on it) and Maddening Wail (Enraged foes hit
+  harder and won't Talk).
+
+**Fights on map 1** are placed to show off the move just learned: a lizard past the stream (Wet + Keri),
+ravens with shiny things at the dead tree (Burdened + Steal), something tough after the smoke (the extra
+turn). Animals can see the Ghost; whether they can hurt it is still open.
 
 **Talk.** Small bonuses in the Talk system (SI_Talk), fitting each style:
 - **Sweet:** Soothe and Plead work a little better.
