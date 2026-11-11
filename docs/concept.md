@@ -2324,8 +2324,9 @@ three 5-tier moves by the end of the tube) is as valid as leaning into one.
 **When Yoon gets a body** (decided): **Yoon loses every Ghost move** (the Wails, Cries, Touches, Spirit
 Surge, Spiritual Writhe, Ghostly Touch); human Yoon's own versions (one target, skills 573-604) come afresh
 from the body-era scale. The Ghost's counts carry over as a **small head start** on that scale. A temperament
-that reached the **top Ghost tier (20)** gives a **small permanent stat bonus**. Suggested (to confirm):
-Sweet, Resolve; Funny, Speed (Flighty); Unhinged, Spirit.
+that reached the **top Ghost tier (20)** gives a **small permanent stat bonus** (decided): **Sweet, Resolve;
+Funny, Speed** (Flighty); **Unhinged, Spirit**. Each is earned on its own, so a varied Ghost can earn two or
+all three.
 
 **Moves from words** (decided). Each thing the Ghost learns to name in the gully (scenes.md, "The Gully
 Walk"), it learns to touch. Lasa explains each move in her own words.
