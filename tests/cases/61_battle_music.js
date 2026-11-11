@@ -21,6 +21,8 @@ module.exports = {
             $dataMap.bgm = { name: 'Salt_Marsh_Night', volume: 90, pitch: 100, pan: 0 }; out.areaNight = pick(63);
             $dataMap.bgm = { name: 'Lava_Tubes', volume: 90, pitch: 100, pan: 0 }; out.tubes = pick(8) + ' ' + pick(20);
             $dataMap.bgm = { name: 'Lava_Tube_Country_Night', volume: 90, pitch: 100, pan: 0 }; out.country = pick(1);
+            $dataMap.bgm = { name: 'Grasslands_Night', volume: 90, pitch: 100, pan: 0 }; out.grass = pick(7);
+            $dataMap.bgm = { name: 'Laurel_Forest', volume: 90, pitch: 100, pan: 0 }; out.laurel = pick(2) + ' ' + pick(9);
             $dataMap.bgm = { name: 'Zonfahare', volume: 90, pitch: 100, pan: 0 }; out.noArea = pick(39);
             $dataMap.autoplayBgm = auto; $dataMap.bgm = bgm;
             let swoosh = 0; const keepSe = AudioManager.playStaticSe; AudioManager.playStaticSe = () => { swoosh++; };
@@ -78,6 +80,8 @@ module.exports = {
         t.eq(r.areaNight, 'Battle_Salt_Marsh', 'the night version of the area counts too');
         t.eq(r.tubes, 'Battle_Lava_Tubes Battle_Lava_Tubes', 'in the lava tubes, the Children of the Caves and the bats alike fight to the tubes\' theme');
         t.eq(r.country, 'Battle_Lava_Tube_Country', 'the lava-tube country has its own (by night too)');
+        t.eq(r.grass, 'Battle_Grasslands', 'the grasslands (by night too): Battle_Grasslands');
+        t.eq(r.laurel, 'Battle_Laurel_Forest Battle_Laurel_Forest', 'the laurel forest: boars and imps alike fight to Battle_Laurel_Forest');
         t.eq(r.noArea, 'Battle_Ancients', 'a map with no area battle theme falls back to the enemy kind');
         t.eq(r.swoosh, 0, 'the battle-start sound effect is muted (the track\'s jingle replaces it)');
         t.eq(r.contact, 'fade 0.25, play Battle_Salt_Marsh', 'the field music fades over a quarter second and the battle track starts at once');

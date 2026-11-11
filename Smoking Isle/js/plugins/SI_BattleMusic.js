@@ -14,7 +14,7 @@
  * @param Area Tracks
  * @desc Area music that has its own battle theme, named the same with Battle_
  * in front (Salt_Marsh -> Battle_Salt_Marsh). Night versions count too.
- * @default Salt_Marsh, Lava_Tubes, Lava_Tube_Country
+ * @default Salt_Marsh, Lava_Tubes, Lava_Tube_Country, Grasslands, Laurel_Forest
  *
  * @param Faction Music
  * @desc Enemies whose music beats the area's (an army, not part of a place).

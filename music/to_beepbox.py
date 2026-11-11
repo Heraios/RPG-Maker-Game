@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
-# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, bosses16, battle_lava16, lava_country16, vehicles16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
+# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, bosses16, battle_lava16, battle_wilds16, lava_country16, vehicles16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
     'Island':           ('island16.py', None, 60 / 108, 4, 4),
     'Zonfahare':        ('zonfahare16.py', None, 60 / 112, 4, 4),
@@ -97,6 +97,8 @@ SONGS = {
     'Battle_Salt_Marsh': ('battle_salt_marsh16.py', None, 60 / 140, 4, 4),
     'Battle_Lava_Tubes': ('battle_lava16.py', 'tubes', 60 / 120, 4, 4),
     'Battle_Lava_Tube_Country': ('battle_lava16.py', 'country', 60 / 144, 4, 4),
+    'Battle_Grasslands': ('battle_wilds16.py', 'grass', 60 / 160, 4, 4),
+    'Battle_Laurel_Forest': ('battle_wilds16.py', 'laurel', 60 / 176, 4, 4),
     'Victory_Isle':     ('victory16.py', None, 60 / 140, 4, 4),
     'Lasa':             ('party16.py', 'lasa', 0.6, 4, 3),                  # 6/8: a beat is a dotted quarter
     'Juda':             ('party16.py', 'juda', 60 / 66, 4, 4),
