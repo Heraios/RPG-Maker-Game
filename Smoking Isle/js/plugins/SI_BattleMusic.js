@@ -26,6 +26,22 @@
  * matches wins: enemy tags or names (separated by /), = and the track; rules separated by ;
  * @default first-sailor/Owl of Ill Omen = Battle_Ancients; spirit/fae = Battle_Spirits
  *
+ * @param Start On Contact
+ * @desc true: the battle music (and its jingle) starts the moment the fight
+ * begins, on the first flash. false: halfway through the flash, as RPG Maker does.
+ * @default true
+ *
+ * @param Field Fade
+ * @desc Seconds for the field music to fade out as the battle music starts,
+ * instead of stopping dead. 0 stops it dead.
+ * @default 0.25
+ *
+ * @param Short Victory
+ * @desc Victory jingle for ordinary fights (in audio/me). Boss fights, and
+ * any victory jingle an event chose, play the database's (Victory_Isle).
+ * Leave empty to always use the database's.
+ * @default Victory_Short
+ *
  * @param Mute Start Sound
  * @desc true: no "battle start" sound effect (each battle track opens with
  * its own jingle instead). false: play the database's sound as usual.
@@ -50,6 +66,13 @@
  *      first-sailor...), or appears in its name (Owl of Ill Omen).
  *   7. Nothing matched: the database's battle music (Battle_Wild).
  * Every battle track starts with its own short jingle (its play-once intro).
+ *
+ * The switch from the field: the moment a fight begins, the field music
+ * fades out over a quarter of a second (Field Fade) while the battle track
+ * starts at once (Start On Contact), so the jingle's opening hit lands on the
+ * first flash. After the fight the field music comes back where it left
+ * off, as usual. Ordinary fights end on the Short Victory jingle; bosses on
+ * the full one.
  * Volume and pitch are the database battle music's own.
  *
  * Script call: SmokingIsle.BattleMusic.choose()  the track the current troop
@@ -82,6 +105,9 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
     $.factions = parseRules(params['Faction Music']);
     $.areas = String(params['Area Tracks'] || '').split(',').map(function(a) { return a.trim(); }).filter(Boolean);
     $.muteStart = String(params['Mute Start Sound'] || 'true') === 'true';
+    $.onContact = String(params['Start On Contact'] || 'true') === 'true';
+    $.fieldFade = Number(params['Field Fade'] || 0);
+    $.shortVictory = String(params['Short Victory'] || '').trim();
 
     // The area battle theme for this map's music, or null.
     $.areaTrack = function() {
@@ -132,6 +158,40 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
         if (!name || name === base.name) return _BattleManager_playBattleBgm.call(this);
         AudioManager.playBgm({ name: name, volume: base.volume, pitch: base.pitch, pan: base.pan });
         AudioManager.stopBgs();
+    };
+
+    // Leaving the field: fade the field music out (rather than stop it dead) and start the battle track at once.
+    $.fadeOutField = function(seconds) {
+        var buffer = AudioManager._bgmBuffer;
+        if (!buffer || !AudioManager._currentBgm || seconds <= 0) return false;
+        buffer.fadeOut(seconds);
+        AudioManager._bgmBuffer = null; AudioManager._currentBgm = null;     // detached: the battle track gets a fresh one
+        setTimeout(function() { buffer.stop(); }, seconds * 1000 + 50);
+        return true;
+    };
+
+    var _Scene_Map_stopAudioOnBattleStart = Scene_Map.prototype.stopAudioOnBattleStart;
+    Scene_Map.prototype.stopAudioOnBattleStart = function() {
+        var current = AudioManager._currentBgm, next = $.choose();
+        var same = current && current.name === next;                          // already playing it: leave it be
+        if (!same) $.fadeOutField($.fieldFade);
+        _Scene_Map_stopAudioOnBattleStart.call(this);
+        if ($.onContact && !same) BattleManager.playBattleBgm();
+    };
+
+    // Ordinary fights end on the short victory jingle; bosses (and an event's own choice) on the full one.
+    $.victoryMe = function() {
+        var me = $gameSystem.victoryMe();
+        var database = $dataSystem.victoryMe && $dataSystem.victoryMe.name;
+        if (!$.shortVictory || me.name !== database || $.bosses[$gameTroop._troopId]) return me;
+        return { name: $.shortVictory, volume: me.volume, pitch: me.pitch, pan: me.pan };
+    };
+
+    var _BattleManager_playVictoryMe = BattleManager.playVictoryMe;
+    BattleManager.playVictoryMe = function() {
+        var me = $.victoryMe();
+        if (me === $gameSystem.victoryMe()) return _BattleManager_playVictoryMe.call(this);
+        AudioManager.playMe(me);
     };
 
     // The battle track's own jingle replaces the "battle start" sound effect.

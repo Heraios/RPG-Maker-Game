@@ -146,7 +146,10 @@ Battles are moving from the earlier *EarthBound*-like themes to something closer
 theme per area, grown out of that area's own music** (same tune, same key, a related pulse), arranged for a 16-bit
 orchestra at war (war drums, a marching snare, driving strings, low brass, a chanting men's choir) with no ambience.
 **Every battle track opens with its own jingle** (its play-once intro: about a bar for ordinary fights, three or
-four seconds for bosses); the database's battle-start sound is muted. Bosses: fast, drums on every beat, no quiet
+four seconds for bosses); the database's battle-start sound is muted. **The switch:** the moment a fight begins, the field music fades
+out over a quarter of a second while the battle track starts at once, so the jingle's hit lands on the first flash;
+after the fight the field music resumes where it left off (a half-second fade in). Ordinary fights end on
+**Victory_Short** (about 3 s), bosses on the full **Victory_Isle**. Bosses: fast, drums on every beat, no quiet
 sections, a key lift near the end of the loop. Shared parts are in `music/battle_kit.py`.
 - **Done:** Battle_Salt_Marsh; Battle_Lava_Tubes and Battle_Lava_Tube_Country (Acts 1-2 start here); Boss_Great_Boar
   rebuilt on Pada's tune (melody first: the riff-based version didn't land).

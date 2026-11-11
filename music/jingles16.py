@@ -10,7 +10,9 @@
 #     little hop up at the end, like a question.
 #   Memory_Isle: the memory updated (a new word from Lasa, something Remembered, a new quest). Lasa's bell glint,
 #     and one note of Yoon's soft voice on A, the note they share (as in First_Words).
-# Usage: python3 jingles16.py defeat rest item save clue memory   (or no names for all)
+#   Victory_Short: winning an ordinary fight (bosses keep the full Victory_Isle). Victory_Isle's opening alone:
+#     a tom roll, Yoon's D-F-A as a fanfare, and the bright D major landing, ringing out. About 3 seconds.
+# Usage: python3 jingles16.py defeat rest item save clue memory short   (or no names for all)
 import sys; sys.path.insert(0, '.')
 import numpy as np
 from synth16 import *
@@ -98,6 +100,25 @@ def memory():
     for m in (57, 61, 64): S.add(0.5, harp(m + 12, 1.6, vol=0.05), pan=0.1)
     cut(S, 2.3, 'Memory_Isle', gain=0.55)
 
-ALL = dict(defeat=defeat, rest=rest, item=item, save=save, clue=clue, memory=memory)
+def short():
+    np.random.seed(41)
+    b = 60 / 140; S = Stereo(5)
+    for i in range(4): S.add(i * b / 4, drum('tom' if i < 2 else 'tomhi', 0.3 + i * 0.08), pan=(-0.4, 0.4)[i % 2])
+    t = b
+    for k, m in enumerate((62, 65, 69)):                          # D F A
+        for iv in (0, 12): S.add(t + k * b / 2, brass(m + iv, b * 0.45, vol=0.24))
+        S.add(t + k * b / 2, marimba(m + 12, b * 0.4, vol=0.3), pan=0.4)
+        S.add(t + k * b / 2, drum('log', 0.35), pan=-0.3)
+    t += 1.5 * b
+    for m, d in ((72, .5), (74, 2.5)):                            # ... C, and home to D
+        for iv in (0, -12): S.add(t, brass(m + iv, d * b * 0.95, vol=0.26))
+        t += d * b
+    hit = t - 2.5 * b
+    for m in (62, 66, 69, 74): S.add(hit, strings(m, 2.6 * b, vol=0.1)); S.add(hit, choir(m + 12, 2.6 * b, vol=0.04))
+    S.add(hit, timpani(38, 0.55)); S.add(hit, cymbal(0.18), pan=0.3); S.add(hit, drum('kick', 0.5))
+    for j, m in enumerate((74, 78, 81, 86, 90, 93)): S.add(hit + j * b / 6, marimba(m, b / 4, vol=0.22), pan=(-0.5, 0.5)[j % 2])
+    cut(S, t + 0.9, 'Victory_Short', gain=0.8)
+
+ALL = dict(defeat=defeat, rest=rest, item=item, save=save, clue=clue, memory=memory, short=short)
 if __name__ == '__main__':
     for name in (sys.argv[1:] or ALL): ALL[name]()

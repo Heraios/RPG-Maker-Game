@@ -35,6 +35,7 @@ SONGS = {
     'Save_Isle':        ('jingles16.py', 'save', 60 / 84, 4, 4),
     'Clue_Isle':        ('jingles16.py', 'clue', 60 / 96, 4, 4),
     'Memory_Isle':      ('jingles16.py', 'memory', 60 / 100, 4, 4),
+    'Victory_Short':    ('jingles16.py', 'short', 60 / 140, 4, 4),
     'Ritual':           ('ritual16.py', None, 60 / 76, 4, 4),
     'Mystery':          ('mystery16.py', None, 60 / 96, 4, 4),
     'Campfire':         ('campfire16.py', None, 60 / 56, 4, 3),           # 6/8: a beat is a dotted quarter
