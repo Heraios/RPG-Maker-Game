@@ -148,9 +148,9 @@ orchestra at war (war drums, a marching snare, driving strings, low brass, a cha
 **Every battle track opens with its own jingle** (its play-once intro: about a bar for ordinary fights, three or
 four seconds for bosses); the database's battle-start sound is muted. Bosses: fast, drums on every beat, no quiet
 sections, a key lift near the end of the loop. Shared parts are in `music/battle_kit.py`.
-- **Pilot (done):** Battle_Salt_Marsh, and Boss_Great_Boar reworked.
-- **To do if the pilot is right:** battle themes for the lava tubes and lava-tube country (quoting Lava_Tubes, the
-  Children of the Caves, Yoon and Sib), the grasslands, the laurel forest, the highlands and the shore; rework
+- **Done:** Battle_Salt_Marsh; Battle_Lava_Tubes and Battle_Lava_Tube_Country (Acts 1-2 start here); Boss_Great_Boar
+  rebuilt on Pada's tune (melody first: the riff-based version didn't land).
+- **To do:** battle themes for the grasslands, the laurel forest, the highlands and the shore; rework
   Boss_Parl, Boss_Daughter_Wells and Boss_Lady_Woods. Seafarers keep Battle_Seafarers wherever they fight;
   Battle_Wild, Battle_Spirits and Battle_Ancients remain only for maps without an area theme.
 

@@ -19,6 +19,8 @@ module.exports = {
             $dataMap.autoplayBgm = true; $dataMap.bgm = { name: 'Salt_Marsh', volume: 90, pitch: 100, pan: 0 };
             out.area = [1, 39, 14, 30].map(pick).join(' ');
             $dataMap.bgm = { name: 'Salt_Marsh_Night', volume: 90, pitch: 100, pan: 0 }; out.areaNight = pick(63);
+            $dataMap.bgm = { name: 'Lava_Tubes', volume: 90, pitch: 100, pan: 0 }; out.tubes = pick(8) + ' ' + pick(20);
+            $dataMap.bgm = { name: 'Lava_Tube_Country_Night', volume: 90, pitch: 100, pan: 0 }; out.country = pick(1);
             $dataMap.bgm = { name: 'Zonfahare', volume: 90, pitch: 100, pan: 0 }; out.noArea = pick(39);
             $dataMap.autoplayBgm = auto; $dataMap.bgm = bgm;
             let swoosh = 0; const keepSe = AudioManager.playStaticSe; AudioManager.playStaticSe = () => { swoosh++; };
@@ -54,6 +56,8 @@ module.exports = {
         t.eq(r.played, 'Battle_Ancients ' + r.volume, 'the battle really plays it, at the database volume');
         t.eq(r.area, 'Battle_Salt_Marsh Battle_Salt_Marsh Battle_Seafarers Boss_Parl', 'in the salt marsh: boars and Hags fight to the marsh\'s battle theme; marines and bosses keep theirs');
         t.eq(r.areaNight, 'Battle_Salt_Marsh', 'the night version of the area counts too');
+        t.eq(r.tubes, 'Battle_Lava_Tubes Battle_Lava_Tubes', 'in the lava tubes, the Children of the Caves and the bats alike fight to the tubes\' theme');
+        t.eq(r.country, 'Battle_Lava_Tube_Country', 'the lava-tube country has its own (by night too)');
         t.eq(r.noArea, 'Battle_Ancients', 'a map with no area battle theme falls back to the enemy kind');
         t.eq(r.swoosh, 0, 'the battle-start sound effect is muted (the track\'s jingle replaces it)');
         const bgm = path.join(__dirname, '..', '..', 'Smoking Isle', 'audio', 'bgm');
