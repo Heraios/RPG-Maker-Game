@@ -12,9 +12,9 @@
  * @default 26 Boss_Daughter_Wells, 27 Boss_Great_Boar, 29 Boss_Lady_Woods, 30 Boss_Parl, 50 Boss_Lady_Woods
  *
  * @param Area Tracks
- * @desc Area music that has its own battle theme, named the same with Battle_
- * in front (Salt_Marsh -> Battle_Salt_Marsh). Night versions count too.
- * @default Salt_Marsh, Lava_Tubes, Lava_Tube_Country, Grasslands, Laurel_Forest
+ * @desc Area music that has a battle theme: Salt_Marsh plays Battle_Salt_Marsh;
+ * Idekeu > Highlands shares Battle_Highlands. Night versions count too.
+ * @default Salt_Marsh, Lava_Tubes, Lava_Tube_Country, Grasslands, Laurel_Forest, Alpine_Forest > Highlands, Idekeu > Highlands, Chafakeu > Highlands, Snowy_Peak > Highlands, Beach > Shore
  *
  * @param Faction Music
  * @desc Enemies whose music beats the area's (an army, not part of a place).
@@ -103,7 +103,11 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
     };
     $.rules = parseRules(params['Kind Music']);
     $.factions = parseRules(params['Faction Music']);
-    $.areas = String(params['Area Tracks'] || '').split(',').map(function(a) { return a.trim(); }).filter(Boolean);
+    $.areas = {};                                        // area track -> its battle theme
+    String(params['Area Tracks'] || '').split(',').forEach(function(entry) {
+        var bits = entry.split('>').map(function(x) { return x.trim(); });
+        if (bits[0]) $.areas[bits[0]] = 'Battle_' + (bits[1] || bits[0]);
+    });
     $.muteStart = String(params['Mute Start Sound'] || 'true') === 'true';
     $.onContact = String(params['Start On Contact'] || 'true') === 'true';
     $.fieldFade = Number(params['Field Fade'] || 0);
@@ -113,7 +117,7 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
     $.areaTrack = function() {
         if (!$dataMap || !$dataMap.autoplayBgm || !$dataMap.bgm) return null;
         var name = String($dataMap.bgm.name || '').replace(/_Night$/, '');
-        return $.areas.indexOf(name) >= 0 ? 'Battle_' + name : null;
+        return $.areas[name] || null;
     };
 
     var defaultName = function() { return ($dataSystem.battleBgm && $dataSystem.battleBgm.name) || ''; };
