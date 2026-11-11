@@ -114,7 +114,8 @@ east-southeast, about 15 rows apart. From the bottom up:
   (map 6's ladder transfers here), ringed by a **kipuka garden**; the **children's marks** and their broken ladder's
   top; **Ladder the goat** grazing. Scripted words: sky, sun.
 - **The old flow front** (rows ~156-187): one thick wall of old lava across the whole map. In Act 1 the only way
-  through is a **warm crack, the ghost-only crossing** (the word "float"; Lasa flies). Rubble on the west side:
+  through is a **warm crack, the ghost-only crossing**, painted **Region 10** (only the Ghost, leading, can cross
+it; the word "float"; Lasa flies). Rubble on the west side:
   "Not that way. That's the deep country." **In Act 2 the living party can't cross it: they go back through the
   lava tubes** (down the mended ladder into map 6 and through a tube under the flow front, coming up north of it).
 - **The channels** (rows ~39-155): eight levees; the player zigzags (the levees' west ends are open; breaches on
@@ -126,6 +127,11 @@ east-southeast, about 15 rows apart. From the bottom up:
   scripted first view (home) as the lament begins. **Exit at the top right** (north-east) to the edge of
   Zonfahare. Keep the top hidden until the last breach, so "home" lands.
 - Pacing: about 14 screens of climbing; every channel needs something in it. Trim a channel if it drags.
+- **Mock-up:** `docs/mockups/gully_mockup.png` (annotated overview) and `gully_mockup_top/mid/bottom.png` (half
+  scale): the painted levees with every proposed feature placed in real tiles. A sketch, not the map: the
+  crack is at x 23, rows 161-173; the sky-hole at about (12, 206); breaches at (57-58, 153), (56-57, 129),
+  (58-59, 97). Note: the flow front's A4 top looks like the ground in-game; scatter lichen and clinker
+  (Lava-E 12, 13, 15) on it so it reads as rough rock.
 
 **8 The Warrens** (optional in Act 1, see questions): Lasa's people's tunnel town. Children of the Caves NPCs,
 the Cave Hoard trader (buy back stolen things), more First Words spots. BGM Warrens.

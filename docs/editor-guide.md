@@ -285,6 +285,11 @@ them with **Change Skills**.
 invisible, walk-through and can't be examined until Tikea reveals it (for good). A story moment can reveal
 one with a Script: `SmokingIsle.FieldMagic.reveal(eventId)`. The steps and range are in the plugin's settings.
 
+**The ghost-only crossing: Region 10.** Paint **Region 10** (the Region tab, R) on tiles only a spirit can
+cross, like the warm crack through the old flow front on map 1. While the **Ghost (actor 1) leads** the party
+it walks over them, even over walls; nobody else can (Yoon with a body, the living in Act 2, Lasa leading).
+Events aren't affected. The number is a setting of `SI_FieldMagic`.
+
 **Moonmilk Paint** (item 278) works the same way as a field spell: from the menu, wandering **spirits** (and the
 dead) don't notice the party for 200 steps (common event 22); in battle, every spirit's Talk mood +20, the
 dead's +30. It's made at a campfire from Moonmilk and Bonemeal (Mada's recipe); Moonmilk Eye-Wash (Moonmilk,

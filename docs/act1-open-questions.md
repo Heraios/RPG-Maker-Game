@@ -40,9 +40,10 @@ lava tubes** under it; then eight channels, climbed in a zigzag (the levees' wes
 east side); the land greens at the top; the exit at the top right.
 
 7. ~~Ridge direction~~ **Done:** repainted, west-northwest to east-southeast, shallow.
-8. **Exact places still to choose:** the east-side breaches, the crack, and the exit tile.
-9. **The ghost-only crossing:** which **region number** marks the crack's tiles? (Needs a small plugin rule: only
-   the Ghost, with Lasa flying, can cross; nobody once Yoon has a body.)
+8. **Exact places still to choose:** the east-side breaches, the crack, and the exit tile. The mock-up
+   (docs/mockups/gully_mockup.png) proposes them all.
+9. ~~The ghost-only crossing's region~~ **Done:** **Region 10**, in `SI_FieldMagic` (only the Ghost, leading,
+   crosses it, even over walls). Mock-up placement: x 23, rows 161-173 (docs/mockups).
 10. **Blocked branches** into the deep country (south-west of the flow front): rubble fields or lava walls, and
     where Lasa says "Not that way."
 11. **Music:** what plays on map 1? (There's no lava-flows track: Lava_Tubes made thinner, the Grasslands near

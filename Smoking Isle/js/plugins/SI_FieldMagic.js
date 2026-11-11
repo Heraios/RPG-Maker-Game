@@ -27,6 +27,12 @@
  * @desc Steps Moonmilk Paint hides the party from wandering spirits.
  * @default 200
  *
+ * @param Ghost Region
+ * @type number
+ * @desc Region ID of the ghost-only crossing: only the Ghost (actor 1) can
+ * cross these tiles; everyone else is blocked.
+ * @default 10
+ *
  * @param Reveal Animation
  * @type animation
  * @desc Played on each secret Tikea reveals.
@@ -44,6 +50,12 @@
  * Moonmilk Paint (item 278), used from the menu: common event 22 calls
  *   SmokingIsle.FieldMagic.veil()    wandering spirits (and the dead) don't
  *                                    notice the party for Veil Steps
+ *
+ * The ghost-only crossing: paint Region 10 (the Ghost Region parameter) on
+ * the tiles only a spirit can cross, like the warm crack through the old
+ * flow front on map 1. While the Ghost (actor 1) leads the party it can
+ * cross them, even over walls; nobody else can (Yoon with a body, the
+ * living children in Act 2). Events aren't affected.
  *
  * Secrets: an event with <Secret> in its note is invisible, walk-through and
  * can't be examined until Tikea reveals it (for good). Hidden caches, a
@@ -65,7 +77,20 @@ SmokingIsle.FieldMagic = SmokingIsle.FieldMagic || {};
     $.tikeaRange = Number(params['Tikea Range'] || 8);
     $.garoSteps = Number(params['Garo Steps'] || 120);
     $.veilSteps = Number(params['Veil Steps'] || 200);
+    $.ghostRegion = Number(params['Ghost Region'] || 10);
+    $.GHOST_ACTOR = 1;
     $.revealAnimation = Number(params['Reveal Animation'] || 92);
+
+    // The ghost-only crossing (Region 10): the Ghost crosses, even over walls; nobody else can.
+    $.isGhostLeading = function() { var l = $gameParty.leader(); return !!l && l.actorId() === $.GHOST_ACTOR; };
+    var _Game_Player_isMapPassable = Game_Player.prototype.isMapPassable;
+    Game_Player.prototype.isMapPassable = function(x, y, d) {
+        var x2 = $gameMap.roundXWithDirection(x, d), y2 = $gameMap.roundYWithDirection(y, d);
+        var here = $gameMap.regionId(x, y) === $.ghostRegion, there = $gameMap.regionId(x2, y2) === $.ghostRegion;
+        if (there) return $.isGhostLeading();
+        if (here && $.isGhostLeading()) return $gameMap.isValid(x2, y2) && $gameMap.isPassable(x2, y2, this.reverseDir(d));
+        return _Game_Player_isMapPassable.call(this, x, y, d);
+    };
 
     // Pura: a light, like a Torch (SI_Time).
     $.pura = function() { SmokingIsle.Time.lightFor($.puraSteps); };

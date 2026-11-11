@@ -66,6 +66,15 @@ module.exports = {
             out.menu = ['Pura', 'Tikea'].map(n => { const s = $dataSkills.find(x => x && x.name === n); return s.occasion + ':' + s.effects[0].dataId; }).join(',');
             const garo = $dataSkills.find(x => x && x.name === 'Garo');
             out.garoBoth = garo.occasion + ':' + garo.effects.some(e => e.code === 44 && e.dataId === 21);
+            // the ghost-only crossing (Region 10): the Ghost crosses, even over walls; nobody else can
+            const x0 = 8, y0 = 9, map = $gameMap, region = map.regionId.bind(map);
+            map.regionId = (x, y) => (x === x0 && (y === y0 - 1 || y === y0 - 2)) ? 10 : region(x, y);
+            $gamePlayer.locate(x0, y0);
+            $gameParty._actors = [1, 4]; const ghostIn = $gamePlayer.isMapPassable(x0, y0, 8), ghostOn = $gamePlayer.isMapPassable(x0, y0 - 1, 8);
+            $gameParty._actors = [2, 3, 4]; const livingIn = $gamePlayer.isMapPassable(x0, y0, 8);
+            $gameParty._actors = [4, 1]; const lasaLeads = $gamePlayer.isMapPassable(x0, y0, 8);
+            delete map.regionId;
+            out.crossing = [ghostIn, ghostOn, livingIn, lasaLeads].join('/');
             // the Status profile wraps inside the window
             const w = new Window_Status(); w.setActor(lasa);
             const lines = SmokingIsle.Screen.wrap(w, lasa.profile(), w.contentsWidth() - 6);
@@ -86,6 +95,7 @@ module.exports = {
         t.eq(r.revealed, 'true/true', '...but not what is far');
         t.eq(r.menu, '2:19,2:20', 'Pura and Tikea are used from the menu (common events 19, 20)');
         t.eq(r.garoBoth, '0:true', 'Garo works in battle and from the menu (common event 21)');
+        t.eq(r.crossing, 'true/true/false/false', 'Region 10: only the Ghost (leading) crosses; the living, and Lasa leading, can\'t');
         t.ok(/^[2-4]\/true$/.test(r.wrap), 'the Status profile wraps inside the window: ' + r.wrap);
         t.ok(turn, 'Lasa turns to the Ghost after dropping in');
     }
