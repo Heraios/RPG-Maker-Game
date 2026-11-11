@@ -143,5 +143,21 @@ module.exports = {
         t.eq(face.g + '/' + face.story, '2/30', 'the face: a girl; Story 30');
         t.ok(!act2.batsAway, 'Act 2: the bats are out');
         t.ok(act2.bone, 'Act 2: the remains run Scene: The Bone');
+    },
+
+    'map 6: the ladder leads up the sky-hole to map 1 (the gully)': async (h, t) => {
+        const climb = async (setup) => {
+            await startGame(h, [6, 25, 15]);
+            await onMap(h, 6);
+            await h.eval(setup);
+            await h.eval(() => $gameMap.events().find(e => e.event().name === 'Broken Ladder').start());
+            await h.pumpMessages();   // Enter takes the first choice: up
+            await onMap(h, 1);
+            return h.eval(() => [$gameMap.mapId(), $gamePlayer.x, $gamePlayer.y, $gamePlayer.direction()].join(','));
+        };
+        const act1 = await climb(() => { $gameParty._actors = [1, 4]; $gameVariables.setValue(5, 30); $gameMap.refresh(); });
+        const act2 = await climb(() => { $gameParty._actors = [2, 3]; $gameVariables.setValue(5, 50); $gameSelfSwitches.setValue([6, 8, 'A'], true); $gameMap.refresh(); });
+        t.eq(act1, '1,12,204,8', 'Act 1: the Ghost and Lasa float up to the gully, on the rim north of the hole, facing north');
+        t.eq(act2, '1,12,204,8', 'Act 2: the mended ladder climbs to the same spot');
     }
 };
