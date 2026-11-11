@@ -110,7 +110,9 @@ and loading screens, so **towns put several small interiors on one "Interiors" m
 **Map 1 "Lava Flows: Nearby Gully"** (decided; formerly planned as map 7 "The Sky-Hole"): 63 x 217, Lava Country
 tileset. **A climb out of the lava country, south to north, one levee at a time.** Levees run west-northwest to
 east-southeast, about 15 rows apart. From the bottom up:
-- **The gully** (rows ~188-216): Yoon and Sib's secret place. The **sky-hole** where the Ghost and Lasa float up
+- **The gully** (rows ~188-216): Yoon and Sib's secret place. The **sky-hole** (see-through tiles over a view
+  of map 6's garden, with its ladder; editor-guide "A hole you can see down"; docs/mockups/sky_hole_views.png)
+  where the Ghost and Lasa float up
   (map 6's ladder transfers here), ringed by a **kipuka garden**; the **children's marks** and their broken ladder's
   top; **Ladder the goat** grazing. Scripted words: sky, sun.
 - **The old flow front** (rows ~156-187): one thick wall of old lava across the whole map. In Act 1 the only way

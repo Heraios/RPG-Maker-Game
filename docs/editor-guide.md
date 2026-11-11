@@ -482,6 +482,21 @@ A narrow passage only children (and Patience) fit through.
 4. Put a crawlway back at the other end too, so the children can return. The adults wait on the starting
    map and rejoin when the party comes back to it.
 
+## A hole you can see down (map 1's sky-hole)
+
+The sky-hole shows the real cave below: map 6's garden, through see-through tiles.
+1. **The hole:** paint **Lava-A5's first tile** (top-left of the A5 tab; it's empty and blocks) over the hole.
+   The parallax shows through only there.
+2. **The rim:** on top of those tiles, paint the rim from **Lava-E** (tab E, rows 6-8, columns 5-7): corners 44,
+   46, 60, 62; top edge 45 and bottom edge 61 (repeat them for a wider hole); sides 52 and 54 (repeat for a
+   taller one). Leave the middle bare. The top edge is the far wall dropping into shadow.
+3. **The view:** Map Properties → Parallax Background: **SkyHole_Day**, and in the map's Note
+   `<Parallax Anchor: x, y, 0.3>` with x, y the hole's middle tile. The image's centre sits under that tile and
+   shifts a little as the camera moves, so it seems far below (0 = flat).
+4. **Time of day and Act 2:** switch it with **Change Parallax**: SkyHole_Day / _Dusk / _Night, and the
+   _Mended versions once the ladder is mended (Act 2).
+5. **If map 6's garden changes,** re-run `art/sky_hole_view.py` (it renders map 6 and remakes the six images).
+
 ## Map tags (Map Properties → Note)
 
 | Tag | Use it for | Effect |

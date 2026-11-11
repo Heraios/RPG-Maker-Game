@@ -12,6 +12,10 @@
 #   15    lichen speckles                                                                       (walkable)
 #   16-19 cracks, still warm:  -  |  \  /   (walkable: the ghost-only crossing is a region you paint)
 #   20 21 / 28 29   a tumulus (2x2: top-left, top-right / bottom-left, bottom-right)           (blocks)
+#   44 45 46 / 52 _ 54 / 60 61 62   the sky-hole's rim, a 3x3 frame around a hole of see-through tiles (Lava-A5's
+#         first tile): a rock lip, the far (north) wall dropping into shadow, rounded corners. Repeat 45/61 along
+#         the top/bottom and 52/54 down the sides for a bigger hole; the middle stays bare.             (blocks)
+import math
 from PIL import Image, ImageDraw
 
 S = 24                                   # drawn size; doubled on save
@@ -139,6 +143,37 @@ def tumulus():                            # a 2x2 dome where the crust pushed up
     d.point((22, 20), fill=RUST); d.point((30, 24), fill=RUST)
     return [big.crop((0, 0, S, S)), big.crop((S, 0, S * 2, S)), big.crop((0, S, S, S * 2)), big.crop((S, S, S * 2, S * 2))]
 
+def hole_rim():                           # a 3x3 frame; returns {index: tile} (the middle is left out)
+    N = S * 3; im = Image.new('RGBA', (N, N), (0, 0, 0, 0)); p = im.load()
+    R = 9                                     # corner radius
+    WALL, WALL_D = (64, 60, 66), (22, 20, 26)
+    for y in range(N):
+        for x in range(N):
+            cx = min(max(x + 0.5, R), N - R); cy = min(max(y + 0.5, R), N - R)
+            edge = R - math.hypot(x + 0.5 - cx, y + 0.5 - cy)            # distance inside the rounded opening
+            d = min(edge, x + 0.5, y + 0.5, N - x - 0.5, N - y - 0.5) if edge > 0 else edge
+            n = ((x % S) * 7 + (y % S) * 13) % 5                         # tileable grain
+            if d <= 0.8: c = ROCK_L if (y < N / 2 and n) else ROCK       # outside the opening: the rock lip
+            elif d <= 1.8: c = OUT                                       # the lip's edge
+            elif d <= 2.8: c = ROCK_D
+            else:
+                top, side, bottom = y + 0.5, min(x + 0.5, N - x - 0.5), N - y - 0.5
+                a = 0
+                if top < 26: a = max(a, min(1.0, 1.4 * (1 - (top - 3) / 23)))   # the far wall, going down into the dark
+                if side < 11: a = max(a, 0.8 * (1 - (side - 3) / 8))         # the side walls, foreshortened
+                if bottom < 6: a = max(a, 0.5 * (1 - (bottom - 3) / 3))      # shadow under the near lip
+                if a <= 0: continue
+                t = max(0.0, min(1.0, (top - 3) / 20))
+                base = tuple(int(WALL[i] + (WALL_D[i] - WALL[i]) * t) for i in range(3))
+                if n == 0 and top < 20: base = tuple(max(0, v - 14) for v in base)   # basalt columns
+                c = base + (int(255 * min(1.0, a)),)
+            p[x, y] = c
+    tiles = {}
+    for r, row in enumerate(((44, 45, 46), (52, None, 54), (60, 61, 62))):
+        for col, idx in enumerate(row):
+            if idx is not None: tiles[idx] = im.crop((col * S, r * S, col * S + S, r * S + S))
+    return tiles
+
 UP, BLOCK, WALK = 0x10, 0x0F, 0x00      # passability flags: drawn above / blocks / walkable
 tum = tumulus()
 LAYOUT = {
@@ -154,6 +189,7 @@ LAYOUT = {
     36: (wire_tile('-', COATED), UP), 37: (wire_tile('|', COATED), UP), 38: (wire_tile('\\', COATED), UP), 39: (wire_tile('/', COATED), UP),
     40: (wire_tile('down', COATED), UP), 41: (wire_tile('low', COATED), UP), 42: (wire_tile('up', COATED), UP),
 }
+LAYOUT.update({i: (t, BLOCK) for i, t in hole_rim().items()})
 
 if __name__ == '__main__':
     sheet = Image.new('RGBA', (16 * S, 16 * S), (0, 0, 0, 0))

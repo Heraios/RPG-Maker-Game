@@ -29,7 +29,9 @@ wires, cairns, cracks, rubble, tumulus), gathering rules, Memory (quests, words)
    north**, on the rim just north of the hole, which goes at x 11-14, rows 205-207 (as in the mock-up). Both the
    Act 1 float (Story >= 30) and the Act 2 climb (mended ladder) land there. **Still to build on map 1:** paint
    the hole there, and an event on it to go back down to map 6 (Act 2, ladder mended).
-5. **The sky-hole's rim** needs to read as a hole on dark basalt: a ring of kipuka grass, or a lighter lip?
+5. ~~The sky-hole's rim~~ **Done:** the hole is see-through tiles showing map 6's garden below (a parallax
+   pinned under it, SI_Screen), framed by Lava-E rim tiles (a rock lip, the far wall dropping into shadow).
+   A ring of kipuka grass around it in the mock-up.
 6. **Do map 6's two side exits** (east and south passages) stay closed in Act 1? They currently say "This way
    isn't built yet." (In Act 2 the party goes back through the tubes, so one of them leads under the flow front.)
 

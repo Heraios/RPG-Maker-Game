@@ -27,6 +27,13 @@
  *   Prologue's narration uses it.
  * - Options > Battle Text: Slow / Normal / Fast. Holding OK still speeds the
  *   log up.
+ * - A view down a hole: <Parallax Anchor: x, y, depth> in a map's note pins
+ *   the map's parallax so the image's centre sits under tile (x, y), and
+ *   shifts it a little as the camera moves (depth 0 = flat; 0.3 = it seems
+ *   far below). Paint the hole with a transparent tile (Lava-A5's first
+ *   tile, which blocks) and the parallax shows through only there. Map 1's
+ *   sky-hole shows map 6's garden: parallaxes SkyHole_Day/_Dusk/_Night
+ *   (+ _Mended in Act 2; change them with Change Parallax).
  */
 
 var Imported = Imported || {};
@@ -283,4 +290,28 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
         _Window_Options_cursorLeft.call(this, wrap);
     };
 
+    // <Parallax Anchor: x, y, depth>: the parallax's centre under tile (x, y), shifting with depth.
+    $.parallaxAnchor = function() {
+        var m = $dataMap && /<Parallax Anchor:\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+))?\s*>/i.exec($dataMap.note || '');
+        return m ? { x: Number(m[1]), y: Number(m[2]), depth: m[3] ? Number(m[3]) : 0 } : null;
+    };
+    $.anchoredOrigin = function(horizontal) {
+        var a = $.parallaxAnchor(), bmp = SceneManager._scene && SceneManager._scene._spriteset && SceneManager._scene._spriteset._parallax;
+        var size = bmp && bmp.bitmap ? (horizontal ? bmp.bitmap.width : bmp.bitmap.height) : 0;
+        var tile = horizontal ? $gameMap.tileWidth() : $gameMap.tileHeight();
+        var display = horizontal ? $gameMap.displayX() : $gameMap.displayY();
+        var screenTiles = horizontal ? $gameMap.screenTileX() : $gameMap.screenTileY();
+        var anchor = ((horizontal ? a.x : a.y) + 0.5) * tile;
+        var camera = (display + screenTiles / 2) * tile;
+        var onScreen = anchor - display * tile + (camera - anchor) * a.depth;   // where the image's centre is drawn
+        return size / 2 - onScreen;
+    };
+    var _Game_Map_parallaxOx = Game_Map.prototype.parallaxOx;
+    Game_Map.prototype.parallaxOx = function() {
+        return $.parallaxAnchor() ? $.anchoredOrigin(true) : _Game_Map_parallaxOx.call(this);
+    };
+    var _Game_Map_parallaxOy = Game_Map.prototype.parallaxOy;
+    Game_Map.prototype.parallaxOy = function() {
+        return $.parallaxAnchor() ? $.anchoredOrigin(false) : _Game_Map_parallaxOy.call(this);
+    };
 })(SmokingIsle.Screen);
