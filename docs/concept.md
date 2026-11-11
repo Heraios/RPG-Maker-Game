@@ -991,8 +991,7 @@ The Ghost's versions hit all enemies or all allies; human Yoon's versions hit on
 **The Ghost starts with no moves.** It learns them from story scenes (Mournful Wail in "First Words",
 scenes.md), from its temperament (see "Yoon's temperament": the Wails and Cries) and from **words** (the
 gully's words teach the Touches, Spirit Surge, Ghostly Touch and Spiritual Writhe, see "Moves from words"),
-not from levels. *To do:* take the Touches,
-Wails and Cries out of the Ghost class's level 1 learnings.
+not from levels (the Ghost class learns none of them).
 
 | Skill | Effect |
 |-------|--------|
@@ -2297,7 +2296,13 @@ only more slowly, and Yoon's character can change over the game.
 
 Mournful Wail always comes from the story ("First Words"). **Temperament gives the Ghost its voice; the world
 gives it touch:** the Touches come from words (below), so the three "(to decide)" slots no longer hold
-Touches. Options: nothing, a stronger Wail or Cry, or something new. Note the counts: after the 13 tube words
+Touches; they're still moves, to choose.
+
+**How a temperament move arrives** (built, common event 18 "A New Word"): **in the lesson** where the count
+reaches 5 / 10 / 20, as the Ghost's reaction to the word it just said, in that temperament's style. Lasa
+answers (in the dim window during First Words, an ordinary one after) and "Snuggly learns Calming Cry!".
+E.g. Unhinged 5: *"...the word. LOUDER. The rocks shake."* **Lasa:** *"Eep! ...Do that to the lizards, not
+me."* Reaching a count any other way (a choice in a scene) teaches the move at the next new word. Note the counts: after the 13 tube words
 and the gully's finds the highest is likely 8-12, so in Act 1 the Ghost has the 5 move and maybe the 10.
 
 **Moves from words** (decided). Each thing the Ghost learns to name in the gully (scenes.md, "The Gully
@@ -2337,7 +2342,8 @@ were chosen for:
 
 **Fights on map 1** are placed to show off the move just learned: a lizard past the stream (Wet + Keri),
 ravens with shiny things at the dead tree (Burdened + Steal), something tough after the smoke (the extra
-turn). Animals can see the Ghost; whether they can hurt it is still open.
+turn). **Animals can see the Ghost, and can hurt it if they hit it** (no immunity: with 15 Health it relies on
+its Speed, Lasa's Keva and the Wails to keep claws off it).
 
 **Talk.** Small bonuses in the Talk system (SI_Talk), fitting each style:
 - **Sweet:** Soothe and Plead work a little better.

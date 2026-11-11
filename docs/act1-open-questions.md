@@ -51,8 +51,8 @@ east side); the land greens at the top; the exit at the top right.
     the top, wind and quiet?) And where does the lament (Grief) start drifting in?
 12. **Time of day:** arrive at dusk, so the rite is lamp-lit? (A story event can set the period.)
 13. **Map note:** `<Area: ...>`? Night troops? **Fights now begin in the gully** (concept.md, "The Ghost and
-    Lasa in a fight"): which enemies (ravens, rock and giant lizards, cave crickets), where, and can animals hurt
-    the Ghost?
+    Lasa in a fight"): which enemies (ravens, rock and giant lizards, cave crickets) and where. (Decided: animals
+    can hurt the Ghost if they hit it.)
 14. **Gathering spots:** which go on map 1? Act 1 finds Lasa can pick by hand (scoria, pumice, ephedra, orchil,
     cosco, Goblin's Gold, wart fern), and Act 2 ones seen now and come back for (obsidian, olivine, jasper,
     ochre, spurge, a skylight fig, moonmilk in a collapse)?

@@ -145,6 +145,26 @@ module.exports = {
         t.ok(act2.bone, 'Act 2: the remains run Scene: The Bone');
     },
 
+    'temperament moves: learned in the lesson where a count reaches 5 / 10 / 20': async (h, t) => {
+        await startGame(h, [6, 25, 15]);
+        await onMap(h, 6);
+        const run = async (setup) => {
+            await h.eval(setup);
+            await h.eval(() => $gameTemp.reserveCommonEvent(18));
+            await h.page.waitForTimeout(300);
+            await h.pumpMessages();
+            return h.eval(() => [589, 590, 592, 597, 598, 599, 600].filter(id => $gameActors.actor(1).isLearnedSkill(id)).join(','));
+        };
+        const start = await run(() => { $gameParty._actors = [1, 4]; $gameVariables.setValue(6, 1); $gameVariables.setValue(11, 4); });
+        const u5 = await run(() => $gameVariables.setValue(11, 5));
+        const again = await run(() => {});
+        const both = await run(() => { $gameVariables.setValue(9, 20); $gameVariables.setValue(5, 30); });
+        t.eq(start, '', 'below 5: no move');
+        t.eq(u5, '592', 'Unhinged 5: Terrifying Wail, in the lesson');
+        t.eq(again, '592', 'only once');
+        t.eq(both, '592,597,598,599,600', 'Sweet 20 at once: Calming, Joyful, then Rallying and Focusing Cry');
+    },
+
     'map 6: the ladder leads up the sky-hole to map 1 (the gully)': async (h, t) => {
         const climb = async (setup) => {
             await startGame(h, [6, 25, 15]);
