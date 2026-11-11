@@ -1004,7 +1004,10 @@ not from levels (the Ghost class learns none of them).
 | Ghostly Touch | Drains MP |
 | Become Ethereal (human Rest skill) | Recover 35 Fatigue; for 3 turns take 25% physical damage, but MDF, AGI and MAT drop and no Physical skills |
 | -Wail (Bewildering, Maddening, Mournful, Terrifying) | Inflict Confused, Enraged, Despair, Panicked |
+| Beguiling Wail (Ghost only, skill 608) | May inflict Hypnotized on all enemies (40%) |
+| Dragging Wail (Ghost only, skill 609) | May drag one enemy Below (60%); hit the Ghost to free it, else it's lost in 3 turns |
 | -Cry (Focusing, Calming, Joyful, Rallying) | Grant Focused, Calm, Happy, Brave |
+| Flitting Cry (Ghost only, skill 607; state 226) | All allies Flitting: the next melee attack on each misses |
 
 ### Mental states
 | State | Effect |
@@ -2291,18 +2294,25 @@ only more slowly, and Yoon's character can change over the game.
 | Count | Sweet | Funny | Unhinged |
 |---|---|---|---|
 | 5 | Calming Cry | Bewildering Wail | Terrifying Wail |
-| 10 | Joyful Cry | (to decide) | Maddening Wail |
-| 20 | Rallying Cry, Focusing Cry | (to decide) | (to decide) |
+| 10 | Joyful Cry | Flitting Cry | Maddening Wail |
+| 20 | Rallying Cry, Focusing Cry | Beguiling Wail | Dragging Wail |
 
 Mournful Wail always comes from the story ("First Words"). **Temperament gives the Ghost its voice; the world
-gives it touch:** the Touches come from words (below), so the three "(to decide)" slots no longer hold
-Touches; they're still moves, to choose.
+gives it touch:** the Touches come from words (below), so Funny and Unhinged got three new moves instead:
+- **Flitting Cry** (Funny 10): all allies Flitting: the next melee attack on each misses (like Vaulting).
+  Flighty dodges everything and teaches the party to; it guards the fragile two, Lasa and the Ghost.
+- **Beguiling Wail** (Funny 20): may Hypnotize all enemies (40%): they attack their own side. The ultimate
+  prank. A hit may snap them out, so Lasa should Steal and Prank them, not Keri them.
+- **Dragging Wail** (Unhinged 20): may drag one enemy Below (60%): out of the fight; its allies must hit the
+  Ghost to pull it free, or in 3 turns it's lost. Risky on purpose: they turn on the 15-Health Ghost.
 
 **How a temperament move arrives** (built, common event 18 "A New Word"): **in the lesson** where the count
 reaches 5 / 10 / 20, as the Ghost's reaction to the word it just said, in that temperament's style. Lasa
 answers (in the dim window during First Words, an ordinary one after) and "Snuggly learns Calming Cry!".
 E.g. Unhinged 5: *"...the word. LOUDER. The rocks shake."* **Lasa:** *"Eep! ...Do that to the lizards, not
-me."* Reaching a count any other way (a choice in a scene) teaches the move at the next new word. Note the counts: after the 13 tube words
+me."* Funny 10: *"...the word slips sideways. So do you."* **Lasa:** *"Ha! You're impossible to catch. Teach
+me that!"* Unhinged 20: *"...the word goes down. Down, into the dark. It wants company."* **Lasa:** *"...Don't
+ever say it like that to me. Okay? Okay."* Reaching a count any other way (a choice in a scene) teaches the move at the next new word. Note the counts: after the 13 tube words
 and the gully's finds the highest is likely 8-12, so in Act 1 the Ghost has the 5 move and maybe the 10.
 
 **Moves from words** (decided). Each thing the Ghost learns to name in the gully (scenes.md, "The Gully

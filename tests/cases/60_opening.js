@@ -153,16 +153,34 @@ module.exports = {
             await h.eval(() => $gameTemp.reserveCommonEvent(18));
             await h.page.waitForTimeout(300);
             await h.pumpMessages();
-            return h.eval(() => [589, 590, 592, 597, 598, 599, 600].filter(id => $gameActors.actor(1).isLearnedSkill(id)).join(','));
+            return h.eval(() => [589, 590, 592, 597, 598, 599, 600, 607, 608, 609].filter(id => $gameActors.actor(1).isLearnedSkill(id)).join(','));
         };
         const start = await run(() => { $gameParty._actors = [1, 4]; $gameVariables.setValue(6, 1); $gameVariables.setValue(11, 4); });
         const u5 = await run(() => $gameVariables.setValue(11, 5));
         const again = await run(() => {});
         const both = await run(() => { $gameVariables.setValue(9, 20); $gameVariables.setValue(5, 30); });
+        const odd = await run(() => { $gameVariables.setValue(10, 20); $gameVariables.setValue(11, 20); });
         t.eq(start, '', 'below 5: no move');
         t.eq(u5, '592', 'Unhinged 5: Terrifying Wail, in the lesson');
         t.eq(again, '592', 'only once');
         t.eq(both, '592,597,598,599,600', 'Sweet 20 at once: Calming, Joyful, then Rallying and Focusing Cry');
+        t.eq(odd, '589,590,592,597,598,599,600,607,608,609', 'Funny 20: Bewildering Wail, Flitting Cry, Beguiling Wail; Unhinged 20: Maddening and Dragging Wail');
+    },
+
+    'the Ghost\'s Funny and Unhinged moves in battle': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const ghost = $gameActors.actor(1), lasa = $gameActors.actor(4), foe = $gameTroop.aliveMembers()[0];
+            const use = (id, target) => { const a = new Game_Action(ghost); a.setSkill(id); target.clearResult(); a.apply(target); };
+            const real = Math.random; Math.random = () => 0;
+            use(607, lasa); use(609, foe);
+            Math.random = real;
+            return { flit: lasa.isStateAffected(226), below: foe.isStateAffected(114), by: foe._siInflicter && foe._siInflicter[114] === ghost,
+                     scopes: [607, 608, 609].map(id => $dataSkills[id].scope).join(',') };
+        });
+        t.ok(r.flit, 'Flitting Cry: Lasa flits (the next melee attack misses)');
+        t.ok(r.below && r.by, 'Dragging Wail: the enemy is dragged below by the Ghost (hit the Ghost to free it)');
+        t.eq(r.scopes, '8,2,1', 'Flitting Cry all allies, Beguiling Wail all enemies, Dragging Wail one enemy');
     },
 
     'map 6: the ladder leads up the sky-hole to map 1 (the gully)': async (h, t) => {
