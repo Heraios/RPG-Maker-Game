@@ -2312,8 +2312,10 @@ answers (in the dim window during First Words, an ordinary one after) and "Snugg
 E.g. Unhinged 5: *"...the word. LOUDER. The rocks shake."* **Lasa:** *"Eep! ...Do that to the lizards, not
 me."* Funny 10: *"...the word slips sideways. So do you."* **Lasa:** *"Ha! You're impossible to catch. Teach
 me that!"* Unhinged 20: *"...the word goes down. Down, into the dark. It wants company."* **Lasa:** *"...Don't
-ever say it like that to me. Okay? Okay."* Reaching a count any other way (a choice in a scene) teaches the move at the next new word. Note the counts: after the 13 tube words
-and the gully's finds the highest is likely 8-12, so in Act 1 the Ghost has the 5 move and maybe the 10.
+ever say it like that to me. Okay? Okay."* Reaching a count any other way (a choice in a scene) teaches the move at the next new word. Note the counts: **map 6 alone gives up to 17 points** (Lasa's offer: up to 4,
+all Funny if you float away three times; the 13 words: 1 each). One temperament can reach 17 there (Funny) or
+14 (Sweet, Unhinged): two moves before leaving the tube, or three 5-tier moves if spread out. The gully's 13
+words (3 scripted, 10 optional) bring the most to 30, so **the 20 tier is reachable in Act 1**.
 
 **Moves from words** (decided). Each thing the Ghost learns to name in the gully (scenes.md, "The Gully
 Walk"), it learns to touch. Lasa explains each move in her own words.
