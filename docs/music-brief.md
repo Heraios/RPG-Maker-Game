@@ -154,9 +154,9 @@ sections, a key lift near the end of the loop. Shared parts are in `music/battle
 - **Done:** Battle_Salt_Marsh; Battle_Lava_Tubes and Battle_Lava_Tube_Country (Acts 1-2 start here); Battle_Grasslands;
   Battle_Laurel_Forest; Battle_Highlands (shared by the alpine forest, Idekeu, Chafakeu and the snow line); Battle_Shore; Boss_Great_Boar
   rebuilt on Pada's tune (melody first: the riff-based version didn't land).
-- **To do:** rework
-  Boss_Parl, Boss_Daughter_Wells and Boss_Lady_Woods. Seafarers keep Battle_Seafarers wherever they fight;
-  Battle_Wild, Battle_Spirits and Battle_Ancients remain only for maps without an area theme.
+- **Bosses (done):** all four reworked melody first: Boss_Great_Boar, Boss_Parl, Boss_Daughter_Wells, Boss_Lady_Woods.
+- Seafarers keep Battle_Seafarers wherever they fight; Battle_Wild, Battle_Spirits and Battle_Ancients remain only for
+  maps without an area theme.
 
 ## Still to make: Acts 1 and 2
 **Already planned:**
