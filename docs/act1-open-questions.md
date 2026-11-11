@@ -11,18 +11,18 @@ acts-1-2-maps.md (the map plan), editor-guide.md (how the systems are placed).
 |---|---|---|
 | 5 | Prologue | Done. New Game starts here (5, 8, 6). Centred narration, Prologue music |
 | 6 | Lava Tube: Waking | Playable: First Words (Lasa, 13 words, the face), skylight, lava glow, Lava Tubes tileset. **Its way out isn't wired**: the ladder's Act 1 page says "(The way up isn't built yet.)" |
-| 1 | Lava Flows: Nearby Gully | Painting in progress (62 x 80, Lava Country tileset). **No events yet**, no music, no map note |
+| 1 | Lava Flows: Nearby Gully | Painting in progress (63 x 217, Lava Country tileset): the levees are in. **Layout decided** (acts-1-2-maps.md, map 1). **No events yet**, no music, no map note |
 
 Built and ready to place: the Lava Country / Lava Tubes tilesets and the Lava-E sheet (telegraph poles and
 wires, cairns, cracks, rubble, tumulus), gathering rules, Memory (quests, words), Lasa's skills.
 
 ## 1. Map numbering and the plan
 
-1. **The plan still numbers the Sky-Hole as map 7.** It's map 1 now ("Lava Flows: Nearby Gully"). Renumber the
-   plan (acts-1-2-maps.md) to the maps as they really are?
+1. ~~**The plan still numbers the Sky-Hole as map 7.**~~ **Done:** the plan describes map 1 now. ~~ It's map 1 now ("Lava Flows: Nearby Gully"). Renumber the
+   plan (acts-1-2-maps.md) to the maps as they really are?~~
 2. **The edge of Zonfahare:** its own map, or the south edge of the Zonfahare map? Which map number?
-3. **How many maps** between the gully and the edge of town: is map 1 the whole lava-flow stretch, or is there a
-   second one?
+3. ~~**How many maps** between the gully and the edge of town:~~ **Decided:** map 1 is the whole stretch, gully to the top-right exit. ~~ is map 1 the whole lava-flow stretch, or is there a
+   second one?~~
 
 ## 2. Map 6 → map 1 (the way up)
 
@@ -34,11 +34,11 @@ wires, cairns, cracks, rubble, tumulus), gathering rules, Memory (quests, words)
 
 ## 3. Map 1: the gully walk
 
-7. **Ridge direction:** the overview map says the levees should run west-northwest to east-southeast, fairly
+7. ~~**Ridge direction:**~~ **Done:** repainted, west-northwest to east-southeast, shallow. ~~ the overview map says the levees should run west-northwest to east-southeast, fairly
    shallow (about 25-30 degrees). Keep the current steeper diagonals, or flatten them?
-8. **The route north-east to town:** where are the **breaches** (gaps in the levees) the player climbs through?
+8. **Decided:** a zigzag up through the channels (west ends open, breaches on the east side), exit top right. *Still to place exactly:*  where are the **breaches** (gaps in the levees) the player climbs through?
    Where's the **exit** (top right)?
-9. **The ghost-only crossing:** which **region number** marks tiles only the Ghost can cross? Where's the crack?
+9. **Decided:** a warm crack through the old flow front (rows ~156-187); in Act 2 the living go back through the lava tubes under it. *Still open:*  which **region number** marks tiles only the Ghost can cross? Where's the crack?
    (In Act 2 the living go round.) Needs a small plugin rule once the region is chosen.
 10. **Blocked branches** into the deep country (south-west): rubble fields or lava walls, and where Lasa says
     "Not that way."

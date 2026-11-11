@@ -107,15 +107,25 @@ and loading screens, so **towns put several small interiors on one "Interiors" m
 - Does the Ghost need darkness? With no light, a `<Dark>` map is very dark. Either skip `<Dark>` in Act 1,
   or let the Ghost glow faintly.
 
-**7 The Sky-Hole** (decided): outdoors, a **hidden gully** outside Zonfahare, out of the way (why Juda chose
-the tube below). Where the Ghost and Lasa **float up out of the skylight** at the end of First Words (the
-ladder's Act 1 page transfers here). First daylight: grasses, a **wild garden** round the rim, the sky.
-- **Yoon and Sib's secret place:** the top of their broken ladder; **their marks scratched in the rim**
-  (tallies, a toy, a half-worn name: the Ghost can't read them; in Act 2 Sib can).
-- **Ladder the goat** grazing at the rim (he follows the kids; he's been coming here since Yoon vanished).
-- Paths out of the gully, towards town and the fields. In Act 2 the party comes back here to go down the
-  mended ladder.
-- Music: the fields or a quiet outdoor track after the cave. Daylight (or late-afternoon gold).
+**Map 1 "Lava Flows: Nearby Gully"** (decided; formerly planned as map 7 "The Sky-Hole"): 63 x 217, Lava Country
+tileset. **A climb out of the lava country, south to north, one levee at a time.** Levees run west-northwest to
+east-southeast, about 15 rows apart. From the bottom up:
+- **The gully** (rows ~188-216): Yoon and Sib's secret place. The **sky-hole** where the Ghost and Lasa float up
+  (map 6's ladder transfers here), ringed by a **kipuka garden**; the **children's marks** and their broken ladder's
+  top; **Ladder the goat** grazing. Scripted words: sky, sun.
+- **The old flow front** (rows ~156-187): one thick wall of old lava across the whole map. In Act 1 the only way
+  through is a **warm crack, the ghost-only crossing** (the word "float"; Lasa flies). Rubble on the west side:
+  "Not that way. That's the deep country." **In Act 2 the living party can't cross it: they go back through the
+  lava tubes** (down the mended ladder into map 6 and through a tube under the flow front, coming up north of it).
+- **The channels** (rows ~39-155): eight levees; the player zigzags (the levees' west ends are open; breaches on
+  the east side). One find per channel: a kipuka with a skylight fig, a dead tree with ravens (tree, bird), the
+  **telegraph road** along a channel with its poles (sing, road), a stream (water), a gusty breach (wind), a
+  tumulus landmark. Lasa's by-hand gathering scattered through; knife / kit / pick spots for Act 2. The grass
+  and lichen grow as you climb.
+- **The top** (rows 0-38): the lava gives out: grass, the first terraces, smoke over the town (smoke), the
+  scripted first view (home) as the lament begins. **Exit at the top right** (north-east) to the edge of
+  Zonfahare. Keep the top hidden until the last breach, so "home" lands.
+- Pacing: about 14 screens of climbing; every channel needs something in it. Trim a channel if it drags.
 
 **8 The Warrens** (optional in Act 1, see questions): Lasa's people's tunnel town. Children of the Caves NPCs,
 the Cave Hoard trader (buy back stolen things), more First Words spots. BGM Warrens.
