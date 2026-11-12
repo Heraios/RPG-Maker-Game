@@ -18,7 +18,7 @@ module.exports = {
             out.badActions = news.filter(e => e.actions.some(a => !$dataSkills[a.skillId] || !$dataSkills[a.skillId].name)).map(e => e.name).join(', ');
             out.badDrops = news.filter(e => e.dropItems.some(d => d.kind && !([null, $dataItems, $dataWeapons, $dataArmors][d.kind][d.dataId] || {}).name)).map(e => e.name).join(', ');
             out.badTroops = $dataTroops.filter(tr => tr && tr.name && tr.members.some(m => !$dataEnemies[m.enemyId] || !$dataEnemies[m.enemyId].name)).map(tr => tr.name).join(', ');
-            out.troops = $dataTroops.filter(tr => tr && tr.id >= 15 && tr.id <= 50 && tr.name).length;
+            out.troops = $dataTroops.filter(tr => tr && tr.id >= 15 && tr.id <= 50 && tr.name && !/^Gully:/.test(tr.name)).length;   // the Gully troops (map 1) are tested in 65
             out.battlers = news.map(e => [e.name, e.battlerName]);
             // the vulture goes for the weakest
             const yoon = $gameActors.actor(2), sib = $gameActors.actor(3), pada = $gameActors.actor(5);

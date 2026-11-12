@@ -15,7 +15,7 @@ module.exports = {
             out.badActions = news.filter(e => e.actions.some(a => !$dataSkills[a.skillId] || !$dataSkills[a.skillId].name)).map(e => e.name).join(', ');
             out.badDrops = news.filter(e => e.dropItems.some(d => d.kind && !([null, $dataItems, $dataWeapons, $dataArmors][d.kind][d.dataId] || {}).name)).map(e => e.name).join(', ');
             const troops = $dataTroops.filter(tr => tr && tr.id >= 51 && tr.name);
-            out.troops = troops.length;
+            out.troops = troops.filter(tr => !/^Gully:/.test(tr.name)).length;   // the Gully troops (map 1) are tested in 65
             out.badTroops = troops.filter(tr => tr.members.some(m => !$dataEnemies[m.enemyId] || !$dataEnemies[m.enemyId].name)).map(tr => tr.name).join(', ');
             out.battlers = news.map(e => [e.name, e.battlerName]);
             const ST = n => SmokingIsle.Ailments.stateByName(n);
