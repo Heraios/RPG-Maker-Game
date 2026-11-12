@@ -10,7 +10,7 @@ acts-1-2-maps.md (the map plan), editor-guide.md (how the systems are placed).
 | Map | Name | State |
 |---|---|---|
 | 5 | Prologue | Done. New Game starts here (5, 8, 6). Centred narration, Prologue music |
-| 6 | Lava Tube: Waking | Playable: First Words (Lasa, 13 words, the face), skylight, lava glow, Lava Tubes tileset. The ladder leads up the sky-hole to map 1 (12, 204), in Act 1 (float) and Act 2 (the mended ladder) |
+| 6 | Lava Tube: Waking | Playable: First Words (Lasa, 13 words, the face), skylight, lava glow, Lava Tubes tileset. The ladder leads up the sky-hole to map 1 (9, 204), in Act 1 (float) and Act 2 (the mended ladder) |
 | 1 | Lava Flows: Nearby Gully | Painting in progress (63 x 217, Lava Country tileset): the levees are in. **Layout decided** (acts-1-2-maps.md, map 1). **No events yet**, no music, no map note |
 
 Built and ready to place: the Lava Country / Lava Tubes tilesets and the Lava-E sheet (telegraph poles and
@@ -25,10 +25,10 @@ wires, cairns, cracks, rubble, tumulus), gathering rules, Memory (quests, words)
 
 ## 2. Map 6 → map 1 (the way up)
 
-4. ~~Where exactly is the sky-hole on map 1?~~ **Wired:** map 6's ladder transfers to **map 1 (12, 204), facing
-   north**, on the rim just north of the hole, which goes at x 11-14, rows 205-207 (as in the mock-up). Both the
-   Act 1 float (Story >= 30) and the Act 2 climb (mended ladder) land there. **Still to build on map 1:** paint
-   the hole there, and an event on it to go back down to map 6 (Act 2, ladder mended).
+4. ~~Where exactly is the sky-hole on map 1?~~ **Wired:** map 6's ladder transfers to **map 1 (9, 204), facing
+   north**, on the rim just north of the hole (painted at x 6-12, rows 205-213, with its rim and view). Both
+   the Act 1 float (Story >= 30) and the Act 2 climb (mended ladder) land there. **Still to build:** an event at
+   the hole to go back down to map 6 (Act 2, ladder mended), and switching the view by time of day.
 5. ~~The sky-hole's rim~~ **Done:** the hole is see-through tiles showing map 6's garden below (a parallax
    pinned under it, SI_Screen), framed by Lava-E rim tiles (a rock lip, the far wall dropping into shadow).
    A ring of kipuka grass around it in the mock-up.

@@ -15,6 +15,8 @@
 #   44 45 46 / 52 _ 54 / 60 61 62   the sky-hole's rim, a 3x3 frame around a hole of see-through tiles (Lava-A5's
 #         first tile): a rock lip, the far (north) wall dropping into shadow, rounded corners. Repeat 45/61 along
 #         the top/bottom and 52/54 down the sides for a bigger hole; the middle stays bare.             (blocks)
+#   47 55 63 71   the rim's inner corners, for a stepped hole: top-left, top-right, bottom-left, bottom-right
+#         (on a hole tile whose two neighbours are hole but the diagonal one isn't)                     (blocks)
 import math
 from PIL import Image, ImageDraw
 
@@ -174,6 +176,25 @@ def hole_rim():                           # a 3x3 frame; returns {index: tile} (
             if idx is not None: tiles[idx] = im.crop((col * S, r * S, col * S + S, r * S + S))
     return tiles
 
+def hole_inner():                         # the rim's inner corners: a small rock lip in one corner
+    WALL, WALL_D = (64, 60, 66), (22, 20, 26)
+    tiles = {}
+    for idx, (fx, fy) in ((47, (0, 0)), (55, (1, 0)), (63, (0, 1)), (71, (1, 1))):
+        im = Image.new('RGBA', (S, S), (0, 0, 0, 0)); p = im.load()
+        for y in range(S):
+            for x in range(S):
+                cx = S if fx else 0; cy = S if fy else 0
+                r = math.hypot(x + 0.5 - cx, y + 0.5 - cy)
+                if r <= 3.0: c = ROCK_L if not fy else ROCK
+                elif r <= 4.0: c = OUT
+                elif r <= 5.0: c = ROCK_D
+                elif r <= 12 and not fy:                          # the far wall's shadow under a top step
+                    a = 0.8 * (1 - (r - 5) / 7); c = WALL_D + (int(255 * a),)
+                else: continue
+                p[x, y] = c
+        tiles[idx] = im
+    return tiles
+
 UP, BLOCK, WALK = 0x10, 0x0F, 0x00      # passability flags: drawn above / blocks / walkable
 tum = tumulus()
 LAYOUT = {
@@ -190,6 +211,7 @@ LAYOUT = {
     40: (wire_tile('down', COATED), UP), 41: (wire_tile('low', COATED), UP), 42: (wire_tile('up', COATED), UP),
 }
 LAYOUT.update({i: (t, BLOCK) for i, t in hole_rim().items()})
+LAYOUT.update({i: (t, BLOCK) for i, t in hole_inner().items()})
 
 if __name__ == '__main__':
     sheet = Image.new('RGBA', (16 * S, 16 * S), (0, 0, 0, 0))

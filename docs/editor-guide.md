@@ -489,7 +489,9 @@ The sky-hole shows the real cave below: map 6's garden, through see-through tile
    The parallax shows through only there.
 2. **The rim:** on top of those tiles, paint the rim from **Lava-E** (tab E, rows 6-8, columns 5-7): corners 44,
    46, 60, 62; top edge 45 and bottom edge 61 (repeat them for a wider hole); sides 52 and 54 (repeat for a
-   taller one). Leave the middle bare. The top edge is the far wall dropping into shadow.
+   taller one). Leave the middle bare. The top edge is the far wall dropping into shadow. A stepped hole needs the
+   inner corners too (47, 55, 63, 71). Easiest: close RPG Maker and run `python3 art/place_hole_rim.py 1`,
+   which paints the whole rim from the hole's shape.
 3. **The view:** Map Properties → Parallax Background: **SkyHole_Day**, and in the map's Note
    `<Parallax Anchor: x, y, 0.3>` with x, y the hole's middle tile. The image's centre sits under that tile and
    shifts a little as the camera moves, so it seems far below (0 = flat).

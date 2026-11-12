@@ -131,7 +131,7 @@ it; the word "float"; Lasa flies). Rubble on the west side:
 - Pacing: about 14 screens of climbing; every channel needs something in it. Trim a channel if it drags.
 - **Mock-up:** `docs/mockups/gully_mockup.png` (annotated overview) and `gully_mockup_top/mid/bottom.png` (half
   scale): the painted levees with every proposed feature placed in real tiles. A sketch, not the map: the
-  crack is at x 23, rows 161-173; the sky-hole at about (12, 206); breaches at (57-58, 153), (56-57, 129),
+  crack is at x 23, rows 161-173; the sky-hole is now painted at x 6-12, rows 205-213; breaches at (57-58, 153), (56-57, 129),
   (58-59, 97). Note: the flow front's A4 top looks like the ground in-game; scatter lichen and clinker
   (Lava-E 12, 13, 15) on it so it reads as rough rock.
 
