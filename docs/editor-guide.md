@@ -492,12 +492,18 @@ The sky-hole shows the real cave below: map 6's garden, through see-through tile
    taller one). Leave the middle bare. The top edge is the far wall dropping into shadow. A stepped hole needs the
    inner corners too (47, 55, 63, 71). Easiest: close RPG Maker and run `python3 art/place_hole_rim.py 1`,
    which paints the whole rim from the hole's shape.
-3. **The view:** Map Properties → Parallax Background: **SkyHole_Day**, and in the map's Note
-   `<Parallax Anchor: x, y, 0.3>` with x, y the hole's middle tile. The image's centre sits under that tile and
-   shifts a little as the camera moves, so it seems far below (0 = flat).
-4. **Time of day and Act 2:** switch it with **Change Parallax**: SkyHole_Day / _Dusk / _Night, and the
-   _Mended versions once the ladder is mended (Act 2).
-5. **If map 6's garden changes,** re-run `art/sky_hole_view.py` (it renders map 6 and remakes the six images).
+3. **The view:** in the map's Note, once per hole: `<Hole View: SkyHole_{period}, 9, 209, 0.3>`: an image
+   from img/parallaxes, centred under the hole's middle tile (9, 209), shifting a little as the camera moves so
+   it seems far below (0 = flat). `{period}` becomes Day, Dusk or Night by itself (dawn uses Day). Each hole
+   gets its own picture, so a map can have several holes showing different places; the map's own Parallax
+   Background stays free.
+4. **Changing it in the story:** a Script command, `SmokingIsle.Screen.setHoleView(1, 0,
+   'SkyHole_{period}_Mended')` (map 1, its first hole view). Mending the ladder on map 6 already does this.
+5. **Making the image of what's below:** `art/hole_view.py` renders the map below in-game and crops it, e.g.
+   for a hole down into a new map 8 around its tiles x 10-24, y 5-18, with only events 3 and 4 shown:
+   `NODE_PATH=$(npm root -g) python3 art/hole_view.py --map 8 --crop 10,5,25,19 --name EastHole --keep 3,4`
+   (add `--tone=-85,-80,-40,30` if that map is darkened by a Tint Screen, like map 6's Cave Shade). It makes
+   EastHole_Day/_Dusk/_Night. The sky-hole's are remade by `art/sky_hole_view.py` when map 6's garden changes.
 
 ## Map tags (Map Properties → Note)
 

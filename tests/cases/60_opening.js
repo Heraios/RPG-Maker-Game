@@ -197,17 +197,19 @@ module.exports = {
         const act2 = await climb(() => { $gameParty._actors = [2, 3]; $gameVariables.setValue(5, 50); $gameSelfSwitches.setValue([6, 8, 'A'], true); $gameMap.refresh(); });
         t.eq(act1, '1,9,204,8', 'Act 1: the Ghost and Lasa float up to the gully, on the rim north of the hole, facing north');
         t.eq(act2, '1,9,204,8', 'Act 2: the mended ladder climbs to the same spot');
-        // the view down the hole: <Parallax Anchor: x, y, depth> pins the parallax's centre under the hole
-        await h.eval(() => { $dataMap.note = '<Parallax Anchor: 13, 206, 0.3>'; $gameMap.changeParallax('SkyHole_Day', false, false, 0, 0); });
-        await h.page.waitForFunction(() => { const p = SceneManager._scene._spriteset._parallax; return p.bitmap && p.bitmap.isReady() && p.bitmap.width > 0; });
+        // the view down the hole: <Hole View: SkyHole_{period}, 9, 209, 0.3> on map 1, a picture under the hole
+        await h.page.waitForFunction(() => { const s = SceneManager._scene._spriteset._siHoles; return s && s[0] && s[0].bitmap && s[0].bitmap.isReady() && s[0].bitmap.width > 0; });
         const view = await h.eval(() => {
-            const S = SmokingIsle.Screen, w = SceneManager._scene._spriteset._parallax.bitmap.width;
-            const centre = () => { $gameMap.setDisplayPos(13.5 - $gameMap.screenTileX() / 2, 0); return $gameMap.parallaxOx(); };
-            const at = centre();
-            $gameMap.setDisplayPos(13.5 - $gameMap.screenTileX() / 2 + 4, 0); const moved = $gameMap.parallaxOx();
-            return { atCentre: Math.round(at - (w / 2 - 13.5 * 48 + $gameMap.displayX() * 48 - 4 * 48)), shift: Math.round(moved - at) };
+            const sp = SceneManager._scene._spriteset, hole = sp._siHoles[0], w = hole.bitmap.width;
+            const centreAt = dx => { $gameMap._displayX = 9.5 - $gameMap.screenTileX() / 2 + dx; sp.updateParallax(); return hole.x + w / 2 - (9.5 - $gameMap.displayX()) * 48; };
+            const at = centreAt(0), moved = centreAt(4);
+            SmokingIsle.Screen.setHoleView(1, 0, 'SkyHole_{period}_Mended');
+            return { name: hole._siName, count: sp._siHoles.length, at: Math.round(at), moved: Math.round(moved),
+                     mended: SmokingIsle.Screen.holeImage(0, SmokingIsle.Screen.holeViews()[0]) };
         });
-        t.eq(view.atCentre, 0, 'with the hole mid-screen, the image\'s centre is under it');
-        t.eq(view.shift, Math.round(4 * 48 * 0.7), 'the camera moves 4 tiles: the view shifts 70% of that (it seems far below)');
+        t.eq(view.count + ':' + view.name, '1:SkyHole_Day', 'map 1 has one hole view: SkyHole_Day by day');
+        t.eq(view.at, 0, 'with the hole mid-screen, the picture\'s centre is under it');
+        t.eq(view.moved, Math.round(4 * 48 * 0.3), 'the camera moves 4 tiles: the picture lags 30% (it seems far below)');
+        t.eq(view.mended, 'SkyHole_Day_Mended', 'mending the ladder switches it to the mended view');
     }
 };

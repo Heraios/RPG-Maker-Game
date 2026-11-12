@@ -27,13 +27,19 @@
  *   Prologue's narration uses it.
  * - Options > Battle Text: Slow / Normal / Fast. Holding OK still speeds the
  *   log up.
- * - A view down a hole: <Parallax Anchor: x, y, depth> in a map's note pins
- *   the map's parallax so the image's centre sits under tile (x, y), and
- *   shifts it a little as the camera moves (depth 0 = flat; 0.3 = it seems
- *   far below). Paint the hole with a transparent tile (Lava-A5's first
- *   tile, which blocks) and the parallax shows through only there. Map 1's
- *   sky-hole shows map 6's garden: parallaxes SkyHole_Day/_Dusk/_Night
- *   (+ _Mended in Act 2; change them with Change Parallax).
+ * - Views down holes: paint a hole with a see-through tile (Lava-A5's
+ *   first tile, which blocks) and put in the map's note, once per hole:
+ *     <Hole View: SkyHole_{period}, 9, 209, 0.3>
+ *   an image from img/parallaxes, centred under tile (9, 209), shifting a
+ *   little as the camera moves (depth 0 = flat; 0.3 = it seems far below).
+ *   {period} becomes Day, Dusk or Night (dawn uses Day). Each view is its own
+ *   picture, sized to its image, so a map can have several holes showing
+ *   different things. Change one later (Script):
+ *     SmokingIsle.Screen.setHoleView(mapId, index, 'SkyHole_{period}_Mended')
+ *   (index: 0 for the note's first <Hole View>, 1 for the second...).
+ *   art/hole_view.py makes the images by rendering the map below.
+ * - <Parallax Anchor: x, y, depth> does the same with the map's parallax
+ *   (one per map; the parallax repeats, so use it for a single hole).
  */
 
 var Imported = Imported || {};
@@ -288,6 +294,56 @@ SmokingIsle.Screen = SmokingIsle.Screen || {};
     Window_Options.prototype.cursorLeft = function(wrap) {
         if (this.commandSymbol(this.index()) === 'battleTextSpeed') return $.cycleSpeed(this, -1, false);
         _Window_Options_cursorLeft.call(this, wrap);
+    };
+
+    // Where a point anchored at tile (x, y) with a depth is drawn on screen (one axis).
+    $.anchorOnScreen = function(tileX, depth, horizontal) {
+        var tile = horizontal ? $gameMap.tileWidth() : $gameMap.tileHeight();
+        var display = horizontal ? $gameMap.displayX() : $gameMap.displayY();
+        var screenTiles = horizontal ? $gameMap.screenTileX() : $gameMap.screenTileY();
+        var anchor = (tileX + 0.5) * tile, camera = (display + screenTiles / 2) * tile;
+        return anchor - display * tile + (camera - anchor) * depth;
+    };
+
+    // <Hole View: image, x, y, depth>: one picture per hole, under the tiles.
+    $.holeViews = function() {
+        var re = /<Hole View:\s*([^,>]+?)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+))?\s*>/gi, out = [], m;
+        var note = ($dataMap && $dataMap.note) || '';
+        while ((m = re.exec(note))) out.push({ name: m[1], x: Number(m[2]), y: Number(m[3]), depth: m[4] ? Number(m[4]) : 0 });
+        return out;
+    };
+    $.periodWord = function() {
+        var T = SmokingIsle.Time;
+        if (!T || !T.period) return 'Day';
+        return T.period() === T.DUSK ? 'Dusk' : T.period() === T.NIGHT ? 'Night' : 'Day';
+    };
+    $.setHoleView = function(mapId, index, name) {
+        var all = $gameSystem._siHoleViews = $gameSystem._siHoleViews || {};
+        (all[mapId] = all[mapId] || {})[index] = name;
+    };
+    $.holeImage = function(index, view) {
+        var all = $gameSystem._siHoleViews || {}, set = all[$gameMap.mapId()] || {};
+        return (set[index] || view.name).replace(/\{period\}/g, $.periodWord());
+    };
+    var _Spriteset_Map_createParallax = Spriteset_Map.prototype.createParallax;
+    Spriteset_Map.prototype.createParallax = function() {
+        _Spriteset_Map_createParallax.call(this);
+        this._siHoles = $.holeViews().map(function() {
+            var sprite = new Sprite(); this._baseSprite.addChild(sprite); return sprite;
+        }, this);
+    };
+    var _Spriteset_Map_updateParallax = Spriteset_Map.prototype.updateParallax;
+    Spriteset_Map.prototype.updateParallax = function() {
+        _Spriteset_Map_updateParallax.call(this);
+        var views = $.holeViews();
+        (this._siHoles || []).forEach(function(sprite, i) {
+            var v = views[i]; if (!v) return;
+            var name = $.holeImage(i, v);
+            if (sprite._siName !== name) { sprite._siName = name; sprite.bitmap = ImageManager.loadParallax(name); }
+            if (!sprite.bitmap || !sprite.bitmap.isReady()) return;
+            sprite.x = Math.round($.anchorOnScreen(v.x, v.depth, true) - sprite.bitmap.width / 2);
+            sprite.y = Math.round($.anchorOnScreen(v.y, v.depth, false) - sprite.bitmap.height / 2);
+        });
     };
 
     // <Parallax Anchor: x, y, depth>: the parallax's centre under tile (x, y), shifting with depth.
