@@ -58,6 +58,8 @@
  *   <Sight: 5>        how many tiles it sees, in a cone in front of it
  *   <Night Only>      only out at night (SI_Time)
  *   <Day Only>        only out by day
+ *   <Before Story: 50> only out while Story (variable 5) is below 50 (e.g.
+ *                     Act 1's fights for the Ghost and Lasa)
  *   <Never Flees>     never runs, however strong the party (bosses, demons)
  *   <Bold>            runs only from a party twice as overwhelming
  *   <Timid>           runs from a party half as overwhelming
@@ -169,6 +171,7 @@ SmokingIsle.Wanderers = SmokingIsle.Wanderers || {};
             var sight = /<Sight:\s*(\d+)>/i.exec(note);
             this._siWanderer = m ? {
                 troopId: Number(m[1]),
+                beforeStory: Number((/<Before Story:\s*(\d+)>/i.exec(note) || [])[1] || 0),
                 sight: sight ? Number(sight[1]) : $.defaultSight,
                 nightOnly: /<Night Only>/i.test(note),
                 dayOnly: /<Day Only>/i.test(note),
@@ -191,6 +194,7 @@ SmokingIsle.Wanderers = SmokingIsle.Wanderers || {};
         var w = this.wanderer();
         if (!w) return false;
         if (this._pageIndex < 0) return true;   // no page's conditions are met: not out (lets the story gate it)
+        if (w.beforeStory && $gameVariables.value(5) >= w.beforeStory) return true;
         var day = $.gone()[this.wanderKey()];
         if (day !== undefined && day >= $.day()) return true;
         var night = SmokingIsle.Time && SmokingIsle.Time.isNight ? SmokingIsle.Time.isNight() : false;

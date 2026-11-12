@@ -2363,9 +2363,22 @@ were chosen for:
 - Weak with her: Burning Touch (she has no fire or air to build on it) and Maddening Wail (Enraged foes hit
   harder and won't Talk).
 
-**Fights on map 1** are placed to show off the move just learned: a lizard past the stream (Wet + Keri),
-ravens with shiny things at the dead tree (Burdened + Steal), something tough after the smoke (the extra
-turn). **Animals can see the Ghost, and can hurt it if they hit it** (no immunity: with 15 Health it relies on
+**Fights on map 1** (built): visible wanderers, only in Act 1 (`<Before Story: 50>`, page needs Lasa and Story
+30), each placed to show off the move just learned:
+
+| Where | Troop | Teaches |
+|---|---|---|
+| Tube collapse, by day / at night | 16 Cave Crickets x2 / 79 Bats x3 | First fight: Burning Touch + Keri; Cricket Legs drop / darkness helps Keva |
+| The stream (water) | 25 Rock Lizard | Chilling Touch, Keri: Sodden, the knife +35% |
+| The dead tree (tree) | 75 Ravens x2 | Crushing Touch slows them: Steal; or Cricket Legs in Talk |
+| The gusty saddle (wind) | 76 Vulture | It goes for the "weakest", the Ghost, and does nothing; Cutting Touch + Keva |
+| The kipuka (grass) | none | The quiet green spot |
+| The wires (sing), at night | 77 Owl of Ill Omen (never flees) | A spirit and an omen: Ghostly Touch, Talk |
+| The top (smoke) | 78 Rock Lizards x2 | The finale: Touch, Writhe, Keri for the extra turn |
+
+Simulated at level 1 with Lasa's basic moves and the Ghost doing nothing: every fight wins 89-100% of the time,
+Lasa ending on 19-32 of 32 Health; the Rock Lizards x2 are the hardest, and come last. The Ghost takes 10% of
+physical damage (and double magic), so animals barely scratch it: about 1 a hit. **Animals can see the Ghost, and can hurt it if they hit it** (no immunity: with 15 Health it relies on
 its Speed, Lasa's Keva and the Wails to keep claws off it).
 
 **Talk.** Small bonuses in the Talk system (SI_Talk), fitting each style:

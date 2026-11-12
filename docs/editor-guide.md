@@ -557,6 +557,10 @@ coast map's `<Night Troops>` note.
 Bosses whose defeat matters to the story (the Great Boar's flesh, the Daughter freed, Parl's fate) need
 the story to continue in the event's commands **after** Battle Processing.
 
+**Act 1 only:** `<Before Story: 50>` in a wanderer's note keeps it out only while Story (variable 5) is below
+50, so the gully's fights for the Ghost and Lasa are gone once Yoon has a body (map 1's seven wanderers use it,
+with a page that needs Lasa in the party and Story >= 30).
+
 ## Switches and variables you can use in event conditions
 
 | Number | Name | Meaning |
