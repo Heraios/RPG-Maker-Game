@@ -25,6 +25,8 @@ SONGS = {
     'Zonfahare_Inside': ('inside16.py', 'zonfahare', 60 / 84, 4, 4),
     'Mansehare_Inside': ('inside16.py', 'mansehare', 60 / 84, 4, 4),
     'Aguerekeu_Inside': ('inside16.py', 'aguerekeu', 60 / 80, 4, 4),
+    'Idekeu_Inside':    ('inside16.py', 'idekeu', 60 / 80, 4, 4),
+    'Chafakeu_Inside':  ('inside16.py', 'chafakeu', 60 / 76, 4, 4),
     'Shrine':           ('shrine16.py', 'shrine', 60 / 60, 4, 4),
     'Island_Chant':     ('shrine16.py', 'chant_track', 60 / 76, 4, 4),
     'Dread':            ('dread16.py', None, 60 / 50, 4, 4),
