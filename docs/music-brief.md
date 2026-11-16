@@ -83,9 +83,9 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
   tune**; a Hag's crane call far off that nobody reacts to; faintly, a second hand on the telegraph line (Parl).
 - **Idekeu** (done, with Idekeu_Night): axes, a falling tree, pitch fires, Tuu coughing; a rough work song.
 - **Chafakeu** (done, with Chafakeu_Night; Yeh's telegraph rambles on): sheep bells, wind; the tune whistled across the valley, answered by another whistle (*silbo*).
-- **Tabonakeu:** chisels; the tune in stone clacks over desert wind; silence where the Stonemen stand.
-- **Corajakeu:** great wind, seabirds, creaking ropes; a brave little tune plucked high over booming waves.
-- **Tacandakeu:** bubbling springs, steam, the electric hum; the tune ticking like a machine.
+- **Tabonakeu** (done, with inside and night versions): chisels; the tune in stone clacks over desert wind; silence where the Stonemen stand.
+- **Corajakeu** (done, with inside and night versions): great wind, seabirds, creaking ropes; a brave little tune plucked high over booming waves.
+- **Tacandakeu** (done, with inside and night versions; it's Sib's family's village, so Sib's tune is in it): bubbling springs, steam, the electric hum; the tune ticking like a machine.
 
 **Sacred sites** (the tune slow and chant-like):
 - **Tiltapu:** mist dripping off leaves; a choir from the tree; the tune slow, as if the tree answers.
