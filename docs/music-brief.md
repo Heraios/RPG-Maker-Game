@@ -41,6 +41,8 @@ plays it that way. The Ritual gathers every friend's motif into Yoon's theme; My
 Falmi's sprout (F A C) and Yoon's opening (D F A) share F and A: in Living_Things the sprout grows into Yoon's theme
 a note at a time. The **Lady of the Wind** has her own leitmotif (`music/wind_tune.py`: E dorian, a falling gust, a
 rising gust, a high cold arc with a C sharp, a sigh), first heard on Snowy_Peak.
+**Sooty Bird** has its own leitmotif (`music/sooty_tune.py`: a tern's cry on a tern-bone whistle), first heard at
+Amentapu; its cry is also the sound of flying between Sooty Bird idols (Sooty_Flight, a sound effect).
 In First_Words, Yoon's first remembered word is "Sib" (Sib's three counting notes, answering Lasa's "Rock!"), the first
 note Yoon holds steady is A (Lasa's home note and the heart of Yoon's D minor), and a bar of Lasa's guilt hides at the end.
 
@@ -88,10 +90,10 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
 - **Tacandakeu** (done, with inside and night versions; it's Sib's family's village, so Sib's tune is in it): bubbling springs, steam, the electric hum; the tune ticking like a machine.
 
 **Sacred sites** (the tune slow and chant-like):
-- **Tiltapu:** mist dripping off leaves; a choir from the tree; the tune slow, as if the tree answers.
-- **Jarcotapu:** dry wind, low chant, scraping tools; quietly dark-funny; a hint of Juda's theme (a clue).
-- **Amentapu:** terns, wind, the egg race's drum; the Birdmen's song over the water.
-- **Banotapu:** almost silent; creaking dead wood; a tiny high melody for the sapling. Burning in Act 5.
+- **Tiltapu** (done; the tree answers with Falmi's sprout): mist dripping off leaves; a choir from the tree; the tune slow, as if the tree answers.
+- **Jarcotapu** (done): dry wind, low chant, scraping tools; quietly dark-funny; a hint of Juda's theme (a clue).
+- **Amentapu** (done; Sooty Bird's new leitmotif, and Sib's priestly chant): terns, wind, the egg race's drum; the Birdmen's song over the water.
+- **Banotapu** (done; an Act 5 burning version still to make): almost silent; creaking dead wood; a tiny high melody for the sapling. Burning in Act 5.
 
 **Grasslands** (done; the terraces): warm wind, grasshoppers, goat bells far off; the tune drifting in now and then.
 

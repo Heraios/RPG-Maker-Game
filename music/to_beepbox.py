@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
-# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, bosses16, battle_lava16, battle_wilds16, battle_heights16, lava_country16, vehicles16, towns16, villages16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
+# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, bosses16, battle_lava16, battle_wilds16, battle_heights16, lava_country16, vehicles16, towns16, villages16, tapu16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
     'Island':           ('island16.py', None, 60 / 108, 4, 4),
     'Zonfahare':        ('zonfahare16.py', None, 60 / 112, 4, 4),
@@ -100,6 +100,10 @@ SONGS = {
     'Tacandakeu':       ('villages16.py', 'tacandakeu', 60 / 96, 4, 4),
     'Tacandakeu_Inside': ('villages16.py', 'tacandakeu_inside', 60 / 80, 4, 4),
     'Tacandakeu_Night': ('villages16.py', 'tacandakeu_night', 60 / 66, 4, 4),
+    'Tiltapu':          ('tapu16.py', 'tiltapu', 60 / 60, 4, 4),
+    'Jarcotapu':        ('tapu16.py', 'jarcotapu', 60 / 72, 4, 4),
+    'Amentapu':         ('tapu16.py', 'amentapu', 60 / 84, 4, 4),
+    'Banotapu':         ('tapu16.py', 'banotapu', 60 / 56, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),

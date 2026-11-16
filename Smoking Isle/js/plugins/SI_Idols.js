@@ -7,6 +7,11 @@
  * Sooty Bird flies you to other idols, Star Mother lets you rest and share a meal.
  * @author Smoking Isle
  *
+ * @param Flight Sound
+ * @desc Sound effect (in audio/se) when Sooty Bird carries you off: its cry
+ * and wingbeats. Leave empty for none.
+ * @default Sooty_Flight
+ *
  * @help
  * Place after SI_Meals, SI_Time and SI_Crafting.
  *
@@ -89,6 +94,8 @@ SmokingIsle.Idols = SmokingIsle.Idols || {};
         var d = $.idols()[name];
         if (!d || (Time && Time.isNight())) return false;
         if (Time) Time.advance();
+        var sound = String(PluginManager.parameters('SI_Idols')['Flight Sound'] || '').trim();
+        if (sound) AudioManager.playSe({ name: sound, volume: 90, pitch: 100, pan: 0 });     // Sooty Bird's cry, and wings
         $gamePlayer.reserveTransfer(d.mapId, d.x, d.y, 2, 0);
         return true;
     };

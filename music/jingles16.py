@@ -12,7 +12,9 @@
 #     and one note of Yoon's soft voice on A, the note they share (as in First_Words).
 #   Victory_Short: winning an ordinary fight (bosses keep the full Victory_Isle). Victory_Isle's opening alone:
 #     a tom roll, Yoon's D-F-A as a fanfare, and the bright D major landing, ringing out. About 3 seconds.
-# Usage: python3 jingles16.py defeat rest item save clue memory short   (or no names for all)
+#   Sooty_Flight: not a jingle but a sound effect (in audio/se): flying between Sooty Bird idols. Sooty Bird's cry
+#     (its leitmotif's first notes, on a tern-bone whistle), quick, over a rush of wingbeats lifting away.
+# Usage: python3 jingles16.py defeat rest item save clue memory short flight   (or no names for all)
 import sys; sys.path.insert(0, '.')
 import numpy as np
 from synth16 import *
@@ -119,6 +121,19 @@ def short():
     for j, m in enumerate((74, 78, 81, 86, 90, 93)): S.add(hit + j * b / 6, marimba(m, b / 4, vol=0.22), pan=(-0.5, 0.5)[j % 2])
     cut(S, t + 0.9, 'Victory_Short', gain=0.8)
 
-ALL = dict(defeat=defeat, rest=rest, item=item, save=save, clue=clue, memory=memory, short=short)
+def flight():
+    from sooty_tune import CRY, LIFT, whistle
+    np.random.seed(671)
+    b = 60 / 150; S = Stereo(3)
+    seq(S, CRY + LIFT[:2], b * 0.75, 0.05, lambda m, d: whistle(m, d * 0.95, vol=0.3), pan=0.2)          # the cry
+    for i in range(7):                                                                              # wingbeats, lifting away
+        n = int(0.14 * SR); x = np.random.uniform(-1, 1, n); x = np.convolve(x, np.ones(12) / 12, 'same')
+        S.add(0.1 + i * 0.17, lowpass(x, 1800 + 300 * i) * 3 * np.sin(np.pi * np.arange(n) / n) * (0.3 - 0.03 * i), pan=-0.4 + 0.12 * i)
+    n = int(1.6 * SR); x = np.random.uniform(-1, 1, n); x = np.convolve(x, np.ones(6) / 6, 'same') - np.convolve(x, np.ones(60) / 60, 'same')
+    S.add(0.2, x * np.sin(np.pi * np.arange(n) / n) ** 2 * 0.12, pan=0.3)                            # the rush of air
+    S.add(1.3, bell(98, 1.0, vol=0.08), pan=0.4)
+    cut(S, 2.0, 'Sooty_Flight', gain=0.42)
+
+ALL = dict(defeat=defeat, rest=rest, item=item, save=save, clue=clue, memory=memory, short=short, flight=flight)
 if __name__ == '__main__':
     for name in (sys.argv[1:] or ALL): ALL[name]()
