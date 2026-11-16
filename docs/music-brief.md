@@ -74,9 +74,9 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
 - **Zonfahare** (done): market crowd, goats, Tegue's hammer, the telegraph tapping ZONFAHARE; the full tune. Home.
 - **Mansehare** (done): surf, gulls, creaking boats; the Island tune as a rowing song; the pearl divers' slow
   version; the Seafarer fanfare made major as a friendly counter-line (Seafarers live here too); a horn on the docks.
-- **Afarohare:** wind in the barley, goat bells, the mill; slow and sunny, a harvest dance (Yeray's wine).
-- **Namethare:** picks in the tunnels, the battery hum; low and dignified, chant for the tombs.
-- **Celhare:** electroplating crackle, silver chimes; the richest, showiest version; Aday's tinkering motif.
+- **Afarohare** (done, with inside and night versions): wind in the barley, goat bells, the mill; slow and sunny, a harvest dance (Yeray's wine).
+- **Namethare** (done, with inside and night versions): picks in the tunnels, the battery hum; low and dignified, chant for the tombs.
+- **Celhare** (done, with inside and night versions): electroplating crackle, silver chimes; the richest, showiest version; Aday's tinkering motif.
 
 **Villages** (sounds first, fragments of the tune):
 - **Aguerekeu** (done): frogs, water under the stilts, the poling stroke; the Island tune **blended with the Marsh

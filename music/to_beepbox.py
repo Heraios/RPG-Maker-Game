@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
-# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, bosses16, battle_lava16, battle_wilds16, battle_heights16, lava_country16, vehicles16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
+# name: (script, function in it (party16, inside16, night16, home16, beach16, eyot16, highlands16, forest_homes16, bosses16, battle_lava16, battle_wilds16, battle_heights16, lava_country16, vehicles16, towns16, shrine16, jingles16) or None, seconds per BeepBox beat, beats per bar, ticks per beat)
 SONGS = {
     'Island':           ('island16.py', None, 60 / 108, 4, 4),
     'Zonfahare':        ('zonfahare16.py', None, 60 / 112, 4, 4),
@@ -82,6 +82,15 @@ SONGS = {
     'Lava_Tube_Country_Night': ('lava_country16.py', 'night', 60 / 60, 4, 4),
     'Raft':             ('vehicles16.py', 'raft', 60 / 76, 4, 4),
     'Canoe':            ('vehicles16.py', 'canoe', 60 / 96, 4, 4),
+    'Afarohare':        ('towns16.py', 'afarohare', 60 / 76, 4, 3),         # 12/8: a beat is a dotted quarter
+    'Afarohare_Inside': ('towns16.py', 'afarohare_inside', 60 / 72, 4, 3),
+    'Afarohare_Night':  ('towns16.py', 'afarohare_night', 60 / 66, 4, 4),
+    'Namethare':        ('towns16.py', 'namethare', 60 / 76, 4, 4),
+    'Namethare_Inside': ('towns16.py', 'namethare_inside', 60 / 72, 4, 4),
+    'Namethare_Night':  ('towns16.py', 'namethare_night', 60 / 60, 4, 4),
+    'Celhare':          ('towns16.py', 'celhare', 60 / 108, 4, 4),
+    'Celhare_Inside':   ('towns16.py', 'celhare_inside', 60 / 84, 4, 4),
+    'Celhare_Night':    ('towns16.py', 'celhare_night', 60 / 66, 4, 4),
     'Title':            ('title16.py', None, 60 / 76, 4, 4),
     'Prologue':         ('prologue16.py', None, 60 / 66, 4, 4),
     'Lava_Tubes':       ('lava_tubes16.py', None, 60 / 60, 4, 4),
