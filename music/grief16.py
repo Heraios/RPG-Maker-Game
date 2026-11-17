@@ -70,5 +70,5 @@ S.add(Bn(32), strings(46 + 12, bar * 0.98, vol=0.05)); S.add(Bn(32), bell(86, 2.
 
 L, Rr = snes_master(S.L, S.R, echo=0.34, fb=0.4, reverb=0.38)
 L, Rr, loop = finish_loop(L, Rr, t0, END)
-save_stereo(L, Rr, 'Grief16.ogg', loop=loop, preview='Grief16_preview.ogg')
+save_stereo(L, Rr, 'Grief16.ogg', loop=loop, preview='Grief16_preview.ogg', gain=0.8)   # a lament sits under the songs (about -9.5 LUFS)
 print('Grief16 intro %.1fs loop %.1fs' % (loop[0] / SR, loop[1] / SR))

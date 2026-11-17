@@ -55,9 +55,11 @@ module.exports = {
             out.first = I.destinations('Test Room').length;
             I.remember('Zonfahare', 1, 5, 5);
             out.places = I.destinations('Test Room').join(',');
-            T.setPeriod(3); out.night = I.fly('Zonfahare');
+            const sounds = [], keepSe = AudioManager.playSe; AudioManager.playSe = se => sounds.push(se.name);
+            T.setPeriod(3); out.night = I.fly('Zonfahare'); out.nightSound = sounds.join(',');
             T.setPeriod(0); const p0 = T.periodName();
             out.flew = I.fly('Zonfahare') + '/' + p0 + '>' + T.periodName() + '/' + $gamePlayer._newMapId + ',' + $gamePlayer._newX + ',' + $gamePlayer._newY;
+            out.flightSound = sounds.join(','); AudioManager.playSe = keepSe;
             $gamePlayer.clearTransferInfo();
             out.redBowl = $dataCommonEvents[6].name + '/' + $dataCommonEvents[6].list.some(c => c.code === 352);
             out.sooty = $dataCommonEvents[7].name;
@@ -69,6 +71,7 @@ module.exports = {
         t.eq(r.places, 'Zonfahare', 'idols you have touched become destinations');
         t.eq(r.night, false, 'Sooty Bird doesn\'t fly at night');
         t.eq(r.flew, 'true/dawn>day/1,5,6', 'by day it carries you, landing below the idol, and time passes');
+        t.eq(r.nightSound + '|' + r.flightSound, '|Sooty_Flight', 'flying plays Sooty Bird\'s cry and wingbeats (and refusing at night plays nothing)');
         t.eq(r.redBowl, 'Red Bowl Idol/true', 'the Red Bowl idol opens the save screen');
         t.eq(r.sooty, 'Sooty Bird Idol', 'the Sooty Bird idol common event');
         t.eq(r.menuSave, false, 'the menu has no Save command');

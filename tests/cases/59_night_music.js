@@ -91,4 +91,59 @@ module.exports = {
         t.eq(r.first, 'play Grief', 'with two notes, the lowest unreached one plays');
         t.eq(r.second, 'play Eyot_Grieving', '... then the next');
     },
+    'drift: <Drift BGM> fades a second track in across the map, and crossfade()': async (h, t) => {
+        await h.newGame();
+        const r = await h.eval(() => {
+            const N = SmokingIsle.NightMusic, out = {}, made = [];
+            const AM = AudioManager, keep = { create: AM.createBuffer, play: AM.playBgm, inn: AM.fadeInBgm, stop: AM.stopBgm, upd: AM.updateBgmParameters };
+            const fake = (name) => ({ name, volume: 1, playing: false, faded: 0, play() { this.playing = true; }, stop() { this.playing = false; }, fadeOut(s) { this.faded = s; }, fadeIn() {}, seek() { return 0; } });
+            AM.createBuffer = (folder, name) => { const b = fake(name); made.push(b); return b; };
+            AM.playBgm = function(bgm) { if (!(this._currentBgm && this._currentBgm.name === bgm.name && this._bgmBuffer)) this._bgmBuffer = fake(bgm.name); this._currentBgm = { name: bgm.name, volume: bgm.volume }; this.updateBgmParameters(bgm); };
+            AM.fadeInBgm = function(s) { out.fadeIn = s; };
+            AM.stopBgm = function() { this._currentBgm = null; this._bgmBuffer = null; };
+            AM.updateBgmParameters = function(bgm) { if (this._bgmBuffer) this._bgmBuffer.volume = this._bgmVolume * bgm.volume / 10000; };
+            const vol = AM._bgmVolume; AM._bgmVolume = 100;
+            const note = $dataMap.note, auto = $dataMap.autoplayBgm, bgm = $dataMap.bgm, story = $gameVariables.value(5), y = $gamePlayer._realY;
+            $dataMap.autoplayBgm = true; $dataMap.bgm = { name: 'Lava_Tube_Country', volume: 80, pitch: 100, pan: 0 };
+            $dataMap.note = '<Drift BGM: Grief, 40-10, until 50>'; $gameVariables.setValue(5, 0);
+            AM.playBgm($dataMap.bgm); const main = AM._bgmBuffer;
+            const at = (row) => { $gamePlayer._realY = row; N.updateDrift(); return [main.volume.toFixed(2), N.drift ? N.drift.buffer.volume.toFixed(2) : '-'].join('/'); };
+            out.below = at(50); out.start = at(40); out.half = at(25); out.top = at(10);
+            out.oneBuffer = made.length;
+            out.back = at(45); out.stopped = made[0].faded + '/' + !N.drift;
+            out.again = at(10);
+            $gameVariables.setValue(5, 50); out.later = at(10);
+            // walking off the top into a map that plays Grief: it carries straight on
+            $gameVariables.setValue(5, 0); at(10); const g = N.drift.buffer;
+            $dataMap.note = ''; $dataMap.bgm = { name: 'Grief', volume: 80, pitch: 100, pan: 0 };
+            $gameMap.autoplay(); out.carry = (AM._bgmBuffer === g) + '/' + AM._currentBgm.name + '/' + g.volume.toFixed(2) + '/' + !N.drift;
+            // a battle stops the drift (the area's music is what comes back)
+            $dataMap.note = '<Drift BGM: Grief, 40-10>'; $dataMap.bgm = { name: 'Lava_Tube_Country', volume: 80, pitch: 100, pan: 0 };
+            AM.playBgm($dataMap.bgm); at(20); const d = N.drift.buffer;
+            BattleManager.saveBgmAndBgs(); out.battle = !d.playing + '/' + !N.drift + '/' + BattleManager._mapBgm.name;
+            // a map with no music of its own: it rises out of silence
+            AM.stopBgm(); $dataMap.note = '<Drift BGM: Grief, 40-10>'; $gamePlayer._realY = 25; N.updateDrift();
+            out.silence = N.drift.buffer.volume.toFixed(2); N.stopDrift(0);
+            // the script call: the old track fades out while the new one fades in
+            $dataMap.note = ''; AM.playBgm({ name: 'Zonfahare', volume: 90 }); const old = AM._bgmBuffer;
+            N.crossfade('Grief', 4); out.cross = old.faded + '/' + AM._currentBgm.name + '/' + AM._currentBgm.volume + '/' + out.fadeIn;
+            Object.assign(AM, { createBuffer: keep.create, playBgm: keep.play, fadeInBgm: keep.inn, stopBgm: keep.stop, updateBgmParameters: keep.upd });
+            AM._bgmVolume = vol; AM._currentBgm = null; AM._bgmBuffer = null; N.drift = null;
+            $dataMap.note = note; $dataMap.autoplayBgm = auto; $dataMap.bgm = bgm; $gameVariables.setValue(5, story); $gamePlayer._realY = y;
+            return out;
+        });
+        t.eq(r.below, '0.80/-', 'below the drift, only the map\'s music');
+        t.eq(r.start, '0.80/-', 'at the "from" row, still none of it');
+        t.eq(r.half, '0.57/0.57', 'halfway, both at once (an even crossfade)');
+        t.eq(r.top, '0.00/0.80', 'at the "to" row, only the drift track');
+        t.eq(r.oneBuffer, 1, 'the drift track is started once, not every step');
+        t.eq(r.back, '0.80/-', 'walking back down, the map\'s music comes back');
+        t.eq(r.stopped, '0.5/true', '... and the drift track fades away');
+        t.eq(r.again, '0.00/0.80', 'it drifts in again going back up');
+        t.eq(r.later, '0.80/-', '"until 50": later in the story there is no drift');
+        t.eq(r.carry, 'true/Grief/0.80/true', 'into a map that plays Grief, the drift carries straight on at full volume');
+        t.eq(r.battle, 'true/true/Lava_Tube_Country', 'a battle stops the drift and comes back to the area\'s music');
+        t.eq(r.silence, '0.64', 'on a map with no music, it rises out of silence');
+        t.eq(r.cross, '4/Grief/90/4', 'crossfade(\'Grief\', 4): the old track fades out as Grief fades in, over 4 seconds');
+    },
 };

@@ -41,6 +41,8 @@ plays it that way. The Ritual gathers every friend's motif into Yoon's theme; My
 Falmi's sprout (F A C) and Yoon's opening (D F A) share F and A: in Living_Things the sprout grows into Yoon's theme
 a note at a time. The **Lady of the Wind** has her own leitmotif (`music/wind_tune.py`: E dorian, a falling gust, a
 rising gust, a high cold arc with a C sharp, a sigh), first heard on Snowy_Peak.
+**Sooty Bird** has its own leitmotif (`music/sooty_tune.py`: a tern's cry on a tern-bone whistle), first heard at
+Amentapu; its cry is also the sound of flying between Sooty Bird idols (Sooty_Flight, a sound effect).
 In First_Words, Yoon's first remembered word is "Sib" (Sib's three counting notes, answering Lasa's "Rock!"), the first
 note Yoon holds steady is A (Lasa's home note and the heart of Yoon's D minor), and a bar of Lasa's guilt hides at the end.
 
@@ -74,24 +76,24 @@ version: thinner, the tune hesitant, a Seafarer drum in the distance.
 - **Zonfahare** (done): market crowd, goats, Tegue's hammer, the telegraph tapping ZONFAHARE; the full tune. Home.
 - **Mansehare** (done): surf, gulls, creaking boats; the Island tune as a rowing song; the pearl divers' slow
   version; the Seafarer fanfare made major as a friendly counter-line (Seafarers live here too); a horn on the docks.
-- **Afarohare:** wind in the barley, goat bells, the mill; slow and sunny, a harvest dance (Yeray's wine).
-- **Namethare:** picks in the tunnels, the battery hum; low and dignified, chant for the tombs.
-- **Celhare:** electroplating crackle, silver chimes; the richest, showiest version; Aday's tinkering motif.
+- **Afarohare** (done, with inside and night versions): wind in the barley, goat bells, the mill; slow and sunny, a harvest dance (Yeray's wine).
+- **Namethare** (done, with inside and night versions): picks in the tunnels, the battery hum; low and dignified, chant for the tombs.
+- **Celhare** (done, with inside and night versions): electroplating crackle, silver chimes; the richest, showiest version; Aday's tinkering motif.
 
 **Villages** (sounds first, fragments of the tune):
 - **Aguerekeu** (done): frogs, water under the stilts, the poling stroke; the Island tune **blended with the Marsh
   tune**; a Hag's crane call far off that nobody reacts to; faintly, a second hand on the telegraph line (Parl).
 - **Idekeu** (done, with Idekeu_Night): axes, a falling tree, pitch fires, Tuu coughing; a rough work song.
 - **Chafakeu** (done, with Chafakeu_Night; Yeh's telegraph rambles on): sheep bells, wind; the tune whistled across the valley, answered by another whistle (*silbo*).
-- **Tabonakeu:** chisels; the tune in stone clacks over desert wind; silence where the Stonemen stand.
-- **Corajakeu:** great wind, seabirds, creaking ropes; a brave little tune plucked high over booming waves.
-- **Tacandakeu:** bubbling springs, steam, the electric hum; the tune ticking like a machine.
+- **Tabonakeu** (done, with inside and night versions): chisels; the tune in stone clacks over desert wind; silence where the Stonemen stand.
+- **Corajakeu** (done, with inside and night versions): great wind, seabirds, creaking ropes; a brave little tune plucked high over booming waves.
+- **Tacandakeu** (done, with inside and night versions; it's Sib's family's village, so Sib's tune is in it): bubbling springs, steam, the electric hum; the tune ticking like a machine.
 
 **Sacred sites** (the tune slow and chant-like):
-- **Tiltapu:** mist dripping off leaves; a choir from the tree; the tune slow, as if the tree answers.
-- **Jarcotapu:** dry wind, low chant, scraping tools; quietly dark-funny; a hint of Juda's theme (a clue).
-- **Amentapu:** terns, wind, the egg race's drum; the Birdmen's song over the water.
-- **Banotapu:** almost silent; creaking dead wood; a tiny high melody for the sapling. Burning in Act 5.
+- **Tiltapu** (done; the tree answers with Falmi's sprout): mist dripping off leaves; a choir from the tree; the tune slow, as if the tree answers.
+- **Jarcotapu** (done): dry wind, low chant, scraping tools; quietly dark-funny; a hint of Juda's theme (a clue).
+- **Amentapu** (done; Sooty Bird's new leitmotif, and Sib's priestly chant): terns, wind, the egg race's drum; the Birdmen's song over the water.
+- **Banotapu** (done; an Act 5 burning version still to make): almost silent; creaking dead wood; a tiny high melody for the sapling. Burning in Act 5.
 
 **Grasslands** (done; the terraces): warm wind, grasshoppers, goat bells far off; the tune drifting in now and then.
 
@@ -139,7 +141,10 @@ track has a night version (its name plus `_Night`) plays that at night, fading a
 breaks. The **SI_BattleMusic** plugin picks each fight's music: boss themes by troop, then Battle_Ancients for
 First Sailor remnants (Hags, Owls, Stonemen), Battle_Seafarers, Battle_Spirits for spirits and fae, else Battle_Wild.
 A map note `<Story BGM: Unseen, 50>` gives a map other music until the Story variable reaches 50
-(Act 1: Unseen in Zonfahare, Eyot_Grieving on the eyot, Home_Grieving at home). By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
+(Act 1: Unseen in Zonfahare, Eyot_Grieving on the eyot, Home_Grieving at home). A map note `<Drift BGM: Grief, 40-10, until 50>` drifts a second track in as the player walks
+from row 40 to row 10, the map's own music fading out as it fades in (map 1's climb, the lament rising near the top;
+it carries straight on into the next map if that map plays Grief). For scripted moments, the event script call
+`SmokingIsle.NightMusic.crossfade('Grief', 4)` fades one track into another over 4 seconds, both at once. By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
 
 ## Battle music: the new direction (pilot)
 Battles are moving from the earlier *EarthBound*-like themes to something closer to *Strange Journey*: **one battle
