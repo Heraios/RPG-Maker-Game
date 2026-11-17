@@ -141,7 +141,10 @@ track has a night version (its name plus `_Night`) plays that at night, fading a
 breaks. The **SI_BattleMusic** plugin picks each fight's music: boss themes by troop, then Battle_Ancients for
 First Sailor remnants (Hags, Owls, Stonemen), Battle_Seafarers, Battle_Spirits for spirits and fae, else Battle_Wild.
 A map note `<Story BGM: Unseen, 50>` gives a map other music until the Story variable reaches 50
-(Act 1: Unseen in Zonfahare, Eyot_Grieving on the eyot, Home_Grieving at home). By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
+(Act 1: Unseen in Zonfahare, Eyot_Grieving on the eyot, Home_Grieving at home). A map note `<Drift BGM: Grief, 40-10, until 50>` drifts a second track in as the player walks
+from row 40 to row 10, the map's own music fading out as it fades in (map 1's climb, the lament rising near the top;
+it carries straight on into the next map if that map plays Grief). For scripted moments, the event script call
+`SmokingIsle.NightMusic.crossfade('Grief', 4)` fades one track into another over 4 seconds, both at once. By day the wilds have daytime insects (grasshoppers, bees, cicadas); crickets are for the night.
 
 ## Battle music: the new direction (pilot)
 Battles are moving from the earlier *EarthBound*-like themes to something closer to *Strange Journey*: **one battle
