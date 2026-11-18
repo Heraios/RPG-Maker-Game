@@ -14,7 +14,7 @@
  * @param Area Tracks
  * @desc Area music that has a battle theme: Salt_Marsh plays Battle_Salt_Marsh;
  * Idekeu > Highlands shares Battle_Highlands. Night versions count too.
- * @default Salt_Marsh, Lava_Tubes, Lava_Tube_Country, Grasslands, Laurel_Forest, Alpine_Forest > Highlands, Idekeu > Highlands, Chafakeu > Highlands, Snowy_Peak > Highlands, Beach > Shore, Sea_Cliffs > Shore
+ * @default Salt_Marsh, Lava_Tubes, Lava_Tube_Country, Grasslands, Laurel_Forest, Alpine_Forest > Highlands, Idekeu > Highlands, Chafakeu > Highlands, Snowy_Peak > Highlands, Beach > Shore, Sea_Cliffs
  *
  * @param Faction Music
  * @desc Enemies whose music beats the area's (an army, not part of a place).

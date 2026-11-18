@@ -127,6 +127,7 @@ SONGS = {
     'Battle_Laurel_Forest': ('battle_wilds16.py', 'laurel', 60 / 176, 4, 4),
     'Battle_Highlands': ('battle_heights16.py', 'highlands', 60 / 132, 4, 4),
     'Battle_Shore':     ('battle_heights16.py', 'shore', 60 / 168, 4, 4),
+    'Battle_Sea_Cliffs': ('battle_cliffs16.py', 'battle', 60 / 168, 4, 4),
     'Victory_Isle':     ('victory16.py', None, 60 / 140, 4, 4),
     'Lasa':             ('party16.py', 'lasa', 0.6, 4, 3),                  # 6/8: a beat is a dotted quarter
     'Juda':             ('party16.py', 'juda', 60 / 66, 4, 4),
