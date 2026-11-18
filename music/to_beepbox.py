@@ -97,6 +97,8 @@ SONGS = {
     'Corajakeu':        ('villages16.py', 'corajakeu', 60 / 88, 4, 4),
     'Corajakeu_Inside': ('villages16.py', 'corajakeu_inside', 60 / 80, 4, 4),
     'Corajakeu_Night':  ('villages16.py', 'corajakeu_night', 60 / 66, 4, 4),
+    'Sea_Cliffs':       ('cliffs16.py', 'day', 60 / 84, 4, 4),
+    'Sea_Cliffs_Night': ('cliffs16.py', 'night', 60 / 66, 4, 4),
     'Tacandakeu':       ('villages16.py', 'tacandakeu', 60 / 96, 4, 4),
     'Tacandakeu_Inside': ('villages16.py', 'tacandakeu_inside', 60 / 80, 4, 4),
     'Tacandakeu_Night': ('villages16.py', 'tacandakeu_night', 60 / 66, 4, 4),
