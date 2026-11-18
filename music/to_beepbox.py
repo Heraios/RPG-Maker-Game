@@ -99,6 +99,8 @@ SONGS = {
     'Corajakeu_Night':  ('villages16.py', 'corajakeu_night', 60 / 66, 4, 4),
     'Sea_Cliffs':       ('cliffs16.py', 'day', 60 / 84, 4, 4),
     'Sea_Cliffs_Night': ('cliffs16.py', 'night', 60 / 66, 4, 4),
+    'Volcanic_Desert':  ('desert16.py', 'day', 60 / 56, 4, 4),
+    'Volcanic_Desert_Night': ('desert16.py', 'night', 60 / 48, 4, 4),
     'Tacandakeu':       ('villages16.py', 'tacandakeu', 60 / 96, 4, 4),
     'Tacandakeu_Inside': ('villages16.py', 'tacandakeu_inside', 60 / 80, 4, 4),
     'Tacandakeu_Night': ('villages16.py', 'tacandakeu_night', 60 / 66, 4, 4),
@@ -128,6 +130,7 @@ SONGS = {
     'Battle_Highlands': ('battle_heights16.py', 'highlands', 60 / 132, 4, 4),
     'Battle_Shore':     ('battle_heights16.py', 'shore', 60 / 168, 4, 4),
     'Battle_Sea_Cliffs': ('battle_cliffs16.py', 'battle', 60 / 168, 4, 4),
+    'Battle_Volcanic_Desert': ('battle_desert16.py', 'battle', 60 / 112, 4, 4),
     'Victory_Isle':     ('victory16.py', None, 60 / 140, 4, 4),
     'Lasa':             ('party16.py', 'lasa', 0.6, 4, 3),                  # 6/8: a beat is a dotted quarter
     'Juda':             ('party16.py', 'juda', 60 / 66, 4, 4),
