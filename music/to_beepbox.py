@@ -101,6 +101,9 @@ SONGS = {
     'Sea_Cliffs_Night': ('cliffs16.py', 'night', 60 / 66, 4, 4),
     'Volcanic_Desert':  ('desert16.py', 'day', 60 / 56, 4, 4),
     'Volcanic_Desert_Night': ('desert16.py', 'night', 60 / 48, 4, 4),
+    'Crater_Lake':      ('snow_line16.py', 'lake', 60 / 66, 4, 4),
+    'Crater_Lake_Night': ('snow_line16.py', 'lake_night', 60 / 54, 4, 4),
+    'Snowy_Peak_Night': ('snow_line16.py', 'peak_night', 60 / 50, 4, 4),
     'Tacandakeu':       ('villages16.py', 'tacandakeu', 60 / 96, 4, 4),
     'Tacandakeu_Inside': ('villages16.py', 'tacandakeu_inside', 60 / 80, 4, 4),
     'Tacandakeu_Night': ('villages16.py', 'tacandakeu_night', 60 / 66, 4, 4),
@@ -131,6 +134,8 @@ SONGS = {
     'Battle_Shore':     ('battle_heights16.py', 'shore', 60 / 168, 4, 4),
     'Battle_Sea_Cliffs': ('battle_cliffs16.py', 'battle', 60 / 168, 4, 4),
     'Battle_Volcanic_Desert': ('battle_desert16.py', 'battle', 60 / 112, 4, 4),
+    'Battle_Snowy_Peak': ('battle_snow16.py', 'peak', 60 / 120, 4, 4),
+    'Battle_Crater_Lake': ('battle_snow16.py', 'lake', 60 / 132, 4, 4),
     'Victory_Isle':     ('victory16.py', None, 60 / 140, 4, 4),
     'Lasa':             ('party16.py', 'lasa', 0.6, 4, 3),                  # 6/8: a beat is a dotted quarter
     'Juda':             ('party16.py', 'juda', 60 / 66, 4, 4),

@@ -134,6 +134,9 @@ leitmotif** (her music-box minuet, E minor, 3/4):
   Yoon's theme frozen on glass bells (the last ingredient).
 - **Dry-side sea cliffs** (done: Sea_Cliffs, Sea_Cliffs_Night, Battle_Sea_Cliffs): Corajakeu's tune with the Lady of
   the Wind's gusts blowing through.
+- **Crater lake** (done: Crater_Lake, Crater_Lake_Night, Battle_Crater_Lake): the Red Bowl itself, grown out of the save
+  jingle; the Island tune reflected upside down. **Snowy peak at night** (done: Snowy_Peak_Night), **its battle**
+  (done: Battle_Snowy_Peak).
 - **Volcanic desert** (done: Volcanic_Desert, Volcanic_Desert_Night, Battle_Volcanic_Desert): the Lady of the Sun's
   theme, Tou's minuet seeping up through the stone; at night her chain far off and the Bull of Heaven bellowing.
 - **Lava tubes:** done (Lava_Tubes).
@@ -163,7 +166,7 @@ after the fight the field music resumes where it left off (a half-second fade in
 **Victory_Short** (about 3 s), bosses on the full **Victory_Isle**. Bosses: fast, drums on every beat, no quiet
 sections, a key lift near the end of the loop. Shared parts are in `music/battle_kit.py`.
 - **Done:** Battle_Salt_Marsh; Battle_Lava_Tubes and Battle_Lava_Tube_Country (Acts 1-2 start here); Battle_Grasslands;
-  Battle_Laurel_Forest; Battle_Highlands (shared by the alpine forest, Idekeu, Chafakeu and the snow line); Battle_Shore; Battle_Sea_Cliffs (its own, grown out of Sea_Cliffs); Battle_Volcanic_Desert (grown out of Volcanic_Desert, on the Lady of the Sun's new theme); Boss_Great_Boar
+  Battle_Laurel_Forest; Battle_Highlands (shared by the alpine forest, Idekeu and Chafakeu); Battle_Snowy_Peak; Battle_Crater_Lake; Battle_Shore; Battle_Sea_Cliffs (its own, grown out of Sea_Cliffs); Battle_Volcanic_Desert (grown out of Volcanic_Desert, on the Lady of the Sun's new theme); Boss_Great_Boar
   rebuilt on Pada's tune (melody first: the riff-based version didn't land).
 - **Bosses (done):** all four reworked melody first: Boss_Great_Boar, Boss_Parl, Boss_Daughter_Wells, Boss_Lady_Woods.
 - Seafarers keep Battle_Seafarers wherever they fight; Battle_Wild, Battle_Spirits and Battle_Ancients remain only for
