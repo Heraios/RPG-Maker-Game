@@ -822,6 +822,11 @@ sites a Guanche word + *tapu*. **Every settlement and ritual site has a telegrap
 - **Bothies:** simple stone rest shelters about a day's walk apart along the trails, each with a **Star
   Mother idol** (heal and rest: a campfire rest, so everyone can eat a meal again). Some double as
   telegraph relay huts.
+- **Lava tubes:** the old tube network runs under much of the **southern side** of the island, out
+  from the lava-tube country around Namethare. It links **Celhare**, **Tabonakeu**, **Corajakeu**,
+  **Tacandakeu**, **Afarohare**, **Namethare** and **Jarcotapu**, and the homes of the Buried Court:
+  **the Warrens**, **the Palace** and **the Quarry**. Shown dashed on the overview map. A way across the
+  south away from the roads, and the Children of the Caves' highway.
 - **Save points:** Red Bowl idols in the towns and villages.
 
 ### People of the island (draft cast)
