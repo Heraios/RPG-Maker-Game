@@ -91,7 +91,7 @@ module.exports = {
         const r = await h.eval(() => {
             const yoon = $gameActors.actor(2), ghost = $gameActors.actor(1);
             const at = lvl => { yoon.changeLevel(lvl, false); ghost.changeLevel(lvl, false); const e = new Game_Enemy(11, 0, 0); e._siMood = 50; return e.talkHint(); };
-            return { i1: at(1), i2: at(2), i4: at(4), i5: [0, 1, 2, 3, 4, 5].map(() => at(5)[1]) };
+            return { i1: at(1), i2: at(2), i4: at(4), i5: Array.from({ length: 40 }, () => at(5)[1]) };
         });
         t.eq(r.i1[0], 'Boar-Man', 'Insight 1: just the name');
         t.eq(r.i1[1], '', 'and no tell');
