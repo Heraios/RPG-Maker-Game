@@ -2953,6 +2953,33 @@ and the Spider Crab with its crabs about half. Act 3 highland troops cost 12–2
 one). Under the sea the Act 4 party loses 21–48%: the sea is meant to be dangerous, a Shark with Killer
 Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a mini-boss.
 
+### Seafarer enemies (Acts 4–5)
+Enemies 13 (the Marine's new moves), 15, 17, 25 and 76–79. Their moves are the party's own weapon skills
+and codex spells (enemies ignore weapon and shield requirements and hit with their own Attack), plus two
+enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the Sea**. Checked by test 66.
+**Drops, Talk and troops are still to do**, and so are Meneswa's phase change and surrender (troop events).
+
+| Enemy | HP / MP / Atk / Def / Spirit / Resolve / Speed / Luck | EXP | Moves |
+|---|---|---|---|
+| Marine (13) | 70 / 0 / 14 / 14 / 1 / 6 / 22 / 8 | 20 | Measured Thrust, Shield Bash, Brace, Cover, Hurl Javelin |
+| Sailor (15) | 65 / 0 / 12 / 8 / 1 / 5 / 34 / 10 | 15 | Quick Slash, Overhead Smash, Cast Net, then Haul In, Throw Knife |
+| Axeman (25) | 140 / 0 / 17 / 13 / 1 / 6 / 24 / 6 | 30 | Heavy Chop, Skull Crack, Hook Shield, Rending Blow, Cleave (≤50%), Cover |
+| Priest (76) | 90 / 60 / 9 / 9 / 15 / 14 / 30 / 10 | 32 | Puaka, Mahu, Puhi, Ward Off, Quick Jab, Bull-Leap (≤50%), Call for Help |
+| Bull-Champion (17) | 260 / 10 / 22 / 15 / 1 / 10 / 46 / 12 | 60 | Skull Crack, Bull-Leap, Trip, Flaying Strike, Hurl Javelin, Bellow (turn 1), Puaka (≤50%) |
+| Lady of the Sword (77) | 1100 / 140 / 26 / 16 / 22 / 20 / 46 / 20 | 220 | Vital Strike, Raking Cut, Riposte, Off-Hand Flurry, Flaying Strike, Kiva, Atua and Cold Composure (≤50%), Every Blade in the Sea (turn 3+) |
+| Meneswa, phase 1 (78) | 1300 / 160 / 24 / 18 / 22 / 20 / 40 / 20 | 0 | Vital Strike, Riposte, Shield Bash, Mea-uha, Tiho-uha, Kerihari |
+| Meneswa, phase 2 (79) | 750 / 200 / 27 / 16 / 28 / 22 / 48 / 22 | 260 | Ahihari, Keriben, Flaying Strike, Mea-uhagun, Mock, Tiho-uhagun (≤40%) |
+
+- **Sparing children:** the Marine, Sailor, Axeman and Priest have `<Spares Children>` and Demand Surrender at
+  rating 1. With an adult standing it is never picked; with only children left it is the only thing they
+  do (no stances, buffs or heals). The Bull-Champion and the bosses spare nobody.
+- **Call for Help:** a Seafarer Priest that is the last enemy standing brings in its troop's hidden member
+  (put one hidden Axeman or Marine in every troop with a Priest). Once per battle.
+- **Counterplay:** the Bull-Champion's Bull-Leap and the Lady's Riposte punish melee, so magic and ranged
+  attacks are the answer; the Lady's Kiva silences casters and Atua turns spells back.
+- **The Lady of the Sword** is a goddess and a Seafarer. Boss-sized, with boss state resistances like
+  Meneswa.
+
 ### Implementation status
 | Piece | Status |
 |-------|--------|
@@ -2983,6 +3010,7 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
+| Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js`; drops, Talk and troops to do |
 | Automated tests | `tests/` (52 tests, about 560 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 

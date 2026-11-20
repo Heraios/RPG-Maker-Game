@@ -40,8 +40,22 @@
  *                                   resistance applies) (jellyfish)
  * Enemy note:   <Spares Children>   won't use harmful actions on children
  *                                   unless it is Enraged (SI_Talk). With only
- *                                   children left, it uses non-harmful
- *                                   actions (talk, waiting) instead.
+ *                                   children left, it uses only its talk
+ *                                   skills (Demand Surrender), not stances,
+ *                                   buffs or heals. Give Demand Surrender a
+ *                                   low rating (1): it is then never picked
+ *                                   while an adult can still be fought.
+ *
+ * ============================================================================
+ * Call for Help
+ * ============================================================================
+ * Skill note:   <Call For Help>     an enemy skill, usable only by the last
+ *                                   enemy standing while the troop still has
+ *                                   a hidden member; it brings the first
+ *                                   hidden member in (like Enemy Appear).
+ *                                   Rate it high (9): it is then always used
+ *                                   when it can be. One hidden member per
+ *                                   troop = one call per battle.
  *
  * ============================================================================
  * Remote body (Tou)
@@ -136,11 +150,45 @@ SmokingIsle.BattleTraits = SmokingIsle.BattleTraits || {};
     Game_Enemy.prototype.isActionValid = function(action) {
         if (!_Game_Enemy_isActionValid.call(this, action)) return false;
         var skill = $dataSkills[action.skillId];
-        if (this.sparesChildren() && $.isHarmful(skill) &&
-                $.spareablePool(this.opponentsUnit()).length === 0) {
+        if (this.sparesChildren() && $.spareablePool(this.opponentsUnit()).length === 0 &&
+                ($.isHarmful(skill) || !$.isEnemyTalkSkill(skill))) {
             return false;
         }
+        if ($.isCallForHelp(skill) && !$.canCallForHelp(this)) return false;
         return true;
+    };
+
+    // An enemy's own talk skill (Demand Surrender, Offer Passage): it runs a common event.
+    $.isEnemyTalkSkill = function(skill) {
+        return !!skill && skill.effects.some(function(e) { return e.code === Game_Action.EFFECT_COMMON_EVENT; });
+    };
+
+    //-------------------------------------------------------------------------
+    // Call for Help
+    //-------------------------------------------------------------------------
+
+    $.isCallForHelp = function(skill) {
+        return !!skill && /<Call For Help>/i.test(skill.note || '');
+    };
+
+    $.hiddenHelper = function() {
+        return $gameTroop.members().filter(function(m) { return m.isHidden() && !m.isDeathStateAffected(); })[0] || null;
+    };
+
+    $.canCallForHelp = function(enemy) {
+        var alive = enemy.friendsUnit().aliveMembers();
+        return alive.length === 1 && alive[0] === enemy && !!$.hiddenHelper();
+    };
+
+    var _Game_Action_applyGlobal_help = Game_Action.prototype.applyGlobal;
+    Game_Action.prototype.applyGlobal = function() {
+        _Game_Action_applyGlobal_help.call(this);
+        if (!$.isCallForHelp(this.item()) || !this.subject().isEnemy()) return;
+        var helper = $.hiddenHelper();
+        if (!helper) return;
+        helper.appear();
+        $gameTroop.makeUniqueNames();
+        if (BattleManager._logWindow) BattleManager._logWindow.push('addText', '%1 comes running!'.format(helper.name()));
     };
 
     $.pickByTgr = function(pool) {
