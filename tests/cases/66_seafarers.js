@@ -77,6 +77,38 @@ module.exports = {
         t.ok(r.champion > 0, 'the Bull-Champion spares nobody');
     },
 
+    'Seafarer drops: no bronze, and a 10% purse per troop': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const EN = n => $dataEnemies.find(e => e && e.name === n), out = {};
+            const LIST = [null, $dataItems, $dataWeapons, $dataArmors];
+            const names = ['All-Seafarer Marine', 'Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Bull-Champion'];
+            out.drops = names.map(n => EN(n).dropItems.filter(d => d.kind).map(d => LIST[d.kind][d.dataId].name).join(', '));
+            out.bronze = names.filter(n => EN(n).dropItems.some(d => d.kind && /bronze/i.test(LIST[d.kind][d.dataId].name))).join(', ');
+            // One roll per troop, however many soldiers carry the tag
+            const purse = $dataItems.find(i => i && i.name === 'Golden Axe Money');
+            const troop = n => { $gameTroop._enemies = names.slice(0, n).map(x => { const e = new Game_Enemy(EN(x).id, 0, 0); e.addState(1); return e; }); };
+            const count = runs => { let c = 0; const rnd = Math.random; for (let i = 0; i < runs; i++) c += $gameTroop.makeDropItems().filter(x => x === purse).length; return c; };
+            troop(5); const rnd = Math.random;
+            Math.random = () => 0.05; out.lucky = count(1);
+            Math.random = () => 0.5; out.unlucky = count(1);
+            Math.random = rnd;
+            out.rate = count(2000) / 2000;
+            // Not for troops without a Seafarer
+            $gameTroop._enemies = [new Game_Enemy(EN('Wild Boar').id, 0, 0)]; $gameTroop._enemies[0].addState(1);
+            Math.random = () => 0.0; out.boar = $gameTroop.makeDropItems().filter(x => x === purse).length; Math.random = rnd;
+            return out;
+        });
+        t.eq(r.drops.join(' | '), 'All-Seafarer Grog, Quilted Cap, Salt Beef | All-Seafarer Grog, Sailor\'s Cap, Lead-Weighted Net | ' +
+            'Salt Beef, Cowhide, Horsehair Plume | Linen Cloth, Bull Priest\'s Robe, Bull-Horn Staff | Salt Beef, Bull-Hide Bracers, Bull-Horn Headdress',
+            'the chosen drops');
+        t.eq(r.bronze, '', 'no Seafarer drops bronze');
+        t.eq(r.lucky, 1, 'a lucky roll gives exactly one Golden Axe Money for a five-soldier troop');
+        t.eq(r.unlucky, 0, 'an unlucky roll gives none');
+        t.between(r.rate, 0.06, 0.14, 'about 10% of troops (' + r.rate + ')');
+        t.eq(r.boar, 0, 'troops without a Seafarer get no purse');
+    },
+
     'a Seafarer Priest left alone calls for help': async (h, t) => {
         await h.battle();
         const r = await h.eval(() => {

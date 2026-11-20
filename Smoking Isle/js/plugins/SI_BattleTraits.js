@@ -58,6 +58,17 @@
  *                                   troop = one call per battle.
  *
  * ============================================================================
+ * Troop drops
+ * ============================================================================
+ * Enemy note:   <Troop Drop: item 611, 10%>
+ *                                   beating a troop with this enemy in it has
+ *                                   that chance of one extra item (also
+ *                                   weapon / armor). Once per troop, however
+ *                                   many members carry the tag; listed with
+ *                                   the other drops (Seafarers: Golden Axe
+ *                                   Money, 10%).
+ *
+ * ============================================================================
  * Remote body (Tou)
  * ============================================================================
  * Actor note:
@@ -156,6 +167,33 @@ SmokingIsle.BattleTraits = SmokingIsle.BattleTraits || {};
         }
         if ($.isCallForHelp(skill) && !$.canCallForHelp(this)) return false;
         return true;
+    };
+
+    //-------------------------------------------------------------------------
+    // Troop drops: <Troop Drop: item 611, 10%>
+    //-------------------------------------------------------------------------
+
+    $.troopDrops = function(troop) {
+        var seen = {}, drops = [];
+        troop.members().forEach(function(enemy) {
+            var re = /<Troop Drop:\s*(item|weapon|armor)\s+(\d+)\s*,\s*(\d+(?:\.\d+)?)\s*%?\s*>/ig, m;
+            while ((m = re.exec(enemy.enemy().note))) {
+                var key = m[1].toLowerCase() + m[2];
+                if (seen[key]) continue;
+                seen[key] = true;
+                drops.push({ list: { item: $dataItems, weapon: $dataWeapons, armor: $dataArmors }[m[1].toLowerCase()], id: Number(m[2]), chance: Number(m[3]) / 100 });
+            }
+        });
+        return drops;
+    };
+
+    var _Game_Troop_makeDropItems = Game_Troop.prototype.makeDropItems;
+    Game_Troop.prototype.makeDropItems = function() {
+        var items = _Game_Troop_makeDropItems.call(this);
+        $.troopDrops(this).forEach(function(d) {
+            if (d.list[d.id] && Math.random() < d.chance) items.push(d.list[d.id]);
+        });
+        return items;
     };
 
     // An enemy's own talk skill (Demand Surrender, Offer Passage): it runs a common event.

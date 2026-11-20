@@ -2957,7 +2957,7 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 Enemies 13 (the Marine's new moves), 15, 17, 25 and 76–79. Their moves are the party's own weapon skills
 and codex spells (enemies ignore weapon and shield requirements and hit with their own Attack), plus two
 enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the Sea**. Checked by test 66.
-**Drops, Talk and troops are still to do**, and so are Meneswa's phase change and surrender (troop events).
+**Talk and troops are still to do**, and so are Meneswa's phase change and surrender (troop events).
 
 | Enemy | HP / MP / Atk / Def / Spirit / Resolve / Speed / Luck | EXP | Moves |
 |---|---|---|---|
@@ -2977,6 +2977,13 @@ enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the
   (put one hidden Axeman or Marine in every troop with a Priest). Once per battle.
 - **Counterplay:** the Bull-Champion's Bull-Leap and the Lady's Riposte punish melee, so magic and ranged
   attacks are the answer; the Lady's Kiva silences casters and Atua turns spells back.
+- **Drops:** never bronze (each bronze piece is semi-unique, one or two per game, from the story). Marine:
+  Grog 1/3, Quilted Cap 1/8, Salt Beef 1/4. Sailor: Grog 1/3, Sailor's Cap 1/10, Lead-Weighted Net 1/12.
+  Axeman: Salt Beef 1/3, Cowhide 1/5, Horsehair Plume 1/15. Priest: Linen Cloth 1/4, Bull Priest's Robe
+  1/15, Bull-Horn Staff 1/20. Bull-Champion: Salt Beef 1/3, Bull-Hide Bracers 1/5, Bull-Horn Headdress 1/15.
+  The bosses drop nothing.
+- **The purse:** every rank-and-file Seafarer has `<Troop Drop: item 611, 10%>`, so a beaten Seafarer troop
+  has a 10% chance of one Golden Axe Money (once per troop, `SI_BattleTraits.js`).
 - **The Lady of the Sword** is a goddess and a Seafarer. Boss-sized, with boss state resistances like
   Meneswa.
 
@@ -3010,7 +3017,7 @@ enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
-| Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js`; drops, Talk and troops to do |
+| Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js` (with drops and the troop purse); Talk and troops to do |
 | Automated tests | `tests/` (52 tests, about 560 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
