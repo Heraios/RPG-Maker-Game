@@ -2965,22 +2965,22 @@ enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the
 | Sailor (15) | 65 / 0 / 12 / 8 / 1 / 5 / 34 / 10 | 15 | Quick Slash, Overhead Smash, Cast Net, then Haul In, Throw Knife |
 | Axeman (25) | 140 / 0 / 17 / 13 / 1 / 6 / 24 / 6 | 30 | Heavy Chop, Skull Crack, Hook Shield, Rending Blow, Cleave (≤50%), Cover |
 | Priest (76) | 90 / 60 / 9 / 9 / 15 / 14 / 30 / 10 | 32 | Puaka, Mahu, Puhi, Ward Off, Quick Jab, Bull-Leap (≤50%), Call for Help |
-| Bull-Champion (17) | 260 / 10 / 22 / 15 / 1 / 10 / 46 / 12 | 60 | Skull Crack, Bull-Leap, Trip, Flaying Strike, Hurl Javelin, Bellow (turn 1), Puaka (≤50%) |
+| Champion (17) | 260 / 10 / 22 / 15 / 1 / 10 / 46 / 12 | 60 | Skull Crack, Bull-Leap, Trip, Flaying Strike, Hurl Javelin, Bellow (turn 1), Puaka (≤50%) |
 | Lady of the Sword (77) | 1100 / 140 / 26 / 16 / 22 / 20 / 46 / 20 | 220 | Vital Strike, Raking Cut, Riposte, Off-Hand Flurry, Flaying Strike, Kiva, Atua and Cold Composure (≤50%), Every Blade in the Sea (turn 3+) |
 | Meneswa, phase 1 (78) | 1300 / 160 / 24 / 18 / 22 / 20 / 40 / 20 | 0 | Vital Strike, Riposte, Shield Bash, Mea-uha, Tiho-uha, Kerihari |
 | Meneswa, phase 2 (79) | 750 / 200 / 27 / 16 / 28 / 22 / 48 / 22 | 260 | Ahihari, Keriben, Flaying Strike, Mea-uhagun, Mock, Tiho-uhagun (≤40%) |
 
 - **Sparing children:** the Marine, Sailor, Axeman and Priest have `<Spares Children>` and Demand Surrender at
   rating 1. With an adult standing it is never picked; with only children left it is the only thing they
-  do (no stances, buffs or heals). The Bull-Champion and the bosses spare nobody.
+  do (no stances, buffs or heals). The Champion and the bosses spare nobody.
 - **Call for Help:** a Seafarer Priest that is the last enemy standing brings in its troop's hidden member
   (put one hidden Axeman or Marine in every troop with a Priest). Once per battle.
-- **Counterplay:** the Bull-Champion's Bull-Leap and the Lady's Riposte punish melee, so magic and ranged
+- **Counterplay:** the Champion's Bull-Leap and the Lady's Riposte punish melee, so magic and ranged
   attacks are the answer; the Lady's Kiva silences casters and Atua turns spells back.
 - **Drops:** never bronze (each bronze piece is semi-unique, one or two per game, from the story). Marine:
   Grog 1/3, Quilted Cap 1/8, Salt Beef 1/4. Sailor: Grog 1/3, Sailor's Cap 1/10, Lead-Weighted Net 1/12.
   Axeman: Salt Beef 1/3, Cowhide 1/5, Horsehair Plume 1/15. Priest: Linen Cloth 1/4, Bull Priest's Robe
-  1/15, Bull-Horn Staff 1/20. Bull-Champion: Salt Beef 1/3, Bull-Hide Bracers 1/5, Bull-Horn Headdress 1/15.
+  1/15, Bull-Horn Staff 1/20. Champion: Salt Beef 1/3, Bull-Hide Bracers 1/5, Bull-Horn Headdress 1/15.
   The bosses drop nothing.
 - **The purse:** every rank-and-file Seafarer has `<Troop Drop: item 611, 10%>`, so a beaten Seafarer troop
   has a 10% chance of one Golden Axe Money (once per troop, `SI_BattleTraits.js`).

@@ -41,6 +41,9 @@ plays it that way. The Ritual gathers every friend's motif into Yoon's theme; My
 Falmi's sprout (F A C) and Yoon's opening (D F A) share F and A: in Living_Things the sprout grows into Yoon's theme
 a note at a time. The **Lady of the Wind** has her own leitmotif (`music/wind_tune.py`: E dorian, a falling gust, a
 rising gust, a high cold arc with a C sharp, a sigh), first heard on Snowy_Peak.
+The **Lady of the Sun** has her own leitmotif (`SUN` in `music/desert16.py`: A with a harsh B flat to C sharp, rising
+in proud leaps and dragged back down, a chain clanking at each phrase end), first heard in the Volcanic_Desert. Once she
+is freed, an unchained version can let the tune finally rise.
 **Sooty Bird** has its own leitmotif (`music/sooty_tune.py`: a tern's cry on a tern-bone whistle), first heard at
 Amentapu; its cry is also the sound of flying between Sooty Bird idols (Sooty_Flight, a sound effect).
 In First_Words, Yoon's first remembered word is "Sib" (Sib's three counting notes, answering Lasa's "Rock!"), the first
@@ -129,7 +132,13 @@ leitmotif** (her music-box minuet, E minor, 3/4):
   B flat) on a reed pipe over a drone; uneasy.
 - **Snowy peak** (done: Snowy_Peak): wind, a wind-choir singing the Lady of the Wind's own leitmotif, one high flute;
   Yoon's theme frozen on glass bells (the last ingredient).
-- **Dry-side sea cliffs:** booming waves, seabirds, hard wind.
+- **Dry-side sea cliffs** (done: Sea_Cliffs, Sea_Cliffs_Night, Battle_Sea_Cliffs): Corajakeu's tune with the Lady of
+  the Wind's gusts blowing through.
+- **Crater lake** (done: Crater_Lake, Crater_Lake_Night, Battle_Crater_Lake): the Red Bowl itself, grown out of the save
+  jingle; the Island tune reflected upside down. **Snowy peak at night** (done: Snowy_Peak_Night), **its battle**
+  (done: Battle_Snowy_Peak).
+- **Volcanic desert** (done: Volcanic_Desert, Volcanic_Desert_Night, Battle_Volcanic_Desert): the Lady of the Sun's
+  theme, Tou's minuet seeping up through the stone; at night her chain far off and the Bull of Heaven bellowing.
 - **Lava tubes:** done (Lava_Tubes).
 
 **Other homes:** the Hag Roost (done: the Marsh tune as a wrong lullaby, Tou's minuet faintly under it), the Seafarer camp (drills, snare, the fanfare; homesick
@@ -157,7 +166,7 @@ after the fight the field music resumes where it left off (a half-second fade in
 **Victory_Short** (about 3 s), bosses on the full **Victory_Isle**. Bosses: fast, drums on every beat, no quiet
 sections, a key lift near the end of the loop. Shared parts are in `music/battle_kit.py`.
 - **Done:** Battle_Salt_Marsh; Battle_Lava_Tubes and Battle_Lava_Tube_Country (Acts 1-2 start here); Battle_Grasslands;
-  Battle_Laurel_Forest; Battle_Highlands (shared by the alpine forest, Idekeu, Chafakeu and the snow line); Battle_Shore; Boss_Great_Boar
+  Battle_Laurel_Forest; Battle_Highlands (shared by the alpine forest, Idekeu and Chafakeu); Battle_Snowy_Peak; Battle_Crater_Lake; Battle_Shore; Battle_Sea_Cliffs (its own, grown out of Sea_Cliffs); Battle_Volcanic_Desert (grown out of Volcanic_Desert, on the Lady of the Sun's new theme); Boss_Great_Boar
   rebuilt on Pada's tune (melody first: the riff-based version didn't land).
 - **Bosses (done):** all four reworked melody first: Boss_Great_Boar, Boss_Parl, Boss_Daughter_Wells, Boss_Lady_Woods.
 - Seafarers keep Battle_Seafarers wherever they fight; Battle_Wild, Battle_Spirits and Battle_Ancients remain only for

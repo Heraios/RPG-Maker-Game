@@ -1,9 +1,9 @@
 [
 null,
-{"id":1,"expanded":false,"name":"Lava Flows: Nearby Gully","order":4,"parentId":6,"scrollX":5328,"scrollY":3148.7999999999997},
+{"id":1,"expanded":false,"name":"Lava Flows: Nearby Gully","order":4,"parentId":6,"scrollX":2262.6666666666665,"scrollY":9769.333333333334},
 null,
 null,
 {"id":4,"expanded":false,"name":"TEST ROOM","order":1,"parentId":0,"scrollX":844.5,"scrollY":492},
-{"id":5,"expanded":false,"name":"Prologue","order":2,"parentId":0,"scrollX":1501.3333333333333,"scrollY":874.6666666666666},
-{"id":6,"expanded":true,"name":"Lava Tube: Waking","order":3,"parentId":0,"scrollX":1110,"scrollY":2224}
+{"id":5,"expanded":false,"name":"Prologue","order":2,"parentId":0,"scrollX":3860.5714285714284,"scrollY":2249.142857142857},
+{"id":6,"expanded":true,"name":"Lava Tube: Waking","order":3,"parentId":0,"scrollX":871.5,"scrollY":985.5}
 ]

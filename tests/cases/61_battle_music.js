@@ -23,7 +23,8 @@ module.exports = {
             $dataMap.bgm = { name: 'Lava_Tube_Country_Night', volume: 90, pitch: 100, pan: 0 }; out.country = pick(1);
             $dataMap.bgm = { name: 'Grasslands_Night', volume: 90, pitch: 100, pan: 0 }; out.grass = pick(7);
             $dataMap.bgm = { name: 'Laurel_Forest', volume: 90, pitch: 100, pan: 0 }; out.laurel = pick(2) + ' ' + pick(9);
-            out.highlands = ['Alpine_Forest', 'Idekeu_Night', 'Chafakeu', 'Snowy_Peak'].map(n => { $dataMap.bgm = { name: n, volume: 90, pitch: 100, pan: 0 }; return pick(17); }).join(' ');
+            out.highlands = ['Alpine_Forest', 'Idekeu_Night', 'Chafakeu'].map(n => { $dataMap.bgm = { name: n, volume: 90, pitch: 100, pan: 0 }; return pick(17); }).join(' ');
+            out.own = ['Sea_Cliffs', 'Volcanic_Desert_Night', 'Snowy_Peak', 'Crater_Lake'].map(n => { $dataMap.bgm = { name: n, volume: 90, pitch: 100, pan: 0 }; return pick(17); }).join(' ');
             $dataMap.bgm = { name: 'Beach', volume: 90, pitch: 100, pan: 0 }; out.shore = pick(6) + ' ' + pick(14);
             $dataMap.bgm = { name: 'Zonfahare', volume: 90, pitch: 100, pan: 0 }; out.noArea = pick(39);
             $dataMap.autoplayBgm = auto; $dataMap.bgm = bgm;
@@ -84,7 +85,8 @@ module.exports = {
         t.eq(r.country, 'Battle_Lava_Tube_Country', 'the lava-tube country has its own (by night too)');
         t.eq(r.grass, 'Battle_Grasslands', 'the grasslands (by night too): Battle_Grasslands');
         t.eq(r.laurel, 'Battle_Laurel_Forest Battle_Laurel_Forest', 'the laurel forest: boars and imps alike fight to Battle_Laurel_Forest');
-        t.eq(r.highlands, 'Battle_Highlands Battle_Highlands Battle_Highlands Battle_Highlands', 'the alpine forest, Idekeu (at night too), Chafakeu and the snow line share Battle_Highlands');
+        t.eq(r.highlands, 'Battle_Highlands Battle_Highlands Battle_Highlands', 'the alpine forest, Idekeu (at night too) and Chafakeu share Battle_Highlands');
+        t.eq(r.own, 'Battle_Sea_Cliffs Battle_Volcanic_Desert Battle_Snowy_Peak Battle_Crater_Lake', 'the cliffs, the desert (at night too), the peak and the crater lake each have their own');
         t.eq(r.shore, 'Battle_Shore Battle_Seafarers', 'the beach: Battle_Shore (Seafarer marines still bring their own)');
         t.eq(r.noArea, 'Battle_Ancients', 'a map with no area battle theme falls back to the enemy kind');
         t.eq(r.swoosh, 0, 'the battle-start sound effect is muted (the track\'s jingle replaces it)');

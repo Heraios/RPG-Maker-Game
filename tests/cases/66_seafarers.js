@@ -7,7 +7,7 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const EN = n => $dataEnemies.find(e => e && e.name === n), out = {};
-            const names = ['Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Bull-Champion',
+            const names = ['Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Champion',
                 'Lady of The Sword', 'All-Seafarer Marine'];
             const meneswa = $dataEnemies.filter(e => e && e.name === 'Meneswa');
             const all = names.map(EN).concat(meneswa);
@@ -67,7 +67,7 @@ module.exports = {
             });
             adults.forEach(a => a.addState(1));
             out.onlyKids = ids.map(id => { $gameTroop._enemies = [new Game_Enemy(id, 0, 0)]; return valid($gameTroop._enemies[0]).join(','); });
-            out.champion = valid(new Game_Enemy(EN('Seafarer Bull-Champion'), 0, 0)).length;
+            out.champion = valid(new Game_Enemy(EN('Seafarer Champion'), 0, 0)).length;
             adults.forEach(a => a.removeState(1));
             return out;
         });
@@ -82,7 +82,7 @@ module.exports = {
         const r = await h.eval(() => {
             const EN = n => $dataEnemies.find(e => e && e.name === n), out = {};
             const LIST = [null, $dataItems, $dataWeapons, $dataArmors];
-            const names = ['All-Seafarer Marine', 'Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Bull-Champion'];
+            const names = ['All-Seafarer Marine', 'Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Champion'];
             out.drops = names.map(n => EN(n).dropItems.filter(d => d.kind).map(d => LIST[d.kind][d.dataId].name).join(', '));
             out.bronze = names.filter(n => EN(n).dropItems.some(d => d.kind && /bronze/i.test(LIST[d.kind][d.dataId].name))).join(', ');
             // One roll per troop, however many soldiers carry the tag
