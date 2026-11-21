@@ -1190,7 +1190,7 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Sailor's Kit (Seafarer crew) | Head, Shoulders (Tarred Cloak: resists Wet), Body (Linen Tunic), Feet | Resists Disoriented | +10% evasion while Wet; escape +10% |
 | Linen Armor (Seafarer marines) | Head (Quilted Cap), Cuirass, Greaves | 10% less Pierce damage | 20% less Pierce damage, but +10% Fire damage. Not metal, and light enough for children |
 | Court Dress (Seafarer nobles) | Head (Gilt Diadem), Shoulders (Orchil-Purple Mantle), Legs (Officer's Kilt), Feet | Ask and Plead +15% on soldiers | Resolve +10%; soldiers start friendlier |
-| Charioteer's Gear (Seafarer elite) | Head (Horsehair-Crested Helm, metal), Cuirass (Cowhide), Hands (Driving Gloves) | Ranged +10% | Speed +10%; the first attack on you each battle likelier misses |
+| Charioteer's Gear (Seafarer officers and racers: chariots are for rank and sport) | Head (Horsehair-Crested Helm, metal), Cuirass (Cowhide), Hands (Driving Gloves) | Ranged +10% | Speed +10%; the first attack on you each battle likelier misses |
 | Palm-Fibre | Head (Pufferfish Helm: 10% spikes), Cuirass, Greaves | 10% less Cut damage | 20% less Cut damage, but +15% Fire damage |
 | Sharkskin | Cuirass, Arms | Melee attackers take 10% back (1 piece) | Immune to Bleed; +10% evasion while Wet |
 | Deerskin | Cuirass, Arms, Greaves | Stalk +15% | You ambush enemies more often; deer start friendlier |
@@ -1317,7 +1317,7 @@ into armor types by where it is worn:
   first ailment each battle; `<Ailment Ward>`).
 - **Seafarer charms:** **Horsehair Plume** (Brave at battle start) and **Bronze Horse-Bit** (Soothe +25%
   on animals). Horses are new to the island: Islanders have never seen one before the invasion, and
-  chariots arrive with it (Act 4). **Cattle goods:** Cowhide, Horsehair, Ox Horn (materials); Salt Beef,
+  the Seafarers' horsemen arrive with it (Act 4). Chariots are for officers and sport (lore.md, "Horses"). **Cattle goods:** Cowhide, Horsehair, Ox Horn (materials); Salt Beef,
   Cow's Milk, Seafarer Cheese (meals).
 - **Where things turn up:** the Sailor's Kit in Act 2 (Mansehare warehouses, Parl's hideout); Crew
   clothing in Act 2 (the Children of the Caves' village and hoards, Lasa's people); Palm-Fibre,

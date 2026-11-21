@@ -660,9 +660,13 @@ Destroyer** (revealed later).
 - **Conducting Edge is an Islander technique.**
 - **Cattle:** domesticated cattle came with the Seafarers; the island has rare wild,
   aurochs-like cattle.
-- **Horses:** the island has none, and Islanders have **never seen one** until the invasion (Act 4),
-  when the Seafarers bring **horses and chariots**. Chariots need open, flat ground (grassland,
-  the Zonfahare ridge, Afarohare's terraces) and are useless in forest, tubes, marsh or mountains.
+- **Horses:** the island has none, and Islanders have **never seen one** until the invasion (Act 4).
+  The Seafarers' great military innovation is **horses bred for riding**: big and steady enough to
+  carry an armed man into battle. Their **horsemen** are the invasion's shock troops. Horsemen need
+  open ground (grassland, the Zonfahare ridge, Afarohare's terraces) and are much weaker in forest,
+  tubes, marsh or mountains.
+- **Chariots,** the old way to take a horse to war, survive as **sport** (Keftiu's chariot races) and as
+  a **mark of rank**: officers and nobles still drive them, on parade and in the races, rarely in battle.
 
 ### Weapon materials (decided)
 | Material | Made into | Notes |
@@ -1143,7 +1147,7 @@ impact crater**: the Red Bowl myth is literally true.
 - **The capital, Keftiu** (an ancient Egyptian name for Crete): about **60,000 people**, as big as the
   largest real Bronze Age cities (Thebes in Egypt, Ur) and the greatest city anyone in the world knows.
   That is about **fifteen times the whole island**; Zonfahare would be one neighbourhood. A palace city in
-  the Minoan and Mycenaean style (painted halls, light-wells, bull-leaping courts, storerooms, scribes
+  the Minoan and Mycenaean style (painted halls, light-wells, bull-leaping courts, a chariot-racing track, storerooms, scribes
   tallying every jar of oil) around a huge harbour. **It can't feed itself:** grain fleets and tribute
   must flow in constantly, another quiet reason for the invasion. Thenmy grew up here, which is why he
   has no wilderness skills. The Dark Lady and the Red Lady live here.
