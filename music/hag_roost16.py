@@ -7,7 +7,7 @@ np.random.seed(421)
 R = None
 # The Hag Roost: crane-nest huts in the deep salt marsh. The Marsh tune made a lullaby in 3/4, hummed and
 # plucked: sweet, and wrong (it leans on B flat; the accompaniment lags). And faintly under it, out of step,
-# a music box playing Queen Tou's minuet: something of the First Sailors down here, very old. Fewer frogs
+# a music box playing Queen Tou's minuet: something of the Builders down here, very old. Fewer frogs
 # than out in the marsh (they keep away); cranes, creaking nests, bone-and-shell chimes, still water.
 T1 = [(76, 1), (79, 1), (83, 1), (82, 1.5), (83, .5), (78, 1), (79, 1), (78, 1), (76, 1), (75, 3)]   # Tou (party16.py)
 T2 = [(76, 1), (83, 1), (88, 1), (86, 1.5), (84, .5), (83, 1), (81, 1), (79, 1), (78, 1), (76, 3)]

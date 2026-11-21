@@ -223,7 +223,7 @@ Spring**, the **Children's Garden**, the **Boar's Wallow**, the **Owl Towers**.
 **22 The Great Boar's Ground**: **The Hunt** (BGM Hunt: tracking, Pada's horn call), then **Boss: Great Boar
 (troop 27)**, Can Escape off, then Great Boar Flesh and Story → 120.
 
-**23 The Well** (optional): a First Sailor well; **Boss: Daughter of the Wells (troop 26)**, switch 12. BGM Wells.
+**23 The Well** (optional): a Builder well; **Boss: Daughter of the Wells (troop 26)**, switch 12. BGM Wells.
 
 **24 Highland Pines / Idekeu** (route 6): `<Dark At Night>`, BGM Alpine_Forest. The Idekeu loggers (Tuu,
 Ayoze, Hupa flirting with an oblivious Pada). Pine, Pine Resin, Juniper spots; Ravens (15), Mouflon (17).

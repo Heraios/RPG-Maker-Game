@@ -1,16 +1,16 @@
 // Grog and Tipsy, elemental materials, shattering ceramic, fire-hardened wood, Resin.
 
 module.exports = {
-    'All-Seafarer Grog heals and makes you Tipsy; a second drink disorients': async (h, t) => {
+    'Seafarer Grog heals and makes you Tipsy; a second drink disorients': async (h, t) => {
         await h.battle();
         const r = await h.eval(() => {
             const A = id => $gameActors.actor(id), IT = n => $dataItems.find(i => i && i.name === n), ST = n => $dataStates.find(s => s && s.name === n).id, out = {};
-            const drink = who => { const x = new Game_Action(A(3)); x.setItem(IT('All-Seafarer Grog').id); who.clearResult(); x.apply(who); };
+            const drink = who => { const x = new Game_Action(A(3)); x.setItem(IT('Seafarer Grog').id); who.clearResult(); x.apply(who); };
             const yoon = A(5); yoon.recoverAll(); yoon.setHp(1); const hit0 = yoon.hit;   // Pada: children are never given grog
             drink(yoon); out.healed = yoon.hp - 1; out.tipsy = yoon.isStateAffected(ST('Tipsy')); out.hitLoss = +(hit0 - yoon.hit).toFixed(2);
             yoon.clearResult(); yoon.addState(ST('Panicked')); out.brave = !yoon.isStateAffected(ST('Panicked'));
             drink(yoon); out.second = (yoon.isStateAffected(ST('Disoriented')) ? 'Disoriented' : '') + (yoon.isStateAffected(ST('Tipsy')) ? '+Tipsy' : '');
-            out.marinesLike = $dataEnemies[13].siTalk.likes.includes(IT('All-Seafarer Grog').id);
+            out.marinesLike = $dataEnemies[13].siTalk.likes.includes(IT('Seafarer Grog').id);
             out.noPotion = !IT('Potion');
             return out;
         });
@@ -19,7 +19,7 @@ module.exports = {
         t.eq(r.hitLoss, 0.1, 'Tipsy: hit -10%');
         t.ok(r.brave, 'liquid courage: Tipsy resists Panicked');
         t.eq(r.second, 'Disoriented', 'a second drink while Tipsy turns it into Disoriented');
-        t.ok(r.marinesLike, 'All-Seafarer Marines like being offered grog');
+        t.ok(r.marinesLike, 'Seafarer Marines like being offered grog');
         t.ok(r.noPotion, 'the Potion is gone');
     },
 

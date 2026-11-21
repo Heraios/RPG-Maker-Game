@@ -1,5 +1,5 @@
 # Two boss themes for Act 2's optional fights, melody first, with war drums on every beat and no let-up.
-#   Boss_Daughter_Wells: one of the Lady of the Woods' daughters, trapped in a First Sailor well. Ominous: a fast,
+#   Boss_Daughter_Wells: one of the Lady of the Woods' daughters, trapped in a Builder well. Ominous: a fast,
 #       dark waltz in E minor (built like Battle_Ancients, on the Wells' music). Her tune (Falmi's theme bent into Tou's
 #       key and 3/4) sung broad as a lament on strings, horns and choir over a relentless waltz; Tou's minuet (the First
 #       Sailors built the well) on low brass and the men's choir, the bells chiming it back; then her tune a semitone

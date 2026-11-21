@@ -14,9 +14,9 @@ module.exports = {
             out.tou = diet(9); out.falmi = diet(10); out.patience = diet(12);
             out.lines = [2, 3, 4, 9].map(id => A(id).tabooRefusalText(IT('Dried Fish')) || '-').join(' | ');
             out.childWine = A(2).tabooRefusalText(IT('Islander Wine')) + ' / ' + A(4).tabooRefusalText(IT('Palm Wine'));
-            out.adultWine = eats(5, 'Islander Wine') && eats(7, 'All-Seafarer Grog');
+            out.adultWine = eats(5, 'Islander Wine') && eats(7, 'Seafarer Grog');
             // in battle too: a child can't be given grog
-            const grog = new Game_Action(A(5)); grog.setItem(IT('All-Seafarer Grog').id);
+            const grog = new Game_Action(A(5)); grog.setItem(IT('Seafarer Grog').id);
             out.battleGrog = grog.testApply(A(2)) + '/' + grog.testApply(A(5));
             // the Seafarers won't wear turtle shell or seashells; Islanders will
             out.shell = ['Tortoise-Shell Cuirass', 'Sea-Turtle Buckler', 'Shell Wind-Chime', 'Cowrie Anklet', 'Turtle-Shell Comb'].map(n =>

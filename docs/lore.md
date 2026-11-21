@@ -4,6 +4,10 @@ Companion to [concept.md](concept.md). Sections 1–3 are the author's canon (or
 condensed). Section 4 is **inference** by the assistant, marked as such, for the author to confirm
 or correct. Section 5 connects the lore to the game's systems. Section 6 lists open questions.
 
+**The three peoples** are always called the **Islanders**, the **Seafarers** and the **Builders**
+(formerly "All-Seafarers" and "First Sailors" / "First Builders"; renamed to avoid confusion). Their
+scripts are Islander, Seafarer and Builder, and the note tags use `islander`, `seafarer` and `builder`.
+
 ---
 
 ## 1. Gods
@@ -24,7 +28,7 @@ or correct. Section 5 connects the lore to the game's systems. Section 6 lists o
    stole her star: the impact                │                              killed the Star Child;
    made the world-crater, and the            └─ THE STAR CHILD               stole the star back (the Sun),
    star melted the mountain into                 killed by White Bird;       scorched into SOOTY BIRD;
-   THE VOLCANO; creates DEMONS                   body → First Sailors →      the Moon is his home;
+   THE VOLCANO; creates DEMONS                   body → Builders →      the Moon is his home;
                                                  all humans                  gave humanity the glyphs
                                                  │
                          Star Mother + Star Child ─► THE LADIES
@@ -57,7 +61,7 @@ are not meat and are open to all.
 **The Lady of the Sun's chaining:** Islanders believe she was **dangerous**, so they see Juda's
 chaining of her as protection.
 
-### How the All-Seafarers see the gods
+### How the Seafarers see the gods
 A **henotheistic** position: the (male, in their view) **Red Bowl is the true god and creator**, and
 **His children and their descendants are an untrustworthy, dangerous but still divine squabbling
 family of incestuous thieves and criminals, who had to be tamed for humanity's benefit**. Except, of
@@ -87,7 +91,7 @@ service.
 came down.
 
 ### Juda's identities
-1. **A Navigator Lord of the First Sailors**, millennia old, his soul in a moai's coral eyes.
+1. **A Navigator Lord of the Builders**, millennia old, his soul in a moai's coral eyes.
 2. **The "old wizard" of the King's party** (65 years ago), a Gandalf figure. He simulated aging with
    magic and **"died" about 50 years ago**.
 3. **A wandering mystic in the form of a teenager**, who came to the island and was **chosen as
@@ -104,7 +108,7 @@ personified. Idols are carved bowls of red scoria filled with pure water. **Thes
 save points**, so the player interacts with the Red Bowl more than any other god. Not
 anthropomorphic: the world itself as a divine entity.
 
-- **Imperial heresy:** the All-Seafarers insist the Red Bowl is male and specifically the father of
+- **Imperial heresy:** the Seafarers insist the Red Bowl is male and specifically the father of
   their King of All the Sea. This is imperial theology reshaping a universal, genderless deity to
   legitimize a dynasty. Every island that worships the Red Bowl as genderless commits quiet heresy
   against imperial doctrine.
@@ -123,7 +127,7 @@ domain was taken and turned into fire and earth.
 ### The Star Child
 The Star Mother's eldest child, believed to be **the first human**, and genderless in island
 cosmology. Killed by the White Bird, but as a god could not truly die: their body fell to earth as
-shooting stars and became **the First Sailors, and thus all humans**.
+shooting stars and became **the Builders, and thus all humans**.
 
 The theological mirror of Yoon's story: a child killed, whose death was generative, whose body
 became something new. The game's central narrative retold at cosmic scale. Also, alongside the Red
@@ -146,7 +150,7 @@ mountain. Its heat melted the mountain into **the volcano**, where he supposedly
 center. The volcano, the lava tubes and the volcanic desert are his domain; his servants (Black
 Hounds, Hunched) emerge from its depths.
 
-May be connected to the First Sailors' demon-summoning. The lava tubes being both his domain and
+May be connected to the Builders' demon-summoning. The lava tubes being both his domain and
 burial sites suggests a link between death, demons and the volcanic underworld. **Yoon waking in a
 lava tube over a skeleton is waking in the Destroyer's house.**
 
@@ -175,7 +179,7 @@ Lives in **two bodies in two places at once**, with two aspects:
 - **Alpine forest:** a great goat-centaur; polite but cold.
 
 Commands the People of the Forest. Has been cultivating a special herb under every blue moon for
-four hundred years to grow the Familiar (Falmi). Her three daughters became trapped in First Sailor
+four hundred years to grow the Familiar (Falmi). Her three daughters became trapped in Builder
 wells and were transformed into giant snake women.
 
 Rules the forest through **negotiated agreements** with the islanders: fallen-wood limits, fire
@@ -217,12 +221,12 @@ questlines.
 See Falmi in concept.md: a small elf-like child grown from the Lady's herb.
 
 ### Daughters of the Wells
-The Lady's three daughters, trapped in First Sailor wells and transformed into giant snake women
+The Lady's three daughters, trapped in Builder wells and transformed into giant snake women
 who try to pull people down to their deaths. If "killed" they revert to their true forms: beautiful
 water maidens of the woodland rivers.
 
 *In the game:* bosses that are really **rescue missions**. Freeing one may be required for
-permission to hunt the Great Boar. They introduce the player to **First Sailor binding magic**
+permission to hunt the Great Boar. They introduce the player to **Builder binding magic**
 before the chains Juda used on the Bull of Heaven.
 
 ### The People of the Forest: one people
@@ -265,11 +269,11 @@ community. **A warning system: if child-fae start mocking you, you've crossed a 
 
 ### Owls of Ill Omen
 Dire owls with long saber-shaped beaks used to suck blood and pupil-less amber eyes. They gather on
-ruined First Sailor towers, and are given leave to attack those who harm the forests.
+ruined Builder towers, and are given leave to attack those who harm the forests.
 
 *In the game:* enemies triggered by serious violations (cutting unmarked trees, fires outside
 clearings, entering sacred groves): the escalation between warnings and a full boar-man response.
-**Tou's presence may stop them attacking**, through residual First Sailor command hierarchy.
+**Tou's presence may stop them attacking**, through residual Builder command hierarchy.
 
 ### The Great Boar
 The largest and most significant animal in the Lady's forest, possibly known to her personally and
@@ -301,14 +305,14 @@ forest child-fae), assigned at birth like a guardian angel. They appear in the d
 desperate need after all human aid has failed, and lead them to hidden treasure with no
 conditions, promises or repayment.
 
-**Secret:** they descend from **discarded infant and child homunculi produced by the First Sailors'
+**Secret:** they descend from **discarded infant and child homunculi produced by the Builders'
 child-sacrifice industry**. They have a hidden village in the lava tubes and are mostly unaware of
 their origins. Digging, they eventually discover Queen Tou in her buried palace and "serve" her.
 
 **They really are children, and never grow up.** Made by magic and never meant to live past 9 or 10, the
 discarded Crew simply stayed children: ancient in years, children in body and mind. Their minds stay young
 because they **forget**: that's why they're mostly unaware of their origins, with only odd flashes of old
-knowledge (a tunnel song older than the Islanders, an archaic word). They are the First Sailors' made
+knowledge (a tunnel song older than the Islanders, an archaic word). They are the Builders' made
 children, the thing the Navigator Lords threw away: the same story as Yoon's new body, Tou's doll and
 Falmi's four centuries, told as a whole people.
 
@@ -328,7 +332,7 @@ gather body ingredients in Act 2 and stays as a **permanent party member** from 
 plays a key role in the Tou questline.
 
 ### Queen Tou
-The last First Sailor monarch: a **nine-year-old girl sacrificed by her parents' court**, her soul
+The last Builder monarch: a **nine-year-old girl sacrificed by her parents' court**, her soul
 put into an articulated wooden doll as a puppet queen. Fed false information about the outside
 world for centuries, she unknowingly signed death warrants for children she believed she was
 fostering. Buried by a volcanic avalanche, she slept for thousands of years until bored Children
@@ -337,8 +341,8 @@ of the Caves dug her up. Immortal through her **moai phylactery**: the doll re-f
 ### Stonemen of the Desert
 Ancient statues quarried in the volcanic desert but never moved to their intended sites. They come
 to life as large, brutish beings with hard dusky stone skin, a very simple tribal structure, little
-clothing and large clubs. **Leaders wear red scoria headdresses, speak broken First Sailor tongue,
-and wield fire magic and magic that turns people into salt.** They guard First Sailor ruins.
+clothing and large clubs. **Leaders wear red scoria headdresses, speak broken Builder tongue,
+and wield fire magic and magic that turns people into salt.** They guard Builder ruins.
 
 Made of **tuff, the softest stone on the island**, a subtle hint at their vulnerability. Residual
 magic in the ruins gave them crude sentience. They may still serve masters present in the moai, coral
@@ -352,12 +356,12 @@ Many varieties. The dead are neighbors: islanders treat ghosts like any other co
 **Ghosts often believe Yoon is a ghost too**, so Yoon can often speak with them peaceably.
 - *Example:* the spirit of a woman who died in childbirth, seen along rivers between one and three in
   the morning, washing bloody clothes and singing a sad lullaby.
-- **First Sailor ghosts** in the deepest lava tubes speak a language only Tou understands, and have
+- **Builder ghosts** in the deepest lava tubes speak a language only Tou understands, and have
   drifted purposelessly for millennia. Tou gives them someone to report to, turning dangerous
   encounters into reunions.
 
 ### Hags of the Salt Marsh
-Ancient First Sailor women whose dead bodies are possessed by weaker demons. They serve the Lady of
+Ancient Builder women whose dead bodies are possessed by weaker demons. They serve the Lady of
 the Wind. Vampiric witches who feed on marsh animals and sometimes interlopers; ugly old hags with
 stumpy legs who can turn into beautiful marsh cranes. Not wholly hostile: **they treat Yoon like
 cooing grandmothers.** That affection is genuine demonic familiarity: they recognize something
@@ -375,7 +379,7 @@ paralleling the Lady of the Woods.
 
 ### The Bull of Water
 The Lady of the Wind's mortal husband, transformed into a **blue minotaur**. He committed terrible
-murders, and since an immortal couldn't be killed, she chained him in the sea. **The All-Seafarers
+murders, and since an immortal couldn't be killed, she chained him in the sea. **The Seafarers
 believe his lie that he is the Bull of Heaven and release him**, to their dismay. Very strong, with a
 keen mind and no sense of law or loyalty; uses every means to coerce and destroy; **can hypnotize**.
 *In the game:* a major threat released by imperial ignorance (their theology assumed their myths
@@ -384,7 +388,7 @@ map onto island reality). Dangerous because he is intelligent and persuasive.
 ### The Lady of the Sun
 A beautiful woman of gigantic proportions who appears in summer. Very arrogant and cruel. Drags
 heavy chains and lives in a grotto at the foot of the volcano. Seeing her means impending death.
-Once ruled the desert. **Chained by Juda with First Sailor chain technology, which is how he became
+Once ruled the desert. **Chained by Juda with Builder chain technology, which is how he became
 head priest.**
 *In the game:* a chained NPC who can be freed, **a major moral choice**: wrongfully imprisoned, but
 genuinely arrogant and cruel. Tou's presence may change things, since the Lady would recognize First
@@ -393,7 +397,7 @@ Sailor royalty.
 ### The Bull of Heaven
 The Lady of the Sun's mortal husband, transformed into a **white minotaur with fires burning on his
 horns**. On full moon nights he bellows outside the house of anyone who has committed a serious
-crime, specifically **Juda's house**. Imprisoned with his wife by Juda, who deciphered First Sailor
+crime, specifically **Juda's house**. Imprisoned with his wife by Juda, who deciphered Builder
 chain spells to neutralize divine punishment: **Juda silenced his own accuser.**
 *In the game:* absent at first; once freed, a divine justice figure. His bellowing outside Juda's
 house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
@@ -428,12 +432,12 @@ house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
 ## 3a. The Islanders
 
 ### Origins
-The Islanders **arrived several centuries after the First Sailors were gone** and found the island
+The Islanders **arrived several centuries after the Builders were gone** and found the island
 abandoned. They know the moai and ruins were built by people.
 
-**All-Seafarer prejudices (all untrue):**
-1. Tattooing is a primitive practice descended from First Sailor slave marks.
-2. The Islanders descend from First Sailor slaves, which is why they are "pitiable" and primitive.
+**Seafarer prejudices (all untrue):**
+1. Tattooing is a primitive practice descended from Builder slave marks.
+2. The Islanders descend from Builder slaves, which is why they are "pitiable" and primitive.
 3. Islanders "sleep with" wild animals, and that is where the People of the Forest come from.
 
 ### Society
@@ -475,12 +479,12 @@ Iceland's assembly and lawspeaker.
   - **Tally houses:** cowrie accounts, the orchil trade, and the **tribute ledger**.
 
 **Tama, the Island Chief.** Likable, gregarious and smart, but a bit spineless. He goes to **Juda** for
-advice on many things, and he's the main advocate of **paying the All-Seafarers' tribute** and keeping the
+advice on many things, and he's the main advocate of **paying the Seafarers' tribute** and keeping the
 peace with them. The island has paid tribute for **about 30 years, on Juda's advice** (part of Juda's
 collaboration). When the invasion comes, **Thenmy keeps Tama around as a puppet** chief; the Islanders
 follow whoever actually provides and protects, which is how **Dama becomes Chieftess by default**.
 
-**Why it matters in the story:** the All-Seafarers expect a king to deal with or behead; the Islanders
+**Why it matters in the story:** the Seafarers expect a king to deal with or behead; the Islanders
 have a consensus web held together by kin, giving and wire, so a puppet chief doesn't buy obedience.
 
 ### Spearwives
@@ -620,7 +624,7 @@ entered in the priest's register of the dead, not mourned. **Custom** (as the Ke
 the family wait **one moon**; then the village holds a funeral without a body at an **empty tomb niche**,
 with the lost one's things laid out, and the priest enters them in the register. On the island belief is
 magic and mourning binds the dead to the living: a Rite for the Lost is a serious thing. **The ritual Sib uses to build Yoon a body is
-forbidden**: Sib learned it from **notes Juda made about First Sailor homunculus production**.
+forbidden**: Sib learned it from **notes Juda made about Builder homunculus production**.
 
 ### Seeing the dead
 **Only priests and potential priests can see ghosts without help:** twins, orphans, intersex and third
@@ -637,10 +641,10 @@ contact, and why Sib, a priest's apprentice, is the one Yoon reaches. It also me
 ghost Yoon**.
 
 ### Tattoos and glyphs
-Tattoos are **glyphs of the same script the First Sailors wrote in**, and carry a magical
+Tattoos are **glyphs of the same script the Builders wrote in**, and carry a magical
 **true-name** power. They were given to humankind by **Sooty Tern as an apology gift**; a myth tells
 how he based the first glyphs on the **crack patterns in eggshells**. Some glyphs are rumored to be
-**the Destroyer's distortion of the system**, which the First Sailors used. (So the All-Seafarer
+**the Destroyer's distortion of the system**, which the Builders used. (So the Seafarer
 "slave marks" slur mocks a sacred script they cannot read.)
 
 **Where tattoos go:** the lower and upper arms, and **the face, which only priests may tattoo**. Yoon's
@@ -654,10 +658,10 @@ Destroyer** (revealed later).
 - **Silver matters spiritually:** copper-silver weapons are slightly more durable and add a little
   magic damage to every attack.
 - **Conducting Edge is an Islander technique.**
-- **Cattle:** domesticated cattle came with the All-Seafarers; the island has rare wild,
+- **Cattle:** domesticated cattle came with the Seafarers; the island has rare wild,
   aurochs-like cattle.
 - **Horses:** the island has none, and Islanders have **never seen one** until the invasion (Act 4),
-  when the All-Seafarers bring **horses and chariots**. Chariots need open, flat ground (grassland,
+  when the Seafarers bring **horses and chariots**. Chariots need open, flat ground (grassland,
   the Zonfahare ridge, Afarohare's terraces) and are useless in forest, tubes, marsh or mountains.
 
 ### Weapon materials (decided)
@@ -674,11 +678,11 @@ Destroyer** (revealed later).
 | **Chert** | — | Not local (it forms in marine sediment). Imported from the crater rim if at all; hot-spring **sinter** is the poor local stand-in |
 | Other stones | Pumice (abrasive, polishing), tuff (soft; the Stonemen), phonolite (rings when struck: bell or ritual stone) | |
 | **Copper**, **copper-silver** | Knives, spears, axes, maces | The Islanders' metals. Copper-silver is a little more durable and adds a little magic damage |
-| **Tin-bronze** | Knives, spears, axes, maces, **swords** | All-Seafarer; tin comes from the crater rim |
-| **"Black bronze"** (copper, silver, gold) | Late-game legendary weapons | First Sailor work |
+| **Tin-bronze** | Knives, spears, axes, maces, **swords** | Seafarer; tin comes from the crater rim |
+| **"Black bronze"** (copper, silver, gold) | Late-game legendary weapons | Builder work |
 | **Gold** | Plating on copper weapons; the Golden Disk Pile; Golden Wire | A trace in the copper ore (1 melt in 50) and in Seafarer axe money. Plated edges carry a little magic |
 | **Sacred metal** (tumbaga: copper, silver, gold) | Rings, pectorals, earrings, bracelets | The Islanders' attempt to recreate black bronze. They never matched it: it won't turn magic aside, but spirits like it and it carries current well, so priests and telegraphers both wear it |
-| **Coral** | Studs on clubs (rasping, festering cuts; the **Coral-Studded Club** draws on water magic); inlays as glyph foci. **First Sailor "grown" coral**, magic-hardened, for rare, unsettling blades from the ruins | Natural coral is too brittle for an edge; it's the same material as the soul-holding moai eyes |
+| **Coral** | Studs on clubs (rasping, festering cuts; the **Coral-Studded Club** draws on water magic); inlays as glyph foci. **Builder "grown" coral**, magic-hardened, for rare, unsettling blades from the ruins | Natural coral is too brittle for an edge; it's the same material as the soul-holding moai eyes |
 | **Ceramic** (fired clay) | Cheap mace heads | Brittle: hits hard and shatters. Fired earth, so it lends itself to earth magic. Any village with a kiln can make it |
 | **Obsidian** and fire | — | Volcanic glass carries the mountain's fire: every obsidian weapon strengthens fire magic |
 | **Star-metal** | A late-game weapon tied to **the Destroyer** | Iron from the stolen star's fall: a piece of what he took. Open question: taken from his side, or forged or hidden by Juda? |
@@ -723,7 +727,7 @@ materials (vendor items), not money.
 |----------|-------|
 | Exports and crafts | **Red dye** (orchil), **pearls** |
 | Metals | **Copper**, **silver**, **lead** (no bronze) |
-| Animals | Fish, goats, pigs, sheep, dogs; **cattle introduced by the All-Seafarers** |
+| Animals | Fish, goats, pigs, sheep, dogs; **cattle introduced by the Seafarers** |
 | Crops | Grapes, wheat, barley, lentils, orchil, on fertile volcanic soil |
 
 Two large mines, **one copper** and **one silver/lead**, both intersect the lava tube network that
@@ -1030,7 +1034,7 @@ wants shiny things and courtesy to its queen. Who can see what matters: at the C
 
 **Others:**
 - **The Hag Roost:** crane-nest huts in the deep salt marsh, past Aguerekeu.
-- **The Owl Towers:** the First Sailor ruins in the laurel forest where the Owls of Ill Omen perch; a disputed
+- **The Owl Towers:** the Builder ruins in the laurel forest where the Owls of Ill Omen perch; a disputed
   loyalty between the Lady and Tou.
 - **The Birdmen's sea stack:** off Amentapu; Islander priests of Sooty Bird, not another people.
 - **The Destroyer's deep tubes:** the hostile one, where Aday's drill leads.
@@ -1038,10 +1042,10 @@ wants shiny things and courtesy to its queen. Who can see what matters: at the C
 All are on the overview map (`docs/island-map.png`, green diamonds).
 ---
 
-## 3b. The First Sailors
+## 3b. The Builders
 
 ### A world-spanning empire
-The First Sailors (the Builders) ruled a powerful **world-spanning empire**. Their elite, the
+The Builders ruled a powerful **world-spanning empire**. Their elite, the
 **Navigator Lords**, had achieved **true immortality** through magic. Believing **the soul lives in
 the eyes**, each Navigator Lord placed **enchanted coral eyes in their moai** as a phylactery. They
 stayed in the prime of physical health and could have children normally.
@@ -1081,8 +1085,8 @@ her civilization really did.
 
 ### Glyph magic
 **Spell names are glyph names**, and spells are cast by **reading the glyph aloud**. The
-All-Seafarers read them **from scrolls**; the Islanders read them **from their own skin** (their
-tattoos). **Tou** (a First Sailor), and **Falmi** and **Lasa** (innately magical), use glyphs
+Seafarers read them **from scrolls**; the Islanders read them **from their own skin** (their
+tattoos). **Tou** (a Builder), and **Falmi** and **Lasa** (innately magical), use glyphs
 **without any medium**.
 
 **Ghost Yoon** uses only the unique ghost abilities; Yoon learns regular magic and weapon skills
@@ -1107,7 +1111,7 @@ after gaining a body.
 2. **A primal force or element.** The generic spells: Ahi (fire), Rari (water), Hagu (air), Keri (earth),
    and the other forces: Mahu (healing), Ara (life returning), Raau (plant-medicine), Kami (the mind).
    Anyone who can read them can use them, but each culture keeps its own top tier: the Islanders the
-   group tier (-gunben), the First Sailors the single-target tier (-sin), the Seafarers the random tier
+   group tier (-gunben), the Builders the single-target tier (-sin), the Seafarers the random tier
    (-hari).
    **Cave magic** is innate to the caves and carved on nothing: **Keva** (blinding dark), **Gau** (the bite,
    hunger) and **Ihi**, the Destroyer's own tearing word from his house in the lava tubes. Lasa has it as a
@@ -1118,7 +1122,7 @@ after gaining a body.
    the other forces.
 
 Tiers (-ben, -sin) and targeting (-gun, -hari) are grammar on top of any glyph. The Destroyer's
-"distortion of the system", which the First Sailors used, works by binding his name into other glyphs.
+"distortion of the system", which the Builders used, works by binding his name into other glyphs.
 
 ### Demons
 **Demons are servants and creations of the Destroyer**, as the People of the Forest are of the
@@ -1126,14 +1130,14 @@ Ladies, but greater, because the Destroyer is a far more powerful god of an **ea
 
 ---
 
-## 3c. The World and the All-Seafarers
+## 3c. The World and the Seafarers
 
 ### The world is a bowl
 The known world is **a large sea ringed by a single continent** that rises quickly into very high,
 jagged mountains. Most people live on islands in the sea. **The whole world is a truly immense
 impact crater**: the Red Bowl myth is literally true.
 
-### The All-Seafarers
+### The Seafarers
 - **Homeland:** the jagged, marginal coasts on the crater rim, which is where they get **tin** (and
   so bronze, which the Islanders lack).
 - **The capital, Keftiu** (an ancient Egyptian name for Crete): about **60,000 people**, as big as the
@@ -1190,7 +1194,7 @@ with the whole situation and **seizes control of the invasion force in a coup**,
 subjugate the island through straightforward brutality (the Princess of Act 5).
 
 ### Parl
-A crewman on the All-Seafarer **tribute collector's** ship, from **a big city in the All-Seafarer
+A crewman on the Seafarer **tribute collector's** ship, from **a big city in the Seafarer
 homeland**, and also a **literate spy**: his job was to write down and record things about the Islanders
 before the invasion. He stole some of the **tribute pearls**, meaning to hide them on the ship and fence
 them back in the capital. He was found out and deserted into the **salt marsh**, where he hides. **Chief Tama** and the
@@ -1285,7 +1289,7 @@ betrothal promise** in certain endings.
   them up wholly. The trait that made Yoon the right victim is the one that half-saved them.
 3. He took the body to **an isolated tomb only he knew about**, **defleshed** Yoon, and **burned the
    flesh in the tomb over a grave** as an offering to summon a demon.
-   The tomb is **warded with First Sailor glyphs** that blind the Children of the Caves, which is why Lasa,
+   The tomb is **warded with Builder glyphs** that blind the Children of the Caves, which is why Lasa,
    Yoon's guardian, couldn't find them (she had been off after something shiny when Yoon was taken). To her
    it felt like "a slippery magic wall". It vanished when the ritual failed, and she found the ghost.
 4. He felt regret at killing a child he had known for about ten years, which **"ruined" the ritual**.
@@ -1318,7 +1322,7 @@ and **the better armed and prepared the villagers with her are**, so **Juda kill
 ## 3e. Wildlife and Creatures
 
 **Ordinary animals are realistic**, drawn from the real-world roots (Canary Islands, Rapa Nui,
-Iberia, Iceland). The strangeness is saved for spirits and First Sailor creations, so it lands harder.
+Iberia, Iceland). The strangeness is saved for spirits and Builder creations, so it lands harder.
 
 | Biome | Animals |
 |-------|---------|
@@ -1331,13 +1335,13 @@ Iberia, Iceland). The strangeness is saved for spirits and First Sailor creation
 | Rare | **Aurochs**, wild cattle |
 
 **Mythic and chimeric beings** follow the island's own patterns: chimeras of goat, pig, bull, snake
-and owl; animals the Ladies turned into peoples; and **the First Sailors' "various creations"**.
+and owl; animals the Ladies turned into peoples; and **the Builders' "various creations"**.
 - **Birdmen** (after Rapa Nui's tangata manu): **Islander priests of Sooty Bird** who live on the sea stack
   off Amentapu, wear tern feathers and eat tern eggs. Tied to the spring race for the first sooty tern egg
-  and to the eggshell glyphs. (Not a First Sailor creation; see "Birdmen" above.)
-- **Kavakava figures:** rib-thin carved ancestor figures guarding First Sailor tombs. Weak to fire and
+  and to the eggshell glyphs. (Not a Builder creation; see "Birdmen" above.)
+- **Kavakava figures:** rib-thin carved ancestor figures guarding Builder tombs. Weak to fire and
   Crush.
-- **Crew-beasts** (**confirmed**): guard and work animals bred by the First Sailors (coral-eyed dogs,
+- **Crew-beasts** (**confirmed**): guard and work animals bred by the Builders (coral-eyed dogs,
   goats with too many horns), feral since the fall, still guarding the ruins. They obey Tou.
 - **Possessed animals:** demons can ride any carcass, not only dogs: a dead aurochs as a battering
   ram, a drowned seal on the shore at night.
@@ -1363,9 +1367,9 @@ Sun and the Destroyer lean Fire.
 ## 4. Inferences (assistant's reading; to confirm or correct)
 
 ### Real-world roots
-- **Rapa Nui** shapes the First Sailors: the moai with coral eyes; the **Stonemen as the unfinished
+- **Rapa Nui** shapes the Builders: the moai with coral eyes; the **Stonemen as the unfinished
   moai of the Rano Raraku quarry** (carved from tuff, with red scoria topknots); an undeciphered
-  script (First Sailor inscriptions); **Sooty Bird and the Birdman cult** of the sooty tern; a
+  script (Builder inscriptions); **Sooty Bird and the Birdman cult** of the sooty tern; a
   civilization that collapsed.
 - **The Guanche of the Canary Islands** shape the Islanders and the cosmology: a volcanic island
   dominated by its volcano, a people who mummified their dead, conquered by a metal-armed sea power.
@@ -1384,34 +1388,34 @@ Sun and the Destroyer lean Fire.
   aspect** (a sacred rain pig, not a separate creature).
 - **The Dream Hunters** match Corsica's mazzeri.
 - **Spell language:** spell roots are Rapa Nui and modifiers Guanche. Perhaps the **roots are the old
-  First Sailor sacred tongue** and the **modifiers are living Islander speech**: magic as ancient
+  Builder sacred tongue** and the **modifiers are living Islander speech**: magic as ancient
   words bent by present-day grammar.
 
 ### History in layers
 1. **Cosmic age:** the Star Mother, the Star Child's death and scattering, White Bird's crime and
    penance, the Destroyer's theft of the star (the volcano), and the Sun and Moon.
-2. **The First Sailors (the Builders):** the Star Child's shooting-star body made flesh; a
+2. **The Builders:** the Star Child's shooting-star body made flesh; a
    world-spanning empire ruled by immortal **Navigator Lords** whose souls live in coral moai eyes.
    Culled their own children (the Crew) to keep an immortal population in check, with a sacrificed
    child queen as puppet. **Overthrown by a children's revolt** that shattered the moai eyes; the
    palace was buried by an eruption. Remnants: Stonemen, ancient ghosts, Hags, the wells' snake women, owls on
    their towers, the Children of the Caves, Tou, and Juda.
-3. **The Islanders (now):** arrived centuries after the First Sailors vanished. Copper Age
+3. **The Islanders (now):** arrived centuries after the Builders vanished. Copper Age
    metallurgy but electrochemical technology; living by negotiated agreements with the Ladies; a
    third gender priesthood grounded in the genderless Red Bowl and Star Child; the dead as neighbors.
-4. **The All-Seafarers (arriving):** a Bronze Age sea empire whose theology claims the Red Bowl as
+4. **The Seafarers (arriving):** a Bronze Age sea empire whose theology claims the Red Bowl as
    their king's father, and who misread island reality through their own myths (releasing the Bull
    of Water).
 
 ### Threads that tie the story together
-- **Homunculi:** the Children of the Caves are discarded First Sailor homunculi, and Yoon's new body
+- **Homunculi:** the Children of the Caves are discarded Builder homunculi, and Yoon's new body
   is a homunculus built with the same kind of craft. Lasa, a homunculus descendant who doesn't know
   it, helps build another. The Tou questline likely brings this into the open.
 - **Child sacrifice and the children who survive it:** Tou (sacrificed child queen), the Children of
   the Caves (discarded children), Yoon (murdered child), the Star Child (the first murdered child),
   and Falmi (a child grown, not born).
 - **Juda the binder:** he chained the Lady of the Sun and the Bull of Heaven to take the high
-  priesthood and silence his accuser; the snake women in First Sailor wells foreshadow this binding
+  priesthood and silence his accuser; the snake women in Builder wells foreshadow this binding
   magic. Freeing the bound is a recurring act of justice.
 - **Mirrors:** White Bird ↔ Juda (killer, remorse, consequences); Star Child ↔ Yoon (generative
   death).
@@ -1430,9 +1434,9 @@ Sun and the Destroyer lean Fire.
 | Pranksters | Children of the Caves, forest child-fae (Green Horses) | Lasa / Falmi talk them down; Threaten scares fae off |
 | Forest people | Boar-men, Owls of Ill Omen | Sapient/spirit; **directness works, cleverness backfires** (boar-men); Tou may stop the owls |
 | Local spirits | Ghosts, Guardian Lizards, Sleep Demons, Daughters of the Wells | Spirit (Sib's Rite, Yoon's ghost kinship) |
-| First Sailor remnants | Stonemen, ancient ghosts, Hags, Crew-beasts, Kavakava figures | **Tou** (Stonemen surrender, ghosts report, Hags conflicted); Yoon (Hags dote on Yoon) |
+| Builder remnants | Stonemen, ancient ghosts, Hags, Crew-beasts, Kavakava figures | **Tou** (Stonemen surrender, ghosts report, Hags conflicted); Yoon (Hags dote on Yoon) |
 | Servants of the Destroyer | Black Hounds, Hunched | Hounds: **cannot talk**. Hunched: **Talk to free them** |
-| All-Seafarers | Soldiers, officers; the Princess's troops | Sapient (Parl, Thenmy; spare children vs. not) |
+| Seafarers | Soldiers, officers; the Princess's troops | Sapient (Parl, Thenmy; spare children vs. not) |
 | Sea | Giant Clams | None |
 | Great powers | Ladies, their husbands, the Bulls | Story bosses and negotiations |
 
@@ -1450,7 +1454,7 @@ Sun and the Destroyer lean Fire.
   "self-taught" magic after Juda.
 - **The Shepherd of the Deer** teaches **stealth magic** in exchange for **songs**: stealth for
   pre-combat encounters (sneaking past or up on visible enemies).
-- **First Sailor inscriptions** and **Tou**: ancient spells.
+- **Builder inscriptions** and **Tou**: ancient spells.
 - **The wise woman** (sleep-demon wards) and the **Stream Maidens** (botany): healing knowledge and
   healing items.
 
@@ -1478,7 +1482,7 @@ Sun and the Destroyer lean Fire.
   and priests are the island's mummifiers.
 - **Tattoos as a progression slot:** earned glyphs with true-name effects (passive bonuses), with
   forbidden Destroyer glyphs as powerful, corrupting options. Learning glyphs ties into Yoon's
-  comprehension (Insight) and First Sailor inscriptions.
+  comprehension (Insight) and Builder inscriptions.
 - **Copper-silver weapons:** more durable wear tiers, plus a small magical part in every hit (a
   weapon-level damage profile addition).
 - **Aurochs** as rare, dangerous wild cattle to hunt.
@@ -1487,7 +1491,7 @@ Sun and the Destroyer lean Fire.
   dye trade are a likely reason for the invasion.
 - **Food items** from the crops and herds: bread, lentil stew, wine, cheese.
 
-### From the First Sailors (extrapolations to confirm)
+### From the Builders (extrapolations to confirm)
 - **Juda's survival is explained.** He burns to ash in Act 3 and returns in Act 5: as a Navigator
   Lord, his soul lives in **coral eyes in a moai that survived the revolt**. Killing him for good in
   Act 6 means **finding and destroying his moai's eyes**: a natural Act 6 quest, and a boss with a
@@ -1498,18 +1502,18 @@ Sun and the Destroyer lean Fire.
 - **Yoon's age is the Crew sacrifice age.** Juda murdered a child at exactly the age his
   civilization culled them: he is still practicing the old rite.
 - **Tou's decrees as a mechanic:** she spent centuries issuing decrees, so a unique battle command
-  (issuing a "decree" as a party buff or an order to First Sailor beings) and an overworld one
+  (issuing a "decree" as a party buff or an order to Builder beings) and an overworld one
   (directing the Children of the Caves to dig, scout or fetch) would fit her.
 - **Spells as glyphs** (decided; see concept.md "Spell acquisition"): Islanders through **tattoo**
-  slots, All-Seafarers through a **codex**, Tou, Falmi and Lasa innately.
+  slots, Seafarers through a **codex**, Tou, Falmi and Lasa innately.
   - **Yoon's "Infernal" skills** could be **Destroyer glyphs**: the demon in Yoon showing through.
   - **Yoon's homunculus body starts without the old Yoon's tattoos**, a quiet loss.
 - **Demons and Yoon:** if Yoon is a demon, Yoon is a creation of the Destroyer, which is why the
   Hags (demon-possessed) recognize kin and dote on Yoon.
 
-### From the world and the All-Seafarers (extrapolations to confirm)
+### From the world and the Seafarers (extrapolations to confirm)
 - **The "invasion" is an escalation,** from a twenty-year tributary relationship to direct rule.
-  All-Seafarer traders and tribute collectors could already be a familiar sight in Act 1–2.
+  Seafarer traders and tribute collectors could already be a familiar sight in Act 1–2.
 - **Bronze is an imperial monopoly** because tin comes from the rim; that is why the Islanders are a
   copper culture and why bronze gear is unbreakable, prestigious and foreign.
 - **Juda's collaboration leaves evidence:** letters, codices, tribute records. **Parl can read them**,
@@ -1531,8 +1535,8 @@ Sun and the Destroyer lean Fire.
 | The **staff shaft** | Buried in the woods; Patience digs it up | A broken ceremonial staff |
 | The **copper ball** | Dumped in the marsh (or carried off by Children of the Caves, who hoard shiny things?) | Matches the staff; together they are **Juda's** staff |
 | **Juda's new staff** | Juda himself | Why did he replace it? |
-| **Juda's homunculus notes** | Read by Sib | Why does the priest study forbidden First Sailor child-homunculus production? |
-| **Collaboration letters** with the All-Seafarers | Juda's papers; **Parl** can read them | Juda's secret deal with Thenmy |
+| **Juda's homunculus notes** | Read by Sib | Why does the priest study forbidden Builder child-homunculus production? |
+| **Collaboration letters** with the Seafarers | Juda's papers; **Parl** can read them | Juda's secret deal with Thenmy |
 | **The Bull of Heaven** bellowing at Juda's door | The village, on full moon nights (if he can be freed early) | A divine accusation |
 | **The dream hunter's vision** | The village dream hunter | Pada's death foretold |
 | **Juda's whereabouts** the day Yoon vanished | Witnesses, telegraph logs | Gaps in his story |
@@ -1567,7 +1571,7 @@ turns the more evidence was found, the villagers with her are better armed, and 
   don't add up.
 - **The Ladies fighting for the Princess** are bound gods, natural Act 5 bosses that can be **freed
   rather than killed** (through Talk), in line with the game's theme of freeing the bound. If they are
-  held with First Sailor chain magic, Juda likely gave the empire that knowledge.
+  held with Builder chain magic, Juda likely gave the empire that knowledge.
 - **Idols as world infrastructure:** Red Bowl (save), Star Mother (heal and rest), Bird (fast travel
   along the telegraph network), Star Child (graveyards). Star Child idols could matter to ghosts and
   to Yoon.

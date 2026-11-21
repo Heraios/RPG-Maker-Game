@@ -24,7 +24,7 @@
  * @param Kind Music
  * @desc For maps with no area battle theme. Rules in order, the first that
  * matches wins: enemy tags or names (separated by /), = and the track; rules separated by ;
- * @default first-sailor/Owl of Ill Omen = Battle_Ancients; spirit/fae = Battle_Spirits
+ * @default builder/Owl of Ill Omen = Battle_Ancients; spirit/fae = Battle_Spirits
  *
  * @param Start On Contact
  * @desc true: the battle music (and its jingle) starts the moment the fight
@@ -63,7 +63,7 @@
  *      the same tune and key, so the battle grows out of the place.
  *   6. Otherwise the first Kind Music rule that matches any enemy in the
  *      troop: a word matches an enemy's Talk Type or Talk Tags (spirit, fae,
- *      first-sailor...), or appears in its name (Owl of Ill Omen).
+ *      builder...), or appears in its name (Owl of Ill Omen).
  *   7. Nothing matched: the database's battle music (Battle_Wild).
  * Every battle track starts with its own short jingle (its play-once intro).
  *

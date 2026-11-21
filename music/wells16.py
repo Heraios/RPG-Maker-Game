@@ -4,9 +4,9 @@ from synth16 import *
 from ambience import drip, lap, rnd
 np.random.seed(671)
 R = None
-# The Wells: freeing one of the Lady's daughters from a First Sailor well. Water, stone and long echoes:
+# The Wells: freeing one of the Lady's daughters from a Builder well. Water, stone and long echoes:
 # drops falling a long way, water lapping far below, stone grinding, a low hum in the old work. Two tunes
-# tangled together: Tou's minuet (the First Sailors built the well) on a music box, and Falmi's theme (the
+# tangled together: Tou's minuet (the Builders built the well) on a music box, and Falmi's theme (the
 # Lady's tune, so the daughter's) bent into Tou's key and her 3/4 time, on a low flute: the daughter's voice.
 #   1-8   the well                         9-16  Tou's minuet, from far below
 #   17-20 the daughter's tune, alone       21-28 both at once, tangled, the strings growing

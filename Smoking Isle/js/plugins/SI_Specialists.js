@@ -42,7 +42,7 @@
  *                        of that kind (she can't see them), unless the
  *                        target is Pointed Out
  *
- * Script call (a First Sailor inscription teaches her a spell):
+ * Script call (a Builder inscription teaches her a spell):
  *   SmokingIsle.Specialists.study(14, skillId)
  */
 

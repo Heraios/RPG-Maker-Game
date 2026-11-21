@@ -6,7 +6,7 @@
 #       its notes sometimes not quite there.
 #   Boars_Wallow: the Boar-Men's warrior camp. Mud, heavy drums, snorts, cheering; the theme as a stomp on low
 #       brass; a contest of strength (grunts, a drum roll, a roar of cheering).
-#   Owl_Towers: the First Sailor ruins where the Owls of Ill Omen perch, their loyalty disputed between the Lady
+#   Owl_Towers: the Builder ruins where the Owls of Ill Omen perch, their loyalty disputed between the Lady
 #       and Queen Tou. The two themes at war: Falmi's (F major) and Tou's minuet (E minor), a semitone apart,
 #       first in turns, then over each other, out of step; the owls screech; then both stop, and an owl hoots.
 # Usage: python3 forest_homes16.py spring garden wallow owls   (or none for all)

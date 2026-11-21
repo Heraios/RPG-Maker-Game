@@ -1,4 +1,4 @@
-// New clothing and armor: Seafarer, Islander and First Sailor sets; child- and adult-sized gear;
+// New clothing and armor: Seafarer, Islander and Builder sets; child- and adult-sized gear;
 // the children's charms; cattle goods.
 
 module.exports = {

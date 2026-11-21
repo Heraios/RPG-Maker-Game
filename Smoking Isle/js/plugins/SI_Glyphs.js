@@ -23,7 +23,7 @@
  * @default 2
  *
  * @help
- * Spells are glyphs. Islanders read them from their tattoos; All-Seafarers
+ * Spells are glyphs. Islanders read them from their tattoos; Seafarers
  * from a codex. Give a tattoo or codex the trait "Add Skill" for each spell
  * it carries (a codex can also have stat bonuses).
  *
@@ -42,14 +42,14 @@
  * Lasa learn spells normally instead).
  *
  * Literacy and codices:
- *   <Reads: islander, first-sailor>   the scripts this character can read.
+ *   <Reads: islander, builder>   the scripts this character can read.
  *                       Anyone who reads at all gets a codex slot.
  *   <Reads If Switch 5: seafarer>     reads that script once the switch is ON
  *   <Codex Mastery>     gets a codex's full spell list (Thenmy)
  * Codex note:
  *   <Codex Move: 22>             a Cultural move for anyone who can read
  *   <Codex Spells: 242, 243, 245>    the weaker spells, for readers of the
- *                                     All-Seafarer script
+ *                                     Seafarer script
  *   <Codex Mastery Spells: 244, 246, 247>  the rest, for <Codex Mastery>
  *
  * Tattoos and codices also need an armor type the class may equip, like any

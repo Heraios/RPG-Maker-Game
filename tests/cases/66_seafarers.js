@@ -8,7 +8,7 @@ module.exports = {
         const r = await h.eval(() => {
             const EN = n => $dataEnemies.find(e => e && e.name === n), out = {};
             const names = ['Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Champion',
-                'Lady of The Sword', 'All-Seafarer Marine'];
+                'Lady of The Sword', 'Seafarer Marine'];
             const meneswa = $dataEnemies.filter(e => e && e.name === 'Meneswa');
             const all = names.map(EN).concat(meneswa);
             out.missing = names.filter(n => !EN(n)).join(', ') + (meneswa.length === 2 ? '' : ' Meneswa x2');
@@ -56,7 +56,7 @@ module.exports = {
         await h.battle();
         const r = await h.eval(() => {
             const EN = n => $dataEnemies.find(e => e && e.name === n).id, out = {};
-            const ids = ['Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'All-Seafarer Marine'].map(EN);
+            const ids = ['Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Marine'].map(EN);
             const valid = e => e.enemy().actions.filter(a => e.isActionValid(a)).map(a => $dataSkills[a.skillId].name);
             const picks = e => { const seen = {}; for (let i = 0; i < 200; i++) { e.makeActions(); const a = e.action(0); if (a && a.item()) seen[a.item().name] = 1; } return Object.keys(seen); };
             const kids = $gameParty.battleMembers().filter(a => a.isChild()), adults = $gameParty.battleMembers().filter(a => !a.isChild());
@@ -82,7 +82,7 @@ module.exports = {
         const r = await h.eval(() => {
             const EN = n => $dataEnemies.find(e => e && e.name === n), out = {};
             const LIST = [null, $dataItems, $dataWeapons, $dataArmors];
-            const names = ['All-Seafarer Marine', 'Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Champion'];
+            const names = ['Seafarer Marine', 'Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Champion'];
             out.drops = names.map(n => EN(n).dropItems.filter(d => d.kind).map(d => LIST[d.kind][d.dataId].name).join(', '));
             out.bronze = names.filter(n => EN(n).dropItems.some(d => d.kind && /bronze/i.test(LIST[d.kind][d.dataId].name))).join(', ');
             // One roll per troop, however many soldiers carry the tag
@@ -99,7 +99,7 @@ module.exports = {
             Math.random = () => 0.0; out.boar = $gameTroop.makeDropItems().filter(x => x === purse).length; Math.random = rnd;
             return out;
         });
-        t.eq(r.drops.join(' | '), 'All-Seafarer Grog, Quilted Cap, Salt Beef | All-Seafarer Grog, Sailor\'s Cap, Lead-Weighted Net | ' +
+        t.eq(r.drops.join(' | '), 'Seafarer Grog, Quilted Cap, Salt Beef | Seafarer Grog, Sailor\'s Cap, Lead-Weighted Net | ' +
             'Salt Beef, Cowhide, Horsehair Plume | Linen Cloth, Bull Priest\'s Robe, Bull-Horn Staff | Salt Beef, Bull-Hide Bracers, Bull-Horn Headdress',
             'the chosen drops');
         t.eq(r.bronze, '', 'no Seafarer drops bronze');
@@ -114,7 +114,7 @@ module.exports = {
         const r = await h.eval(() => {
             const EN = n => $dataEnemies.find(e => e && e.name === n).id, out = {};
             const help = $dataSkills.find(s => s && s.name === 'Call for Help');
-            const priest = new Game_Enemy(EN('Seafarer Priest'), 0, 0), marine = new Game_Enemy(EN('All-Seafarer Marine'), 0, 0);
+            const priest = new Game_Enemy(EN('Seafarer Priest'), 0, 0), marine = new Game_Enemy(EN('Seafarer Marine'), 0, 0);
             const axeman = new Game_Enemy(EN('Seafarer Axeman'), 0, 0); axeman.hide();
             const can = () => priest.isActionValid(priest.enemy().actions.find(a => a.skillId === help.id));
             $gameTroop._enemies = [priest, marine, axeman];

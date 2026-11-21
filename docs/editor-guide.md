@@ -93,7 +93,7 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
 
 **Aday and Kathrout** (actors 13 and 14) use a few note tags of their own (`SI_Specialists.js`):
 - Kathrout can't use glyph tattoos; her class note `<Codex Slots: 2>` gives her two codex slots (the only
-  character with two). A First Sailor inscription can teach her a spell with the script call
+  character with two). A Builder inscription can teach her a spell with the script call
   `SmokingIsle.Specialists.study(14, skillId)`.
 - Gear with `<Taboo Tags: grave>` (the Crew clothes, the coral eye and pupil, the Crescent Pectoral) is grave
   goods: Kathrout won't wear it. Tag any new tomb find the same way.

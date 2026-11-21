@@ -69,9 +69,9 @@ module.exports = {
         t.eq(T[9], 'Battle_Spirits', 'forest imps: Battle_Spirits');
         t.eq(T[22], 'Battle_Spirits', 'restless bones (spirits): Battle_Spirits');
         t.eq(T[11], 'Battle_Ancients', 'the Owls of Ill Omen: Battle_Ancients');
-        t.eq(T[39], 'Battle_Ancients', 'Marsh Hags (First Sailor remnants): Battle_Ancients');
+        t.eq(T[39], 'Battle_Ancients', 'Marsh Hags (Builder remnants): Battle_Ancients');
         t.eq(T[40], 'Battle_Ancients', 'Stonemen: Battle_Ancients');
-        t.eq(T[14], 'Battle_Seafarers', 'All-Seafarer marines: Battle_Seafarers');
+        t.eq(T[14], 'Battle_Seafarers', 'Seafarer marines: Battle_Seafarers');
         t.eq(T[26], 'Boss_Daughter_Wells', 'boss: the Daughter of the Wells');
         t.eq(T[27], 'Boss_Great_Boar', 'boss: the Great Boar');
         t.eq(T[29], 'Boss_Lady_Woods', 'boss: the Lady of the Woods');
