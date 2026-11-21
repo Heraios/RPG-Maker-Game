@@ -202,5 +202,41 @@ module.exports = {
         t.ok(r.freshMood, 'the rider on foot starts his own Talk mood');
         t.ok(r.footSpares, 'the charging horse spares nobody; the rider on foot spares children');
         t.eq(r.steady, ' plants their feet!', 'Steady Footing has its own battle message');
+    },
+
+    'every Seafarer soldier can be talked to, in its own way': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const A = id => $gameActors.actor(id), out = {};
+            const EN = n => $dataEnemies.find(e => e && e.name === n).id;
+            const fresh = id => { const e = new Game_Enemy(id, 0, 0); $gameTroop._enemies.push(e); e._siMood = 40; return e; };
+            const withRoll = (v, f) => { const rnd = Math.random; Math.random = () => v; try { return f(); } finally { Math.random = rnd; } };
+            const talk = (a, skillId, e, offer) => withRoll(0.1, () => { const x = new Game_Action(a); x.setSkill(skillId); if (offer) x._siOfferItemId = offer; e.clearResult(); x.apply(e); return e.talkMood(); });
+            const names = ['Seafarer Marine', 'Seafarer Sailor', 'Seafarer Axeman', 'Seafarer Priest', 'Seafarer Champion', 'Seafarer Captain', 'Seafarer Officer'];
+            out.noTalk = names.filter(n => { const d = new Game_Enemy(EN(n), 0, 0).talkData(); return d.type !== 'sapient' || !(d.tells || []).length; }).join(', ');
+            out.questions = names.map(n => (new Game_Enemy(EN(n), 0, 0).talkData().questions || []).length);
+            [2, 98, 348, 83].forEach(id => $gameParty.gainItem($dataItems[id], 5));
+            // the Sailor loves grog, hates shellfish
+            out.grog = talk(A(2), 282, fresh(EN('Seafarer Sailor')), 2) - 40;
+            out.shell = talk(A(2), 282, fresh(EN('Seafarer Sailor')), 83) - 40;
+            // the Axeman respects a threat; the Champion despises pleading; the Priest wants a rite, not a threat
+            out.axeThreat = talk(A(7), 285, fresh(EN('Seafarer Axeman'))) - 40;
+            out.champPlead = talk(A(2), 286, fresh(EN('Seafarer Champion'))) - 40;
+            out.priestRite = talk(A(3), 284, fresh(EN('Seafarer Priest'))) - 40;
+            out.priestThreat = talk(A(3), 285, fresh(EN('Seafarer Priest'))) - 40;
+            // the Captain's fall now reaches the Sailors too
+            const cap = new Game_Enemy(EN('Seafarer Captain'), 0, 0), sailor = new Game_Enemy(EN('Seafarer Sailor'), 0, 0);
+            $gameTroop._enemies = [cap, sailor]; sailor._siMood = 30; cap.addState(cap.deathStateId());
+            out.sailorMorale = sailor.talkMood();
+            return out;
+        });
+        t.eq(r.noTalk, '', 'every Seafarer soldier talks (sapient, with tells)');
+        t.ok(r.questions.every(n => n >= 1), 'and asks at least one question: ' + r.questions.join(','));
+        t.ok(r.grog > 0, 'the Sailor loves grog (+' + r.grog + ')');
+        t.ok(r.shell < 0, 'and hates anything from a shell (' + r.shell + ')');
+        t.ok(r.axeThreat > 0, 'the Axeman respects a threat (+' + r.axeThreat + ')');
+        t.ok(r.champPlead < 0, 'the Champion despises pleading (' + r.champPlead + ')');
+        t.ok(r.priestRite > 0 && r.priestThreat < 0, 'the Priest answers a rite and resents a threat (' + r.priestRite + ' / ' + r.priestThreat + ')');
+        t.eq(r.sailorMorale, 55, "the Captain's fall now breaks the Sailors' morale too");
     }
 };

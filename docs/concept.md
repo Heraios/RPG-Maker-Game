@@ -2957,7 +2957,7 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 Enemies 13 (the Marine's new moves), 15, 17, 25 and 76–79. Their moves are the party's own weapon skills
 and codex spells (enemies ignore weapon and shield requirements and hit with their own Attack), plus two
 enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the Sea**. Checked by test 66.
-**Talk and troops are still to do**, and so are Meneswa's phase change and surrender (troop events).
+**Troops are still to do**, and so are Meneswa's phase change and surrender (troop events) and Talk for the bosses.
 
 | Enemy | HP / MP / Atk / Def / Spirit / Resolve / Speed / Luck | EXP | Moves |
 |---|---|---|---|
@@ -2988,6 +2988,13 @@ enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the
   The bosses drop nothing.
 - **The purse:** every rank-and-file Seafarer has `<Troop Drop: item 611, 10%>`, so a beaten Seafarer troop
   has a 10% chance of one Golden Axe Money (once per troop, `SI_BattleTraits.js`).
+- **Talk:** every soldier is sapient, with its own temper. All love Seafarer food and drink and hate anything
+  from a shell (and men take milk as an insult). The **Sailor** is homesick and easy (Grog, Salt Beef); the
+  **Axeman** respects a threat and shrugs off sweet talk; the **Priest** answers a rite (Ox Horn or beef as an
+  offering) and resents threats; the **Champion** wants a contest: threats impress him, pleading disgusts him,
+  and a purse (Golden Axe Money) interests him; when Pacified he salutes the party (Might up). The **Captain**
+  can be Asked to withdraw; the **Officer** takes Ask, not Plead or bribes. Their questions have special answers
+  for Thenmy (their prince), Parl, Aday, Kathrout, Sib, Dama, Tou and Falmi.
 - **Mini-bosses (recurring ranks, Acts 4–5):** the **Captain** (`Mm1_09Captain_3`) leads Marines and Sailors;
   beat him and the soldiers still standing lose heart (`<Morale Leader: 25>`: +25 mood). The **Officer**
   (`Mm1_32Prince_3`), a chariot-driving noble, leads Axemen and Champions and marks one for a sure critical (Iku);
@@ -3031,7 +3038,7 @@ enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
-| Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js` (with drops and the troop purse); Talk and troops to do |
+| Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js` (with drops, Talk and the troop purse); troops to do |
 | Automated tests | `tests/` (52 tests, about 560 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
