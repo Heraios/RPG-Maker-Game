@@ -1159,6 +1159,7 @@ impact crater**: the Red Bowl myth is literally true.
   **ancient Egypt** and the **Mycenaean Greeks**.
 - **Religion:** they especially venerate the **bull-men**, the husbands of various minor goddesses, for
   their strength (which is why the Bull of Water's lie works on them).
+- **Sky burial:** the Seafarers practise **sky burial**: their dead are given to the birds.
 - **Food taboos:** nothing that hides in a shell (eggs, shellfish, turtle; nor shell jewellery or armour), for
   everyone. And the bull's gifts are split by sex: **grown men eat the bull's flesh** and take his strength,
   but drink **no milk** (the goddesses' gift to mothers and children: a man drinking it is a baby, or a thief
@@ -1412,6 +1413,9 @@ Sun and the Destroyer lean Fire.
    of Water).
 
 ### Threads that tie the story together
+- **Sky burial vs. mummification.** The Islanders keep their dead close in the tubes; the Seafarers give
+  theirs to the birds. Each may find the other's way grim, and it may be why Seafarer dead so rarely linger
+  as ghosts (the Seafarer Priest says as much in his Talk question).
 - **Homunculi:** the Children of the Caves are discarded Builder homunculi, and Yoon's new body
   is a homunculus built with the same kind of craft. Lasa, a homunculus descendant who doesn't know
   it, helps build another. The Tou questline likely brings this into the open.

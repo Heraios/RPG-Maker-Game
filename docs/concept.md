@@ -2957,7 +2957,18 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 Enemies 13 (the Marine's new moves), 15, 17, 25 and 76–79. Their moves are the party's own weapon skills
 and codex spells (enemies ignore weapon and shield requirements and hit with their own Attack), plus two
 enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the Sea**. Checked by test 66.
-**Troops are still to do**, and so are Meneswa's phase change and surrender (troop events) and Talk for the bosses.
+Troops 80–97 (test 67). **Talk for the bosses is still to do.**
+
+| Troops | Members |
+|---|---|
+| 80–84 | Marines*3; Sailors*3; Marine, Sailors*2; Axemen*2; Axeman, Marines*2 |
+| 85–86 | Priest, Marines*2 (+ a hidden Marine); Priest, Axemen*2 (+ a hidden Axeman): Call for Help |
+| 87–88 | Champion; Champion, Axemen*2 |
+| 89–90 | Captain's Crew: Captain, Marines*2, Sailor; Captain, Sailors*3 |
+| 91–92 | Officer's Guard: Officer, Axeman, Champion; Officer, Axemen*2, Priest (+ a hidden Axeman) |
+| 93–95 | Horseman; Horsemen*2; Horseman, Marines*2 (open ground only) |
+| 96 | Boss: Lady of the Sword (music Battle_Seafarers) |
+| 97 | Boss: Meneswa (music Meneswa). Immortal throughout; at half Health she becomes phase 2 at full Health; at the end she yields: switch 10 "Meneswa surrendered (Act 5)" and the battle breaks off |
 
 | Enemy | HP / MP / Atk / Def / Spirit / Resolve / Speed / Luck | EXP | Moves |
 |---|---|---|---|
@@ -3038,7 +3049,7 @@ enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
-| Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js` (with drops, Talk and the troop purse); troops to do |
+| Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js` (with drops, Talk, the troop purse and troops 80–97); boss Talk to do |
 | Automated tests | `tests/` (52 tests, about 560 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
