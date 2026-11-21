@@ -138,5 +138,69 @@ module.exports = {
         t.eq(r.again, false, "not again while the Axeman's up");
         t.eq(r.noneLeft, false, 'once per battle: nobody left to call');
         t.eq(r.noHidden, false, 'a troop with no hidden member gets no help');
+    },
+
+    'Captain, Officer and Horseman: moves, morale, unhorsing, bogging down': async (h, t) => {
+        await h.battle();
+        const r = await h.eval(() => {
+            const EN = n => $dataEnemies.filter(e => e && e.name === n), out = {};
+            const LIST = [null, $dataItems, $dataWeapons, $dataArmors];
+            const cap = EN('Seafarer Captain')[0], off = EN('Seafarer Officer')[0], horse = EN('Seafarer Horseman');
+            out.found = [cap, off].filter(Boolean).length + '/' + horse.length;
+            const all = [cap, off].concat(horse);
+            out.badActions = all.filter(e => e.actions.some(a => !$dataSkills[a.skillId] || !$dataSkills[a.skillId].name || $dataSkills[a.skillId].mpCost > e.params[1])).map(e => e.name).join(', ');
+            out.bronze = all.filter(e => e.dropItems.some(d => d.kind && /bronze/i.test(LIST[d.kind][d.dataId].name))).map(e => e.name).join(', ');
+            out.purse = all.every(e => /<Troop Drop:\s*item 611, 10%>/.test(e.note));
+            out.sprites = all.map(e => e.battlerName);
+            // every move runs for an enemy
+            const party = $gameParty.battleMembers(), errors = [];
+            all.forEach(data => data.actions.forEach(a => {
+                const e = new Game_Enemy(data.id, 0, 0); $gameTroop._enemies.push(e);
+                try { const act = new Game_Action(e); act.setSkill(a.skillId); act.applyGlobal();
+                    (act.isForFriend() ? [e] : party).forEach(x => { x.clearResult(); act.apply(x); }); }
+                catch (err) { errors.push(data.name + '/' + $dataSkills[a.skillId].name + ': ' + err.message); }
+                $gameTroop._enemies.pop(); party.forEach(x => x.recoverAll());
+            }));
+            out.errors = errors.join('; ');
+            // the Captain falls: his Marine loses heart (+25 mood); an Enraged one doesn't
+            const captain = new Game_Enemy(cap.id, 0, 0), marine = new Game_Enemy(EN('Seafarer Marine')[0].id, 0, 0), angry = new Game_Enemy(EN('Seafarer Marine')[0].id, 0, 0);
+            $gameTroop._enemies = [captain, marine, angry];
+            marine._siMood = 30; angry._siMood = 0; angry.addState(SmokingIsle.Talk.enragedStateId);
+            captain.addState(captain.deathStateId());
+            out.morale = marine.talkMood() + '/' + angry.talkMood();
+            // the Horseman: bogged down it can't charge or trample; at half Health the rider is thrown
+            const rider = new Game_Enemy(horse[0].id, 0, 0); $gameTroop._enemies = [rider];
+            const trample = rider.enemy().actions.find(a => a.skillId === 780);
+            out.trampleFree = rider.isActionValid(trample);
+            rider.addState($dataStates.find(s => s && s.name === 'Mired').id);
+            out.trampleBogged = rider.isActionValid(trample) + '/' + SmokingIsle.BattleTraits.blockedWhile(rider, 779);
+            rider.clearStates();
+            out.stalk = rider.talkData().overrides.stalk;
+            rider._siMood = 60; rider.setHp(Math.floor(rider.mhp * 0.5) + 2);
+            const yoon = $gameActors.actor(2), punch = new Game_Action(yoon); punch.setSkill(1);
+            const rnd = Math.random; Math.random = () => 0.5; rider.clearResult(); punch.apply(rider); Math.random = rnd;
+            out.unhorsed = rider.enemyId() === horse[1].id && rider.isAlive() && rider.hp <= Math.floor(rider.mhp);
+            out.thrown = (rider._siCommandMessages || []).join(' ');
+            out.freshMood = rider._siMood === undefined || rider.talkMood() !== 60;
+            out.footSpares = /<Spares Children>/.test(horse[1].note) && !/<Spares Children>/.test(horse[0].note);
+            out.steady = $dataSkills.find(s => s && s.name === 'Steady Footing').message1;
+            return out;
+        });
+        t.eq(r.found, '2/2', 'the Captain, the Officer and both Horseman forms exist');
+        t.eq(r.badActions, '', 'every move is a real skill they have the MP for');
+        t.eq(r.bronze, '', 'no bronze drops');
+        t.ok(r.purse, 'all carry the 10% purse');
+        const fs = require('fs'), path = require('path'), dir = path.join(__dirname, '..', '..', 'Smoking Isle', 'img', 'enemies');
+        t.eq(r.sprites.filter(b => !fs.existsSync(path.join(dir, b + '.png'))).join(', '), '', 'every sprite exists: ' + r.sprites.join(', '));
+        t.eq(r.errors, '', 'every move works when an enemy uses it');
+        t.eq(r.morale, '55/0', "with the Captain down, his Marine gains 25 mood; an Enraged one doesn't");
+        t.eq(r.trampleFree, true, 'a horse on firm ground can trample');
+        t.eq(r.trampleBogged, 'false/true', "a Mired horse can't trample or charge");
+        t.eq(r.stalk, 0, "a ridden horse can't be stalked");
+        t.ok(r.unhorsed, 'at half Health the rider is thrown and fights on foot');
+        t.ok(/thrown from the saddle/.test(r.thrown), 'with a message: ' + r.thrown);
+        t.ok(r.freshMood, 'the rider on foot starts his own Talk mood');
+        t.ok(r.footSpares, 'the charging horse spares nobody; the rider on foot spares children');
+        t.eq(r.steady, ' plants their feet!', 'Steady Footing has its own battle message');
     }
 };

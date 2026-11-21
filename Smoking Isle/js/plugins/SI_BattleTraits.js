@@ -58,6 +58,23 @@
  *                                   troop = one call per battle.
  *
  * ============================================================================
+ * Leaders, unhorsing and bogging down
+ * ============================================================================
+ * Enemy note:   <Morale Leader: 25> when it falls, every enemy still standing
+ *                                   that can be talked to gains that much
+ *                                   mood (default 25; never to Pacified).
+ *                                   Their morale breaks (the Captain).
+ * Enemy note:   <Transform At: 50%, enemy 83>
+ *                                   at or below that share of Health it
+ *                                   becomes that enemy (Health carries over;
+ *                                   Talk mood starts afresh). Optional:
+ *               <Transform Message: %1 is thrown from the saddle!>
+ * Enemy note:   <Not While: Mired, Entangled, Held | 779, 780>
+ *                                   it can't use those skills while it has
+ *                                   any of those states (a bogged-down horse
+ *                                   can't charge or trample).
+ *
+ * ============================================================================
  * Troop drops
  * ============================================================================
  * Enemy note:   <Troop Drop: item 611, 10%>
@@ -166,7 +183,67 @@ SmokingIsle.BattleTraits = SmokingIsle.BattleTraits || {};
             return false;
         }
         if ($.isCallForHelp(skill) && !$.canCallForHelp(this)) return false;
+        if ($.blockedWhile(this, action.skillId)) return false;
         return true;
+    };
+
+    //-------------------------------------------------------------------------
+    // <Not While: Mired, Entangled, Held | 779, 780>
+    //-------------------------------------------------------------------------
+
+    $.blockedWhile = function(enemy, skillId) {
+        var m = /<Not While:\s*([^|>]+)\|\s*([^>]+)>/i.exec(enemy.enemy().note);
+        if (!m) return false;
+        var ids = m[2].split(',').map(Number);
+        if (ids.indexOf(skillId) < 0) return false;
+        return m[1].split(',').some(function(name) {
+            name = name.trim().toLowerCase();
+            return enemy.states().some(function(s) { return s.name.toLowerCase() === name; });
+        });
+    };
+
+    //-------------------------------------------------------------------------
+    // <Morale Leader: 25>
+    //-------------------------------------------------------------------------
+
+    var _Game_Enemy_die = Game_Enemy.prototype.die;
+    Game_Enemy.prototype.die = function() {
+        var wasAlive = this.isAlive();
+        _Game_Enemy_die.call(this);
+        var m = /<Morale Leader(?::\s*(\d+))?>/i.exec(this.enemy().note);
+        if (!wasAlive || !m || !$gameParty.inBattle()) return;
+        var gain = m[1] ? Number(m[1]) : 25, broken = false;
+        this.friendsUnit().aliveMembers().forEach(function(e) {
+            if (!e.talkData || !e.talkData().type || (e.isEnraged && e.isEnraged())) return;
+            e._siMood = Math.min(e.talkMood() + gain, 99);
+            broken = true;
+        });
+        if (broken && BattleManager._logWindow) BattleManager._logWindow.push('addText', 'With %1 down, the others lose heart.'.format(this.name()));
+    };
+
+    //-------------------------------------------------------------------------
+    // <Transform At: 50%, enemy 83>
+    //-------------------------------------------------------------------------
+
+    $.transformAt = function(enemy) {
+        var m = /<Transform At:\s*(\d+)\s*%?\s*,\s*enemy\s+(\d+)>/i.exec(enemy.enemy().note);
+        return m ? { rate: Number(m[1]) / 100, id: Number(m[2]) } : null;
+    };
+
+    $.checkTransform = function(enemy) {
+        var t = enemy && enemy.isEnemy() && enemy.isAlive() && $.transformAt(enemy);
+        if (!t || enemy.hpRate() > t.rate || !$dataEnemies[t.id]) return;
+        var msg = /<Transform Message:\s*([^>]+)>/i.exec(enemy.enemy().note);
+        var name = enemy.name();
+        enemy.transform(t.id);
+        enemy._siMood = undefined;      // a new speaker: Talk starts afresh
+        if (msg) enemy._siCommandMessages = (enemy._siCommandMessages || []).concat([msg[1].format(name)]);
+    };
+
+    var _Game_Action_apply_transform = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        _Game_Action_apply_transform.call(this, target);
+        $.checkTransform(target);
     };
 
     //-------------------------------------------------------------------------

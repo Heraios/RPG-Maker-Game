@@ -2969,6 +2969,10 @@ enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the
 | Lady of the Sword (77) | 1100 / 140 / 26 / 16 / 22 / 20 / 46 / 20 | 220 | Vital Strike, Raking Cut, Riposte, Off-Hand Flurry, Flaying Strike, Kiva, Atua and Cold Composure (≤50%), Every Blade in the Sea (turn 3+) |
 | Meneswa, phase 1 (78) | 1300 / 160 / 24 / 18 / 22 / 20 / 40 / 20 | 0 | Vital Strike, Riposte, Shield Bash, Mea-uha, Tiho-uha, Kerihari |
 | Meneswa, phase 2 (79) | 750 / 200 / 27 / 16 / 28 / 22 / 48 / 22 | 260 | Ahihari, Keriben, Flaying Strike, Mea-uhagun, Mock, Tiho-uhagun (≤40%) |
+| Captain (80) | 350 / 50 / 18 / 14 / 10 / 12 / 34 / 14 | 70 | Raking Cut, Pommel Strike, Read the Wind (turn 1), Vero, Arikigun (turn 3+) |
+| Officer (81) | 450 / 60 / 20 / 18 / 12 / 14 / 30 / 14 | 90 | Vital Strike, Shield Bash, Iku (turn 2+), Puakagun, Kiva, Riposte (≤50%) |
+| Horseman, mounted (82) | 320 / 0 / 22 / 14 / 1 / 8 / 52 / 10 | 80 | Aurochs Charge (turn 1), Measured Thrust, Trample, Hurl Javelin |
+| Horseman, on foot (83) | 180 / 0 / 16 / 10 / 1 / 8 / 40 / 10 | 80 | Loose Arrow, Aimed Shot, Covering Fire, Riposte |
 
 - **Sparing children:** the Marine, Sailor, Axeman and Priest have `<Spares Children>` and Demand Surrender at
   rating 1. With an adult standing it is never picked; with only children left it is the only thing they
@@ -2984,6 +2988,16 @@ enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the
   The bosses drop nothing.
 - **The purse:** every rank-and-file Seafarer has `<Troop Drop: item 611, 10%>`, so a beaten Seafarer troop
   has a 10% chance of one Golden Axe Money (once per troop, `SI_BattleTraits.js`).
+- **Mini-bosses (recurring ranks, Acts 4–5):** the **Captain** (`Mm1_09Captain_3`) leads Marines and Sailors;
+  beat him and the soldiers still standing lose heart (`<Morale Leader: 25>`: +25 mood). The **Officer**
+  (`Mm1_32Prince_3`), a chariot-driving noble, leads Axemen and Champions and marks one for a sure critical (Iku);
+  proud, so Ask works and Plead and bribes insult him. The **Horseman** (`En3_055Dullahan_C30_S4`) charges on turn
+  1; Mired, Entangled or Held stops its charge and trample (`<Not While: ...>`); at half Health the rider is thrown
+  (`<Transform At: 50%, enemy 83>`, `archer1`) and fights on foot with a bow. The horse talks as an animal (can't
+  be stalked): Soothe it and it bolts with the rider. Drops: Captain Sailor's Compass 1/6, Gilt Armlets 1/12,
+  Grog 1/3; Officer Officer's Kilt 1/5, Orchil-Purple Mantle 1/12, Gilt Diadem 1/20; Horseman (both forms)
+  Horsehair 1/2, Driving Gloves 1/5, Cowhide 1/4. All carry the 10% purse. Act 5 Firebrand versions are to do
+  (`Mm1_09Captain_2`, `Mm1_32Prince_1`, `En3_055Dullahan_C23_S4`).
 - **The Lady of the Sword** is a goddess and a Seafarer. Boss-sized, with boss state resistances like
   Meneswa.
 
