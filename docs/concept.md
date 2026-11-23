@@ -2710,6 +2710,95 @@ end of the target's next own turn. Feverish
 counts as a mental state for Insight's mental resistance. Exceptions: `<Elemental: water>`,
 `<No Elemental States>`, `<Inflict: sodden>` (`SI_ElementalStates.js`).
 
+### Enemy tactics (design; `SI_Tactics.js`, to build)
+Enemies that think. RPG Maker's own enemy AI rolls dice over the database ratings and picks targets at
+random; it can't see the party's states or its own allies. **`SI_Tactics.js` replaces how an enemy chooses
+its move and target** with a scoring pass. Everything after the choice (damage, states, Talk, the turn
+order) works as now. Creature by creature, the plans are in [bestiary.md](bestiary.md).
+
+**Decided:** every enemy, by tier; telegraphing gated by Yoon's Insight; troop combos in the first version;
+the bestiary's `NEW` database changes ship with the plugin; this design first, code after.
+
+**1. Filters first (unchanged rules, applied before any scoring)**
+- RPG Maker's own validity: action conditions, MP, sealed skills, Sodden (no Magic), Mired (no Physical).
+- The existing rules: Calm enemies don't attack (`SI_Talk`); sparing children; Call for Help; `<Not While:>`
+  (`SI_BattleTraits`); `<Flees When:>` (below).
+- **Who it can target:** animals can't single out **Ghost Yoon** (`<Ignores: ghost>` is their default;
+  omen creatures, spirits, fae, priests and Hags see him). **Everyone can target Lasa.** Party-wide moves
+  still hit everyone.
+
+**2. Scoring.** For every allowed move × target:
+
+```
+score = rating                          the database rating, as a base
+      + value                           what the move achieves (below)
+      + situation                       combos, finishing a target, protecting an ally, style
+      - waste                           re-applying a state, a resisted state, a target that mostly dodges
+```
+
+| Value | How it's judged (placeholder weights, to tune with the sims) |
+|---|---|
+| Damage | The real damage formula against that target (Defense, resistances, Wet, metal...), as a share of the target's Health. **+ a bonus if it would knock the target out** |
+| A state | Worth more where it matters: Entangled or Chilled on a fast target, Dazzled on a hard hitter, Despair on a caster. Zero if already there or resisted |
+| Elements | `<Source>` against the cycle: **clearing a tier-2 state (the extra turn) scores very high**; upgrading a state (Wet → Sodden) high; just inflicting a base state a little |
+| Heal | The Health it would actually restore (nothing on an unhurt ally) |
+| Buff / debuff | Worth more on an ally about to act and hit hard, or on the party member who hurts the enemy most |
+| Talk skills | Demand Surrender, Call for Help: as their own rules say (they already win when valid) |
+
+**3. Choosing, by tier**
+
+| Tier | Who (default) | How it chooses |
+|---|---|---|
+| 0 | Prey and near-harmless beasts (Laurel Pigeon, Aurochs Calf, Jellyfish, Green Horse) | Today's dice, minus the waste (no pointless repeats) |
+| 1 | Other animals, pranksters, swarms | From the best half of its options, weighted toward the top |
+| 2 | Sapient and spirit enemies: soldiers, Boar-Men, Hags, Stonemen, Hunched, priests; the named rivals | Usually the best option; plans combos |
+| 3 | Bosses (troops named "Boss: ...") | Almost always the best option; reads the whole party |
+
+The default comes from the enemy's Talk type and whether it's a boss; `<Tactics: n>` overrides it.
+
+**4. Personality (enemy notes)**
+
+| Note | Meaning |
+|---|---|
+| `<Tactics: 2>` | its tier |
+| `<Tactics Style: aggressive>` | also `cautious` (heals and guards early), `cunning` (combos and debuffs first), `support` (allies first) |
+| `<Grudge>` | prefers whoever hurt it most |
+| `<Pack>` | prefers whoever its allies just hit |
+| `<Patient: 50%>` | waits (circles) until someone is at or below 50% Health (the Vulture) |
+| `<Prefers: Wet>` | favours targets with that state (Cranes, Herons: wet things look like fish) |
+| `<Flees When: alone, 30%>` | leaves when it's the last one standing, or below 30% Health (either) |
+| `<Ignores: ghost>` | won't single out Ghost Yoon (the animal default; `<Sees: ghost>` overrides) |
+| `<Intent: %1 eyes %2's wet clothes.>` | (skill note) its telegraph line; %1 = the enemy, %2 = the target |
+
+**5. Combos.** A setup move **marks** its target (the state it gave, and who gave it). A follow-up gets a large
+bonus against a marked target, more if an ally set it up this round.
+- **By state, on an enemy:** `<Follow Up: Wet +40>` (it cashes in on Wet targets). Most combos need only this:
+  the frog wets, the heron spears; the hag curses, the other hag drains whoever is in Despair.
+- **By troop,** for set plays: a **Comment on the troop's first event page** (troops have no Note box):
+  `<Combo: Seafarer Priest buffs Seafarer Axeman, then Seafarer Axeman attacks>`. The buffer favours that
+  ally; the ally then favours its heaviest move. If the setup never happens, nothing fires.
+
+**6. Telegraphing, gated by Insight.** When an enemy at tier 1 or above commits to a setup or a big move,
+its plan can show **before it acts** ("The Officer points his sword at Sib!"), from the skill's `<Intent>`
+line or a plain default ("%1 is watching %2."). Whether it shows depends on **Yoon's Insight** against the
+enemy's tier (placeholder): tier 1 at Insight 5, tier 2 at Insight 10, tier 3 at Insight 15. The concept's
+"at high Insight may reveal enemies' next actions" becomes this. Yoon's tells at battle start stay as they are.
+
+**7. Database changes that ship with it** (from the bestiary): the Owl of Ill Omen gains Ill Omen; the Wild
+Boar gains Paw the Ground; the cave children gain Mock; the Marsh Hag gains Rari; Bask works only by day and
+outdoors; Latch drains Health; the Leech gets Talk notes; the Marsh Eel gets a short submerged dodge after
+biting; the Vulture gets a circling wait; rats steal a food item. Plus each enemy's tags above, written as the
+bestiary is.
+
+**8. Proving it**
+- **Tests:** set situations with one right answer: the Hag holds Marsh Wind for the Sodden target; the Priest
+  heals the hurt ally, not the healthy one; the Vulture circles until someone is low; animals never target
+  the Ghost; a combo fires only after its setup; a plan shows only at enough Insight.
+- **Balance:** rerun every simulator (Act 2, Acts 2–3, animals, Act 4). Smarter enemies are harder, so
+  numbers will come down where the sims say. The Act 4 run already flags the Horsemen, the Officer's Guard
+  and the Champion with Axemen as too hard *before* tactics.
+- **Size:** one plugin of roughly 300–400 lines, placed after `SI_BattleTraits`, plus tests.
+
 ### Balance (first pass)
 **Philosophy:** low, readable numbers all game. Total growth is about 2–3×, and later difficulty
 comes from variety, status effects and Fatigue pressure rather than inflated stats. Every value
@@ -3051,6 +3140,7 @@ Troops 80–97 (test 67). **Talk for the bosses is still to do.**
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
+| Enemy tactics (`SI_Tactics.js`) | Designed (see "Enemy tactics"); to build |
 | Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js` (with drops, Talk, the troop purse and troops 80–97); boss Talk to do |
 | Automated tests | `tests/` (52 tests, about 560 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
