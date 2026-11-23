@@ -819,6 +819,119 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 
 ---
 
+## 8. The alpine meadows and the snow (Acts 2–3)
+
+Up from the Highland Pines and Idekeu (map 24) through the Alpine Meadows and Chafakeu (25) to the Snow Line (26):
+the Shepherd's herds, then the Lady's cold high-forest body. Act 2's party (Ghost Yoon, Sib, Lasa, Pada) on the way
+to the Snow Urn; the Lady's alpine aspect may wait for Act 3 (with Juda). **Already in this bestiary:** the Raven
+(the pines, troop 15) and the Feral Sheep (in the Alpine Herd, troop 18). **The high forest's combo** is the alpine
+Lady's: her Snowfall (air) leaves you **Disoriented**, and her Falling Boughs (earth) turn Disoriented into
+**Grounded** (attack halved).
+
+### Mouflon Ram
+**Design**
+- **Where:** the Highland Pines (troop 17, ×3); the Alpine Herd (troop 18, with Feral Sheep ×2); the Shepherd's
+  herd (troop 28).
+- **Stats:** 85 / 13 / 9 / 32. **Moves:** Ram; Paw the Ground (Brave).
+- **Talk:** animal. Likes Barley Bread, Salt Lick.
+- **Drops:** Mouflon Wool 1/2, Raw Meat 1/2, Ram Horn Charm 1/10.
+- **Tactics (instinct):** works itself up (Paw the Ground), then rams; charges whoever stands up to it (whoever has
+  hurt it).
+- **Changes:** `<Grudge>`.
+
+**Remembered**
+- *First sight:* "Sheep. Wrong sheep. Curly horns."
+- *Insight 2–4:* "It stamps first. Then it comes. Move."
+- *Insight 5+:* "It only charges what stands in front of it."
+- *Margin, Pada:* "The Shepherd's flock. One beast per family per winter. Not this winter."
+
+### Golden Eagle
+**Design**
+- **Where:** the alpine peaks (troop 19, ×2); the Shepherd's herd (troop 28).
+- **Stats:** 50 / 13 / 4 / 56. Flying. **Moves:** Talon Dive (Bleed, 25%); Rending Beak.
+- **Talk:** animal. Likes Raw Meat, Raw Fish.
+- **Drops:** Eagle Feather 1/8, Bone 1/3, Hide 1/5.
+- **Tactics (instinct):** dives to make you bleed, then rends the bleeding (`<Follow Up: Bleed +30>`, already in).
+  It wants you gone from its nest, not dead: badly hurt, it leaves.
+- **Changes:** `<Flees When: 30%>`.
+
+**Remembered**
+- *First sight:* "Bird. The biggest bird. Gold."
+- *Insight 2–4:* "It cuts you from the sky. Then it tears where it cut."
+- *Insight 5+:* "There's a nest up there. It wants us gone, not dead."
+- *Margin, Lasa:* "It's so PRETTY. It's so pretty and it hates us. That's the worst kind of pretty."
+
+### Snow-line Hare
+**Design**
+- **Where:** the alpine meadows up to the snow line (troop 74, ×3).
+- **Stats:** 40 / 11 / 3 / 80. **Moves:** Hind Kick; Escape (it may bolt).
+- **Talk:** animal; a threat sends it off. Likes Sweet Potato, Taro.
+- **Drops:** Raw Meat 1/2, Hide 1/3.
+- **Tactics (instinct):** kicks and runs. The fastest thing on the mountain: one loud noise and it's gone.
+- **Changes:** none.
+
+**Remembered**
+- *First sight:* "White. Fast. Gone."
+- *Insight 2–4:* "Big feet. It kicks."
+- *Insight 5+:* "One loud noise and it's gone."
+- *Margin, Pada:* "Snare, don't chase. You won't catch it running. Nobody does."
+
+### Shepherd of the Deer (boss)
+**Design**
+- **Where:** the snow in the alpine forest (troop 28; Act 2, or later). The Lady's husband, guardian of the wild
+  herds. **Calls his herd in two waves:** an eagle and a ram at 70% Health, two more at 35% (troop events).
+- **Stats:** 800 / 20 / 10 / 48 (MAT 16). **Moves:** Crook Strike; Lead Astray (the whole party may be
+  Disoriented, 60%); Garo (his stealth song, when hurt: he and his herd are hard to hit, Evasion +50%).
+- **Talk:** spirit. **A rite works far better than a threat:** priests teach him songs. Asked when Calm, he gives the
+  meadow's terms, and the party gets Speed up for 3 turns.
+- **Sees the Ghost** (a spirit).
+- **Tactics (tier 3):**
+  - **Lead astray, then strike:** Lead Astray while the party is steady; Crook Strike whoever is lost.
+  - **The herd fights for him:** the rams work themselves up and charge, the eagles cut and rend.
+  - Garo when he's hurt: the whole herd melts into the snow (hard to hit).
+- **Changes:** `<Follow Up: Disoriented +30>`.
+- **Balance** (Act 2 party, attacking only): won nine fights in ten, at about 70% of the party's Health.
+
+**Remembered**
+- *First sight:* "A man with antlers. Or a deer with hands."
+- *Insight 2–4:* "Everything looks the same when he sings. Then the crook comes."
+- *Insight 5+:* "He wants a song, not a fight. Sib knows songs."
+- *Margin, Sib:* "Priests teach him songs. That's in the oldest rites. I never thought I'd be the one singing."
+- *Margin, Juda:* "He's always loved a new song. I taught him several, long ago. Ask him which."
+
+### Lady of the Woods, alpine aspect (boss) and the Stern Centaur
+**Design**
+- **Where:** the high pines (troop 50). The Lady's cold high-forest body: polite but cold. **Courtesy works** (Ask,
+  Rite); gifts insult her; tears don't move her; threats are unforgivable. At half Health she becomes the **Stern
+  Centaur** (troop event).
+- **The Lady:** 900 / 20 / 13 / 40 (MAT 20). **Moves:** Horned Rebuke; Snowfall (air, the whole party: Chilled,
+  30%); Falling Boughs (earth, the whole party); Cold Composure (Endurance and Resolve up, when hurt); Huhuti (her
+  glyph: Entangled, 60%).
+- **The Stern Centaur:** 560 / 24 / 14 / 46 (MAT 22). **Moves:** Spear of the Pines; Hoofbeat (the whole party);
+  Frost of the Heights (air, the whole party: Chilled, 50%); Huhuti. A judge with a spear: only formal questions and
+  rites reach her now.
+- **Talk:** spirit. Asked properly when Calm, she gives the high forest's stricter terms (no fire above the
+  treeline, no felling the old pines, one beast of the herd per family per winter).
+- **Sees the Ghost** (spirits).
+- **Tactics (tier 3):**
+  - **Her own combo:** Snowfall leaves the party Disoriented; Falling Boughs then turns that into Grounded (attack
+    halved). The tactics find it by themselves.
+  - **Bind, then strike:** Huhuti entangles; then Horned Rebuke (the Lady) or Spear of the Pines (the Centaur) on
+    whoever is held.
+  - Cold Composure when she's hurt.
+- **Changes:** `<Follow Up: Entangled +30>` (both).
+- **Balance** (attacking only): not won. **The fight is the failure:** courtesy and the right rite are the way.
+
+**Remembered**
+- *First sight:* "The Lady again. Cold now. Very polite."
+- *Insight 2–4:* "Snow, then branches. Then you can't hit hard. Then she ties you up."
+- *Insight 5+:* "Ask her properly. Don't give her food. Don't cry."
+- *Margin, Pada:* "Bow. Ask. Wait. Then ask again, slower."
+- *Margin, Falmi (later):* "This is Mother when she's being a JUDGE. I hate it when she's a judge. I love her. I
+  hate it."
+
+---
+
 ## Open questions
 
 - **Built:** the tactics plugin, every change marked `NEW` above and every section's **Changes** (the coast's too)
@@ -832,8 +945,7 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
     children until he's below half Health);
   - "most dangerous" and "smallest" targets come from the scoring (fast or hard-hitting targets are worth
     more for disabling states; the Barn Owl `<Prefers: child>`).
-- **Next area,** in story order: the alpine meadows and the snow (the Shepherd of the Deer, the Lady's alpine
-  aspect).
+- **Next area,** in story order: the highlands and the volcanic desert (Act 3).
 
 **Decided:** the early enemies keep their stats (their data notes now give the right acts); ravens see the
 dead; enemies can see Lasa; margin notes are in each character's voice (concept.md, "Voices").
