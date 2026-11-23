@@ -168,6 +168,7 @@ Each took a mortal husband over the centuries, who eventually became minor gods 
 | Lady of the Wind | Marsh, coasts, mountain peak | The Bull of Water |
 | Lady of the Sun | Once the desert (now chained) | The Bull of Heaven |
 | Lady of the Mountains (the Dark Lady and the Red Lady) | The crater rim; now the Seafarer capital | The King of All the Sea, the Charging Bull |
+| Lady of the Sword (a Seafarer goddess) | **Star metal**: iron-bearing meteorites, which bind the Destroyer | (open) |
 
 ---
 
@@ -402,6 +403,12 @@ chain spells to neutralize divine punishment: **Juda silenced his own accuser.**
 *In the game:* absent at first; once freed, a divine justice figure. His bellowing outside Juda's
 house is a mystery clue: if the Bull of Heaven marks your door, what did you do?
 
+### The Lady of the Sword
+A goddess, and a Seafarer. Her domain is **star metal**: **iron-bearing meteorites**, like the iron sword
+she wields. **Star metal binds the Destroyer.** In Act 5 she fights for the Princess (an Act 5 boss; see
+concept.md, "Seafarer enemies").
+*Open:* whether she serves the Princess willingly or bound, and her husband(s).
+
 ### Servants of the Destroyer
 - **Black Hounds:** demonic wolf-like beasts with shaggy black fur and glowing red eyes, born from
   minor demons possessing the corpses of rabid dogs. They live in deep mountain caves and emerge at
@@ -630,7 +637,7 @@ forbidden**: Sib learned it from **notes Juda made about Builder homunculus prod
 **Only priests and potential priests can see ghosts without help:** twins, orphans, intersex and third
 gender people, and those who "died and came back". Belief is magic on the island: because the culture
 counts them as priests, they can see the dead. Ordinary people, adults and children alike, cannot.
-(Children see the Children of the Caves, not ghosts.) **Sib** (intersex, third gender, and a priest's
+(Children see the Children of the Caves, not ghosts.) **Omen birds see the dead too:** ravens see ghost Yoon. **Sib** (intersex, third gender, and a priest's
 apprentice) and **Yoon's twin siblings** can all see ghost Yoon.
 
 **Yoon counts as a priest.** Yoon literally died and came back, the purest case of what drowning
@@ -649,7 +656,8 @@ how he based the first glyphs on the **crack patterns in eggshells**. Some glyph
 
 **Where tattoos go:** the lower and upper arms, and **the face, which only priests may tattoo**. Yoon's
 face carries a glyph nobody can read, which holds their ghost abilities: **the name of the
-Destroyer** (revealed later).
+Destroyer** (revealed later). **The glyph is new:** it came with Yoon's death, and it **carries over to the
+new body**.
 
 ### Weapons and metal
 - Islanders make **copper spears, axes, maces and long knives**, but **not swords proper**. Their only
@@ -689,7 +697,7 @@ Destroyer** (revealed later).
 | **Coral** | Studs on clubs (rasping, festering cuts; the **Coral-Studded Club** draws on water magic); inlays as glyph foci. **Builder "grown" coral**, magic-hardened, for rare, unsettling blades from the ruins | Natural coral is too brittle for an edge; it's the same material as the soul-holding moai eyes |
 | **Ceramic** (fired clay) | Cheap mace heads | Brittle: hits hard and shatters. Fired earth, so it lends itself to earth magic. Any village with a kiln can make it |
 | **Obsidian** and fire | — | Volcanic glass carries the mountain's fire: every obsidian weapon strengthens fire magic |
-| **Star-metal** | A late-game weapon tied to **the Destroyer** | Iron from the stolen star's fall: a piece of what he took. Open question: taken from his side, or forged or hidden by Juda? |
+| **Star-metal** | A late-game weapon tied to **the Destroyer** | Iron from the stolen star's fall: a piece of what he took. **It binds him**, and it is the **Lady of the Sword's** domain. Open question: taken from his side, or forged or hidden by Juda? |
 
 ### Woods (decided)
 | Wood | Where | Used for | Notes |
@@ -1515,7 +1523,8 @@ Sun and the Destroyer lean Fire.
 - **Spells as glyphs** (decided; see concept.md "Spell acquisition"): Islanders through **tattoo**
   slots, Seafarers through a **codex**, Tou, Falmi and Lasa innately.
   - **Yoon's "Infernal" skills** could be **Destroyer glyphs**: the demon in Yoon showing through.
-  - **Yoon's homunculus body starts without the old Yoon's tattoos**, a quiet loss.
+  - **Yoon's homunculus body starts without the old Yoon's tattoos**, a quiet loss; only the face glyph
+    (the Destroyer's name) carries over.
 - **Demons and Yoon:** if Yoon is a demon, Yoon is a creation of the Destroyer, which is why the
   Hags (demon-possessed) recognize kin and dote on Yoon.
 

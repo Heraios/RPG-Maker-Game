@@ -25,8 +25,10 @@ best (with some randomness, so enemies stay readable but not robotic). Database 
 - **Telegraphing:** smart plans show (a line in the log, or a tell Yoon can read), so the player can always
   answer them.
 - **Who can see the Ghost:** only priests and "potential priests" can see ghosts (lore.md, "Seeing the dead").
-  **Ordinary animals never single out Ghost Yoon**; party-wide attacks still catch him. Omen creatures and fae
-  **can** see him (marked **Sees the Ghost** below).
+  **Ordinary animals never single out Ghost Yoon**; party-wide attacks still catch him. Omen creatures (ravens,
+  the Owls of Ill Omen) and fae **can** see him (marked **Sees the Ghost** below).
+- **Everyone can see Lasa** in battle, adults included, even though the lore says the Children of the Caves
+  are seen only by children: whatever she bites can see her.
 
 **Entry legend.** Stats are HP / ATK / DEF / AGI. *Tactics* is the planned behaviour; *Changes* are edits to the
 database this would need (`NEW` = a new skill or tag). Remembered lines unlock: **First sight** (fought or
@@ -54,7 +56,7 @@ The Ghost and Lasa alone at first: the Ghost can't deal damage, so fights here a
 - *First sight:* "Small. Loud. Many."
 - *Insight 2–4:* "They follow each other. Where one bites, all bite."
 - *Insight 5+:* "They hate noise and light. Shout, and they go."
-- *Margin, Lasa:* "they're my neighbours!! they're RUDE neighbours"
+- *Margin, Lasa:* "Neighbours! Rude neighbours! Rude, rude, RUDE neighbours. Don't let them nibble Sib. Sib breaks."
 
 ---
 
@@ -77,7 +79,7 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *First sight:* "Big bug. Too loud."
 - *Insight 2–4:* "It sings first. Then it kicks the one who's dizzy."
 - *Insight 5+:* "It scares easy. Give it bread."
-- *Margin, Sib:* "Crickets are lucky. Not this one."
+- *Margin, Sib:* "Um. Crickets are good luck. In a house. This one isn't in a house. Or lucky."
 
 ### Rock Lizard
 **Design**
@@ -95,7 +97,7 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *First sight:* "Rock that runs."
 - *Insight 2–4:* "Hurt it, and it lies in the sun to get better."
 - *Insight 5+:* "Fast when it's warm. Slow when it's not. Fight it at night."
-- *Margin, Lasa:* "it did push-ups at me. i did push-ups back. we're even"
+- *Margin, Lasa:* "It did push-ups at me! So I did push-ups back! We're friends now. Mostly. It bit Sib, so: mostly."
 
 ### Raven
 **Design**
@@ -103,7 +105,7 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - **Stats:** 26 / 8 / 2 / 52. **Moves:** Peck; Ill Omen (Despair, 30%).
 - **Talk:** animal. Likes Raw Meat, Cricket Legs.
 - **Drops:** Raven Feather 1/8, Scrap Copper 1/6, Barley 1/4.
-- **Sees the Ghost** (an omen bird; a suggestion, not yet lore).
+- **Sees the Ghost** (an omen bird; lore.md, "Seeing the dead").
 - **Tactics (instinct):**
   - **Ill Omen** caws only at the Ghost, or at whoever isn't already in Despair. Unsettling, nearly harmless.
   - **Follows the Vulture:** with a Vulture in the fight, ravens peck whoever the Vulture picked.
@@ -112,7 +114,7 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *First sight:* "Black bird. It looks at me. Only it looks at me."
 - *Insight 2–4:* "It sees me. Birds that see me are bad news, Sib says."
 - *Insight 5+:* "It wants meat, not bread."
-- *Margin, Sib:* "Ravens see the dead. Everyone knows that. Please stop waving at them."
+- *Margin, Sib:* "Ravens see the dead. That's in every rite. So, um. Please stop waving at them."
 
 ### Vulture
 **Design**
@@ -131,7 +133,7 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *First sight:* "Big bird. Waiting."
 - *Insight 2–4:* "It waits for someone to fall. Then it comes."
 - *Insight 5+:* "It doesn't want me. I've got nothing it wants."
-- *Margin, Lasa:* "rude!!!! yoon is DELICIOUS probably"
+- *Margin, Lasa:* "It won't even look at Yoon! Rude! ...No, wait, that's good. That's good! Keep Sib away from it. Sib's squishy."
 
 ### Owl of Ill Omen
 **Design**
@@ -149,7 +151,7 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *First sight:* "Owl. Wrong eyes."
 - *Insight 2–4:* "It drinks. It likes the ones who bleed."
 - *Insight 5+:* "It won't look at me. It answers to something older, from the towers."
-- *Margin, Sib:* "Set loose on people who hurt the forest. So what did we do?"
+- *Margin, Sib:* "They're set on people who harm the forest. Um. So someone thinks we did. We didn't. ...Did we?"
 
 ---
 
@@ -174,7 +176,7 @@ the end of Act 2); Pada joins after the Parl quest.
 - *First sight:* "Sheep. Wild ones. Rude ones."
 - *Insight 2–4:* "Hit one and they all come. Scare one and they all run."
 - *Insight 5+:* "It'll eat anything. Then want more. Bread works."
-- *Margin, Pada:* "Old Yballa's strays. Don't tell her we fought them."
+- *Margin, Pada:* "Old Yballa's strays. Don't tell her."
 
 ### Wild Boar
 **Design**
@@ -192,7 +194,7 @@ the end of Act 2); Pada joins after the Parl quest.
 - *First sight:* "Pig. Angry pig."
 - *Insight 2–4:* "Hurt it and it gets braver, not scared."
 - *Insight 5+:* "It wants the bread in my bag."
-- *Margin, Pada:* "The Lady's children, in a way. Take only what you need."
+- *Margin, Pada:* "Lady's beasts. Take what you need. No more."
 
 ### Barn Owl
 **Design**
@@ -208,7 +210,7 @@ the end of Act 2); Pada joins after the Parl quest.
 - *First sight:* "Owl. A real one."
 - *Insight 2–4:* "You don't hear it until it's on you. It goes for the small ones."
 - *Insight 5+:* "Its eyes are only eyes."
-- *Margin, Sib:* "Not every owl is an omen. Most of them are just owls."
+- *Margin, Sib:* "Not every owl is an omen. Most owls are just... owls. That one's an owl. Probably."
 
 ---
 
@@ -232,7 +234,7 @@ down through the tubes.
 - *First sight:* "Rats. Big. A lot."
 - *Insight 2–4:* "They all bite the one who's bleeding most."
 - *Insight 5+:* "Hungry, and greedy with it. Hold on to the food."
-- *Margin, Lasa:* "they ate my beetle collection once. we are NOT friends"
+- *Margin, Lasa:* "They ate my beetles! All my beetles! My whole collection! I'm never talking to them. Never ever."
 
 ### Cave Spider
 **Design**
@@ -248,7 +250,7 @@ down through the tubes.
 - *First sight:* "Pale. Too many legs."
 - *Insight 2–4:* "It ties one up. Then it bites the one it tied."
 - *Insight 5+:* "Light bothers it. Its web is behind it."
-- *Margin, Sib:* "Don't let it near your face. Please."
+- *Margin, Sib:* "Um. If it goes for my face I'm going to scream. That isn't a rite. I'm just telling you."
 
 ### Cave Girl and Cave Boy (Children of the Caves)
 **Design**
@@ -271,7 +273,7 @@ down through the tubes.
 - *First sight:* "Kids. Underground kids. Laughing."
 - *Insight 2–4:* "One blinds you. The other takes your shiny things."
 - *Insight 5+:* "They hum an old tunnel song. Lasa knows it."
-- *Margin, Lasa:* "my cousins!!! sort of!!! give the figs BACK"
+- *Margin, Lasa:* "Cousins! Sort-of cousins! Give the figs back, those are MY figs! ...Ours. Mostly mine."
 
 ---
 
@@ -298,7 +300,7 @@ electricity hits Wet targets harder.
 - *First sight:* "Worm. On Sib. On SIB."
 - *Insight 2–4:* "It won't let go. Salt makes it let go. Fire too."
 - *Insight 5+:* "Mada keeps them in a jar. For medicine. Mada is brave."
-- *Margin, Sib:* "Get it OFF get it OFF"
+- *Margin, Sib:* "Get it off—get it OFF—salt! Mada says salt! Who has salt?"
 
 ### Marsh Eel
 **Design**
@@ -315,7 +317,7 @@ electricity hits Wet targets harder.
 - *First sight:* "Snake. Wet snake. Bites."
 - *Insight 2–4:* "It bites, then it hides in the water. It makes you wet."
 - *Insight 5+:* "It only wants its reeds. Leave the reeds."
-- *Margin, Lasa:* "slippy!!!"
+- *Margin, Lasa:* "Slippy! Slippy, slippy. You humans can't even swim properly. It's adorable."
 
 ### Crane
 **Design**
@@ -331,7 +333,7 @@ electricity hits Wet targets harder.
 - *First sight:* "Tall bird. Spear face."
 - *Insight 2–4:* "It goes for the wet one. It thinks we're fish."
 - *Insight 5+:* "Just a crane. Probably. Look at its eyes."
-- *Margin, Sib:* "Old Guacimara says any crane might be a Hag. Any crane."
+- *Margin, Sib:* "Old Guacimara says any crane might be a Hag. Any crane. Um. That's a lot of cranes."
 
 ### Heron
 **Design**
@@ -348,7 +350,7 @@ electricity hits Wet targets harder.
 - *First sight:* "Another tall bird. Different."
 - *Insight 2–4:* "It waits. The frogs make you wet. Then it comes."
 - *Insight 5+:* "Just a heron. Really. Its eyes blink the right way."
-- *Margin, Lasa:* "it stood on one leg for SO long. i tried. i fell in"
+- *Margin, Lasa:* "It stood on one leg for SO long! I tried! I fell in. Twice. Don't tell Sib."
 
 ### Marsh Frog
 **Design**
@@ -365,7 +367,7 @@ electricity hits Wet targets harder.
 - *First sight:* "Frog. Big as Patience."
 - *Insight 2–4:* "It jumps on you and you get wet. Then the birds come."
 - *Insight 5+:* "All it wants is to sit in the mud."
-- *Margin, Lasa:* "i LOVE him"
+- *Margin, Lasa:* "I love him! I love him! Can we keep him? He's so squishy! Squishier than Sib!"
 
 ### Water Snake
 **Design**
@@ -381,7 +383,7 @@ electricity hits Wet targets harder.
 - *First sight:* "Snake. Scared snake."
 - *Insight 2–4:* "Make yourself big and it goes."
 - *Insight 5+:* "It only bites once. It doesn't want more."
-- *Margin, Sib:* "Its bite is Venom. Mada has a remedy. Remember Mada has a remedy."
+- *Margin, Sib:* "Venom. Mada makes a remedy for that. Remember that Mada makes a remedy. Please remember."
 
 ### Marsh Hag (and the false Crane)
 **Design**
@@ -405,8 +407,8 @@ electricity hits Wet targets harder.
 - *First sight:* "Lady. Bird lady. She likes me. I don't like that she likes me."
 - *Insight 2–4:* "She makes you wet, then cold. She kisses and you get weaker."
 - *Insight 5+:* "She never hurts me. She hurts the ones near me."
-- *Margin, Sib:* "Old Guacimara says be polite and never say thank you. Don't say thank you."
-- *Margin, Lasa:* "she said i was a pretty little thing. i hate her"
+- *Margin, Sib:* "Old Guacimara's rules: be polite, never say 'thank you', never eat what she offers. Um. I wrote them down."
+- *Margin, Lasa:* "She called me a pretty little thing! ME! I'm older than her! ...Probably. Maybe."
 
 ### Parl (boss)
 **Design**
@@ -428,19 +430,15 @@ electricity hits Wet targets harder.
 - *First sight:* "Man with a bow. Running."
 - *Insight 2–4:* "He doesn't want to hurt Sib. He keeps missing on purpose."
 - *Insight 5+:* "The pearls are in his pouch."
-- *Margin, Sib:* "He rowed for twenty years. That's a long time to row."
+- *Margin, Sib:* "He says he rowed for twenty years. That's... a long time to row. Um. We still need the pearl."
 
 ---
 
 ## Open questions
 
-- **Areas in the data notes:** some enemies' notes name a later act than where they're placed. The Rock
-  Lizard (note: Act 3), Raven (Act 2) and Vulture (Act 3) all appear in the Act 1 gully, and the Bat
-  (Act 2) in the Act 1 waking tube. Fine if intended, but they were balanced for later parties; the Act 1
-  party is the Ghost, Lasa and Sib.
-- **Ravens seeing the Ghost** is a suggestion, not lore yet.
-- **Margin notes** are drafts in each character's voice.
-- **Can adults see Lasa?** The lore says the Children of the Caves are "seen only by children". If that
-  holds in battle, adult enemies (Parl, soldiers, most beasts?) couldn't single her out either. That would be
-  a big rule; say if you want it.
+- **The tactics plugin** and the database changes marked `NEW` wait until its rules are settled (scope,
+  telegraphing, troop combos).
 - **Next areas,** in story order: the coast (Mansehare's shore), then the laurel forest.
+
+**Decided:** the early enemies keep their stats (their data notes now give the right acts); ravens see the
+dead; enemies can see Lasa; margin notes are in each character's voice (concept.md, "Voices").

@@ -3014,7 +3014,9 @@ Troops 80–97 (test 67). **Talk for the bosses is still to do.**
   (`<Transform At: 50%, enemy 83>`, `archer1`) and fights on foot with a bow. The horse talks as an animal (can't
   be stalked): Soothe it and it bolts with the rider. Drops: Captain Sailor's Compass 1/6, Gilt Armlets 1/12,
   Grog 1/3; Officer Officer's Kilt 1/5, Orchil-Purple Mantle 1/12, Gilt Diadem 1/20; Horseman (both forms)
-  Horsehair 1/2, Driving Gloves 1/5, Cowhide 1/4. All carry the 10% purse. Act 5 Firebrand versions are to do
+  Horsehair 1/2, Driving Gloves 1/5, Cowhide 1/4. All carry the 10% purse. **They are named rivals, not generic ranks:** each
+  is one named Seafarer the party meets again and again. He escapes at low Health and comes back stronger,
+  with a grudge (and, for some, a later choice: defecting to Thenmy in Act 5). Names and encounters to come. Act 5 Firebrand versions are to do
   (`Mm1_09Captain_2`, `Mm1_32Prince_1`, `En3_055Dullahan_C23_S4`).
 - **The Lady of the Sword** is a goddess and a Seafarer. Boss-sized, with boss state resistances like
   Meneswa.
