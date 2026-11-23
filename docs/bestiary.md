@@ -457,6 +457,178 @@ electricity hits Wet targets harder.
 
 ---
 
+## 6. The coast: Mansehare's shore (Acts 1–2)
+
+The black-sand shore, the tide pools and the rocks below Mansehare (map 17), and the haunted coast at night.
+Mostly Act 2 (the Ghost, Sib and Lasa; Pada once the Parl quest is done). **The coast's own combo:** the Monk
+Seal's **Splash** soaks the party **Wet**, and Wet makes every physical hit land 15% harder (the tactics see it
+in their damage sums). Fishing birds hunt the Wet. Water everywhere helps the party too: Sib's lightning hits Wet
+things harder.
+
+### Monk Seal
+**Design**
+- **Where:** the shore rocks (troop 6, ×2 with Red Rock Crabs ×2).
+- **Stats:** 100 / 10 / 6 / 24. **Moves:** Body Slam; Bellow (the party may Panic, 25%); Splash (soaks everyone:
+  Wet, 70%).
+- **Talk:** animal; starts **Wary** (territorial in season). Likes Dried Fish, Shellfish.
+- **Drops:** Raw Meat 1/1, Hide 1/2, Seal Skin 1/2.
+- **Tactics (instinct):**
+  - **Territory:** Bellow on turn 1 if nobody is Panicked yet.
+  - **Splash** when the party is dry: it sets up its own Body Slams and the crabs' pinches.
+  - **Body Slam** whoever is Wet.
+- **Changes:** `<Follow Up: Wet +20>`.
+
+**Remembered**
+- *First sight:* "Big. Fat. Loud. Wet."
+- *Insight 2–4:* "It shouts first. Then it splashes. Then it lands on you."
+- *Insight 5+:* "It's only guarding the rocks. Back off and it stops."
+- *Margin, Lasa:* "A dog that gave up on legs! I love it. It hates me. I still love it."
+- *Margin, Dama (later):* "Seals. They steal from the nets and look sorry about it. They're not."
+
+### Red Rock Crab
+**Design**
+- **Where:** the lava shore (troop 4, ×5; troop 6, with the Monk Seals).
+- **Stats:** 24 / 9 / 14 / 28. **Moves:** Pinch; Withdraw (Endurance up, at or below half Health).
+- **Talk:** animal. Likes Dried Fish, Shellfish.
+- **Drops:** Shell 1/2, Raw Meat 1/3, Coral 1/6.
+- **Tactics (instinct):**
+  - **Shell:** it pulls in when hurt (Withdraw), so a hurt crab is a waste of a slashing attack.
+  - **Pack:** crabs pinch whoever another crab just pinched.
+- **Changes:** `<Pack>`.
+
+**Remembered**
+- *First sight:* "Red rock with pinchers."
+- *Insight 2–4:* "Hurt it and it hides in its shell. Hit it hard, not fast."
+- *Insight 5+:* "A loud noise sends it running."
+- *Margin, Sib:* "Crush, not cut. Tinguaro says crabs taught the first smiths about armour. Um. I think that's a joke."
+
+### Shore Crab
+**Design**
+- **Where:** the black-sand shore and tide pools (troop 53, ×3; troop 54, with the Spider Crab).
+- **Stats:** 34 / 10 / 12 / 30. **Moves:** Pinch; Withdraw (at or below half Health).
+- **Talk:** animal.
+- **Drops:** Shellfish 1/2, Shell 1/3.
+- **Tactics (instinct):** as the Red Rock Crab (`<Pack>`, withdraws when hurt). With a Spider Crab, it follows the
+  big one.
+- **Changes:** `<Pack>`.
+
+**Remembered**
+- *First sight:* "Crab. Another crab. More crabs."
+- *Insight 2–4:* "Hard on top. Soft under. Crush it."
+- *Insight 5+:* "They follow the big one."
+- *Margin, Parl (later):* "Not touching it. Not even to fight it. My god takes shells very seriously."
+
+### Spider Crab
+**Design**
+- **Where:** the shore (troop 54: with Shore Crabs ×2, and two more it calls in at 70% Health).
+- **Stats:** 90 / 13 / 16 / 26. **Moves:** Long Claw (Entangled, 40%); Pinch; Scuttle Call (more crabs come).
+- **Talk:** animal. Likes Raw Fish, Shellfish.
+- **Drops:** Shellfish 1/1, Shell 1/2 (×2).
+- **Tactics (instinct):**
+  - **Hold and pinch:** Long Claw first, then Pinch whoever it holds.
+  - **The leader:** beat it and the little crabs lose heart (its tell already says so).
+- **Changes:** `<Follow Up: Entangled +30>`; `<Morale Leader: 25>` (the Captain's tag: its crabs gain mood when it
+  falls).
+- **Balance** (animal sim, Act 1 party, tactics on): always won, but about 78% of the party's Health. The coast's
+  hardest fight early on.
+
+**Remembered**
+- *First sight:* "Crab with too-long legs. Too big."
+- *Insight 2–4:* "It holds you with one claw and pinches with the other."
+- *Insight 5+:* "The little crabs follow it. Beat it and they scatter."
+- *Margin, Lasa:* "It looks like a spider and a crab had an argument. Both of them lost."
+
+### Gannet
+**Design**
+- **Where:** the sea cliffs and shore (troop 52, ×2).
+- **Stats:** 45 / 11 / 3 / 54. Flying. **Moves:** Plunge Dive; Peck.
+- **Talk:** animal. Likes Raw Fish.
+- **Drops:** Seabird Feather 1/2, Raw Fish 1/3.
+- **Tactics (instinct):**
+  - **Fishing:** it dives at whoever is Wet first (wet things look like fish), like the marsh's Cranes.
+  - **Plunge Dive** for big hits; Peck when the target is already low.
+- **Changes:** `<Prefers: Wet, Sodden>`.
+- **Balance** (Act 1 party): won three fights in four. Hard for the Ghost, Sib and Lasa.
+
+**Remembered**
+- *First sight:* "White bird. Falls out of the sky. On purpose."
+- *Insight 2–4:* "It goes for the wet one. It thinks we're fish."
+- *Insight 5+:* "It's fishing. We're in the way."
+- *Margin, Dama (later):* "Gannets show you where the fish are. Follow the gannets, not the men."
+
+### Shearwater
+**Design**
+- **Where:** the haunted coast at night only (troop 51, ×4; a `<Night Troops>` encounter).
+- **Stats:** 22 / 7 / 2 / 50. Flying. **Moves:** Peck; Crying Chorus (the party may Panic, 25%).
+- **Talk:** animal. Likes Raw Fish.
+- **Drops:** Seabird Feather 1/3, Seabird Eggs 1/4, Shearwater Oil 1/10.
+- **Tactics (instinct):**
+  - **The chorus first:** Crying Chorus while nobody is Panicked; then they peck the Panicked.
+  - **Pack:** the flock follows the first bird's target.
+- **Changes:** `<Pack>`; `<Follow Up: Panicked +20>`.
+- **Balance** (Act 1 party): always won, about 68% of the party's Health. Night on the coast is meant to be eerie.
+
+**Remembered**
+- *First sight:* "Babies. Crying. In the dark. Birds?"
+- *Insight 2–4:* "They cry until you're scared. Then they come."
+- *Insight 5+:* "They're only birds. They only SOUND like babies."
+- *Margin, Sib:* "The old stories say the Master of Deception wept like a child to lure people into the sea.
+  Um. I'd rather not think about that right now."
+
+### Jellyfish
+**Design**
+- **Where:** drifting in shallow water off the shore (troop 55, ×3).
+- **Stats:** 30 / 8 / 1 / 20. **Moves:** Sting (Venom, 40%). Stings anyone who hits it with a weapon (`<Stings:
+  Venom 30>`).
+- **Talk:** none: it doesn't think.
+- **Drops:** Venom Sac 1/4, Sea Salt 1/3.
+- **Tactics (tier 0):** none. It drifts. The danger is touching it: magic, slings and nets are the answer.
+
+**Remembered**
+- *First sight:* "Water that bites."
+- *Insight 2–4:* "Don't hit it with your hands. Or a knife. Or anything you're holding."
+- *Insight 5+:* "It isn't angry. It isn't anything."
+- *Margin, Lasa:* "I poked one. Don't poke one."
+
+### Moray Eel
+**Design**
+- **Where:** the Mansehare tide pools (troop 23, ×3; troop 24, with an Octopus).
+- **Stats:** 40 / 12 / 4 / 44. **Moves:** Moray Bite (Bleed, 30%); Grapple (Entangled, 50%).
+- **Talk:** animal. Likes Raw Fish.
+- **Drops:** Raw Eel 1/2, Eel Skin 1/4.
+- **Tactics (instinct):**
+  - **Grab and bite:** Grapple, then bite whoever it holds (`<Follow Up: Entangled +30>`, already in).
+  - **Home:** it only wants its hole back; alone and hurt, it slips away.
+- **Changes:** `<Flees When: alone & 30%>`.
+
+**Remembered**
+- *First sight:* "Snake in a hole. Lots of teeth."
+- *Insight 2–4:* "It grabs, then it bites the one it's holding."
+- *Insight 5+:* "It only wants its hole back."
+- *Margin, Dama (later):* "Morays bite once and don't let go. Mind your fingers in the pools."
+
+### Octopus
+**Design**
+- **Where:** the Mansehare shore (troop 24, with Moray Eels ×2).
+- **Stats:** 55 / 10 / 4 / 40. **Moves:** Grapple (Entangled, 50%); Ink Cloud (Dazzled, 70%); Drag Below (pulls a
+  victim down; hit the octopus to free them).
+- **Talk:** animal; curious, not hungry. Likes Shellfish.
+- **Drops:** Octopus Ink 1/2, Octopus 1/2, Shell 1/4.
+- **Tactics (instinct, clever for an animal):**
+  - **Ink first:** Ink Cloud at whoever hits hardest (the scoring already favours Dazzling hard hitters).
+  - **Grab, then pull:** Grapple, then Drag Below whoever it holds: a combo inside one creature.
+  - **Escape artist:** below 30% Health it jets away.
+- **Changes:** `<Follow Up: Entangled +30>`; `<Flees When: 30%>`.
+
+**Remembered**
+- *First sight:* "Too many arms. All of them grabbing."
+- *Insight 2–4:* "It squirts black. Then it holds you. Then it pulls you under."
+- *Insight 5+:* "It's curious, not hungry. It likes shellfish."
+- *Margin, Lasa:* "It took my shiny stone and gave me a different shiny stone. Fair trade!"
+- *Margin, Parl (later):* "The one sea creature my god lets me eat. Don't tell it that."
+
+---
+
 ## Open questions
 
 - **Built:** the tactics plugin and every change marked `NEW` above are in the game (test 68). Some plans
@@ -469,7 +641,7 @@ electricity hits Wet targets harder.
     children until he's below half Health);
   - "most dangerous" and "smallest" targets come from the scoring (fast or hard-hitting targets are worth
     more for disabling states; the Barn Owl `<Prefers: child>`).
-- **Next areas,** in story order: the coast (Mansehare's shore), then the laurel forest.
+- **Next area,** in story order: the laurel forest.
 
 **Decided:** the early enemies keep their stats (their data notes now give the right acts); ravens see the
 dead; enemies can see Lasa; margin notes are in each character's voice (concept.md, "Voices").
