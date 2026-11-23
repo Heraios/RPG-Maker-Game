@@ -2774,7 +2774,7 @@ Hoard** chest, which gives back everything stolen.
 | Cave Girl | 33 | 5 | 3 | 42 | Blinding Light (Dazzled), Pilfer | Prankster. Lasa: instant | — |
 | Cave Boy | 39 | 6 | 4 | 38 | Pantsing, Pilfer | Prankster. Lasa: instant | — |
 | Forest Imp | 27 | 5 | 3 | 48 | Trip (Disoriented), Mock (Panicked) | Prankster. Threaten: flees. Plead +40. Falmi: instant | — |
-| Green Horse | 50 | 8 | 4 | 50 | Trample | 60% evasion, **0 while Wet/Sodden/Burdened/Mired**. Fire ×2. No talk | — |
+| Green Horse | 50 | 8 | 4 | 50 | Hoof Strike | 60% evasion, **0 while Wet/Sodden/Burdened/Mired**. Fire ×2. No talk | — |
 | Boar-Man | 110 | 15 | 8 | 30 | Club (crush), Spear (pierce) | Soothe +15, Plead +20, **Offer −15**, Threaten +5 | — |
 | Owl of Ill Omen | 55 | 12 | 4 | 50 | Saber Beak (drain, Bleed 30%) | Flying. Tou: instant | Owl Feather (1/2) |
 
@@ -2840,7 +2840,7 @@ Dragged Below, Hypnotized, Salting, Stunned and Confused.
 | Black Hound Alpha | 260 | 22 | 12 | 0 | 54 | Rending Bite, Drag Down, Howl of the Pit | Fire ×0.5, Water ×1.5 | no Talk |
 | Hunched | 100 | 15 | 8 | 0 | 26 | Corpse Claw, Grave Breath | Fire ×1.5 | Talk: spirit |
 | Hunched Defiler | 180 | 12 | 10 | 20 | 30 | Defile, Pyre Breath, Corpse Claw | Fire ×1.25 | Talk: spirit |
-| The Bull of the Caves | 950 | 21 | 15 | 15 | 38 | Gore, Fire Breath, Cave Stampede | Fire ×0, Water ×1.5 | no Talk |
+| The Bull of the Caves | 950 | 21 | 15 | 15 | 38 | Molten Gore, Fire Breath, Cave Stampede | Fire ×0, Water ×1.5 | no Talk |
 | Juda | 550 | 13 | 12 | 13 | 34 | Ritual Knife, Pyre, Ahigun, Chlorine Cloud, Mahu | Fire ×0.5 | no Talk |
 
 **Troop events** (in the Troops tab, editable):
