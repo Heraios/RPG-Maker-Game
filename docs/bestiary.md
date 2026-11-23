@@ -3,8 +3,8 @@
 Every creature the party can fight, **area by area in the order the player reaches them**. Each entry has
 two halves:
 
-1. **Design**: what it is in the database (stats, moves, Talk, drops) and how it should **fight smart** once
-   the tactics plugin exists (`SI_Tactics.js`, planned; see "How enemies think" below).
+1. **Design**: what it is in the database (stats, moves, Talk, drops) and how it **fights smart** with the
+   tactics plugin (`SI_Tactics.js`; see "How enemies think" below).
 2. **Remembered**: a draft of its in-game entry in the **Remembered → Creatures** tab of the Memory menu
    (concept.md, "Memory (the journal)"). Written in **Yoon's voice**, unlocked a line at a time by Insight
    and Talk, with **margin notes** from party members. When `SI_Journal.js` gets its Creatures tab, these
@@ -16,7 +16,7 @@ Companion to [concept.md](concept.md) (systems, balance) and [lore.md](lore.md) 
 
 ## How enemies think
 
-The planned `SI_Tactics.js` scores each move against each possible target before acting, then picks among the
+`SI_Tactics.js` scores each move against each possible target before acting, then picks among the
 best (with some randomness, so enemies stay readable but not robotic). Database ratings stay the base weight.
 
 - **Tiers** (`<Tactics: 0-3>`): **0–1 instinct** (animals: packs, grudges, fleeing, opportunism), **2 tactics**
@@ -30,8 +30,8 @@ best (with some randomness, so enemies stay readable but not robotic). Database 
 - **Everyone can see Lasa** in battle, adults included, even though the lore says the Children of the Caves
   are seen only by children: whatever she bites can see her.
 
-**Entry legend.** Stats are HP / ATK / DEF / AGI. *Tactics* is the planned behaviour; *Changes* are edits to the
-database this would need (`NEW` = a new skill or tag). Remembered lines unlock: **First sight** (fought or
+**Entry legend.** Stats are HP / ATK / DEF / AGI. *Tactics* is the planned behaviour; *Changes* are the database edits it
+needed (`NEW` = a new skill or tag); all made, with the plugin. Remembered lines unlock: **First sight** (fought or
 talked to once), **Insight 2–4**, **Insight 5+**, and **Talked down** (pacified once).
 
 ---
@@ -436,8 +436,16 @@ electricity hits Wet targets harder.
 
 ## Open questions
 
-- **The tactics plugin** and the database changes marked `NEW` wait until its rules are settled (scope,
-  telegraphing, troop combos).
+- **Built:** the tactics plugin and every change marked `NEW` above are in the game (test 68). Some plans
+  are approximated by the general scoring rather than built exactly:
+  - the false Crane doesn't stare at the Ghost in battle (its tell still says so);
+  - the cave children's Mock and the Raven's Ill Omen aren't aimed at the Ghost on purpose (ravens can
+    target him; the scoring decides);
+  - the Hag doesn't single out whoever stands nearest the Ghost;
+  - Parl doesn't kite or answer his worst attacker with sand (he is `<Reluctant>`: he holds back on
+    children until he's below half Health);
+  - "most dangerous" and "smallest" targets come from the scoring (fast or hard-hitting targets are worth
+    more for disabling states; the Barn Owl `<Prefers: child>`).
 - **Next areas,** in story order: the coast (Mansehare's shore), then the laurel forest.
 
 **Decided:** the early enemies keep their stats (their data notes now give the right acts); ravens see the

@@ -2710,7 +2710,7 @@ end of the target's next own turn. Feverish
 counts as a mental state for Insight's mental resistance. Exceptions: `<Elemental: water>`,
 `<No Elemental States>`, `<Inflict: sodden>` (`SI_ElementalStates.js`).
 
-### Enemy tactics (design; `SI_Tactics.js`, to build)
+### Enemy tactics (`SI_Tactics.js`)
 Enemies that think. RPG Maker's own enemy AI rolls dice over the database ratings and picks targets at
 random; it can't see the party's states or its own allies. **`SI_Tactics.js` replaces how an enemy chooses
 its move and target** with a scoring pass. Everything after the choice (damage, states, Talk, the turn
@@ -3140,7 +3140,7 @@ Troops 80–97 (test 67). **Talk for the bosses is still to do.**
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
-| Enemy tactics (`SI_Tactics.js`) | Designed (see "Enemy tactics"); to build |
+| Enemy tactics (`SI_Tactics.js`) | Done: see "Enemy tactics"; test 68. Scoring weights to tune with the sims |
 | Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js` (with drops, Talk, the troop purse and troops 80–97); boss Talk to do |
 | Automated tests | `tests/` (52 tests, about 560 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
