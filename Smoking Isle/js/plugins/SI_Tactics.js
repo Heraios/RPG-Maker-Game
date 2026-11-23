@@ -85,6 +85,7 @@
  *   <Needs: day, outdoors>      usable only by day / outdoors (Bask)
  *   <Circle>                    the move a <Patient> enemy waits with
  *   <Steal Food>                on a hit, takes one <Meal> item from the bag
+ * Cover (a skill with <Cover>, SI_WeaponArts) is scored by how hurt the ally is.
  *
  * ============================================================================
  * Troop combos
@@ -332,7 +333,11 @@ SmokingIsle.Tactics = SmokingIsle.Tactics || {};
                 } else if (e.code === Game_Action.EFFECT_ADD_STATE && e.dataId > 0) {
                     var state = $dataStates[e.dataId];
                     if (target.isStateAffected(e.dataId) || target.isStateResist(e.dataId) || target.stateRate(e.dataId) === 0) { stateV -= $.W.waste; return; }
-                    if (friendly) { stateV += $.W.state * e.value1; return; }
+                    if (friendly) {
+                        // Cover (a bodyguard move) is worth what the ally stands to lose: nothing on a healthy ally or on itself.
+                        if (/<Cover>/i.test(skill.note || '')) { stateV += target === enemy ? -$.W.waste : 60 * (1 - target.hpRate()) - 10; return; }
+                        stateV += $.W.state * e.value1; return;
+                    }
                     stateV += e.value1 * target.stateRate(e.dataId) * $.stateWorth(state, target, opponents);
                     setup = true;
                     combos.forEach(function(c) { if (c.type === 'state' && c.a === myName && $.stateId(c.state) === e.dataId) stateV += $.W.setup; });

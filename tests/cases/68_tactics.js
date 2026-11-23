@@ -111,7 +111,15 @@ module.exports = {
             const bite = new Game_Action(eel); bite.setSkill($dataSkills.find(s => s && s.name === 'Eel Bite').id); bite.applyGlobal();
             out.submerged = eel.isStateAffected(ST('Submerged')) && eel.eva >= 0.5;
 
-            // 12. Default tiers
+            // 12. A Green Horse (fae, tier 2) covers its hurt imp, not a healthy one
+            party([2, 3, 7]);
+            const [imp1, horse, imp2] = troop(['Forest Imp', 'Green Horse', 'Forest Imp']);
+            const hp0 = picks(horse, 60).filter(p => p[0] === 'Cover').length;
+            imp1.setHp(Math.floor(imp1.mhp * 0.3));
+            const hc = picks(horse, 60).filter(p => p[0] === 'Cover');
+            out.coverHealthy = hp0; out.coverHurt = hc.length; out.coverOnHurt = hc.length ? share(hc, p => p[1].endsWith('#0')) : 0;
+
+            // 13. Default tiers
             out.tiers = ['Laurel Pigeon', 'Bat', 'Marsh Hag', 'Seafarer Marine'].map(n => TA.tier(new Game_Enemy(EN(n), 0, 0))).join(',');
             return out;
         });
@@ -132,6 +140,8 @@ module.exports = {
         t.eq(r.breadLeft, 1, 'a rat snatches food from the bag');
         t.ok(/snatches/.test(r.snatchLine), 'with a line: ' + r.snatchLine);
         t.ok(r.submerged, 'an Eel dives after biting (harder to hit)');
+        t.eq(r.coverHealthy, 0, 'a Green Horse doesn\'t Cover while its imps are healthy');
+        t.ok(r.coverHurt >= 20 && r.coverOnHurt >= 0.9, 'it covers the hurt imp (' + r.coverHurt + ' of 60, ' + r.coverOnHurt + ' on the hurt one)');
         t.eq(r.tiers, '0,1,2,2', 'default tiers: prey 0, animals 1, spirits and soldiers 2');
     },
 

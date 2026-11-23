@@ -681,9 +681,10 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 - **Talk:** none (it doesn't answer). Very hard to hit (60% evasion) **until soaked or weighed down** (Wet, Sodden,
   Burdened, Mired); burns easily (Fire ×2).
 - **Drops:** Green Horse Bough 1/4, Horsehair 1/3, Beard Lichen 1/4.
-- **Tactics (tier 0):** guards its riders: now and then it steps in front of an imp (Cover). Tier 0 rolls dice,
-  so it doesn't wait for an imp to be hurt.
-- **Changes:** gains **Cover** (97: takes single attacks meant for an ally).
+- **Sees the Ghost** (fae).
+- **Tactics (tier 2: a fae creature, not a dumb beast):** guards its riders. When an imp is hurt, it steps in front
+  of it (Cover, worth more the more hurt the imp is); otherwise it kicks.
+- **Changes:** gains **Cover** (97: takes single attacks meant for an ally); `<Tactics: 2>`; `<Sees: ghost>`.
 
 **Remembered**
 - *First sight:* "A horse? Leaves in the shape of a horse."
@@ -829,7 +830,6 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
   - the Hag doesn't single out whoever stands nearest the Ghost;
   - Parl doesn't kite or answer his worst attacker with sand (he is `<Reluctant>`: he holds back on
     children until he's below half Health);
-  - the Green Horse covers its imps at random (tier 0), not when one is hurt;
   - "most dangerous" and "smallest" targets come from the scoring (fast or hard-hitting targets are worth
     more for disabling states; the Barn Owl `<Prefers: child>`).
 - **Next area,** in story order: the alpine meadows and the snow (the Shepherd of the Deer, the Lady's alpine
