@@ -631,7 +631,8 @@ things harder.
 
 ## Open questions
 
-- **Built:** the tactics plugin and every change marked `NEW` above are in the game (test 68). Some plans
+- **Built:** the tactics plugin, every change marked `NEW` above and every section's **Changes** (the coast's too)
+  are in the game (test 68). Some plans
   are approximated by the general scoring rather than built exactly:
   - the false Crane doesn't stare at the Ghost in battle (its tell still says so);
   - the cave children's Mock and the Raven's Ill Omen aren't aimed at the Ghost on purpose (ravens can
