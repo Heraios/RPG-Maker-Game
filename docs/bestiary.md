@@ -83,7 +83,8 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 
 ### Rock Lizard
 **Design**
-- **Where:** the gully (troop 25 alone; troop 78, ×2); Act 3 highlands and desert edge (troop 70, ×3).
+- **Where:** the gully (troop 25, alone); Act 3 highlands and desert edge (troop 70, ×3). Its big cousin, the
+  Old Rock Lizard, is the gully's mini-boss (below).
 - **Stats:** 55 / 13 / 8 / 46. **Moves:** Bite; Tail Lash; Bask (heals 15%, at or below half Health).
 - **Talk:** animal. Likes Raw Meat, Cricket Legs.
 - **Drops:** Hide 1/3, Raw Meat 1/3, Red Scoria 1/4.
@@ -98,6 +99,22 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *Insight 2–4:* "Hurt it, and it lies in the sun to get better."
 - *Insight 5+:* "Fast when it's warm. Slow when it's not. Fight it at night."
 - *Margin, Lasa:* "It did push-ups at me! So I did push-ups back! We're friends now. Mostly. It bit Sib, so: mostly."
+
+### Old Rock Lizard (mini-boss)
+**Design**
+- **Where:** the gully, near the top of the climb (troop 78, alone). The Act 1 mini-boss.
+- **Stats:** 120 / 15 / 9 / 44. **Moves:** Bite; Tail Lash; Tail Sweep (the whole party); Bask (heals 15%, by day
+  only).
+- **Talk:** animal; harder to calm than its cousins (a threat rarely sends it off). Likes Raw Meat, Cricket Legs.
+- **Drops:** Hide 1/1, Raw Meat 1/1, Red Scoria 1/2.
+- **Tactics (tier 2):** `<Grudge>`; basks when hurt, but only in the sun. **Fight it at night** and it can't heal.
+- **Balance** (starting party, tactics on): won every time, about 45% of the party's Health, 16 turns.
+
+**Remembered**
+- *First sight:* "Big rock. Old rock. Angry rock."
+- *Insight 2–4:* "It lies in the sun when it's hurt. Then it isn't hurt."
+- *Insight 5+:* "At night the sun can't help it."
+- *Margin, Lasa:* "It's the GRANDPA one! Grandpa, no! Grandpa, sit!"
 
 ### Raven
 **Design**
@@ -181,7 +198,8 @@ the end of Act 2); Pada joins after the Parl quest.
 
 ### Wild Boar
 **Design**
-- **Where:** the Fields (troop 1, ×3); the laurel forest (troop 2, with centipedes).
+- **Where:** the Fields (troop 1, ×2: three were too many for the starting party); the laurel forest (troop 2,
+  with centipedes).
 - **Stats:** 80 / 12 / 6 / 34. **Moves:** Gore.
 - **Talk:** animal. Likes Barley Bread, Ti Root.
 - **Drops:** Raw Meat 1/1, Hide 1/2, Boar Tusk 1/4.
@@ -390,7 +408,8 @@ electricity hits Wet targets harder.
 
 ### Marsh Hag (and the false Crane)
 **Design**
-- **Where:** the Hag Roost, a sting area past Aguerekeu (troop 39, Hags ×2; troop 38, three Cranes, one of
+- **Where:** the Hag Roost, a **mistake area** past Aguerekeu: meant to be too much for the starting party (and
+  the marsh's Cranes nearby are hard for the same reason) (troop 39, Hags ×2; troop 38, three Cranes, one of
   them a Hag that turns on turn 2). The Lady of the Wind's marsh witches, Builder remnants.
 - **Stats:** 160 / 12 / 8 / 40 (MAT 18, MP 60). The false Crane: 40 HP, MAT 10.
 - **Moves:** Draining Kiss (magic, drains); Hag's Curse (Despair, 50%); Marsh Wind (air, all, Disoriented 30%).
@@ -420,7 +439,8 @@ electricity hits Wet targets harder.
   belong under **People** rather than Creatures.)
 - **Stats:** 520 / 18 / 10 / 50. **Moves:** Quick Shot (can't be dodged); Pinning Shot (Entangled, 40%);
   Arrow Volley (random hits); Throw Sand (Dazzled, 70%); Dirty Trick (Disoriented, 50%).
-- **Talk:** sapient; can be talked down ("He doesn't want to hurt children. He just wants out.").
+- **Talk:** sapient. **He has to be talked down:** the starting party can't win this fight by fighting (by design;
+  the sims agree). Talking wins every time ("He doesn't want to hurt children. He just wants out.").
 - **Doesn't see the Ghost** (a Seafarer, not a priest).
 - **Tactics (tier 2, boss):**
   - **He wants out, not a fight:** with only children to fight, he favours moves that stop people rather than
