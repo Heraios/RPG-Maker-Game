@@ -2799,6 +2799,18 @@ bestiary is.
   and the Champion with Axemen as too hard *before* tactics.
 - **Size:** one plugin of roughly 300–400 lines, placed after `SI_BattleTraits`, plus tests.
 
+**Balance stance (decided):** with tactics on, **no retuning**. The simulated party only attacks (it never heals,
+guards, uses items or plays the elemental cycle), so its losses mark where a fight *demands* tactics, not where
+it's unfair. **The player wins through clever tactics, good use of moves and healing.** What the sims showed
+(tactics and the second moves on, attacking only):
+- **Regular troops:** mostly won every time for 2–50% Health; a few early ones are hard for the starting party
+  (the Act 1 coast; Boar-Men before Pada, who are meant to be talked to).
+- **Bosses** (tier 3) are much harder than before tactics: the Great Boar about a third of fights, the Lady of the
+  Woods 0–30%, Juda and the Bull of the Caves 0%. Bosses are meant to be won by playing well.
+- **Act 4 Seafarers:** the Officer's Guard (5–10%), Horsemen ×2 (0%) and the Champion with Axemen (15%) are the
+  hardest set pieces of the act.
+- **Talking** still wins nearly every fight that can be talked down (Parl must be).
+
 ### Balance (first pass)
 **Philosophy:** low, readable numbers all game. Total growth is about 2–3×, and later difficulty
 comes from variety, status effects and Fatigue pressure rather than inflated stats. Every value
