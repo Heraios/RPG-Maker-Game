@@ -364,7 +364,7 @@ SmokingIsle.Tactics = SmokingIsle.Tactics || {};
                     if ($.has(enemy, 'Pack') && $gameTroop._siLastTarget === target) v += $.W.pack;
                     if ($.has(enemy, 'Sticky') && enemy._siLastHit === target) v += $.W.sticky;
                 }
-                if (/<Targets Weakest>/i.test(enemy.enemy().note)) v += (1 - target.hpRate()) * 40;
+                if (/<Targets Weakest>/i.test(enemy.enemy().note)) v += (1 - target.hpRate()) * 80;
                 if (/<Steal>/i.test(skill.note || '') && target.isActor()) v += 15 * target.equips().filter(function(x) { return x && x.siShiny; }).length;
                 if (/<Steal Food>/i.test(skill.note || '')) v += $.foodInBag().length ? 25 : -$.W.waste;
             } else {
