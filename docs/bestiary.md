@@ -155,7 +155,8 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 
 ## 3. The Fields: grassland (Act 2)
 
-The terraces between Zonfahare and Afarohare (map 13). Yoon has a body now; Pada is with the party.
+The terraces between Zonfahare and Afarohare (map 13). Still the Ghost, Sib and Lasa (Yoon gets a body at
+the end of Act 2); Pada joins after the Parl quest.
 
 ### Feral Sheep
 **Design**
@@ -213,7 +214,8 @@ The terraces between Zonfahare and Afarohare (map 13). Yoon has a body now; Pada
 
 ## 4. The lava tubes (Act 2)
 
-The living party can't cross the old flow front, so they go back down through the tubes.
+Sib can't cross the old flow front (only the Ghost could, and Lasa flies), so in Act 2 the party goes back
+down through the tubes.
 
 ### Giant Cave Rat
 **Design**
@@ -273,6 +275,163 @@ The living party can't cross the old flow front, so they go back down through th
 
 ---
 
+## 5. The salt marsh (Act 2)
+
+The marsh on the way to Aguerekeu and Parl's hideout (map 14). Ghost Yoon, Sib and Lasa. **The marsh's own
+combo:** Frogs and Eels leave you **Wet**; the Hags' **Marsh Wind** (air) turns Wet into Chilled, and clearing
+**Sodden** wins the caster an extra turn. Water everywhere also helps the party: Sib's Lightning Clan
+electricity hits Wet targets harder.
+
+### Leech
+**Design**
+- **Where:** the marsh (troop 35, ×5).
+- **Stats:** 20 / 6 / 2 / 20. **Moves:** Latch (drinks blood).
+- **Talk:** none yet (add: animal, no likes; it doesn't listen).
+- **Drops:** Marsh Reed 1/3, Bonemeal 1/4, Leech Jar 1/12.
+- **Tactics (instinct):**
+  - **It holds on:** once it latches, it keeps biting the same victim until salt or fire makes it let go.
+  - **It drinks:** heals itself by part of what it takes.
+  - Doesn't see the Ghost (no blood).
+- **Changes:** Latch drains Health (`NEW`: a drain on a physical skill); a "latched" target memory; Talk notes.
+
+**Remembered**
+- *First sight:* "Worm. On Sib. On SIB."
+- *Insight 2–4:* "It won't let go. Salt makes it let go. Fire too."
+- *Insight 5+:* "Mada keeps them in a jar. For medicine. Mada is brave."
+- *Margin, Sib:* "Get it OFF get it OFF"
+
+### Marsh Eel
+**Design**
+- **Where:** the marsh and the Aguerekeu eel pools (troop 36, ×3).
+- **Stats:** 45 / 12 / 4 / 42. **Moves:** Eel Bite (Wet, 40%).
+- **Talk:** animal; territorial ("It wants the reeds, not you"). Likes Raw Fish.
+- **Drops:** Raw Eel 1/2, Eel Skin 1/3.
+- **Tactics (instinct):**
+  - **Bite and dive:** after a bite it slips under (harder to hit until its next turn).
+  - **Spreads the wet:** bites whoever isn't Wet yet. In a troop with Hags, that's their setup.
+- **Changes:** a short "submerged" evasion after biting (`NEW` state, like Bull-Leap's).
+
+**Remembered**
+- *First sight:* "Snake. Wet snake. Bites."
+- *Insight 2–4:* "It bites, then it hides in the water. It makes you wet."
+- *Insight 5+:* "It only wants its reeds. Leave the reeds."
+- *Margin, Lasa:* "slippy!!!"
+
+### Crane
+**Design**
+- **Where:** the marsh (troop 37, ×3).
+- **Stats:** 40 / 11 / 3 / 48. Flying. **Moves:** Spear Beak.
+- **Talk:** animal. Likes Raw Fish.
+- **Drops:** Seabird Feather 1/3, Raw Fish 1/4, Marsh Reed 1/4.
+- **Tactics (instinct):**
+  - **Fishing:** it spears whoever is Wet first. Wet things look like fish.
+  - Doesn't see the Ghost.
+
+**Remembered**
+- *First sight:* "Tall bird. Spear face."
+- *Insight 2–4:* "It goes for the wet one. It thinks we're fish."
+- *Insight 5+:* "Just a crane. Probably. Look at its eyes."
+- *Margin, Sib:* "Old Guacimara says any crane might be a Hag. Any crane."
+
+### Heron
+**Design**
+- **Where:** the marsh (troop 65, ×2; troop 66, with Marsh Frogs ×2).
+- **Stats:** 42 / 12 / 3 / 48. Flying. **Moves:** Spear Beak.
+- **Talk:** animal. Likes Raw Fish.
+- **Drops:** Seabird Feather 1/3, Raw Fish 1/3, Marsh Reed 1/4.
+- **Tactics (instinct):**
+  - **Fishing,** like the Crane: Wet targets first.
+  - **Stillness:** it waits on one leg until someone is Wet, then strikes.
+  - **With the frogs (troop 66):** the frogs soak, the heron spears. The marsh's first partnership.
+
+**Remembered**
+- *First sight:* "Another tall bird. Different."
+- *Insight 2–4:* "It waits. The frogs make you wet. Then it comes."
+- *Insight 5+:* "Just a heron. Really. Its eyes blink the right way."
+- *Margin, Lasa:* "it stood on one leg for SO long. i tried. i fell in"
+
+### Marsh Frog
+**Design**
+- **Where:** the marsh (troop 63, ×3; troop 66, with a Heron).
+- **Stats:** 60 / 11 / 6 / 40. **Moves:** Leaping Slam (Wet, 40%); Croak (Disoriented, 25%); Bite.
+- **Talk:** animal. Likes Raw Eel.
+- **Drops:** Raw Meat 1/3, Marsh Reed 1/4, Venom Sac 1/6.
+- **Tactics (instinct):**
+  - **Croak** on turn 1 if nobody is Disoriented.
+  - **Leaping Slam** goes at whoever is dry (spreading the wet); **Bite** at whoever is already Wet.
+  - **With a heron or Hags,** that wetting is their setup.
+
+**Remembered**
+- *First sight:* "Frog. Big as Patience."
+- *Insight 2–4:* "It jumps on you and you get wet. Then the birds come."
+- *Insight 5+:* "All it wants is to sit in the mud."
+- *Margin, Lasa:* "i LOVE him"
+
+### Water Snake
+**Design**
+- **Where:** the marsh and streams (troop 64, ×2).
+- **Stats:** 38 / 11 / 3 / 52. **Moves:** Venom Bite (Venom, 40%).
+- **Talk:** animal; a threat sends it off.
+- **Drops:** Venom Sac 1/3, Hide 1/3, Eel Skin 1/5.
+- **Tactics (instinct):**
+  - **Rather not:** it bites someone who isn't Venomed yet, then tries to slip away. Alone, or below half
+    Health, it flees.
+
+**Remembered**
+- *First sight:* "Snake. Scared snake."
+- *Insight 2–4:* "Make yourself big and it goes."
+- *Insight 5+:* "It only bites once. It doesn't want more."
+- *Margin, Sib:* "Its bite is Venom. Mada has a remedy. Remember Mada has a remedy."
+
+### Marsh Hag (and the false Crane)
+**Design**
+- **Where:** the Hag Roost, a sting area past Aguerekeu (troop 39, Hags ×2; troop 38, three Cranes, one of
+  them a Hag that turns on turn 2). The Lady of the Wind's marsh witches, Builder remnants.
+- **Stats:** 160 / 12 / 8 / 40 (MAT 18, MP 60). The false Crane: 40 HP, MAT 10.
+- **Moves:** Draining Kiss (magic, drains); Hag's Curse (Despair, 50%); Marsh Wind (air, all, Disoriented 30%).
+- **Talk:** spirit; Tou reaches her (Builder). Likes Islander Wine, Palm Wine.
+- **Drops:** Hag-Crane Feather 1/4, Wart Fern 1/3, Spurge Milk 1/5.
+- **Sees the Ghost,** and **dotes on Yoon**.
+- **Tactics (tier 2, the first real schemers):**
+  - **Elemental play:** Marsh Wind when the party is Wet (Chilled) or Sodden (an extra turn).
+  - **Making her own setup:** without frogs or eels around, she soaks someone first.
+  - **Never the Ghost:** she dotes on Yoon. She curses whoever stands closest to him instead.
+  - **Draining Kiss** when she's hurt, on the healthiest living target.
+  - **The pair:** one curses a victim with Despair, the other drains whoever is in Despair.
+  - **The false Crane** fishes like a crane on turn 1, but only ever looks at the Ghost (its tell).
+- **Changes:** gains **Rari** (a water spell) to soak a target when no one is Wet.
+
+**Remembered**
+- *First sight:* "Lady. Bird lady. She likes me. I don't like that she likes me."
+- *Insight 2–4:* "She makes you wet, then cold. She kisses and you get weaker."
+- *Insight 5+:* "She never hurts me. She hurts the ones near me."
+- *Margin, Sib:* "Old Guacimara says be polite and never say thank you. Don't say thank you."
+- *Margin, Lasa:* "she said i was a pretty little thing. i hate her"
+
+### Parl (boss)
+**Design**
+- **Where:** Parl's Hideout in the deep marsh, after the Chase (troop 30). The Seafarer who stole the tribute
+  pearls. The ending decides whether he dies, stays an enemy, or joins in Act 4. (A person, so his entry may
+  belong under **People** rather than Creatures.)
+- **Stats:** 520 / 18 / 10 / 50. **Moves:** Quick Shot (can't be dodged); Pinning Shot (Entangled, 40%);
+  Arrow Volley (random hits); Throw Sand (Dazzled, 70%); Dirty Trick (Disoriented, 50%).
+- **Talk:** sapient; can be talked down ("He doesn't want to hurt children. He just wants out.").
+- **Doesn't see the Ghost** (a Seafarer, not a priest).
+- **Tactics (tier 2, boss):**
+  - **He wants out, not a fight:** with only children to fight, he favours moves that stop people rather than
+    hurt them (Pinning Shot, Throw Sand, Dirty Trick), and Quick Shot only when cornered (below half Health).
+  - **Kiting:** he pins whoever reaches him, then backs off.
+  - **Throw Sand** at whoever just hurt him most.
+  - **Arrow Volley** only when three or more targets are standing.
+
+**Remembered**
+- *First sight:* "Man with a bow. Running."
+- *Insight 2–4:* "He doesn't want to hurt Sib. He keeps missing on purpose."
+- *Insight 5+:* "The pearls are in his pouch."
+- *Margin, Sib:* "He rowed for twenty years. That's a long time to row."
+
+---
+
 ## Open questions
 
 - **Areas in the data notes:** some enemies' notes name a later act than where they're placed. The Rock
@@ -281,4 +440,7 @@ The living party can't cross the old flow front, so they go back down through th
   party is the Ghost, Lasa and Sib.
 - **Ravens seeing the Ghost** is a suggestion, not lore yet.
 - **Margin notes** are drafts in each character's voice.
-- **Next areas,** in story order: the salt marsh, the coast, and the laurel forest.
+- **Can adults see Lasa?** The lore says the Children of the Caves are "seen only by children". If that
+  holds in battle, adult enemies (Parl, soldiers, most beasts?) couldn't single her out either. That would be
+  a big rule; say if you want it.
+- **Next areas,** in story order: the coast (Mansehare's shore), then the laurel forest.
