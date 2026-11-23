@@ -119,7 +119,8 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 ### Vulture
 **Design**
 - **Where:** the gully (troop 76, alone); Act 3 highlands and desert, arriving late (troop 33).
-- **Stats:** 55 / 13 / 4 / 50. **Moves:** Rending Beak. Already picks on the weakest (`<Targets Weakest>`).
+- **Stats:** 55 / 13 / 4 / 50. **Moves:** Rending Beak; Circle (waits); Ill Omen (Despair). Picks on the weakest
+  (`<Targets Weakest>`).
 - **Talk:** animal. Likes Raw Meat.
 - **Drops:** Vulture Feather 1/8, Bone 1/2, Raw Meat 1/4.
 - **Tactics (instinct):**
@@ -305,7 +306,8 @@ electricity hits Wet targets harder.
 ### Marsh Eel
 **Design**
 - **Where:** the marsh and the Aguerekeu eel pools (troop 36, ×3).
-- **Stats:** 45 / 12 / 4 / 42. **Moves:** Eel Bite (Wet, 40%).
+- **Stats:** 45 / 12 / 4 / 42. **Moves:** Eel Bite (Wet, 40%); Drag Below (pulls a victim under; hit the eel
+  to free them).
 - **Talk:** animal; territorial ("It wants the reeds, not you"). Likes Raw Fish.
 - **Drops:** Raw Eel 1/2, Eel Skin 1/3.
 - **Tactics (instinct):**
@@ -322,7 +324,7 @@ electricity hits Wet targets harder.
 ### Crane
 **Design**
 - **Where:** the marsh (troop 37, ×3).
-- **Stats:** 40 / 11 / 3 / 48. Flying. **Moves:** Spear Beak.
+- **Stats:** 40 / 11 / 3 / 48. Flying. **Moves:** Spear Beak; Trip (a wing buffet: Disoriented).
 - **Talk:** animal. Likes Raw Fish.
 - **Drops:** Seabird Feather 1/3, Raw Fish 1/4, Marsh Reed 1/4.
 - **Tactics (instinct):**
@@ -338,7 +340,7 @@ electricity hits Wet targets harder.
 ### Heron
 **Design**
 - **Where:** the marsh (troop 65, ×2; troop 66, with Marsh Frogs ×2).
-- **Stats:** 42 / 12 / 3 / 48. Flying. **Moves:** Spear Beak.
+- **Stats:** 42 / 12 / 3 / 48. Flying. **Moves:** Spear Beak; Trip (a wing buffet: Disoriented).
 - **Talk:** animal. Likes Raw Fish.
 - **Drops:** Seabird Feather 1/3, Raw Fish 1/3, Marsh Reed 1/4.
 - **Tactics (instinct):**
@@ -372,7 +374,8 @@ electricity hits Wet targets harder.
 ### Water Snake
 **Design**
 - **Where:** the marsh and streams (troop 64, ×2).
-- **Stats:** 38 / 11 / 3 / 52. **Moves:** Venom Bite (Venom, 40%).
+- **Stats:** 38 / 11 / 3 / 52. **Moves:** Venom Bite (Venom, 40%); Coil (Entangled). Bites whoever it
+  holds (`<Follow Up: Entangled +30>`).
 - **Talk:** animal; a threat sends it off.
 - **Drops:** Venom Sac 1/3, Hide 1/3, Eel Skin 1/5.
 - **Tactics (instinct):**
