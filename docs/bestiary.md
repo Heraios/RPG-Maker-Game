@@ -629,6 +629,194 @@ things harder.
 
 ---
 
+## 7. The laurel forest (Act 2)
+
+The Lady of the Woods' rainforest: the forest's edge (map 19), the Lady's Table (20), the deep forest (21) and
+the Builder well. Ghost Yoon, Sib, Lasa and Pada. **Already in this bestiary:** the Wild Boar (with Centipedes
+here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the Forest Patrol) and the Barn Owl.
+**The forest's own combo** belongs to its Lady: her rain soaks you **Wet**, her falling boughs (earth) turn Wet to
+**Sodden** (no magic; physical hits land 35% harder), and then she gores.
+
+### Giant Centipede
+**Design**
+- **Where:** the forest's edge (troop 3, ×4; troop 2, with Wild Boars).
+- **Stats:** 30 / 9 / 3 / 46. **Moves:** Venom Bite (Venom, 40%); Trip (Disoriented).
+- **Talk:** animal; gentle words don't reach it, a sharp threat might send it off.
+- **Drops:** Venom Sac 1/2, Centipede Venom 1/4, Leaf Mould 1/4.
+- **Tactics (instinct):** trips the steady, then bites the stumbling (`<Follow Up: Disoriented +30>`, already in).
+  Doesn't waste Venom on the already Venomed.
+
+**Remembered**
+- *First sight:* "Long. Legs. All legs."
+- *Insight 2–4:* "It trips you. Then it bites the one who fell."
+- *Insight 5+:* "Shout at it. It doesn't like shouting."
+- *Margin, Pada:* "Boots. Thick ones. Then step on its head."
+
+### Forest Imp
+**Design**
+- **Where:** the deep forest (troop 9, ×2 with Green Horses ×2). The forest's child-fae: pranksters who never knock
+  anyone out, and run when beaten.
+- **Stats:** 27 / 5 / 3 / 48 (MAT 8). **Moves:** Trip (Disoriented); Mock (Panicked, 30%).
+- **Talk:** spirit, starts Wary. A threat dissolves it into a puddle (no reward); pleading works (it feels bad
+  when children cry). Falmi talks it down at once. Likes Dried Figs. Talked down, it leaves the party a gift: Speed
+  up for 3 turns.
+- **Drops:** Pine Pitch 1/3, Faya Berries 1/4, Bellflower Fruit 1/6.
+- **Sees the Ghost** (fae).
+- **Tactics (instinct, teamwork):** one trips a victim, the other mocks whoever is down. With the Green Horses,
+  they keep the horse between them and you.
+- **Changes:** `<Pack>`.
+
+**Remembered**
+- *First sight:* "Little green people. Laughing at us."
+- *Insight 2–4:* "They trip you and then they laugh. They stop if you cry."
+- *Insight 5+:* "One shout and they're puddles. That's sad. Don't shout."
+- *Margin, Lasa:* "Forest cousins! They're not as funny as cave cousins. Don't tell them I said that."
+- *Margin, Falmi (later):* "MY little brothers and sisters! Sort of! They grow in the Garden! I grew in a POT!"
+
+### Green Horse
+**Design**
+- **Where:** the deep forest (troop 9, carrying the Forest Imps). The child-fae's near-invisible mount of leaves and
+  boughs.
+- **Stats:** 50 / 8 / 4 / 50. **Moves:** Hoof Strike.
+- **Talk:** none (it doesn't answer). Very hard to hit (60% evasion) **until soaked or weighed down** (Wet, Sodden,
+  Burdened, Mired); burns easily (Fire ×2).
+- **Drops:** Green Horse Bough 1/4, Horsehair 1/3, Beard Lichen 1/4.
+- **Tactics (tier 0):** guards its rider: when an imp is hurt, it steps in front of it.
+- **Changes:** gains **Cover** (97: takes single attacks meant for an ally).
+
+**Remembered**
+- *First sight:* "A horse? Leaves in the shape of a horse."
+- *Insight 2–4:* "You can't hit it. It's mostly not there."
+- *Insight 5+:* "Wet leaves droop. Make it wet. Make it heavy."
+- *Margin, Sib:* "Fire would work too. Please don't set the Lady's forest on fire."
+
+### Boar-Man
+**Design**
+- **Where:** the deep forest (troop 10, ×3; troop 12, the Forest Patrol, with an Owl of Ill Omen). The People of
+  the Forest's men, who enforce the forest agreements.
+- **Stats:** 110 / 15 / 8 / 30. **Moves:** Boar Club; Boar Spear; Brace (counters the next melee blow); Skull Crack
+  (Disoriented); Offer Passage (a talk move: lets the party leave).
+- **Talk:** sapient. **Plain speaking works; bribes and cleverness backfire;** a threat is honest, so it doesn't
+  offend. Likes Islander Wine. Pacified, it tells you the terms and the party's Defense goes up.
+- **Drops:** Sinew 1/2, Bone 1/3.
+- **Tactics (tier 2):**
+  - **Honest fighters:** Brace (then counter) against a melee party; Skull Crack (Disoriented) on the hardest
+    hitter, which the scoring favours.
+  - **Patrol:** Boar-Men gang up on whoever an ally just hit.
+  - Offer Passage once they're calm enough.
+- **Changes:** `<Pack>`.
+
+**Remembered**
+- *First sight:* "Men. Pig men. Big."
+- *Insight 2–4:* "Say it plain. Don't be clever. Don't give gifts."
+- *Insight 5+:* "Cut only the marked trees. Burn only in the clearings. The owls are watching."
+- *Margin, Pada:* "Good neighbours if you keep the agreements. I keep them."
+
+### Laurel Pigeon
+**Design**
+- **Where:** the forest's edge (troop 60, ×2). The gentle fight that teaches Talk.
+- **Stats:** 18 / 4 / 2 / 48. Flying. **Moves:** Flutter (nothing happens); Peck; Escape (when scared).
+- **Talk:** animal, nearly Calm already. Likes Barley, Cosco Seeds, Pine Nuts.
+- **Drops:** Seabird Feather 1/3, Pine Nuts 1/4, Laurel Branch 1/5.
+- **Tactics (tier 0):** none on purpose. It flutters, pecks, and flies off when frightened.
+
+**Remembered**
+- *First sight:* "Bird. Soft bird. Scared bird."
+- *Insight 2–4:* "Talk quiet. Give it seeds. It stays."
+- *Insight 5+:* "It's more scared of us than we are of it."
+- *Margin, Lasa:* "It let me hold it! It let me HOLD it! It weighs nothing! Is it hollow? Are birds hollow?"
+
+### Wild Bees
+**Design**
+- **Where:** the Bee Rock gathering spots (troop 61, ×2). A swarm defending its honey.
+- **Stats:** 40 / 9 / 2 / 62. **Moves:** Swarm Stings (Venom, 25%); Angry Buzz (the whole party).
+- **Talk:** none. **Smoke drives them off:** with a Torch lit, they flee (troop event).
+- **Drops:** Wild Honey 1/2, Venom Sac 1/6, Myrtle Wax 1/5.
+- **Tactics (instinct):** the swarm follows the first sting (pack), and buzzes the whole party when several of you
+  are close.
+- **Changes:** `<Pack>`.
+
+**Remembered**
+- *First sight:* "Buzzing. Everywhere. Hurts."
+- *Insight 2–4:* "They're guarding the honey. Smoke makes them go."
+- *Insight 5+:* "Light a torch first. Then take the honey."
+- *Margin, Pada:* "Smoke, then honey. Never honey, then smoke."
+
+### Great Boar (boss)
+**Design**
+- **Where:** deep in the forest, with the Lady's leave (troop 27). The largest boar in the Lady's forest. Its flesh
+  becomes Yoon's body.
+- **Stats:** 900 / 24 / 12 / 36. **Moves:** Great Gore; Tusk Sweep (the whole party); Stampede (at or below half
+  Health: a huge charge); Wallow (heals itself when hurt).
+- **Talk:** animal; the showcase for **Stalk**: corner it (Hunted), then Pada's **Finishing Blow** ends it at once.
+  Likes Sweet Potato.
+- **Drops:** Raw Meat, Boar Tusk, Hide (all certain).
+- **Tactics (tier 3):** gores whoever hurt it most; sweeps when the party bunches up; wallows when hurt and no one
+  is close to falling; stampedes at the end.
+- **Changes:** `<Grudge>`.
+- **Balance** (Act 2 party, attacking only): won about a third of the time. **Stalking is the answer:** a hunter
+  doesn't fight a boar like this head-on.
+
+**Remembered**
+- *First sight:* "Big. The biggest. Old."
+- *Insight 2–4:* "Don't fight it. Hunt it. Pada knows how."
+- *Insight 5+:* "It knows why we came. It's tired."
+- *Margin, Pada:* "Old, scarred, and tired. It deserves a clean end. We give it one."
+
+### Daughter of the Wells (boss)
+**Design**
+- **Where:** the Builder well (troop 26, optional). One of the Lady of the Woods' three daughters, trapped in the
+  well by a Builder binding and made a snake woman. **A rescue:** beaten or calmed, she becomes a river maiden
+  again.
+- **Stats:** 700 / 19 / 10 / 38 (MAT 18). **Moves:** Coil (Entangled); Drag Below (pulls a victim under); Well
+  Water (water, the whole party: Wet); Viri (water; may drag under).
+- **Talk:** spirit.
+- **Sees the Ghost** (a spirit).
+- **Tactics (tier 3):**
+  - **Coil, then drag:** whoever she holds goes under (`<Follow Up: Entangled +30>`).
+  - **The well rises:** Well Water when the party is dry; then her water spells against the soaked.
+- **Changes:** `<Follow Up: Entangled +30>`.
+- **Balance** (Act 2 party): won 75–100% of the time, but at about 70% of the party's Health.
+
+**Remembered**
+- *First sight:* "Snake. Snake lady. In the dark water."
+- *Insight 2–4:* "She holds you, then she pulls you down. Hit her and she lets go."
+- *Insight 5+:* "Under the hissing she's crying for her mother."
+- *Margin, Sib:* "The binding's carved round the rim. Builder glyphs. Um. I can read most of it. Most."
+- *Margin, Falmi (later):* "My SISTER! ...Kind of! We're both the Lady's! She was stuck in a WELL! I'm so angry it's
+  raining inside me!"
+
+### Lady of the Woods, lowland aspect (boss) and the Sacred Rain Pig
+**Design**
+- **Where:** the Lady's Table (troop 29), if a bargain goes wrong or she's insulted. Temperamental but gregarious:
+  **feed her, talk plainly, and she'd rather feast than fight.** At half Health she becomes the **Sacred Rain Pig**
+  (troop event; her mood carries over).
+- **The Lady:** 900 / 20 / 12 / 40 (MAT 20). **Moves:** Tusked Fury; Rainforest Deluge (water, the whole party);
+  Falling Boughs (earth, the whole party); Temper (Brave, at or below half); Geha (her glyph: heals her).
+- **The Sacred Rain Pig:** 440 / 22 / 13 / 36 (MAT 22). **Moves:** Mud Charge (Mired); Sacred Rain (soaks the whole
+  party Wet); Geha. Wordless and holy: only a rain rite or food reaches it.
+- **Talk:** spirit. The Lady: food and plain words (likes Sweet Potato, Islander Wine); Asked when Calm, she gives
+  the forest's terms. The Pig: a rain rite or food only.
+- **Sees the Ghost** (spirits).
+- **Tactics (tier 3):**
+  - **Her own combo:** Deluge soaks the party Wet; Falling Boughs (earth) then turns Wet to Sodden (no magic; hits
+    land 35% harder); then Tusked Fury. The tactics see the upgrade on their own: no tags needed.
+  - Geha when she's hurt; Temper at half Health.
+  - **The Pig:** soaks the party, then Mud Charges whoever is still standing firm.
+- **Changes:** none.
+- **Balance** (Act 2 party, attacking only): won 5–30% of the time. **The fight is the failure:** feeding her and
+  speaking plainly is the way.
+
+**Remembered**
+- *First sight:* "The Lady. Big. Hungry. Angry. Then laughing."
+- *Insight 2–4:* "Rain, then branches, then tusks. Get dry. Get out of the way."
+- *Insight 5+:* "She'd rather eat than fight. Feed her."
+- *Margin, Pada:* "Never come to her table empty-handed. Never come hungry either: she'll notice."
+- *Margin, Falmi (later):* "MOTHER! She's lovely when she's not trying to kill you. She's lovely then too, but
+  louder."
+
+---
+
 ## Open questions
 
 - **Built:** the tactics plugin, every change marked `NEW` above and every section's **Changes** (the coast's too)
@@ -642,7 +830,8 @@ things harder.
     children until he's below half Health);
   - "most dangerous" and "smallest" targets come from the scoring (fast or hard-hitting targets are worth
     more for disabling states; the Barn Owl `<Prefers: child>`).
-- **Next area,** in story order: the laurel forest.
+- **Next area,** in story order: the alpine meadows and the snow (the Shepherd of the Deer, the Lady's alpine
+  aspect).
 
 **Decided:** the early enemies keep their stats (their data notes now give the right acts); ravens see the
 dead; enemies can see Lasa; margin notes are in each character's voice (concept.md, "Voices").
