@@ -7,8 +7,8 @@
 #   down  = full          left = chipped (taken today)          right = worked out          up = full (spare)
 # and 3 columns: the middle one is plain; the outer two carry a glint (turn Stepping on and it twinkles).
 # SI_Gather turns the event to the right row by itself (any graphic whose name starts with "!Veins").
-# Drawn on a 16 x 16 grid and scaled 3x to 48 x 48, so every pixel is a hard square. The ore sits in a patch of
-# plain speckled stone, set into the wall, so dark ores (coal, lodestone) still show on dark cliffs.
+# Drawn on a 16 x 16 grid and scaled 3x to 48 x 48, so every pixel is a hard square: chunky ore blobs with a pale
+# rim above and a shadow below, straight on the wall (no stone patch: the wall itself is the rock).
 import random
 from PIL import Image
 
@@ -63,9 +63,9 @@ def put(im, x, y, c):
 def draw_cluster(im, px, pal):
     dark, base, light = pal
     ring = {(x + dx, y + dy) for (x, y) in px for dx in (-1, 0, 1) for dy in (-1, 0, 1)} - px
-    for (x, y) in ring:                                 # the stone around the ore: pale above / left, shadow below / right
+    for (x, y) in ring:                                 # the rock around the ore: pale above / left, shadow below / right
         below_right = any((x - dx, y - dy) in px for (dx, dy) in [(1, 0), (0, 1), (1, 1)])
-        put(im, x, y, (52, 48, 52) if below_right and not any((x + dx, y + dy) in px for (dx, dy) in [(1, 0), (0, 1)]) else (150, 144, 138))
+        put(im, x, y, (40, 36, 40, 235) if below_right and not any((x + dx, y + dy) in px for (dx, dy) in [(1, 0), (0, 1)]) else (132, 126, 120, 235))
     for (x, y) in px:
         lit = (x - 1, y) not in px or (x, y - 1) not in px
         dim = (x + 1, y) not in px or (x, y + 1) not in px
@@ -78,28 +78,9 @@ def socket(im, x, y, w, h):                             # an empty hole where a 
     for j in range(h): put(im, x + w, y + j, (150, 144, 138))
     for i in range(w): put(im, x + i, y - 1, (60, 56, 58))               # and its upper edge is in shadow
 
-def stone_patch(im, name):
-    """A patch of plain speckled stone, set into the wall: the ore sits in it (like an ore block)."""
-    r = random.Random(SEED[name] + 1)
-    inside = set()
-    for y in range(1, N - 1):
-        for x in range(1, N - 1):
-            dx, dy = (x - 7.5) / 7.0, (y - 7.5) / 6.6
-            if dx * dx + dy * dy <= 1.0 + r.uniform(-0.12, 0.1) and not (x in (1, N - 2) and y in (1, N - 2)):
-                inside.add((x, y))
-    for (x, y) in inside:
-        g = r.choice([112, 118, 124, 124, 130, 138])
-        put(im, x, y, (g, g - 4, g - 8))
-    for (x, y) in inside:                                # dark edge: the patch is set into the cliff
-        for (dx, dy) in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
-            if (x + dx, y + dy) not in inside:
-                put(im, x, y, (58, 54, 56) if (dx, dy) in [(1, 0), (0, 1)] else (150, 144, 138))
-    return inside
-
 def frame(name, state, glint):
     im = Image.new('RGBA', (N, N), (0, 0, 0, 0))
     cl = clusters(name)
-    stone_patch(im, name)
     if state == 'worked':
         for (px, _) in cl[:5]:
             x = min(p[0] for p in px); y = min(p[1] for p in px)
