@@ -36,9 +36,29 @@ module.exports = {
         t.eq(m7.links, '3', 'map 7: south to the channels (north isn\'t built yet)');
         t.eq([m1, m2, m3, m7].map(m => m.wanderers).join(','), '0,0,4,1', 'wanderers: none in the gully (the children\'s place), 4 in the channels, 1 at the top');
         t.ok([m3, m7].every(m => m.troops.split('|').every(n => /^Gully:/.test(n))), 'Act 1 ones: Gully troops');
-        t.eq(m1.cairns, '0/2', 'the children\'s cairns by the hole: not in Act 1, there with Sib (Act 2)');
+        t.eq(m1.cairns, '2/2', 'the children\'s cairns by the hole: there in Act 1 (Lasa teaches \'together\') and with Sib (Act 2)');
         t.eq([m1, m3, m7].map(m => m.before).join(','), '0,0,0', 'none out before Lasa joins');
         t.ok(m1.act1 === 0 && m3.act1 >= 3 && m7.act1 === 1, 'Act 1 (Lasa, Story 30): none in the gully; the channels and the top');
         t.eq(m1.act2 + ',' + m3.act2 + ',' + m7.act2, '0,0,0', 'Act 2 (Story 50): the Act 1 fights are gone');
+    },
+
+    'the gully: Lasa teaches "together" at the children\'s cairn': async (h, t) => {
+        await h.page.goto(h.base + '/index.html');
+        await h.page.waitForFunction(() => window.SceneManager && SceneManager._scene instanceof Scene_Title && SceneManager._sceneStarted, null, { timeout: 60000 });
+        await h.page.evaluate(() => { Object.assign($dataSystem, { startMapId: 1, startX: 28, startY: 16 }); SceneManager._scene.commandNewGame(); });
+        await h.page.waitForFunction(() => SceneManager._scene instanceof Scene_Map && SceneManager._sceneStarted && $gameMap.mapId() === 1, null, { timeout: 30000 });
+        const before = await h.eval(() => {
+            $gameParty._actors = [1, 4]; $gameVariables.setValue(5, 30); $gameActors.actor(1).setName('Snuggly'); $gameMap.refresh();
+            const c = $gameMap.events().find(e => /Cairn/.test(e.event().name));
+            const said = c.page().list.filter(x => x.code === 401).map(x => x.parameters[0]).join(' | ');
+            const sweet = $gameVariables.value(9); c.start(); return { said, sweet, id: c.eventId() };
+        });
+        await h.pumpMessages();      // Enter: "Say it carefully."
+        const r = await h.eval(id => ({ knows: SmokingIsle.Journal.knowsWord('together'), sweet: $gameVariables.value(9),
+            done: $gameSelfSwitches.value([1, id, 'B']), page: $gameMap.event(id).findProperPageIndex() }), before.id);
+        t.ok(/Two kids stacked this together! Like you and me, \\N\[1\]!/.test(before.said), 'Lasa: "Two kids stacked this together! Like you and me, [nickname]!"');
+        t.ok(r.knows, 'new word: together (in Memory)');
+        t.eq(r.sweet - before.sweet, 1, 'said carefully: Sweet +1');
+        t.ok(r.done && r.page === 1, 'afterwards the cairn says "...together. Two of them."');
     }
 };

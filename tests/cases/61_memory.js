@@ -31,6 +31,7 @@ module.exports = {
             out.said = J.state().said.bones;
             out.words = $gameVariables.value(6);
             out.wordRows = J.rows('remembered').filter(x => x.kind === 'word').map(x => x.text).join(',');
+            out.totalWords = Object.keys($dataJournal.words).length;
             out.unknownWords = J.rows('remembered').filter((x, i, all) => x.kind === 'unknown' && all.slice(0, i).filter(y => y.kind === 'header').length === 1).length;
             out.wailed = J.wailed('remember');
             // the Body: from Story 60; an ingredient counts while the party holds its key item
@@ -60,7 +61,7 @@ module.exports = {
         t.eq(r.said, 1, 'a word remembers how it was first said');
         t.eq(r.words, 1, 'the Words variable counts known words');
         t.eq(r.wordRows, 'bones', 'known words by name...');
-        t.eq(r.unknownWords, 12, '...the rest as ???');
+        t.eq(r.unknownWords, r.totalWords - 1, '...the rest as ??? (' + (r.totalWords - 1) + ')');
         t.eq(r.wailed, 'REEEEEMEMBER.', 'a wailed word');
         t.ok(!r.bodyBefore && r.bodyAfter, 'The Body shows from Story 60, first in Quests');
         t.ok(r.bone, 'the bone counts from Story 60');

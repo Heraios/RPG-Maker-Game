@@ -2341,7 +2341,7 @@ Walk"), it learns to touch. Lasa explains each move in her own words.
 | **sing** (the telegraph wires) | Ghostly Touch | The hum carries something; the Ghost sips it |
 | **smoke** (above the town, last) | Spiritual Writhe | Smoke twists and rises |
 
-goat, bird, road and home teach no move; **float** is the ghost-only crossing (Region 10). Only **sun** is
+together (the children's cairns, map 1), goat, bird, road and home teach no move; **float** is the ghost-only crossing (Region 10). Only **sun** is
 scripted, so a player who skips every find still has Burning Touch, Mournful Wail and a temperament move.
 
 **The Ghost and Lasa in a fight.** Lasa is the finisher and thief (Keri, Gau, Prank, Steal, Keva, Mahu,

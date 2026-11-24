@@ -209,6 +209,7 @@ it, at a goat's distance, all the way to town.)*
 
 | Where | Word | Lasa | Said wrong / Lasa | Before | After |
 |---|---|---|---|---|---|
+| The children's cairns by the hole | **together** | Two kids stacked this together! Like you and me, \N[1]! | "Tether." / That's a rope word. This is a friend word. | (Lasa's there) | ...together. Two of them. |
 | Ladder the goat | **goat** | A goat! They eat everything and climb everything. | "Got." / Got goat. | ...it stares. It can't see you. It stares anyway. | ...goat. Staring. |
 | The kipuka grass | **grass** | Grass. It grows where the fire didn't. | "Gas." / ...Please don't. | ...soft. Alive. | ...grass. |
 | The stream | **water** | Water! You know water. You saw your face in it. | "Wawa." / That's baby talk. You're a big ghost. | ...it runs. It's going somewhere. | ...water. Going down to people. |
