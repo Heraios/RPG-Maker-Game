@@ -10,8 +10,11 @@ acts-1-2-maps.md (the map plan), editor-guide.md (how the systems are placed).
 | Map | Name | State |
 |---|---|---|
 | 5 | Prologue | Done. New Game starts here (5, 8, 6). Centred narration, Prologue music |
-| 6 | Lava Tube: Waking | Playable: First Words (Lasa, 13 words, the face), skylight, lava glow, Lava Tubes tileset. The ladder leads up the sky-hole to map 1 (9, 204), in Act 1 (float) and Act 2 (the mended ladder) |
-| 1 | Lava Flows: Nearby Gully | Painting in progress (63 x 217, Lava Country tileset): the levees are in. **Layout decided** (acts-1-2-maps.md, map 1). **No events yet**, no music, no map note |
+| 6 | Lava Tube: Waking | Playable: First Words (Lasa, 13 words, the face), skylight, lava glow, Lava Tubes tileset. The ladder leads up the sky-hole to map 1 (20, 14), in Act 1 (float) and Act 2 (the mended ladder) |
+| 1 | Lava Flows: Sky-Hole Gully | **First draft** (40 x 30): the walled gully, the sky-hole (with its view of map 6), the kipuka garden, the children's cairns, Ladder (placeholder), the tube collapse, rubble to the south; crickets / bats. Exit north to map 2 |
+| 2 | Lava Flows: The Old Flow Front | Stub (42 x 30, blank): edges linked south to 1 and north to 3. To draft: the wall of old lava and the warm crack (Region 10) |
+| 3 | Lava Flows: The Channels | Stub (42 x 45, blank): the levees, the wires, the stream, the dead tree, the gusty saddle; its four wanderers wait in place-holder spots |
+| 7 | Lava Flows: The Greening | Stub (42 x 30, blank): the land greens, the first view of town; the Old Rock Lizard. North isn't built yet |
 
 Built and ready to place: the Lava Country / Lava Tubes tilesets and the Lava-E sheet (telegraph poles and
 wires, cairns, cracks, rubble, tumulus), gathering rules, Memory (quests, words), Lasa's skills.
@@ -20,8 +23,9 @@ wires, cairns, cracks, rubble, tumulus), gathering rules, Memory (quests, words)
 
 1. ~~The plan numbered the Sky-Hole as map 7.~~ **Done:** the plan describes map 1, "Lava Flows: Nearby Gully".
 2. **The edge of Zonfahare:** its own map, or the south edge of the Zonfahare map? Which map number?
-3. ~~How many maps between the gully and the edge of town?~~ **Decided:** map 1 is the whole stretch, from the
-   gully at the bottom to the exit at the top right.
+3. ~~How many maps between the gully and the edge of town?~~ **Re-decided:** the stretch is **four maps** (1 the
+   gully, 2 the flow front, 3 the channels, 7 the greening), each 1-3 screens, linked edge to edge. It was one
+   63 x 217 map, which was too big to paint.
 
 ## 2. Map 6 → map 1 (the way up)
 

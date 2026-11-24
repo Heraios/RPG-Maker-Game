@@ -492,8 +492,8 @@ The sky-hole shows the real cave below: map 6's garden, through see-through tile
    taller one). Leave the middle bare. The top edge is the far wall dropping into shadow. A stepped hole needs the
    inner corners too (47, 55, 63, 71). Easiest: close RPG Maker and run `python3 art/place_hole_rim.py 1`,
    which paints the whole rim from the hole's shape.
-3. **The view:** in the map's Note, once per hole: `<Hole View: SkyHole_{period}, 9, 209, 0.3>`: an image
-   from img/parallaxes, centred under the hole's middle tile (9, 209), shifting a little as the camera moves so
+3. **The view:** in the map's Note, once per hole: `<Hole View: SkyHole_{period}, 20, 16, 0.3>`: an image
+   from img/parallaxes, centred under the hole's middle tile (20, 16), shifting a little as the camera moves so
    it seems far below (0 = flat). `{period}` becomes Day, Dusk or Night by itself (dawn uses Day). Each hole
    gets its own picture, so a map can have several holes showing different places; the map's own Parallax
    Background stays free.
@@ -564,7 +564,7 @@ Bosses whose defeat matters to the story (the Great Boar's flesh, the Daughter f
 the story to continue in the event's commands **after** Battle Processing.
 
 **Act 1 only:** `<Before Story: 50>` in a wanderer's note keeps it out only while Story (variable 5) is below
-50, so the gully's fights for the Ghost and Lasa are gone once Yoon has a body (map 1's seven wanderers use it,
+50, so the gully's fights for the Ghost and Lasa are gone once Yoon has a body (the seven wanderers on maps 1, 3 and 7 use it,
 with a page that needs Lasa in the party and Story >= 30).
 
 ## Switches and variables you can use in event conditions

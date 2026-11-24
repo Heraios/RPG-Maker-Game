@@ -195,13 +195,13 @@ module.exports = {
         };
         const act1 = await climb(() => { $gameParty._actors = [1, 4]; $gameVariables.setValue(5, 30); $gameMap.refresh(); });
         const act2 = await climb(() => { $gameParty._actors = [2, 3]; $gameVariables.setValue(5, 50); $gameSelfSwitches.setValue([6, 8, 'A'], true); $gameMap.refresh(); });
-        t.eq(act1, '1,9,204,8', 'Act 1: the Ghost and Lasa float up to the gully, on the rim north of the hole, facing north');
-        t.eq(act2, '1,9,204,8', 'Act 2: the mended ladder climbs to the same spot');
-        // the view down the hole: <Hole View: SkyHole_{period}, 9, 209, 0.3> on map 1, a picture under the hole
+        t.eq(act1, '1,20,14,8', 'Act 1: the Ghost and Lasa float up to the gully, on the rim north of the hole, facing north');
+        t.eq(act2, '1,20,14,8', 'Act 2: the mended ladder climbs to the same spot');
+        // the view down the hole: <Hole View: SkyHole_{period}, 20, 16, 0.3> on map 1, a picture under the hole
         await h.page.waitForFunction(() => { const s = SceneManager._scene._spriteset._siHoles; return s && s[0] && s[0].bitmap && s[0].bitmap.isReady() && s[0].bitmap.width > 0; });
         const view = await h.eval(() => {
             const sp = SceneManager._scene._spriteset, hole = sp._siHoles[0], w = hole.bitmap.width;
-            const centreAt = dx => { $gameMap._displayX = 9.5 - $gameMap.screenTileX() / 2 + dx; sp.updateParallax(); return hole.x + w / 2 - (9.5 - $gameMap.displayX()) * 48; };
+            const centreAt = dx => { $gameMap._displayX = 20.5 - $gameMap.screenTileX() / 2 + dx; sp.updateParallax(); return hole.x + w / 2 - (20.5 - $gameMap.displayX()) * 48; };
             const at = centreAt(0), moved = centreAt(4);
             SmokingIsle.Screen.setHoleView(1, 0, 'SkyHole_{period}_Mended');
             return { name: hole._siName, count: sp._siHoles.length, at: Math.round(at), moved: Math.round(moved),
