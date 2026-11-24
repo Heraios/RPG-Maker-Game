@@ -1117,6 +1117,185 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 
 ---
 
+## 10. The tombs, the deep tubes and the volcano (Acts 2–3)
+
+The island's dark: the stone-cut tombs (Namethare, Jarcotapu) in Act 2, then in Act 3 the deep tubes and the
+volcano, the Destroyer's house, where his servants run, and the mountain where Juda burns Pada. Act 2's party in the
+tombs (Ghost Yoon, Sib, Lasa, Pada); Act 3's after (Yoon, Sib, Pada, Juda), and Yoon, Sib and Dama against Juda.
+**The dark's rules:** the dead can be laid to rest with a rite; demons ride corpses and can be made to let go; the
+Destroyer's own servants (the hounds, the Bull) won't listen at all.
+
+### Restless Bones
+**Design**
+- **Where:** the tombs (troop 22, ×2 with a Bone Chanter).
+- **Stats:** 70 / 14 / 9 / 30. **Moves:** Grave Blade; Brace (counters the next melee blow); Shield Bash (Stunned).
+- **Talk:** spirit. **A rite or grave paint lays them down.**
+- **Drops:** Bone 1/2, Bonemeal 1/3.
+- **Sees the Ghost** (the dead see the dead).
+- **Tactics (tier 2):** dead tomb guards, still guarding: they brace against a melee party and shield-bash the
+  hardest hitter. With a Bone Chanter, they get back up.
+- **Changes:** none.
+
+**Remembered**
+- *First sight:* "Bones. Standing up. Holding swords."
+- *Insight 2–4:* "Hit them carelessly and they hit back first."
+- *Insight 5+:* "Their graves were robbed of their paint. They want the rite done right."
+- *Margin, Sib:* "Ochre paint, the right words, and they'll lie down. They're not angry. They're unfinished."
+
+### Bone Chanter
+**Design**
+- **Where:** the tombs (troop 22, with Restless Bones ×2).
+- **Stats:** 45 / 6 / 5 / 34 (MAT 14, MP 40). **Moves:** Grave Chill (magic: Chilled); Dirge (the whole party may
+  fall into Despair, 40%); Raise Bones (stands a fallen skeleton back up, at half Health).
+- **Talk:** spirit; a rite reaches it, and Sib might know its song's missing verse.
+- **Drops:** Bone 1/2, Ochre Grave Paint 1/4.
+- **Sees the Ghost.**
+- **Tactics (tier 2, support):** raises a fallen skeleton the moment one falls (the scoring values bringing back the
+  fallen); Dirge on a party not yet in Despair. **Take it down first.**
+- **Changes:** `<Tactics Style: support>`.
+
+**Remembered**
+- *First sight:* "A dead priest. Singing."
+- *Insight 2–4:* "It sings the bones back up. Stop the song first."
+- *Insight 5+:* "Its song has a missing verse. Sib might know it."
+- *Margin, Sib:* "It's the funeral verse for the Star Child. Someone left out the last line. That's why it can't stop."
+- *Margin, Juda:* "A verse left out is a door left open. Remember that, Sib."
+
+### Black Hound
+**Design**
+- **Where:** the volcano and the tubes (troop 44, ×3; troop 45, with an Alpha; troop 48, with the Bull of the Caves).
+  The Destroyer's servants.
+- **Stats:** 120 / 18 / 9 / 52. **Moves:** Hound Bite; Drag Below (pulls a victim into the dark; **hit the hound to
+  pull them free**).
+- **Talk:** none: it can't be talked to.
+- **Drops:** Bone 1/2, Red Scoria 1/4, Hide 1/4.
+- **Tactics (instinct):** the pack savages whoever one of them has dragged below (`<Pack>`, already in).
+- **Changes:** `<Follow Up: Dragged Below +30>`.
+
+**Remembered**
+- *First sight:* "Black dogs. Red eyes. Hot breath."
+- *Insight 2–4:* "One pulls you down. The others come for you there."
+- *Insight 5+:* "Hit the one holding you. It lets go."
+- *Margin, Pada:* "Not dogs. Don't let them make you think they're dogs. Patience knows."
+- *Margin, Juda:* "They answer to an old master. Be careful in the deep tubes, children. Stay close to me."
+
+### Black Hound Alpha
+**Design**
+- **Where:** leading a pack (troop 45, with Black Hounds ×2).
+- **Stats:** 260 / 22 / 12 / 54. **Moves:** Rending Bite (Bleed, 40%); Drag Down (pulls a victim into the dark, 70%;
+  hit the Alpha to pull them free); Howl of the Pit (the whole party may Panic, 40%).
+- **Talk:** none.
+- **Drops:** Bone 1/1, Black Hound Pelt 1/8, Sulfur Lump 1/8.
+- **Tactics (instinct, a pack leader):** howls first (Panic), drags one down, and rends whoever is dragged or
+  panicked.
+- **Changes:** `<Follow Up: Dragged Below +30>`; `<Follow Up: Panicked +20>`.
+- **Balance** (Act 3 party): about a third of the party's Health.
+
+**Remembered**
+- *First sight:* "The biggest dog. The others watch it."
+- *Insight 2–4:* "It howls and you can't think. Then it takes someone."
+- *Insight 5+:* "Kill it and the others are only dogs."
+- *Margin, Pada:* "Lead hound. Take the lead hound."
+
+### Hunched
+**Design**
+- **Where:** the tubes and graveyards (troop 46, ×3; troop 47, with a Defiler). A corpse ridden by a demon.
+- **Stats:** 100 / 15 / 8 / 26 (MP 12). **Moves:** Corpse Claw; Grave Breath (Venom, 40%); Grave Chill (magic:
+  Chilled).
+- **Talk:** spirit. **Talk to free it:** the rider lets go, and the dead can be laid to rest.
+- **Drops:** Bone 1/2, Ancestral Remains 1/4, Mourning Paint 1/8.
+- **Sees the Ghost** (a spirit rides it).
+- **Tactics (tier 2):** chills the healthy, rots the chilled with its breath, claws the slowed.
+- **Changes:** none.
+
+**Remembered**
+- *First sight:* "A dead person. Walking wrong. Bent over."
+- *Insight 2–4:* "Something is riding it. Something that isn't it."
+- *Insight 5+:* "Someone is still in there, under the rider. Talk to it."
+- *Margin, Sib:* "Every one of them was somebody's. We have to lay them down properly after."
+- *Margin, Juda:* "Poor things. Someone really should lay them to rest."
+
+### Hunched Defiler
+**Design**
+- **Where:** deeper in (troop 47, with Hunched ×2). A stronger demon in an older corpse: it uses magic.
+- **Stats:** 180 / 12 / 10 / 30 (MAT 20, MP 60). **Moves:** Defile (magic, Despair 40%); Pyre Breath (fire, the whole
+  party: Smoldering); Corpse Claw.
+- **Talk:** spirit; a rite reaches it.
+- **Drops:** Bone 1/1, Ochre Grave Paint 1/4, Skeletal Figurine 1/8.
+- **Sees the Ghost.**
+- **Tactics (tier 2, cunning):** Pyre Breath plays the cycle by itself (fire turns Disoriented into Feverish and
+  cracks the Mired); Defile whoever isn't in Despair yet.
+- **Changes:** `<Tactics Style: cunning>`.
+
+**Remembered**
+- *First sight:* "Old corpse. Fire in its mouth."
+- *Insight 2–4:* "It burns you, then it makes you hopeless."
+- *Insight 5+:* "Its grip on the body is old. It will be hard to talk it loose."
+- *Margin, Sib:* "Fire from a dead mouth. I'm going to have nightmares. Um. More nightmares."
+
+### The Bull of the Caves (optional boss)
+**Design**
+- **Where:** the Destroyer's tubes, guarding treasure (troop 48, with Black Hounds ×2 that join at half Health). The
+  fire-breathing twin of the Bull of Heaven. Serves the Destroyer.
+- **Stats:** 950 / 21 / 15 / 38 (MAT 15). **Moves:** Molten Gore (part fire); Fire Breath (fire, the whole party);
+  Cave Stampede (the whole party, at or below 60% Health).
+- **Talk:** none: it won't listen.
+- **Tactics (tier 3):** breathes fire over the party, gores whoever hurt it most, stampedes when hurt; its hounds
+  drag and savage.
+- **Changes:** `<Grudge>`.
+- **Balance** (Act 3 party, attacking only): not won. The island's hardest optional fight in Act 3, and meant to be:
+  come back stronger.
+
+**Remembered**
+- *First sight:* "A bull made of the mountain. On fire."
+- *Insight 2–4:* "Fire on all of us. Then the horns. Then everything at once."
+- *Insight 5+:* "It belongs to the dark under the mountain. It won't listen."
+- *Margin, Sib:* "The Bull of Heaven's twin. One judges the guilty. This one serves the Destroyer."
+
+### Juda (Act 3 boss)
+**Design**
+- **Where:** the mountain, after he burns Pada (troop 49). He believes Yoon is the demon he summoned. **Optionally
+  beatable:** at 0 Health he doesn't die but rises in his **partial Navigator Lord form** (coral eyes), which can't be
+  fairly beaten: it never knocks anyone out, and after three turns the fire roars up and the battle ends (switch 9).
+  (A person, so his entry may belong under **People**.)
+- **Stats:** 550 / 13 / 12 / 34 (MAT 13, MP 150). **Moves:** Ritual Knife; Pyre (fire); Ahigun (fire, the whole party);
+  Chlorine Cloud (the whole party: Venom 60%, Panicked 30%); Mahu (heals himself, when hurt).
+- **The half-risen form:** 9999 Health. **Moves:** Unmaking Glyph; Coral Gaze (Hypnotized, 80%); Ashen Hand.
+- **Talk:** none: he won't listen.
+- **Sees the Ghost** (a priest, and more).
+- **Tactics (tier 3):**
+  - **He goes for Yoon:** he believes Yoon is the demon.
+  - **Gas, then fire:** Chlorine Cloud on a steady party, then fire on the poisoned and panicked; Mahu when he's hurt.
+- **Changes:** `<Prefers: actor 2>` (`NEW`: the tactics can prefer a particular party member); `<Tactics Style:
+  cunning>`.
+- **Balance** (Yoon, Sib and Dama, attacking only): not won. Beating him is optional, and it shows you the truth.
+
+**Remembered**
+- *First sight:* "Master Juda. Fire in his hands."
+- *Insight 2–4:* "He wants me. Not the others. Me."
+- *Insight 5+:* "You smell like the dark where I woke up."
+- *Margin, Sib:* "I never suspected him. Not once. I should have. I should have."
+- *Margin, Dama:* "Someone killed a child. That's my business. He made it my business."
+
+### Ridden Aurochs (Act 4+)
+**Design**
+- **Where:** with the Destroyer's forces from Act 4 (troop 69). A dead aurochs ridden by a demon, used as a battering
+  ram.
+- **Stats:** 700 / 26 / 16 / 30. **Moves:** Battering Ram (the whole party: Stunned, 20%); Dead Horns (Venom, 40%);
+  Grave Breath (Venom, 40%).
+- **Talk:** spirit. **Talk like the Hunched:** a rite frees the carcass.
+- **Drops:** Ox Horn 1/1, Bone 1/1.
+- **Tactics (tier 2):** rams the whole party, then gores whoever hurt it most.
+- **Changes:** `<Grudge>`.
+
+**Remembered**
+- *First sight:* "A dead bull. Something is wearing it."
+- *Insight 2–4:* "It uses itself like a ram at a gate."
+- *Insight 5+:* "A rite. Like the Hunched. Let the bull lie down."
+- *Margin, Thenmy (later):* "Our cattle came from these. To see one used so... it is an obscenity."
+
+---
+
 ## Open questions
 
 - **Built:** the tactics plugin, every change marked `NEW` above and every section's **Changes** (the coast's too)
@@ -1130,8 +1309,7 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
     children until he's below half Health);
   - "most dangerous" and "smallest" targets come from the scoring (fast or hard-hitting targets are worth
     more for disabling states; the Barn Owl `<Prefers: child>`).
-- **Next area,** in story order: the tombs, the deep tubes and the volcano (Act 3: the dead, the Destroyer's
-  servants, the Bull of the Caves, Juda).
+- **Next area,** in story order: the Seafarers (Acts 4–5).
 
 **Decided:** the early enemies keep their stats (their data notes now give the right acts); ravens see the
 dead; enemies can see Lasa; margin notes are in each character's voice (concept.md, "Voices").
