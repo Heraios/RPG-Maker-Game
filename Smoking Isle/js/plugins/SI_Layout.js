@@ -184,4 +184,62 @@ SmokingIsle.Layout = SmokingIsle.Layout || {};
         return 1;
     };
 
+    // The slot list in two columns, filled top to bottom: worn things on the left (Head ... Feet),
+    // weapons, charms and the rest on the right. All 22 slots fit without scrolling.
+    Window_EquipSlot.prototype.maxCols = function() { return 2; };
+    Window_EquipSlot.prototype.siRows = function() { return Math.max(1, Math.ceil(this.maxItems() / 2)); };
+    Window_EquipSlot.prototype.itemRect = function(index) {
+        var rows = this.siRows(), w = this.itemWidth(), h = this.itemHeight();
+        var col = Math.floor(index / rows), row = index % rows;
+        return new Rectangle(col * (w + this.spacing()) - this._scrollX, row * h - this._scrollY, w, h);
+    };
+    Window_EquipSlot.prototype.row = function() { return this.index() % this.siRows(); };
+    Window_EquipSlot.prototype.maxRows = function() { return this.siRows(); };
+    Window_EquipSlot.prototype.cursorDown = function() {
+        var i = this.index(), rows = this.siRows();
+        if (i % rows < rows - 1 && i + 1 < this.maxItems()) this.select(i + 1);
+    };
+    Window_EquipSlot.prototype.cursorUp = function() {
+        var i = this.index();
+        if (i % this.siRows() > 0) this.select(i - 1);
+    };
+    Window_EquipSlot.prototype.cursorRight = function() {
+        var i = this.index(), rows = this.siRows();
+        if (i + rows < this.maxItems()) this.select(i + rows);
+        else if (i < rows && this.maxItems() > rows) this.select(this.maxItems() - 1);
+    };
+    Window_EquipSlot.prototype.cursorLeft = function() {
+        var i = this.index(), rows = this.siRows();
+        if (i - rows >= 0) this.select(i - rows);
+    };
+
+    //-------------------------------------------------------------------------
+    // Status screen: everything that's equipped, two columns (slot, item)
+    //-------------------------------------------------------------------------
+
+    Window_Status.prototype.drawEquipments = function(x, y) {
+        var actor = this._actor, rows = [];
+        actor.equips().forEach(function(item, i) {
+            if (!item) return;
+            var slot = actor.equipSlotName ? actor.equipSlotName(i) : $dataSystem.equipTypes[actor.equipSlots()[i]];
+            rows.push([slot, item]);
+        });
+        var lh = 31, perCol = Math.floor(this.lineHeight() * 6 / lh), colW = Math.floor((this.contentsWidth() - x) / 2);
+        var shown = rows.length > perCol * 2 ? perCol * 2 - 1 : rows.length;
+        this.contents.fontSize = 24;
+        for (var k = 0; k < shown; k++) {
+            var cx = x + Math.floor(k / perCol) * colW, cy = y + (k % perCol) * lh;
+            this.changeTextColor(this.systemColor());
+            this.drawText(rows[k][0], cx, cy, 136, 'left');
+            this.resetTextColor();
+            this.drawText(rows[k][1].name, cx + 140, cy, colW - 150, 'left');
+        }
+        if (shown < rows.length) {
+            this.changeTextColor(this.systemColor());
+            this.drawText('+ ' + (rows.length - shown) + ' more (see Equip)', x + colW, y + (perCol - 1) * lh, colW - 10, 'left');
+        }
+        if (!rows.length) { this.changeTextColor(this.systemColor()); this.drawText('Nothing equipped.', x, y, colW, 'left'); }
+        this.resetFontSettings();
+    };
+
 })(SmokingIsle.Layout);

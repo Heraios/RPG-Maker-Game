@@ -118,6 +118,16 @@
    "after": "Who was in the tubes that day? Somebody's not where they said."
   }
  ],
+ "temperament": {
+  "_readme": "Memory's 'What I'm like' page. var: the count's variable. tiers: [count, what it gives]. Add the body-era tiers later.",
+  "title": "What I'm like",
+  "list": [
+   { "name": "Sweet", "var": 9, "color": 24, "tiers": [[5, "Calming Cry"], [10, "Joyful Cry"], [20, "Rallying Cry and Focusing Cry"]] },
+   { "name": "Funny", "var": 10, "color": 17, "tiers": [[5, "Bewildering Wail"], [10, "Flitting Cry"], [20, "Beguiling Wail"]] },
+   { "name": "Unhinged", "var": 11, "color": 31, "tiers": [[5, "Terrifying Wail"], [10, "Maddening Wail"], [20, "Dragging Wail"]] }
+  ],
+  "done": "Everything, for now."
+ },
  "words": {
   "bones": {
    "where": "The small bones, in the tube where I woke.",

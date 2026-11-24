@@ -2268,7 +2268,9 @@ Named for the word the Red Bowl teaches. Yoon keeps it from the first scene. **E
 ### Yoon's temperament
 Every Act 1–2 choice written in Yoon's voice has a **Sweet**, a **Funny** and an **Unhinged** option (see
 "Personality" under Yoon). Each choice adds 1 to its own count: variables **9 Sweet, 10 Funny, 11 Unhinged**.
-The counts are shared by the Ghost and human Yoon, and **never shown**.
+The counts are shared by the Ghost and human Yoon. **Shown in Memory** (decided; it used to be "never shown"):
+Remembered, "What I'm like": each count with a bar to its next tier and what that tier gives (the tiers are in
+Journal.json, "temperament"; the body-era tiers get added there).
 
 **Dialogue: extra options, never fewer.** The three basic options are always there. A high count adds a
 **fourth** option in that style:

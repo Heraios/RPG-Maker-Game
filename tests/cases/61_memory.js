@@ -1,6 +1,22 @@
 // Memory (SI_Journal): Yoon's journal. Quests, Evidence, Remembered; notices; the menu command and J.
 
 module.exports = {
+    "memory: what I'm like (temperament and the next tier)": async (h, t) => {
+        await h.newGame();
+        const r = await h.eval(() => {
+            const J = SmokingIsle.Journal, out = {};
+            [9, 10, 11].forEach(v => $gameVariables.setValue(v, 0));
+            out.hidden = !J.rows('remembered').some(x => x.kind === 'temperament');
+            $gameVariables.setValue(9, 7); $gameVariables.setValue(10, 3); $gameVariables.setValue(11, 21);
+            out.shown = J.rows('remembered')[0].kind === 'temperament';
+            out.next = J.temperament().map(e => e.name + ' ' + e.value + ' ' + (e.next ? e.next[0] + ':' + e.next[1] : 'done')).join(' | ');
+            return out;
+        });
+        t.ok(r.hidden, 'not shown while every count is 0');
+        t.ok(r.shown, 'then first in Remembered');
+        t.eq(r.next, 'Sweet 7 10:Joyful Cry | Funny 3 5:Bewildering Wail | Unhinged 21 done', 'each count, and what its next tier gives');
+    },
+
     'memory: quests, clues, words and the Body': async (h, t) => {
         await h.newGame();
         const r = await h.eval(() => {
