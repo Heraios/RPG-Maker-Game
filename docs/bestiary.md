@@ -1,7 +1,7 @@
 # Smoking Isle — Bestiary
 
-Every creature the party can fight, **area by area in the order the player reaches them**. Each entry has
-two halves:
+Every creature the party can fight, **area by area in the order the player reaches them**. Each entry has a
+**Description** (what it is, for the top of its in-game page) and two halves:
 
 1. **Design**: what it is in the database (stats, moves, Talk, drops) and how it **fights smart** with the
    tactics plugin (`SI_Tactics.js`; see "How enemies think" below).
@@ -41,6 +41,10 @@ talked to once), **Insight 2–4**, **Insight 5+**, and **Talked down** (pacifie
 The Ghost and Lasa alone at first: the Ghost can't deal damage, so fights here are short and gentle.
 
 ### Bat
+**Description**
+Small bats that roost by the thousand in the lava tubes and the silver mine. They hunt by sound and move as one:
+where one bites, the whole swarm follows. Noise and light scatter them.
+
 **Design**
 - **Where:** the waking tube (troop 20, Bats ×6); the gully (troop 79); Act 2 tubes and the silver mine.
 - **Stats:** 16 / 6 / 1 / 58. **Moves:** Bat Bite; Screech (the party may be Disoriented, 35%).
@@ -65,6 +69,10 @@ The Ghost and Lasa alone at first: the Ghost can't deal damage, so fights here a
 The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon Sib.
 
 ### Giant Cave Cricket
+**Description**
+A pale, dog-sized cricket of the lava tubes. Its chirr is loud enough to rattle a tunnel and leave anyone near it
+reeling, and its hind legs kick like a mule's. It frightens easily.
+
 **Design**
 - **Where:** the gully (troop 16, ×2); the waking tube; Act 2 tubes (troop 21, ×5).
 - **Stats:** 24 / 8 / 5 / 44. **Moves:** Leap Kick; Deafening Chirr (the party may be Disoriented, 25%).
@@ -82,6 +90,10 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *Margin, Sib:* "Um. Crickets are good luck. In a house. This one isn't in a house. Or lucky."
 
 ### Rock Lizard
+**Description**
+A lean, fast lizard of the lava fields and the dry slopes, never far from a warm rock. Like all the island's lizards
+it lives by the sun: quick when warm, sluggish when cold, and able to bask its wounds away by day.
+
 **Design**
 - **Where:** the gully (troop 25, alone); Act 3 highlands and desert edge (troop 70, ×3). Its big cousin, the
   Old Rock Lizard, is the gully's mini-boss (below).
@@ -101,6 +113,11 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *Margin, Lasa:* "It did push-ups at me! So I did push-ups back! We're friends now. Mostly. It bit Sib, so: mostly."
 
 ### Old Rock Lizard (mini-boss)
+**Description**
+An old, oversized Rock Lizard that has claimed the top of the gully's climb: scarred, heavy and short-tempered. Its
+tail can sweep a whole party off its feet. By day the sun heals it as fast as it can be hurt; at night it is only a
+big, cold lizard.
+
 **Design**
 - **Where:** the gully, near the top of the climb (troop 78, alone). The Act 1 mini-boss.
 - **Stats:** 120 / 15 / 9 / 44. **Moves:** Bite; Tail Lash; Tail Sweep (the whole party); Bask (heals 15%, by day
@@ -117,6 +134,11 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *Margin, Lasa:* "It's the GRANDPA one! Grandpa, no! Grandpa, sit!"
 
 ### Raven
+**Description**
+A large black bird of the gully and the laurel forest, and an omen bird in Islander belief. Ravens see the dead, and
+a raven's croak over a living person is said to bring despair. Otherwise they are scavengers, quick to follow bigger
+hunters to a kill.
+
 **Design**
 - **Where:** the gully (troop 75, ×2); Act 2 laurel forest (troop 15, ×4).
 - **Stats:** 26 / 8 / 2 / 52. **Moves:** Peck; Ill Omen (Despair, 30%).
@@ -134,6 +156,10 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *Margin, Sib:* "Ravens see the dead. That's in every rite. So, um. Please stop waving at them."
 
 ### Vulture
+**Description**
+A broad-winged scavenger of the gully and the dry highlands. It rarely starts a fight: it circles until something is
+weak, bleeding or dying, and then comes down on that one. Alone and hurt, it simply leaves.
+
 **Design**
 - **Where:** the gully (troop 76, alone); Act 3 highlands and desert, arriving late (troop 33).
 - **Stats:** 55 / 13 / 4 / 50. **Moves:** Rending Beak; Circle (waits); Ill Omen (Despair). Picks on the weakest
@@ -154,6 +180,11 @@ The climb out through the old lava channels (map 1). The Ghost, Lasa, and soon S
 - *Margin, Lasa:* "It won't even look at Yoon! Rude! ...No, wait, that's good. That's good! Keep Sib away from it. Sib's squishy."
 
 ### Owl of Ill Omen
+**Description**
+A dire owl with a long, saber-shaped beak for drawing blood and pupil-less amber eyes. Owls of Ill Omen gather on
+ruined Builder towers and have the Lady of the Woods' leave to attack those who harm the forest. They answer to
+something older too: a Builder queen can call them off.
+
 **Design**
 - **Where:** the gully (troop 77, alone); Act 2 laurel forest (troop 11, ×3; troop 12, the Forest Patrol).
 - **Stats:** 55 / 12 / 4 / 50. **Moves:** Saber Beak (Bleed).
@@ -179,6 +210,11 @@ The terraces between Zonfahare and Afarohare (map 13). Still the Ghost, Sib and 
 the end of Act 2); Pada joins after the Parl quest.
 
 ### Feral Sheep
+**Description**
+Sheep gone wild from Islander flocks, rougher and bolder than their tame cousins. They graze the terraces and
+highlands in loose flocks that look after each other: hit one and the rest come for you; frighten one off and the
+others tend to follow. They will eat anything.
+
 **Design**
 - **Where:** the Fields (troop 7, ×4); the alpine herd (troop 18).
 - **Stats:** 45 / 9 / 4 / 40. **Moves:** Headbutt; Escape (at or below 30% Health).
@@ -197,6 +233,10 @@ the end of Act 2); Pada joins after the Parl quest.
 - *Margin, Pada:* "Old Yballa's strays. Don't tell her."
 
 ### Wild Boar
+**Description**
+Bristled, tusked wild pigs of the laurel forest and the Fields: the Lady of the Woods' own beasts. A boar doesn't
+run from a fight it's losing. It gets angrier, and it remembers who hurt it.
+
 **Design**
 - **Where:** the Fields (troop 1, ×2: three were too many for the starting party); the laurel forest (troop 2,
   with centipedes).
@@ -216,6 +256,10 @@ the end of Act 2); Pada joins after the Parl quest.
 - *Margin, Pada:* "Lady's beasts. Take what you need. No more."
 
 ### Barn Owl
+**Description**
+An ordinary pale owl of the forest's edge and the fields at night: the mundane cousin of the Owls of Ill Omen. It
+hunts by sound, in silence, and goes for the smallest prey it can find.
+
 **Design**
 - **Where:** the forest and fields at night (troop 62, ×2).
 - **Stats:** 42 / 12 / 3 / 50. **Moves:** Silent Swoop; Barn Screech (Disoriented, 35%).
@@ -239,6 +283,10 @@ Sib can't cross the old flow front (only the Ghost could, and Lasa flies), so in
 down through the tubes.
 
 ### Giant Cave Rat
+**Description**
+Rabbit-sized scavengers of the lava tubes that travel in packs. Their noses never stop working: they gang up on
+whatever is wounded, snatch food from a bag, and scatter once half the pack is down.
+
 **Design**
 - **Where:** the tubes (troop 5, ×6).
 - **Stats:** 18 / 6 / 2 / 40. **Moves:** Gnaw.
@@ -256,6 +304,10 @@ down through the tubes.
 - *Margin, Lasa:* "They ate my beetles! All my beetles! My whole collection! I'm never talking to them. Never ever."
 
 ### Cave Spider
+**Description**
+A pale, long-legged spider of the lava tubes that hunts by throwing sticky cords across a tunnel. It ties its prey
+up first and bites it after. Light bothers it.
+
 **Design**
 - **Where:** the tubes, Acts 1–3 (troop 73, ×3).
 - **Stats:** 36 / 10 / 4 / 44. **Moves:** Web Shot (Entangled, 50%); Spider Bite (Venom, 25%).
@@ -272,6 +324,13 @@ down through the tubes.
 - *Margin, Sib:* "Um. If it goes for my face I'm going to scream. That isn't a rite. I'm just telling you."
 
 ### Cave Girl and Cave Boy (Children of the Caves)
+**Description**
+The Children of the Caves: ageless fae children of the lava tubes, ancient in years and children in body and mind.
+The girls are small winged women in red with silver-embroidered hats, who can blind with light; the boys are short
+and chubby, in long vestments and red broad-brimmed hats. Pranksters, not killers: they steal shiny things to hidden
+hoards, pull clothes off, and run when beaten. They choose who sees them, and Islanders believe half the island's
+children have one as a guardian.
+
 **Design**
 - **Where:** the tubes (troop 8, ×4, two of each). Pranksters: never knock anyone out; steal shiny things
   to a hidden hoard (it can be bought back); run off when beaten.
@@ -304,6 +363,10 @@ combo:** Frogs and Eels leave you **Wet**; the Hags' **Marsh Wind** (air) turns 
 electricity hits Wet targets harder.
 
 ### Leech
+**Description**
+A fat marsh leech the length of a hand that latches on and drinks until it's full or forced off. Salt and fire make
+it let go. Herbalists keep them in jars, for bloodletting.
+
 **Design**
 - **Where:** the marsh (troop 35, ×5).
 - **Stats:** 20 / 6 / 2 / 20. **Moves:** Latch (drinks blood).
@@ -322,6 +385,10 @@ electricity hits Wet targets harder.
 - *Margin, Sib:* "Get it off—get it OFF—salt! Mada says salt! Who has salt?"
 
 ### Marsh Eel
+**Description**
+A long, slick eel of the salt marsh and the Aguerekeu eel pools. It bites, slips back under the water, and sometimes
+drags a victim in after it. All it wants is its reeds.
+
 **Design**
 - **Where:** the marsh and the Aguerekeu eel pools (troop 36, ×3).
 - **Stats:** 45 / 12 / 4 / 42. **Moves:** Eel Bite (Wet, 40%); Drag Below (pulls a victim under; hit the eel
@@ -340,6 +407,10 @@ electricity hits Wet targets harder.
 - *Margin, Lasa:* "Slippy! Slippy, slippy. You humans can't even swim properly. It's adorable."
 
 ### Crane
+**Description**
+A tall grey marsh bird that spears fish, and anything else that's wet, with a beak like a fishing spear. Most cranes
+are just cranes. The marsh folk say any of them might be a Hag.
+
 **Design**
 - **Where:** the marsh (troop 37, ×3).
 - **Stats:** 40 / 11 / 3 / 48. Flying. **Moves:** Spear Beak; Trip (a wing buffet: Disoriented).
@@ -356,6 +427,10 @@ electricity hits Wet targets harder.
 - *Margin, Sib:* "Old Guacimara says any crane might be a Hag. Any crane. Um. That's a lot of cranes."
 
 ### Heron
+**Description**
+The Crane's twin: a tall, patient marsh bird that stands on one leg for hours and strikes in an instant. Genuinely a
+heron, honestly: its eyes blink the right way.
+
 **Design**
 - **Where:** the marsh (troop 65, ×2; troop 66, with Marsh Frogs ×2).
 - **Stats:** 42 / 12 / 3 / 48. Flying. **Moves:** Spear Beak; Trip (a wing buffet: Disoriented).
@@ -373,6 +448,10 @@ electricity hits Wet targets harder.
 - *Margin, Lasa:* "It stood on one leg for SO long! I tried! I fell in. Twice. Don't tell Sib."
 
 ### Marsh Frog
+**Description**
+A dog-sized frog of the salt marsh that croaks like a drum and lands on its prey in a soaking belly-flop. All it
+really wants is to sit in the mud.
+
 **Design**
 - **Where:** the marsh (troop 63, ×3; troop 66, with a Heron).
 - **Stats:** 60 / 11 / 6 / 40. **Moves:** Leaping Slam (Wet, 40%); Croak (Disoriented, 25%); Bite.
@@ -390,6 +469,10 @@ electricity hits Wet targets harder.
 - *Margin, Lasa:* "I love him! I love him! Can we keep him? He's so squishy! Squishier than Sib!"
 
 ### Water Snake
+**Description**
+A slender, venomous snake of the marsh and the streams. It coils around what it means to bite, but it would always
+rather slither away than fight: make yourself big and it goes.
+
 **Design**
 - **Where:** the marsh and streams (troop 64, ×2).
 - **Stats:** 38 / 11 / 3 / 52. **Moves:** Venom Bite (Venom, 40%); Coil (Entangled). Bites whoever it
@@ -407,6 +490,11 @@ electricity hits Wet targets harder.
 - *Margin, Sib:* "Venom. Mada makes a remedy for that. Remember that Mada makes a remedy. Please remember."
 
 ### Marsh Hag (and the false Crane)
+**Description**
+Ancient Builder women whose dead bodies are ridden by lesser demons: vampiric witches of the Lady of the Wind's
+marsh, ugly and stumpy-legged, who can take the shape of a beautiful marsh crane. They feed on marsh animals, and
+sometimes on people. Towards Yoon they are oddly, sincerely fond, cooing like grandmothers over something kindred.
+
 **Design**
 - **Where:** the Hag Roost, a **mistake area** past Aguerekeu: meant to be too much for the starting party (and
   the marsh's Cranes nearby are hard for the same reason) (troop 39, Hags ×2; troop 38, three Cranes, one of
@@ -433,6 +521,11 @@ electricity hits Wet targets harder.
 - *Margin, Lasa:* "She called me a pretty little thing! ME! I'm older than her! ...Probably. Maybe."
 
 ### Parl (boss)
+**Description**
+A Seafarer crewman from the tribute collector's ship, twenty years at the oars and a literate spy for the empire,
+who stole tribute pearls and deserted into the salt marsh. Wry, self-mocking, and quick with a bow and a dirty
+trick. He doesn't want to hurt children; he wants out.
+
 **Design**
 - **Where:** Parl's Hideout in the deep marsh, after the Chase (troop 30). The Seafarer who stole the tribute
   pearls. The ending decides whether he dies, stays an enemy, or joins in Act 4. (A person, so his entry may
@@ -466,6 +559,10 @@ in their damage sums). Fishing birds hunt the Wet. Water everywhere helps the pa
 things harder.
 
 ### Monk Seal
+**Description**
+A heavy grey seal of the shore rocks: harmless most of the year, fiercely territorial in season. It warns with a
+bellow, soaks intruders with a slap of its flippers, and then simply lands on them.
+
 **Design**
 - **Where:** the shore rocks (troop 6, ×2 with Red Rock Crabs ×2).
 - **Stats:** 100 / 10 / 6 / 24. **Moves:** Body Slam; Bellow (the party may Panic, 25%); Splash (soaks everyone:
@@ -486,6 +583,10 @@ things harder.
 - *Margin, Dama (later):* "Seals. They steal from the nets and look sorry about it. They're not."
 
 ### Red Rock Crab
+**Description**
+A hard-shelled red crab of the lava shore that hides in cracks and keeps one claw up. Cutting does little; a heavy
+blow cracks it. Hurt, it pulls in and waits.
+
 **Design**
 - **Where:** the lava shore (troop 4, ×5; troop 6, with the Monk Seals).
 - **Stats:** 24 / 9 / 14 / 28. **Moves:** Pinch; Withdraw (Endurance up, at or below half Health).
@@ -503,6 +604,10 @@ things harder.
 - *Margin, Sib:* "Crush, not cut. Tinguaro says crabs taught the first smiths about armour. Um. I think that's a joke."
 
 ### Shore Crab
+**Description**
+The black-sand shore's common crab: hard on top, soft underneath. Shore Crabs gather in loose crowds that pinch
+together and follow the biggest crab around.
+
 **Design**
 - **Where:** the black-sand shore and tide pools (troop 53, ×3; troop 54, with the Spider Crab).
 - **Stats:** 34 / 10 / 12 / 30. **Moves:** Pinch; Withdraw (at or below half Health).
@@ -519,6 +624,10 @@ things harder.
 - *Margin, Parl (later):* "Not touching it. Not even to fight it. My god takes shells very seriously."
 
 ### Spider Crab
+**Description**
+A huge, long-legged crab of the shore that leads the smaller crabs. It holds prey with one long claw and pinches
+with the other, and a clatter of its claws calls more crabs in. Beat it and the little ones lose heart.
+
 **Design**
 - **Where:** the shore (troop 54: with Shore Crabs ×2, and two more it calls in at 70% Health).
 - **Stats:** 90 / 13 / 16 / 26. **Moves:** Long Claw (Entangled, 40%); Pinch; Scuttle Call (more crabs come).
@@ -539,6 +648,10 @@ things harder.
 - *Margin, Lasa:* "It looks like a spider and a crab had an argument. Both of them lost."
 
 ### Gannet
+**Description**
+A big white diving seabird of the sea cliffs that folds its wings and drops on fish like a thrown spear. Anyone
+standing wet at the waterline looks enough like a fish.
+
 **Design**
 - **Where:** the sea cliffs and shore (troop 52, ×2).
 - **Stats:** 45 / 11 / 3 / 54. Flying. **Moves:** Plunge Dive; Peck.
@@ -557,6 +670,11 @@ things harder.
 - *Margin, Dama (later):* "Gannets show you where the fish are. Follow the gannets, not the men."
 
 ### Shearwater
+**Description**
+A burrow-nesting seabird of the haunted coast that comes ashore at night, when the flock's calls sound like crying
+babies. The old stories say the Master of Deception wept like a child to lure people into the sea, and that the
+birds learned it from him.
+
 **Design**
 - **Where:** the haunted coast at night only (troop 51, ×4; a `<Night Troops>` encounter).
 - **Stats:** 22 / 7 / 2 / 50. Flying. **Moves:** Peck; Crying Chorus (the party may Panic, 25%).
@@ -576,6 +694,10 @@ things harder.
   Um. I'd rather not think about that right now."
 
 ### Jellyfish
+**Description**
+A pale, drifting bell of the shallows trailing stinging threads. It doesn't think or hunt: it drifts, and stings
+whatever touches it, weapons included.
+
 **Design**
 - **Where:** drifting in shallow water off the shore (troop 55, ×3).
 - **Stats:** 30 / 8 / 1 / 20. **Moves:** Sting (Venom, 40%). Stings anyone who hits it with a weapon (`<Stings:
@@ -591,6 +713,10 @@ things harder.
 - *Margin, Lasa:* "I poked one. Don't poke one."
 
 ### Moray Eel
+**Description**
+A thick, spotted eel of the Mansehare tide pools, all teeth, living in holes among the rocks. It grabs, bites and
+doesn't let go. It only wants its hole back.
+
 **Design**
 - **Where:** the Mansehare tide pools (troop 23, ×3; troop 24, with an Octopus).
 - **Stats:** 40 / 12 / 4 / 44. **Moves:** Moray Bite (Bleed, 30%); Grapple (Entangled, 50%).
@@ -608,6 +734,11 @@ things harder.
 - *Margin, Dama (later):* "Morays bite once and don't let go. Mind your fingers in the pools."
 
 ### Octopus
+**Description**
+A clever, many-armed creature of the Mansehare shore, more curious than hungry. Cornered, it clouds the water with
+ink, grabs, and pulls its victim under, then jets away when hurt. It is fond of shellfish. The Seafarers, who eat
+nothing from a shell, may eat octopus.
+
 **Design**
 - **Where:** the Mansehare shore (troop 24, with Moray Eels ×2).
 - **Stats:** 55 / 10 / 4 / 40. **Moves:** Grapple (Entangled, 50%); Ink Cloud (Dazzled, 70%); Drag Below (pulls a
@@ -638,6 +769,10 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 **Sodden** (no magic; physical hits land 35% harder), and then she gores.
 
 ### Giant Centipede
+**Description**
+A long, glossy centipede of the laurel forest's leaf litter, fast and venomous. Its many legs tangle a walker's
+feet; then it bites the one who stumbles. Gentle words don't reach it; a sharp threat might.
+
 **Design**
 - **Where:** the forest's edge (troop 3, ×4; troop 2, with Wild Boars).
 - **Stats:** 30 / 9 / 3 / 46. **Moves:** Venom Bite (Venom, 40%); Trip (Disoriented).
@@ -653,6 +788,12 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 - *Margin, Pada:* "Boots. Thick ones. Then step on its head."
 
 ### Forest Imp
+**Description**
+The forest's child-fae, grown from herbs by the People of the Forest: little boys with porcine faces and girls with
+hooves, often left to raise themselves. They trip and mock those lost in the woods, but they're harmless at heart:
+they feel bad and lead you out if you cry, and dissolve into a puddle if frightened. They ride Green Horses. If the
+imps start mocking you, you've crossed a boundary.
+
 **Design**
 - **Where:** the deep forest (troop 9, ×2 with Green Horses ×2). The forest's child-fae: pranksters who never knock
   anyone out, and run when beaten.
@@ -674,6 +815,11 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 - *Margin, Falmi (later):* "MY little brothers and sisters! Sort of! They grow in the Garden! I grew in a POT!"
 
 ### Green Horse
+**Description**
+The child-fae's mount: a horse-shape of living leaves and boughs, nearly invisible among the trees and nearly
+impossible to hit. Soaked or weighed down, the leaves droop and it can be struck; it burns easily. It guards its
+riders.
+
 **Design**
 - **Where:** the deep forest (troop 9, carrying the Forest Imps). The child-fae's near-invisible mount of leaves and
   boughs.
@@ -693,6 +839,11 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 - *Margin, Sib:* "Fire would work too. Please don't set the Lady's forest on fire."
 
 ### Boar-Man
+**Description**
+The men of the People of the Forest: swine-men, sometimes upright and sometimes on all fours, uplifted from ordinary
+pigs by the Lady of the Woods. One matches five men in strength. Blunt and honest, they enforce the forest
+agreements with club and spear, respect plain speaking, and take flattery, bribes and clever words as insults.
+
 **Design**
 - **Where:** the deep forest (troop 10, ×3; troop 12, the Forest Patrol, with an Owl of Ill Omen). The People of
   the Forest's men, who enforce the forest agreements.
@@ -715,6 +866,10 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 - *Margin, Pada:* "Good neighbours if you keep the agreements. I keep them."
 
 ### Laurel Pigeon
+**Description**
+A soft grey pigeon of the laurel forest, harmless and easily frightened. Talk to it quietly or offer it seeds and it
+settles; it pecks only when cornered.
+
 **Design**
 - **Where:** the forest's edge (troop 60, ×2). The gentle fight that teaches Talk.
 - **Stats:** 18 / 4 / 2 / 48. Flying. **Moves:** Flutter (nothing happens); Peck; Escape (when scared).
@@ -729,6 +884,10 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 - *Margin, Lasa:* "It let me hold it! It let me HOLD it! It weighs nothing! Is it hollow? Are birds hollow?"
 
 ### Wild Bees
+**Description**
+A swarm of the island's black bees defending a honey rock. Bees can't be reasoned with, but they can be smoked out:
+a lit torch sends them off.
+
 **Design**
 - **Where:** the Bee Rock gathering spots (troop 61, ×2). A swarm defending its honey.
 - **Stats:** 40 / 9 / 2 / 62. **Moves:** Swarm Stings (Venom, 25%); Angry Buzz (the whole party).
@@ -745,6 +904,10 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 - *Margin, Pada:* "Smoke, then honey. Never honey, then smoke."
 
 ### Great Boar (boss)
+**Description**
+The largest boar in the Lady of the Woods' forest: old, scarred, and known to her. Hunting it without her leave
+brings the whole forest down on the hunter. Its flesh is to become Yoon's body.
+
 **Design**
 - **Where:** deep in the forest, with the Lady's leave (troop 27). The largest boar in the Lady's forest. Its flesh
   becomes Yoon's body.
@@ -766,6 +929,11 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
 - *Margin, Pada:* "Old, scarred, and tired. It deserves a clean end. We give it one."
 
 ### Daughter of the Wells (boss)
+**Description**
+One of the Lady of the Woods' three daughters, trapped in a Builder well by Builder binding magic and turned into a
+giant snake woman who drags people down to drown. Beaten or calmed, the binding breaks and she becomes what she was:
+a water maiden of the woodland rivers.
+
 **Design**
 - **Where:** the Builder well (troop 26, optional). One of the Lady of the Woods' three daughters, trapped in the
   well by a Builder binding and made a snake woman. **A rescue:** beaten or calmed, she becomes a river maiden
@@ -789,6 +957,12 @@ here, troop 2), the Raven (troop 15), the Owl of Ill Omen (troop 11, and the For
   raining inside me!"
 
 ### Lady of the Woods, lowland aspect (boss) and the Sacred Rain Pig
+**Description**
+The Lady of the Woods lives in two bodies at once. In the temperate rainforest she is a woman with a porcine aspect,
+temperamental but gregarious, who rules the forest through agreements with the Islanders and would always rather
+feast than fight. Pushed to half her strength, she becomes the Sacred Rain Pig: the forest's holy sow that brings
+the rain, wordless, reached only by a rain rite or an offering.
+
 **Design**
 - **Where:** the Lady's Table (troop 29), if a bargain goes wrong or she's insulted. Temperamental but gregarious:
   **feed her, talk plainly, and she'd rather feast than fight.** At half Health she becomes the **Sacred Rain Pig**
@@ -829,6 +1003,10 @@ Lady's: her Snowfall (air) leaves you **Disoriented**, and her Falling Boughs (e
 **Grounded** (attack halved).
 
 ### Mouflon Ram
+**Description**
+A wild ram of the Highland Pines and the alpine meadows, thick-fleeced and thick-skulled: one of the Shepherd of the
+Deer's herd. It works itself up, then charges whoever stands in front of it.
+
 **Design**
 - **Where:** the Highland Pines (troop 17, ×3); the Alpine Herd (troop 18, with Feral Sheep ×2); the Shepherd's
   herd (troop 28).
@@ -846,6 +1024,10 @@ Lady's: her Snowfall (air) leaves you **Disoriented**, and her Falling Boughs (e
 - *Margin, Pada:* "The Shepherd's flock. One beast per family per winter. Not this winter."
 
 ### Golden Eagle
+**Description**
+The island's greatest bird of prey, nesting on the alpine peaks. It stoops from above, talons first, and tears at
+whatever it has cut. It wants intruders gone from its nest, not dead.
+
 **Design**
 - **Where:** the alpine peaks (troop 19, ×2); the Shepherd's herd (troop 28).
 - **Stats:** 50 / 13 / 4 / 56. Flying. **Moves:** Talon Dive (Bleed, 25%); Rending Beak.
@@ -862,6 +1044,10 @@ Lady's: her Snowfall (air) leaves you **Disoriented**, and her Falling Boughs (e
 - *Margin, Lasa:* "It's so PRETTY. It's so pretty and it hates us. That's the worst kind of pretty."
 
 ### Snow-line Hare
+**Description**
+A white-coated hare of the high meadows up to the snow line: the fastest thing on the mountain. It kicks hard with
+its big hind feet and bolts at the first loud noise.
+
 **Design**
 - **Where:** the alpine meadows up to the snow line (troop 74, ×3).
 - **Stats:** 40 / 11 / 3 / 80. **Moves:** Hind Kick; Escape (it may bolt).
@@ -877,6 +1063,12 @@ Lady's: her Snowfall (air) leaves you **Disoriented**, and her Falling Boughs (e
 - *Margin, Pada:* "Snare, don't chase. You won't catch it running. Nobody does."
 
 ### Shepherd of the Deer (boss)
+**Description**
+The Lady of the Woods' other husband and the guardian of the wild herds: about six feet tall, with a muscled upper
+body, boar-like legs, a face hidden in coarse bristles but for fiery round red eyes, a twin-tipped tail and a
+gnarled crook. He warns animals of traps and leads hunters astray. Islander priests quest to find him and teach him
+new songs, in exchange for stealth magic.
+
 **Design**
 - **Where:** the snow in the alpine forest (troop 28; Act 2, or later). The Lady's husband, guardian of the wild
   herds. **Calls his herd in two waves:** an eagle and a ram at 70% Health, two more at 35% (troop events).
@@ -900,6 +1092,12 @@ Lady's: her Snowfall (air) leaves you **Disoriented**, and her Falling Boughs (e
 - *Margin, Juda:* "He's always loved a new song. I taught him several, long ago. Ask him which."
 
 ### Lady of the Woods, alpine aspect (boss) and the Stern Centaur
+**Description**
+The Lady of the Woods' second body, in the high pines: polite but cold, keeper of the high forest's older, stricter
+agreements. Courtesy reaches her; gifts insult her; threats are unforgivable. Pushed to half her strength she
+becomes the Stern Centaur, a great goat-centaur with a spear of living pine: a judge, reached only by formal
+questions and rites.
+
 **Design**
 - **Where:** the high pines (troop 50). The Lady's cold high-forest body: polite but cold. **Courtesy works** (Ask,
   Rite); gifts insult her; tears don't move her; threats are unforgivable. At half Health she becomes the **Stern
@@ -940,6 +1138,10 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 (fight lizards at night); the Stonemen mire you and salt you; the crater lake soaks you and blinds you with steam.
 
 ### Giant Lizard
+**Description**
+A lizard over a metre long from the highlands and the volcanic desert. Cold-blooded and slow until the sun warms it,
+then quick and heavy-tailed; it basks its wounds away by day.
+
 **Design**
 - **Where:** the highlands and desert (troop 31, ×2; troop 33, with Vultures arriving late).
 - **Stats:** 110 / 16 / 10 / 30. **Moves:** Tail Lash; Bite; Bask (heals 15%, by day and outdoors only).
@@ -955,6 +1157,10 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 - *Margin, Pada:* "Cold-blooded. Hunt them at dawn, before the rocks warm up."
 
 ### Giant Tortoise
+**Description**
+An ancient tortoise of the highland trails, nearly unhurtable in its shell and in no hurry at all. Cutting does
+nothing; it has to be crushed. The Seafarers, who wear nothing from a shell, won't touch its scutes.
+
 **Design**
 - **Where:** the highlands (troop 32, alone).
 - **Stats:** 200 / 15 / 30 / 12. **Moves:** Snapping Bite; Withdraw (Endurance up).
@@ -971,6 +1177,11 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 - *Margin, Sib:* "Tortoises carry the old roads on their backs. That's a story. Um. It's a nice story."
 
 ### Guardian Lizard
+**Description**
+A spirit lizard: a giant gecko-like guardian of a pool or a spring. It watches the water, not you, and is peaceful
+to those who approach properly and dangerous to those who don't. It keeps a Builder oath, and a Builder queen would
+know it.
+
 **Design**
 - **Where:** pools and springs (troop 34, ×2), and the crater lake.
 - **Stats:** 140 / 16 / 12 / 40 (MAT 14). **Moves:** Spring Spit (water: Wet); Bite; Scale Guard (Endurance up).
@@ -988,6 +1199,11 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 - *Margin, Tou (later):* "We remember its oath. It guarded our wells when they were young. Stand down, old friend."
 
 ### Aurochs Calf, and the Aurochs
+**Description**
+The island's wild cattle, huge and rare: the ancestors of the Seafarers' cows. A calf is harmless and bleats for its
+herd. Hurt it and the herd bull comes, a tonne of horn and hoof that charges and tramples. Back away slowly and the
+bull may let you go.
+
 **Design**
 - **Where:** the highlands (troop 67: a calf, and the herd bull who charges in when it's hurt; troop 68, a lone
   bull, rare).
@@ -1008,6 +1224,10 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 - *Margin, Pada:* "Wild cattle. The Seafarers' cows came from these, once. Theirs forgot how to charge."
 
 ### Desert Scorpion
+**Description**
+A venomous scorpion of the volcanic desert, under every stone. It holds its prey with its pincers and strikes with
+its tail. It doesn't understand kindness.
+
 **Design**
 - **Where:** the volcanic desert, under every stone (troop 71, ×3).
 - **Stats:** 60 / 14 / 14 / 40. **Moves:** Stinger (Venom, 50%); Pincers; Grapple (Entangled).
@@ -1023,6 +1243,10 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 - *Margin, Juda:* "Shake out your sandals in the morning, children. Always."
 
 ### Hawk
+**Description**
+A smaller, faster raptor of the dry slopes. Like the Golden Eagle it stoops to cut, then tears at the bleeding, but
+it wants food, not a fight.
+
 **Design**
 - **Where:** the dry slopes (troop 72, ×2).
 - **Stats:** 44 / 14 / 3 / 60. Flying. **Moves:** Talon Dive (Bleed, 25%); Rending Beak.
@@ -1039,6 +1263,11 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 - *Margin, Lasa:* "Show-off! Show-OFF!"
 
 ### Stoneman
+**Description**
+An unfinished moai of soft tuff, quarried by the Builders and never set up, walking: large and brutish, stone-
+skinned, guarding Builder ruins and waiting for orders that never come. Tuff is the softest stone on the island:
+crush it. Stonemen surrender to their queen.
+
 **Design**
 - **Where:** the volcanic desert (troop 40, ×3; troop 41, with a Stoneman Priest; troop 42, with the Shaman).
   Unfinished moai of soft tuff, walking: Builder remnants waiting for orders.
@@ -1057,6 +1286,10 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 - *Margin, Tou (later):* "Stand down. Your queen is here. ...They always did look so tired."
 
 ### Stoneman Priest
+**Description**
+A Stoneman cut with salt glyphs, a Builder rite that turns flesh toward salt. It mends cracked Stonemen and salts
+their enemies. Water washes the salt off.
+
 **Design**
 - **Where:** the volcanic desert (troop 41, with Stonemen ×2).
 - **Stats:** 120 / 10 / 16 / 22 (MAT 16). **Moves:** Salt Glyph (Salting, 80%); Mend Stone (heals an ally 25%);
@@ -1074,6 +1307,10 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 - *Margin, Sib:* "The glyphs are a rite. A Builder rite. I can read it. I don't like what it says."
 
 ### Stoneman Shaman (boss)
+**Description**
+The oldest Stoneman and keeper of the salt glyphs, crowned with red scoria and speaking a broken Builder tongue. It
+shakes the desert floor and salts the air, and it is waiting for a Navigator Lord's order.
+
 **Design**
 - **Where:** the volcanic desert (troop 42, with a Stoneman). The oldest Stoneman, keeper of the salt glyphs.
 - **Stats:** 600 / 17 / 20 / 24 (MAT 16). **Moves:** Stone Fist; Salt Storm (the whole party: Salting, 30%);
@@ -1095,6 +1332,10 @@ Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this be
 - *Margin, Juda:* "Such patient servants. It seems a shame no one gives them orders anymore."
 
 ### Guardian of the Crater Lake (boss)
+**Description**
+The greatest of the Guardian Lizards, keeping the crater lake on the way to the ritual site for someone long gone.
+It floods the shore, fills the air with blinding steam, and sweeps its tail through whoever is left standing.
+
 **Design**
 - **Where:** the crater lake, on the way to the ritual site (troop 43). The greatest Guardian Lizard.
 - **Stats:** 800 / 19 / 14 / 40 (MAT 18). **Moves:** Spring Torrent (water, the whole party); Steam Burst (the whole
@@ -1126,6 +1367,10 @@ tombs (Ghost Yoon, Sib, Lasa, Pada); Act 3's after (Yoon, Sib, Pada, Juda), and 
 Destroyer's own servants (the hounds, the Bull) won't listen at all.
 
 ### Restless Bones
+**Description**
+The unquiet dead of the stone-cut tombs: dead tomb guards whose graves were robbed of their ochre paint, still
+guarding with notched copper blades. The right rite, or fresh grave paint, lays them down.
+
 **Design**
 - **Where:** the tombs (troop 22, ×2 with a Bone Chanter).
 - **Stats:** 70 / 14 / 9 / 30. **Moves:** Grave Blade; Brace (counters the next melee blow); Shield Bash (Stunned).
@@ -1143,6 +1388,10 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
 - *Margin, Sib:* "Ochre paint, the right words, and they'll lie down. They're not angry. They're unfinished."
 
 ### Bone Chanter
+**Description**
+A dead priest still chanting in the tombs, its funeral song missing a verse. It sings fallen skeletons back up and
+sings despair over the living.
+
 **Design**
 - **Where:** the tombs (troop 22, with Restless Bones ×2).
 - **Stats:** 45 / 6 / 5 / 34 (MAT 14, MP 40). **Moves:** Grave Chill (magic: Chilled); Dirge (the whole party may
@@ -1162,6 +1411,11 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
 - *Margin, Juda:* "A verse left out is a door left open. Remember that, Sib."
 
 ### Black Hound
+**Description**
+A servant of the Destroyer: a demon in the corpse of a rabid dog, wolf-like, with shaggy black fur and glowing red
+eyes. Black Hounds live in deep mountain caves and come out at night to drag livestock and people into the
+underworld. They cannot be reasoned with.
+
 **Design**
 - **Where:** the volcano and the tubes (troop 44, ×3; troop 45, with an Alpha; troop 48, with the Bull of the Caves).
   The Destroyer's servants.
@@ -1180,6 +1434,10 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
 - *Margin, Juda:* "They answer to an old master. Be careful in the deep tubes, children. Stay close to me."
 
 ### Black Hound Alpha
+**Description**
+The leader of a Black Hound pack: bigger, older and crueller. Its howl comes from under the mountain. When it falls,
+the rest are only dogs.
+
 **Design**
 - **Where:** leading a pack (troop 45, with Black Hounds ×2).
 - **Stats:** 260 / 22 / 12 / 54. **Moves:** Rending Bite (Bleed, 40%); Drag Down (pulls a victim into the dark, 70%;
@@ -1198,6 +1456,11 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
 - *Margin, Pada:* "Lead hound. Take the lead hound."
 
 ### Hunched
+**Description**
+A corpse used as a puppet by one of the Destroyer's demons, with a death's-head face of unending pain and long,
+grasping claws. The Hunched kill livestock in the dark, raid in storms, and drag people before their master. In
+battle they wail and keen: the body underneath is begging to be released, and Talk can make the rider let go.
+
 **Design**
 - **Where:** the tubes and graveyards (troop 46, ×3; troop 47, with a Defiler). A corpse ridden by a demon.
 - **Stats:** 100 / 15 / 8 / 26 (MP 12). **Moves:** Corpse Claw; Grave Breath (Venom, 40%); Grave Chill (magic:
@@ -1216,6 +1479,10 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
 - *Margin, Juda:* "Poor things. Someone really should lay them to rest."
 
 ### Hunched Defiler
+**Description**
+A stronger demon riding an older corpse, with fire in its dead mouth. Its grip on the body is old and hard to
+loosen.
+
 **Design**
 - **Where:** deeper in (troop 47, with Hunched ×2). A stronger demon in an older corpse: it uses magic.
 - **Stats:** 180 / 12 / 10 / 30 (MAT 20, MP 60). **Moves:** Defile (magic, Despair 40%); Pyre Breath (fire, the whole
@@ -1234,6 +1501,10 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
 - *Margin, Sib:* "Fire from a dead mouth. I'm going to have nightmares. Um. More nightmares."
 
 ### The Bull of the Caves (optional boss)
+**Description**
+The fire-breathing twin of the Bull of Heaven: a bull of the mountain itself, with horns of red-hot stone, guarding
+treasure in the Destroyer's tubes. Where its twin judges the guilty, this one serves the Destroyer. It won't listen.
+
 **Design**
 - **Where:** the Destroyer's tubes, guarding treasure (troop 48, with Black Hounds ×2 that join at half Health). The
   fire-breathing twin of the Bull of Heaven. Serves the Destroyer.
@@ -1253,6 +1524,11 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
 - *Margin, Sib:* "The Bull of Heaven's twin. One judges the guilty. This one serves the Destroyer."
 
 ### Juda (Act 3 boss)
+**Description**
+The village priest of Zonfahare: wise, respected, Sib's teacher, and the man who murdered Yoon. He believes Yoon is
+the demon he summoned through that murder. Beaten on the mountain, his skin splits and something older rises
+underneath, with eyes of coral.
+
 **Design**
 - **Where:** the mountain, after he burns Pada (troop 49). He believes Yoon is the demon he summoned. **Optionally
   beatable:** at 0 Health he doesn't die but rises in his **partial Navigator Lord form** (coral eyes), which can't be
@@ -1278,6 +1554,10 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
 - *Margin, Dama:* "Someone killed a child. That's my business. He made it my business."
 
 ### Ridden Aurochs (Act 4+)
+**Description**
+A dead aurochs ridden by one of the Destroyer's demons and used as a living battering ram by his forces, from the
+invasion on. As with the Hunched, a rite can make the rider let go and let the carcass lie down.
+
 **Design**
 - **Where:** with the Destroyer's forces from Act 4 (troop 69). A dead aurochs ridden by a demon, used as a battering
   ram.
@@ -1296,6 +1576,291 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
 
 ---
 
+## 11. The Seafarers (Acts 4–5)
+
+The invasion: Prince Thenmy's army in Act 4, and his sister Meneswa's in Act 5, which burns the forests. The party
+is Yoon, Sib, Dama and Parl (and Thenmy in Act 5). Full design: concept.md, "Seafarer enemies". **The Seafarers'
+rules:** Thenmy's soldiers spare children and, with only children left, demand surrender; they can be talked down,
+and their prince's word moves them most. Nothing they drop is bronze: each bronze piece is semi-unique, from the
+story. A beaten Seafarer troop has a 10% chance of a Golden Axe Money purse.
+
+### Seafarer Marine
+**Description**
+The backbone of the invasion: a soldier in bronze armour with spear and shield. Marines hold a line, brace against a
+charge and step in front of a wounded comrade. Under Thenmy they won't harm children unless enraged; with only
+children left, they demand surrender.
+
+**Design**
+- **Where:** troops 14, 80, 82, 84, 85, 89, 95 (with Sailors, Axemen, a Priest, the Captain, a Horseman).
+- **Stats:** 70 / 14 / 14 / 22. Bronze: cutting and piercing land 25% softer (`<Metal>`).
+- **Moves:** Measured Thrust; Shield Bash (Stunned); Brace; Cover (guards a hurt ally); Hurl Javelin; Demand
+  Surrender (only children left).
+- **Talk:** sapient; a bribe might work; Ask and Plead reach him. Likes Seafarer Grog. Hates anything from a shell.
+- **Drops:** Seafarer Grog 1/3, Quilted Cap 1/8, Salt Beef 1/4.
+- **Tactics (tier 2):** thrusts at the weakest adult, braces against melee, covers a wounded comrade.
+
+**Remembered**
+- *Insight 1:* "Bronze man. Spear. Shield. Lots of them."
+- *Insight 2–4:* "They won't hurt Sib. They won't hurt me. They hurt Dama."
+- *Insight 5+:* "His purse is light. He doesn't want to be here."
+- *Margin, Parl:* "Marines. Twenty years of being shouted at by them. Note: they're worse on land."
+
+### Seafarer Sailor
+**Description**
+A deckhand pressed into the invasion: no bronze armour, a knife, a belaying pin and a net. Homesick and
+superstitious, he'd rather be at sea, and nobody warned him about ghosts.
+
+**Design**
+- **Where:** troops 81, 82, 89, 90 (with Marines, the Captain).
+- **Stats:** 65 / 12 / 8 / 34. **Moves:** Quick Slash; Overhead Smash; Cast Net, then Haul In (on whoever is netted);
+  Throw Knife; Demand Surrender.
+- **Talk:** sapient; easy to win over. Likes Seafarer Grog, Salt Beef. Hates anything from a shell.
+- **Drops:** Seafarer Grog 1/3, Sailor's Cap 1/10, Lead-Weighted Net 1/12.
+- **Tactics (tier 2):** nets someone, then hauls them in.
+
+**Remembered**
+- *Insight 1:* "A sailor. Scared. Holding a net."
+- *Insight 2–4:* "He throws the net, then he pulls."
+- *Insight 5+:* "He keeps looking back toward the ships."
+- *Margin, Dama:* "Fishermen, really. Wrong side of the net today."
+
+### Seafarer Axeman
+**Description**
+The invasion's heavy hitter: a big man with a bronze war axe and bronze armour, slow but crushing. He respects nerve
+more than kind words, and a priest's blessing makes him worse.
+
+**Design**
+- **Where:** troops 83, 84, 86, 88, 91, 92 (with Marines, Priests, the Champion, the Officer).
+- **Stats:** 140 / 17 / 13 / 24. `<Metal>`. **Moves:** Heavy Chop; Skull Crack (Disoriented); Hook Shield; Rending Blow
+  (Defense down); Cleave (at or below half Health); Cover; Demand Surrender.
+- **Talk:** sapient; a threat impresses him, sweet talk doesn't. Likes Salt Beef, Grog. Hates anything from a shell.
+- **Drops:** Salt Beef 1/3, Cowhide 1/5, Horsehair Plume 1/15.
+- **Tactics (tier 2):** with a Priest, he's the one being blessed (troop combo): a buffed Axeman swings his heaviest.
+
+**Remembered**
+- *Insight 1:* "Big man. Big axe."
+- *Insight 2–4:* "When the priest touches him, get out of the way."
+- *Insight 5+:* "He's tired. That axe has been heavy since Mansehare."
+- *Margin, Parl:* "Never stand where an axeman can swing. Note: that's everywhere."
+
+### Seafarer Priest
+**Description**
+A priest of the Bull Cult: red-robed, horn-crowned, carrying a bull-horn staff and the Codex of the Bulls. He
+blesses the soldiers with the Charging Bull's strength and heals them, and left alone he shouts for help. Take him
+down first.
+
+**Design**
+- **Where:** troops 85, 86, 92 (with Marines or Axemen, and a hidden soldier who answers his call).
+- **Stats:** 90 / 9 / 9 / 30 (MAT 15, MP 60). **Moves:** Puaka (an ally's Might up); Mahu (heals an ally); Puhi
+  (Hypnotizes a party member into attacking their own side); Ward Off; Quick Jab; Bull-Leap; Call for Help (alone:
+  a hidden soldier comes running); Demand Surrender.
+- **Talk:** sapient; a rite reaches him, threats offend. Likes Ox Horn and beef (an offering for the Bull). Hates
+  anything from a shell.
+- **Drops:** Linen Cloth 1/4, Bull Priest's Robe 1/15, Bull-Horn Staff 1/20.
+- **Tactics (tier 2, the troop's support):** blesses his heaviest hitter, heals the most hurt; calls for help when
+  he's the last one standing.
+
+**Remembered**
+- *Insight 1:* "A priest. Not ours. Horns on his head."
+- *Insight 2–4:* "He makes them stronger. He fixes them. Hit him first."
+- *Insight 5+:* "They give their dead to the birds."
+- *Margin, Sib:* "His rite has the same shape as ours. Um. That's either very beautiful or very worrying."
+
+### Seafarer Champion
+**Description**
+A bull-leaper of Keftiu's courts: fast, evasive and a showman, in a horned helm. He leaps clear of melee blows,
+wants a contest, not a war, and despises anyone who begs.
+
+**Design**
+- **Where:** troops 87, 88, 91 (alone, with Axemen, with the Officer).
+- **Stats:** 260 / 22 / 15 / 46. **Moves:** Skull Crack; Bull-Leap (the next melee attack misses); Trip; Flaying
+  Strike (Speed down); Hurl Javelin; Bellow (turn 1); Puaka (when hurt).
+- **Talk:** sapient; threats impress him, pleading disgusts him, a prize purse interests him. Talked down, he salutes
+  the party (Might up).
+- **Drops:** Salt Beef 1/3, Bull-Hide Bracers 1/5, Bull-Horn Headdress 1/15.
+- **Tactics (tier 2):** leaps clear of melee: magic and ranged attacks are the answer.
+- **Balance** (Act 4 party, attacking only): alone, about a quarter of the party's Health; with two Axemen, one of
+  the act's hardest fights.
+
+**Remembered**
+- *Insight 1:* "A man who jumps over things. Showing off."
+- *Insight 2–4:* "You can't hit him close. Hit him from far."
+- *Insight 5+:* "He wants a contest. Brag at him."
+- *Margin, Thenmy (Act 5):* "I watched him leap the King's own bull. He slipped. Do not tell him I said so."
+
+### Seafarer Captain (named rival)
+**Description**
+A ship's master leading Marines and Sailors: one named rival the party meets again and again, who escapes when
+beaten and comes back with a grudge. He speeds and steadies his side, and his men lose heart when he falls.
+
+**Design**
+- **Where:** the Captain's Crew (troops 89, 90). Recurring; the Act 5 Firebrand version is still to come.
+- **Stats:** 350 / 18 / 14 / 34. `<Metal>`, `<Morale Leader: 25>`. **Moves:** Raking Cut; Pommel Strike; Read the
+  Wind (turn 1: his side's Speed up); Vero; Arikigun (turn 3+: clears his side's debuffs and states); Demand
+  Surrender.
+- **Talk:** sapient; can be Asked to withdraw. Thenmy's word turns him at once.
+- **Drops:** Sailor's Compass 1/6, Gilt Armlets 1/12, Seafarer Grog 1/3.
+- **Balance** (Act 4 party): always won, at over half the party's Health.
+
+**Remembered**
+- *Insight 1:* "The one the others listen to."
+- *Insight 2–4:* "Beat him and the others stop wanting to fight."
+- *Insight 5+:* "He'd rather not lose anyone. Ask him to go."
+- *Margin, Dama:* "A captain's a captain. Talk to him like one."
+
+### Seafarer Officer (named rival)
+**Description**
+A noble who drove to the war in his own chariot, leading Axemen and Champions: another named rival. He marks one
+soldier for a sure, crushing blow, strengthens his side, and silences the party's casters. Proud: he takes a formal
+request, never a plea or a bribe.
+
+**Design**
+- **Where:** the Officer's Guard (troops 91, 92). Recurring; Firebrand version to come.
+- **Stats:** 450 / 20 / 18 / 30. `<Metal>`. **Moves:** Vital Strike; Shield Bash; Iku (marks an ally: their next
+  blow is a sure critical); Puakagun (his side's Might up); Kiva (silences a caster); Riposte (when hurt); Demand
+  Surrender.
+- **Talk:** sapient; Ask works, Plead and bribes insult him.
+- **Drops:** Officer's Kilt 1/5, Orchil-Purple Mantle 1/12, Gilt Diadem 1/20 (the Court Dress set).
+- **Tactics (tier 2):** marks the hardest hitter beside him; silences whoever casts most.
+- **Balance** (Act 4 party, attacking only): won one fight in ten or twenty. The act's set-piece battle.
+
+**Remembered**
+- *Insight 1:* "A rich man in a cloak. He points, and they hit."
+- *Insight 2–4:* "Watch who he points at."
+- *Insight 5+:* "Ask him properly. He likes being asked properly."
+- *Margin, Thenmy (Act 5):* "My cousin. He still owes me a chariot race."
+
+### Seafarer Horseman (named rival)
+**Description**
+The invasion's great innovation: a warrior on a horse bred for riding, which the Islanders have never seen. He
+charges on open ground and tramples whole lines; unhorsed, he fights on with a bow. The horse is only an animal, and
+it can be calmed.
+
+**Design**
+- **Where:** troops 93–95, on open ground only. Recurring named rival; Firebrand version to come.
+- **Mounted:** 320 / 22 / 14 / 52. **Moves:** Aurochs Charge (turn 1); Measured Thrust; Trample; Hurl Javelin. Mired,
+  Entangled or Held stops the charge and the trample. At half Health the rider is thrown (`<Transform At>`).
+- **On foot:** 180 / 16 / 10 / 40. **Moves:** Loose Arrow; Aimed Shot; Covering Fire; Riposte; Demand Surrender.
+- **Talk:** mounted, the horse talks as an animal (it can't be stalked): soothe it and it bolts, rider and all. On
+  foot, the rider is a soldier.
+- **Drops:** Horsehair 1/2, Driving Gloves 1/5, Cowhide 1/4.
+- **Balance** (Act 4 party, attacking only): one is a fair fight; two are the act's hardest.
+
+**Remembered**
+- *Insight 1:* "A man on a—what IS that? A big goat? A deer with no horns?"
+- *Insight 2–4:* "Bog it down and it can't run at us."
+- *Insight 5+:* "The horse is scared too. Talk to the horse."
+- *Margin, Sib:* "It's called a horse. Parl says. Um. Parl says a lot of things."
+
+### Lady of the Sword (Act 5 boss)
+**Description**
+A goddess, and a Seafarer: her domain is star metal, the iron of fallen meteorites that binds the Destroyer, like
+the iron sword she wields. She fights for the Princess with Keftiu sword-craft and the codices. Whether she serves
+willingly or bound is not yet known.
+
+**Design**
+- **Where:** troop 96 (Act 5).
+- **Stats:** 1100 / 26 / 16 / 46 (MAT 22). **Moves:** Vital Strike; Raking Cut; Riposte; Off-Hand Flurry; Flaying
+  Strike; Kiva (silences a caster); Atua (turns a spell back); Cold Composure; Every Blade in the Sea (turn 3+: the
+  whole party, Bleed).
+- **Talk:** to come (bound or willing decides it).
+- **Tactics (tier 3):** Riposte punishes melee, Kiva silences casters, Atua turns spells back: ranged attacks are
+  the gap.
+
+**Remembered**
+- *Insight 1:* "A lady with a sword. Iron. Old iron."
+- *Insight 2–4:* "Don't hit her close. Don't cast at her. Throw things."
+- *Insight 5+:* "Her sword is the star-metal. Like the one in the tube where I woke."
+- *Margin, Thenmy:* "I grew up on stories of her. I never thought I would draw steel against her."
+
+### Meneswa (Act 5 boss)
+**Description**
+The Princess: Thenmy's half-sister, daughter of the King of All the Sea and the Lady of the Mountains. She seized
+the invasion in a coup and means to subjugate the island by brutality, burning the forests. Pushed to half her
+strength she tears off her helm, and her eyes are her mothers': one dark as rain, one red as the highlands. At the
+end, she yields.
+
+**Design**
+- **Where:** troop 97 (Act 5). Immortal throughout the fight; at half Health she becomes her second phase at full
+  Health; at the end she surrenders (switch 10) and the battle breaks off.
+- **Phase 1:** 1300 / 24 / 18 / 40 (MAT 22). **Moves:** Vital Strike; Riposte; Shield Bash; Mea-uha (pushes a party
+  member's turn back); Tiho-uha (30% less physical damage); Kerihari (earth, random hits).
+- **Phase 2:** 750 / 27 / 16 / 48 (MAT 28). **Moves:** Ahihari (fire, random hits); Keriben (heavy earth); Flaying
+  Strike; Mea-uhagun (the whole party's turns pushed back); Mock; Tiho-uhagun (when hurt).
+- **Talk:** to come.
+- **Tactics (tier 3).** Her music is her own theme, *Meneswa*.
+
+**Remembered**
+- *Insight 1:* "The Princess. Thenmy's sister. She hates everything here."
+- *Insight 2–4:* "She makes you slow, then she cuts. Then fire."
+- *Insight 5+:* "Her eyes are two different mothers."
+- *Margin, Thenmy:* "My sister. Please don't kill her. I know what I'm asking."
+
+---
+
+## 12. Under the sea (Act 4+)
+
+Offshore and in the deep water, once Dama's breathing spell opens the sea. The party is Yoon, Sib, Dama and
+Thenmy (the animal sim's Act 4 party). **The sea's rule:** blood in the water makes everything worse; the
+Killer Fish and the Shark frenzy on the Bleeding.
+
+### Killer Fish
+**Description**
+Toothy fish that hunt in shoals off the island's coast: always hungry, and worse once there's blood in the water.
+
+**Design**
+- **Where:** troops 56 (×4), 57 (with a Swordfish), 59 (with a Shark).
+- **Stats:** 60 / 14 / 6 / 50. **Moves:** Frenzy Bite (Bleed, 20%); Blood Frenzy (Brave).
+- **Talk:** animal; the shoal can turn away as one.
+- **Drops:** Raw Fish 1/2, Shark Tooth 1/6.
+- **Tactics (instinct):** the shoal bites the Bleeding (`<Follow Up: Bleed +20>`), and gets Brave once someone bleeds.
+
+**Remembered**
+- *Insight 1:* "Fish. Teeth. Everywhere."
+- *Insight 2–4:* "Once you bleed, they all come."
+- *Insight 5+:* "Always hungry. Don't bleed."
+- *Margin, Dama:* "Get out of the water bleeding and you won't get out of the water."
+
+### Swordfish
+**Description**
+A big, fast fish of the open sea with a bill like a sword of bone. It runs things through, and only attacks what it
+can't outswim.
+
+**Design**
+- **Where:** troop 57 (with Killer Fish ×2).
+- **Stats:** 200 / 20 / 8 / 64. **Moves:** Bill Thrust; Slashing Rush (two targets).
+- **Talk:** animal.
+- **Drops:** Raw Fish 1/1, Bone 1/2.
+- **Tactics (instinct):** thrusts at the slowest swimmer; rushes through two when they're close together.
+
+**Remembered**
+- *Insight 1:* "A fish with a sword. Why does a fish need a sword?"
+- *Insight 2–4:* "It goes straight through. Don't be in a line."
+- *Insight 5+:* "It only attacks what it can't outswim."
+- *Margin, Thenmy:* "Fascinating. Terrifying. Chiefly terrifying."
+
+### Shark
+**Description**
+The sea's great hunter: the Star Mother's creature, in Islander belief. It makes things bleed and frenzies when it's
+hurt. Sharks respect a hit on the nose more than words, and Dama would know how to treat one.
+
+**Design**
+- **Where:** troops 58 (alone), 59 (with Killer Fish ×2).
+- **Stats:** 380 / 22 / 12 / 52. **Moves:** Shark Bite (Bleed, 50%); Bite; Blood Frenzy (Brave, when hurt).
+- **Talk:** animal; a threat may send it off.
+- **Drops:** Shark Tooth 1/1, Shark Skin 1/2, Shark Tooth 1/2.
+- **Tactics (instinct):** bites to make you bleed; frenzies when hurt.
+- **Balance** (Act 4 party, attacking only): about a quarter of the party's Health alone; with Killer Fish, over
+  half.
+
+**Remembered**
+- *Insight 1:* "Big fish. Grey. Smiling."
+- *Insight 2–4:* "It bites, and you bleed, and then everything comes."
+- *Insight 5+:* "Hit it on the nose. It respects that."
+- *Margin, Dama:* "The Star Mother's. You don't kill them if you can help it. You make them leave."
+
+---
+
 ## Open questions
 
 - **Built:** the tactics plugin, every change marked `NEW` above and every section's **Changes** (the coast's too)
@@ -1309,7 +1874,8 @@ Destroyer's own servants (the hounds, the Bull) won't listen at all.
     children until he's below half Health);
   - "most dangerous" and "smallest" targets come from the scoring (fast or hard-hitting targets are worth
     more for disabling states; the Barn Owl `<Prefers: child>`).
-- **Next area,** in story order: the Seafarers (Acts 4–5).
+- **Done:** every creature in the game has an entry. New enemies (the Bull of Water, Sleep Demons, Builder
+  ghosts, Crew-beasts, Kavakava figures, the Firebrand variants) get entries as they're built.
 
 **Decided:** the early enemies keep their stats (their data notes now give the right acts); ravens see the
 dead; enemies can see Lasa; margin notes are in each character's voice (concept.md, "Voices").
