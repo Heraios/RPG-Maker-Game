@@ -207,6 +207,26 @@
    "where": "The children's cairns by the sky-hole.",
    "taught": "Two kids stacked this together! Like you and me.",
    "wrong": "Tether."
+  },
+  "sky": {
+   "where": "Coming out of the sky-hole.",
+   "taught": "Sky! That's the biggest thing there is.",
+   "wrong": "Sigh."
+  },
+  "sun": {
+   "where": "Coming out of the sky-hole.",
+   "taught": "And that's the sun. Don't look at it.",
+   "wrong": "Son."
+  },
+  "goat": {
+   "where": "Ladder, grazing by the sky-hole.",
+   "taught": "A goat! They eat everything and climb everything.",
+   "wrong": "Got."
+  },
+  "grass": {
+   "where": "The kipuka garden by the sky-hole.",
+   "taught": "Grass. It grows where the fire didn't.",
+   "wrong": "Gas."
   }
  },
  "body": [

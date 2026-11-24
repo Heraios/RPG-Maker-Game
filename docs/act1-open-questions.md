@@ -11,7 +11,7 @@ acts-1-2-maps.md (the map plan), editor-guide.md (how the systems are placed).
 |---|---|---|
 | 5 | Prologue | Done. New Game starts here (5, 8, 6). Centred narration, Prologue music |
 | 6 | Lava Tube: Waking | Playable: First Words (Lasa, 13 words, the face), skylight, lava glow, Lava Tubes tileset. The ladder leads up the sky-hole to map 1 (20, 14), in Act 1 (float) and Act 2 (the mended ladder) |
-| 1 | Lava Flows: Sky-Hole Gully | **First draft** (40 x 30): the walled gully, the sky-hole (with its view of map 6), the kipuka garden, the children's cairns, Ladder (placeholder), the tube collapse, rubble to the south; crickets / bats. Exit north to map 2 |
+| 1 | Lava Flows: Sky-Hole Gully | **Events built**: arriving with Lasa plays "Out of the sky-hole" once (sky, sun, Burning Touch); lessons goat (Ladder), grass (kipuka: Spirit Surge), together (the children's cairn); the hole (climb down in Act 2); gathering: obsidian vein, skylight fig, wart fern x2, ephedra, orchil, scoria, goblin's gold; Act 2 wanderers (crickets / bats by the collapse, giant lizards at the neck). Exit north to map 2. Still: music, Ladder following, Sib's cairn line |
 | 2 | Lava Flows: The Old Flow Front | Stub (42 x 30, blank): edges linked south to 1 and north to 3. To draft: the wall of old lava and the warm crack (Region 10) |
 | 3 | Lava Flows: The Channels | Stub (42 x 45, blank): the levees, the wires, the stream, the dead tree, the gusty saddle; its four wanderers wait in place-holder spots |
 | 7 | Lava Flows: The Greening | Stub (42 x 30, blank): the land greens, the first view of town; the Old Rock Lizard. North isn't built yet |

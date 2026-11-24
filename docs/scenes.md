@@ -185,7 +185,7 @@ object's line gains the word; "New word: ..."), but Lasa speaks in ordinary wind
 scripted** (sky, sun, home); **the rest are optional finds**, a reason to wander the kipuka, never a gate.
 Lasa cheers now and then, not on a count.
 
-### 1. Out of the sky-hole (scripted)
+### 1. Out of the sky-hole (scripted) — built on map 1 (autorun, once)
 *(Daylight. The cave music gives way to wind. The Ghost and Lasa rise out of the hole.)*
 
 **Lasa:** Sky! That's the biggest thing there is.
