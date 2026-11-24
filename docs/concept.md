@@ -2368,7 +2368,7 @@ were chosen for:
 
 | Where | Troop | Teaches |
 |---|---|---|
-| Tube collapse, by day / at night | 16 Cave Crickets x2 / 79 Bats x3 | First fight: Burning Touch + Keri; Cricket Legs drop / darkness helps Keva |
+| Tube collapse (map 1), **Act 2 only**, back with Sib | 21 Cave Crickets x5 by day / 20 Bats x6 at night | Not in Act 1: the gully stays peaceful, the children's place |
 | The stream (water) | 25 Rock Lizard | Chilling Touch, Keri: Sodden, the knife +35% |
 | The dead tree (tree) | 75 Ravens x2 | Crushing Touch slows them: Steal; or Cricket Legs in Talk |
 | The gusty saddle (wind) | 76 Vulture | It goes for the "weakest", the Ghost, and does nothing; Cutting Touch + Keva |
@@ -2376,7 +2376,8 @@ were chosen for:
 | The wires (sing), at night | 77 Owl of Ill Omen (never flees) | A spirit and an omen: Ghostly Touch, Talk |
 | The top (smoke) | 78 Rock Lizards x2 | The finale: Touch, Writhe, Keri for the extra turn |
 
-Simulated at level 1 with Lasa's basic moves and the Ghost doing nothing: every fight wins 89-100% of the time,
+Act 1's first fight is now in the channels (map 3): the Rock Lizard by the stream. Burning Touch (sun) still
+comes first, on map 1. Simulated at level 1 with Lasa's basic moves and the Ghost doing nothing: every fight wins 89-100% of the time,
 Lasa ending on 19-32 of 32 Health; the Rock Lizards x2 are the hardest, and come last. The Ghost takes 10% of
 physical damage (and double magic), so animals barely scratch it: about 1 a hit. **Animals can see the Ghost, and can hurt it if they hit it** (no immunity: with 15 Health it relies on
 its Speed, Lasa's Keva and the Wails to keep claws off it).

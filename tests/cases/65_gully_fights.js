@@ -30,10 +30,11 @@ module.exports = {
         t.eq(m2.links, '1,3', 'map 2: south to the gully, north to the channels');
         t.eq(m3.links, '2,7', 'map 3: south to the flow front, north to the greening');
         t.eq(m7.links, '3', 'map 7: south to the channels (north isn\'t built yet)');
-        t.eq([m1, m2, m3, m7].map(m => m.wanderers).join(','), '2,0,4,1', 'the seven wanderers: 2 in the gully, 4 in the channels, 1 at the top');
-        t.ok([m1, m3, m7].every(m => m.troops.split('|').every(n => /^Gully:/.test(n))), 'all Gully troops');
+        t.eq([m1, m2, m3, m7].map(m => m.wanderers).join(','), '2,0,4,1', 'wanderers: 2 in the gully, 4 in the channels, 1 at the top');
+        t.ok([m3, m7].every(m => m.troops.split('|').every(n => /^Gully:/.test(n))), 'Act 1 ones: Gully troops');
+        t.eq(m1.troops, 'Cave Crickets*5|Bats*6', 'the gully\'s are Act 2 troops (the crickets and bats of the tubes)');
         t.eq([m1, m3, m7].map(m => m.before).join(','), '0,0,0', 'none out before Lasa joins');
-        t.ok(m1.act1 >= 1 && m3.act1 >= 3 && m7.act1 === 1, 'Act 1 (Lasa, Story 30): out (day or night ones)');
-        t.eq([m1, m3, m7].map(m => m.act2).join(','), '0,0,0', 'Act 2 (Story 50): all gone');
+        t.ok(m1.act1 === 0 && m3.act1 >= 3 && m7.act1 === 1, 'Act 1 (Lasa, Story 30): none in the gully; the channels and the top');
+        t.eq(m1.act2 + ',' + m3.act2 + ',' + m7.act2, '1,0,0', 'Act 2 (Sib, Story 50): back in the gully, crickets by day or bats at night; the rest gone');
     }
 };
