@@ -321,6 +321,26 @@ night-only plants, fatigue, tool wear and the daily reset. **No second page is n
 the spot **vanishes until the next day** (dawn, or sleeping): hidden, walk-through, and it can't be
 examined. Gathering also turns its Self Switch A on (and a new day off) for any event that wants to know.
 
+### Veins on walls
+
+For stone and ore that comes out of rock, use the **vein** graphics: a seam set into the rock, transparent around
+it, so it sits **on a wall tile** (a cliff face, a tube wall) and the wall shows through.
+1. Make the gathering event as usual (`<Gather: Copper Vein>`, Call Common Event "Gather"), **on the wall tile**,
+   on the face's lowest row (the one the player can stand in front of).
+2. Graphic: **!Veins_Stone** or **!Veins_Ore**, the picture matching the species (below). Priority **Same as
+   characters**, trigger **Action Button**: the player faces the wall to gather.
+3. That's all: the spot shows its state by itself (full; chipped once it's been worked today; empty sockets once
+   it's worked out, for ore, which stays; loose stone vanishes). Turn on **Stepping** for a twinkle, so players
+   spot it.
+
+| | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|---|
+| !Veins_Stone | Obsidian | Chalcedony | Jasper | Basalt | Andesite | Olivine | Trachyte Cliff (opal) | Snowline Quartz |
+| !Veins_Ore | Copper Vein | Lead Vein | Lodestone | Coal Seam | Sulfur Vent | Moonmilk | Ochre | White Clay |
+
+(Top row of the sheet is 1-4, bottom row 5-8.) Loose stone on the ground (Scoria, Pumice) and pools (Hot Spring)
+still use tiles. `art/gather_veins.py` draws them.
+
 ### Things to know
 
 - **Thenmy is a city boy:** he's only offered for strength jobs (wood, ore, stone, water). A story scene
