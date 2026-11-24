@@ -214,6 +214,28 @@ SmokingIsle.Layout = SmokingIsle.Layout || {};
     };
 
     //-------------------------------------------------------------------------
+    // Fatigue (FT) on the main menu and the Status screen: it carries over between battles, so it's
+    // worth seeing outside them. Actors with <No Fatigue> (the Ghost) don't get a gauge.
+    //-------------------------------------------------------------------------
+
+    $.showsFatigue = function(actor) { return !!actor && !(actor.hasNoFatigue && actor.hasNoFatigue()); };
+    var _Window_Base_drawActorSimpleStatus = Window_Base.prototype.drawActorSimpleStatus;
+    Window_Base.prototype.drawActorSimpleStatus = function(actor, x, y, width) {
+        _Window_Base_drawActorSimpleStatus.call(this, actor, x, y, width);
+        if (!$.showsFatigue(actor)) return;
+        var width2 = Math.min(200, width - 180 - this.textPadding());
+        this.drawActorTp(actor, x + 180, y + this.lineHeight() * 3, width2);
+    };
+    Window_Status.prototype.drawBasicInfo = function(x, y) {
+        var lh = this.lineHeight();
+        this.drawActorLevel(this._actor, x, y);
+        this.drawActorIcons(this._actor, x + 150, y, 96);         // states beside the level, to free a line for FT
+        this.drawActorHp(this._actor, x, y + lh * 1);
+        this.drawActorMp(this._actor, x, y + lh * 2);
+        if ($.showsFatigue(this._actor)) this.drawActorTp(this._actor, x, y + lh * 3, 186);
+    };
+
+    //-------------------------------------------------------------------------
     // Status screen: everything that's equipped, two columns (slot, item)
     //-------------------------------------------------------------------------
 
