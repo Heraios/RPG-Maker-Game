@@ -2378,7 +2378,10 @@ were chosen for:
 | The wires (sing), at night | 77 Owl of Ill Omen (never flees) | A spirit and an omen: Ghostly Touch, Talk |
 | The top (smoke) | 78 Rock Lizards x2 | The finale: Touch, Writhe, Keri for the extra turn |
 
-Act 1's first fight is now in the channels (map 3): the Rock Lizard by the stream. Burning Touch (sun) still
+Act 1's first fight is now in the channels (map 3), usually the Rock Lizard by the stream. **Combat tutorial**
+(built): whichever gully fight comes first, Lasa explains the battle screen at its start (the turn line; Fight /
+Talk / Tactics; the Ghost barely hurts and is barely hurt, its moves in Fight > Innate; her FT), once (common
+event 23, called by the gully troops' battle-start page); Memory keeps it as Know-how, "Fighting". Burning Touch (sun) still
 comes first, on map 1. Simulated at level 1 with Lasa's basic moves and the Ghost doing nothing: every fight wins 89-100% of the time,
 Lasa ending on 19-32 of 32 Health; the Rock Lizards x2 are the hardest, and come last. The Ghost takes 10% of
 physical damage (and double magic), so animals barely scratch it: about 1 a hit. **Animals can see the Ghost, and can hurt it if they hit it** (no immunity: with 15 Health it relies on

@@ -232,6 +232,36 @@
    "where": "The warm crack in the old flow front.",
    "taught": "That's a crack. You go over it. Float! That's what you do.",
    "wrong": "Flood."
+  },
+  "water": {
+   "where": "The spring in the channels.",
+   "taught": "Water! You know water. You saw your face in it.",
+   "wrong": "Wawa."
+  },
+  "tree": {
+   "where": "The dead tree in the channels.",
+   "taught": "A tree. A dead one. Everything here is a bit dead.",
+   "wrong": "Three."
+  },
+  "bird": {
+   "where": "The ravens in the dead tree.",
+   "taught": "Birds! They can see you. Birds see everything.",
+   "wrong": "Bud."
+  },
+  "wind": {
+   "where": "The gusty saddle in the channels.",
+   "taught": "Wind! You can't see it either. You're the same!",
+   "wrong": "Wine."
+  },
+  "sing": {
+   "where": "The telegraph wires.",
+   "taught": "The wires sing! People talk through them. Far away.",
+   "wrong": "Sting."
+  },
+  "road": {
+   "where": "The road by the wires.",
+   "taught": "A road. People walk on it to go places.",
+   "wrong": "Rude."
   }
  },
  "body": [
@@ -285,6 +315,18 @@
   }
  ],
  "knowhow": {
+  "fighting": {
+   "title": "Fighting",
+   "text": [
+    "The line at the top says whose turn it is. Fast ones get more turns.",
+    "Fight is for hitting. Talk is for talking it down: animals listen, sometimes. Tactics is guarding, the bag, catching your breath, or running.",
+    "I can barely hurt anything, and things can barely hurt me. My moves are in Fight, then Innate: the touches, the wails, the cries.",
+    "\\N[4] gets tired (FT). Too tired, and she has to catch her breath."
+   ],
+   "notes": {
+    "4": "I'll do the hitting. You do the spooky."
+   }
+  },
   "gathering": {
    "title": "Picking things",
    "text": [
