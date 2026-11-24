@@ -33,6 +33,12 @@
  *    Gathering turns its Self Switch A on until it's back; worked out also
  *    turns on Self Switch D (for a stump or rubble page, if you want one).
  *
+ * Veins on walls: give the spot a graphic from !Veins_Stone or !Veins_Ore
+ * (art/gather_veins.py) and put it ON the wall tile, priority "Same as
+ * characters", trigger Action Button: the player faces the wall to gather.
+ * It shows its state by itself: full, chipped (taken today), worked out
+ * (empty sockets; ore stays to show it, loose stone vanishes).
+ *
  * The Ghost alone (nobody who can gather) gets "...your hand goes through
  * it." Spots only some can gather name only people already met.
  *
@@ -401,6 +407,21 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     Game_Event.prototype.isThrough = function() {
         return this.siGatherSpent() || Game_Character.prototype.isThrough.call(this);
     };
+    // !Veins graphics: the row shows the state (down full, left chipped today, right worked out).
+    $.veinDirection = function(ev) {
+        if ($.isWorkedOut(ev._mapId, ev._eventId)) return 6;
+        if ($.isSpent(ev._mapId, ev._eventId)) return 4;
+        return 2;
+    };
+    var _Game_Event_update_vein = Game_Event.prototype.update;
+    Game_Event.prototype.update = function() {
+        _Game_Event_update_vein.call(this);
+        if (/^!Veins/.test(this.characterName()) && $.speciesOf(this)) {
+            var dir = $.veinDirection(this);
+            if (this._direction !== dir) { this._direction = dir; }
+        }
+    };
+
     var _Game_Event_start = Game_Event.prototype.start;
     Game_Event.prototype.start = function() {
         if (this.siGatherSpent()) return;
