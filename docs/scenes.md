@@ -795,6 +795,134 @@ only one who looked like *someone*.
 
 ---
 
+## Bothy: "A Big Glad"
+**Needs:** Yoon (with a body), Sib. Pada and Patience asleep; Juda away. **When:** Act 3, a bothy on the trail toward
+the mountain: the last quiet night before Pada dies. Best after "You Just Look Like Sib".
+
+*(Night in a stone bothy. The fire is low. Pada is asleep against the door, one hand on Patience. Juda's bedroll
+is empty: he walks at night, to pray.)*
+
+*(Yoon is awake, turning a stone over and over. Sib is awake too, and pretending not to be.)*
+
+**Sib:** You're doing the not-sleeping thing again.
+
+**Yoon:** I'm practising. I got as far as closing my eyes.
+
+**Sib:** That's... actually, that's most of it.
+
+**Yoon:** Then I'm nearly good at it.
+
+*(Sib sits up and pulls the blanket round their shoulders.)*
+
+**Sib:** Yoon. Can I... um. Can I tell you something? It's not a rite. It's not about the body, or the mountain,
+or anything. It's just a thing.
+
+**Yoon:** You can tell me anything. You told me what a "tomorrow" was.
+
+**Sib:** Right. Yes. Okay.
+
+*(Sib takes a breath. Holds it. Lets it out.)*
+
+**Sib:** When you were gone. Before we knew you were... before. Everyone said you'd come home. Your Mada said it,
+and the twins, and Pada didn't say anything, which is how Pada says things.
+
+**Sib:** And I didn't say it. Because if I said it and you didn't come, then I'd have said it. Out loud. And it
+would just be there, with nobody to...
+
+**Yoon:** To catch it.
+
+**Sib:** ...Yeah.
+
+**Sib:** So I'm saying it now. While you're here to... Yoon, I—
+
+*(Sib looks down. In the firelight their hands look very small on the blanket, and their elbows stick out. They
+look at their hands for a long time.)*
+
+**Sib:** ...I'm really glad you came home.
+
+*(A pause.)*
+
+**Yoon:** That's the thing?
+
+**Sib:** That's the thing.
+
+**Yoon:** It sounded bigger at the start.
+
+**Sib:** It's a big thing! Being glad is big. Okay? It's a big glad.
+
+> **Choice:** [Sweet] "I'm glad it was you who found me." / [Funny] "Big glad. It's going in my words." /
+> [Unhinged] "You stopped. Your hand stopped."
+
+**▸ Sweet**
+
+**Yoon:** I'm glad too. Out of everyone who could have found me in the dark, I'm glad it was you.
+
+**Sib:** *(very quietly)* ...Me too.
+
+**Sib:** I mean, that it was me. Not that I'm glad that... never mind. It's late.
+
+**▸ Funny**
+
+**Yoon:** Big glad. I'm putting it with my words. Rock. Water. Bones. Big glad.
+
+**Sib:** *(a laugh, a little wet)* That's not one word. That's two.
+
+**Yoon:** It's a big word.
+
+**Sib:** ...Yeah. It is.
+
+**▸ Unhinged**
+
+**Yoon:** You stopped. Your hand stopped halfway. Like something grabbed it.
+
+**Sib:** *(hands under the blanket, fast)* Nothing grabbed it!
+
+**Yoon:** I know what it looks like when something grabs you, Sib. I was there for mine.
+
+**Sib:** ...You can't just say things like that. Nothing grabbed me. I just ran out of brave.
+
+**Yoon:** You can borrow some of mine. I've got a lot. I don't know what it's for.
+
+**All branches continue:**
+
+*(The fire pops. Pada shifts against the door and doesn't wake.)*
+
+**Yoon:** Sib?
+
+**Sib:** Mm.
+
+**Yoon:** When you've got the rest of the brave, tell me the rest of the thing.
+
+*(Sib goes completely still.)*
+
+**Sib:** ...There isn't a rest.
+
+**Yoon:** Okay.
+
+*(Yoon lies down. Eyes closed: practising.)*
+
+**Yoon:** I'll wait anyway. I'm good at waiting. I waited in the dark for a whole moon.
+
+*(Sib doesn't answer. After a long time, very quietly, to someone who might already be asleep:)*
+
+**Sib:** ...Good night, Yoon.
+
+*(Yoon isn't asleep. Yoon is practising.)*
+
+**Notes**
+- Sib backs out because of the fear ("someone like them"): what stops them is their own hands and elbows in the
+  firelight, the same list as "You Just Look Like Sib". Nobody names it.
+- "There isn't a rest" is Sib's one lie in the scene. Later scenes (the crush returned, or a childhood betrothal
+  promise in certain endings) can call back to "the rest of the thing"; if the player never returns the crush, it
+  stays a fierce friendship and the line still lands.
+- Pada asleep by the door makes this the last quiet night before the mountain; Juda's empty bedroll is a small
+  foreshadowing beat.
+- Yoon's lines avoid pronouns (the player chooses them); in the game, use the `\YP[...]` codes wherever narration
+  needs one.
+- The last line can be shown only if Yoon's Insight is high enough to "read" the moment, or always.
+
+---
+
 ## Campfire: "Since They Were Babies"
 **Needs:** Thenmy, Dama, Aday, Lasa. **When:** Act 4 or later.
 
