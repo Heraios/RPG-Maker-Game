@@ -2368,7 +2368,7 @@ were chosen for:
 
 | Where | Troop | Teaches |
 |---|---|---|
-| Tube collapse (map 1), **Act 2 only**, back with Sib | 21 Cave Crickets x5 by day / 20 Bats x6 at night | Not in Act 1: the gully stays peaceful, the children's place |
+| The gully (map 1) | none | The children's place stays peaceful (their cairns by the hole appear only once Sib is along, Act 2) |
 | The stream (water) | 25 Rock Lizard | Chilling Touch, Keri: Sodden, the knife +35% |
 | The dead tree (tree) | 75 Ravens x2 | Crushing Touch slows them: Steal; or Cricket Legs in Talk |
 | The gusty saddle (wind) | 76 Vulture | It goes for the "weakest", the Ghost, and does nothing; Cutting Touch + Keva |
