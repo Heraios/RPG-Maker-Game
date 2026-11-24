@@ -17,7 +17,7 @@ WHO = {'adult': 'adults', None: 'anyone'}
 def rule_text(r):
     if r['always']: return 'never runs out'
     if r['hauls']:
-        end = 'then vanishes' if r['vanish'] == 'worked' else 'then stays, worked out'
+        end = 'then worked out (sockets)'
         return '%d hauls, one a day,\n%s' % (r['hauls'], end)
     return 'back in %d day%s' % (r['regrow'], '' if r['regrow'] == 1 else 's')
 

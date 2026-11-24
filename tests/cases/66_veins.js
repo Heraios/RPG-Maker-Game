@@ -10,9 +10,17 @@ module.exports = {
             const out = { full: dir() };
             G.spent()[G.key(map, ev.eventId())] = SmokingIsle.Time.day(); out.chipped = dir();
             G.workedOut()[G.key(map, ev.eventId())] = true; out.worked = dir();
+            out.stays = !ev.isTransparent();
+            // a real gather: chipped today, full the next morning
+            delete G.workedOut()[G.key(map, ev.eventId())]; delete G.spent()[G.key(map, ev.eventId())];
+            const yoon = $gameActors.actor(2), kit = $dataItems.find(i => i && i.name === 'Knapping Kit'); if (kit) $gameParty.gainItem(kit, 1);
+            G.gather(map, ev.eventId(), 'Obsidian', yoon); out.afterGather = dir();
+            SmokingIsle.Time.state().day += 1; G.regrow(SmokingIsle.Time.day()); out.nextDay = dir();
             return out;
         });
         t.eq(r.full + '/' + r.chipped + '/' + r.worked, '2/4/6', 'full faces down, chipped left, worked out right');
+        t.ok(r.stays, 'worked out, a vein stays (its sockets show), even loose stone that would vanish');
+        t.eq(r.afterGather + '/' + r.nextDay, '4/2', 'gathering chips it; the next morning it is full again');
         const sizes = await h.page.evaluate(async () => {
             const load = n => new Promise(res => { const b = ImageManager.loadCharacter(n); b.addLoadListener(() => res(b.width + 'x' + b.height)); });
             const sets = ['Exterior', 'Interior', 'Lava', 'Tubes'], out = [];

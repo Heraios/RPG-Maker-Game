@@ -339,8 +339,10 @@ transparent around it, so it sits **on a wall tile** (a cliff face, a cave wall)
 
    The slots are the same in every set (the rock around the ore is coloured to match that tileset's walls).
    Priority **Same as characters**, trigger **Action Button**: the player faces the wall to gather.
-3. That's all: the spot shows its state by itself (full; chipped once it's been worked today; empty sockets once
-   it's worked out). Turn on **Stepping** for a twinkle, so players spot it.
+3. That's all: the spot shows its state by itself. Gathering chips it (it stays chipped for the rest of the day,
+   full again the next morning); the last haul leaves empty sockets, and the vein stays there showing them (a
+   vein never vanishes, even stone that would vanish elsewhere). Turn on **Stepping** for a twinkle, so players
+   spot it.
 
 | | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 |---|---|---|---|---|---|---|---|---|

@@ -37,7 +37,7 @@
  * (art/gather_veins.py) and put it ON the wall tile, priority "Same as
  * characters", trigger Action Button: the player faces the wall to gather.
  * It shows its state by itself: full, chipped (taken today), worked out
- * (empty sockets; ore stays to show it, loose stone vanishes).
+ * (empty sockets: a vein never vanishes, even stone that would).
  *
  * The Ghost alone (nobody who can gather) gets "...your hand goes through
  * it." Spots only some can gather name only people already met.
@@ -398,7 +398,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         if (this._siGatherRule === undefined) this._siGatherRule = $.rule(this._siGatherSpecies, this);
         var v = this._siGatherRule.vanish;
         if (v === 'spent') return $.isSpent(this._mapId, this._eventId);
-        if (v === 'worked') return $.isWorkedOut(this._mapId, this._eventId);
+        if (v === 'worked') return !/^!Veins/.test(this.characterName()) && $.isWorkedOut(this._mapId, this._eventId);   // a vein stays: its sockets show
         return false;
     };
     Game_Event.prototype.isTransparent = function() {
