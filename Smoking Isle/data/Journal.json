@@ -227,6 +227,11 @@
    "where": "The kipuka garden by the sky-hole.",
    "taught": "Grass. It grows where the fire didn't.",
    "wrong": "Gas."
+  },
+  "float": {
+   "where": "The warm crack in the old flow front.",
+   "taught": "That's a crack. You go over it. Float! That's what you do.",
+   "wrong": "Flood."
   }
  },
  "body": [
