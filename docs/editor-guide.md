@@ -323,23 +323,32 @@ examined. Gathering also turns its Self Switch A on (and a new day off) for any 
 
 ### Veins on walls
 
-For stone and ore that comes out of rock, use the **vein** graphics: a seam set into the rock, transparent around
-it, so it sits **on a wall tile** (a cliff face, a tube wall) and the wall shows through.
+For stone and ore that comes out of rock, use the **vein** graphics: blocky ore set straight into the rock,
+transparent around it, so it sits **on a wall tile** (a cliff face, a cave wall) and the wall shows through.
+**Which is which: see `docs/reference/veins.png`** (every vein, its slot, note tag, what it gives, who, with what).
 1. Make the gathering event as usual (`<Gather: Copper Vein>`, Call Common Event "Gather"), **on the wall tile**,
    on the face's lowest row (the one the player can stand in front of).
-2. Graphic: **!Veins_Stone** or **!Veins_Ore**, the picture matching the species (below). Priority **Same as
-   characters**, trigger **Action Button**: the player faces the wall to gather.
+2. Graphic: the set for the map's tileset, then the picture matching the species:
+
+   | Tileset | Stone | Ore and other wall finds |
+   |---|---|---|
+   | Exterior | !Veins_Stone_Exterior | !Veins_Ore_Exterior |
+   | Interior | !Veins_Stone_Interior | !Veins_Ore_Interior |
+   | Lava Country | !Veins_Stone_Lava | !Veins_Ore_Lava |
+   | Lava Tubes | !Veins_Stone_Tubes | !Veins_Ore_Tubes |
+
+   The slots are the same in every set (the rock around the ore is coloured to match that tileset's walls).
+   Priority **Same as characters**, trigger **Action Button**: the player faces the wall to gather.
 3. That's all: the spot shows its state by itself (full; chipped once it's been worked today; empty sockets once
-   it's worked out, for ore, which stays; loose stone vanishes). Turn on **Stepping** for a twinkle, so players
-   spot it.
+   it's worked out). Turn on **Stepping** for a twinkle, so players spot it.
 
 | | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 |---|---|---|---|---|---|---|---|---|
-| !Veins_Stone | Obsidian | Chalcedony | Jasper | Basalt | Andesite | Olivine | Trachyte Cliff (opal) | Snowline Quartz |
-| !Veins_Ore | Copper Vein | Lead Vein | Lodestone | Coal Seam | Sulfur Vent | Moonmilk | Ochre | White Clay |
+| Stone sheets | Obsidian | Chalcedony | Jasper | Basalt | Andesite | Olivine | Trachyte Cliff (opal) | Snowline Quartz |
+| Ore sheets | Copper Vein | Lead Vein | Lodestone | Coal Seam | Sulfur Vent | Moonmilk | Ochre | White Clay |
 
 (Top row of the sheet is 1-4, bottom row 5-8.) Loose stone on the ground (Scoria, Pumice) and pools (Hot Spring)
-still use tiles. `art/gather_veins.py` draws them.
+still use tiles. `art/gather_veins.py` draws the sheets; `art/veins_reference.py` redraws the reference page.
 
 ### Things to know
 

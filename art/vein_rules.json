@@ -1,0 +1,169 @@
+{
+ "Obsidian": {
+  "kind": "stone",
+  "tool": "kit",
+  "gives": "Obsidian Shard",
+  "regrow": 1,
+  "hauls": 5,
+  "vanish": "worked",
+  "always": false,
+  "verb": "chips off"
+ },
+ "Chalcedony": {
+  "kind": "stone",
+  "tool": "kit",
+  "gives": "Chalcedony",
+  "regrow": 1,
+  "hauls": 5,
+  "vanish": "worked",
+  "always": false,
+  "verb": "chips off"
+ },
+ "Jasper": {
+  "kind": "stone",
+  "tool": "kit",
+  "gives": "Jasper",
+  "regrow": 1,
+  "hauls": 5,
+  "vanish": "worked",
+  "always": false,
+  "verb": "chips off"
+ },
+ "Basalt": {
+  "kind": "stone",
+  "tool": "kit",
+  "gives": "Basalt",
+  "regrow": 1,
+  "hauls": 6,
+  "vanish": false,
+  "always": false,
+  "verb": "chips off"
+ },
+ "Andesite": {
+  "kind": "stone",
+  "tool": "kit",
+  "gives": "Andesite",
+  "regrow": 1,
+  "hauls": 6,
+  "vanish": false,
+  "always": false,
+  "verb": "chips off"
+ },
+ "Olivine": {
+  "kind": "stone",
+  "tool": "kit",
+  "gives": "Volcano Tear",
+  "chance": 30,
+  "regrow": 1,
+  "hauls": 5,
+  "vanish": "worked",
+  "always": false,
+  "verb": "chips off"
+ },
+ "Trachyte Cliff": {
+  "kind": "stone",
+  "tool": "kit",
+  "gives": "Fire Opal",
+  "chance": 5,
+  "regrow": 1,
+  "hauls": 4,
+  "vanish": false,
+  "always": false,
+  "verb": "chips off"
+ },
+ "Snowline Quartz": {
+  "kind": "stone",
+  "gives": "Snow Quartz",
+  "chance": 50,
+  "light": true,
+  "regrow": 1,
+  "hauls": 5,
+  "vanish": "worked",
+  "always": false,
+  "verb": "chips off"
+ },
+ "Copper Vein": {
+  "kind": "ore",
+  "tool": "pick",
+  "who": "adult",
+  "gives": "Copper Ore",
+  "regrow": 1,
+  "hauls": 6,
+  "vanish": false,
+  "always": false,
+  "verb": "breaks off"
+ },
+ "Lead Vein": {
+  "kind": "ore",
+  "tool": "pick",
+  "who": "adult",
+  "gives": "Lead Ore",
+  "regrow": 1,
+  "hauls": 6,
+  "vanish": false,
+  "always": false,
+  "verb": "breaks off"
+ },
+ "Lodestone": {
+  "kind": "ore",
+  "tool": "pick",
+  "who": "adult",
+  "gives": "Lodestone",
+  "chance": 30,
+  "regrow": 1,
+  "hauls": 3,
+  "vanish": false,
+  "always": false,
+  "verb": "breaks off"
+ },
+ "Coal Seam": {
+  "kind": "ore",
+  "tool": "pick",
+  "who": "adult",
+  "gives": "Brown Coal",
+  "regrow": 1,
+  "hauls": 8,
+  "vanish": false,
+  "always": false,
+  "verb": "breaks off"
+ },
+ "Sulfur Vent": {
+  "kind": "stone",
+  "gives": "Sulfur Lump",
+  "regrow": 2,
+  "hauls": 0,
+  "vanish": false,
+  "always": false,
+  "verb": "chips off"
+ },
+ "Moonmilk": {
+  "kind": "herb",
+  "gives": "Moonmilk",
+  "light": true,
+  "regrow": 7,
+  "hauls": 0,
+  "vanish": false,
+  "always": false,
+  "verb": "picks"
+ },
+ "Ochre": {
+  "kind": "dig",
+  "tool": "stick",
+  "gives": "Red Ochre",
+  "regrow": 3,
+  "hauls": 0,
+  "vanish": false,
+  "always": false,
+  "verb": "digs up"
+ },
+ "White Clay": {
+  "kind": "dig",
+  "tool": "stick",
+  "gives": "White Clay",
+  "regrow": 3,
+  "hauls": 0,
+  "vanish": false,
+  "always": false,
+  "verb": "digs up"
+ }
+}

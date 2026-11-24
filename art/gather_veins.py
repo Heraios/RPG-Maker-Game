@@ -1,8 +1,10 @@
 # Run from the repository root:  python3 art/gather_veins.py
 # Draws two character sheets of gathering spots that sit ON WALL TILES (cliff faces, tube walls): blocky clusters of
 # mineral set into the rock, in the angular style of game ore blocks, on a transparent background so the wall shows.
-#   img/characters/!Veins_Stone.png   stone for knapping
-#   img/characters/!Veins_Ore.png     ore and other wall finds
+#   img/characters/!Veins_Stone_<set>.png   stone for knapping
+#   img/characters/!Veins_Ore_<set>.png     ore and other wall finds
+# with one set per tileset (Exterior, Interior, Lava = Lava Country, Tubes = Lava Tubes): the rock around the ore is
+# coloured from that tileset's main rock wall, so it looks set into it.
 # Each sheet holds 8 spots (RPG Maker's 8-character sheet). Every spot has 4 rows (the event's direction):
 #   down  = full          left = chipped (taken today)          right = worked out          up = full (spare)
 # and 3 columns: the middle one is plain; the outer two carry a glint (turn Stepping on and it twinkles).
@@ -60,12 +62,18 @@ def clusters(name):
 def put(im, x, y, c):
     if 0 <= x < N and 0 <= y < N: im.putpixel((x, y), c if len(c) == 4 else c + (255,))
 
-def draw_cluster(im, px, pal):
+# The rock around the ore takes its colours from the wall it sits on (set per tileset by main()).
+RIM = {'light': (132, 126, 120), 'shadow': (40, 36, 40), 'socket': (160, 154, 148), 'socket_dark': (60, 56, 58)}
+BRIGHT_RIM = {'Obsidian', 'Coal Seam', 'Lodestone'}      # dark ores: a brighter lip, so they show on dark walls
+def mix(a, b, t): return tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
+
+def draw_cluster(im, px, pal, bright=False):
     dark, base, light = pal
+    lip = mix(RIM['light'], (255, 255, 255), 0.45) + (255,) if bright else RIM['light'] + (235,)
     ring = {(x + dx, y + dy) for (x, y) in px for dx in (-1, 0, 1) for dy in (-1, 0, 1)} - px
     for (x, y) in ring:                                 # the rock around the ore: pale above / left, shadow below / right
         below_right = any((x - dx, y - dy) in px for (dx, dy) in [(1, 0), (0, 1), (1, 1)])
-        put(im, x, y, (40, 36, 40, 235) if below_right and not any((x + dx, y + dy) in px for (dx, dy) in [(1, 0), (0, 1)]) else (132, 126, 120, 235))
+        put(im, x, y, RIM['shadow'] + (235,) if below_right and not any((x + dx, y + dy) in px for (dx, dy) in [(1, 0), (0, 1)]) else lip)
     for (x, y) in px:
         lit = (x - 1, y) not in px or (x, y - 1) not in px
         dim = (x + 1, y) not in px or (x, y + 1) not in px
@@ -74,9 +82,9 @@ def draw_cluster(im, px, pal):
 def socket(im, x, y, w, h):                             # an empty hole where a cluster came out
     for i in range(w):
         for j in range(h): put(im, x + i, y + j, (14, 12, 18))
-    for i in range(w): put(im, x + i, y + h, (160, 154, 148))            # the hole's lower lip catches the light
-    for j in range(h): put(im, x + w, y + j, (150, 144, 138))
-    for i in range(w): put(im, x + i, y - 1, (60, 56, 58))               # and its upper edge is in shadow
+    for i in range(w): put(im, x + i, y + h, RIM['socket'])              # the hole's lower lip catches the light
+    for j in range(h): put(im, x + w, y + j, RIM['socket'])
+    for i in range(w): put(im, x + i, y - 1, RIM['socket_dark'])         # and its upper edge is in shadow
 
 def frame(name, state, glint):
     im = Image.new('RGBA', (N, N), (0, 0, 0, 0))
@@ -84,10 +92,10 @@ def frame(name, state, glint):
     if state == 'worked':
         for (px, _) in cl[:5]:
             x = min(p[0] for p in px); y = min(p[1] for p in px)
-            socket(im, x, y, 2, 2)
+            socket(im, x, y, 3, 2)
         return im
     keep = cl if state == 'full' else cl[::2]
-    for (px, pal) in keep: draw_cluster(im, px, PAL[name][pal])
+    for (px, pal) in keep: draw_cluster(im, px, PAL[name][pal], name in BRIGHT_RIM)
     if state == 'chipped':                              # pale fresh scars and a socket where chunks came out
         for (px, _) in cl[1::2][:2]:
             x = min(p[0] for p in px); y = min(p[1] for p in px)
@@ -108,7 +116,30 @@ def sheet(names, path):
                 out.paste(frame(name, state, g if state != 'worked' else 0), (bx + c * N, by + row * N))
     out.resize((N * 36, N * 24), Image.NEAREST).save(path)
 
+# One set per tileset, each with the rim coloured from that tileset's main rock wall (A4 sheet, wall kind).
+VARIANTS = {
+    'Exterior':     ('Ext-A4', 120),
+    'Interior':     ('Int-A4', 123),
+    'Lava':         ('Lava-A4', 120),          # Lava Country
+    'Tubes':        ('Lava-Int-A4', 123),      # Lava Tubes
+}
+def wall_tile(sheet_name, kind):
+    ys = [0, 144, 240, 384, 480, 624]
+    k = kind - 80; c, r = k % 8, k // 8
+    im = Image.open('Smoking Isle/img/tilesets/%s.png' % sheet_name).convert('RGB')
+    return im.crop((c * 96 + 24, ys[r] + 24, c * 96 + 72, ys[r] + 72))
+def rim_from(tile):
+    px = sorted((c for c in tile.get_flattened_data() if sum(c) > 90), key=lambda c: sum(c))   # skip the black outlines
+    n = len(px); top = px[int(n * 0.85):]; low = px[:int(n * 0.12)]
+    avg = lambda cs: tuple(sum(c[i] for c in cs) // len(cs) for i in range(3))
+    light, shadow = avg(top), avg(low)
+    return {'light': mix(light, (255, 255, 255), 0.4), 'shadow': tuple(int(v * 0.55) for v in shadow),
+            'socket': mix(light, (255, 255, 255), 0.6), 'socket_dark': tuple(int(v * 0.45) for v in shadow)}
+
 if __name__ == '__main__':
-    sheet(STONE, 'Smoking Isle/img/characters/!Veins_Stone.png')
-    sheet(ORE, 'Smoking Isle/img/characters/!Veins_Ore.png')
-    print('!Veins_Stone:', ', '.join(STONE)); print('!Veins_Ore:', ', '.join(ORE))
+    for v, (sheet_name, kind) in VARIANTS.items():
+        RIM.update(rim_from(wall_tile(sheet_name, kind)))
+        sheet(STONE, 'Smoking Isle/img/characters/!Veins_Stone_%s.png' % v)
+        sheet(ORE, 'Smoking Isle/img/characters/!Veins_Ore_%s.png' % v)
+        print(v, RIM)
+    print('!Veins_Stone_*:', ', '.join(STONE)); print('!Veins_Ore_*:', ', '.join(ORE))
