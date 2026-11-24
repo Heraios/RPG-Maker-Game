@@ -932,6 +932,191 @@ Lady's: her Snowfall (air) leaves you **Disoriented**, and her Falling Boughs (e
 
 ---
 
+## 9. The highlands and the volcanic desert (Act 3)
+
+The dry highlands, the volcanic desert where the Stonemen stand, and the crater lake on the way to the ritual site.
+Yoon has a body now: the party is Yoon, Sib, Pada and Juda. **Already in this bestiary:** the Rock Lizard (troop
+70, ×3) and the Vulture (arriving late in the desert, troop 33). **The desert's rules:** the sun heals what basks
+(fight lizards at night); the Stonemen mire you and salt you; the crater lake soaks you and blinds you with steam.
+
+### Giant Lizard
+**Design**
+- **Where:** the highlands and desert (troop 31, ×2; troop 33, with Vultures arriving late).
+- **Stats:** 110 / 16 / 10 / 30. **Moves:** Tail Lash; Bite; Bask (heals 15%, by day and outdoors only).
+- **Talk:** animal. Likes Raw Meat, Dried Figs, Cricket Legs.
+- **Drops:** Hide 1/2, Raw Meat 1/2.
+- **Tactics (instinct):** like its small cousins: lashes whoever hurt it, basks when hurt (in the sun only).
+- **Changes:** `<Grudge>`.
+
+**Remembered**
+- *First sight:* "Lizard. Big. As long as Pada."
+- *Insight 2–4:* "Slow until the sun warms it. Then it lies in the sun and gets better."
+- *Insight 5+:* "Fight it at night."
+- *Margin, Pada:* "Cold-blooded. Hunt them at dawn, before the rocks warm up."
+
+### Giant Tortoise
+**Design**
+- **Where:** the highlands (troop 32, alone).
+- **Stats:** 200 / 15 / 30 / 12. **Moves:** Snapping Bite; Withdraw (Endurance up).
+- **Talk:** animal; ancient and in no hurry. Likes Dried Figs, Sweet Potato.
+- **Drops:** Tortoise Scute 1/2, Raw Meat 1/2. (Seafarers won't wear its shell.)
+- **Tactics (instinct, cautious):** pulls into its shell whenever it's hurt, then snaps when someone comes close.
+  Crush it, don't cut it.
+- **Changes:** `<Tactics Style: cautious>`.
+
+**Remembered**
+- *First sight:* "A rock that walks. Very slowly."
+- *Insight 2–4:* "Cutting does nothing. Hit it like a door."
+- *Insight 5+:* "It's old as the trail. Leave it be."
+- *Margin, Sib:* "Tortoises carry the old roads on their backs. That's a story. Um. It's a nice story."
+
+### Guardian Lizard
+**Design**
+- **Where:** pools and springs (troop 34, ×2), and the crater lake.
+- **Stats:** 140 / 16 / 12 / 40 (MAT 14). **Moves:** Spring Spit (water: Wet); Bite; Scale Guard (Endurance up).
+- **Talk:** spirit; a rite works. **Tou knows its oath:** it yields to her at once. Likes Cricket Legs.
+- **Drops:** Lizard-Scale Charm 1/10, Hide 1/2, Bone 1/3.
+- **Sees the Ghost** (a spirit).
+- **Tactics (tier 2):** spits to soak, then bites the soaked; raises its scales when hurt. (It guards the water, not
+  itself: on the map it's placed by a pool, and the tell warns you off.)
+- **Changes:** `<Follow Up: Wet +20>`.
+
+**Remembered**
+- *First sight:* "Lizard. Shiny. Watching the water."
+- *Insight 2–4:* "It spits water, then it bites. It guards the pool."
+- *Insight 5+:* "Don't go near the pool."
+- *Margin, Tou (later):* "We remember its oath. It guarded our wells when they were young. Stand down, old friend."
+
+### Aurochs Calf, and the Aurochs
+**Design**
+- **Where:** the highlands (troop 67: a calf, and the herd bull who charges in when it's hurt; troop 68, a lone
+  bull, rare).
+- **The calf:** 80 / 6 / 6 / 30. **Moves:** Bleat (calls the herd). Harmless. Tier 0.
+- **The bull:** 460 / 27 / 14 / 34. **Moves:** Aurochs Charge (Stunned, 20%); Trample (the whole party); Paw the
+  Ground (Brave, when hurt).
+- **Talk:** animal. The bull is guarding the herd: back away slowly and it may let you. Likes Salt Lick, Sea Salt.
+- **Drops:** the calf: Cow's Milk 1/2, Raw Meat 1/3. The bull: Cowhide 1/1, Ox Horn 1/2, Raw Meat 1/1.
+- **Tactics (instinct):** the bull charges whoever hurt its calf or itself, then tramples the party.
+- **Changes:** `<Flock>` and `<Grudge>` (the bull).
+- **Balance** (Act 3 party, attacking only): won almost always, at over half the party's Health. Hurting the calf
+  is the mistake.
+
+**Remembered**
+- *First sight:* "Calf. Big calf. Its mother is somewhere."
+- *Insight 2–4:* "Hurt the little one and the big one comes. The big one is VERY big."
+- *Insight 5+:* "Back away slowly. It only wants its herd."
+- *Margin, Pada:* "Wild cattle. The Seafarers' cows came from these, once. Theirs forgot how to charge."
+
+### Desert Scorpion
+**Design**
+- **Where:** the volcanic desert, under every stone (troop 71, ×3).
+- **Stats:** 60 / 14 / 14 / 40. **Moves:** Stinger (Venom, 50%); Pincers; Grapple (Entangled).
+- **Talk:** animal; it doesn't understand kindness.
+- **Drops:** Venom Sac 1/2, Red Scoria 1/4, Sulfur Lump 1/12.
+- **Tactics (instinct):** grabs, then stings whoever it holds (`<Follow Up: Entangled +30>`, already in).
+- **Changes:** none.
+
+**Remembered**
+- *First sight:* "Under the stone. Tail up."
+- *Insight 2–4:* "It holds you with the claws. Then the tail."
+- *Insight 5+:* "Watch the tail, not the claws."
+- *Margin, Juda:* "Shake out your sandals in the morning, children. Always."
+
+### Hawk
+**Design**
+- **Where:** the dry slopes (troop 72, ×2).
+- **Stats:** 44 / 14 / 3 / 60. Flying. **Moves:** Talon Dive (Bleed, 25%); Rending Beak.
+- **Talk:** animal. Likes Raw Meat, Cricket Legs.
+- **Drops:** Seabird Feather 1/3, Bone 1/3.
+- **Tactics (instinct):** dives to make you bleed, then rends the bleeding (already in). It wants food, not a fight:
+  badly hurt, it leaves.
+- **Changes:** `<Flees When: 30%>`.
+
+**Remembered**
+- *First sight:* "Small eagle. Faster."
+- *Insight 2–4:* "Cut, then tear. Like the big one."
+- *Insight 5+:* "It wants food, not us."
+- *Margin, Lasa:* "Show-off! Show-OFF!"
+
+### Stoneman
+**Design**
+- **Where:** the volcanic desert (troop 40, ×3; troop 41, with a Stoneman Priest; troop 42, with the Shaman).
+  Unfinished moai of soft tuff, walking: Builder remnants waiting for orders.
+- **Stats:** 150 / 17 / 22 / 18. **Moves:** Stone Fist; Ground Pound (the whole party: Mired, 30%); Brace.
+- **Talk:** sapient; **they surrender to Tou** at once.
+- **Drops:** Basalt 1/2, Andesite 1/3, Red Scoria 1/4.
+- **Tactics (tier 2):** stamps the ground (Mired: slowed, no physical moves), then fists whoever is stuck; braces
+  against melee.
+- **Changes:** `<Follow Up: Mired +20>`.
+- **Balance** (Act 3 party): about half the party's Health for three. Crush them; don't cut stone.
+
+**Remembered**
+- *First sight:* "Stone people. Not finished."
+- *Insight 2–4:* "They stamp and the ground holds you. Then they hit."
+- *Insight 5+:* "They're waiting for orders that never come."
+- *Margin, Tou (later):* "Stand down. Your queen is here. ...They always did look so tired."
+
+### Stoneman Priest
+**Design**
+- **Where:** the volcanic desert (troop 41, with Stonemen ×2).
+- **Stats:** 120 / 10 / 16 / 22 (MAT 16). **Moves:** Salt Glyph (Salting, 80%); Mend Stone (heals an ally 25%);
+  Stone Fist.
+- **Talk:** sapient; a rite works, and Tou stops it at once.
+- **Drops:** Jasper 1/3, Glyph Tablet Shard 1/6, Chalcedony 1/4.
+- **Tactics (tier 2, support):** mends whichever Stoneman is most cracked; salts whoever isn't salted yet. Take it
+  down first. **Water washes Salting off.**
+- **Changes:** `<Tactics Style: support>`.
+
+**Remembered**
+- *First sight:* "Stone man with writing on it."
+- *Insight 2–4:* "It fixes the others. It makes you salty. Hit it first."
+- *Insight 5+:* "Water washes the salt off."
+- *Margin, Sib:* "The glyphs are a rite. A Builder rite. I can read it. I don't like what it says."
+
+### Stoneman Shaman (boss)
+**Design**
+- **Where:** the volcanic desert (troop 42, with a Stoneman). The oldest Stoneman, keeper of the salt glyphs.
+- **Stats:** 600 / 17 / 20 / 24 (MAT 16). **Moves:** Stone Fist; Salt Storm (the whole party: Salting, 30%);
+  Earthshaker (earth, the whole party: Mired, 30%); Mend Stone (when hurt).
+- **Talk:** sapient; a rite reaches it, and Tou gives it the order it's been waiting for. Asked when Calm: "The
+  Navigator Lords left. We were not finished. We wait."
+- **Tactics (tier 3):**
+  - **Earthshaker plays the cycle:** it turns Wet into Sodden and clears Disoriented into Grounded; the tactics find
+    those on their own.
+  - Salt Storm on an unsalted party; Mend Stone on itself or its Stoneman when they're cracked.
+  - Stone Fist whoever is Mired.
+- **Changes:** `<Follow Up: Mired +20>`.
+- **Balance** (Act 3 party, attacking only): won about half the time.
+
+**Remembered**
+- *First sight:* "The oldest stone. Covered in writing."
+- *Insight 2–4:* "Salt, then the ground shakes, then the fist."
+- *Insight 5+:* "It's waiting for a Navigator's order. Tou could give one."
+- *Margin, Juda:* "Such patient servants. It seems a shame no one gives them orders anymore."
+
+### Guardian of the Crater Lake (boss)
+**Design**
+- **Where:** the crater lake, on the way to the ritual site (troop 43). The greatest Guardian Lizard.
+- **Stats:** 800 / 19 / 14 / 40 (MAT 18). **Moves:** Spring Torrent (water, the whole party); Steam Burst (the whole
+  party: Steam, 60%: blinding); Tail Sweep (the whole party); Scale Guard.
+- **Talk:** spirit; a rite reaches it, and Tou knows its oath.
+- **Sees the Ghost** (a spirit).
+- **Tactics (tier 3):**
+  - **Flood, then steam:** Spring Torrent soaks the party Wet; Steam Burst blinds (the scoring favours blinding
+    hard hitters); Tail Sweep, then its Wet follow-up, against a soaked party.
+  - Scale Guard when it's hurt.
+- **Changes:** `<Follow Up: Wet +20>`.
+- **Balance** (Act 3 party, attacking only): won a little over half the time.
+
+**Remembered**
+- *First sight:* "The lake has a lizard. The lizard IS the lake."
+- *Insight 2–4:* "Water, then steam. You can't see. Then the tail."
+- *Insight 5+:* "It guards the lake for someone long gone."
+- *Margin, Sib:* "Who for, though? Who was it guarding it FOR?"
+- *Margin, Tou (later):* "For us. For a queen who isn't coming back. ...Hello again, dear one."
+
+---
+
 ## Open questions
 
 - **Built:** the tactics plugin, every change marked `NEW` above and every section's **Changes** (the coast's too)
@@ -945,7 +1130,8 @@ Lady's: her Snowfall (air) leaves you **Disoriented**, and her Falling Boughs (e
     children until he's below half Health);
   - "most dangerous" and "smallest" targets come from the scoring (fast or hard-hitting targets are worth
     more for disabling states; the Barn Owl `<Prefers: child>`).
-- **Next area,** in story order: the highlands and the volcanic desert (Act 3).
+- **Next area,** in story order: the tombs, the deep tubes and the volcano (Act 3: the dead, the Destroyer's
+  servants, the Bull of the Caves, Juda).
 
 **Decided:** the early enemies keep their stats (their data notes now give the right acts); ravens see the
 dead; enemies can see Lasa; margin notes are in each character's voice (concept.md, "Voices").
