@@ -66,7 +66,7 @@
  *   <Patient: 50%>               circles (its <Circle> skill, else Wait) until
  *                                someone is at or below 50% Health or Bleeding
  *   <Prefers: Wet, child>        favours targets with those states (or the
- *                                words ghost / child)
+ *                                words ghost / child / actor 2)
  *   <Follow Up: Wet +40>         cashes in on targets with that state (more
  *                                if an ally set it up). Several: comma
  *   <Flees When: alone, 30%>     escapes when any is true: alone (last one
@@ -278,6 +278,8 @@ SmokingIsle.Tactics = SmokingIsle.Tactics || {};
         var t = token.toLowerCase();
         if (t === 'ghost') return $.isGhost(target);
         if (t === 'child') return target.isActor() && target.isChild && target.isChild();
+        var actor = /^actor\s+(\d+)$/.exec(t);
+        if (actor) return target.isActor() && target.actorId() === Number(actor[1]);
         var id = $.stateId(token);
         return !!id && target.isStateAffected(id);
     };

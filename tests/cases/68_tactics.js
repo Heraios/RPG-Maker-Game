@@ -119,7 +119,13 @@ module.exports = {
             const hc = picks(horse, 60).filter(p => p[0] === 'Cover');
             out.coverHealthy = hp0; out.coverHurt = hc.length; out.coverOnHurt = hc.length ? share(hc, p => p[1].endsWith('#0')) : 0;
 
-            // 13. Default tiers
+            // 13. Juda goes for Yoon (<Prefers: actor 2>)
+            party([2, 3, 7]);
+            const [juda] = troop(['Juda']);
+            const jp = picks(juda, 80).filter(p => p[1] !== '*' && p[1] !== '-' && !p[1].includes('#'));
+            out.judaOnYoon = jp.length ? share(jp, p => p[1] === $gameActors.actor(2).name()) : 0;
+
+            // 14. Default tiers
             out.tiers = ['Laurel Pigeon', 'Bat', 'Marsh Hag', 'Seafarer Marine'].map(n => TA.tier(new Game_Enemy(EN(n), 0, 0))).join(',');
             return out;
         });
@@ -142,6 +148,7 @@ module.exports = {
         t.ok(r.submerged, 'an Eel dives after biting (harder to hit)');
         t.eq(r.coverHealthy, 0, 'a Green Horse doesn\'t Cover while its imps are healthy');
         t.ok(r.coverHurt >= 20 && r.coverOnHurt >= 0.9, 'it covers the hurt imp (' + r.coverHurt + ' of 60, ' + r.coverOnHurt + ' on the hurt one)');
+        t.ok(r.judaOnYoon >= 0.6, 'Juda goes for Yoon, the demon he thinks he summoned (' + r.judaOnYoon + ' of his single-target moves)');
         t.eq(r.tiers, '0,1,2,2', 'default tiers: prey 0, animals 1, spirits and soldiers 2');
     },
 
