@@ -2801,7 +2801,9 @@ bestiary is.
 
 **Balance stance (decided):** with tactics on, **no retuning**. The simulated party only attacks (it never heals,
 guards, uses items or plays the elemental cycle), so its losses mark where a fight *demands* tactics, not where
-it's unfair. **The player wins through clever tactics, good use of moves and healing.** What the sims showed
+it's unfair. **The player wins through clever tactics, good use of moves and healing.** **The sims' job** is to flag the extremes: fights that
+are walkovers or impossible. Real difficulty is judged by playtesting by hand (a smarter sim party was considered and
+set aside). What the sims showed
 (tactics and the second moves on, attacking only):
 - **Regular troops:** mostly won every time for 2–50% Health; a few early ones are hard for the starting party
   (the Act 1 coast; Boar-Men before Pada, who are meant to be talked to).
