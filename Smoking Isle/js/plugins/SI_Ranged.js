@@ -69,7 +69,8 @@
  * Flying
  * ============================================================================
  * Actor / enemy / state note:   <Flying>   (a state: Hiri)
- * Melee physical attacks against a flyer face at least the Flying Evasion.
+ * Melee physical attacks against a flyer face at least the Flying Evasion,
+ * unless the attacker flies too (Lasa, while she isn't Landed).
  * Ranged and magical attacks are unaffected.
  *
  * ============================================================================
@@ -360,7 +361,8 @@ SmokingIsle.Ranged = SmokingIsle.Ranged || {};
     Game_Action.prototype.itemEva = function(target) {
         if ($.isRanged(this.item()) || /<Ranged Strike>/i.test((this.item() && this.item().note) || '')) return 0;
         var eva = _Game_Action_itemEva.call(this, target);
-        if (this.isPhysical() && $.isFlying(target)) eva = Math.max(eva, $.flyingEvasion);
+        // a flyer dodges melee from the ground; another flyer (Lasa, when she isn't Landed) can reach it
+        if (this.isPhysical() && $.isFlying(target) && !$.isFlying(this.subject())) eva = Math.max(eva, $.flyingEvasion);
         return eva;
     };
 

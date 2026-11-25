@@ -10,7 +10,8 @@ module.exports = {
             const C = SmokingIsle.Crafting, P = $gameParty, out = {};
             // copper ore sometimes gives gold
             out.oreBonus = C.recipes.filter(x => x.ins.some(a => a.some(ref => C.object(ref).name === 'Copper Ore')) && x.bonus && C.object(x.bonus.ref).name === 'Gold Ingot' && x.bonus.chance === 2).length;
-            out.marine = $dataEnemies[13].dropItems.some(d => d.kind === 1 && $dataItems[d.dataId].name === 'Golden Axe Money');
+            // Seafarer troops carry the purse: a 10% troop drop (SI_BattleTraits <Troop Drop>)
+            out.marine = /<Troop Drop:\s*item\s+611\s*,\s*10%>/.test($dataEnemies[13].note) && $dataItems[611].name === 'Golden Axe Money';
             // the Golden Disk Pile: 6 charge and Lightning Bolt
             const yoon = A(2); yoon.forceChangeEquip(yoon.slotOfType(20), AR('Golden Disk Pile')); yoon.gainCharge(6);
             out.pile = yoon.maxCharge() + '/' + yoon.skills().some(s => s.name === 'Lightning Bolt') + '/' + yoon.canUse(SK('Lightning Bolt'));
@@ -43,7 +44,7 @@ module.exports = {
             return out;
         });
         t.eq(r.oreBonus, 2, 'melting copper ore (smith or crucible) gives a Gold Ingot 2% of the time');
-        t.ok(r.marine, 'Seafarer marines can drop Golden Axe Money');
+        t.ok(r.marine, 'beaten Seafarer marine troops can yield Golden Axe Money (10% troop drop)');
         t.eq(r.pile, '6/true/true', 'the Golden Disk Pile holds 6 and looses Lightning Bolt');
         t.eq(r.plainPile, false, 'an ordinary pile can\'t');
         t.eq(r.eva, 0, 'Lightning Bolt can\'t be dodged, even by a flyer');

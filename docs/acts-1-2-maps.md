@@ -107,8 +107,14 @@ and loading screens, so **towns put several small interiors on one "Interiors" m
 - Does the Ghost need darkness? With no light, a `<Dark>` map is very dark. Either skip `<Dark>` in Act 1,
   or let the Ghost glow faintly.
 
-**Map 1 "Lava Flows: Nearby Gully"** (decided; formerly planned as map 7 "The Sky-Hole"): 63 x 217, Lava Country
-tileset. **A climb out of the lava country, south to north, one levee at a time.** Levees run west-northwest to
+**The lava flows: four maps** (split from one 63 x 217 map, too big to paint). Lava Country tileset, each 1-3
+screens, linked edge to edge, south to north: **1 Sky-Hole Gully** (40 x 30, first draft: a walled gully, the
+sky-hole in a kipuka garden, the children's cairns, the tube collapse, rubble south: "Not that way"; the ladder
+lands at (20, 14)), **2 The Old Flow Front** (stub), **3 The Channels** (stub), **7 The Greening** (stub). The
+plan below still holds; read "rows" as which map: the gully is map 1, the flow front map 2, the channels map 3,
+the top map 7.
+
+The original single-map plan: **A climb out of the lava country, south to north, one levee at a time.** Levees run west-northwest to
 east-southeast, about 15 rows apart. From the bottom up:
 - **The gully** (rows ~188-216): Yoon and Sib's secret place. The **sky-hole** (see-through tiles over a view
   of map 6's garden, with its ladder; editor-guide "A hole you can see down"; docs/mockups/sky_hole_views.png)
@@ -223,7 +229,7 @@ Spring**, the **Children's Garden**, the **Boar's Wallow**, the **Owl Towers**.
 **22 The Great Boar's Ground**: **The Hunt** (BGM Hunt: tracking, Pada's horn call), then **Boss: Great Boar
 (troop 27)**, Can Escape off, then Great Boar Flesh and Story → 120.
 
-**23 The Well** (optional): a First Sailor well; **Boss: Daughter of the Wells (troop 26)**, switch 12. BGM Wells.
+**23 The Well** (optional): a Builder well; **Boss: Daughter of the Wells (troop 26)**, switch 12. BGM Wells.
 
 **24 Highland Pines / Idekeu** (route 6): `<Dark At Night>`, BGM Alpine_Forest. The Idekeu loggers (Tuu,
 Ayoze, Hupa flirting with an oblivious Pada). Pine, Pine Resin, Juniper spots; Ravens (15), Mouflon (17).

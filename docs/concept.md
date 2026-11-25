@@ -85,14 +85,14 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 - Dama joins. Pada is permanently gone, and so are any of his unfinished sidequests.
 
 ### Act 4 — The Invasion
-- The All-Seafarers invade.
+- The Seafarers invade.
 - Yoon teams up with Dama, and possibly Parl, to rally the island's forces against them.
 - The Familiar and Last Queen questlines unlock (and can be done any time after this point).
 - At the end of the act, the party discovers that Thenmy, the invading Prince, isn't evil, and
   can choose to **surrender to him, fight him, or negotiate with him**.
 
 ### Act 5 — The Princess
-- A second All-Seafarer force arrives under Thenmy's sister, who is far worse.
+- A second Seafarer force arrives under Thenmy's sister, who is far worse.
 - Thenmy joins the party.
 - Her army wreaks havoc: freeing the blue bull, trying to burn down the forests, and more.
 - A boss fight built up as the final battle. She surrenders, and either lets Thenmy govern
@@ -120,9 +120,9 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
    ritual failed because he felt regret at the last moment.
 3. Genuinely unsure whether Yoon is a harmless demon from the ruined ritual, or Yoon's ghost
    with its memory lost because part of the soul was siphoned off.
-4. Secretly collaborating with the All-Seafarer invaders...
+4. Secretly collaborating with the Seafarer invaders...
 5. ...while really planning to use the demon to kill the invaders once they landed...
-6. ...while *really* being a millennia-old First Sailor/Builder Navigator Lord, using the war as
+6. ...while *really* being a millennia-old Builder Navigator Lord, using the war as
    a source of bodies for demon summoning and necromancy for his master, the Destroyer, the evil
    volcanic deity.
 
@@ -139,7 +139,7 @@ See also **[lore.md](lore.md)** for the gods, spirits and history of the island.
 | 6 | Juda | Temporary powerhouse guest | Memory ritual trek | Betrays on the mountain |
 | 7 | Dama | Adult anchor, tank, battlefield control | During or after the mountain | Never |
 | 8 | Parl | Utility fighter and intelligence | Optional (pearl thief outcome) | — |
-| 9 | Tou | Burst caster, First Sailor key | Optional (buried palace) | — |
+| 9 | Tou | Burst caster, Builder key | Optional (buried palace) | — |
 | 10 | Falmi | Child tank | Optional (Lady of the Woods) | — |
 | 11 | Thenmy | Premier tank and damage | End of Act 4 (three paths) | — |
 | 12 | Patience | Pseudo party member | With Sib | — |
@@ -278,8 +278,8 @@ home, and she wasn't there to stop it. When she finds the ghost she **doesn't re
 purely because they seem lost. Learning later that the lost ghost she adopted was her own child is one of
 her biggest moments: guilt she has to live with, and a reason she never leaves Yoon's side.
 - **Why she wasn't there:** both. She was off after something shiny when Yoon was taken, and by the time
-  she noticed, Yoon had vanished behind Juda's ward: his tomb is sealed with First Sailor glyphs that blind
-  the Children of the Caves (First Sailor creations themselves). She searched and couldn't see through it.
+  she noticed, Yoon had vanished behind Juda's ward: his tomb is sealed with Builder glyphs that blind
+  the Children of the Caves (Builder creations themselves). She searched and couldn't see through it.
 - **When she realises:** when Yoon gets a body (end of Act 2). The new body takes after the family's
   blood, and when she sees the face she watched over for ten years, it clicks.
   (In common event 11: *"Y-you! You're. You're my kid. Oh no. Oh no oh no."*)
@@ -387,7 +387,7 @@ her: a child was lured into a tomb and butchered, and "this is unacceptable to T
 - Cannot die or leave.
 
 ### Parl — The Pearl Thief
-A crewman on the All-Seafarer tribute collector's ship and a literate spy, recording the Islanders
+A crewman on the Seafarer tribute collector's ship and a literate spy, recording the Islanders
 before the invasion. He stole some of the tribute pearls to fence back home, was found out, and
 deserted into the salt marsh, where he hides. Chief Tama and the Seafarer tributary official Iras put Dama and her
 spearwives (Mansehare's sworn investigators) on the case. A pearl is the fifth ingredient for Yoon's body, so hunting
@@ -399,7 +399,7 @@ him down is an important Act 2 quest.
   least tanky adult. High AGI. Decent at almost everything but best at nothing.
 - **Intelligence:** speaks the enemy's language and has limited literacy in it. Can read captured
   orders, documents and supply manifests (otherwise only possible with the Prince). Knows
-  ground-level All-Seafarer military operations, supply chains and naval procedures.
+  ground-level Seafarer military operations, supply chains and naval procedures.
 - **Core role:** flexible utility fighter and intelligence asset.
 - **Recruitment, based on the pearl thief quest:**
   - **Option 1 (he turned himself in):** joins during the invasion with a good relationship with Dama.
@@ -431,14 +431,14 @@ over four hundred years to be her heir. Develops a crush on Tou.
 - **Quirks:** a combat-focused child who tanks by avoiding hits. Average HP, high AGI,
   self-buffing magic and **HP regeneration every turn**, so their real staying power is far
   higher than their HP. Hard to knock out and keep down.
-- **Literacy:** reads First Sailor inscriptions from growing up around ruins, with a different
+- **Literacy:** reads Builder inscriptions from growing up around ruins, with a different
   perspective from Sib (priestly) or the Prince (academic). Fully literate in Islander.
 - **Core role:** the child tank, who makes an all-child party able to survive.
 - **Recruitment:** through the Lady of the Woods questline. Falmi is "born" from the special herb
   she has cultivated for four hundred years.
 
 ### Tou — The Last Queen
-The last queen of the First Sailors/Builders. A young girl the Navigator Lords used as a puppet
+The last queen of the Builders. A young girl the Navigator Lords used as a puppet
 ruler, now trapped in a child-sized wooden doll with jointed limbs.
 
 - **Weapons:** clubs, staffs, slings only. Bladed weapons are forbidden by a purity taboo the
@@ -446,15 +446,15 @@ ruler, now trapped in a child-sized wooden doll with jointed limbs.
 - **Quirks:** average HP and DEF. **Very weak to fire and cutting**, strongly resistant to blunt
   and piercing (it's a wooden body). **When knocked out, she comes back after two turns with
   reset TP**, because her soul is in the coral eyes of her moai in the throne room, not in the
-  doll. This makes her the party member you can sacrifice tactically. Knows powerful First Sailor
+  doll. This makes her the party member you can sacrifice tactically. Knows powerful Builder
   spells that others can only learn through hard inscription puzzles, but has a below-average MP
   pool: three or four big spells and she's empty.
-- **First Sailor key:** deciphers First Sailor inscriptions perfectly, though their content may be
-  hard for her emotionally. **Stonemen (First Sailor golems) surrender immediately** if she's in
-  the party. Has advantages against First Sailor-era ghosts, the Hags, the Owls of Ill Omen and
+- **Builder key:** deciphers Builder inscriptions perfectly, though their content may be
+  hard for her emotionally. **Stonemen (Builder golems) surrender immediately** if she's in
+  the party. Has advantages against Builder-era ghosts, the Hags, the Owls of Ill Omen and
   other ancient beings, and is useless against modern threats like the invasion.
 - Cannot leave the island, because her soul is anchored to her moai.
-- **Core role:** burst magic damage, the key to First Sailor content, and an emotional gut punch.
+- **Core role:** burst magic damage, the key to Builder content, and an emotional gut punch.
   With Yoon, Sib and Falmi she completes the all-child party: "the party of people the world
   wasn't designed for."
 - **Recruitment:** optional. Found in her buried palace, where the player expects a terrifying
@@ -514,11 +514,11 @@ already knows (see "Memory (the journal)" below, and lore.md, "People of the isl
 - **Combat role: pure mage.** She learned magic from books (anyone literate can use a Codex, and she's the
   most literate person on the island). Like the Seafarers generally, she **can't use glyph tattoos at all**;
   instead, **uniquely, she has two codex slots** (every other reader has one), and with Codex Mastery she
-  gets both codices' full spell lists. A First Sailor inscription can still teach her a spell (a story
+  gets both codices' full spell lists. A Builder inscription can still teach her a spell (a story
   event). Highest magic attack in the game, a big MP pool, frail for an adult.
 - **The red mage: breadth over depth.** Even more of a pure mage than Sib, but where the others go deep in
   a few spells, she covers the widest spread: any two schools at once (fire and healing, say, or the
-  elements and healing), swapped between battles to fit the fight. Tou keeps the First Sailor burst;
+  elements and healing), swapped between battles to fit the fight. Tou keeps the Builder burst;
   Kathrout is the one with an answer for everything.
 - **She can't see ghosts or spirits** (she's an adult): against spirits her spells go astray unless someone
   points the target out. (Lasa, oddly, she can see.)
@@ -533,11 +533,11 @@ already knows (see "Memory (the journal)" below, and lore.md, "People of the isl
   who had her committed).
 - **Taboos and customs:**
   - **Seafarer:** nothing in a shell, and no shell jewellery or armor; and, as a grown woman, **no red meat**
-    (the bull's flesh is for men; see lore.md, "The All-Seafarers").
+    (the bull's flesh is for men; see lore.md, "The Seafarers").
   - **No alcohol:** *"A clear head is the only instrument I own."* (Routledge was raised a Quaker.) The one
     adult who turns down Yeray's wine.
   - Otherwise **eats what she's given** out of courtesy, asking first whose god she might offend.
-  - **The collector's lesson:** she first wants to ship a First Sailor moai to Keftiu "where scholars can
+  - **The collector's lesson:** she first wants to ship a Builder moai to Keftiu "where scholars can
     study it". Then she meets Tou, and learns the coral eyes she wanted are a person. After that she **never
     takes from a grave or a shrine** (in play: she won't equip grave goods), credits every informant, and
     honours "withheld at the priest's request" entries.
@@ -710,7 +710,7 @@ choice: sweet / funny / uncanny)
 3. **Tou and Lasa** (hidden): the Children of the Caves descend from the Crew children Tou's court
    sacrificed, with death warrants she signed unknowing. Lasa's people now cheerfully serve her. The truth
    is the most painful scene in the party: guilt, and maybe forgiveness.
-4. **Tou and Sib** (hidden): Sib's necromancy comes from Juda's notes on First Sailor homunculus-making,
+4. **Tou and Sib** (hidden): Sib's necromancy comes from Juda's notes on Builder homunculus-making,
    Tou's civilization's crime, used to rebuild Yoon.
 5. **Falmi and the Seafarers:** the forest's heir, and the Princess who burns forests.
 6. **Mealtimes (comedy):** Yoon eats only land meat, Sib only birds, Dama only fish; three gods' worth of
@@ -740,7 +740,7 @@ A school-trip friend group, with a ghost, a fae, a doll queen and a forest princ
   by consent.
 - **Not knowing what your realm does:** Tou's decrees killed children she thought she fostered; Thenmy
   is learning what tribute and conquest mean. The only two who understand that horror.
-- **Tou as a primary source** for Thenmy's First Sailor scholarship: thrilling for him, awkward for her.
+- **Tou as a primary source** for Thenmy's Builder scholarship: thrilling for him, awkward for her.
 - **Protocol comedy:** Tou's ancient etiquette, Thenmy's courtliness, Falmi asking what manners are.
 - **Real advice:** centuries of "solving" invented crises make Tou a surprisingly good adviser on
   governing the island after the war.
@@ -820,7 +820,7 @@ RPG Maker MV. Some of them only need database setup; others need custom plugins.
 | Pre-combat encounters | Sib, Pada, Juda, Tou | Events or plugin: checks on enemy type and party members before battle (talk your way out, ambush, surrender) |
 | Relationships and sidequests | Yoon's skill learning, Pada's bow, Thenmy's swords | Variables per character; skills and weapon types unlocked by sidequest switches |
 | Missable content | Pada's sidequests | Switches that lock when Pada dies |
-| Languages and literacy | Islander, All-Seafarer, First Sailor | Party checks on inscription and document events (Sib, Parl, Falmi, Tou, Thenmy) |
+| Languages and literacy | Islander, Seafarer, Builder | Party checks on inscription and document events (Sib, Parl, Falmi, Tou, Thenmy) |
 | Memory (the journal): quests, evidence, compendium | Act 2's open quest order, Pada's missable sidequests, the murder mystery, Known Words, Kathrout | One custom Memory menu (and the J key) with three tabs (Quests, Evidence, Remembered). See "Memory (the journal)" |
 | Yoon's temperament | Sweet, Funny and Unhinged choices | Three variables; extra dialogue options, moves, Talk bonuses and small stat states at thresholds. See "Yoon's temperament" |
 | Player-chosen gender | Yoon | Choice (boy, girl or third gender) that sets pronoun substitution in dialogue (he / she / they), how people address Yoon and small flavor effects. **Yoon looks the same whatever the choice.** Built: `SI_Yoon.js`; its per-gender Look settings stay empty |
@@ -935,17 +935,17 @@ weapon has a worn tier (Chipped, Cracked, Bent or Gap-Toothed) at about two-thir
   resistance but has lost its resin shell.
 - **Metal** weapons also have the **metal** move (Conducting Blade with a Voltaic Pile).
 - **Copper-silver** has `<Magic Edge: 15>`: weapon skills deal 15% extra damage as magic.
-- **Black Bronze Leaf Sword** (22, Magic Edge 30, never wears): a placeholder for the late-game First Sailor
+- **Black Bronze Leaf Sword** (22, Magic Edge 30, never wears): a placeholder for the late-game Builder
   legendaries.
 - **Harpoons** are light spears that anyone can throw once a battle: Bone Harpoon (6; 30% Bleed), Fishing
   Harpoon (8; 40% Bleed), Shark-Tooth Harpoon (9; 60% Bleed). **Dama's Fishing Gear** (ranged) gives one
   net cast and two javelin throws (`<Ammo: net 1, throw 2>`).
-- **Priest staves:** Jasper-Tipped Staff (Rite +25%), Glyph-Carved Staff (MAT +6), First Sailor Relic Staff
+- **Priest staves:** Jasper-Tipped Staff (Rite +25%), Glyph-Carved Staff (MAT +6), Builder Relic Staff
   (late). **Glyph staves** (Staff of Ahi, Rari, Hagu, Keri, Mahu) work like that tattoo while held: they
   grant the tier-1 spell.
 - **Broken obsidian** weapons leave **Obsidian Caltrops** (a battle item).
 - **Late and rare weapons:** the **black bronze** legendaries (Knife, Spear, Axe, Mace, plus the Leaf Sword;
-  Magic Edge 30, never wear); **grown-coral** First Sailor blades (Grown-Coral Knife and Blade: water spells
+  Magic Edge 30, never wear); **grown-coral** Builder blades (Grown-Coral Knife and Blade: water spells
   +15%, 40% Bleed); **Heaven's Horn** (a fire spear from the Bull of Heaven: fire spells +15%, may set targets
   Smoldering, 20% less Fire damage); the **Living Bough Staff** (a Green Horse's bough: MAT +6, heals 3%
   HP a turn). Also the **Ash Spear** (light, AGI +2) and the crumbly early **Sinter Knife**.
@@ -1156,10 +1156,10 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
   Only the two grove priests may do it, so the game has **three sets**: Juda's own (he starts in it; it
   burns to ash with him in Act 3), one for **Sib** and one for **Yoon**.
 - **Parts:** a set is made of parts, one per slot unless a piece names its own part. Pieces for the same
-  part are substitutes, and several charms of one set still count once (the First Sailor Regalia names
+  part are substitutes, and several charms of one set still count once (the Builder Regalia names
   the eye and the pupil as separate parts). One piece can belong to two sets (Goat-Skin Moccasins).
-- "First Sailor spells" are spells tagged `<School: first-sailor>` (none yet: Tou's spells are still to
-  come); enemies tagged `first-sailor` (Stonemen, First Sailor ghosts) are still to come too.
+- "Builder spells" are spells tagged `<School: builder>` (none yet: Tou's spells are still to
+  come); enemies tagged `builder` (Stonemen, Builder ghosts) are still to come too.
 
 | Set | Slots | Small bonus | Full bonus |
 |---|---|---|---|
@@ -1183,25 +1183,25 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Fisher's Gear | Neck (Bone Fishhook Pendant or Shark-Tooth Necklace), Charm (Net Floats), Ranged (Fishing Gear or Palm-Fibre Net) | +1 net cast | Sea creatures start friendlier; +10% evasion while Wet |
 | Ritualist's Things | Neck (Sandalwood Beads), Hands (Jasper Ring), Charm (Gourd Rattle or Silver-Plated Idol) | Rite +15% | Spirits start friendlier; Spirit +10% |
 | Officer's Kit | Hands (Bronze Signet), Charm (Sailor's Compass), Codex (any) | Ask +15% on soldiers | Escape +15%; the whole party AGI +5% |
-| First Sailor Regalia | Neck (Crescent Pectoral), the Coral Eye Fragment **and** the Scoria Pupil | Spirit +10% | Stonemen and First Sailor ghosts start friendlier; First Sailor spells +15% |
+| Builder Regalia | Neck (Crescent Pectoral), the Coral Eye Fragment **and** the Scoria Pupil | Spirit +10% | Stonemen and Builder ghosts start friendlier; Builder spells +15% |
 | Shore Dog (Patience) | Booties (Seal-Skin), Bell (Shell) | +10% evasion while Wet | Sea creatures start friendlier |
 | Cave Dog (Patience) | Collar (Glow-Bead), Booties (Hide) | +10% evasion in caves | Cave creatures start friendlier |
-| All-Seafarer Bronze | Head (Bronze Helm or the Horsehair-Crested Helm), Cuirass, Greaves (+ shield) | +DEF | Marines treat you as one of theirs (Ask, Plead), but you count as `<Metal>` |
+| Seafarer Bronze | Head (Bronze Helm or the Horsehair-Crested Helm), Cuirass, Greaves (+ shield) | +DEF | Marines treat you as one of theirs (Ask, Plead), but you count as `<Metal>` |
 | Sailor's Kit (Seafarer crew) | Head, Shoulders (Tarred Cloak: resists Wet), Body (Linen Tunic), Feet | Resists Disoriented | +10% evasion while Wet; escape +10% |
 | Linen Armor (Seafarer marines) | Head (Quilted Cap), Cuirass, Greaves | 10% less Pierce damage | 20% less Pierce damage, but +10% Fire damage. Not metal, and light enough for children |
 | Court Dress (Seafarer nobles) | Head (Gilt Diadem), Shoulders (Orchil-Purple Mantle), Legs (Officer's Kilt), Feet | Ask and Plead +15% on soldiers | Resolve +10%; soldiers start friendlier |
-| Charioteer's Gear (Seafarer elite) | Head (Horsehair-Crested Helm, metal), Cuirass (Cowhide), Hands (Driving Gloves) | Ranged +10% | Speed +10%; the first attack on you each battle likelier misses |
+| Charioteer's Gear (Seafarer officers and racers: chariots are for rank and sport) | Head (Horsehair-Crested Helm, metal), Cuirass (Cowhide), Hands (Driving Gloves) | Ranged +10% | Speed +10%; the first attack on you each battle likelier misses |
 | Palm-Fibre | Head (Pufferfish Helm: 10% spikes), Cuirass, Greaves | 10% less Cut damage | 20% less Cut damage, but +15% Fire damage |
 | Sharkskin | Cuirass, Arms | Melee attackers take 10% back (1 piece) | Immune to Bleed; +10% evasion while Wet |
 | Deerskin | Cuirass, Arms, Greaves | Stalk +15% | You ambush enemies more often; deer start friendlier |
 | Slat Armor (wood) | Head (Carved Wooden Helm: Threaten +15%), Cuirass (Laurel, Pine or Mahogany), Arms, Greaves | 10% less Cut and Pierce, +10% Fire | 20% less Cut and Pierce, but +15% Crush and Fire. The Pine cuirass cancels the Fire weakness, the Mahogany one the Crush weakness. Every cuirass costs 1 Fatigue a turn |
-| Crew (First Sailor, child-sized) | Head, Body, Legs, Neck (Numbered Collar) | Fatigue builds 10% slower | First Sailor beings and the Children of the Caves take you for Crew and start friendlier |
-| Royal Regalia (First Sailor, child-sized) | Head (Queen's Feather Diadem), Shoulders (Mantle of Petitions), Body (Royal Tapa Robe), Feet | Max Mana +15% | First Sailor spells +15%; First Sailor beings start friendlier. **Tou starts in the diadem and robe**; the mantle and sandals are found in her palace |
-| Navigator's Raiment (First Sailor, adult-sized) | Head, Shoulders (Star-Chart Mantle), Body, Neck (Crescent Pectoral, also First Sailor Regalia) | +1 Insight | Spells cost 10% less Mana |
+| Crew (Builder, child-sized) | Head, Body, Legs, Neck (Numbered Collar) | Fatigue builds 10% slower | Builder beings and the Children of the Caves take you for Crew and start friendlier |
+| Royal Regalia (Builder, child-sized) | Head (Queen's Feather Diadem), Shoulders (Mantle of Petitions), Body (Royal Tapa Robe), Feet | Max Mana +15% | Builder spells +15%; Builder beings start friendlier. **Tou starts in the diadem and robe**; the mantle and sandals are found in her palace |
+| Navigator's Raiment (Builder, adult-sized) | Head, Shoulders (Star-Chart Mantle), Body, Neck (Crescent Pectoral, also Builder Regalia) | +1 Insight | Spells cost 10% less Mana |
 | Sacred Metal (tumbaga; fits anyone) | Hands (Ring: Rite +15%), Cuirass (Pectoral: spirits start friendlier), Charm (Earrings: Spirit, Wits), Charm (Bracelet: electric +10%) | Rite +15% | Resolve +10%; spirits start friendlier still. Shiny; every piece also counts for the Telegrapher's Kit |
 | Silvered Bronze (**Thenmy only**; his starting gear) | Head (Silvered War-Circlet), Cuirass, Arms (Bracers), Greaves | Endurance +10%; 15% less damage from spirits | Resolve +10%; 20% less damage from demons; Seafarer soldiers start friendlier. Shiny, `<Metal>`, unbreakable |
-| Black Bronze (First Sailor, adult-sized) | Head, Cuirass, Arms, Greaves | 10% less magic damage | 25% less magic damage. Shiny and `<Metal>`; heavy (Fatigue) |
-| Grown Coral (First Sailor; fits anyone) | Head, Cuirass (heals 2% Health a turn), Greaves | Water spells +10%; resists Wet | 15% less Cut damage; attackers take 15% back. **Every piece whispers Despair (3% a turn)**; the Scoria Pupil quiets it |
+| Black Bronze (Builder, adult-sized) | Head, Cuirass, Arms, Greaves | 10% less magic damage | 25% less magic damage. Shiny and `<Metal>`; heavy (Fatigue) |
+| Grown Coral (Builder; fits anyone) | Head, Cuirass (heals 2% Health a turn), Greaves | Water spells +10%; resists Wet | 15% less Cut damage; attackers take 15% back. **Every piece whispers Despair (3% a turn)**; the Scoria Pupil quiets it |
 | Firebrand Gear (the Princess's forest-burners, Act 5; fits anyone) | Head (Wet-Felt Hood), Cuirass (Clay-Daubed Coat), Hands (Mitts), Legs, Feet | 25% less Fire damage | Immune to Smoldering and Enflamed; fire spells +15%; **but you start every battle Wet** (weak to electricity and cold) |
 | Black Hound Regalia (the Destroyer's gift, Act 6; fits anyone) | Head (Hound-Skull Helm), Shoulders (Black Hound Pelt), Cuirass (Scoria-Plate), Legs (Ember-Vein), Feet (Ash-Walker Boots: immune to Mired) | Might +10%; immune to Smoldering | 20% less damage from the Destroyer's servants, who start friendlier; spirits and priests start unfriendly. **Every piece whispers** (Panicked or Enraged), and nothing quiets it |
 
@@ -1248,8 +1248,8 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Ritualist's Things (all) | spirits start friendlier; Resolve +15%; Rite +25% in all |
 | Officer's Kit (2) | Ask +15% on soldiers |
 | Officer's Kit (all) | escape +20%; the whole party Speed +8% |
-| First Sailor Regalia (2) | Resolve +10% |
-| First Sailor Regalia (all) | Stonemen and First Sailor ghosts start friendlier; First Sailor spells +25% |
+| Builder Regalia (2) | Resolve +10% |
+| Builder Regalia (all) | Stonemen and Builder ghosts start friendlier; Builder spells +25% |
 | Shore Dog (1) | +10% evasion while Wet |
 | Shore Dog (all) | sea creatures start friendlier; +20% evasion while Wet in all |
 | Cave Dog (1) | +10% evasion in caves |
@@ -1271,9 +1271,9 @@ bonus; the **whole set** gives the full bonus. A set with only two pieces gives 
 | Slat Armor (2) | 10% less Cut and Pierce damage, +10% Fire damage |
 | Slat Armor (all) | 30% less Cut and Pierce damage, but +15% Crush and Fire damage |
 | Crew (2) | Fatigue builds 10% slower |
-| Crew (all) | Fatigue builds 20% slower in all; First Sailor beings and the Children of the Caves take you for Crew: they start friendlier |
+| Crew (all) | Fatigue builds 20% slower in all; Builder beings and the Children of the Caves take you for Crew: they start friendlier |
 | Royal Regalia (2) | max Mana +15% |
-| Royal Regalia (all) | First Sailor spells +25%; First Sailor beings start friendlier |
+| Royal Regalia (all) | Builder spells +25%; Builder beings start friendlier |
 | Navigator's Raiment (3) | +1 Insight |
 | Navigator's Raiment (all) | spells cost 20% less Mana |
 | Black Bronze (2) | 10% less magic damage |
@@ -1317,7 +1317,7 @@ into armor types by where it is worn:
   first ailment each battle; `<Ailment Ward>`).
 - **Seafarer charms:** **Horsehair Plume** (Brave at battle start) and **Bronze Horse-Bit** (Soothe +25%
   on animals). Horses are new to the island: Islanders have never seen one before the invasion, and
-  chariots arrive with it (Act 4). **Cattle goods:** Cowhide, Horsehair, Ox Horn (materials); Salt Beef,
+  the Seafarers' horsemen arrive with it (Act 4). Chariots are for officers and sport (lore.md, "Horses"). **Cattle goods:** Cowhide, Horsehair, Ox Horn (materials); Salt Beef,
   Cow's Milk, Seafarer Cheese (meals).
 - **Where things turn up:** the Sailor's Kit in Act 2 (Mansehare warehouses, Parl's hideout); Crew
   clothing in Act 2 (the Children of the Caves' village and hoards, Lasa's people); Palm-Fibre,
@@ -1335,8 +1335,8 @@ tusk pendant, raven feather in the laurel forest; antler toggle, ibex horn, yew 
 juniper smudge bundle in the alpine forest; eagle feather, snow quartz, shell wind-chime on the peak;
 lizard-scale charm, tortoise-shell amulet, vulture feather, obsidian amulet (fire spells +10%) in the
 desert; phonolite bell, basalt whetstone, pumice stone in the quarry; sulfur lump, tin bead,
-hot-spring sinter in the crater; sailor's compass, bronze signet (All-Seafarer); crescent pectoral and a
-whispering **coral eye fragment** (First Sailor relics). Patience's collars: Woven → Hide →
+hot-spring sinter in the crater; sailor's compass, bronze signet (Seafarer); crescent pectoral and a
+whispering **coral eye fragment** (Builder relics). Patience's collars: Woven → Hide →
 Shark-Tooth → Coral-Eyed. Rings: silver, bone, obsidian; gloves: hide, sinew wraps.
 
 **Island goods** (stone, pigment, salt, sea and forest):
@@ -1392,7 +1392,7 @@ Rubber is the gate.
 ### Voltaic techniques (Islander electricity)
 `SI_Voltaic.js`. The **Voltaic Pile** (in its own **Battery** slot; every Islander starts with one) lets **Islanders** (Yoon, Sib, Pada, Dama, Juda) use
 electrical techniques, under their own **Voltaic** skill type. Nobody else can wear a pile: it's
-Islander technology, and the bronze-armed All-Seafarers don't have it.
+Islander technology, and the bronze-armed Seafarers don't have it.
 
 - **Charge:** a pile holds **3 charge**. Techniques spend it, and it **carries over between battles**.
   Refill with **Acid Jars** (+2; acid from the hot springs) or a **battery tender** (full). The skill list
@@ -1426,7 +1426,7 @@ Islander technology, and the bronze-armed All-Seafarers don't have it.
 - **Gold-plated** Knife, Axe, Mace and Spear (electroplater): copper weapons with **Magic Edge 20** that wear
   half as often; bent, the plating cracks off and they're bent copper again.
 - **Sacred Metal** (tumbaga: copper, silver and gold, at a smith): Ring, Pectoral, Earrings and Bracelet.
-  The Islanders' attempt to recreate First Sailor black bronze; it doesn't stop magic as black bronze does,
+  The Islanders' attempt to recreate Builder black bronze; it doesn't stop magic as black bronze does,
   but spirits like it. Its own set, and every piece counts for the Telegrapher's Kit.
 
 **Field uses (to build with the overworld):** battery lamps (light in the lava tubes, spending charge);
@@ -1463,10 +1463,10 @@ rarer recipes from the **Stream Maidens**; ritual ones kept by **priests**.
 | Wart Fern Poultice | Microsorum fern | **Prevents Salting** for the battle (Fresh Water is the cure) |
 | **Bandage** | Cloth, **burrbark** (hauhau) or **paper** | The only item that stops **Bleed** |
 
-**All-Seafarer Grog** replaced the old Potion: sailors' rum and water. Heals **30 HP** but leaves the
+**Seafarer Grog** replaced the old Potion: sailors' rum and water. Heals **30 HP** but leaves the
 drinker **Tipsy** for 3 turns (hit −10%, but **liquid courage**: immune to Despair and Panicked). A second
 drink while Tipsy turns it into **Disoriented**. It's foreign: the Islanders don't make it. It comes
-from Marines (a 1-in-3 drop), Parl, Thenmy or trade, and **All-Seafarer Marines like being offered it**.
+from Marines (a 1-in-3 drop), Parl, Thenmy or trade, and **Seafarer Marines like being offered it**.
 Islander remedies cure cleanly; the outsiders' medicine has a cost.
 
 **Supplies:** Well Water (+15 MP), **Kava** (+40 MP, Fatigue +10), **Sacred Dew** (+80 MP), **Pennyroyal Sprig**
@@ -1486,7 +1486,7 @@ damage; cures Chilled on the whole party), **Octopus Ink** (Dazzled on every sea
 **Healing principle:** states are mostly cured by **items** (remedies, supplies), and HP is mostly
 restored by **healing spells**, so both matter. **Anything that cures a base elemental state also cures its
 stronger form** (Wet and Sodden, Smoldering and Enflamed, Burdened and Mired, Disoriented and Feverish).
-**Revival is never cheap:** no common item revives. The exceptions are small: All-Seafarer Grog (the foreign
+**Revival is never cheap:** no common item revives. The exceptions are small: Seafarer Grog (the foreign
 "medicine", 30 HP with a cost), revives, and meals (small heals, outside battle).
 
 **Upkeep and buffs:**
@@ -1496,7 +1496,7 @@ stronger form** (Wet and Sodden, Smoldering and Enflamed, Burdened and Mired, Di
 - **Battery Discs** restore 3 Voltaic charge.
 - **War paints and snuff** (battle buffs, 5 turns): Orchil War Paint (ATK up), Dragon's-Blood Paint (DEF
   up), Mint Snuff (AGI up), **Ochre Grave Paint** (MDF up).
-- **Treasures** to sell: Skeletal Figurine, Glyph Tablet Shard, First Sailor Bead, Sandalwood Casket.
+- **Treasures** to sell: Skeletal Figurine, Glyph Tablet Shard, Builder Bead, Sandalwood Casket.
 
 **Key items:** the body ingredients (Great Boar Flesh, Kin's Blood, Snow Urn, Silver Bracelet, Sea Pearl,
 Bellflower, Dragon-Tree Framework) and clues (Juda's Notes, Parl's Notebook, Tribute Ledger,
@@ -1862,10 +1862,10 @@ Tangata on Rapa Nui) are long, winding tunnels left when a lava river drained un
   breathing opens flooded sumps and the sea tunnel; adults clear rubble.
 - **Hazards:** bad air near vents (Fatigue), steam, sharp rubbly floors, lavacicles.
 - **Life:** blind crabs, cave rats, crickets (their legs: bait, Roast Cricket, and what bats and birds like), bats near entrances; **skylight figs** (Wild Figs: fae-safe food, and latex) and **moonmilk** on tube walls (eye-wash for Blinded; bone-white paint the dead take you for one of their own); the Children of the Caves' pranks and
-  hoards; First Sailor ghosts deeper; the Destroyer's tubes deepest. Wart Fern, Cave Mushrooms, Goblin's
+  hoards; Builder ghosts deeper; the Destroyer's tubes deepest. Wart Fern, Cave Mushrooms, Goblin's
   Gold, Cave Pearls, Hot-Spring Sinter near vents.
 - **Story places:** the Children of the Caves' village under a skylight garden; burial tubes (Islander
-  mummies, First Sailor tombs, Tou's remains); a tube running through Tou's buried palace.
+  mummies, Builder tombs, Tou's remains); a tube running through Tou's buried palace.
 - **Variety along a long tube:** colour changes (black, rust-red, gold), skylights, lava falls, root curtains,
   pools. Tiles: recoloured cave tiles with raised wall benches.
 
@@ -2041,9 +2041,9 @@ relationships, inscriptions and the story.
 | Pada | Animals |
 | Juda | Priestly and religious encounters |
 | Dama | Islanders, militia, sea creatures |
-| Parl | All-Seafarer common soldiers, deserters, smugglers |
-| Thenmy | All-Seafarer officers and nobility |
-| Tou | First Sailor beings: Stonemen, Hags, Owls of Ill Omen, ancient ghosts |
+| Parl | Seafarer common soldiers, deserters, smugglers |
+| Thenmy | Seafarer officers and nobility |
+| Tou | Builder beings: Stonemen, Hags, Owls of Ill Omen, ancient ghosts |
 | Falmi | Plants, forest fae, the Lady of the Woods' court |
 | Lasa | Children of the Caves, fae |
 | Patience | Dogs and animals (passive: helps whoever is speaking) |
@@ -2053,7 +2053,7 @@ relationships, inscriptions and the story.
 1. **Perception:** reveals enemy HP, then weaknesses, then mood during conversations. It also
    lengthens the Turn Order window, and at high Insight may reveal enemies' next actions.
 2. **Comprehension:** in Act 1, NPC dialogue is partly garbled and becomes readable as Insight
-   rises. Later this gives partial understanding of All-Seafarer and First Sailor text (Parl, Tou
+   rises. Later this gives partial understanding of Seafarer and Builder text (Parl, Tou
    and Falmi still give full readings).
 3. **Reading people:** extra dialogue options, catching contradictions, spotting lies, and
    noticing Juda's tells. Insight checks *add* understanding but never lock out anything the plot
@@ -2268,7 +2268,9 @@ Named for the word the Red Bowl teaches. Yoon keeps it from the first scene. **E
 ### Yoon's temperament
 Every Act 1–2 choice written in Yoon's voice has a **Sweet**, a **Funny** and an **Unhinged** option (see
 "Personality" under Yoon). Each choice adds 1 to its own count: variables **9 Sweet, 10 Funny, 11 Unhinged**.
-The counts are shared by the Ghost and human Yoon, and **never shown**.
+The counts are shared by the Ghost and human Yoon. **Shown in Memory** (decided; it used to be "never shown"):
+Remembered, "What I'm like": each count with a bar to its next tier and what that tier gives (the tiers are in
+Journal.json, "temperament"; the body-era tiers get added there).
 
 **Dialogue: extra options, never fewer.** The three basic options are always there. A high count adds a
 **fourth** option in that style:
@@ -2337,11 +2339,13 @@ Walk"), it learns to touch. Lasa explains each move in her own words.
 | **water** (the stream) | Chilling Touch | Cold, wet |
 | **wind** (the gusty spot) | Cutting Touch | Air; "something pushes" |
 | **tree** (the dead tree) | Crushing Touch | "A dry hand, reaching up": it grips |
-| **grass** (the kipuka) | Spirit Surge | Clean, alive; what grows back after the fire |
+| **plant** (the first wart fern Lasa picks) | Spirit Surge | Plants come back after the fire: wipe things clean |
 | **sing** (the telegraph wires) | Ghostly Touch | The hum carries something; the Ghost sips it |
 | **smoke** (above the town, last) | Spiritual Writhe | Smoke twists and rises |
 
-goat, bird, road and home teach no move; **float** is the ghost-only crossing (Region 10). Only **sun** is
+together (the children's cairns, map 1), goat, bird, road and home teach no move. **Words from gathering** (decided): the first time Lasa picks something, she
+names it: wart fern **plant** (and Spirit Surge), skylight fig **fruit**, scoria or pumice **lava**, sulfur **stink**
+(Journal.json words, "gather"; common events 24-27); **float** is the ghost-only crossing (Region 10). Only **sun** is
 scripted, so a player who skips every find still has Burning Touch, Mournful Wail and a temperament move.
 
 **The Ghost and Lasa in a fight.** Lasa is the finisher and thief (Keri, Gau, Prank, Steal, Keva, Mahu,
@@ -2363,12 +2367,17 @@ were chosen for:
 - Weak with her: Burning Touch (she has no fire or air to build on it) and Maddening Wail (Enraged foes hit
   harder and won't Talk).
 
+**Battle fixes from playtesting** (built): every enemy has some Mana (a quarter of its Health, 10-80), so Ghostly
+Touch always has something to drain and the Ghost needn't run dry; **Landed** Lasa regains 10% Mana a turn (on the
+ground: no flying, Endurance -25%, sheds 5 Fatigue); a **flyer reaches flyers**: Lasa, while she isn't Landed, hits
+flying enemies in melee without their flying dodge.
+
 **Fights on map 1** (built): visible wanderers, only in Act 1 (`<Before Story: 50>`, page needs Lasa and Story
 30), each placed to show off the move just learned:
 
 | Where | Troop | Teaches |
 |---|---|---|
-| Tube collapse, by day / at night | 16 Cave Crickets x2 / 79 Bats x3 | First fight: Burning Touch + Keri; Cricket Legs drop / darkness helps Keva |
+| The gully (map 1) | none | The children's place stays peaceful (their cairns by the hole appear only once Sib is along, Act 2) |
 | The stream (water) | 25 Rock Lizard | Chilling Touch, Keri: Sodden, the knife +35% |
 | The dead tree (tree) | 75 Ravens x2 | Crushing Touch slows them: Steal; or Cricket Legs in Talk |
 | The gusty saddle (wind) | 76 Vulture | It goes for the "weakest", the Ghost, and does nothing; Cutting Touch + Keva |
@@ -2376,7 +2385,11 @@ were chosen for:
 | The wires (sing), at night | 77 Owl of Ill Omen (never flees) | A spirit and an omen: Ghostly Touch, Talk |
 | The top (smoke) | 78 Rock Lizards x2 | The finale: Touch, Writhe, Keri for the extra turn |
 
-Simulated at level 1 with Lasa's basic moves and the Ghost doing nothing: every fight wins 89-100% of the time,
+Act 1's first fight is now in the channels (map 3), usually the Rock Lizard by the stream. **Combat tutorial**
+(built): whichever gully fight comes first, Lasa explains the battle screen at its start (the turn line; Fight /
+Talk / Tactics; the Ghost barely hurts and is barely hurt, its moves in Fight > Innate; her FT), once (common
+event 23, called by the gully troops' battle-start page); Memory keeps it as Know-how, "Fighting". Burning Touch (sun) still
+comes first, on map 1. Simulated at level 1 with Lasa's basic moves and the Ghost doing nothing: every fight wins 89-100% of the time,
 Lasa ending on 19-32 of 32 Health; the Rock Lizards x2 are the hardest, and come last. The Ghost takes 10% of
 physical damage (and double magic), so animals barely scratch it: about 1 a hit. **Animals can see the Ghost, and can hurt it if they hit it** (no immunity: with 15 Health it relies on
 its Speed, Lasa's Keva and the Wails to keep claws off it).
@@ -2526,7 +2539,7 @@ the elemental cycle. The remedies stay cheaper and more specific. **Keva in the 
 
 **Magic by culture.** Generic spells (the roots above, at their basic tiers) are open to all. The top tiers
 belong to one culture each: **-gunben** (reliable top-tier group damage) is **Islander**, tattoo only;
-**-sin** (top-tier single target) is **First Sailor** (`<School: first-sailor>`; Tou knows all four);
+**-sin** (top-tier single target) is **Builder** (`<School: builder>`; Tou knows all four);
 **-hari** (random hits) is **Seafarer**, from codices. There are no -sin or -hari tattoos. Islanders trade
 versatility for specificity: one tattoo is one spell, but it can be any tier, the strongest included.
 
@@ -2585,7 +2598,7 @@ read, so everything she knows is innate.
 |-----|----------------|---------------|
 | Lasa (cave) | **Keri, Mahu, Kami, Keva, Gau**: a dabbler, a little of many kinds of magic. Plus her people's **innate** tricks (not spells: silence can't stop them): **Prank** (Endurance down, may panic) and **Steal** | One story event at a time: the field spells **Pura** (a light), **Tikea** (reveals secrets) and **Garo** (shared with Falmi: hidden, in battle and on the map); Keriben, Kevaben, Kevagun, Gauben; **Ihi**, late |
 | Falmi (the forest's heir) | Raau, Geha, **Hahikiri** ("Roots and Bark": himself, 3 turns, regeneration doubled and Endurance +25%; MP 6) | Huhuti (meeting his mother's alpine body), Gogoro and Garo (his fathers), Viri / Viriben / Virisin (one per Daughter of the Wells he frees), maybe Mahu |
-| Tou (First Sailor) | Ahisin, Rarisin, Hagusin, Kerisin | First Sailor inscriptions |
+| Tou (Builder) | Ahisin, Rarisin, Hagusin, Kerisin | Builder inscriptions |
 | Yoon | (the ??? Glyph) | **Ihi**: a word they know without knowing how |
 
 **Healing items** are different: no Fatigue or MP, small **fixed** amounts, and they often apply
@@ -2598,7 +2611,7 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
 | Who | How spells are gained |
 |-----|-----------------------|
 | Islanders (Human Yoon, Sib, Pada, Juda, Dama; Parl if he joins the village) | **Tattoo** slots on the body, each tattoo encoding one spell (see below). Tattoos can only be swapped in the late game (magical healing) |
-| Readers (see Literacy below) | A single **Codex** slot; what a codex teaches depends on how well you read All-Seafarer script |
+| Readers (see Literacy below) | A single **Codex** slot; what a codex teaches depends on how well you read Seafarer script |
 | Tou, Falmi, Lasa | Innately, no medium: from the start or through story (see Innate magic) |
 | Ghost Yoon | Only the unique ghost abilities; regular magic and weapon skills come after gaining a body |
 
@@ -2623,13 +2636,13 @@ All spells add +2 Fatigue (placeholder). The test room's Spell Tutor teaches all
 - **Tattoos are permanent** while the switch "Tattoo removal (late game)" is off: empty tattoo slots
   can be filled, but an occupied one can't be removed or replaced, and Optimize/Clear never touch
   tattoos. Once removal is allowed, a removed or replaced tattoo is **destroyed**, not returned to the bag.
-- **Literacy** is tracked per character (`<Reads: ...>`): Yoon (Islander), Sib (Islander; All-Seafarer
-  script later, switch "Sib reads Seafarer script"), Parl (All-Seafarer), Tou (First Sailor; All-Seafarer
-  later, switch "Tou reads Seafarer script"), Falmi (Islander, First Sailor), Juda (all three), Thenmy
-  (All-Seafarer, and **Codex Mastery**). Lasa, Pada and Dama can't read, so they have no codex slot.
+- **Literacy** is tracked per character (`<Reads: ...>`): Yoon (Islander), Sib (Islander; Seafarer
+  script later, switch "Sib reads Seafarer script"), Parl (Seafarer), Tou (Builder; Seafarer
+  later, switch "Tou reads Seafarer script"), Falmi (Islander, Builder), Juda (all three), Thenmy
+  (Seafarer, and **Codex Mastery**). Lasa, Pada and Dama can't read, so they have no codex slot.
 - **Codices** are Seafarer gods' books, each pairing its gods with a generic spell. Three tiers:
   1. **Anyone who reads:** a **cultural move** and a basic single-target generic spell.
-  2. **Readers of All-Seafarer script** (Parl, Juda, Kathrout, later Sib and Tou): at least one god spell,
+  2. **Readers of Seafarer script** (Parl, Juda, Kathrout, later Sib and Tou): at least one god spell,
      a second god spell or another generic spell, and the second tier of the tier-1 spell.
   3. **Codex Mastery** (Thenmy, Kathrout): the gods' group versions, the -hari of the tier-1 spell (or a
      stand-in where there is none), and the upgrade of tier 2's extra generic spell.
@@ -2710,6 +2723,109 @@ end of the target's next own turn. Feverish
 counts as a mental state for Insight's mental resistance. Exceptions: `<Elemental: water>`,
 `<No Elemental States>`, `<Inflict: sodden>` (`SI_ElementalStates.js`).
 
+### Enemy tactics (`SI_Tactics.js`)
+Enemies that think. RPG Maker's own enemy AI rolls dice over the database ratings and picks targets at
+random; it can't see the party's states or its own allies. **`SI_Tactics.js` replaces how an enemy chooses
+its move and target** with a scoring pass. Everything after the choice (damage, states, Talk, the turn
+order) works as now. Creature by creature, the plans are in [bestiary.md](bestiary.md).
+
+**Decided:** every enemy, by tier; telegraphing gated by Yoon's Insight; troop combos in the first version;
+the bestiary's `NEW` database changes ship with the plugin; this design first, code after.
+
+**1. Filters first (unchanged rules, applied before any scoring)**
+- RPG Maker's own validity: action conditions, MP, sealed skills, Sodden (no Magic), Mired (no Physical).
+- The existing rules: Calm enemies don't attack (`SI_Talk`); sparing children; Call for Help; `<Not While:>`
+  (`SI_BattleTraits`); `<Flees When:>` (below).
+- **Who it can target:** animals can't single out **Ghost Yoon** (`<Ignores: ghost>` is their default;
+  omen creatures, spirits, fae, priests and Hags see him). **Everyone can target Lasa.** Party-wide moves
+  still hit everyone.
+
+**2. Scoring.** For every allowed move × target:
+
+```
+score = rating                          the database rating, as a base
+      + value                           what the move achieves (below)
+      + situation                       combos, finishing a target, protecting an ally, style
+      - waste                           re-applying a state, a resisted state, a target that mostly dodges
+```
+
+| Value | How it's judged (placeholder weights, to tune with the sims) |
+|---|---|
+| Damage | The real damage formula against that target (Defense, resistances, Wet, metal...), as a share of the target's Health. **+ a bonus if it would knock the target out** |
+| A state | Worth more where it matters: Entangled or Chilled on a fast target, Dazzled on a hard hitter, Despair on a caster. Zero if already there or resisted |
+| Elements | `<Source>` against the cycle: **clearing a tier-2 state (the extra turn) scores very high**; upgrading a state (Wet → Sodden) high; just inflicting a base state a little |
+| Heal | The Health it would actually restore (nothing on an unhurt ally) |
+| Buff / debuff | Worth more on an ally about to act and hit hard, or on the party member who hurts the enemy most |
+| Talk skills | Demand Surrender, Call for Help: as their own rules say (they already win when valid) |
+
+**3. Choosing, by tier**
+
+| Tier | Who (default) | How it chooses |
+|---|---|---|
+| 0 | Prey and near-harmless beasts (Laurel Pigeon, Aurochs Calf, Jellyfish, Green Horse) | Today's dice, minus the waste (no pointless repeats) |
+| 1 | Other animals, pranksters, swarms | From the best half of its options, weighted toward the top |
+| 2 | Sapient and spirit enemies: soldiers, Boar-Men, Hags, Stonemen, Hunched, priests; the named rivals | Usually the best option; plans combos |
+| 3 | Bosses (troops named "Boss: ...") | Almost always the best option; reads the whole party |
+
+The default comes from the enemy's Talk type and whether it's a boss; `<Tactics: n>` overrides it.
+
+**4. Personality (enemy notes)**
+
+| Note | Meaning |
+|---|---|
+| `<Tactics: 2>` | its tier |
+| `<Tactics Style: aggressive>` | also `cautious` (heals and guards early), `cunning` (combos and debuffs first), `support` (allies first) |
+| `<Grudge>` | prefers whoever hurt it most |
+| `<Pack>` | prefers whoever its allies just hit |
+| `<Patient: 50%>` | waits (circles) until someone is at or below 50% Health (the Vulture) |
+| `<Prefers: Wet>` | favours targets with that state (Cranes, Herons: wet things look like fish) |
+| `<Flees When: alone, 30%>` | leaves when it's the last one standing, or below 30% Health (either) |
+| `<Ignores: ghost>` | won't single out Ghost Yoon (the animal default; `<Sees: ghost>` overrides) |
+| `<Intent: %1 eyes %2's wet clothes.>` | (skill note) its telegraph line; %1 = the enemy, %2 = the target |
+
+**5. Combos.** A setup move **marks** its target (the state it gave, and who gave it). A follow-up gets a large
+bonus against a marked target, more if an ally set it up this round.
+- **By state, on an enemy:** `<Follow Up: Wet +40>` (it cashes in on Wet targets). Most combos need only this:
+  the frog wets, the heron spears; the hag curses, the other hag drains whoever is in Despair.
+- **By troop,** for set plays: a **Comment on the troop's first event page** (troops have no Note box):
+  `<Combo: Seafarer Priest buffs Seafarer Axeman, then Seafarer Axeman attacks>`. The buffer favours that
+  ally; the ally then favours its heaviest move. If the setup never happens, nothing fires.
+
+**6. Telegraphing, gated by Insight.** When an enemy at tier 1 or above commits to a setup or a big move,
+its plan can show **before it acts** ("The Officer points his sword at Sib!"), from the skill's `<Intent>`
+line or a plain default ("%1 is watching %2."). Whether it shows depends on **Yoon's Insight** against the
+enemy's tier (placeholder): tier 1 at Insight 5, tier 2 at Insight 10, tier 3 at Insight 15. The concept's
+"at high Insight may reveal enemies' next actions" becomes this. Yoon's tells at battle start stay as they are.
+
+**7. Database changes that ship with it** (from the bestiary): the Owl of Ill Omen gains Ill Omen; the Wild
+Boar gains Paw the Ground; the cave children gain Mock; the Marsh Hag gains Rari; Bask works only by day and
+outdoors; Latch drains Health; the Leech gets Talk notes; the Marsh Eel gets a short submerged dodge after
+biting; the Vulture gets a circling wait; rats steal a food item. Plus each enemy's tags above, written as the
+bestiary is.
+
+**8. Proving it**
+- **Tests:** set situations with one right answer: the Hag holds Marsh Wind for the Sodden target; the Priest
+  heals the hurt ally, not the healthy one; the Vulture circles until someone is low; animals never target
+  the Ghost; a combo fires only after its setup; a plan shows only at enough Insight.
+- **Balance:** rerun every simulator (Act 2, Acts 2–3, animals, Act 4). Smarter enemies are harder, so
+  numbers will come down where the sims say. The Act 4 run already flags the Horsemen, the Officer's Guard
+  and the Champion with Axemen as too hard *before* tactics.
+- **Size:** one plugin of roughly 300–400 lines, placed after `SI_BattleTraits`, plus tests.
+
+**Balance stance (decided):** with tactics on, **no retuning**. The simulated party only attacks (it never heals,
+guards, uses items or plays the elemental cycle), so its losses mark where a fight *demands* tactics, not where
+it's unfair. **The player wins through clever tactics, good use of moves and healing.** **The sims' job** is to flag the extremes: fights that
+are walkovers or impossible. Real difficulty is judged by playtesting by hand (a smarter sim party was considered and
+set aside). What the sims showed
+(tactics and the second moves on, attacking only):
+- **Regular troops:** mostly won every time for 2–50% Health; a few early ones are hard for the starting party
+  (the Act 1 coast; Boar-Men before Pada, who are meant to be talked to).
+- **Bosses** (tier 3) are much harder than before tactics: the Great Boar about a third of fights, the Lady of the
+  Woods 0–30%, Juda and the Bull of the Caves 0%. Bosses are meant to be won by playing well.
+- **Act 4 Seafarers:** the Officer's Guard (5–10%), Horsemen ×2 (0%) and the Champion with Axemen (15%) are the
+  hardest set pieces of the act.
+- **Talking** still wins nearly every fight that can be talked down (Parl must be).
+
 ### Balance (first pass)
 **Philosophy:** low, readable numbers all game. Total growth is about 2–3×, and later difficulty
 comes from variety, status effects and Fatigue pressure rather than inflated stats. Every value
@@ -2756,7 +2872,7 @@ Scale** (20, a SI_CombatCore setting) halves damage.
 - Pada's Heavy Chop does about 32 to an Orc (45 HP).
 - Children go down in about 3–4 Orc hits, and Sib in about 2 Minotaur hits. Pada takes about 11
   Minotaur hits and Thenmy about 17.
-- Armor rescaled: Shield DEF 3, Hat 1, Cloth 2, Ring MDF 2. Potion (now All-Seafarer Grog) heals 30 and Magic Water
+- Armor rescaled: Shield DEF 3, Hat 1, Cloth 2, Ring MDF 2. Potion (now Seafarer Grog) heals 30 and Magic Water
   restores 15.
 
 ### Act 2 enemies (first batch)
@@ -2774,7 +2890,7 @@ Hoard** chest, which gives back everything stolen.
 | Cave Girl | 33 | 5 | 3 | 42 | Blinding Light (Dazzled), Pilfer | Prankster. Lasa: instant | — |
 | Cave Boy | 39 | 6 | 4 | 38 | Pantsing, Pilfer | Prankster. Lasa: instant | — |
 | Forest Imp | 27 | 5 | 3 | 48 | Trip (Disoriented), Mock (Panicked) | Prankster. Threaten: flees. Plead +40. Falmi: instant | — |
-| Green Horse | 50 | 8 | 4 | 50 | Trample | 60% evasion, **0 while Wet/Sodden/Burdened/Mired**. Fire ×2. No talk | — |
+| Green Horse | 50 | 8 | 4 | 50 | Hoof Strike | 60% evasion, **0 while Wet/Sodden/Burdened/Mired**. Fire ×2. No talk | — |
 | Boar-Man | 110 | 15 | 8 | 30 | Club (crush), Spear (pierce) | Soothe +15, Plead +20, **Offer −15**, Threaten +5 | — |
 | Owl of Ill Omen | 55 | 12 | 4 | 50 | Saber Beak (drain, Bleed 30%) | Flying. Tou: instant | Owl Feather (1/2) |
 
@@ -2840,7 +2956,7 @@ Dragged Below, Hypnotized, Salting, Stunned and Confused.
 | Black Hound Alpha | 260 | 22 | 12 | 0 | 54 | Rending Bite, Drag Down, Howl of the Pit | Fire ×0.5, Water ×1.5 | no Talk |
 | Hunched | 100 | 15 | 8 | 0 | 26 | Corpse Claw, Grave Breath | Fire ×1.5 | Talk: spirit |
 | Hunched Defiler | 180 | 12 | 10 | 20 | 30 | Defile, Pyre Breath, Corpse Claw | Fire ×1.25 | Talk: spirit |
-| The Bull of the Caves | 950 | 21 | 15 | 15 | 38 | Gore, Fire Breath, Cave Stampede | Fire ×0, Water ×1.5 | no Talk |
+| The Bull of the Caves | 950 | 21 | 15 | 15 | 38 | Molten Gore, Fire Breath, Cave Stampede | Fire ×0, Water ×1.5 | no Talk |
 | Juda | 550 | 13 | 12 | 13 | 34 | Ritual Knife, Pyre, Ahigun, Chlorine Cloud, Mahu | Fire ×0.5 | no Talk |
 
 **Troop events** (in the Troops tab, editable):
@@ -2953,6 +3069,74 @@ and the Spider Crab with its crabs about half. Act 3 highland troops cost 12–2
 one). Under the sea the Act 4 party loses 21–48%: the sea is meant to be dangerous, a Shark with Killer
 Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a mini-boss.
 
+### Seafarer enemies (Acts 4–5)
+Enemies 13 (the Marine's new moves), 15, 17, 25 and 76–79. Their moves are the party's own weapon skills
+and codex spells (enemies ignore weapon and shield requirements and hit with their own Attack), plus two
+enemy skills: **Call for Help** and the Lady of the Sword's **Every Blade in the Sea**. Checked by test 66.
+Troops 80–97 (test 67). **Talk for the bosses is still to do.**
+
+| Troops | Members |
+|---|---|
+| 80–84 | Marines*3; Sailors*3; Marine, Sailors*2; Axemen*2; Axeman, Marines*2 |
+| 85–86 | Priest, Marines*2 (+ a hidden Marine); Priest, Axemen*2 (+ a hidden Axeman): Call for Help |
+| 87–88 | Champion; Champion, Axemen*2 |
+| 89–90 | Captain's Crew: Captain, Marines*2, Sailor; Captain, Sailors*3 |
+| 91–92 | Officer's Guard: Officer, Axeman, Champion; Officer, Axemen*2, Priest (+ a hidden Axeman) |
+| 93–95 | Horseman; Horsemen*2; Horseman, Marines*2 (open ground only) |
+| 96 | Boss: Lady of the Sword (music Battle_Seafarers) |
+| 97 | Boss: Meneswa (music Meneswa). Immortal throughout; at half Health she becomes phase 2 at full Health; at the end she yields: switch 10 "Meneswa surrendered (Act 5)" and the battle breaks off |
+
+| Enemy | HP / MP / Atk / Def / Spirit / Resolve / Speed / Luck | EXP | Moves |
+|---|---|---|---|
+| Marine (13) | 70 / 0 / 14 / 14 / 1 / 6 / 22 / 8 | 20 | Measured Thrust, Shield Bash, Brace, Cover, Hurl Javelin |
+| Sailor (15) | 65 / 0 / 12 / 8 / 1 / 5 / 34 / 10 | 15 | Quick Slash, Overhead Smash, Cast Net, then Haul In, Throw Knife |
+| Axeman (25) | 140 / 0 / 17 / 13 / 1 / 6 / 24 / 6 | 30 | Heavy Chop, Skull Crack, Hook Shield, Rending Blow, Cleave (≤50%), Cover |
+| Priest (76) | 90 / 60 / 9 / 9 / 15 / 14 / 30 / 10 | 32 | Puaka, Mahu, Puhi, Ward Off, Quick Jab, Bull-Leap (≤50%), Call for Help |
+| Champion (17) | 260 / 10 / 22 / 15 / 1 / 10 / 46 / 12 | 60 | Skull Crack, Bull-Leap, Trip, Flaying Strike, Hurl Javelin, Bellow (turn 1), Puaka (≤50%) |
+| Lady of the Sword (77) | 1100 / 140 / 26 / 16 / 22 / 20 / 46 / 20 | 220 | Vital Strike, Raking Cut, Riposte, Off-Hand Flurry, Flaying Strike, Kiva, Atua and Cold Composure (≤50%), Every Blade in the Sea (turn 3+) |
+| Meneswa, phase 1 (78) | 1300 / 160 / 24 / 18 / 22 / 20 / 40 / 20 | 0 | Vital Strike, Riposte, Shield Bash, Mea-uha, Tiho-uha, Kerihari |
+| Meneswa, phase 2 (79) | 750 / 200 / 27 / 16 / 28 / 22 / 48 / 22 | 260 | Ahihari, Keriben, Flaying Strike, Mea-uhagun, Mock, Tiho-uhagun (≤40%) |
+| Captain (80) | 350 / 50 / 18 / 14 / 10 / 12 / 34 / 14 | 70 | Raking Cut, Pommel Strike, Read the Wind (turn 1), Vero, Arikigun (turn 3+) |
+| Officer (81) | 450 / 60 / 20 / 18 / 12 / 14 / 30 / 14 | 90 | Vital Strike, Shield Bash, Iku (turn 2+), Puakagun, Kiva, Riposte (≤50%) |
+| Horseman, mounted (82) | 320 / 0 / 22 / 14 / 1 / 8 / 52 / 10 | 80 | Aurochs Charge (turn 1), Measured Thrust, Trample, Hurl Javelin |
+| Horseman, on foot (83) | 180 / 0 / 16 / 10 / 1 / 8 / 40 / 10 | 80 | Loose Arrow, Aimed Shot, Covering Fire, Riposte |
+
+- **Sparing children:** the Marine, Sailor, Axeman and Priest have `<Spares Children>` and Demand Surrender at
+  rating 1. With an adult standing it is never picked; with only children left it is the only thing they
+  do (no stances, buffs or heals). The Champion and the bosses spare nobody.
+- **Call for Help:** a Seafarer Priest that is the last enemy standing brings in its troop's hidden member
+  (put one hidden Axeman or Marine in every troop with a Priest). Once per battle.
+- **Counterplay:** the Champion's Bull-Leap and the Lady's Riposte punish melee, so magic and ranged
+  attacks are the answer; the Lady's Kiva silences casters and Atua turns spells back.
+- **Drops:** never bronze (each bronze piece is semi-unique, one or two per game, from the story). Marine:
+  Grog 1/3, Quilted Cap 1/8, Salt Beef 1/4. Sailor: Grog 1/3, Sailor's Cap 1/10, Lead-Weighted Net 1/12.
+  Axeman: Salt Beef 1/3, Cowhide 1/5, Horsehair Plume 1/15. Priest: Linen Cloth 1/4, Bull Priest's Robe
+  1/15, Bull-Horn Staff 1/20. Champion: Salt Beef 1/3, Bull-Hide Bracers 1/5, Bull-Horn Headdress 1/15.
+  The bosses drop nothing.
+- **The purse:** every rank-and-file Seafarer has `<Troop Drop: item 611, 10%>`, so a beaten Seafarer troop
+  has a 10% chance of one Golden Axe Money (once per troop, `SI_BattleTraits.js`).
+- **Talk:** every soldier is sapient, with its own temper. All love Seafarer food and drink and hate anything
+  from a shell (and men take milk as an insult). The **Sailor** is homesick and easy (Grog, Salt Beef); the
+  **Axeman** respects a threat and shrugs off sweet talk; the **Priest** answers a rite (Ox Horn or beef as an
+  offering) and resents threats; the **Champion** wants a contest: threats impress him, pleading disgusts him,
+  and a purse (Golden Axe Money) interests him; when Pacified he salutes the party (Might up). The **Captain**
+  can be Asked to withdraw; the **Officer** takes Ask, not Plead or bribes. Their questions have special answers
+  for Thenmy (their prince), Parl, Aday, Kathrout, Sib, Dama, Tou and Falmi.
+- **Mini-bosses (recurring ranks, Acts 4–5):** the **Captain** (`Mm1_09Captain_3`) leads Marines and Sailors;
+  beat him and the soldiers still standing lose heart (`<Morale Leader: 25>`: +25 mood). The **Officer**
+  (`Mm1_32Prince_3`), a chariot-driving noble, leads Axemen and Champions and marks one for a sure critical (Iku);
+  proud, so Ask works and Plead and bribes insult him. The **Horseman** (`En3_055Dullahan_C30_S4`) charges on turn
+  1; Mired, Entangled or Held stops its charge and trample (`<Not While: ...>`); at half Health the rider is thrown
+  (`<Transform At: 50%, enemy 83>`, `archer1`) and fights on foot with a bow. The horse talks as an animal (can't
+  be stalked): Soothe it and it bolts with the rider. Drops: Captain Sailor's Compass 1/6, Gilt Armlets 1/12,
+  Grog 1/3; Officer Officer's Kilt 1/5, Orchil-Purple Mantle 1/12, Gilt Diadem 1/20; Horseman (both forms)
+  Horsehair 1/2, Driving Gloves 1/5, Cowhide 1/4. All carry the 10% purse. **They are named rivals, not generic ranks:** each
+  is one named Seafarer the party meets again and again. He escapes at low Health and comes back stronger,
+  with a grudge (and, for some, a later choice: defecting to Thenmy in Act 5). Names and encounters to come. Act 5 Firebrand versions are to do
+  (`Mm1_09Captain_2`, `Mm1_32Prince_1`, `En3_055Dullahan_C23_S4`).
+- **The Lady of the Sword** is a goddess and a Seafarer. Boss-sized, with boss state resistances like
+  Meneswa.
+
 ### Implementation status
 | Piece | Status |
 |-------|--------|
@@ -2983,6 +3167,8 @@ Fish is the worst, and the Ridden Aurochs (about half the party's Health) is a m
 | Act 2 enemies (first batch) and prank fights | Done: 12 enemies, troops 5–16, `SI_Pranks.js` (steal to hidden hoards, pantsing, nonlethal, run off when beaten), `<Talk Flees>` |
 | Talk reactions, weighted results, enemy questions, Insight hints and tells | Done: `SI_Talk.js`; all enemies written. Placeholder test enemies removed |
 | Voltaic techniques (pile charge, water and metal) | Done: `SI_Voltaic.js` |
+| Enemy tactics (`SI_Tactics.js`) | Done: see "Enemy tactics"; test 68. Scoring weights to tune with the sims |
+| Seafarer enemies (stats and moves; Call for Help) | Done: data plus `SI_BattleTraits.js` (with drops, Talk, the troop purse and troops 80–97); boss Talk to do |
 | Automated tests | `tests/` (52 tests, about 560 checks; see tests/README.md) |
 | Insight (leveling) | Done: EXP from Talk (`SI_Talk.js`), stat effects and shared Yoon Insight (`SI_Insight.js`), caps (actor Max Level) |
 
@@ -2995,7 +3181,7 @@ campfire (full rest). Its **Play the Opening** door runs the opening from there.
 ### Current database (as uploaded)
 - Actors 1–12 match the cast above. Actors 1 (Ghost) and 2 (Yoon) already split Yoon's two forms.
 - Classes: Ghost, Returned Child, Junior Priest, Child of The Caves, Hunter, Priest, Fisher,
-  All-Seafarer Thief, First Builder Queen, Forest Familiar (Falmi), All-Seafarer Prince
+  Seafarer Thief, Builder Queen, Forest Familiar (Falmi), Seafarer Prince
   (Thenmy), Hound (Patience), assigned to actors 1–12.
 - Each class's equippable weapon types follow the character design above (the Ghost cannot
   equip weapons).

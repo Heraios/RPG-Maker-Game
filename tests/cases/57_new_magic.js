@@ -1,5 +1,5 @@
 // The magic redo: Puaka, Ariki, Manu, Huki, Hakahepo, Hahikiri; the cultural moves (Steady Footing, Bail Out,
-// Bull-Leap); the six codices in three tiers; innate magic (Lasa's cave magic, Falmi, Tou's First Sailor -sin
+// Bull-Leap); the six codices in three tiers; innate magic (Lasa's cave magic, Falmi, Tou's Builder -sin
 // spells); and the culture split (no -sin or -hari glyphs).
 
 module.exports = {
@@ -52,7 +52,7 @@ module.exports = {
             out.lasa = ['Mahu', 'Kami', 'Keri', 'Keva', 'Gau'].every(n => lasa.includes(n)) && !lasa.includes('Raau') &&
                 !['Keriben', 'Kerigun', 'Kevaben', 'Kevagun', 'Gauben', 'Gaugun', 'Ihi'].some(n => lasa.includes(n));   // the rest come through story
             out.falmi = ['Raau', 'Geha', 'Hahikiri'].every(n => fal.includes(n));
-            out.tou = ['Ahisin', 'Rarisin', 'Hagusin', 'Kerisin'].every(n => tou.includes(n) && /<School: first-sailor>/.test(SK(n).note));
+            out.tou = ['Ahisin', 'Rarisin', 'Hagusin', 'Kerisin'].every(n => tou.includes(n) && /<School: builder>/.test(SK(n).note));
             out.noLevelMagic = $dataClasses.every(c => !c || c.learnings.every(l => $dataSkills[l.skillId].stypeId !== 1 || l.level === 1));
             // culture split: no -sin or -hari tattoos; -gunben tattoos stay
             out.split = ['Ahisin', 'Kerihari', 'Rarisin', 'Haguhari'].every(n => !AR('Glyph: ' + n)) && !!AR('Glyph: Ahigunben');
@@ -74,7 +74,7 @@ module.exports = {
         t.eq(r.oldCodices, '', 'the old codex names are gone');
         t.eq(r.lasa, true, 'Lasa starts with Keri, Mahu, Kami, Keva and Gau; the rest come through story');
         t.eq(r.falmi, true, 'Falmi: Raau, Geha, Hahikiri');
-        t.eq(r.tou, true, 'Tou: the four First Sailor -sin spells');
+        t.eq(r.tou, true, 'Tou: the four Builder -sin spells');
         t.eq(r.noLevelMagic, true, 'nobody learns spells by levelling up');
         t.eq(r.split, true, 'no -sin or -hari glyphs; -gunben glyphs stay');
     }

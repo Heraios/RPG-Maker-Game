@@ -1,9 +1,10 @@
 [
 null,
-{"id":1,"expanded":false,"name":"Lava Flows: Nearby Gully","order":4,"parentId":6,"scrollX":3805.7142857142853,"scrollY":3154.285714285714},
-null,
-null,
+{"id":1,"expanded":true,"name":"Lava Flows: Sky-Hole Gully","order":4,"parentId":6,"scrollX":1254,"scrollY":952.8},
+{"id":2,"expanded":false,"name":"Lava Flows: The Old Flow Front","order":5,"parentId":1,"scrollX":1350,"scrollY":952.8},
+{"id":3,"expanded":false,"name":"Lava Flows: The Channels","order":6,"parentId":1,"scrollX":1350,"scrollY":384},
 {"id":4,"expanded":false,"name":"TEST ROOM","order":1,"parentId":0,"scrollX":844.5,"scrollY":492},
 {"id":5,"expanded":false,"name":"Prologue","order":2,"parentId":0,"scrollX":3860.5714285714284,"scrollY":2249.142857142857},
-{"id":6,"expanded":true,"name":"Lava Tube: Waking","order":3,"parentId":0,"scrollX":1210.909090909091,"scrollY":997.0909090909091}
+{"id":6,"expanded":true,"name":"Lava Tube: Waking","order":3,"parentId":0,"scrollX":1062,"scrollY":951.5999999999999},
+{"id":7,"expanded":false,"name":"Lava Flows: The Greening","order":7,"parentId":1,"scrollX":1275.6,"scrollY":404.4}
 ]

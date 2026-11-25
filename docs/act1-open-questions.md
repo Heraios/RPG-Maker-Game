@@ -10,8 +10,11 @@ acts-1-2-maps.md (the map plan), editor-guide.md (how the systems are placed).
 | Map | Name | State |
 |---|---|---|
 | 5 | Prologue | Done. New Game starts here (5, 8, 6). Centred narration, Prologue music |
-| 6 | Lava Tube: Waking | Playable: First Words (Lasa, 13 words, the face), skylight, lava glow, Lava Tubes tileset. The ladder leads up the sky-hole to map 1 (9, 204), in Act 1 (float) and Act 2 (the mended ladder) |
-| 1 | Lava Flows: Nearby Gully | Painting in progress (63 x 217, Lava Country tileset): the levees are in. **Layout decided** (acts-1-2-maps.md, map 1). **No events yet**, no music, no map note |
+| 6 | Lava Tube: Waking | Playable: First Words (Lasa, 13 words, the face), skylight, lava glow, Lava Tubes tileset. The ladder leads up the sky-hole to map 1 (20, 14), in Act 1 (float) and Act 2 (the mended ladder) |
+| 1 | Lava Flows: Sky-Hole Gully | **Events built**: arriving with Lasa plays "Out of the sky-hole" once (sky, sun, Burning Touch); lessons goat (Ladder), grass (kipuka: Spirit Surge), together (the children's cairn); the hole (climb down in Act 2); gathering: obsidian vein, skylight fig, wart fern x2, ephedra, orchil, scoria, goblin's gold; Act 2 wanderers (crickets / bats by the collapse, giant lizards at the neck). Exit north to map 2. Still: music, Ladder following, Sib's cairn line |
+| 2 | Lava Flows: The Old Flow Front | **First draft** (42 x 30): a wall of old lava across the map, its tall face to the south; the **warm crack**, one straight line up the wall: the Ghost (leading) **floats through it by event**, up from its foot or down from its top; Lasa teaches **float** at its foot (Act 2: "back through the tubes"); rubble west ("Not that way"); the tubes' far mouth on the north side (Act 2, not built); sulfur and obsidian veins in the face, pumice. Edges: south to 1, north to 3 |
+| 3 | Lava Flows: The Channels | **First draft** (42 x 45): three levees climbed in a zigzag; the road and telegraph line straight up the east side (cutting the middle levee). Lessons: water (spring and stream: Chilling Touch), tree (dead tree: Crushing Touch), bird (a raven in it), wind (the gusty saddle: Cutting Touch), sing (the wires: Ghostly Touch); road moved to map 7. Wanderers by each find (rock lizard, ravens, vulture, owl at night); the **combat tutorial** on the first fight (common event 23, Memory: Fighting). Gathering: spring, ephedra, orchil, wart fern, scoria; olivine, jasper and copper veins |
+| 7 | Lava Flows: The Greening | Stub (42 x 30, blank): the land greens, the first view of town; the Old Rock Lizard; the **road** lesson (placed in the middle until the road is painted). North isn't built yet |
 
 Built and ready to place: the Lava Country / Lava Tubes tilesets and the Lava-E sheet (telegraph poles and
 wires, cairns, cracks, rubble, tumulus), gathering rules, Memory (quests, words), Lasa's skills.
@@ -20,8 +23,9 @@ wires, cairns, cracks, rubble, tumulus), gathering rules, Memory (quests, words)
 
 1. ~~The plan numbered the Sky-Hole as map 7.~~ **Done:** the plan describes map 1, "Lava Flows: Nearby Gully".
 2. **The edge of Zonfahare:** its own map, or the south edge of the Zonfahare map? Which map number?
-3. ~~How many maps between the gully and the edge of town?~~ **Decided:** map 1 is the whole stretch, from the
-   gully at the bottom to the exit at the top right.
+3. ~~How many maps between the gully and the edge of town?~~ **Re-decided:** the stretch is **four maps** (1 the
+   gully, 2 the flow front, 3 the channels, 7 the greening), each 1-3 screens, linked edge to edge. It was one
+   63 x 217 map, which was too big to paint.
 
 ## 2. Map 6 → map 1 (the way up)
 

@@ -55,6 +55,10 @@
  * "Only for a while: ...", and its notice says so. Nothing time-limited may
  * stop the game being beaten.
  *
+ * What I'm like (Remembered tab, top): Sweet, Funny and Unhinged with their
+ * counts, a bar to the next tier and what it gives. The tiers are in
+ * Journal.json ("temperament"). Shown once any count is above 0.
+ *
  * A corner notice says what was added (never in battle: it waits). Words
  * add no notice: the lesson already says "New word".
  *
@@ -215,6 +219,7 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
                 rows.push($.hasClue(id) ? { kind: 'clue', id: id, text: d.clues[id].title } : { kind: 'unknown', text: '???' });
             });
         } else if (tab === 'remembered') {
+            if ($.temperamentShown()) rows.push({ kind: 'temperament', text: (d.temperament && d.temperament.title) || "What I'm like" });
             var words = d.words || {};
             rows.push({ kind: 'header', text: 'Known Words' });
             Object.keys(words).forEach(function(w) {
@@ -230,6 +235,16 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
         }
         return rows;
     };
+    // Temperament: each count, and its next tier (or null when all are reached)
+    $.temperament = function() {
+        var t = $.data().temperament; if (!t) return [];
+        return t.list.map(function(e) {
+            var v = $gameVariables.value(e.var), prev = 0, next = null;
+            e.tiers.forEach(function(tier) { if (v >= tier[0]) prev = tier[0]; else if (!next) next = tier; });
+            return { name: e.name, value: v, color: e.color, prev: prev, next: next };
+        });
+    };
+    $.temperamentShown = function() { return $.temperament().some(function(e) { return e.value > 0; }); };
     $.tabs = function() {
         return $.TABS.filter(function(t) { return t[0] !== 'evidence' || $.evidenceOpen(); });
     };
@@ -354,7 +369,7 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
         if (r.kind === 'header') { this.changeTextColor(this.systemColor()); this.drawText(r.text, rect.x, rect.y, rect.width); return; }
         if (r.kind === 'unknown' || r.kind === 'empty') this.changePaintOpacity(false);
         if (r.status === 'missed' || r.status === 'done') this.changePaintOpacity(false);
-        var indent = (r.kind === 'body' || r.kind === 'questions') ? 0 : 16;
+        var indent = (r.kind === 'body' || r.kind === 'questions' || r.kind === 'temperament') ? 0 : 16;
         if (r.timed && r.status === 'now') {   // time-limited: always clearly marked
             this.changeTextColor(this.crisisColor()); this.drawText('!', rect.x, rect.y, 16); this.resetTextColor();
         }
@@ -458,6 +473,22 @@ DataManager._databaseFiles.push({ name: '$dataJournal', src: 'Journal.json' });
             title(k.title);
             (k.text || []).forEach(function(line) { para(todo(line)); });
             notes(k);
+        } else if (r.kind === 'temperament') {
+            title(r.text);
+            var bw = Math.min(260, w - 380);
+            $.temperament().forEach(function(e) {
+                this.changeTextColor(this.textColor(e.color)); this.drawText(e.name, 0, y, 150); this.resetTextColor();
+                this.drawText(String(e.value), 150, y, 60, 'right');
+                var from = e.prev, to = e.next ? e.next[0] : Math.max(e.value, 1);
+                var rate = e.next ? Math.max(0, Math.min(1, (e.value - from) / (to - from))) : 1;
+                this.contents.fillRect(230, y + lh / 2 - 5, bw, 10, this.gaugeBackColor());
+                this.contents.fillRect(230, y + lh / 2 - 5, Math.floor(bw * rate), 10, this.textColor(e.color));
+                y += lh;
+                this.changePaintOpacity(false);
+                this.drawText(e.next ? 'Next, at ' + e.next[0] + ': ' + e.next[1] : $.data().temperament.done, 24, y, w - 24);
+                this.changePaintOpacity(true);
+                y += lh + 10;
+            }, this);
         } else if (r.kind === 'word') {
             var wd = d.words[r.id], said = $.state().said[r.id];
             title(r.id);

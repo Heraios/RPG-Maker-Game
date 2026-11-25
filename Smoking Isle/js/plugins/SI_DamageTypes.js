@@ -42,15 +42,15 @@
  * Weapon note:
  *   <Magic Edge: 15>   weapon skills used with it deal 15% extra damage as
  *                      magic (against the target's magic damage rate):
- *                      copper-silver and First Sailor black bronze.
+ *                      copper-silver and Builder black bronze.
  *
  * Weapon / armor note:
  *   <Spell Boost: fire 10>   magic skills of that source (<Source: fire>) used
  *                            while it is equipped deal 10% more (obsidian:
  *                            fire, coral: water, ceramic: earth). Several
  *                            pieces add up.
- *   <Spell Boost: first-sailor 15>   the same for spells of a school
- *                            (skill note <School: first-sailor>)
+ *   <Spell Boost: builder 15>   the same for spells of a school
+ *                            (skill note <School: builder>)
  *   Set-bonus and other states can carry <Spell Boost> too.
  *   <Echo Boost: 15>         spells of the same source as the wearer's last
  *                            spell this battle deal 15% more (Fire Opal)

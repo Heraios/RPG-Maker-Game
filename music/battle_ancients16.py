@@ -5,7 +5,7 @@ from marsh_tune import LULL1, LULL2
 from ambience import clacks
 np.random.seed(561)
 R = None
-# Battle_Ancients: for the First Sailor remnants: Hags, Owls of Ill Omen, Stonemen. Queen Tou's minuet made
+# Battle_Ancients: for the Builder remnants: Hags, Owls of Ill Omen, Stonemen. Queen Tou's minuet made
 # a fight: a fast, dark waltz in E minor (her sharp fourth, A sharp, and her D sharp), glassy and old: harp,
 # bells, organ, strings, a choir, timpani; bone chimes knocking. Then each remnant gets a turn: the Hags' wrong
 # lullaby on low strings with an owl's hoot over it, and the Stonemen, the minuet at half speed, heavy as rock.

@@ -27,6 +27,11 @@
  * @desc Switch that is ON at night, for event page conditions.
  * @default 7
  *
+ * @param Sky Battlebacks
+ * @desc Battleback 2 images with sky: at dusk and at night outdoors, battles use
+ * NAME_Dusk / NAME_Night instead (art/lava_battlebacks.py). Comma-separated.
+ * @default LavaSky, field
+ *
  * @param Tints
  * @desc Screen tone (red, green, blue, grey) outdoors for Dawn; Day; Dusk;
  * Night; and Night with a light.
@@ -52,6 +57,10 @@
  * @default spirit 10, animal -10
  *
  * @help
+ *
+ * Battles at dusk and night: the screen tint for the time of day reaches battles too, so rocky battlebacks need
+ * nothing more. Battlebacks with sky (the "Sky Battlebacks" setting: LavaSky, field) get a real dusk or night sky:
+ * outdoors, the battle uses NAME_Dusk / NAME_Night (img/battlebacks2) instead. Set the plain name on the map.
  * Place after SI_Talk and SI_Crafting.
  *
  * ============================================================================
@@ -129,6 +138,7 @@ SmokingIsle.Time = SmokingIsle.Time || {};
     $.periodVariable = Number(params['Period Variable'] || 0);
     $.dayVariable = Number(params['Day Variable'] || 0);
     $.nightSwitch = Number(params['Night Switch'] || 0);
+    $.skyBattlebacks = String(params['Sky Battlebacks'] || 'LavaSky, field').split(',').map(function(n) { return n.trim(); }).filter(Boolean);
     $.tints = String(params['Tints'] || '0,0,0,0;0,0,0,0;0,0,0,0;0,0,0,0;0,0,0,0').split(';').map(function(t) {
         return t.split(',').map(Number);
     });
@@ -242,6 +252,16 @@ SmokingIsle.Time = SmokingIsle.Time || {};
         if (!$.isOutdoors() || /<No Time Tint>/i.test($.mapNote())) return [0, 0, 0, 0];
         if ($.isNight() && $.hasLight()) return $.tints[4] || $.tints[3];
         return $.tints[$.period()];
+    };
+
+    // A sky backdrop at dusk or night outdoors: its _Dusk / _Night version (the rock ones just take the tint).
+    $.skyBattleback = function(name) {
+        if (!name || $.skyBattlebacks.indexOf(name) < 0 || !$.isOutdoors()) return name;
+        return $.period() === $.DUSK ? name + '_Dusk' : $.period() === $.NIGHT ? name + '_Night' : name;
+    };
+    var _Spriteset_Battle_battleback2Name = Spriteset_Battle.prototype.battleback2Name;
+    Spriteset_Battle.prototype.battleback2Name = function() {
+        return $.skyBattleback(_Spriteset_Battle_battleback2Name.call(this));
     };
 
     $.refreshTint = function(duration) {

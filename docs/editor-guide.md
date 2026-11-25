@@ -22,6 +22,11 @@ before pushing your own.
 
 ---
 
+
+**An event's Note box is one line.** RPG Maker MV keeps only the first line of an event's note when you open and
+save the event, so every tag (`<Wanderer: 25>`, `<Before Story: 50>`, `<Gather: Obsidian>`, ...) goes on that one
+line, tags first: `<Wanderer: 25> <Before Story: 50> <Bold> Act 1 ...`. (Notes in the database, like items' and
+enemies', can have many lines.)
 ## Troubleshooting: crashes on a Mac
 
 RPG Maker MV 1.6.1 ships with a very old NW.js (the small browser that runs the game). Current macOS no
@@ -93,7 +98,7 @@ animations, faces, icons); and tuning numbers (stats, prices, Mana costs, drop r
 
 **Aday and Kathrout** (actors 13 and 14) use a few note tags of their own (`SI_Specialists.js`):
 - Kathrout can't use glyph tattoos; her class note `<Codex Slots: 2>` gives her two codex slots (the only
-  character with two). A First Sailor inscription can teach her a spell with the script call
+  character with two). A Builder inscription can teach her a spell with the script call
   `SmokingIsle.Specialists.study(14, skillId)`.
 - Gear with `<Taboo Tags: grave>` (the Crew clothes, the coral eye and pupil, the Crescent Pectoral) is grave
   goods: Kathrout won't wear it. Tag any new tomb find the same way.
@@ -321,6 +326,37 @@ night-only plants, fatigue, tool wear and the daily reset. **No second page is n
 the spot **vanishes until the next day** (dawn, or sleeping): hidden, walk-through, and it can't be
 examined. Gathering also turns its Self Switch A on (and a new day off) for any event that wants to know.
 
+### Veins on walls
+
+For stone and ore that comes out of rock, use the **vein** graphics: blocky ore set straight into the rock,
+transparent around it, so it sits **on a wall tile** (a cliff face, a cave wall) and the wall shows through.
+**Which is which: see `docs/reference/veins.png`** (every vein, its slot, note tag, what it gives, who, with what).
+1. Make the gathering event as usual (`<Gather: Copper Vein>`, Call Common Event "Gather"), **on the wall tile**,
+   on the face's lowest row (the one the player can stand in front of).
+2. Graphic: the set for the map's tileset, then the picture matching the species:
+
+   | Tileset | Stone | Ore and other wall finds |
+   |---|---|---|
+   | Exterior | !Veins_Stone_Exterior | !Veins_Ore_Exterior |
+   | Interior | !Veins_Stone_Interior | !Veins_Ore_Interior |
+   | Lava Country | !Veins_Stone_Lava | !Veins_Ore_Lava |
+   | Lava Tubes | !Veins_Stone_Tubes | !Veins_Ore_Tubes |
+
+   The slots are the same in every set (the rock around the ore is coloured to match that tileset's walls).
+   Priority **Same as characters**, trigger **Action Button**: the player faces the wall to gather.
+3. That's all: the spot shows its state by itself. Gathering chips it (it stays chipped for the rest of the day,
+   full again the next morning); the last haul leaves empty sockets, and the vein stays there showing them (a
+   vein never vanishes, even stone that would vanish elsewhere). Turn on **Stepping** for a twinkle, so players
+   spot it.
+
+| | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|---|
+| Stone sheets | Obsidian | Chalcedony | Jasper | Basalt | Andesite | Olivine | Trachyte Cliff (opal) | Snowline Quartz |
+| Ore sheets | Copper Vein | Lead Vein | Lodestone | Coal Seam | Sulfur Vent | Moonmilk | Ochre | White Clay |
+
+(Top row of the sheet is 1-4, bottom row 5-8.) Loose stone on the ground (Scoria, Pumice) and pools (Hot Spring)
+still use tiles. `art/gather_veins.py` draws the sheets; `art/veins_reference.py` redraws the reference page.
+
 ### Things to know
 
 - **Thenmy is a city boy:** he's only offered for strength jobs (wood, ore, stone, water). A story scene
@@ -492,8 +528,8 @@ The sky-hole shows the real cave below: map 6's garden, through see-through tile
    taller one). Leave the middle bare. The top edge is the far wall dropping into shadow. A stepped hole needs the
    inner corners too (47, 55, 63, 71). Easiest: close RPG Maker and run `python3 art/place_hole_rim.py 1`,
    which paints the whole rim from the hole's shape.
-3. **The view:** in the map's Note, once per hole: `<Hole View: SkyHole_{period}, 9, 209, 0.3>`: an image
-   from img/parallaxes, centred under the hole's middle tile (9, 209), shifting a little as the camera moves so
+3. **The view:** in the map's Note, once per hole: `<Hole View: SkyHole_{period}, 20, 16, 0.3>`: an image
+   from img/parallaxes, centred under the hole's middle tile (20, 16), shifting a little as the camera moves so
    it seems far below (0 = flat). `{period}` becomes Day, Dusk or Night by itself (dawn uses Day). Each hole
    gets its own picture, so a map can have several holes showing different places; the map's own Parallax
    Background stays free.
@@ -504,6 +540,37 @@ The sky-hole shows the real cave below: map 6's garden, through see-through tile
    `NODE_PATH=$(npm root -g) python3 art/hole_view.py --map 8 --crop 10,5,25,19 --name EastHole --keep 3,4`
    (add `--tone=-85,-80,-40,30` if that map is darkened by a Tint Screen, like map 6's Cave Shade). It makes
    EastHole_Day/_Dusk/_Night. The sky-hole's are remade by `art/sky_hole_view.py` when map 6's garden changes.
+
+## Telegraph lines (Lava Country)
+
+**Which piece is which: `docs/reference/telegraph.png`** (every piece, its tile number and where it is in tab E,
+with two assembled lines). A pole is three things stacked: the rock (Ext-B 76), the pole's foot on it (Lava-E 9),
+and a pole top in the tile above, drawn above the player. The wire runs at the crossarm's height, so pole tops and
+the wire tiles between them share a row.
+- **Straight lines:** pole tops 1-4 (– | \ /), wire 5-8 between, or the sagging span 22, 23 (repeat), 24.
+- **Turning, ending, branching:** pole tops 72-91: corners (N+E, N+W, S+E, S+W), line ends (N, S, E, W: the side
+  the wire leaves by), T-junctions, and straight-to-slant joins (e.g. W+NE).
+- **On a north-south line,** use the wired foot (92) instead of 9: the wire passes the foot on its way to the
+  crossarm above. Also for a T's branch going south past its own pole.
+- **Rubber-coated wire:** the same shapes in black: 32-42 straight, 96-115 turns, 116 the wired foot.
+
+## Battle backgrounds for the lava country
+
+Recoloured into the basalt palette (`art/lava_battlebacks.py`): one floor, three backdrops. See
+`docs/mockups/lava_battlebacks.png` for each in a real battle. Set them in Map Properties → Battleback.
+
+| For | Battleback 1 | Battleback 2 |
+|---|---|---|
+| The flows (the gully, the flow front, the channels) | LavaCountry | LavaRidges |
+| Open ground, a wide view | LavaCountry | LavaSky |
+| By the tubes (a collapse, a tube mouth) | LavaCountry | LavaTubeMouth |
+| A kipuka (grass in the lava) | grassDark | LavaSky |
+| Where the land greens (map 7) | LavaCountry | field |
+
+**Day and night:** the time-of-day tint reaches battles, so rock backdrops need nothing more. The backdrops with
+sky (LavaSky, field) have dusk and night versions (`_Dusk`, `_Night`: a sunset, stars and a moon) that SI_Time
+swaps in by itself outdoors; set the plain name on the map. To give another backdrop its own versions, add
+NAME_Dusk / NAME_Night images and put NAME in SI_Time's "Sky Battlebacks" setting.
 
 ## Map tags (Map Properties → Note)
 
@@ -572,7 +639,7 @@ Bosses whose defeat matters to the story (the Great Boar's flesh, the Daughter f
 the story to continue in the event's commands **after** Battle Processing.
 
 **Act 1 only:** `<Before Story: 50>` in a wanderer's note keeps it out only while Story (variable 5) is below
-50, so the gully's fights for the Ghost and Lasa are gone once Yoon has a body (map 1's seven wanderers use it,
+50, so the gully's fights for the Ghost and Lasa are gone once Yoon has a body (the seven wanderers on maps 1, 3 and 7 use it,
 with a page that needs Lasa in the party and Story >= 30).
 
 ## Switches and variables you can use in event conditions

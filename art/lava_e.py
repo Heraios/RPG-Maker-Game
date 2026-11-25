@@ -15,6 +15,10 @@
 #   44 45 46 / 52 _ 54 / 60 61 62   the sky-hole's rim, a 3x3 frame around a hole of see-through tiles (Lava-A5's
 #         first tile): a rock lip, the far (north) wall dropping into shadow, rounded corners. Repeat 45/61 along
 #         the top/bottom and 52/54 down the sides for a bigger hole; the middle stays bare.             (blocks)
+#   72-91 telegraph poles where the line turns (corners N+E N+W S+E S+W), ends (N S E W), branches (T: N+S+E N+S+W
+#         N+E+W S+E+W) or goes from straight to slant (S+NE S+NW N+SE N+SW W+NE W+SE E+NW E+SW); 96-115 the same, rubber
+#         (drawn above; docs/reference/telegraph.png shows them all)
+#   92 / 116  the pole foot with a north-south wire passing it, copper / rubber (blocks): instead of 9 on N-S lines
 #   47 55 63 71   the rim's inner corners, for a stepped hole: top-left, top-right, bottom-left, bottom-right
 #         (on a hole tile whose two neighbours are hole but the diagonal one isn't)                     (blocks)
 import math
@@ -73,6 +77,35 @@ def pole_top(kind, col=BARE):
         d.rectangle([x - 1, 5, x + 1, 7], fill=OUT); d.point((x, 6), fill=CLAY)
     d.rectangle([16, 10, 18, 16], fill=OUT); d.rectangle([17, 11, 17, 15], fill=CLOTH)    # the clan's cloth
     wire(d, kind, col)
+    return im
+
+# Half-wires from the crossarm (12, 9) to one side, on the same lines as the straight runs, so turns join up.
+def half(d, side, col=BARE):
+    C1, C2 = col
+    if side == 'N': line(d, [(12, 0), (12, 9)], C1); line(d, [(13, 0), (13, 9)], C2)
+    elif side == 'S': line(d, [(12, 9), (12, S - 1)], C1); line(d, [(13, 9), (13, S - 1)], C2)
+    elif side == 'E': line(d, [(12, 9), (S - 1, 9)], C1); line(d, [(12, 10), (S - 1, 10)], C2)
+    elif side == 'W': line(d, [(0, 9), (12, 9)], C1); line(d, [(0, 10), (12, 10)], C2)
+    else:
+        xs = {'NW': range(0, 13), 'SE': range(12, S), 'NE': range(12, S), 'SW': range(0, 13)}[side]
+        for x in xs:
+            y = x - 3 if side in ('NW', 'SE') else 21 - x
+            px(d, x, y, C1); px(d, x, y + 1, C2)
+
+# A pole where the line turns, ends or branches: wire leaves by each side in `exits`.
+TURNS = [('N', 'E'), ('N', 'W'), ('S', 'E'), ('S', 'W'),                       # corners
+         ('N',), ('S',), ('E',), ('W',),                                         # line ends
+         ('N', 'S', 'E'), ('N', 'S', 'W'), ('N', 'E', 'W'), ('S', 'E', 'W'),     # T-junctions
+         ('S', 'NE'), ('S', 'NW'), ('N', 'SE'), ('N', 'SW'),                     # straight to slant
+         ('W', 'NE'), ('W', 'SE'), ('E', 'NW'), ('E', 'SW')]
+def pole_base_wired(col=BARE):           # the pole's foot with a north-south wire passing it (lines running north-south)
+    im = pole_base(); d = ImageDraw.Draw(im); C1, C2 = col
+    line(d, [(12, 0), (12, S - 1)], C1); line(d, [(13, 0), (13, S - 1)], C2)
+    return im
+
+def pole_turn(exits, col=BARE):
+    im = pole_top('none', col); d = ImageDraw.Draw(im)
+    for side in exits: half(d, side, col)
     return im
 
 def wire_tile(kind, col=BARE):
@@ -212,6 +245,11 @@ LAYOUT = {
 }
 LAYOUT.update({i: (t, BLOCK) for i, t in hole_rim().items()})
 LAYOUT.update({i: (t, BLOCK) for i, t in hole_inner().items()})
+#   72-91  copper poles where the line turns, ends or branches (TURNS order); 96-115 the same in rubber
+LAYOUT.update({72 + k: (pole_turn(ex), UP) for k, ex in enumerate(TURNS)})
+LAYOUT.update({96 + k: (pole_turn(ex, COATED), UP) for k, ex in enumerate(TURNS)})
+#   92 / 116  a pole foot with a north-south wire passing it (copper / rubber): use it instead of 9 on lines running north-south
+LAYOUT.update({92: (pole_base_wired(), BLOCK), 116: (pole_base_wired(COATED), BLOCK)})
 
 if __name__ == '__main__':
     sheet = Image.new('RGBA', (16 * S, 16 * S), (0, 0, 0, 0))

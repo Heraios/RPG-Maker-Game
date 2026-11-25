@@ -40,8 +40,50 @@
  *                                   resistance applies) (jellyfish)
  * Enemy note:   <Spares Children>   won't use harmful actions on children
  *                                   unless it is Enraged (SI_Talk). With only
- *                                   children left, it uses non-harmful
- *                                   actions (talk, waiting) instead.
+ *                                   children left, it uses only its talk
+ *                                   skills (Demand Surrender), not stances,
+ *                                   buffs or heals. Give Demand Surrender a
+ *                                   low rating (1): it is then never picked
+ *                                   while an adult can still be fought.
+ *
+ * ============================================================================
+ * Call for Help
+ * ============================================================================
+ * Skill note:   <Call For Help>     an enemy skill, usable only by the last
+ *                                   enemy standing while the troop still has
+ *                                   a hidden member; it brings the first
+ *                                   hidden member in (like Enemy Appear).
+ *                                   Rate it high (9): it is then always used
+ *                                   when it can be. One hidden member per
+ *                                   troop = one call per battle.
+ *
+ * ============================================================================
+ * Leaders, unhorsing and bogging down
+ * ============================================================================
+ * Enemy note:   <Morale Leader: 25> when it falls, every enemy still standing
+ *                                   that can be talked to gains that much
+ *                                   mood (default 25; never to Pacified).
+ *                                   Their morale breaks (the Captain).
+ * Enemy note:   <Transform At: 50%, enemy 83>
+ *                                   at or below that share of Health it
+ *                                   becomes that enemy (Health carries over;
+ *                                   Talk mood starts afresh). Optional:
+ *               <Transform Message: %1 is thrown from the saddle!>
+ * Enemy note:   <Not While: Mired, Entangled, Held | 779, 780>
+ *                                   it can't use those skills while it has
+ *                                   any of those states (a bogged-down horse
+ *                                   can't charge or trample).
+ *
+ * ============================================================================
+ * Troop drops
+ * ============================================================================
+ * Enemy note:   <Troop Drop: item 611, 10%>
+ *                                   beating a troop with this enemy in it has
+ *                                   that chance of one extra item (also
+ *                                   weapon / armor). Once per troop, however
+ *                                   many members carry the tag; listed with
+ *                                   the other drops (Seafarers: Golden Axe
+ *                                   Money, 10%).
  *
  * ============================================================================
  * Remote body (Tou)
@@ -136,11 +178,132 @@ SmokingIsle.BattleTraits = SmokingIsle.BattleTraits || {};
     Game_Enemy.prototype.isActionValid = function(action) {
         if (!_Game_Enemy_isActionValid.call(this, action)) return false;
         var skill = $dataSkills[action.skillId];
-        if (this.sparesChildren() && $.isHarmful(skill) &&
-                $.spareablePool(this.opponentsUnit()).length === 0) {
+        if (this.sparesChildren() && $.spareablePool(this.opponentsUnit()).length === 0 &&
+                ($.isHarmful(skill) || !$.isEnemyTalkSkill(skill))) {
             return false;
         }
+        if ($.isCallForHelp(skill) && !$.canCallForHelp(this)) return false;
+        if ($.blockedWhile(this, action.skillId)) return false;
         return true;
+    };
+
+    //-------------------------------------------------------------------------
+    // <Not While: Mired, Entangled, Held | 779, 780>
+    //-------------------------------------------------------------------------
+
+    $.blockedWhile = function(enemy, skillId) {
+        var m = /<Not While:\s*([^|>]+)\|\s*([^>]+)>/i.exec(enemy.enemy().note);
+        if (!m) return false;
+        var ids = m[2].split(',').map(Number);
+        if (ids.indexOf(skillId) < 0) return false;
+        return m[1].split(',').some(function(name) {
+            name = name.trim().toLowerCase();
+            return enemy.states().some(function(s) { return s.name.toLowerCase() === name; });
+        });
+    };
+
+    //-------------------------------------------------------------------------
+    // <Morale Leader: 25>
+    //-------------------------------------------------------------------------
+
+    var _Game_Enemy_die = Game_Enemy.prototype.die;
+    Game_Enemy.prototype.die = function() {
+        var wasAlive = this.isAlive();
+        _Game_Enemy_die.call(this);
+        var m = /<Morale Leader(?::\s*(\d+))?>/i.exec(this.enemy().note);
+        if (!wasAlive || !m || !$gameParty.inBattle()) return;
+        var gain = m[1] ? Number(m[1]) : 25, broken = false;
+        this.friendsUnit().aliveMembers().forEach(function(e) {
+            if (!e.talkData || !e.talkData().type || (e.isEnraged && e.isEnraged())) return;
+            e._siMood = Math.min(e.talkMood() + gain, 99);
+            broken = true;
+        });
+        if (broken && BattleManager._logWindow) BattleManager._logWindow.push('addText', 'With %1 down, the others lose heart.'.format(this.name()));
+    };
+
+    //-------------------------------------------------------------------------
+    // <Transform At: 50%, enemy 83>
+    //-------------------------------------------------------------------------
+
+    $.transformAt = function(enemy) {
+        var m = /<Transform At:\s*(\d+)\s*%?\s*,\s*enemy\s+(\d+)>/i.exec(enemy.enemy().note);
+        return m ? { rate: Number(m[1]) / 100, id: Number(m[2]) } : null;
+    };
+
+    $.checkTransform = function(enemy) {
+        var t = enemy && enemy.isEnemy() && enemy.isAlive() && $.transformAt(enemy);
+        if (!t || enemy.hpRate() > t.rate || !$dataEnemies[t.id]) return;
+        var msg = /<Transform Message:\s*([^>]+)>/i.exec(enemy.enemy().note);
+        var name = enemy.name();
+        enemy.transform(t.id);
+        enemy._siMood = undefined;      // a new speaker: Talk starts afresh
+        if (msg) enemy._siCommandMessages = (enemy._siCommandMessages || []).concat([msg[1].format(name)]);
+    };
+
+    var _Game_Action_apply_transform = Game_Action.prototype.apply;
+    Game_Action.prototype.apply = function(target) {
+        _Game_Action_apply_transform.call(this, target);
+        $.checkTransform(target);
+    };
+
+    //-------------------------------------------------------------------------
+    // Troop drops: <Troop Drop: item 611, 10%>
+    //-------------------------------------------------------------------------
+
+    $.troopDrops = function(troop) {
+        var seen = {}, drops = [];
+        troop.members().forEach(function(enemy) {
+            var re = /<Troop Drop:\s*(item|weapon|armor)\s+(\d+)\s*,\s*(\d+(?:\.\d+)?)\s*%?\s*>/ig, m;
+            while ((m = re.exec(enemy.enemy().note))) {
+                var key = m[1].toLowerCase() + m[2];
+                if (seen[key]) continue;
+                seen[key] = true;
+                drops.push({ list: { item: $dataItems, weapon: $dataWeapons, armor: $dataArmors }[m[1].toLowerCase()], id: Number(m[2]), chance: Number(m[3]) / 100 });
+            }
+        });
+        return drops;
+    };
+
+    var _Game_Troop_makeDropItems = Game_Troop.prototype.makeDropItems;
+    Game_Troop.prototype.makeDropItems = function() {
+        var items = _Game_Troop_makeDropItems.call(this);
+        $.troopDrops(this).forEach(function(d) {
+            if (d.list[d.id] && Math.random() < d.chance) items.push(d.list[d.id]);
+        });
+        return items;
+    };
+
+    // An enemy's own talk skill (Demand Surrender, Offer Passage): it runs a common event.
+    $.isEnemyTalkSkill = function(skill) {
+        return !!skill && skill.effects.some(function(e) { return e.code === Game_Action.EFFECT_COMMON_EVENT; });
+    };
+
+    //-------------------------------------------------------------------------
+    // Call for Help
+    //-------------------------------------------------------------------------
+
+    $.isCallForHelp = function(skill) {
+        return !!skill && /<Call For Help>/i.test(skill.note || '');
+    };
+
+    $.hiddenHelper = function() {
+        return $gameTroop.members().filter(function(m) { return m.isHidden() && !m.isDeathStateAffected(); })[0] || null;
+    };
+
+    $.canCallForHelp = function(enemy) {
+        var alive = enemy.friendsUnit().aliveMembers();
+        return alive.length === 1 && alive[0] === enemy && !!$.hiddenHelper();
+    };
+
+    var _Game_Action_applyGlobal_help = Game_Action.prototype.applyGlobal;
+    Game_Action.prototype.applyGlobal = function() {
+        _Game_Action_applyGlobal_help.call(this);
+        if (!$.isCallForHelp(this.item()) || !this.subject().isEnemy()) return;
+        var helper = $.hiddenHelper();
+        if (!helper) return;
+        helper.appear();
+        $gameTroop.makeUniqueNames();
+        if (BattleManager._logWindow) BattleManager._logWindow.push('addText', '%1 comes running!'.format(helper.name()));
     };
 
     $.pickByTgr = function(pool) {

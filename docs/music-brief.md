@@ -53,8 +53,8 @@ note Yoon holds steady is A (Lasa's home note and the heart of Yoon's D minor), 
 | Who | Sound | Notes |
 |---|---|---|
 | **Islanders** (Yoon, Sib, Pada, Dama, the villages) | Warm, communal, rhythmic: log and slit drums, clapping, chant-like melodies, flute | Pentatonic and folk modes. Music made by many people together |
-| **All-Seafarers** (Thenmy, the invasion, Meneswa) | Grand and a little cold: brass-like fanfares, marching snare, lyre-like arpeggios | Phrygian and Dorian modes (Mediterranean, Minoan). Impressive, imperial, slightly hollow |
-| **First Sailors** (Tou, the ruins, the Navigator Lords) | Eerie, glassy, ancient: slow arpeggios, long echoes, unresolved chords | Beautiful and wrong at the same time |
+| **Seafarers** (Thenmy, the invasion, Meneswa) | Grand and a little cold: brass-like fanfares, marching snare, lyre-like arpeggios | Phrygian and Dorian modes (Mediterranean, Minoan). Impressive, imperial, slightly hollow |
+| **Builders** (Tou, the ruins, the Navigator Lords) | Eerie, glassy, ancient: slow arpeggios, long echoes, unresolved chords | Beautiful and wrong at the same time |
 | **The caves and the Destroyer** | Low drones, dripping, heartbeat percussion, almost no melody | Silence is part of it |
 
 ## Leitmotifs
@@ -148,7 +148,7 @@ songs at night).
 turns to cold wind and stars). The **SI_NightMusic** plugin switches them by the game's time of day: a map whose
 track has a night version (its name plus `_Night`) plays that at night, fading across when night falls or day
 breaks. The **SI_BattleMusic** plugin picks each fight's music: boss themes by troop, then Battle_Ancients for
-First Sailor remnants (Hags, Owls, Stonemen), Battle_Seafarers, Battle_Spirits for spirits and fae, else Battle_Wild.
+Builder remnants (Hags, Owls, Stonemen), Battle_Seafarers, Battle_Spirits for spirits and fae, else Battle_Wild.
 A map note `<Story BGM: Unseen, 50>` gives a map other music until the Story variable reaches 50
 (Act 1: Unseen in Zonfahare, Eyot_Grieving on the eyot, Home_Grieving at home). A map note `<Drift BGM: Grief, 40-10, until 50>` drifts a second track in as the player walks
 from row 40 to row 10, the map's own music fading out as it fades in (map 1's climb, the lament rising near the top;
@@ -200,7 +200,7 @@ sections, a key lift near the end of the loop. Shared parts are in `music/battle
 - **Forbidden Lore** (done: Forbidden_Lore): Sib reading the ritual in Juda's books by candlelight: his hymn hushed, something wrong in it.
 - **The Chase** (done: Chase): hunting Parl down before his fight: his jig fast and slippery, running into Boss_Parl.
 - **The Hunt** (done: Hunt): tracking the Great Boar with Pada: quiet and tense, his horn call held back, a heartbeat drum.
-- **The Wells** (done: Wells): freeing one of the Lady's daughters from a First Sailor well: water, stone, echoes; Tou's minuet
+- **The Wells** (done: Wells): freeing one of the Lady's daughters from a Builder well: water, stone, echoes; Tou's minuet
   and Falmi's theme tangled together. A daughter could fight to Battle_Ancients.
 - **Living Things** (done: Living_Things): harvesting the dragon tree and the living bellflower (the heart): Falmi's sprouting phrase
   growing into Yoon's theme.
@@ -225,7 +225,7 @@ Loop = loops in game; Jingle = plays once.
 | 10 | **Mountain / alpine forest** | Cold, high, lonely; the trek with Juda | Loop |
 | 11 | **Volcanic desert** | Hot, harsh, shimmering; long notes | Loop |
 | 12 | **Shrine / temple** (done: Shrine; Island_Chant for ceremonies) | Calm, sacred, chant-like: the Island tune hummed by a priest | Loop |
-| 13 | **Tou's buried palace** | The First Sailors' eerie beauty; lonely and royal | Loop |
+| 13 | **Tou's buried palace** | The Builders' eerie beauty; lonely and royal | Loop |
 | 14 | **Seafarer camp / occupation** | The Seafarer fanfare, military and oppressive | Loop |
 | 15 | **Battle** | Driving, upbeat, island percussion under a pulse melody | Loop |
 | 16 | **Seafarer battle** | Marching snare and brass-like fanfare | Loop |

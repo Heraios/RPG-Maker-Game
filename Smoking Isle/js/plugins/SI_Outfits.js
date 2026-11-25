@@ -24,7 +24,7 @@
  * ============================================================================
  * Armor note:   <Set: Tapa>          (weapons can belong to a set too: the Bull-Horn Staff)
  *               <Set: Goat-Skin>  <Set: Mouflon Wool>   (one piece, two sets)
- *               <Set: First Sailor Regalia (eye)>       (a named part)
+ *               <Set: Builder Regalia (eye)>       (a named part)
  *
  * A set is made of parts. A piece's part is its equipment type unless it
  * names one, so pieces for the same slot are substitutes (Tapa Wrap or the

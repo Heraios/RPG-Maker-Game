@@ -33,6 +33,16 @@
  *    Gathering turns its Self Switch A on until it's back; worked out also
  *    turns on Self Switch D (for a stump or rubble page, if you want one).
  *
+ * Veins on walls: give the spot a graphic from !Veins_Stone or !Veins_Ore
+ * (art/gather_veins.py) and put it ON the wall tile, priority "Same as
+ * characters", trigger Action Button: the player faces the wall to gather.
+ * It shows its state by itself: full, chipped (taken today), worked out
+ * (empty sockets: a vein never vanishes, even stone that would).
+ *
+ * Words from gathering: in Journal.json give a word "gather": ["Wart Fern"];
+ * the first time Lasa picks that, its lesson (a common event the Gather
+ * event calls: SmokingIsle.Gather.lessonDue('plant')) runs.
+ *
  * The Ghost alone (nobody who can gather) gets "...your hand goes through
  * it." Spots only some can gather name only people already met.
  *
@@ -392,7 +402,7 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         if (this._siGatherRule === undefined) this._siGatherRule = $.rule(this._siGatherSpecies, this);
         var v = this._siGatherRule.vanish;
         if (v === 'spent') return $.isSpent(this._mapId, this._eventId);
-        if (v === 'worked') return $.isWorkedOut(this._mapId, this._eventId);
+        if (v === 'worked') return !/^!Veins/.test(this.characterName()) && $.isWorkedOut(this._mapId, this._eventId);   // a vein stays: its sockets show
         return false;
     };
     Game_Event.prototype.isTransparent = function() {
@@ -401,6 +411,21 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
     Game_Event.prototype.isThrough = function() {
         return this.siGatherSpent() || Game_Character.prototype.isThrough.call(this);
     };
+    // !Veins graphics: the row shows the state (down full, left chipped today, right worked out).
+    $.veinDirection = function(ev) {
+        if ($.isWorkedOut(ev._mapId, ev._eventId)) return 6;
+        if ($.isSpent(ev._mapId, ev._eventId)) return 4;
+        return 2;
+    };
+    var _Game_Event_update_vein = Game_Event.prototype.update;
+    Game_Event.prototype.update = function() {
+        _Game_Event_update_vein.call(this);
+        if (/^!Veins/.test(this.characterName()) && $.speciesOf(this)) {
+            var dir = $.veinDirection(this);
+            if (this._direction !== dir) { this._direction = dir; }
+        }
+    };
+
     var _Game_Event_start = Game_Event.prototype.start;
     Game_Event.prototype.start = function() {
         if (this.siGatherSpent()) return;
@@ -526,6 +551,16 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         interpreter.setWaitMode('message');
     };
 
+    // Words learned by gathering: the first time Lasa picks a species listed in Journal.json (words.<word>.gather).
+    $.wordFor = function(species) {
+        var words = (SmokingIsle.Journal && SmokingIsle.Journal.data().words) || {};
+        return Object.keys(words).find(function(w) { return (words[w].gather || []).indexOf(species) >= 0; }) || '';
+    };
+    $.lessonDue = function(word) {
+        if ($gameTemp._siGatherWord !== word) return false;
+        $gameTemp._siGatherWord = null; return true;
+    };
+
     $.finish = function(interpreter) {
         var p = $.pending;
         $.pending = null;
@@ -533,6 +568,11 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         var result = $.gather(p.mapId, p.eventId, p.species, p.actors[p.choice]);
         $gameMessage.add(result.text);
         if (result.worn) $gameMessage.add(result.worn);
+        // a word from gathering (Journal.json words.<word>.gather): its lesson runs next, in the Gather event
+        var word = result.got && result.got.length ? $.wordFor(p.species) : '';
+        if (word && !SmokingIsle.Journal.knowsWord(word) && $gameParty.members().some(function(a) { return a.actorId() === 4; })) {
+            $gameTemp._siGatherWord = word;
+        }
         interpreter.setWaitMode('message');
         return result;
     };

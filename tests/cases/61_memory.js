@@ -1,6 +1,22 @@
 // Memory (SI_Journal): Yoon's journal. Quests, Evidence, Remembered; notices; the menu command and J.
 
 module.exports = {
+    "memory: what I'm like (temperament and the next tier)": async (h, t) => {
+        await h.newGame();
+        const r = await h.eval(() => {
+            const J = SmokingIsle.Journal, out = {};
+            [9, 10, 11].forEach(v => $gameVariables.setValue(v, 0));
+            out.hidden = !J.rows('remembered').some(x => x.kind === 'temperament');
+            $gameVariables.setValue(9, 7); $gameVariables.setValue(10, 3); $gameVariables.setValue(11, 21);
+            out.shown = J.rows('remembered')[0].kind === 'temperament';
+            out.next = J.temperament().map(e => e.name + ' ' + e.value + ' ' + (e.next ? e.next[0] + ':' + e.next[1] : 'done')).join(' | ');
+            return out;
+        });
+        t.ok(r.hidden, 'not shown while every count is 0');
+        t.ok(r.shown, 'then first in Remembered');
+        t.eq(r.next, 'Sweet 7 10:Joyful Cry | Funny 3 5:Bewildering Wail | Unhinged 21 done', 'each count, and what its next tier gives');
+    },
+
     'memory: quests, clues, words and the Body': async (h, t) => {
         await h.newGame();
         const r = await h.eval(() => {
@@ -31,6 +47,7 @@ module.exports = {
             out.said = J.state().said.bones;
             out.words = $gameVariables.value(6);
             out.wordRows = J.rows('remembered').filter(x => x.kind === 'word').map(x => x.text).join(',');
+            out.totalWords = Object.keys($dataJournal.words).length;
             out.unknownWords = J.rows('remembered').filter((x, i, all) => x.kind === 'unknown' && all.slice(0, i).filter(y => y.kind === 'header').length === 1).length;
             out.wailed = J.wailed('remember');
             // the Body: from Story 60; an ingredient counts while the party holds its key item
@@ -60,7 +77,7 @@ module.exports = {
         t.eq(r.said, 1, 'a word remembers how it was first said');
         t.eq(r.words, 1, 'the Words variable counts known words');
         t.eq(r.wordRows, 'bones', 'known words by name...');
-        t.eq(r.unknownWords, 12, '...the rest as ???');
+        t.eq(r.unknownWords, r.totalWords - 1, '...the rest as ??? (' + (r.totalWords - 1) + ')');
         t.eq(r.wailed, 'REEEEEMEMBER.', 'a wailed word');
         t.ok(!r.bodyBefore && r.bodyAfter, 'The Body shows from Story 60, first in Quests');
         t.ok(r.bone, 'the bone counts from Story 60');

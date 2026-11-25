@@ -95,7 +95,7 @@
   "notes": {
    "title": "Juda's Notes",
    "where": "TODO: Juda's books.",
-   "text": "TODO: notes on First Sailor homunculus making."
+   "text": "TODO: notes on Builder homunculus making."
   },
   "log": {
    "title": "The Telegraph Log",
@@ -118,6 +118,16 @@
    "after": "Who was in the tubes that day? Somebody's not where they said."
   }
  ],
+ "temperament": {
+  "_readme": "Memory's 'What I'm like' page. var: the count's variable. tiers: [count, what it gives]. Add the body-era tiers later.",
+  "title": "What I'm like",
+  "list": [
+   { "name": "Sweet", "var": 9, "color": 24, "tiers": [[5, "Calming Cry"], [10, "Joyful Cry"], [20, "Rallying Cry and Focusing Cry"]] },
+   { "name": "Funny", "var": 10, "color": 17, "tiers": [[5, "Bewildering Wail"], [10, "Flitting Cry"], [20, "Beguiling Wail"]] },
+   { "name": "Unhinged", "var": 11, "color": 31, "tiers": [[5, "Terrifying Wail"], [10, "Maddening Wail"], [20, "Dragging Wail"]] }
+  ],
+  "done": "Everything, for now."
+ },
  "words": {
   "bones": {
    "where": "The small bones, in the tube where I woke.",
@@ -192,6 +202,90 @@
    "notes": {
     "4": "Remember everything! I'll help!"
    }
+  },
+  "together": {
+   "where": "The children's cairns by the sky-hole.",
+   "taught": "Two kids stacked this together! Like you and me.",
+   "wrong": "Tether."
+  },
+  "sky": {
+   "where": "Coming out of the sky-hole.",
+   "taught": "Sky! That's the biggest thing there is.",
+   "wrong": "Sigh."
+  },
+  "sun": {
+   "where": "Coming out of the sky-hole.",
+   "taught": "And that's the sun. Don't look at it.",
+   "wrong": "Son."
+  },
+  "goat": {
+   "where": "Ladder, grazing by the sky-hole.",
+   "taught": "A goat! They eat everything and climb everything.",
+   "wrong": "Got."
+  },
+  "grass": {
+   "where": "The kipuka garden by the sky-hole.",
+   "taught": "Grass. It grows where the fire didn't.",
+   "wrong": "Gas."
+  },
+  "float": {
+   "where": "The warm crack in the old flow front.",
+   "taught": "That's a crack. You go over it. Float! That's what you do.",
+   "wrong": "Flood."
+  },
+  "water": {
+   "where": "The spring in the channels.",
+   "taught": "Water! You know water. You saw your face in it.",
+   "wrong": "Wawa."
+  },
+  "tree": {
+   "where": "The dead tree in the channels.",
+   "taught": "A tree. A dead one. Everything here is a bit dead.",
+   "wrong": "Three."
+  },
+  "bird": {
+   "where": "The ravens in the dead tree.",
+   "taught": "Birds! They can see you. Birds see everything.",
+   "wrong": "Bud."
+  },
+  "wind": {
+   "where": "The gusty saddle in the channels.",
+   "taught": "Wind! You can't see it either. You're the same!",
+   "wrong": "Wine."
+  },
+  "sing": {
+   "where": "The telegraph wires.",
+   "taught": "The wires sing! People talk through them. Far away.",
+   "wrong": "Sting."
+  },
+  "road": {
+   "where": "The road where the land greens.",
+   "taught": "A road. People walk on it to go places.",
+   "wrong": "Rude."
+  },
+  "plant": {
+   "where": "The first wart fern \\N[4] picked.",
+   "taught": "That's a plant! It grows out of the ground, and it doesn't go anywhere.",
+   "wrong": "Plank.",
+   "gather": ["Wart Fern"]
+  },
+  "fruit": {
+   "where": "The skylight fig.",
+   "taught": "Fruit! A fig. The sweet part of a plant. Sweet for me, anyway.",
+   "wrong": "Flute.",
+   "gather": ["Skylight Fig"]
+  },
+  "lava": {
+   "where": "The first scoria (or pumice) \\N[4] picked up.",
+   "taught": "This was lava once! Hot rock, running like water. Then it cooled down and stopped.",
+   "wrong": "Lather.",
+   "gather": ["Scoria", "Pumice"]
+  },
+  "stink": {
+   "where": "The sulfur by the warm crack.",
+   "taught": "Phew! That's sulfur. It stinks! That's 'stink'. You're lucky you can't smell.",
+   "wrong": "Sink.",
+   "gather": ["Sulfur Vent"]
   }
  },
  "body": [
@@ -245,6 +339,18 @@
   }
  ],
  "knowhow": {
+  "fighting": {
+   "title": "Fighting",
+   "text": [
+    "The line at the top says whose turn it is. Fast ones get more turns.",
+    "Fight is for hitting. Talk is for talking it down: animals listen, sometimes. Tactics is guarding, the bag, catching your breath, or running.",
+    "I can barely hurt anything, and things can barely hurt me. My moves are in Fight, then Innate: the touches, the wails, the cries.",
+    "\\N[4] gets tired (FT). Too tired, and she has to catch her breath."
+   ],
+   "notes": {
+    "4": "I'll do the hitting. You do the spooky."
+   }
+  },
   "gathering": {
    "title": "Picking things",
    "text": [
