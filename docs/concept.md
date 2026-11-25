@@ -2339,11 +2339,13 @@ Walk"), it learns to touch. Lasa explains each move in her own words.
 | **water** (the stream) | Chilling Touch | Cold, wet |
 | **wind** (the gusty spot) | Cutting Touch | Air; "something pushes" |
 | **tree** (the dead tree) | Crushing Touch | "A dry hand, reaching up": it grips |
-| **grass** (the kipuka) | Spirit Surge | Clean, alive; what grows back after the fire |
+| **plant** (the first wart fern Lasa picks) | Spirit Surge | Plants come back after the fire: wipe things clean |
 | **sing** (the telegraph wires) | Ghostly Touch | The hum carries something; the Ghost sips it |
 | **smoke** (above the town, last) | Spiritual Writhe | Smoke twists and rises |
 
-together (the children's cairns, map 1), goat, bird, road and home teach no move; **float** is the ghost-only crossing (Region 10). Only **sun** is
+together (the children's cairns, map 1), goat, bird, road and home teach no move. **Words from gathering** (decided): the first time Lasa picks something, she
+names it: wart fern **plant** (and Spirit Surge), skylight fig **fruit**, scoria or pumice **lava**, sulfur **stink**
+(Journal.json words, "gather"; common events 24-27); **float** is the ghost-only crossing (Region 10). Only **sun** is
 scripted, so a player who skips every find still has Burning Touch, Mournful Wail and a temperament move.
 
 **The Ghost and Lasa in a fight.** Lasa is the finisher and thief (Keri, Gau, Prank, Steal, Keva, Mahu,
@@ -2364,6 +2366,11 @@ were chosen for:
   eases her Mana, paid from the Ghost's. Focusing Cry suits Gau or her knife (Keri can't crit).
 - Weak with her: Burning Touch (she has no fire or air to build on it) and Maddening Wail (Enraged foes hit
   harder and won't Talk).
+
+**Battle fixes from playtesting** (built): every enemy has some Mana (a quarter of its Health, 10-80), so Ghostly
+Touch always has something to drain and the Ghost needn't run dry; **Landed** Lasa regains 10% Mana a turn (on the
+ground: no flying, Endurance -25%, sheds 5 Fatigue); a **flyer reaches flyers**: Lasa, while she isn't Landed, hits
+flying enemies in melee without their flying dodge.
 
 **Fights on map 1** (built): visible wanderers, only in Act 1 (`<Before Story: 50>`, page needs Lasa and Story
 30), each placed to show off the move just learned:

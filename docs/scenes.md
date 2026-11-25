@@ -186,11 +186,13 @@ scripted** (sky, sun, home); **the rest are optional finds**, a reason to wander
 Lasa cheers now and then, not on a count.
 
 ### 1. Out of the sky-hole (scripted) — built on map 1 (autorun, once)
+*(Narration, centred, with wind: "Up, and up, out of the dark..." / "...and then there's no ceiling at all. Light,
+everywhere at once. Wind, pushing at nothing.")*
 *(Daylight. The cave music gives way to wind. The Ghost and Lasa rise out of the hole.)*
 
 **Lasa:** Sky! That's the biggest thing there is.
 
-> **Choice** (as in the lessons): Say it carefully. / Say it wrong. / Wail it.
+> **Choice** (as in the lessons): Say it carefully. / Be silly. / Wail it.
 
 - Wrong: "Sigh." **Lasa:** Yes. Exactly.
 

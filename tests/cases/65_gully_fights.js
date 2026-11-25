@@ -41,7 +41,7 @@ module.exports = {
         t.eq(m1.cairns, '1/1', 'the children\'s cairn by the hole: there in Act 1 (Lasa teaches \'together\') and with Sib (Act 2)');
         t.eq([m1, m3, m7].map(m => m.before).join(','), '0,0,0', 'none out before Lasa joins');
         t.ok(m1.act1 === 0 && m3.act1 >= 3 && m7.act1 === 1, 'Act 1 (Lasa, Story 30): none in the gully; the channels and the top');
-        t.ok(m1.act2 >= 1 && m3.act2 === 0 && m7.act2 === 0, 'Act 2 (Sib, Story 50): the gully\'s own wanderers come out; the Act 1 fights are gone');
+        t.ok(m1.act2 >= 1 && m3.act2 === 0 && m7.act2 === 0, 'Act 2 (Sib, Story 50): the gully\'s own wanderers come out; the Act 1 fights are gone (' + [m1.act2, m3.act2, m7.act2] + ')');
     },
 
     'the gully: Lasa teaches "together" at the children\'s cairn': async (h, t) => {
@@ -65,7 +65,7 @@ module.exports = {
         t.ok(r.done && r.page === 1, 'afterwards the cairn says "...together. Two of them."');
     },
 
-    'the gully: out of the sky-hole (sky, sun, Burning Touch), goat, grass and the gathering spots': async (h, t) => {
+    'the gully: out of the sky-hole (sky, sun, Burning Touch), goat and the gathering spots': async (h, t) => {
         await h.page.goto(h.base + '/index.html');
         await h.page.waitForFunction(() => window.SceneManager && SceneManager._scene instanceof Scene_Title && SceneManager._sceneStarted, null, { timeout: 60000 });
         await h.page.evaluate(() => { Object.assign($dataSystem, { startMapId: 1, startX: 20, startY: 14 }); SceneManager._scene.commandNewGame(); });
@@ -83,55 +83,46 @@ module.exports = {
         t.ok(arrived.once && !arrived.running, 'it plays once');
         // Ladder: goat
         await h.eval(() => $gameMap.event(2).start()); await h.pumpMessages(60);
-        // the kipuka grass: grass, and Spirit Surge
-        await h.eval(() => $gameMap.events().find(e => /Kipuka Grass/.test(e.event().name)).start()); await h.pumpMessages(80);
         const r = await h.eval(() => {
             const J = SmokingIsle.Journal, G = SmokingIsle.Gather, g = $gameActors.actor(1);
-            const grassEv = $gameMap.events().find(e => /Kipuka Grass/.test(e.event().name));
             const spots = $gameMap.events().filter(e => /^Gather:/.test(e.event().name)).map(e => G.speciesOf(e));
-            return { goat: J.knowsWord('goat'), goatDone: $gameMap.event(2).findProperPageIndex(), grass: J.knowsWord('grass'),
-                     surge: g.isLearnedSkill(584), grassDone: grassEv.findProperPageIndex(),
+            return { goat: J.knowsWord('goat'), goatDone: $gameMap.event(2).findProperPageIndex(),
                      spots: spots.join(','), unknown: spots.filter(s => !G.TABLE[s]).join(','),
                      lasaCan: spots.filter(s => s !== 'Obsidian').every(s => { const e = G.TABLE[s]; return e.who !== 'adult' && !e.tool; }) };
         });
         t.ok(r.goat && r.goatDone === 2, 'Ladder teaches "goat"; then "...goat. Staring."');
-        t.ok(r.grass && r.surge && r.grassDone === 2, 'the kipuka teaches "grass", and the Ghost learns Spirit Surge');
         t.eq(r.unknown, '', 'every gathering spot is a real species: ' + r.spots);
         t.ok(r.lasaCan, 'the plants (and scoria) Lasa can pick by hand in Act 1; the obsidian vein waits for the Knapping Kit');
     },
 
-    'the old flow front (map 2): only the Ghost crosses, by the warm crack; Lasa teaches "float"': async (h, t) => {
+    'the old flow front (map 2): the Ghost floats through the warm crack; Lasa teaches "float"': async (h, t) => {
         await h.page.goto(h.base + '/index.html');
         await h.page.waitForFunction(() => window.SceneManager && SceneManager._scene instanceof Scene_Title && SceneManager._sceneStarted, null, { timeout: 60000 });
         await h.page.evaluate(() => { Object.assign($dataSystem, { startMapId: 2, startX: 24, startY: 21 }); SceneManager._scene.commandNewGame(); });
         await h.page.waitForFunction(() => SceneManager._scene instanceof Scene_Map && SceneManager._sceneStarted && $gameMap.mapId() === 2, null, { timeout: 30000 });
-        const r = await h.eval(() => {
-            // follow the crack (Region 10) from its foot to the north side, a step at a time, with the game's rules
-            const cells = []; for (let y = 0; y < $gameMap.height(); y++) for (let x = 0; x < $gameMap.width(); x++) if ($gameMap.regionId(x, y) === 10) cells.push([x, y]);
-            const walk = (party) => {
-                $gameParty._actors = party; $gamePlayer.locate(24, 21); const seen = new Set(['24,21']); let steps = 0;
-                for (let k = 0; k < 60; k++) {
-                    const x = $gamePlayer.x, y = $gamePlayer.y;
-                    const next = [[8, 0, -1], [6, 1, 0], [4, -1, 0], [2, 0, 1]].find(([d, dx, dy]) => !seen.has((x + dx) + ',' + (y + dy)) &&
-                        ($gameMap.regionId(x + dx, y + dy) === 10 || $gameMap.regionId(x, y) === 10 && dy < 0) && $gamePlayer.canPass(x, y, d));
-                    if (!next) break;
-                    $gamePlayer.locate(x + next[1], y + next[2]); seen.add($gamePlayer.x + ',' + $gamePlayer.y); steps++;
-                }
-                return { end: $gamePlayer.x + ',' + $gamePlayer.y, steps, northSide: $gameMap.regionId($gamePlayer.x, $gamePlayer.y) !== 10 && $gamePlayer.y < 10 };
-            };
-            const ghost = walk([1, 4]), living = walk([2, 3, 4]), lasaLeads = walk([4, 1]);
-            return { cells: cells.length, ghost, living, lasaLeads };
-        });
-        t.ok(r.cells >= 15, 'the crack is painted Region 10 (' + r.cells + ' tiles)');
-        t.ok(r.ghost.northSide, 'the Ghost, leading, floats up the crack to the north side (' + r.ghost.end + ', ' + r.ghost.steps + ' steps)');
-        t.eq(r.living.steps, 0, 'Act 2: the living can\'t even step into it');
-        t.eq(r.lasaLeads.steps, 0, 'nor can Lasa when she leads');
-        // the lesson at the crack's foot
-        await h.eval(() => { $gameParty._actors = [1, 4]; $gamePlayer.locate(24, 21); $gameVariables.setValue(5, 30); $gameMap.refresh();
-            $gameMap.events().find(e => /Warm Crack/.test(e.event().name)).start(); });
-        await h.pumpMessages(60);
-        const f = await h.eval(() => ({ knows: SmokingIsle.Journal.knowsWord('float'),
-            done: $gameMap.events().find(e => /Warm Crack/.test(e.event().name)).findProperPageIndex() }));
-        t.ok(f.knows && f.done === 2, 'Lasa teaches "float" at the foot of the crack; then "...float."');
+        const settle = async () => { for (let k = 0; k < 120; k++) { const busy = await h.eval(() => $gameMessage.isBusy() || $gameMap.isEventRunning() || $gamePlayer.isMoving());
+            if (!busy) return; if (await h.eval(() => $gameMessage.isBusy())) await h.page.keyboard.press('Enter'); await h.page.waitForTimeout(100); } };
+        const walkIn = await h.eval(() => { $gameParty._actors = [1, 4]; $gamePlayer.locate(24, 21); return $gamePlayer.canPass(24, 21, 8); });
+        // Act 1: the Ghost leads; at the crack's foot, Lasa teaches "float", then it floats up through
+        await h.eval(() => { $gameVariables.setValue(5, 30); $gameMap.refresh(); $gamePlayer.setDirection(8);
+            $gameMap.events().find(e => e.event().name === 'The Warm Crack (float)').start(); });
+        await settle();
+        const up = await h.eval(() => ({ at: $gamePlayer.x + ',' + $gamePlayer.y, knows: SmokingIsle.Journal.knowsWord('float'), through: $gamePlayer.isThrough() }));
+        // and back down, from the top
+        await h.eval(() => { $gamePlayer.setDirection(2); $gameMap.events().find(e => e.event().name === 'The Warm Crack (top)').start(); });
+        await settle();
+        const down = await h.eval(() => $gamePlayer.x + ',' + $gamePlayer.y);
+        // Act 2: the living can't
+        await h.eval(() => { $gameParty._actors = [2, 3, 4]; $gameVariables.setValue(5, 50); $gamePlayer.locate(24, 21); $gameMap.refresh();
+            window.__said = []; const add = Game_Message.prototype.add; Game_Message.prototype.add = function(t) { window.__said.push(t); return add.call(this, t); };
+            $gameMap.events().find(e => e.event().name === 'The Warm Crack (float)').start(); });
+        await settle();
+        const act2 = await h.eval(() => ({ at: $gamePlayer.x + ',' + $gamePlayer.y, said: window.__said.join(' ') }));
+        t.ok(!walkIn, 'nobody walks into the crack: it is crossed by floating');
+        t.ok(up.knows, 'Lasa teaches "float" at the foot of the crack');
+        t.eq(up.at, '24,5', 'the Ghost floats up through the crack to the north side');
+        t.ok(!up.through, 'and is solid again after');
+        t.eq(down, '24,21', 'and floats back down from the top');
+        t.ok(act2.at === '24,21' && /too narrow/.test(act2.said), 'Act 2: the living can\'t ("too narrow ... back through the tubes")');
     }
 };

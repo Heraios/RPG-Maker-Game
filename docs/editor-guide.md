@@ -22,6 +22,11 @@ before pushing your own.
 
 ---
 
+
+**An event's Note box is one line.** RPG Maker MV keeps only the first line of an event's note when you open and
+save the event, so every tag (`<Wanderer: 25>`, `<Before Story: 50>`, `<Gather: Obsidian>`, ...) goes on that one
+line, tags first: `<Wanderer: 25> <Before Story: 50> <Bold> Act 1 ...`. (Notes in the database, like items' and
+enemies', can have many lines.)
 ## Troubleshooting: crashes on a Mac
 
 RPG Maker MV 1.6.1 ships with a very old NW.js (the small browser that runs the game). Current macOS no

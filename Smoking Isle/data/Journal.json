@@ -262,6 +262,30 @@
    "where": "The road by the wires.",
    "taught": "A road. People walk on it to go places.",
    "wrong": "Rude."
+  },
+  "plant": {
+   "where": "The first wart fern \\N[4] picked.",
+   "taught": "That's a plant! It grows out of the ground, and it doesn't go anywhere.",
+   "wrong": "Plank.",
+   "gather": ["Wart Fern"]
+  },
+  "fruit": {
+   "where": "The skylight fig.",
+   "taught": "Fruit! A fig. The sweet part of a plant. Sweet for me, anyway.",
+   "wrong": "Flute.",
+   "gather": ["Skylight Fig"]
+  },
+  "lava": {
+   "where": "The first scoria (or pumice) \\N[4] picked up.",
+   "taught": "This was lava once! Hot rock, running like water. Then it cooled down and stopped.",
+   "wrong": "Lather.",
+   "gather": ["Scoria", "Pumice"]
+  },
+  "stink": {
+   "where": "The sulfur by the warm crack.",
+   "taught": "Phew! That's sulfur. It stinks! That's 'stink'. You're lucky you can't smell.",
+   "wrong": "Sink.",
+   "gather": ["Sulfur Vent"]
   }
  },
  "body": [
