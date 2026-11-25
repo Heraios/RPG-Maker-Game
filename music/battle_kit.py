@@ -1,14 +1,23 @@
 # Shared parts for the battle and boss themes: an orchestra at war, 16-bit. War drums, a marching snare, driving
 # string figures, low brass and a men's choir holding the roots, and the big hit that opens every battle jingle.
 # Each takes the Stereo track S first, a start time t in seconds, and the beat length b.
+import os
 import numpy as np
 from synth16 import *
 _drum = drum
+# Fierce mode (FIERCE=1 python3 battle_x16.py): the area's miniboss version, saved as Miniboss_X instead of Battle_X.
+# The war drums pound on every beat (drive instead of march), the tune is doubled an octave up on bright brass, the
+# strings drive harder and the bass is heavier, every hit gets a second crash and the choir; and when it's saved
+# (synth16.save_stereo) the whole track goes up a semitone and about 6% faster.
+FIERCE = os.environ.get('FIERCE') == '1'
 LOW, DRUMS, LEAD, STR = 0.7, 0.8, 1.4, 1.5        # the mix: bass and drums back, the tune and strings forward
 def drum(kind, vol=1.0): return _drum(kind, vol * DRUMS)
 
 def hit(S, t, root, vol=1.0, minor=True):
     """Everyone at once: war drum, timpani, cymbal, low brass and choir on the root and fifth."""
+    if FIERCE:
+        S.add(t + 0.03, cymbal(0.1 * vol, 2.5), pan=-0.3); S.add(t, drum('taikohi', 0.35 * vol), pan=0.2)
+        for m in (root + 12, root + 19, root + 24): S.add(t, menchoir(m, 1.2, vol=0.08 * vol), pan=-0.1)
     S.add(t, drum('taiko', 0.6 * vol)); S.add(t, timpani(root + 12 if root < 40 else root, 0.35 * vol)); S.add(t, drum('kick', 0.18 * vol))
     S.add(t, cymbal(0.14 * vol, 2.2), pan=0.2)
     for m in (root, root + 7, root + 12): S.add(t, brass(m, 0.9, vol=0.16 * vol), pan=-0.1)
@@ -21,6 +30,7 @@ def roll(S, t, beats, b, v0=0.04, v1=0.3, kind='snare', rate=8, pan=0.15):
 
 def march(S, t, b, bars, vol=1.0, fill=True):
     """A grim march in 4: war drums on one and three, the snare answering, ghost strokes between."""
+    if FIERCE: return drive(S, t, b, bars, vol * 0.9, fill=fill)       # no marching: pounding
     for k in range(bars):
         at = t + k * 4 * b; last = fill and k == bars - 1
         for j, v in ((0, 0.5), (1.5, 0.25), (2, 0.42), (3.5, 0.25)): S.add(at + j * b, drum('taiko', v * vol), pan=-0.1)
@@ -46,6 +56,7 @@ def ostinato(S, t, b, roots, pattern, vol=0.07, step=0.25, octave=12, beats=4, m
     """Driving strings: a short figure repeated under everything. pattern: scale steps above the bar's root
     (0 root, 3 third, 7 fifth, 12 octave...), one per `step` of a beat; the first of each beat is accented."""
     per = int(round(beats / step))
+    if FIERCE: vol *= 1.25
     for k, r in enumerate(roots):
         for i in range(per):
             iv = pattern[i % len(pattern)]
@@ -63,6 +74,7 @@ def power(S, t, dur, root, minor=True, vol=1.0, choir_too=True):
 
 def low_end(S, t, b, roots, vol=0.34, beats=4, pattern=(0, 0, 12, 0, 0, 12, 0, 7)):
     """A pounding bass in eighths under the ostinato."""
+    if FIERCE: vol *= 1.15
     for k, r in enumerate(roots):
         n = int(beats * 2)
         for i in range(n):
@@ -70,6 +82,9 @@ def low_end(S, t, b, roots, vol=0.34, beats=4, pattern=(0, 0, 12, 0, 0, 12, 0, 7
 
 def tune(S, t, b, notes, voices, shift=0):
     """A melody on several instruments at once. voices: list of (instrument, octave shift, vol, pan, gate)."""
+    if FIERCE and voices and voices[0][0] is not bell:                   # doubled an octave up on bright brass
+        inst, octv, vol, pan, gate = voices[0]
+        voices = list(voices) + [(brass, octv + 12, vol * 0.45, -pan or 0.3, min(gate, 0.9))]
     for inst, octv, vol, pan, gate in voices:
         seq(S, [(m + shift + octv if m is not None else None, d) for m, d in notes], b, t,
             (lambda i, v, g: (lambda m, d: i(m, d * g / 0.95, vol=v * LEAD)))(inst, vol, gate), pan=pan)

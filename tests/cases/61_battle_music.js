@@ -98,4 +98,36 @@ module.exports = {
         const missing = [...new Set(r.tracks)].filter(n => !['.ogg', '.m4a'].every(x => fs.existsSync(path.join(bgm, n + x))));
         t.eq(missing.join(', '), '', 'every battle track is in audio/bgm (.ogg and .m4a)');
     },
+    'minibosses play their area\'s fiercer battle theme': async (h, t) => {
+        await h.newGame();
+        const r = await h.eval(() => {
+            const M = SmokingIsle.BattleMusic, out = {};
+            const pick = id => { $gameTroop.setup(id); return M.choose(); };
+            const auto = $dataMap.autoplayBgm, bgm = $dataMap.bgm, keepList = M.minibosses;
+            $dataMap.autoplayBgm = true; $dataMap.bgm = { name: 'Sea_Cliffs_Night', volume: 90, pitch: 100, pan: 0 };
+            out.ordinary = pick(1);
+            M.minibosses = [1]; out.listed = pick(1) + ' ' + M.victoryMe().name;
+            M.minibosses = [];
+            const enemy = $dataEnemies[$dataTroops[1].members[0].enemyId], meta = enemy.meta;
+            enemy.meta = Object.assign({}, meta, { Miniboss: true });
+            out.noted = pick(1);
+            $dataMap.bgm = { name: 'Alpine_Forest', volume: 90, pitch: 100, pan: 0 }; out.shared = pick(1);
+            $dataMap.bgm = { name: 'Zonfahare', volume: 90, pitch: 100, pan: 0 }; out.noArea = pick(1);
+            enemy.meta = meta;
+            $gameTroop.setup(1); out.after = M.victoryMe().name + ' ' + M.isMiniboss();
+            M.minibosses = keepList; $dataMap.autoplayBgm = auto; $dataMap.bgm = bgm;
+            out.areas = Object.keys(M.areas).map(k => M.areas[k]).filter((v, i, a) => a.indexOf(v) === i);
+            return out;
+        });
+        t.eq(r.ordinary, 'Battle_Sea_Cliffs', 'an ordinary fight on the cliffs (at night) plays the cliffs\' battle theme');
+        t.eq(r.listed, 'Miniboss_Sea_Cliffs Victory_Isle', 'a troop in Miniboss Troops plays the fiercer version, and ends on the full victory jingle');
+        t.eq(r.noted, 'Miniboss_Sea_Cliffs', 'so does a troop with a <Miniboss> enemy');
+        t.eq(r.shared, 'Miniboss_Highlands', 'an area that shares a battle theme shares its miniboss version too');
+        t.eq(r.noArea, 'Battle_Wild', 'with no area battle theme, a miniboss plays the usual music');
+        t.eq(r.after, 'Victory_Short false', 'ordinary fights still end on the short jingle');
+        const bgmDir = path.join(__dirname, '..', '..', 'Smoking Isle', 'audio', 'bgm');
+        const missing = [];
+        r.areas.forEach(n => [n, n.replace(/^Battle_/, 'Miniboss_')].forEach(m => ['.ogg', '.m4a'].forEach(x => { if (!fs.existsSync(path.join(bgmDir, m + x))) missing.push(m + x); })));
+        t.eq(missing.join(', '), '', 'every area battle theme and its miniboss version is in audio/bgm (.ogg and .m4a)');
+    },
 };

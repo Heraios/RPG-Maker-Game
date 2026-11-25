@@ -560,6 +560,14 @@ Aurochs Calf brings the bull, and the **Wild Bees** troop checks each turn for a
 swarm (put that troop on a Bee Rock event). **Shearwaters** only come at night: list their troop in the
 coast map's `<Night Troops>` note.
 
+**Minibosses** (a tough fight that isn't a boss: a lone brute, a pack leader, a guardian) play their area's
+**fiercer battle theme**: the same music as the area's ordinary fights, a step higher and faster, the drums
+pounding. To make a fight a miniboss, either write `<Miniboss>` in the **Note** box of its main enemy
+(Database → Enemies; every troop with that enemy counts), or add the troop's number to the **SI_BattleMusic**
+plugin's *Miniboss Troops* parameter (for a troop of ordinary enemies that's tough together). A miniboss also
+ends on the full victory jingle. Only areas with their own battle theme have a fiercer version; anywhere else a
+miniboss plays the usual music.
+
 Bosses whose defeat matters to the story (the Great Boar's flesh, the Daughter freed, Parl's fate) need
 the story to continue in the event's commands **after** Battle Processing.
 

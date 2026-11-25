@@ -11,6 +11,11 @@
  * @desc Troop number and track, for boss fights.
  * @default 26 Boss_Daughter_Wells, 27 Boss_Great_Boar, 29 Boss_Lady_Woods, 30 Boss_Parl, 50 Boss_Lady_Woods
  *
+ * @param Miniboss Troops
+ * @desc Troop numbers for minibosses (tough fights that aren't bosses): they
+ * play their area's fiercer battle theme. An enemy's <Miniboss> note does the same.
+ * @default
+ *
  * @param Area Tracks
  * @desc Area music that has a battle theme: Salt_Marsh plays Battle_Salt_Marsh;
  * Idekeu > Highlands shares Battle_Highlands. Night versions count too.
@@ -61,6 +66,11 @@
  *   5. The area's battle theme: if the map's own music is in Area Tracks
  *      (Salt_Marsh, or Salt_Marsh_Night), the fight plays Battle_Salt_Marsh:
  *      the same tune and key, so the battle grows out of the place.
+ *      A miniboss plays the area's fiercer version instead (Miniboss_Salt_Marsh):
+ *      the same theme, a semitone higher and a little faster, the war drums
+ *      pounding on every beat, the tune doubled on bright brass. A fight is a
+ *      miniboss if its troop is in Miniboss Troops, or any enemy in it has
+ *      <Miniboss> in its note box.
  *   6. Otherwise the first Kind Music rule that matches any enemy in the
  *      troop: a word matches an enemy's Talk Type or Talk Tags (spirit, fae,
  *      first-sailor...), or appears in its name (Owl of Ill Omen).
@@ -71,8 +81,8 @@
  * fades out over a quarter of a second (Field Fade) while the battle track
  * starts at once (Start On Contact), so the jingle's opening hit lands on the
  * first flash. After the fight the field music comes back where it left
- * off, as usual. Ordinary fights end on the Short Victory jingle; bosses on
- * the full one.
+ * off, as usual. Ordinary fights end on the Short Victory jingle; bosses and
+ * minibosses on the full one.
  * Volume and pitch are the database battle music's own.
  *
  * Script call: SmokingIsle.BattleMusic.choose()  the track the current troop
@@ -108,6 +118,7 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
         var bits = entry.split('>').map(function(x) { return x.trim(); });
         if (bits[0]) $.areas[bits[0]] = 'Battle_' + (bits[1] || bits[0]);
     });
+    $.minibosses = String(params['Miniboss Troops'] || '').split(/[\s,]+/).filter(Boolean).map(Number);
     $.muteStart = String(params['Mute Start Sound'] || 'true') === 'true';
     $.onContact = String(params['Start On Contact'] || 'true') === 'true';
     $.fieldFade = Number(params['Field Fade'] || 0);
@@ -118,6 +129,12 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
         if (!$dataMap || !$dataMap.autoplayBgm || !$dataMap.bgm) return null;
         var name = String($dataMap.bgm.name || '').replace(/_Night$/, '');
         return $.areas[name] || null;
+    };
+
+    // A miniboss: its troop listed in Miniboss Troops, or an enemy with a <Miniboss> note.
+    $.isMiniboss = function() {
+        if ($.minibosses.indexOf($gameTroop._troopId) >= 0) return true;
+        return $gameTroop.members().some(function(e) { return !!(e.enemy && e.enemy().meta && e.enemy().meta.Miniboss); });
     };
 
     var defaultName = function() { return ($dataSystem.battleBgm && $dataSystem.battleBgm.name) || ''; };
@@ -149,7 +166,7 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
             if ($.matches($.factions[f], enemies)) return $.factions[f].track;
         }
         var area = $.areaTrack();
-        if (area) return area;
+        if (area) return $.isMiniboss() ? area.replace(/^Battle_/, 'Miniboss_') : area;
         for (var i = 0; i < $.rules.length; i++) {
             if ($.matches($.rules[i], enemies)) return $.rules[i].track;
         }
@@ -187,7 +204,7 @@ SmokingIsle.BattleMusic = SmokingIsle.BattleMusic || {};
     $.victoryMe = function() {
         var me = $gameSystem.victoryMe();
         var database = $dataSystem.victoryMe && $dataSystem.victoryMe.name;
-        if (!$.shortVictory || me.name !== database || $.bosses[$gameTroop._troopId]) return me;
+        if (!$.shortVictory || me.name !== database || $.bosses[$gameTroop._troopId] || $.isMiniboss()) return me;
         return { name: $.shortVictory, volume: me.volume, pitch: me.pitch, pan: me.pan };
     };
 

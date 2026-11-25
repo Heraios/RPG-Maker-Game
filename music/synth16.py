@@ -133,6 +133,15 @@ def snes_master(L, R, echo=0.24, fb=0.35, reverb=0.18, cutoff=9000):
 def save_stereo(L, R, path, loop=None, preview=None, gain=1.0, drive=2.2):
     """gain: below 1 for a track that should sit quieter than the songs (0.63 is about 4 dB quieter).
     drive: the limiter (2.2 is gentle; 4 or so for battle music, whose drum hits would otherwise hold it down)."""
+    import os
+    if os.environ.get('FIERCE') == '1' and os.path.basename(path).startswith('Battle_'):
+        # a miniboss version (see battle_kit.py): saved as Miniboss_..., a semitone up and that much faster
+        path = os.path.join(os.path.dirname(path), 'Miniboss_' + os.path.basename(path)[7:])
+        if preview: preview = os.path.join(os.path.dirname(preview), 'Miniboss_' + os.path.basename(preview)[7:])
+        r = 2 ** (1 / 12); n = int(len(L) / r); x = np.arange(n) * r
+        L = np.interp(x, np.arange(len(L)), L); R = np.interp(x, np.arange(len(R)), R)
+        if loop: loop = (int(round(loop[0] / r)), int(round(loop[1] / r)))
+        drive = max(drive, 3.0); gain *= 0.94                                                      # as loud as a boss theme, no louder
     peak = max(np.max(np.abs(L)), np.max(np.abs(R))); L = L / peak; R = R / peak
     L = np.tanh(L * drive) / np.tanh(drive) * 0.9 * gain; R = np.tanh(R * drive) / np.tanh(drive) * 0.9 * gain
     def write(l, r, wav, ogg, meta):

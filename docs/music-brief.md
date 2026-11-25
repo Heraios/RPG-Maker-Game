@@ -167,6 +167,9 @@ after the fight the field music resumes where it left off (a half-second fade in
 sections, a key lift near the end of the loop. Shared parts are in `music/battle_kit.py`.
 - **Done:** Battle_Salt_Marsh; Battle_Lava_Tubes and Battle_Lava_Tube_Country (Acts 1-2 start here); Battle_Grasslands;
   Battle_Laurel_Forest; Battle_Highlands (shared by the alpine forest, Idekeu and Chafakeu); Battle_Snowy_Peak; Battle_Crater_Lake; Battle_Shore; Battle_Sea_Cliffs (its own, grown out of Sea_Cliffs); Battle_Volcanic_Desert (grown out of Volcanic_Desert, on the Lady of the Sun's new theme); Boss_Great_Boar
+  Every area battle theme also has a **miniboss version** (Miniboss_Salt_Marsh and so on): the same theme a semitone
+  higher and faster, the war drums pounding, the tune doubled on bright brass. Minibosses are marked with `<Miniboss>` in
+  an enemy's note or in SI_BattleMusic's *Miniboss Troops*.
   rebuilt on Pada's tune (melody first: the riff-based version didn't land).
 - **Bosses (done):** all four reworked melody first: Boss_Great_Boar, Boss_Parl, Boss_Daughter_Wells, Boss_Lady_Woods.
 - Seafarers keep Battle_Seafarers wherever they fight; Battle_Wild, Battle_Spirits and Battle_Ancients remain only for
