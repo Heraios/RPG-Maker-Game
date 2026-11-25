@@ -541,6 +541,32 @@ The sky-hole shows the real cave below: map 6's garden, through see-through tile
    (add `--tone=-85,-80,-40,30` if that map is darkened by a Tint Screen, like map 6's Cave Shade). It makes
    EastHole_Day/_Dusk/_Night. The sky-hole's are remade by `art/sky_hole_view.py` when map 6's garden changes.
 
+## Telegraph lines (Lava Country)
+
+**Which piece is which: `docs/reference/telegraph.png`** (every piece, its tile number and where it is in tab E,
+with two assembled lines). A pole is three things stacked: the rock (Ext-B 76), the pole's foot on it (Lava-E 9),
+and a pole top in the tile above, drawn above the player. The wire runs at the crossarm's height, so pole tops and
+the wire tiles between them share a row.
+- **Straight lines:** pole tops 1-4 (– | \ /), wire 5-8 between, or the sagging span 22, 23 (repeat), 24.
+- **Turning, ending, branching:** pole tops 72-91: corners (N+E, N+W, S+E, S+W), line ends (N, S, E, W: the side
+  the wire leaves by), T-junctions, and straight-to-slant joins (e.g. W+NE).
+- **On a north-south line,** use the wired foot (92) instead of 9: the wire passes the foot on its way to the
+  crossarm above. Also for a T's branch going south past its own pole.
+- **Rubber-coated wire:** the same shapes in black: 32-42 straight, 96-115 turns, 116 the wired foot.
+
+## Battle backgrounds for the lava country
+
+Recoloured into the basalt palette (`art/lava_battlebacks.py`): one floor, three backdrops. See
+`docs/mockups/lava_battlebacks.png` for each in a real battle. Set them in Map Properties → Battleback.
+
+| For | Battleback 1 | Battleback 2 |
+|---|---|---|
+| The flows (the gully, the flow front, the channels) | LavaCountry | LavaRidges |
+| Open ground, a wide view | LavaCountry | LavaSky |
+| By the tubes (a collapse, a tube mouth) | LavaCountry | LavaTubeMouth |
+| A kipuka (grass in the lava) | grassDark | LavaSky |
+| Where the land greens (map 7) | LavaCountry | field |
+
 ## Map tags (Map Properties → Note)
 
 | Tag | Use it for | Effect |

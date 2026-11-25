@@ -1,4 +1,4 @@
-// Map 3, the channels: the climb, its six lessons (water, tree, bird, wind, sing, road) and the combat tutorial.
+// Map 3, the channels: the climb, its five lessons (water, tree, bird, wind, sing) and the combat tutorial.
 const start = async (h, x, y) => {
     await h.page.goto(h.base + '/index.html');
     await h.page.waitForFunction(() => window.SceneManager && SceneManager._scene instanceof Scene_Title && SceneManager._sceneStarted, null, { timeout: 60000 });
@@ -29,15 +29,15 @@ module.exports = {
         t.eq(r.unreachable, '', 'every lesson and gathering spot can be reached (' + r.n + ')');
     },
 
-    'the channels: six lessons; four teach the Ghost a touch': async (h, t) => {
+    'the channels: five lessons; four teach the Ghost a touch': async (h, t) => {
         await start(h, 20, 43);
-        for (const name of ['The Spring', 'The Dead Tree', 'Ravens in the Dead Tree', 'The Gusty Saddle', 'The Singing Wires', 'The Road']) {
+        for (const name of ['The Spring', 'The Dead Tree', 'Ravens in the Dead Tree', 'The Gusty Saddle', 'The Singing Wires']) {
             await h.eval(n => $gameMap.events().find(e => e.event().name.startsWith(n)).start(), name);
             await h.pumpMessages(80);
         }
-        const r = await h.eval(() => ({ words: ['water', 'tree', 'bird', 'wind', 'sing', 'road'].filter(w => SmokingIsle.Journal.knowsWord(w)).join(','),
+        const r = await h.eval(() => ({ words: ['water', 'tree', 'bird', 'wind', 'sing'].filter(w => SmokingIsle.Journal.knowsWord(w)).join(','),
             moves: [570, 572, 571, 588].map(id => $gameActors.actor(1).isLearnedSkill(id)).join('/') }));
-        t.eq(r.words, 'water,tree,bird,wind,sing,road', 'six new words');
+        t.eq(r.words, 'water,tree,bird,wind,sing', 'five new words (road is on map 7 now)');
         t.eq(r.moves, 'true/true/true/true', 'water: Chilling, tree: Crushing, wind: Cutting, sing: Ghostly Touch');
     },
 
