@@ -567,6 +567,11 @@ Recoloured into the basalt palette (`art/lava_battlebacks.py`): one floor, three
 | A kipuka (grass in the lava) | grassDark | LavaSky |
 | Where the land greens (map 7) | LavaCountry | field |
 
+**Day and night:** the time-of-day tint reaches battles, so rock backdrops need nothing more. The backdrops with
+sky (LavaSky, field) have dusk and night versions (`_Dusk`, `_Night`: a sunset, stars and a moon) that SI_Time
+swaps in by itself outdoors; set the plain name on the map. To give another backdrop its own versions, add
+NAME_Dusk / NAME_Night images and put NAME in SI_Time's "Sky Battlebacks" setting.
+
 ## Map tags (Map Properties → Note)
 
 | Tag | Use it for | Effect |
