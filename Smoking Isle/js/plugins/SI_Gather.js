@@ -39,6 +39,10 @@
  * It shows its state by itself: full, chipped (taken today), worked out
  * (empty sockets: a vein never vanishes, even stone that would).
  *
+ * Words from gathering: in Journal.json give a word "gather": ["Wart Fern"];
+ * the first time Lasa picks that, its lesson (a common event the Gather
+ * event calls: SmokingIsle.Gather.lessonDue('plant')) runs.
+ *
  * The Ghost alone (nobody who can gather) gets "...your hand goes through
  * it." Spots only some can gather name only people already met.
  *
@@ -547,6 +551,16 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         interpreter.setWaitMode('message');
     };
 
+    // Words learned by gathering: the first time Lasa picks a species listed in Journal.json (words.<word>.gather).
+    $.wordFor = function(species) {
+        var words = (SmokingIsle.Journal && SmokingIsle.Journal.data().words) || {};
+        return Object.keys(words).find(function(w) { return (words[w].gather || []).indexOf(species) >= 0; }) || '';
+    };
+    $.lessonDue = function(word) {
+        if ($gameTemp._siGatherWord !== word) return false;
+        $gameTemp._siGatherWord = null; return true;
+    };
+
     $.finish = function(interpreter) {
         var p = $.pending;
         $.pending = null;
@@ -554,6 +568,11 @@ SmokingIsle.Gather = SmokingIsle.Gather || {};
         var result = $.gather(p.mapId, p.eventId, p.species, p.actors[p.choice]);
         $gameMessage.add(result.text);
         if (result.worn) $gameMessage.add(result.worn);
+        // a word from gathering (Journal.json words.<word>.gather): its lesson runs next, in the Gather event
+        var word = result.got && result.got.length ? $.wordFor(p.species) : '';
+        if (word && !SmokingIsle.Journal.knowsWord(word) && $gameParty.members().some(function(a) { return a.actorId() === 4; })) {
+            $gameTemp._siGatherWord = word;
+        }
         interpreter.setWaitMode('message');
         return result;
     };
